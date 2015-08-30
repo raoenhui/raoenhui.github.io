@@ -47,7 +47,7 @@ def zip_zap_zoom(desired_cap=desired_cap_default):
         if not "Google" in driver.title:
             raise Exception("Unable to load google page!")
         elem = driver.find_element_by_name("q")
-        elem.send_keys("Amey Jadiye")
+        elem.send_keys("Enhui Rao")
         elem.submit()
         print driver.title
         driver.quit()
@@ -80,19 +80,19 @@ Run the code, you will see something like below
 
 {%highlight bash%}
 amey@amey-xps:~/work/python$ python automated_test.py 
-Amey Jadiye - Google Search
+Enhui Rao - Google Search
 Done :  {'os_version': 'xp', 'browser_version': '7.0', 'os': 'Windows', 'browserstack.debug': 'true', 'browser': 'IE'}
-Amey Jadiye - Google zoeken
+Enhui Rao - Google zoeken
 Done :  {'os_version': '7', 'browser_version': '31.0', 'os': 'Windows', 'browserstack.debug': 'true', 'browser': 'Firefox'}
-Amey Jadiye - Google zoeken
+Enhui Rao - Google zoeken
 Done :  {'os_version': 'Mavericks', 'browser_version': '7.0', 'os': 'OS X', 'browserstack.debug': 'true', 'browser': 'Safari'}
-Amey Jadiye - Google Search
+Enhui Rao - Google Search
 Done :  {'os_version': '8.1', 'browser_version': '36.0', 'os': 'Windows', 'browserstack.debug': 'true', 'browser': 'Chrome'}
-Amey Jadiye - Google zoeken
+Enhui Rao - Google zoeken
 Done :  {'device': 'LG Nexus 4', 'platform': 'ANDROID', 'browserName': 'android', 'browserstack.debug': 'true'}
-Amey Jadiye - Google zoeken
+Enhui Rao - Google zoeken
 Done :  {'device': 'iPad mini Retina', 'platform': 'MAC', 'browserName': 'iPad', 'browserstack.debug': 'true'}
-Amey Jadiye - Google zoeken
+Enhui Rao - Google zoeken
 Done :  {'device': 'iPhone 5S', 'platform': 'MAC', 'browserName': 'iPhone'}
 {%endhighlight%}
 

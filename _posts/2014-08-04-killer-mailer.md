@@ -31,7 +31,7 @@ import argparse
 from email.mime.text import MIMEText
 
 
-parser = argparse.ArgumentParser(description='This is a demo script by Amey Jadiye')
+parser = argparse.ArgumentParser(description='This is a demo script by Enhui Rao')
 parser.add_argument('-s','--subject', help='Subject',required=True)
 parser.add_argument('-b','--body',help='Body', required=True)
 parser.add_argument('-t','--to',help='To', required=True)
