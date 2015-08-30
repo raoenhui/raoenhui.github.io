@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CHECKING MYSQL DATABASE SIZE &vert; CODEINVENTORY</title>
+<meta name="description" content="Nerd's feeder!">
+<meta name="keywords" content="database, mysql">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.codeinventory.com/images/logo.png">
+<meta name="twitter:title" content="Checking MySQL Database Size">
+<meta name="twitter:description" content="Nerd's feeder!">
+<meta name="twitter:creator" content="@ameyjadiye">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Checking MySQL Database Size">
+<meta property="og:description" content="Nerd's feeder!">
+<meta property="og:url" content="http://www.codeinventory.com/database/2013/12/15/checking-mysql-database-size/">
+<meta property="og:site_name" content="CodeInventory">
+<meta property="og:image" content="http://www.codeinventory.com/images/">
+
+
+
+
+
+<link rel="canonical" href="http://www.codeinventory.com/database/2013/12/15/checking-mysql-database-size/">
+<link href="http://www.codeinventory.com/feed.xml" type="application/atom+xml" rel="alternate" title="CodeInventory Feed">
+<link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://www.codeinventory.com/assets/css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="http://www.codeinventory.com/assets/css/vendor/normalize.css">
+    <link rel="stylesheet" href="http://www.codeinventory.com/assets/css/vendor/nprogress.css">
+    <link rel="stylesheet" href="http://www.codeinventory.com/assets/css/vendor/foundation.min.css">
+    <link rel="stylesheet" href="http://www.codeinventory.com/assets/css/style.css">
+    <link rel="stylesheet" href="http://www.codeinventory.com/assets/css/post.css">
+
+
+
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://www.codeinventory.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://www.codeinventory.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://www.codeinventory.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://www.codeinventory.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://www.codeinventory.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.codeinventory.com/images/apple-touch-icon-144x144-precomposed.png">
+
+<style type="text/css">@media only screen and (min-width:43.75em){.notepad-post-content div>p:first-child:first-letter{float:left;font-size:4.688rem;line-height:4.375rem;padding-top:.25rem;padding-right:.5rem;padding-left:.188rem;font-family:serif}}</style>
+</head>
+<body class="post-template" itemscope itemtype="http://schema.org/WebPage">  
+
+        <main id="notepad-post-container-simple" class="notepad-post-container-simple" role="main">
+            <header class="notepad-post-header-simple">
+                <div class="notepad-post-menu-header-simple">
+
+                    <a class="notepad-blog-logo" href="http://www.codeinventory.com">
+                        <img src="http://www.codeinventory.com/images/logo.png" alt="Blog Logo" />
+                    </a>
+
+                <div class="notepad-blog-menu">      
+    <div class="notepad-mobile-menu show-for-small">
+        <a href="#"><i class="fa fa-bars"></i></a>
+    </div>
+    <ul class="notepad-menu">
+        <li class="notepad-mobile-close-btn show-for-small text-right">
+            <a href="#"><i class="fa fa-times"></i></a>
+        </li>
+
+            <li>
+                    <a href="http://www.codeinventory.com/">Home</a>
+                 </li>
+
+            <li>
+                    <a href="http://www.codeinventory.com/categories">Categories</a>
+                 </li>
+
+            <li>
+                    <a href="http://www.codeinventory.com/about">About</a>
+                 </li>
+            
+           <li><a href="http://www.codeinventory.com/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+    </ul>
+
+</div>
+            </div>
+
+                <div class="notepad-post-title-simple row">
+                    <div class="small-12 columns">
+                        <div class="notepad-post-meta-simple">
+                            <h1>Checking MySQL Database Size</h1>
+                            <p>by <strong>Amey Jadiye</strong> &#8212; on <a href="http://www.codeinventory.com/tags/index.html#database" data-toggle="tooltip" title="Posts tagged with database" rel="tag">database</a>&nbsp;&comma;&nbsp;<a href="http://www.codeinventory.com/tags/index.html#mysql" data-toggle="tooltip" title="Posts tagged with mysql" rel="tag">mysql</a> <strong><time datetime="2013-12-15T22:00:00+05:30">15 Dec 2013</time></strong></p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+        <article class="notepad-post-content post tag-simple">
+            <div><p>Hi all , in this post i am going to show you how to check current mysql database size, below queries are tested on Mysql 5.5.8</p>
+
+<p>Just fire below queries on your mysql db you will have your results ready on terminal.</p>
+
+<p>For calculating db size 2 things should be considered</p>
+
+<ul>
+  <li>Data length</li>
+  <li>Index length</li>
+</ul>
+
+<h3 id="checking-for-full-database-size-on-server--">Checking for full database size on server :-</h3>
+
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="n">table_schema</span> <span class="ss">&quot;Database Name&quot;</span><span class="p">,</span> <span class="k">SUM</span><span class="p">(</span> <span class="n">data_length</span> <span class="o">+</span> <span class="n">index_length</span><span class="p">)</span>
+ <span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span><span class="mi">1024</span> <span class="ss">&quot;Size in GB&quot;</span> <span class="k">FROM</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">TABLES</span>
+ <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">table_schema</span><span class="p">;</span></code></pre></div>
+
+<h3 id="checking-in-details-with-each-table-size-in-single-schema--">Checking in details with each table size in single schema :-</h3>
+
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="k">TABLE_NAME</span><span class="p">,</span> <span class="n">table_rows</span><span class="p">,</span> <span class="n">data_length</span><span class="p">,</span> <span class="n">index_length</span><span class="p">,</span> 
+<span class="n">round</span><span class="p">(((</span><span class="n">data_length</span> <span class="o">+</span> <span class="n">index_length</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span> <span class="ss">&quot;Size in GB&quot;</span>
+<span class="k">FROM</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">TABLES</span> <span class="k">WHERE</span> <span class="n">table_schema</span> <span class="o">=</span> <span class="ss">&quot;your_schema_name&quot;</span><span class="p">;</span></code></pre></div>
+
+<p><em>For checking the database size in MB just remove one ‘/1024’ from quries.</em></p>
+
+<p>Happy coding.. :)</p>
+
+            </div>
+        </article>
+        <div class="cf"></div>
+        <div class="row text-center">
+            <section class="notepad-post-share">
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Checking MySQL Database Size&quot;%20http://www.codeinventory.com/database/2013/12/15/checking-mysql-database-size/%20via%20&#64;ameyjadiye"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=http://www.codeinventory.com/database/2013/12/15/checking-mysql-database-size/"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a class="google-icon" href="https://plus.google.com/share?url=http://www.codeinventory.com/database/2013/12/15/checking-mysql-database-size/"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </section>
+        </div>
+        <div class="cf"></div>
+        
+            <div class="notepad-author-info">
+                <div class="row">
+                    <section class="notepad-post-author small-12 columns">
+                        
+                            <img src="http://www.codeinventory.com/images/ameyjadiye.jpg" class="notepad-post-author-avatar" alt="Amey Jadiye's photo">
+                        
+                        
+                            <span class="author-label">Author</span>
+                            <h1>Amey Jadiye</h1>
+                        
+                        
+                            <p><a href="mailto:ameyjadiye@gmail.com" class="author-website">ameyjadiye@gmail.com</a>
+
+			    <iframe src="//www.facebook.com/plugins/follow?href=https%3A%2F%2Fwww.facebook.com%2Fameyjadiye&amp;layout=standard&amp;show_faces=true&amp;colorscheme=light&amp;width=450&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe> 
+			    </p>
+                        
+                        
+                            <p>Programming is 1% knowledge, 2% ability and 97% getting the ability to work with the knowledge :)</p>
+                        
+                    </section>
+                </div>
+            </div>
+ 
+        
+        <div class="cf"></div>
+        
+        <section class="notepad-disqus row">
+    <div class="small-12 columns">
+        <h1 class="notepad-comments-header">Comments</h1>
+        <div id="disqus_thread"></div>
+        
+<!--
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'codeinventorycom'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+-->
+
+ 
+<div class="fb-comments" data-href="http://www.codeinventory.com/database/2013/12/15/checking-mysql-database-size/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=1595152237390753&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, "script", "facebook-jssdk"));</script>
+
+    </div>
+</section>
+
+        <div class="cf"></div>
+
+    <footer class="notepad-site-footer">
+    <div class="copyright">
+        <section>All content copyright <a href="http://www.codeinventory.com/about">Amey Jadiye</a> &copy; 2015 &bull; All rights reserved.</section>
+	<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>
+          <a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>
+    </div>
+    <div class="social-icons">
+        
+        
+        <a href="http://twitter.com/ameyjadiye">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="https://plus.google.com/u/0/+AmeyJadiye">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-google-plus fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="http://instagram.com/ameyjadiye">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-instagram fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="http://github.com/ameyjadiye">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="http://facebook.com/ameyjadiye">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+        </a>
+        
+    </div>
+    
+    <div class="cf"></div>
+</footer>
+ 
+</main>    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="http://www.codeinventory.com/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+    <script src="http://www.codeinventory.com/assets/js/vendor/modernizr.js"></script>
+    <script src="http://www.codeinventory.com/assets/js/foundation.min.js"></script>
+    
+    <script src="http://www.codeinventory.com/assets/js/notepad.js"></script>
+    <script src="http://www.codeinventory.com/assets/js/scripts.min.js"></script>
+    <script src="http://www.codeinventory.com/assets/js/vendor/nprogress.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/sigma.js/1.0.3/sigma.min.js"></script>
+
+    <script>
+      $(document).foundation();
+    </script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46791108-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+
+</script>
+
+<script>NProgress.start();var interval=setInterval(function(){NProgress.inc()},1000);jQuery(window).load(function(){clearInterval(interval);NProgress.done()});jQuery(window).unload(function(){NProgress.start()});</script>
+ 
+</body>
+</html>
