@@ -1,110 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://localhost:4000</loc>
+        <loc>http://raoenhui.github.io</loc>
     </url>
     
     
     <url>
-        <loc>http://localhost:4000/404/</loc>
+        <loc>http://raoenhui.github.io/404/</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/about/index.html</loc>
+        <loc>http://raoenhui.github.io/about/index.html</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/categories/index.html</loc>
+        <loc>http://raoenhui.github.io/categories/index.html</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/feed.xml</loc>
+        <loc>http://raoenhui.github.io/feed.xml</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/</loc>
+        <loc>http://raoenhui.github.io/</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/links.jsonp</loc>
+        <loc>http://raoenhui.github.io/links.jsonp</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/search.json</loc>
+        <loc>http://raoenhui.github.io/search.json</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/sitemap.xml</loc>
+        <loc>http://raoenhui.github.io/sitemap.xml</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/tags/index.html</loc>
+        <loc>http://raoenhui.github.io/tags/index.html</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/page2/</loc>
+        <loc>http://raoenhui.github.io/page2/</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/page3/</loc>
+        <loc>http://raoenhui.github.io/page3/</loc>
     </url>
     
 
     
     <url>
-        <loc>http://localhost:4000/analytics/2015/05/10/sentiment-analysis-with-R/</loc>
+        <loc>http://raoenhui.github.io/analytics/2015/05/10/sentiment-analysis-with-R/</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/linux/2015/04/01/alias-makes-life-easy/</loc>
+        <loc>http://raoenhui.github.io/linux/2015/04/01/alias-makes-life-easy/</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/linux/2014/12/31/working-with-git-patch/</loc>
+        <loc>http://raoenhui.github.io/linux/2014/12/31/working-with-git-patch/</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/android/2014/11/23/install-lollipop-on-nexus-4/</loc>
+        <loc>http://raoenhui.github.io/android/2014/11/23/install-lollipop-on-nexus-4/</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/linux/2014/09/14/bang-bang/</loc>
+        <loc>http://raoenhui.github.io/linux/2014/09/14/bang-bang/</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/javascript/2014/09/07/javascript-attache-with-events/</loc>
+        <loc>http://raoenhui.github.io/javascript/2014/09/07/javascript-attache-with-events/</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/testing/2014/08/30/Super-awesome-automation/</loc>
+        <loc>http://raoenhui.github.io/testing/2014/08/30/Super-awesome-automation/</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/nodejs/2014/08/17/N-for-Node.js/</loc>
+        <loc>http://raoenhui.github.io/nodejs/2014/08/17/N-for-Node.js/</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/python/2014/08/08/python-timezone-convertion/</loc>
+        <loc>http://raoenhui.github.io/python/2014/08/08/python-timezone-convertion/</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/python/2014/08/04/killer-mailer/</loc>
+        <loc>http://raoenhui.github.io/python/2014/08/04/killer-mailer/</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/linux/2014/01/19/functions-in-shell-script/</loc>
+        <loc>http://raoenhui.github.io/linux/2014/01/19/functions-in-shell-script/</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/database/2013/12/17/using-mysql-dump/</loc>
+        <loc>http://raoenhui.github.io/database/2013/12/17/using-mysql-dump/</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/database/2013/12/15/checking-mysql-database-size/</loc>
+        <loc>http://raoenhui.github.io/database/2013/12/15/checking-mysql-database-size/</loc>
     </url>
     
     <url>
-        <loc>http://localhost:4000/java/2013/12/10/capturing-http-header-in-JAX-RS/</loc>
+        <loc>http://raoenhui.github.io/java/2013/12/10/capturing-http-header-in-JAX-RS/</loc>
     </url>
     
 </urlset>
