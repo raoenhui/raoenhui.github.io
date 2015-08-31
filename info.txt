@@ -1,5 +1,3 @@
 jekyll server  --watch
 
 git push origin master
-
-about uses coding

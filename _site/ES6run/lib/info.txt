@@ -1,0 +1,5 @@
+cd /d D:/ice1/es6
+babel -d lib/ src/ -w
+
+http://www.browsersync.io/docs/options/
+browser-sync start --server --files "lib/*.js"
