@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ES6 FEATRUES &vert; 饶恩慧的博客</title>
+<meta name="description" content="一枚前端攻城狮!">
+<meta name="keywords" content="Es6">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://raoenhui.github.io/images/logo.png">
+<meta name="twitter:title" content="Es6 featrues">
+<meta name="twitter:description" content="一枚前端攻城狮!">
+<meta name="twitter:creator" content="@raoenhui">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Es6 featrues">
+<meta property="og:description" content="一枚前端攻城狮!">
+<meta property="og:url" content="http://raoenhui.github.io/es6/2015/08/28/es6-featrue/">
+<meta property="og:site_name" content="饶恩慧的博客">
+<meta property="og:image" content="http://raoenhui.github.io/images/">
+
+
+
+
+
+<link rel="canonical" href="http://raoenhui.github.io/es6/2015/08/28/es6-featrue/">
+<link href="http://raoenhui.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="饶恩慧的博客 Feed">
+<link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://raoenhui.github.io/assets/css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="http://raoenhui.github.io/assets/css/vendor/normalize.css">
+    <link rel="stylesheet" href="http://raoenhui.github.io/assets/css/vendor/nprogress.css">
+    <link rel="stylesheet" href="http://raoenhui.github.io/assets/css/vendor/foundation.min.css">
+    <link rel="stylesheet" href="http://raoenhui.github.io/assets/css/style.css">
+    <link rel="stylesheet" href="http://raoenhui.github.io/assets/css/post.css">
+
+
+
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://raoenhui.github.io/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://raoenhui.github.io/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://raoenhui.github.io/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://raoenhui.github.io/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://raoenhui.github.io/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://raoenhui.github.io/images/apple-touch-icon-144x144-precomposed.png">
+
+<style type="text/css">@media only screen and (min-width:43.75em){.notepad-post-content div>p:first-child:first-letter{float:left;font-size:4.688rem;line-height:4.375rem;padding-top:.25rem;padding-right:.5rem;padding-left:.188rem;font-family:serif}}</style>
+</head>
+<body class="post-template" itemscope itemtype="http://schema.org/WebPage">  
+
+        <main id="notepad-post-container-simple" class="notepad-post-container-simple" role="main">
+            <header class="notepad-post-header-simple">
+                <div class="notepad-post-menu-header-simple">
+
+                    <a class="notepad-blog-logo" href="http://raoenhui.github.io">
+                        <img src="http://raoenhui.github.io/images/logo.png" alt="Blog Logo" />
+                    </a>
+
+                <div class="notepad-blog-menu">      
+    <div class="notepad-mobile-menu show-for-small">
+        <a href="#"><i class="fa fa-bars"></i></a>
+    </div>
+    <ul class="notepad-menu">
+        <li class="notepad-mobile-close-btn show-for-small text-right">
+            <a href="#"><i class="fa fa-times"></i></a>
+        </li>
+
+            <li>
+                    <a href="http://raoenhui.github.io/">主页</a>
+                 </li>
+
+            <li>
+                    <a href="http://raoenhui.github.io/categories">目录</a>
+                 </li>
+
+            <li>
+                    <a href="http://raoenhui.github.io/about">关于</a>
+                 </li>
+            
+           <li><a href="http://raoenhui.github.io/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+    </ul>
+
+</div>
+            </div>
+
+                <div class="notepad-post-title-simple row">
+                    <div class="small-12 columns">
+                        <div class="notepad-post-meta-simple">
+                            <h1>Es6 featrues</h1>
+                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="http://raoenhui.github.io/tags/index.html#Es6" data-toggle="tooltip" title="Posts tagged with Es6" rel="tag">Es6</a> <strong><time datetime="2015-08-28T15:09:00+05:30">28 Aug 2015</time></strong></p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+        <article class="notepad-post-content post tag-simple">
+            <div><h1 id="ecmascript-6-supgitioes6featureshttpgitioes6featuressup">ECMAScript 6 <sup><a href="http://git.io/es6features">git.io/es6features</a></sup></h1>
+
+<h2 id="section">介绍</h2>
+<p>ECMAScript 6,2015年也被称为ECMAScript 标准的最新版本。标志着最新的语言，是及2009年ES5发布后相继6年出的版本。这些功能的实现主要的JavaScript引擎统计如右边链接(现在正在完善)(http://kangax.github.io/es5-compat-table/es6/)。</p>
+
+<p>ES6的完整规范如左边网址下<a href="http://www.ecma-international.org/ecma-262/6.0/">ES6 standard</a>。 </p>
+
+<p>ES6包括以下几个新功能:
+- <a href="#arrows">arrows</a>
+- <a href="#classes">classes</a>
+- <a href="#enhanced-object-literals">enhanced object literals</a>
+- <a href="#template-strings">template strings</a>
+- <a href="#destructuring">destructuring</a>
+- <a href="#default--rest--spread">default + rest + spread</a>
+- <a href="#let--const">let + const</a>
+- <a href="#iterators--forof">iterators + for..of</a>
+- <a href="#generators">generators</a>
+- <a href="#unicode">unicode</a>
+- <a href="#modules">modules</a>
+- <a href="#module-loaders">module loaders</a>
+- <a href="#map--set--weakmap--weakset">map + set + weakmap + weakset</a>
+- <a href="#proxies">proxies</a>
+- <a href="#symbols">symbols</a>
+- <a href="#subclassable-built-ins">subclassable built-ins</a>
+- <a href="#promises">promises</a>
+- <a href="#math--number--string--array--object-apis">math + number + string + array + object APIs</a>
+- <a href="#binary-and-octal-literals">binary and octal literals</a>
+- <a href="#reflect-api">reflect api</a>
+- <a href="#tail-calls">tail calls</a></p>
+
+<h2 id="ecmascript-6-">ECMAScript 6 功能</h2>
+
+<h3 id="arrows">Arrows</h3>
+<p>Arrows are a function shorthand using the <code>=&gt;</code> syntax.  They are syntactically similar to the related feature in C#, Java 8 and CoffeeScript.  They support both statement block bodies as well as expression bodies which return the value of the expression.  Unlike functions, arrows share the same lexical <code>this</code> as their surrounding code.</p>
+
+<p>箭头函数简单的说是用＝&gt;语法。其语法的相关特性类似于c,Java 8和CoffeeScript。他们同时支持声明块体以及表达身体的返回值的表达式。与方法不同，箭头函数分享了相同语法的this以及它周边代码</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">// Expression bodies
+var <span class="nv">odds</span> <span class="o">=</span> evens.map<span class="o">(</span><span class="nv">v</span> <span class="o">=</span>&gt; v + 1<span class="o">)</span><span class="p">;</span>
+var <span class="nv">nums</span> <span class="o">=</span> evens.map<span class="o">((</span>v, i<span class="o">)</span> <span class="o">=</span>&gt; v + i<span class="o">)</span><span class="p">;</span>
+var <span class="nv">pairs</span> <span class="o">=</span> evens.map<span class="o">(</span><span class="nv">v</span> <span class="o">=</span>&gt; <span class="o">({</span>even: v, odd: v + 1<span class="o">}))</span><span class="p">;</span>
+
+// Statement bodies
+nums.forEach<span class="o">(</span><span class="nv">v</span> <span class="o">=</span>&gt; <span class="o">{</span>
+  <span class="k">if</span> <span class="o">(</span>v % <span class="nv">5</span> <span class="o">===</span> 0<span class="o">)</span>
+    fives.push<span class="o">(</span>v<span class="o">)</span><span class="p">;</span>
+<span class="o">})</span><span class="p">;</span>
+
+// Lexical this
+var <span class="nv">bob</span> <span class="o">=</span> <span class="o">{</span>
+  _name: <span class="s2">&quot;Bob&quot;</span>,
+  _friends: <span class="o">[]</span>,
+  printFriends<span class="o">()</span> <span class="o">{</span>
+    this._friends.forEach<span class="o">(</span><span class="nv">f</span> <span class="o">=</span>&gt;
+      console.log<span class="o">(</span>this._name + <span class="s2">&quot; knows &quot;</span> + f<span class="o">))</span><span class="p">;</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></div>
+
+<p>ES5与ES6对比</p>
+
+<p>```JavaScript
+//ES5
+nums.forEach(function (v) {
+   if (v % 5 === 0)
+       fives.push(v);
+});</p>
+
+<p>//ES6
+nums.forEach(v =&gt; {
+   if (v % 5 === 0)
+       fives.push(v)
+})
+```</p>
+
+<h3 id="classes">Classes</h3>
+<p>ES6 classes are a simple sugar over the prototype-based OO pattern.  Having a single convenient declarative form makes class patterns easier to use, and encourages interoperability.  Classes support prototype-based inheritance, super calls, instance and static methods and constructors.</p>
+
+<p>ES6类是一个简单基于原型的面向对象模式。它以类模式声明,并鼓励互操作性。类支持基于原型的继承、超级调用实例和静态方法和构造函数。</p>
+
+<p>```JavaScript
+class SkinnedMesh extends THREE.Mesh {
+  constructor(geometry, materials) {
+    super(geometry, materials);</p>
+
+<pre><code>this.idMatrix = SkinnedMesh.defaultMatrix();
+this.bones = [];
+this.boneMatrices = [];
+//...   }   update(camera) {
+//...
+super.update();   }   get boneCount() {
+return this.bones.length;   }   set matrixType(matrixType) {
+this.idMatrix = SkinnedMesh[matrixType]();   }   static defaultMatrix() {
+return new THREE.Matrix4();   } } ``` ES5与ES6对比
+</code></pre>
+
+<p>```JavaScript</p>
+
+<p>//ES5
+var Shape = function (id, x, y) {
+    this.id = id;
+    this.move(x, y);
+};
+Shape.prototype.move = function (x, y) {
+    this.x = x;
+    this.y = y;
+};</p>
+
+<p>//ES6
+class Shape {
+    constructor (id, x, y) {
+        this.id = id
+        this.move(x, y)
+    }
+    move (x, y) {
+        this.x = x
+        this.y = y
+    }
+}
+```</p>
+
+<h3 id="enhanced-object-literals">Enhanced Object Literals</h3>
+<p>Object literals are extended to support setting the prototype at construction, shorthand for <code>foo: foo</code> assignments, defining methods, making super calls, and computing property names with expressions.  Together, these also bring object literals and class declarations closer together, and let object-based design benefit from some of the same conveniences.</p>
+
+<p>对象文本扩展为支持设置原型结构,简称“foo:foo”模式,定义方法,使超级调用,和计算属性名表达式。在一起,这些也将文本对象和类声明更紧密地联系在一起,并让基于对象的设计更加便利的使用在一起。</p>
+
+<p><code>JavaScript
+var obj = {
+    // __proto__
+    __proto__: theProtoObj,
+    // Shorthand for ‘handler: handler’
+    handler,
+    // Methods
+    toString() {
+     // Super calls
+     return "d " + super.toString();
+    },
+    // Computed (dynamic) property names
+    [ 'prop_' + (() =&gt; 42)() ]: 42
+};
+</code>
+ES5与ES6对比</p>
+
+<p>```JavaScript
+//ES5
+obj = {
+    foo: “bar”
+};
+obj[ “prop_” + foo() ] = 42;</p>
+
+<p>//ES6
+obj = {
+    foo: “bar”,
+    [ “prop_” + foo() ]: 42
+}
+```</p>
+
+<h3 id="template-strings">Template Strings</h3>
+<p>Template strings provide syntactic sugar for constructing strings.  This is similar to string interpolation features in Perl, Python and more.  Optionally, a tag can be added to allow the string construction to be customized, avoiding injection attacks or constructing higher level data structures from string contents.</p>
+
+<p>模板构建字符串的字符串提供更简便的写法。这类似于字符串插值特性在Perl、Python和更多。可选地,可以添加一个标签允许自定义字符串建设,避免注入攻击或从字符串构造更高层次数据结构的内容。</p>
+
+<p>```JavaScript
+// Basic literal string creation
+<code>In JavaScript '\n' is a line-feed.</code></p>
+
+<p>// Multiline strings
+<code>In JavaScript this is
+ not legal.</code></p>
+
+<p>// String interpolation
+var name = “Bob”, time = “today”;
+<code>Hello ${name}, how are you ${time}?</code></p>
+
+<p>// Construct an HTTP request prefix is used to interpret the replacements and construction
+GET<code>http://foo.org/bar?a=${a}&amp;b=${b}
+    Content-Type: application/json
+    X-Credentials: ${credentials}
+    { "foo": ${foo},
+      "bar": ${bar}}</code>(myOnReadyStateChangeHandler);
+```
+ES5与ES6对比</p>
+
+<p>```JavaScript
+//ES5
+var customer = { name: “Foo” };
+var card = { amount: 7, product: “Bar”, unitprice: 42 };
+message = “Hello “ + customer.name + “,\n” +
+“want to buy “ + card.amount + “ “ + card.product + “ for\n” +
+“a total of “ + (card.amount * card.unitprice) + “ bucks?”;</p>
+
+<p>//ES6
+var customer = { name: “Foo” }
+var card = { amount: 7, product: “Bar”, unitprice: 42 }
+message = <code>Hello ${customer.name},
+want to buy ${card.amount} ${card.product} for
+a total of ${card.amount * card.unitprice} bucks?</code>
+```</p>
+
+<h3 id="destructuring">Destructuring</h3>
+<p>Destructuring allows binding using pattern matching, with support for matching arrays and objects.  Destructuring is fail-soft, similar to standard object lookup <code>foo["bar"]</code>, producing <code>undefined</code> values when not found.</p>
+
+<p>解构允许绑定使用模式匹配,支持匹配数组和对象。解构是可以让故障弱化,类似于标准对象查找foo(“bar”),生产时没有发现未定义的值‘undefined’。</p>
+
+<p>```JavaScript
+// list matching
+var [a, , b] = [1,2,3];</p>
+
+<p>// object matching
+var { op: a, lhs: { op: b }, rhs: c }
+       = getASTNode()</p>
+
+<p>// object matching shorthand
+// binds <code>op</code>, <code>lhs</code> and <code>rhs</code> in scope
+var {op, lhs, rhs} = getASTNode()</p>
+
+<p>// Can be used in parameter position
+function g({name: x}) {
+  console.log(x);
+}
+g({name: 5})</p>
+
+<p>// Fail-soft destructuring
+var [a] = [];
+a === undefined;</p>
+
+<p>// Fail-soft destructuring with defaults
+var [a = 1] = [];
+a === 1;
+```
+ES5与ES6对比</p>
+
+<p>```JavaScript
+//ES5
+var { op: a, lhs: { op: b }, rhs: c } = getASTNode()</p>
+
+<p>//ES6
+var tmp = getASTNode();
+var a = tmp.op;
+var b = tmp.lhs.op;
+var c = tmp.rhs;</p>
+
+<p>//ES5
+function f (arg) {
+    var name = arg[0];
+    var val  = arg[1];
+    console.log(name, val);
+};
+function g (arg) {
+    var n = arg.name;
+    var v = arg.val;
+    console.log(n, v);
+};
+function h (arg) {
+    var name = arg.name;
+    var val  = arg.val;
+    console.log(name, val);
+};
+f([ “bar”, 42 ]);
+g({ name: “foo”, val:  7 });
+h({ name: “bar”, val: 42 });</p>
+
+<p>//ES6
+function f ([ name, val ]) {
+    console.log(name, val)
+}
+function g ({ name: n, val: v }) {
+    console.log(n, v)
+}
+function h ({ name, val }) {
+    console.log(name, val)
+}
+f([ “bar”, 42 ])
+g({ name: “foo”, val:  7 })
+h({ name: “bar”, val: 42 })
+```</p>
+
+<h3 id="default--rest--spread">Default + Rest + Spread</h3>
+<p>Callee-evaluated default parameter values.  Turn an array into consecutive arguments in a function call.  Bind trailing parameters to an array.  Rest replaces the need for <code>arguments</code> and addresses common cases more directly.</p>
+
+<p>Callee-evaluated默认参数值。把一个数组转化为连续函数调用的参数。剩余的参数绑定到一个数组中。其他取代了需要的参数和地址一般情况下更直接。</p>
+
+<p><code>JavaScript
+function f(x, y=12) {
+  // y is 12 if not passed (or passed as undefined)
+  return x + y;
+}
+f(3) == 15
+</code>
+<code>JavaScript
+function f(x, ...y) {
+  // y is an Array
+  return x * y.length;
+}
+f(3, "hello", true) == 6
+</code>
+<code>JavaScript
+function f(x, y, z) {
+  return x + y + z;
+}
+// Pass each elem of array as argument
+f(...[1,2,3]) == 6
+</code>
+ES5与ES6对比</p>
+
+<p>```JavaScript
+//ES5
+var params = [ “hello”, true, 7 ];
+var other = [ 1, 2 ].concat(params); // [ 1, 2, “hello”, true, 7 ]
+f.apply(undefined, [ 1, 2 ].concat(params)) === 9;</p>
+
+<p>var str = “foo”;
+var chars = str.split(“”); // [ “f”, “o”, “o” ]</p>
+
+<p>//ES6
+var params = [ “hello”, true, 7 ]
+var other = [ 1, 2, …params ] // [ 1, 2, “hello”, true, 7 ]
+f(1, 2, …params) === 9</p>
+
+<p>var str = “foo”
+var chars = [ …str ] // [ “f”, “o”, “o” ]
+```</p>
+
+<h3 id="let--const">Let + Const</h3>
+<p>Block-scoped binding constructs.  <code>let</code> is the new <code>var</code>.  <code>const</code> is single-assignment.  Static restrictions prevent use before assignment.</p>
+
+<p>Block-scoped绑定结构。let”是新的“var”。“常量”是单一赋值消息快。静态限制防止作业之前使用。</p>
+
+<p><code>JavaScript
+function f() {
+  {
+    let x;
+    {
+      // okay, block scoped name
+      const x = "sneaky";
+      // error, const
+      x = "foo";
+    }
+    // error, already declared in block
+    let x = "inner";
+  }
+}
+</code>
+ES5与ES6对比</p>
+
+<p>```JavaScript
+//ES5
+Object.defineProperty(typeof global === “object” ? global : window, “PI”, {
+    value:        3.141593,
+    enumerable:   true,
+    writable:     false,
+    configurable: false
+})
+PI &gt; 3.0;</p>
+
+<p>//ES6
+const PI = 3.141593
+PI &gt; 3.0
+```</p>
+
+<h3 id="iterators--forof">Iterators + For..Of</h3>
+<p>Iterator objects enable custom iteration like CLR IEnumerable or Java Iterable.  Generalize <code>for..in</code> to custom iterator-based iteration with <code>for..of</code>.  Don’t require realizing an array, enabling lazy design patterns like LINQ.</p>
+
+<p>迭代器对象启用自定义迭代就像CLR IEnumerable或Java Iterable。概括的. .概括来说它就是将‘fo..in’等循环用‘for..of’来写。不需要实现一个数组,使懒惰像LINQ设计模式。</p>
+
+<p>```JavaScript
+let fibonacci = {
+  <a href="">Symbol.iterator</a> {
+    let pre = 0, cur = 1;
+    return {
+      next() {
+        [pre, cur] = [cur, pre + cur];
+        return { done: false, value: cur }
+      }
+    }
+  }
+}</p>
+
+<p>for (var n of fibonacci) {
+  // truncate the sequence at 1000
+  if (n &gt; 1000)
+    break;
+  console.log(n);
+}
+```</p>
+
+<p>Iteration is based on these duck-typed interfaces (using <a href="http://typescriptlang.org">TypeScript</a> type syntax for exposition only):
+<code>TypeScript
+interface IteratorResult {
+  done: boolean;
+  value: any;
+}
+interface Iterator {
+  next(): IteratorResult;
+}
+interface Iterable {
+  [Symbol.iterator](): Iterator
+}
+</code>
+ES5与ES6对比</p>
+
+<p>```JavaScript
+//ES5
+var fibonacci = {
+    next: ((function () {
+        var pre = 0, cur = 1;
+        return function () {
+            tmp = pre;
+            pre = cur;
+            cur += tmp;
+            return cur;
+        };
+    })();
+};</p>
+
+<p>var n;
+for (;;) {
+    n = fibonacci.next();
+    if (n &gt; 1000)
+        break;
+    console.log(n);
+}</p>
+
+<p>//ES6
+let fibonacci = {
+    <a href="">Symbol.iterator</a> {
+        let pre = 0, cur = 1
+        return {
+           next () {
+               [ pre, cur ] = [ cur, pre + cur ]
+               return { done: false, value: cur }
+           }
+        }
+    }
+}</p>
+
+<p>for (let n of fibonacci) {
+    if (n &gt; 1000)
+        break
+    console.log(n)
+}
+```
+### Generators
+Generators simplify iterator-authoring using <code>function*</code> and <code>yield</code>.  A function declared as function* returns a Generator instance.  Generators are subtypes of iterators which include additional  <code>next</code> and <code>throw</code>.  These enable values to flow back into the generator, so <code>yield</code> is an expression form which returns a value (or throws).</p>
+
+<p>生成器简化iterator-authoring使用“function<em>”和“yield”。一个函数声明为函数</em>返回一个生成器实例。生成器是迭代器的子类型,包括额外的“next”和“throw”。这可使用的值回流到生成器,因此“产量”是一种表达形式返回一个值(或抛出)。</p>
+
+<p>Note: Can also be used to enable ‘await’-like async programming, see also ES7 <code>await</code> proposal.</p>
+
+<p>```JavaScript
+var fibonacci = {
+  [Symbol.iterator]: function*() {
+    var pre = 0, cur = 1;
+    for (;;) {
+      var temp = pre;
+      pre = cur;
+      cur += temp;
+      yield cur;
+    }
+  }
+}</p>
+
+<p>for (var n of fibonacci) {
+  // truncate the sequence at 1000
+  if (n &gt; 1000)
+    break;
+  console.log(n);
+}
+```</p>
+
+<p>The generator interface is (using <a href="http://typescriptlang.org">TypeScript</a> type syntax for exposition only):</p>
+
+<p><code>TypeScript
+interface Generator extends Iterator {
+    next(value?: any): IteratorResult;
+    throw(exception: any);
+}
+</code>
+ES5与ES6对比</p>
+
+<p>```JavaScript
+//ES5
+function range (start, end, step) {
+    var list = [];
+    while (start &lt; end) {
+        list.push(start);
+        start += step;
+    }
+    return list;
+}</p>
+
+<p>var r = range(0, 10, 2);
+for (var i = 0; i &lt; r.length; i++) {
+    console.log(r[i]); // 0, 2, 4, 6, 8
+}</p>
+
+<p>//ES6
+function* range (start, end, step) {
+    while (start &lt; end) {
+        yield start
+        start += step
+    }
+}</p>
+
+<p>for (let i of range(0, 10, 2)) {
+    console.log(i) // 0, 2, 4, 6, 8
+}
+```
+### Unicode
+Non-breaking additions to support full Unicode, including new Unicode literal form in strings and new RegExp <code>u</code> mode to handle code points, as well as new APIs to process strings at the 21bit code points level.  These additions support building global apps in JavaScript.</p>
+
+<p>可以帮助增加完整的Unicode的支持,包括新的Unicode字符串中的文字形式和新的正则表达式处理代码点“u”模式,以及新的api来处理字符串在21位代码点水平。这些添加支持建立全球JavaScript应用程序。</p>
+
+<p>```JavaScript
+// same as ES5.1
+“𠮷”.length == 2</p>
+
+<p>// new RegExp behaviour, opt-in ‘u’
+“𠮷”.match(/./u)[0].length == 2</p>
+
+<p>// new form
+“\u{20BB7}”==”𠮷”==”\uD842\uDFB7”</p>
+
+<p>// new String ops
+“𠮷”.codePointAt(0) == 0x20BB7</p>
+
+<p>// for-of iterates code points
+for(var c of “𠮷”) {
+  console.log(c);
+}
+```
+ES5与ES6对比</p>
+
+<p>```JavaScript
+//ES5
+“𠮷”.length === 2;
+“𠮷”.match(/(?:[\0-\t\x0B\f\x0E-\u2027\u202A-\uD7FF\uE000-\uFFFF][\uD800-\uDBFF][\uDC00-\uDFFF]<a href="?![\uDC00-\uDFFF]">\uD800-\uDBFF</a>(?:[^\uD800-\uDBFF]^)[\uDC00-\uDFFF])/)[0].length === 2;
+“𠮷” === “\uD842\uDFB7”;</p>
+
+<p>//ES6
+“𠮷”.length === 2
+“𠮷”.match(/./u)[0].length === 2
+“\u{20BB7}” === “𠮷” === “\uD842\uDFB7”
+```
+### Modules
+Language-level support for modules for component definition.  Codifies patterns from popular JavaScript module loaders (AMD, CommonJS). Runtime behaviour defined by a host-defined default loader.  Implicitly async model – no code executes until requested modules are available and processed.</p>
+
+<p>为组件定义语言级支持模块。汇总模式从流行的JavaScript模块加载器(AMD,CommonJS)。运行时行为由host-defined定义默认加载程序。隐式异步模型——没有代码执行,直到请求模块是可用的和加工。</p>
+
+<p><code>JavaScript
+// lib/math.js
+export function sum(x, y) {
+  return x + y;
+}
+export var pi = 3.141593;
+</code>
+<code>JavaScript
+// app.js
+import * as math from "lib/math";
+alert("2π = " + math.sum(math.pi, math.pi));
+</code>
+<code>JavaScript
+// otherApp.js
+import {sum, pi} from "lib/math";
+alert("2π = " + sum(pi, pi));
+</code></p>
+
+<p>Some additional features include <code>export default</code> and <code>export *</code>:</p>
+
+<p><code>JavaScript
+// lib/mathplusplus.js
+export * from "lib/math";
+export var e = 2.71828182846;
+export default function(x) {
+    return Math.log(x);
+}
+</code>
+<code>JavaScript
+// app.js
+import ln, {pi, e} from "lib/mathplusplus";
+alert("2π = " + ln(e)*pi*2);
+</code>
+ES5与ES6对比</p>
+
+<p>```JavaScript
+//ES5</p>
+
+<p>LibMathPP = {};
+for (symbol in LibMath)
+    if (LibMath.hasOwnProperty(symbol))
+        LibMathPP[symbol] = LibMath[symbol];
+LibMathPP.e = 2.71828182846;
+LibMathPP.exp = function (x) { return Math.exp(x) };</p>
+
+<p>//  someApp.js
+var exp = LibMathPP.exp, pi = LibMathPP.pi, e = libMathPP.e;
+console.log(“e^{π} = “ + exp(pi));</p>
+
+<p>//ES6
+export * from “lib/math”
+export var e = 2.71828182846
+export default (x) =&gt; Math.exp(x)</p>
+
+<p>//  someApp.js
+import exp, { pi, e } from “lib/mathplusplus”
+console.log(“e^{π} = “ + exp(pi))
+```
+### Module Loaders
+Module loaders support:
+- Dynamic loading
+- State isolation
+- Global namespace isolation
+- Compilation hooks
+- Nested virtualization</p>
+
+<p>The default module loader can be configured, and new loaders can be constructed to evaluate and load code in isolated or constrained contexts.</p>
+
+<p>默认模块加载器可以配置,可以评估和构造新的加载器加载代码隔离或语境的限制。</p>
+
+<p>```JavaScript
+// Dynamic loading – ‘System’ is default loader
+System.import(‘lib/math’).then(function(m) {
+  alert(“2π = “ + m.sum(m.pi, m.pi));
+});</p>
+
+<p>// Create execution sandboxes – new Loaders
+var loader = new Loader({
+  global: fixup(window) // replace ‘console.log’
+});
+loader.eval(“console.log(‘hello world!’);”);</p>
+
+<p>// Directly manipulate module cache
+System.get(‘jquery’);
+System.set(‘jquery’, Module({$: $})); // WARNING: not yet finalized
+```</p>
+
+<h3 id="map--set--weakmap--weakset">Map + Set + WeakMap + WeakSet</h3>
+<p>Efficient data structures for common algorithms.  WeakMaps provides leak-free object-key’d side tables.</p>
+
+<p>数据结构常用算法效率。WeakMaps提供对象键索引表。</p>
+
+<p>```JavaScript
+// Sets
+var s = new Set();
+s.add(“hello”).add(“goodbye”).add(“hello”);
+s.size === 2;
+s.has(“hello”) === true;</p>
+
+<p>// Maps
+var m = new Map();
+m.set(“hello”, 42);
+m.set(s, 34);
+m.get(s) == 34;</p>
+
+<p>// Weak Maps
+var wm = new WeakMap();
+wm.set(s, { extra: 42 });
+wm.size === undefined</p>
+
+<p>// Weak Sets
+var ws = new WeakSet();
+ws.add({ data: 42 });
+// Because the added object has no other references, it will not be held in the set
+```
+ES5与ES6对比</p>
+
+<p>```JavaScript
+//ES5
+var m = {};
+m[“hello”] = 42;
+// no equivalent in ES5
+// no equivalent in ES5
+Object.keys(m).length === 2;
+for (key in m) {
+    if (m.hasOwnProperty(key)) {
+        var val = m[key];
+        console.log(key + “ = “ + val);
+    }
+}</p>
+
+<p>//ES6
+let m = new Map()
+m.set(“hello”, 42)
+m.set(s, 34)
+m.get(s) === 34
+m.size === 2
+for (let [ key, val ] of m.entries())
+    console.log(key + “ = “ + val)
+```
+### Proxies
+Proxies enable creation of objects with the full range of behaviors available to host objects.  Can be used for interception, object virtualization, logging/profiling, etc.</p>
+
+<p>代理启用创建对象的全部行为可用主机对象。可用于拦截、对象虚拟化,日志/分析等,这是一个新功能。</p>
+
+<p>```JavaScript
+// Proxying a normal object
+var target = {};
+var handler = {
+  get: function (receiver, name) {
+    return <code>Hello, ${name}!</code>;
+  }
+};</p>
+
+<p>var p = new Proxy(target, handler);
+p.world === ‘Hello, world!’;
+```</p>
+
+<p>```JavaScript
+// Proxying a function object
+var target = function () { return ‘I am the target’; };
+var handler = {
+  apply: function (receiver, …args) {
+    return ‘I am the proxy’;
+  }
+};</p>
+
+<p>var p = new Proxy(target, handler);
+p() === ‘I am the proxy’;
+```</p>
+
+<p>There are traps available for all of the runtime-level meta-operations:</p>
+
+<p><code>JavaScript
+var handler =
+{
+  get:...,
+  set:...,
+  has:...,
+  deleteProperty:...,
+  apply:...,
+  construct:...,
+  getOwnPropertyDescriptor:...,
+  defineProperty:...,
+  getPrototypeOf:...,
+  setPrototypeOf:...,
+  enumerate:...,
+  ownKeys:...,
+  preventExtensions:...,
+  isExtensible:...
+}
+</code></p>
+
+<h3 id="symbols">Symbols</h3>
+<p>Symbols enable access control for object state.  Symbols allow properties to be keyed by either <code>string</code> (as in ES5) or <code>symbol</code>.  Symbols are a new primitive type. Optional <code>name</code> parameter used in debugging - but is not part of identity.  Symbols are unique (like gensym), but not private since they are exposed via reflection features like <code>Object.getOwnPropertySymbols</code>.</p>
+
+<p>符号启用访问控制对象状态。符号允许键属性的“string”(如ES5)或“symbol”。符号是一个新的原始类型。可选的“name”参数用于调试——但不是身份的一部分。符号是独一无二的(比如gensym),而不是个人,因为他们是通过反射特性,如“Object.getOwnPropertySymbols”。这是也是一个新功能。</p>
+
+<p>```JavaScript
+var MyClass = (function() {</p>
+
+<p>// module scoped symbol
+  var key = Symbol(“key”);</p>
+
+<p>function MyClass(privateData) {
+    this[key] = privateData;
+  }</p>
+
+<p>MyClass.prototype = {
+    doStuff: function() {
+      … this[key] …
+    }
+  };</p>
+
+<p>return MyClass;
+})();</p>
+
+<p>var c = new MyClass(“hello”)
+c[“key”] === undefined</p>
+
+<h3 id="subclassable-built-ins">Subclassable Built-ins</h3>
+<p>In ES6, built-ins like <code>Array</code>, <code>Date</code> and DOM <code>Element</code>s can be subclassed.</p>
+
+<p>Object construction for a function named <code>Ctor</code> now uses two-phases (both virtually dispatched):
+- Call <code>Ctor[@@create]</code> to allocate the object, installing any special behavior
+- Invoke constructor on new instance to initialize</p>
+
+<p>The known <code>@@create</code> symbol is available via <code>Symbol.create</code>.  Built-ins now expose their <code>@@create</code> explicitly.</p>
+
+<p>在ES6,应有尽有,如“Array”,“Date”和DOM”Element”的可以派生子类。
+　　
+对象构造函数名为“Ctor”现在使用两(几乎两派):
+- 称之为“Ctor(@@create)的分配对象,安装任何特殊的行为
+- 新实例上调用构造函数来初始化
+　　
+已知的“@@create”符号是可以通过“Symbol.create”。内置模板现在公开他们的@@create明确。</p>
+
+<p>```JavaScript
+// Pseudo-code of Array
+class Array {
+    constructor(…args) { /* … */ }
+    static <a href="">Symbol.create</a> {
+        // Install special [[DefineOwnProperty]]
+        // to magically update ‘length’
+    }
+}</p>
+
+<p>// User code of Array subclass
+class MyArray extends Array {
+    constructor(…args) { super(…args); }
+}</p>
+
+<p>// Two-phase ‘new’:
+// 1) Call @@create to allocate object
+// 2) Invoke constructor on new instance
+var arr = new MyArray();
+arr[1] = 12;
+arr.length == 2
+```
+ES5与ES6对比</p>
+
+<p>```JavaScript
+//ES5
+var obj = { a: 1 };
+Object.defineProperty(obj, “b”, { value: 2 });
+// no equivalent in ES5
+Object.getOwnPropertyNames(obj); // [ “a”, “b” ]</p>
+
+<p>//ES6
+let obj = { a: 1 }
+Object.defineProperty(obj, “b”, { value: 2 })
+obj[Symbol(“c”)] = 3
+Reflect.ownKeys(obj) // [ “a”, “b”, Symbol(c) ]
+```
+### Math + Number + String + Array + Object APIs
+Many new library additions, including core Math libraries, Array conversion helpers, String helpers, and Object.assign for copying.</p>
+
+<p>许多新图书馆补充,包括核心数学库,数组转换帮手,字符串助手,和对象。分配进行复制。</p>
+
+<p>```JavaScript
+Number.EPSILON
+Number.isInteger(Infinity) // false
+Number.isNaN(“NaN”) // false</p>
+
+<p>Math.acosh(3) // 1.762747174039086
+Math.hypot(3, 4) // 5
+Math.imul(Math.pow(2, 32) - 1, Math.pow(2, 32) - 2) // 2</p>
+
+<p>“abcde”.includes(“cd”) // true
+“abc”.repeat(3) // “abcabcabc”</p>
+
+<p>Array.from(document.querySelectorAll(‘*’)) // Returns a real Array
+Array.of(1, 2, 3) // Similar to new Array(…), but without special one-arg behavior
+[0, 0, 0].fill(7, 1) // [0,7,7]
+[1, 2, 3].find(x =&gt; x == 3) // 3
+[1, 2, 3].findIndex(x =&gt; x == 2) // 1
+[1, 2, 3, 4, 5].copyWithin(3, 0) // [1, 2, 3, 1, 2]
+[“a”, “b”, “c”].entries() // iterator [0, “a”], [1,”b”], [2,”c”]
+[“a”, “b”, “c”].keys() // iterator 0, 1, 2
+[“a”, “b”, “c”].values() // iterator “a”, “b”, “c”</p>
+
+<p>Object.assign(Point, { origin: new Point(0,0) })
+```</p>
+
+<h3 id="binary-and-octal-literals">Binary and Octal Literals</h3>
+<p>Two new numeric literal forms are added for binary (<code>b</code>) and octal (<code>o</code>).</p>
+
+<p>添加两个新的数值文字形式为二进制(“b”)和八进制(“o”)。</p>
+
+<p><code>JavaScript
+0b111110111 === 503 // true
+0o767 === 503 // true
+</code>
+ES5与ES6对比</p>
+
+<p>```JavaScript
+//ES5
+parseInt(“111110111”, 2) === 503;
+parseInt(“767”, 8) === 503;
+0767 === 503; // only in non-strict, backward compatibility mode</p>
+
+<p>//ES6
+0b111110111 === 503
+0o767 === 503
+```</p>
+
+<h3 id="promises">Promises</h3>
+<p>Promises are a library for asynchronous programming.  Promises are a first class representation of a value that may be made available in the future.  Promises are used in many existing JavaScript libraries.</p>
+
+<p>承诺模式是异步编程库。承诺是一个一个流的表示的值可能会在未来使用。承诺模式用于许多现有的JavaScript库。</p>
+
+<p>```JavaScript
+function timeout(duration = 0) {
+    return new Promise((resolve, reject) =&gt; {
+        setTimeout(resolve, duration);
+    })
+}</p>
+
+<p>var p = timeout(1000).then(() =&gt; {
+    return timeout(2000);
+}).then(() =&gt; {
+    throw new Error(“hmm”);
+}).catch(err =&gt; {
+    return Promise.all([timeout(100), timeout(200)]);
+})
+```
+ES5与ES6对比</p>
+
+<p>```JavaScript
+//ES5
+function msgAfterTimeout (msg, who, timeout, onDone) {
+    setTimeout(function () {
+        onDone(msg + “ Hello “ + who + “!”);
+    }, timeout);
+}
+msgAfterTimeout(“”, “Foo”, 100, function (msg) {
+    msgAfterTimeout(msg, “Bar”, 200, function (msg) {
+        console.log(“done after 300ms:” + msg);
+    });
+});</p>
+
+<p>//ES6
+function msgAfterTimeout (msg, who, timeout) {
+    return new Promise((resolve, reject) =&gt; {
+        setTimeout(() =&gt; resolve(<code>${msg} Hello ${who}!</code>), timeout)
+    })
+}
+msgAfterTimeout(“”, “Foo”, 100).then((msg) =&gt;
+    msgAfterTimeout(msg, “Bar”, 200)
+).then((msg) =&gt; {
+    console.log(<code>done after 300ms:${msg}</code>)
+})
+```
+### Reflect API
+Full reflection API exposing the runtime-level meta-operations on objects.  This is effectively the inverse of the Proxy API, and allows making calls corresponding to the same meta-operations as the proxy traps.  Especially useful for implementing proxies.</p>
+
+<p>完整的反射API公开运行时级meta-operations对象。这是一个有效的反向代理的API,并声明对应相同的meta-operations代理陷阱。实现代理尤其有用。</p>
+
+<p>ES5与ES6对比</p>
+
+<p>```JavaScript
+//ES5
+var obj = { a: 1 };
+Object.defineProperty(obj, “b”, { value: 2 });
+// no equivalent in ES5
+Object.getOwnPropertyNames(obj); // [ “a”, “b” ]</p>
+
+<p>//ES6
+let obj = { a: 1 }
+Object.defineProperty(obj, “b”, { value: 2 })
+obj[Symbol(“c”)] = 3
+Reflect.ownKeys(obj) // [ “a”, “b”, Symbol(c) ]
+```
+### Tail Calls
+Calls in tail-position are guaranteed to not grow the stack unboundedly.  Makes recursive algorithms safe in the face of unbounded inputs.</p>
+
+<p>在尾部调用保证不是堆栈无限制地增长。使得在面对无限递归算法安全投入。</p>
+
+<p>```JavaScript
+function factorial(n, acc = 1) {
+    ‘use strict’;
+    if (n &lt;= 1) return acc;
+    return factorial(n - 1, n * acc);
+}</p>
+
+<p>// Stack overflow in most implementations today,
+// but safe on arbitrary inputs in ES6
+factorial(100000)
+```</p>
+
+
+            </div>
+        </article>
+        <div class="cf"></div>
+        <div class="row text-center">
+            <section class="notepad-post-share">
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Es6 featrues&quot;%20http://raoenhui.github.io/es6/2015/08/28/es6-featrue/%20via%20&#64;raoenhui"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=http://raoenhui.github.io/es6/2015/08/28/es6-featrue/"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a class="google-icon" href="https://plus.google.com/share?url=http://raoenhui.github.io/es6/2015/08/28/es6-featrue/"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </section>
+        </div>
+        <div class="cf"></div>
+        
+            <div class="notepad-author-info">
+                <div class="row">
+                    <section class="notepad-post-author small-12 columns">
+                        
+                            <img src="http://raoenhui.github.io/images/logo.png" class="notepad-post-author-avatar" alt="Enhui Rao's photo">
+                        
+                        
+                            <span class="author-label">Author</span>
+                            <h1>Enhui Rao</h1>
+                        
+                        
+                            <p><a href="mailto:670615769@qq.com" class="author-website">670615769@qq.com</a>
+
+			    <iframe src="//www.facebook.com/plugins/follow?href=https%3A%2F%2Fwww.facebook.com%2Fameyjadiye&amp;layout=standard&amp;show_faces=true&amp;colorscheme=light&amp;width=450&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe> 
+			    </p>
+                        
+                        
+                            <p>Programming is 1% knowledge, 2% ability and 97% getting the ability to work with the knowledge :)</p>
+                        
+                    </section>
+                </div>
+            </div>
+ 
+        
+        <div class="cf"></div>
+        
+        <section class="notepad-disqus row">
+    <div class="small-12 columns">
+        <h1 class="notepad-comments-header">Comments</h1>
+        <div id="disqus_thread"></div>
+        
+<!--
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = '饶恩慧'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+-->
+
+ 
+<div class="fb-comments" data-href="http://raoenhui.github.io/es6/2015/08/28/es6-featrue/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=1595152237390753&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, "script", "facebook-jssdk"));</script>
+
+    </div>
+</section>
+
+        <div class="cf"></div>
+
+    <footer class="notepad-site-footer">
+    <div class="copyright">
+        <section>All content copyright <a href="http://raoenhui.github.io/about">Enhui Rao</a> &copy; 2015 &bull; All rights reserved.</section>
+	<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>
+          <a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>
+    </div>
+    <div class="social-icons">
+        
+        
+        <a href="http://twitter.com/raoenhui">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="https://plus.google.com/u/0/+AmeyJadiye">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-google-plus fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="http://instagram.com/raoenhui">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-instagram fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="http://github.com/raoenhui">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="http://facebook.com/raoenhui">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+        </a>
+        
+    </div>
+    
+    <div class="cf"></div>
+</footer>
+ 
+</main>    
+    <script src="//apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="http://raoenhui.github.io/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+    <script src="http://raoenhui.github.io/assets/js/vendor/modernizr.js"></script>
+    <script src="http://raoenhui.github.io/assets/js/foundation.min.js"></script>
+    
+    <script src="http://raoenhui.github.io/assets/js/notepad.js"></script>
+    <script src="http://raoenhui.github.io/assets/js/scripts.min.js"></script>
+    <script src="http://raoenhui.github.io/assets/js/vendor/nprogress.js"></script>
+    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/sigma.js/1.0.3/sigma.min.js"></script>-->
+<script src="//apps.bdimg.com/libs/sigma.js/0.1/sigma.min.js"></script>
+
+    <script>
+      $(document).foundation();
+    </script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46791108-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+
+</script>
+
+<script>NProgress.start();var interval=setInterval(function(){NProgress.inc()},1000);jQuery(window).load(function(){clearInterval(interval);NProgress.done()});jQuery(window).unload(function(){NProgress.start()});</script>
+ 
+</body>
+</html>

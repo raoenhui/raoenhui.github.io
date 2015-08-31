@@ -1,6 +1,22 @@
 [
 	
 		{
+		  "title"      : "ES6从入门到精通之常量与变量(一)",
+		  "category"   : "ES6",
+		  "url"        : "http://raoenhui.github.io/es6/2015/08/30/es6-one/",
+		  "date"       : "2015-08-30 20:00:00 +0530",
+		  "shortdate"  : "August 30, 2015"
+		} ,
+	
+		{
+		  "title"      : "Es6 featrues",
+		  "category"   : "Es6",
+		  "url"        : "http://raoenhui.github.io/es6/2015/08/28/es6-featrue/",
+		  "date"       : "2015-08-28 15:09:00 +0530",
+		  "shortdate"  : "August 28, 2015"
+		} ,
+	
+		{
 		  "title"      : "Sentiment analysis with R",
 		  "category"   : "analytics",
 		  "url"        : "http://raoenhui.github.io/analytics/2015/05/10/sentiment-analysis-with-R/",

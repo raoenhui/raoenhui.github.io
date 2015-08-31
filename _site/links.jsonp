@@ -68,6 +68,16 @@ callback([
   {
     "text": "Sentiment analysis with R",
     "href": "http://raoenhui.github.io/analytics/2015/05/10/sentiment-analysis-with-R/"
+  } ,
+
+  {
+    "text": "Es6 featrues",
+    "href": "http://raoenhui.github.io/es6/2015/08/28/es6-featrue/"
+  } ,
+
+  {
+    "text": "ES6从入门到精通之常量与变量(一)",
+    "href": "http://raoenhui.github.io/es6/2015/08/30/es6-one/"
   } 
 
 ])

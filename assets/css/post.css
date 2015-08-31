@@ -398,7 +398,7 @@ html, body, .notepad-post-container, .notepad-post-header {
       color: #E971BE; }
   .notepad-page-title h1,
   .notepad-post-title-simple h1 {
-    color: black;
+    color: #E971BE;
     font-weight: 800;
     font-size: 3.125rem;
     padding: 0;

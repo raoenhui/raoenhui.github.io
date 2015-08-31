@@ -9,13 +9,1224 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://raoenhui.github.io/" />
-<updated>2015-08-30T11:46:50+05:30</updated>
+<updated>2015-08-31T18:52:20+05:30</updated>
 <id>http://raoenhui.github.io/</id>
 <author>
   <name>Enhui Rao</name>
   <uri>http://raoenhui.github.io/</uri>
   <email>670615769@qq.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[ES6从入门到精通之常量与变量(一)]]></title>
+  <link rel="alternate" type="text/html" href="http://raoenhui.github.io/es6/2015/08/30/es6-one/"/>
+  <id>http://raoenhui.github.io/es6/2015/08/30/es6-one</id>
+  <published>2015-08-30T20:00:00+05:30</published>
+  <updated>2015-08-30T20:00:00+05:30</updated>
+  <author>
+    <name>Enhui Rao</name>
+    <uri>http://raoenhui.github.io</uri>
+    <email>670615769@qq.com</email>
+  </author>
+  <category scheme="http://raoenhui.github.io/tags/#R,%20ES6," term="R, ES6," />
+  <content type="html">
+  
+    &lt;p&gt;ECMAScript 6（以下简称ES6）是JavaScript语言的下一代标准，已经在2015年6月正式发布了。&lt;/p&gt;
+
+&lt;p&gt;Mozilla公司将在这个标准的基础上，推出JavaScript 2.而ES6有着强大的目标，是使得JavaScript语言可以用来编写大型的复杂的应用程序，成为企业级开发语言。&lt;/p&gt;
+
+&lt;p&gt;对ES6的支持可以查看&lt;a href=&quot;http://kangax.github.io/compat-table/es6/&quot;&gt;http://kangax.github.io/compat-table/es6/&lt;/a&gt;，在这里可以清晰的了解到不同版本的浏览器对ES6功能的支持情况。如果你想现在就在浏览器使用ES6的特性，还可以通过引用兼容包的方式提前尝尝鲜。 &lt;a href=&quot;https://github.com/paulmillr/es6-shim&quot;&gt;https://github.com/paulmillr/es6-shim&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;环境支持推荐用js工具babel来编译&lt;a href=&quot;http://babeljs.io/&quot;&gt;http://babeljs.io/&lt;/a&gt;。
+变量与字符串&lt;/p&gt;
+
+&lt;p&gt;let是ES6中新增关键字。
+它的作用类似于var，用来声明变量，但是所声明的变量，只在let命令所在的代码块内有效。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*E1*/&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;br/&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;br/&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Uncaught ReferenceError: b is not defined&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Example2&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*E2*/&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 5&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 20&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Q1：用let声明a变量默认为5，在if判断中let声明a为10，看a输出结果。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*Exercises1*/&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//5&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;for循环的计数器，就很合适使用let命令。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*E3*/&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]();&lt;/span&gt; 
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;const&quot;&gt;const&lt;/h3&gt;
+&lt;p&gt;const 声明的是常量，一旦声明，值将是不可变的。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;PI&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.1415&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;PI&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 3.1415&lt;/span&gt;
+ 
+&lt;span class=&quot;nx&quot;&gt;PI&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;PI&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 3.1415&lt;/span&gt;
+ 
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;PI&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;PI&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 3.1415&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;const 也具有块级作用域&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*E4*/&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;max&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//Uncaught ReferenceError: max is not defined&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;max&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//5&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;const 不可重复声明&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;/* E5*/&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hello!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ 
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Goodbye!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//cli:Duplicate declaration &amp;quot;age&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;const 指令指向变量所在的地址，所以对该变量进行属性设置是可行的（未改变变量地址），如果想完全不可变化（包括属性），那么可以使用冻结&lt;/p&gt;
+
+&lt;p&gt;/* E6*/&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;C1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;C1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;C1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 1 &lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;C1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// cli: C1 = {};  // 报错  重新赋值，地址改变&lt;/span&gt;
+
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;C2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;freeze&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({});&lt;/span&gt; 
+&lt;span class=&quot;nx&quot;&gt;C2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;C2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//Uncaught TypeError: Can&amp;#39;t add property a, object is not extensible&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Q2:在if (true) { 声明一个const变量a，并为赋值为5， }在块级作用域中和外面，分别打印变量a看结果。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*Exercises2*/&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;a1:&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;a2:&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//Uncaught ReferenceError: a is not defined&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;是否包含字符串三种新方法
+传统上，JavaScript只有 indexOf 方法，可以用来确定一个字符串是否包含在另一个字符串中。ES6又提供了三种新方法。
+* includes()：返回布尔值，表示是否找到了参数字符串。
+* startsWith()：返回布尔值，表示参数字符串是否在源字符串的头部。
+* endsWith()：返回布尔值，表示参数字符串是否在源字符串的尾部。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hello world!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ 
+&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;startsWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Hello&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;endsWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;includes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;o&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这三个方法都支持第二个参数，表示开始搜索的位置。
+* 上面代码表示，使用第二个参数n时，endsWith 的行为与其他两个方法有所不同。它针对前n个字符，而其他两个方法针对从第n个位置直到字符串结束。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hello world!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ 
+&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;startsWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;world&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;endsWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Hello&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;includes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Hello&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;repeat()原字符串重复&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;x&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;repeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;quot;xxx&amp;quot;&lt;/span&gt;
+ 
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;hello&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;str1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;repeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;quot;hellohello&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;标签模板
+模板字符串前面有一个标识名tag，它是一个函数。整个表达式的返回值，就是tag函数处理模板字符串后的返回值。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ 
+&lt;span class=&quot;nx&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Hello&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;world&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;tag函数所有参数的实际值如下。
+- 第一个参数：[‘Hello ‘, ‘ world ‘]
+- 第二个参数: 15
+- 第三个参数：50&lt;/p&gt;
+
+&lt;p&gt;也就是说，tag函数实际上以下面的形式调用。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Hello &amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39; world &amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;tag用法&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*E7*/&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ 
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;v1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;v2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;br/&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;br/&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;v1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;br/&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;v2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;br/&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+ 
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;OK&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+ 
+&lt;span class=&quot;nx&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Hello&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;world&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// &amp;quot;Hello &amp;quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// &amp;quot; world &amp;quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 15&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 50&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// &amp;quot;OK&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;模板字符串可以是原始的
+ES6还为原生的String对象，提供了一个raw方法。
+若使用String.raw 作为模板字符串的前缀，则模板字符串可以是原始(raw)的。反斜线也不再是特殊字符，\n 也不会被解释成换行符：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*E8*/&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;raw&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Not a newline: \n&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;raw&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Not a newline: \\n&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;
+
+ &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;raw&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;raw&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Not&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;newline&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;raw&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Not a newline: \\n&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;javascript
+function fancyAlert(arg) {
+  if(arg) {
+    $.facebox({div:’#foo’})
+  }
+}&lt;/p&gt;
+
+&lt;p&gt;Happy coding .. :)&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://raoenhui.github.io/es6/2015/08/30/es6-one/&quot;&gt;ES6从入门到精通之常量与变量(一)&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://raoenhui.github.io&quot;&gt;饶恩慧的博客&lt;/a&gt; on August 30, 2015.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Es6 featrues]]></title>
+  <link rel="alternate" type="text/html" href="http://raoenhui.github.io/es6/2015/08/28/es6-featrue/"/>
+  <id>http://raoenhui.github.io/es6/2015/08/28/es6-featrue</id>
+  <published>2015-08-28T15:09:00+05:30</published>
+  <updated>2015-08-28T15:09:00+05:30</updated>
+  <author>
+    <name>Enhui Rao</name>
+    <uri>http://raoenhui.github.io</uri>
+    <email>670615769@qq.com</email>
+  </author>
+  <category scheme="http://raoenhui.github.io/tags/#Es6" term="Es6" />
+  <content type="html">
+  
+    &lt;h1 id=&quot;ecmascript-6-supgitioes6featureshttpgitioes6featuressup&quot;&gt;ECMAScript 6 &lt;sup&gt;&lt;a href=&quot;http://git.io/es6features&quot;&gt;git.io/es6features&lt;/a&gt;&lt;/sup&gt;&lt;/h1&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;ECMAScript 6,2015年也被称为ECMAScript 标准的最新版本。标志着最新的语言，是及2009年ES5发布后相继6年出的版本。这些功能的实现主要的JavaScript引擎统计如右边链接(现在正在完善)(http://kangax.github.io/es5-compat-table/es6/)。&lt;/p&gt;
+
+&lt;p&gt;ES6的完整规范如左边网址下&lt;a href=&quot;http://www.ecma-international.org/ecma-262/6.0/&quot;&gt;ES6 standard&lt;/a&gt;。 &lt;/p&gt;
+
+&lt;p&gt;ES6包括以下几个新功能:
+- &lt;a href=&quot;#arrows&quot;&gt;arrows&lt;/a&gt;
+- &lt;a href=&quot;#classes&quot;&gt;classes&lt;/a&gt;
+- &lt;a href=&quot;#enhanced-object-literals&quot;&gt;enhanced object literals&lt;/a&gt;
+- &lt;a href=&quot;#template-strings&quot;&gt;template strings&lt;/a&gt;
+- &lt;a href=&quot;#destructuring&quot;&gt;destructuring&lt;/a&gt;
+- &lt;a href=&quot;#default--rest--spread&quot;&gt;default + rest + spread&lt;/a&gt;
+- &lt;a href=&quot;#let--const&quot;&gt;let + const&lt;/a&gt;
+- &lt;a href=&quot;#iterators--forof&quot;&gt;iterators + for..of&lt;/a&gt;
+- &lt;a href=&quot;#generators&quot;&gt;generators&lt;/a&gt;
+- &lt;a href=&quot;#unicode&quot;&gt;unicode&lt;/a&gt;
+- &lt;a href=&quot;#modules&quot;&gt;modules&lt;/a&gt;
+- &lt;a href=&quot;#module-loaders&quot;&gt;module loaders&lt;/a&gt;
+- &lt;a href=&quot;#map--set--weakmap--weakset&quot;&gt;map + set + weakmap + weakset&lt;/a&gt;
+- &lt;a href=&quot;#proxies&quot;&gt;proxies&lt;/a&gt;
+- &lt;a href=&quot;#symbols&quot;&gt;symbols&lt;/a&gt;
+- &lt;a href=&quot;#subclassable-built-ins&quot;&gt;subclassable built-ins&lt;/a&gt;
+- &lt;a href=&quot;#promises&quot;&gt;promises&lt;/a&gt;
+- &lt;a href=&quot;#math--number--string--array--object-apis&quot;&gt;math + number + string + array + object APIs&lt;/a&gt;
+- &lt;a href=&quot;#binary-and-octal-literals&quot;&gt;binary and octal literals&lt;/a&gt;
+- &lt;a href=&quot;#reflect-api&quot;&gt;reflect api&lt;/a&gt;
+- &lt;a href=&quot;#tail-calls&quot;&gt;tail calls&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ecmascript-6-&quot;&gt;ECMAScript 6 功能&lt;/h2&gt;
+
+&lt;h3 id=&quot;arrows&quot;&gt;Arrows&lt;/h3&gt;
+&lt;p&gt;Arrows are a function shorthand using the &lt;code&gt;=&amp;gt;&lt;/code&gt; syntax.  They are syntactically similar to the related feature in C#, Java 8 and CoffeeScript.  They support both statement block bodies as well as expression bodies which return the value of the expression.  Unlike functions, arrows share the same lexical &lt;code&gt;this&lt;/code&gt; as their surrounding code.&lt;/p&gt;
+
+&lt;p&gt;箭头函数简单的说是用＝&amp;gt;语法。其语法的相关特性类似于c,Java 8和CoffeeScript。他们同时支持声明块体以及表达身体的返回值的表达式。与方法不同，箭头函数分享了相同语法的this以及它周边代码&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;// Expression bodies
+var &lt;span class=&quot;nv&quot;&gt;odds&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; evens.map&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; v + 1&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+var &lt;span class=&quot;nv&quot;&gt;nums&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; evens.map&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;v, i&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; v + i&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+var &lt;span class=&quot;nv&quot;&gt;pairs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; evens.map&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; &lt;span class=&quot;o&quot;&gt;({&lt;/span&gt;even: v, odd: v + 1&lt;span class=&quot;o&quot;&gt;}))&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+// Statement bodies
+nums.forEach&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;v % &lt;span class=&quot;nv&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; 0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    fives.push&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;v&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+// Lexical this
+var &lt;span class=&quot;nv&quot;&gt;bob&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  _name: &lt;span class=&quot;s2&quot;&gt;&amp;quot;Bob&amp;quot;&lt;/span&gt;,
+  _friends: &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;,
+  printFriends&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    this._friends.forEach&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt;
+      console.log&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;this._name + &lt;span class=&quot;s2&quot;&gt;&amp;quot; knows &amp;quot;&lt;/span&gt; + f&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;ES5与ES6对比&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+//ES5
+nums.forEach(function (v) {
+   if (v % 5 === 0)
+       fives.push(v);
+});&lt;/p&gt;
+
+&lt;p&gt;//ES6
+nums.forEach(v =&amp;gt; {
+   if (v % 5 === 0)
+       fives.push(v)
+})
+```&lt;/p&gt;
+
+&lt;h3 id=&quot;classes&quot;&gt;Classes&lt;/h3&gt;
+&lt;p&gt;ES6 classes are a simple sugar over the prototype-based OO pattern.  Having a single convenient declarative form makes class patterns easier to use, and encourages interoperability.  Classes support prototype-based inheritance, super calls, instance and static methods and constructors.&lt;/p&gt;
+
+&lt;p&gt;ES6类是一个简单基于原型的面向对象模式。它以类模式声明,并鼓励互操作性。类支持基于原型的继承、超级调用实例和静态方法和构造函数。&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+class SkinnedMesh extends THREE.Mesh {
+  constructor(geometry, materials) {
+    super(geometry, materials);&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;this.idMatrix = SkinnedMesh.defaultMatrix();
+this.bones = [];
+this.boneMatrices = [];
+//...   }   update(camera) {
+//...
+super.update();   }   get boneCount() {
+return this.bones.length;   }   set matrixType(matrixType) {
+this.idMatrix = SkinnedMesh[matrixType]();   }   static defaultMatrix() {
+return new THREE.Matrix4();   } } ``` ES5与ES6对比
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;```JavaScript&lt;/p&gt;
+
+&lt;p&gt;//ES5
+var Shape = function (id, x, y) {
+    this.id = id;
+    this.move(x, y);
+};
+Shape.prototype.move = function (x, y) {
+    this.x = x;
+    this.y = y;
+};&lt;/p&gt;
+
+&lt;p&gt;//ES6
+class Shape {
+    constructor (id, x, y) {
+        this.id = id
+        this.move(x, y)
+    }
+    move (x, y) {
+        this.x = x
+        this.y = y
+    }
+}
+```&lt;/p&gt;
+
+&lt;h3 id=&quot;enhanced-object-literals&quot;&gt;Enhanced Object Literals&lt;/h3&gt;
+&lt;p&gt;Object literals are extended to support setting the prototype at construction, shorthand for &lt;code&gt;foo: foo&lt;/code&gt; assignments, defining methods, making super calls, and computing property names with expressions.  Together, these also bring object literals and class declarations closer together, and let object-based design benefit from some of the same conveniences.&lt;/p&gt;
+
+&lt;p&gt;对象文本扩展为支持设置原型结构,简称“foo:foo”模式,定义方法,使超级调用,和计算属性名表达式。在一起,这些也将文本对象和类声明更紧密地联系在一起,并让基于对象的设计更加便利的使用在一起。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;JavaScript
+var obj = {
+    // __proto__
+    __proto__: theProtoObj,
+    // Shorthand for ‘handler: handler’
+    handler,
+    // Methods
+    toString() {
+     // Super calls
+     return &quot;d &quot; + super.toString();
+    },
+    // Computed (dynamic) property names
+    [ &#39;prop_&#39; + (() =&amp;gt; 42)() ]: 42
+};
+&lt;/code&gt;
+ES5与ES6对比&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+//ES5
+obj = {
+    foo: “bar”
+};
+obj[ “prop_” + foo() ] = 42;&lt;/p&gt;
+
+&lt;p&gt;//ES6
+obj = {
+    foo: “bar”,
+    [ “prop_” + foo() ]: 42
+}
+```&lt;/p&gt;
+
+&lt;h3 id=&quot;template-strings&quot;&gt;Template Strings&lt;/h3&gt;
+&lt;p&gt;Template strings provide syntactic sugar for constructing strings.  This is similar to string interpolation features in Perl, Python and more.  Optionally, a tag can be added to allow the string construction to be customized, avoiding injection attacks or constructing higher level data structures from string contents.&lt;/p&gt;
+
+&lt;p&gt;模板构建字符串的字符串提供更简便的写法。这类似于字符串插值特性在Perl、Python和更多。可选地,可以添加一个标签允许自定义字符串建设,避免注入攻击或从字符串构造更高层次数据结构的内容。&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+// Basic literal string creation
+&lt;code&gt;In JavaScript &#39;\n&#39; is a line-feed.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;// Multiline strings
+&lt;code&gt;In JavaScript this is
+ not legal.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;// String interpolation
+var name = “Bob”, time = “today”;
+&lt;code&gt;Hello ${name}, how are you ${time}?&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;// Construct an HTTP request prefix is used to interpret the replacements and construction
+GET&lt;code&gt;http://foo.org/bar?a=${a}&amp;amp;b=${b}
+    Content-Type: application/json
+    X-Credentials: ${credentials}
+    { &quot;foo&quot;: ${foo},
+      &quot;bar&quot;: ${bar}}&lt;/code&gt;(myOnReadyStateChangeHandler);
+```
+ES5与ES6对比&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+//ES5
+var customer = { name: “Foo” };
+var card = { amount: 7, product: “Bar”, unitprice: 42 };
+message = “Hello “ + customer.name + “,\n” +
+“want to buy “ + card.amount + “ “ + card.product + “ for\n” +
+“a total of “ + (card.amount * card.unitprice) + “ bucks?”;&lt;/p&gt;
+
+&lt;p&gt;//ES6
+var customer = { name: “Foo” }
+var card = { amount: 7, product: “Bar”, unitprice: 42 }
+message = &lt;code&gt;Hello ${customer.name},
+want to buy ${card.amount} ${card.product} for
+a total of ${card.amount * card.unitprice} bucks?&lt;/code&gt;
+```&lt;/p&gt;
+
+&lt;h3 id=&quot;destructuring&quot;&gt;Destructuring&lt;/h3&gt;
+&lt;p&gt;Destructuring allows binding using pattern matching, with support for matching arrays and objects.  Destructuring is fail-soft, similar to standard object lookup &lt;code&gt;foo[&quot;bar&quot;]&lt;/code&gt;, producing &lt;code&gt;undefined&lt;/code&gt; values when not found.&lt;/p&gt;
+
+&lt;p&gt;解构允许绑定使用模式匹配,支持匹配数组和对象。解构是可以让故障弱化,类似于标准对象查找foo(“bar”),生产时没有发现未定义的值‘undefined’。&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+// list matching
+var [a, , b] = [1,2,3];&lt;/p&gt;
+
+&lt;p&gt;// object matching
+var { op: a, lhs: { op: b }, rhs: c }
+       = getASTNode()&lt;/p&gt;
+
+&lt;p&gt;// object matching shorthand
+// binds &lt;code&gt;op&lt;/code&gt;, &lt;code&gt;lhs&lt;/code&gt; and &lt;code&gt;rhs&lt;/code&gt; in scope
+var {op, lhs, rhs} = getASTNode()&lt;/p&gt;
+
+&lt;p&gt;// Can be used in parameter position
+function g({name: x}) {
+  console.log(x);
+}
+g({name: 5})&lt;/p&gt;
+
+&lt;p&gt;// Fail-soft destructuring
+var [a] = [];
+a === undefined;&lt;/p&gt;
+
+&lt;p&gt;// Fail-soft destructuring with defaults
+var [a = 1] = [];
+a === 1;
+```
+ES5与ES6对比&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+//ES5
+var { op: a, lhs: { op: b }, rhs: c } = getASTNode()&lt;/p&gt;
+
+&lt;p&gt;//ES6
+var tmp = getASTNode();
+var a = tmp.op;
+var b = tmp.lhs.op;
+var c = tmp.rhs;&lt;/p&gt;
+
+&lt;p&gt;//ES5
+function f (arg) {
+    var name = arg[0];
+    var val  = arg[1];
+    console.log(name, val);
+};
+function g (arg) {
+    var n = arg.name;
+    var v = arg.val;
+    console.log(n, v);
+};
+function h (arg) {
+    var name = arg.name;
+    var val  = arg.val;
+    console.log(name, val);
+};
+f([ “bar”, 42 ]);
+g({ name: “foo”, val:  7 });
+h({ name: “bar”, val: 42 });&lt;/p&gt;
+
+&lt;p&gt;//ES6
+function f ([ name, val ]) {
+    console.log(name, val)
+}
+function g ({ name: n, val: v }) {
+    console.log(n, v)
+}
+function h ({ name, val }) {
+    console.log(name, val)
+}
+f([ “bar”, 42 ])
+g({ name: “foo”, val:  7 })
+h({ name: “bar”, val: 42 })
+```&lt;/p&gt;
+
+&lt;h3 id=&quot;default--rest--spread&quot;&gt;Default + Rest + Spread&lt;/h3&gt;
+&lt;p&gt;Callee-evaluated default parameter values.  Turn an array into consecutive arguments in a function call.  Bind trailing parameters to an array.  Rest replaces the need for &lt;code&gt;arguments&lt;/code&gt; and addresses common cases more directly.&lt;/p&gt;
+
+&lt;p&gt;Callee-evaluated默认参数值。把一个数组转化为连续函数调用的参数。剩余的参数绑定到一个数组中。其他取代了需要的参数和地址一般情况下更直接。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;JavaScript
+function f(x, y=12) {
+  // y is 12 if not passed (or passed as undefined)
+  return x + y;
+}
+f(3) == 15
+&lt;/code&gt;
+&lt;code&gt;JavaScript
+function f(x, ...y) {
+  // y is an Array
+  return x * y.length;
+}
+f(3, &quot;hello&quot;, true) == 6
+&lt;/code&gt;
+&lt;code&gt;JavaScript
+function f(x, y, z) {
+  return x + y + z;
+}
+// Pass each elem of array as argument
+f(...[1,2,3]) == 6
+&lt;/code&gt;
+ES5与ES6对比&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+//ES5
+var params = [ “hello”, true, 7 ];
+var other = [ 1, 2 ].concat(params); // [ 1, 2, “hello”, true, 7 ]
+f.apply(undefined, [ 1, 2 ].concat(params)) === 9;&lt;/p&gt;
+
+&lt;p&gt;var str = “foo”;
+var chars = str.split(“”); // [ “f”, “o”, “o” ]&lt;/p&gt;
+
+&lt;p&gt;//ES6
+var params = [ “hello”, true, 7 ]
+var other = [ 1, 2, …params ] // [ 1, 2, “hello”, true, 7 ]
+f(1, 2, …params) === 9&lt;/p&gt;
+
+&lt;p&gt;var str = “foo”
+var chars = [ …str ] // [ “f”, “o”, “o” ]
+```&lt;/p&gt;
+
+&lt;h3 id=&quot;let--const&quot;&gt;Let + Const&lt;/h3&gt;
+&lt;p&gt;Block-scoped binding constructs.  &lt;code&gt;let&lt;/code&gt; is the new &lt;code&gt;var&lt;/code&gt;.  &lt;code&gt;const&lt;/code&gt; is single-assignment.  Static restrictions prevent use before assignment.&lt;/p&gt;
+
+&lt;p&gt;Block-scoped绑定结构。let”是新的“var”。“常量”是单一赋值消息快。静态限制防止作业之前使用。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;JavaScript
+function f() {
+  {
+    let x;
+    {
+      // okay, block scoped name
+      const x = &quot;sneaky&quot;;
+      // error, const
+      x = &quot;foo&quot;;
+    }
+    // error, already declared in block
+    let x = &quot;inner&quot;;
+  }
+}
+&lt;/code&gt;
+ES5与ES6对比&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+//ES5
+Object.defineProperty(typeof global === “object” ? global : window, “PI”, {
+    value:        3.141593,
+    enumerable:   true,
+    writable:     false,
+    configurable: false
+})
+PI &amp;gt; 3.0;&lt;/p&gt;
+
+&lt;p&gt;//ES6
+const PI = 3.141593
+PI &amp;gt; 3.0
+```&lt;/p&gt;
+
+&lt;h3 id=&quot;iterators--forof&quot;&gt;Iterators + For..Of&lt;/h3&gt;
+&lt;p&gt;Iterator objects enable custom iteration like CLR IEnumerable or Java Iterable.  Generalize &lt;code&gt;for..in&lt;/code&gt; to custom iterator-based iteration with &lt;code&gt;for..of&lt;/code&gt;.  Don’t require realizing an array, enabling lazy design patterns like LINQ.&lt;/p&gt;
+
+&lt;p&gt;迭代器对象启用自定义迭代就像CLR IEnumerable或Java Iterable。概括的. .概括来说它就是将‘fo..in’等循环用‘for..of’来写。不需要实现一个数组,使懒惰像LINQ设计模式。&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+let fibonacci = {
+  &lt;a href=&quot;&quot;&gt;Symbol.iterator&lt;/a&gt; {
+    let pre = 0, cur = 1;
+    return {
+      next() {
+        [pre, cur] = [cur, pre + cur];
+        return { done: false, value: cur }
+      }
+    }
+  }
+}&lt;/p&gt;
+
+&lt;p&gt;for (var n of fibonacci) {
+  // truncate the sequence at 1000
+  if (n &amp;gt; 1000)
+    break;
+  console.log(n);
+}
+```&lt;/p&gt;
+
+&lt;p&gt;Iteration is based on these duck-typed interfaces (using &lt;a href=&quot;http://typescriptlang.org&quot;&gt;TypeScript&lt;/a&gt; type syntax for exposition only):
+&lt;code&gt;TypeScript
+interface IteratorResult {
+  done: boolean;
+  value: any;
+}
+interface Iterator {
+  next(): IteratorResult;
+}
+interface Iterable {
+  [Symbol.iterator](): Iterator
+}
+&lt;/code&gt;
+ES5与ES6对比&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+//ES5
+var fibonacci = {
+    next: ((function () {
+        var pre = 0, cur = 1;
+        return function () {
+            tmp = pre;
+            pre = cur;
+            cur += tmp;
+            return cur;
+        };
+    })();
+};&lt;/p&gt;
+
+&lt;p&gt;var n;
+for (;;) {
+    n = fibonacci.next();
+    if (n &amp;gt; 1000)
+        break;
+    console.log(n);
+}&lt;/p&gt;
+
+&lt;p&gt;//ES6
+let fibonacci = {
+    &lt;a href=&quot;&quot;&gt;Symbol.iterator&lt;/a&gt; {
+        let pre = 0, cur = 1
+        return {
+           next () {
+               [ pre, cur ] = [ cur, pre + cur ]
+               return { done: false, value: cur }
+           }
+        }
+    }
+}&lt;/p&gt;
+
+&lt;p&gt;for (let n of fibonacci) {
+    if (n &amp;gt; 1000)
+        break
+    console.log(n)
+}
+```
+### Generators
+Generators simplify iterator-authoring using &lt;code&gt;function*&lt;/code&gt; and &lt;code&gt;yield&lt;/code&gt;.  A function declared as function* returns a Generator instance.  Generators are subtypes of iterators which include additional  &lt;code&gt;next&lt;/code&gt; and &lt;code&gt;throw&lt;/code&gt;.  These enable values to flow back into the generator, so &lt;code&gt;yield&lt;/code&gt; is an expression form which returns a value (or throws).&lt;/p&gt;
+
+&lt;p&gt;生成器简化iterator-authoring使用“function&lt;em&gt;”和“yield”。一个函数声明为函数&lt;/em&gt;返回一个生成器实例。生成器是迭代器的子类型,包括额外的“next”和“throw”。这可使用的值回流到生成器,因此“产量”是一种表达形式返回一个值(或抛出)。&lt;/p&gt;
+
+&lt;p&gt;Note: Can also be used to enable ‘await’-like async programming, see also ES7 &lt;code&gt;await&lt;/code&gt; proposal.&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+var fibonacci = {
+  [Symbol.iterator]: function*() {
+    var pre = 0, cur = 1;
+    for (;;) {
+      var temp = pre;
+      pre = cur;
+      cur += temp;
+      yield cur;
+    }
+  }
+}&lt;/p&gt;
+
+&lt;p&gt;for (var n of fibonacci) {
+  // truncate the sequence at 1000
+  if (n &amp;gt; 1000)
+    break;
+  console.log(n);
+}
+```&lt;/p&gt;
+
+&lt;p&gt;The generator interface is (using &lt;a href=&quot;http://typescriptlang.org&quot;&gt;TypeScript&lt;/a&gt; type syntax for exposition only):&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;TypeScript
+interface Generator extends Iterator {
+    next(value?: any): IteratorResult;
+    throw(exception: any);
+}
+&lt;/code&gt;
+ES5与ES6对比&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+//ES5
+function range (start, end, step) {
+    var list = [];
+    while (start &amp;lt; end) {
+        list.push(start);
+        start += step;
+    }
+    return list;
+}&lt;/p&gt;
+
+&lt;p&gt;var r = range(0, 10, 2);
+for (var i = 0; i &amp;lt; r.length; i++) {
+    console.log(r[i]); // 0, 2, 4, 6, 8
+}&lt;/p&gt;
+
+&lt;p&gt;//ES6
+function* range (start, end, step) {
+    while (start &amp;lt; end) {
+        yield start
+        start += step
+    }
+}&lt;/p&gt;
+
+&lt;p&gt;for (let i of range(0, 10, 2)) {
+    console.log(i) // 0, 2, 4, 6, 8
+}
+```
+### Unicode
+Non-breaking additions to support full Unicode, including new Unicode literal form in strings and new RegExp &lt;code&gt;u&lt;/code&gt; mode to handle code points, as well as new APIs to process strings at the 21bit code points level.  These additions support building global apps in JavaScript.&lt;/p&gt;
+
+&lt;p&gt;可以帮助增加完整的Unicode的支持,包括新的Unicode字符串中的文字形式和新的正则表达式处理代码点“u”模式,以及新的api来处理字符串在21位代码点水平。这些添加支持建立全球JavaScript应用程序。&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+// same as ES5.1
+“𠮷”.length == 2&lt;/p&gt;
+
+&lt;p&gt;// new RegExp behaviour, opt-in ‘u’
+“𠮷”.match(/./u)[0].length == 2&lt;/p&gt;
+
+&lt;p&gt;// new form
+“\u{20BB7}”==”𠮷”==”\uD842\uDFB7”&lt;/p&gt;
+
+&lt;p&gt;// new String ops
+“𠮷”.codePointAt(0) == 0x20BB7&lt;/p&gt;
+
+&lt;p&gt;// for-of iterates code points
+for(var c of “𠮷”) {
+  console.log(c);
+}
+```
+ES5与ES6对比&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+//ES5
+“𠮷”.length === 2;
+“𠮷”.match(/(?:[\0-\t\x0B\f\x0E-\u2027\u202A-\uD7FF\uE000-\uFFFF][\uD800-\uDBFF][\uDC00-\uDFFF]&lt;a href=&quot;?![\uDC00-\uDFFF]&quot;&gt;\uD800-\uDBFF&lt;/a&gt;(?:[^\uD800-\uDBFF]^)[\uDC00-\uDFFF])/)[0].length === 2;
+“𠮷” === “\uD842\uDFB7”;&lt;/p&gt;
+
+&lt;p&gt;//ES6
+“𠮷”.length === 2
+“𠮷”.match(/./u)[0].length === 2
+“\u{20BB7}” === “𠮷” === “\uD842\uDFB7”
+```
+### Modules
+Language-level support for modules for component definition.  Codifies patterns from popular JavaScript module loaders (AMD, CommonJS). Runtime behaviour defined by a host-defined default loader.  Implicitly async model – no code executes until requested modules are available and processed.&lt;/p&gt;
+
+&lt;p&gt;为组件定义语言级支持模块。汇总模式从流行的JavaScript模块加载器(AMD,CommonJS)。运行时行为由host-defined定义默认加载程序。隐式异步模型——没有代码执行,直到请求模块是可用的和加工。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;JavaScript
+// lib/math.js
+export function sum(x, y) {
+  return x + y;
+}
+export var pi = 3.141593;
+&lt;/code&gt;
+&lt;code&gt;JavaScript
+// app.js
+import * as math from &quot;lib/math&quot;;
+alert(&quot;2π = &quot; + math.sum(math.pi, math.pi));
+&lt;/code&gt;
+&lt;code&gt;JavaScript
+// otherApp.js
+import {sum, pi} from &quot;lib/math&quot;;
+alert(&quot;2π = &quot; + sum(pi, pi));
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Some additional features include &lt;code&gt;export default&lt;/code&gt; and &lt;code&gt;export *&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;JavaScript
+// lib/mathplusplus.js
+export * from &quot;lib/math&quot;;
+export var e = 2.71828182846;
+export default function(x) {
+    return Math.log(x);
+}
+&lt;/code&gt;
+&lt;code&gt;JavaScript
+// app.js
+import ln, {pi, e} from &quot;lib/mathplusplus&quot;;
+alert(&quot;2π = &quot; + ln(e)*pi*2);
+&lt;/code&gt;
+ES5与ES6对比&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+//ES5&lt;/p&gt;
+
+&lt;p&gt;LibMathPP = {};
+for (symbol in LibMath)
+    if (LibMath.hasOwnProperty(symbol))
+        LibMathPP[symbol] = LibMath[symbol];
+LibMathPP.e = 2.71828182846;
+LibMathPP.exp = function (x) { return Math.exp(x) };&lt;/p&gt;
+
+&lt;p&gt;//  someApp.js
+var exp = LibMathPP.exp, pi = LibMathPP.pi, e = libMathPP.e;
+console.log(“e^{π} = “ + exp(pi));&lt;/p&gt;
+
+&lt;p&gt;//ES6
+export * from “lib/math”
+export var e = 2.71828182846
+export default (x) =&amp;gt; Math.exp(x)&lt;/p&gt;
+
+&lt;p&gt;//  someApp.js
+import exp, { pi, e } from “lib/mathplusplus”
+console.log(“e^{π} = “ + exp(pi))
+```
+### Module Loaders
+Module loaders support:
+- Dynamic loading
+- State isolation
+- Global namespace isolation
+- Compilation hooks
+- Nested virtualization&lt;/p&gt;
+
+&lt;p&gt;The default module loader can be configured, and new loaders can be constructed to evaluate and load code in isolated or constrained contexts.&lt;/p&gt;
+
+&lt;p&gt;默认模块加载器可以配置,可以评估和构造新的加载器加载代码隔离或语境的限制。&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+// Dynamic loading – ‘System’ is default loader
+System.import(‘lib/math’).then(function(m) {
+  alert(“2π = “ + m.sum(m.pi, m.pi));
+});&lt;/p&gt;
+
+&lt;p&gt;// Create execution sandboxes – new Loaders
+var loader = new Loader({
+  global: fixup(window) // replace ‘console.log’
+});
+loader.eval(“console.log(‘hello world!’);”);&lt;/p&gt;
+
+&lt;p&gt;// Directly manipulate module cache
+System.get(‘jquery’);
+System.set(‘jquery’, Module({$: $})); // WARNING: not yet finalized
+```&lt;/p&gt;
+
+&lt;h3 id=&quot;map--set--weakmap--weakset&quot;&gt;Map + Set + WeakMap + WeakSet&lt;/h3&gt;
+&lt;p&gt;Efficient data structures for common algorithms.  WeakMaps provides leak-free object-key’d side tables.&lt;/p&gt;
+
+&lt;p&gt;数据结构常用算法效率。WeakMaps提供对象键索引表。&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+// Sets
+var s = new Set();
+s.add(“hello”).add(“goodbye”).add(“hello”);
+s.size === 2;
+s.has(“hello”) === true;&lt;/p&gt;
+
+&lt;p&gt;// Maps
+var m = new Map();
+m.set(“hello”, 42);
+m.set(s, 34);
+m.get(s) == 34;&lt;/p&gt;
+
+&lt;p&gt;// Weak Maps
+var wm = new WeakMap();
+wm.set(s, { extra: 42 });
+wm.size === undefined&lt;/p&gt;
+
+&lt;p&gt;// Weak Sets
+var ws = new WeakSet();
+ws.add({ data: 42 });
+// Because the added object has no other references, it will not be held in the set
+```
+ES5与ES6对比&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+//ES5
+var m = {};
+m[“hello”] = 42;
+// no equivalent in ES5
+// no equivalent in ES5
+Object.keys(m).length === 2;
+for (key in m) {
+    if (m.hasOwnProperty(key)) {
+        var val = m[key];
+        console.log(key + “ = “ + val);
+    }
+}&lt;/p&gt;
+
+&lt;p&gt;//ES6
+let m = new Map()
+m.set(“hello”, 42)
+m.set(s, 34)
+m.get(s) === 34
+m.size === 2
+for (let [ key, val ] of m.entries())
+    console.log(key + “ = “ + val)
+```
+### Proxies
+Proxies enable creation of objects with the full range of behaviors available to host objects.  Can be used for interception, object virtualization, logging/profiling, etc.&lt;/p&gt;
+
+&lt;p&gt;代理启用创建对象的全部行为可用主机对象。可用于拦截、对象虚拟化,日志/分析等,这是一个新功能。&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+// Proxying a normal object
+var target = {};
+var handler = {
+  get: function (receiver, name) {
+    return &lt;code&gt;Hello, ${name}!&lt;/code&gt;;
+  }
+};&lt;/p&gt;
+
+&lt;p&gt;var p = new Proxy(target, handler);
+p.world === ‘Hello, world!’;
+```&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+// Proxying a function object
+var target = function () { return ‘I am the target’; };
+var handler = {
+  apply: function (receiver, …args) {
+    return ‘I am the proxy’;
+  }
+};&lt;/p&gt;
+
+&lt;p&gt;var p = new Proxy(target, handler);
+p() === ‘I am the proxy’;
+```&lt;/p&gt;
+
+&lt;p&gt;There are traps available for all of the runtime-level meta-operations:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;JavaScript
+var handler =
+{
+  get:...,
+  set:...,
+  has:...,
+  deleteProperty:...,
+  apply:...,
+  construct:...,
+  getOwnPropertyDescriptor:...,
+  defineProperty:...,
+  getPrototypeOf:...,
+  setPrototypeOf:...,
+  enumerate:...,
+  ownKeys:...,
+  preventExtensions:...,
+  isExtensible:...
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;symbols&quot;&gt;Symbols&lt;/h3&gt;
+&lt;p&gt;Symbols enable access control for object state.  Symbols allow properties to be keyed by either &lt;code&gt;string&lt;/code&gt; (as in ES5) or &lt;code&gt;symbol&lt;/code&gt;.  Symbols are a new primitive type. Optional &lt;code&gt;name&lt;/code&gt; parameter used in debugging - but is not part of identity.  Symbols are unique (like gensym), but not private since they are exposed via reflection features like &lt;code&gt;Object.getOwnPropertySymbols&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;符号启用访问控制对象状态。符号允许键属性的“string”(如ES5)或“symbol”。符号是一个新的原始类型。可选的“name”参数用于调试——但不是身份的一部分。符号是独一无二的(比如gensym),而不是个人,因为他们是通过反射特性,如“Object.getOwnPropertySymbols”。这是也是一个新功能。&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+var MyClass = (function() {&lt;/p&gt;
+
+&lt;p&gt;// module scoped symbol
+  var key = Symbol(“key”);&lt;/p&gt;
+
+&lt;p&gt;function MyClass(privateData) {
+    this[key] = privateData;
+  }&lt;/p&gt;
+
+&lt;p&gt;MyClass.prototype = {
+    doStuff: function() {
+      … this[key] …
+    }
+  };&lt;/p&gt;
+
+&lt;p&gt;return MyClass;
+})();&lt;/p&gt;
+
+&lt;p&gt;var c = new MyClass(“hello”)
+c[“key”] === undefined&lt;/p&gt;
+
+&lt;h3 id=&quot;subclassable-built-ins&quot;&gt;Subclassable Built-ins&lt;/h3&gt;
+&lt;p&gt;In ES6, built-ins like &lt;code&gt;Array&lt;/code&gt;, &lt;code&gt;Date&lt;/code&gt; and DOM &lt;code&gt;Element&lt;/code&gt;s can be subclassed.&lt;/p&gt;
+
+&lt;p&gt;Object construction for a function named &lt;code&gt;Ctor&lt;/code&gt; now uses two-phases (both virtually dispatched):
+- Call &lt;code&gt;Ctor[@@create]&lt;/code&gt; to allocate the object, installing any special behavior
+- Invoke constructor on new instance to initialize&lt;/p&gt;
+
+&lt;p&gt;The known &lt;code&gt;@@create&lt;/code&gt; symbol is available via &lt;code&gt;Symbol.create&lt;/code&gt;.  Built-ins now expose their &lt;code&gt;@@create&lt;/code&gt; explicitly.&lt;/p&gt;
+
+&lt;p&gt;在ES6,应有尽有,如“Array”,“Date”和DOM”Element”的可以派生子类。
+　　
+对象构造函数名为“Ctor”现在使用两(几乎两派):
+- 称之为“Ctor(@@create)的分配对象,安装任何特殊的行为
+- 新实例上调用构造函数来初始化
+　　
+已知的“@@create”符号是可以通过“Symbol.create”。内置模板现在公开他们的@@create明确。&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+// Pseudo-code of Array
+class Array {
+    constructor(…args) { /* … */ }
+    static &lt;a href=&quot;&quot;&gt;Symbol.create&lt;/a&gt; {
+        // Install special [[DefineOwnProperty]]
+        // to magically update ‘length’
+    }
+}&lt;/p&gt;
+
+&lt;p&gt;// User code of Array subclass
+class MyArray extends Array {
+    constructor(…args) { super(…args); }
+}&lt;/p&gt;
+
+&lt;p&gt;// Two-phase ‘new’:
+// 1) Call @@create to allocate object
+// 2) Invoke constructor on new instance
+var arr = new MyArray();
+arr[1] = 12;
+arr.length == 2
+```
+ES5与ES6对比&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+//ES5
+var obj = { a: 1 };
+Object.defineProperty(obj, “b”, { value: 2 });
+// no equivalent in ES5
+Object.getOwnPropertyNames(obj); // [ “a”, “b” ]&lt;/p&gt;
+
+&lt;p&gt;//ES6
+let obj = { a: 1 }
+Object.defineProperty(obj, “b”, { value: 2 })
+obj[Symbol(“c”)] = 3
+Reflect.ownKeys(obj) // [ “a”, “b”, Symbol(c) ]
+```
+### Math + Number + String + Array + Object APIs
+Many new library additions, including core Math libraries, Array conversion helpers, String helpers, and Object.assign for copying.&lt;/p&gt;
+
+&lt;p&gt;许多新图书馆补充,包括核心数学库,数组转换帮手,字符串助手,和对象。分配进行复制。&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+Number.EPSILON
+Number.isInteger(Infinity) // false
+Number.isNaN(“NaN”) // false&lt;/p&gt;
+
+&lt;p&gt;Math.acosh(3) // 1.762747174039086
+Math.hypot(3, 4) // 5
+Math.imul(Math.pow(2, 32) - 1, Math.pow(2, 32) - 2) // 2&lt;/p&gt;
+
+&lt;p&gt;“abcde”.includes(“cd”) // true
+“abc”.repeat(3) // “abcabcabc”&lt;/p&gt;
+
+&lt;p&gt;Array.from(document.querySelectorAll(‘*’)) // Returns a real Array
+Array.of(1, 2, 3) // Similar to new Array(…), but without special one-arg behavior
+[0, 0, 0].fill(7, 1) // [0,7,7]
+[1, 2, 3].find(x =&amp;gt; x == 3) // 3
+[1, 2, 3].findIndex(x =&amp;gt; x == 2) // 1
+[1, 2, 3, 4, 5].copyWithin(3, 0) // [1, 2, 3, 1, 2]
+[“a”, “b”, “c”].entries() // iterator [0, “a”], [1,”b”], [2,”c”]
+[“a”, “b”, “c”].keys() // iterator 0, 1, 2
+[“a”, “b”, “c”].values() // iterator “a”, “b”, “c”&lt;/p&gt;
+
+&lt;p&gt;Object.assign(Point, { origin: new Point(0,0) })
+```&lt;/p&gt;
+
+&lt;h3 id=&quot;binary-and-octal-literals&quot;&gt;Binary and Octal Literals&lt;/h3&gt;
+&lt;p&gt;Two new numeric literal forms are added for binary (&lt;code&gt;b&lt;/code&gt;) and octal (&lt;code&gt;o&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;添加两个新的数值文字形式为二进制(“b”)和八进制(“o”)。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;JavaScript
+0b111110111 === 503 // true
+0o767 === 503 // true
+&lt;/code&gt;
+ES5与ES6对比&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+//ES5
+parseInt(“111110111”, 2) === 503;
+parseInt(“767”, 8) === 503;
+0767 === 503; // only in non-strict, backward compatibility mode&lt;/p&gt;
+
+&lt;p&gt;//ES6
+0b111110111 === 503
+0o767 === 503
+```&lt;/p&gt;
+
+&lt;h3 id=&quot;promises&quot;&gt;Promises&lt;/h3&gt;
+&lt;p&gt;Promises are a library for asynchronous programming.  Promises are a first class representation of a value that may be made available in the future.  Promises are used in many existing JavaScript libraries.&lt;/p&gt;
+
+&lt;p&gt;承诺模式是异步编程库。承诺是一个一个流的表示的值可能会在未来使用。承诺模式用于许多现有的JavaScript库。&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+function timeout(duration = 0) {
+    return new Promise((resolve, reject) =&amp;gt; {
+        setTimeout(resolve, duration);
+    })
+}&lt;/p&gt;
+
+&lt;p&gt;var p = timeout(1000).then(() =&amp;gt; {
+    return timeout(2000);
+}).then(() =&amp;gt; {
+    throw new Error(“hmm”);
+}).catch(err =&amp;gt; {
+    return Promise.all([timeout(100), timeout(200)]);
+})
+```
+ES5与ES6对比&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+//ES5
+function msgAfterTimeout (msg, who, timeout, onDone) {
+    setTimeout(function () {
+        onDone(msg + “ Hello “ + who + “!”);
+    }, timeout);
+}
+msgAfterTimeout(“”, “Foo”, 100, function (msg) {
+    msgAfterTimeout(msg, “Bar”, 200, function (msg) {
+        console.log(“done after 300ms:” + msg);
+    });
+});&lt;/p&gt;
+
+&lt;p&gt;//ES6
+function msgAfterTimeout (msg, who, timeout) {
+    return new Promise((resolve, reject) =&amp;gt; {
+        setTimeout(() =&amp;gt; resolve(&lt;code&gt;${msg} Hello ${who}!&lt;/code&gt;), timeout)
+    })
+}
+msgAfterTimeout(“”, “Foo”, 100).then((msg) =&amp;gt;
+    msgAfterTimeout(msg, “Bar”, 200)
+).then((msg) =&amp;gt; {
+    console.log(&lt;code&gt;done after 300ms:${msg}&lt;/code&gt;)
+})
+```
+### Reflect API
+Full reflection API exposing the runtime-level meta-operations on objects.  This is effectively the inverse of the Proxy API, and allows making calls corresponding to the same meta-operations as the proxy traps.  Especially useful for implementing proxies.&lt;/p&gt;
+
+&lt;p&gt;完整的反射API公开运行时级meta-operations对象。这是一个有效的反向代理的API,并声明对应相同的meta-operations代理陷阱。实现代理尤其有用。&lt;/p&gt;
+
+&lt;p&gt;ES5与ES6对比&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+//ES5
+var obj = { a: 1 };
+Object.defineProperty(obj, “b”, { value: 2 });
+// no equivalent in ES5
+Object.getOwnPropertyNames(obj); // [ “a”, “b” ]&lt;/p&gt;
+
+&lt;p&gt;//ES6
+let obj = { a: 1 }
+Object.defineProperty(obj, “b”, { value: 2 })
+obj[Symbol(“c”)] = 3
+Reflect.ownKeys(obj) // [ “a”, “b”, Symbol(c) ]
+```
+### Tail Calls
+Calls in tail-position are guaranteed to not grow the stack unboundedly.  Makes recursive algorithms safe in the face of unbounded inputs.&lt;/p&gt;
+
+&lt;p&gt;在尾部调用保证不是堆栈无限制地增长。使得在面对无限递归算法安全投入。&lt;/p&gt;
+
+&lt;p&gt;```JavaScript
+function factorial(n, acc = 1) {
+    ‘use strict’;
+    if (n &amp;lt;= 1) return acc;
+    return factorial(n - 1, n * acc);
+}&lt;/p&gt;
+
+&lt;p&gt;// Stack overflow in most implementations today,
+// but safe on arbitrary inputs in ES6
+factorial(100000)
+```&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://raoenhui.github.io/es6/2015/08/28/es6-featrue/&quot;&gt;Es6 featrues&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://raoenhui.github.io&quot;&gt;饶恩慧的博客&lt;/a&gt; on August 28, 2015.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
