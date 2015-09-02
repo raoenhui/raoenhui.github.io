@@ -1,5 +1,5 @@
 ---
-author: ameyjadiye
+author: raoenhui
 layout: post
 title: "Super awesome automation testing"
 date: 2014-08-30 21:45

@@ -1,5 +1,5 @@
 ---
-author: ameyjadiye
+author: raoenhui
 layout: post
 title: "Working with GIT patch"
 date: 2014-12-31 11:36

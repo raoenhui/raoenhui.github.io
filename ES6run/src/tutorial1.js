@@ -57,9 +57,11 @@
 /*E5*/
 // var message = "Hello!";
 // let age = 25;
- 
-// const message = "Goodbye!";
+ // if(true){
+//  	const message = "Goodbye!";
 // const age = 30;//cli:Duplicate declaration "age"
+ // }
+
 
 /*E6*/
 // const C1 = {};
@@ -102,5 +104,5 @@
 // var raw =String('Not a newline: \n');
 // document.write(raw === 'Not a newline: \\n');// false
 
-//  let raw = String.raw`Not a newline: \n`;
-//  document.write(raw === 'Not a newline: \\n'); // true
+ // let raw = String.raw`Not a newline: \n`;
+ // document.write(raw === 'Not a newline: \\n'); // true

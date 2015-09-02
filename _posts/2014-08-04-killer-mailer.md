@@ -1,5 +1,5 @@
 ---
-author: ameyjadiye
+author: raoenhui
 layout: post
 title: "Killer mailer script in Python"
 date: 2014-08-04 09:23

@@ -1,5 +1,5 @@
 ---
-author: ameyjadiye
+author: raoenhui
 layout: post
 title: "Functions in shell script"
 date: 2014-01-19 15:09

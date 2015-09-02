@@ -1,5 +1,5 @@
 ---
-author: ameyjadiye
+author: raoenhui
 layout: post
 title: "Sentiment analysis with R"
 date: 2015-05-10 20:00

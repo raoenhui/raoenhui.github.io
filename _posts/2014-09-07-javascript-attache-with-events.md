@@ -1,5 +1,5 @@
 ---
-author: ameyjadiye
+author: raoenhui
 layout: post
 title: "Javascript - ♥ Attach with events"
 date: 2014-09-07 23:51

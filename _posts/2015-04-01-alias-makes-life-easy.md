@@ -1,5 +1,5 @@
 ---
-author: ameyjadiye
+author: raoenhui
 layout: post
 title: "Alias makes life easy"
 date: 2015-04-01 18:45

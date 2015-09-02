@@ -1,5 +1,5 @@
 ---
-author: ameyjadiye
+author: raoenhui
 layout: post
 title: "Timezone conversion in python -Easy way"
 date: 2014-08-08 10:17

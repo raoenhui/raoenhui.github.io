@@ -1,5 +1,5 @@
 ---
-author: ameyjadiye
+author: raoenhui
 layout: post
 title: "Es6 featrues"
 date: 2015-08-28 15:09
