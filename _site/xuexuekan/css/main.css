@@ -1,0 +1,32 @@
+@charset "utf-8";
+/*for jquery mobile*/
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+*{
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;  text-shadow: none;
+}
+.mainBox{  padding: 0;
+  min-width: 300px;
+  max-width: 640px;
+  margin: 0 auto;}
+.clearfix:before, .clearfix:after{content: " ";display: table}
+.clearfix:after{clear: both}
+
+/*icon*/
+span.xueicon{color:red;content: ' ';    background-repeat: no-repeat;    background-position: center center;background-size: contain;display: block;}
+span.xueicon.hide{display:none}
+span.xueicon.xueicon-classify{
+    background-image: url(../img/icon/classify.png);
+    width: 0.40em;  
+    height: 0.60em;
+}
+span.xueicon.xueicon-message{
+    background-image: url(../img/icon/message.png);
+    width: 0.50em;  
+    height: 0.60em;
+}
