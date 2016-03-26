@@ -8,10 +8,10 @@ category : webpack
 tags:
 - webpack
 ---
-webpack入门教程
+# webpack入门教程
 
 
-## 介绍
+### 介绍
 
 这是一个webpack的最简单教程
 你将会学到:
@@ -19,7 +19,7 @@ webpack入门教程
 - 如何安装webpack
 - 如何使用webpack 
 
-## 安装
+### 安装
 
 首先你要安装nodejs和npm
 
@@ -57,7 +57,7 @@ module.exports = "It works from content.js.";
 {% endhighlight %}
 
 
-运行
+### 运行
 
 ``` 
  webpack ./entry.js bundle.js
