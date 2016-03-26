@@ -19,8 +19,7 @@ webpack入门教程
 - 如何安装webpack
 - 如何使用webpack 
 
-
-##安装
+## 安装
 
 首先你要安装nodejs和npm
 
@@ -30,8 +29,7 @@ webpack入门教程
 
 ![webpack]({{ site.url }}/images/blog/webpackStepOne-1.png) 
 
-
-##开始编辑
+## 开始编辑
 
 > 新建文件 entry.js
 
