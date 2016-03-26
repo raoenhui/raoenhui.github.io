@@ -17,7 +17,7 @@ webpack入门教程
 你将会学到:
 
 - 如何安装webpack
-- 如何使用webpack
+- 如何使用webpack 
 
 
 ##安装
@@ -28,7 +28,7 @@ webpack入门教程
  sudo npm install webpack -g
 ```
 
-![webpack]({{ site.url }}/images/blog/webpackStepOne-1.png)
+![webpack]({{ site.url }}/images/blog/webpackStepOne-1.png) 
 
 
 ##开始编辑
