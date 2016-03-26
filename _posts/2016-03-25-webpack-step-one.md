@@ -8,10 +8,9 @@ category : webpack
 tags:
 - webpack
 ---
-# webpack入门教程
+Webpack是一款用户打包前端模块的工具。
 
-
-### 介绍
+### 简介
 
 这是一个webpack的最简单教程
 你将会学到:
