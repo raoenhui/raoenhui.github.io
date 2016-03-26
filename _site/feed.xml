@@ -9,13 +9,106 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://raoenhui.github.io/" />
-<updated>2015-09-26T16:34:03+05:30</updated>
+<updated>2016-03-26T13:30:21+05:30</updated>
 <id>http://raoenhui.github.io/</id>
 <author>
   <name>Enhui Rao</name>
   <uri>http://raoenhui.github.io/</uri>
   <email>670615769@qq.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[webpack入门教程]]></title>
+  <link rel="alternate" type="text/html" href="http://raoenhui.github.io/webpack/2016/06/25/webpack-step-one/"/>
+  <id>http://raoenhui.github.io/webpack/2016/06/25/webpack-step-one</id>
+  <published>2016-06-25T23:51:00+05:30</published>
+  <updated>2016-06-25T23:51:00+05:30</updated>
+  <author>
+    <name>Enhui Rao</name>
+    <uri>http://raoenhui.github.io</uri>
+    <email>670615769@qq.com</email>
+  </author>
+  <category scheme="http://raoenhui.github.io/tags/#webpack" term="webpack" />
+  <content type="html">
+  
+    &lt;h1 id=&quot;webpack&quot;&gt;webpack入门教程&lt;/h1&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;介绍&lt;/h3&gt;
+&lt;p&gt;这是一个webpack的最简单教程
+你将会学到:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;如何安装webpack&lt;/li&gt;
+  &lt;li&gt;如何使用webpack&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;安装&lt;/h3&gt;
+&lt;p&gt;首先你要安装nodejs和npm&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+ sudo npm install webpack -g
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://raoenhui.github.io/images/blog/webpackStepOne-1.png&quot; alt=&quot;webpack&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;开始编辑&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;新建文件 entry.js&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;./content.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;新建文件 index.html&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;utf-8&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;bundle.js&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;utf-8&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;新建文件 content.js&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;It works from content.js.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;运行&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+ webpack ./entry.js bundle.js
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;编译结果为：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Hash: a5409e97d9575465c66c  
+Version: webpack 1.12.14  
+Time: 52ms  
+    Asset     Size  Chunks             Chunk Names  
+bundle.js  1.55 kB       &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;emitted&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;  main  
+   &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; ./entry.js &lt;span class=&quot;m&quot;&gt;41&lt;/span&gt; bytes &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;built&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;  
+   &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;1&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; ./content.js &lt;span class=&quot;m&quot;&gt;42&lt;/span&gt; bytes &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;built&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://raoenhui.github.io/images/blog/webpackStepOne-2.png&quot; alt=&quot;webpack&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;有兴趣的小伙伴们还可以看下下面文档:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://webpack.github.io/&quot;&gt;webpack官网&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/raoenhui/webpack&quot;&gt;webpack入门例子&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Happy Codeing …. :)&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://raoenhui.github.io/webpack/2016/06/25/webpack-step-one/&quot;&gt;webpack入门教程&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://raoenhui.github.io&quot;&gt;饶恩慧的博客&lt;/a&gt; on June 25, 2016.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -272,7 +365,7 @@ ES6还为原生的String对象，提供了一个raw方法。
     &lt;h1 id=&quot;ecmascript-6-supgitioes6featureshttpgitioes6featuressup&quot;&gt;ECMAScript 6 &lt;sup&gt;&lt;a href=&quot;http://git.io/es6features&quot;&gt;git.io/es6features&lt;/a&gt;&lt;/sup&gt;&lt;/h1&gt;
 
 &lt;h2 id=&quot;section&quot;&gt;介绍&lt;/h2&gt;
-&lt;p&gt;ECMAScript 6,2015年也被称为ECMAScript 标准的最新版本。标志着最新的语言，是及2009年ES5发布后相继6年出的版本。这些功能的实现主要的JavaScript引擎统计如右边链接(现在正在完善)(http://kangax.github.io/es5-compat-table/es6/)。&lt;/p&gt;
+&lt;p&gt;ECMAScript 6,2015年也被称为ECMAScript 标准的最新版本。标志着最新的语言，是及2009年ES5发布后相继6年出的版本。这些功能的实现主要的JavaScript引擎统计如右边链接(现在正在完善)(http://kangax.github.io/es5-compat-table/es6/)&lt;/p&gt;
 
 &lt;p&gt;ES6的完整规范如左边网址下&lt;a href=&quot;http://www.ecma-international.org/ecma-262/6.0/&quot;&gt;ES6 standard&lt;/a&gt;。 &lt;/p&gt;
 

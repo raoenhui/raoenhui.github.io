@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "webpack入门教程",
+		  "category"   : "webpack",
+		  "url"        : "http://raoenhui.github.io/webpack/2016/06/25/webpack-step-one/",
+		  "date"       : "2016-06-25 23:51:00 +0530",
+		  "shortdate"  : "June 25, 2016"
+		} ,
+	
+		{
 		  "title"      : "ES6从入门到精通之常量与变量(一)",
 		  "category"   : "ES6",
 		  "url"        : "http://raoenhui.github.io/es6/2015/08/30/es6-one/",

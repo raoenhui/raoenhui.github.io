@@ -2,23 +2,23 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>TIMEZONE CONVERSION IN PYTHON -EASY WAY &vert; 饶恩慧的博客</title>
+<title>WEBPACK入门教程 &vert; 饶恩慧的博客</title>
 <meta name="description" content="一枚前端攻城狮!">
-<meta name="keywords" content="python">
+<meta name="keywords" content="webpack">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://raoenhui.github.io/images/logo.png">
-<meta name="twitter:title" content="Timezone conversion in python -Easy way">
+<meta name="twitter:title" content="webpack入门教程">
 <meta name="twitter:description" content="一枚前端攻城狮!">
 <meta name="twitter:creator" content="@raoenhui">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Timezone conversion in python -Easy way">
+<meta property="og:title" content="webpack入门教程">
 <meta property="og:description" content="一枚前端攻城狮!">
-<meta property="og:url" content="http://raoenhui.github.io/python/2014/08/08/python-timezone-convertion/">
+<meta property="og:url" content="http://raoenhui.github.io/webpack/2016/06/25/webpack-step-one/">
 <meta property="og:site_name" content="饶恩慧的博客">
 <meta property="og:image" content="http://raoenhui.github.io/images/">
 
@@ -26,7 +26,7 @@
 
 
 
-<link rel="canonical" href="http://raoenhui.github.io/python/2014/08/08/python-timezone-convertion/">
+<link rel="canonical" href="http://raoenhui.github.io/webpack/2016/06/25/webpack-step-one/">
 <link href="http://raoenhui.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="饶恩慧的博客 Feed">
 <link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
 
@@ -104,51 +104,102 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h1>Timezone conversion in python -Easy way</h1>
-                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="http://raoenhui.github.io/tags/index.html#python" data-toggle="tooltip" title="Posts tagged with python" rel="tag">python</a> <strong><time datetime="2014-08-08T10:17:00+05:30">08 Aug 2014</time></strong></p>
+                            <h1>webpack入门教程</h1>
+                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="http://raoenhui.github.io/tags/index.html#webpack" data-toggle="tooltip" title="Posts tagged with webpack" rel="tag">webpack</a> <strong><time datetime="2016-06-25T23:51:00+05:30">25 Jun 2016</time></strong></p>
                         </div>
                     </div>
                 </div>
             </header>
 
         <article class="notepad-post-content post tag-simple">
-            <div><p>This lib i found most usefulll <a href="http://niemeyer.net/python-dateutil">python-dateutil</a>.</p>
+            <div><h1 id="webpack">webpack入门教程</h1>
 
-<p><code>bash
-sudo pip install python-dateutil
+<h3 id="section">介绍</h3>
+<p>这是一个webpack的最简单教程
+你将会学到:</p>
+
+<ul>
+  <li>如何安装webpack</li>
+  <li>如何使用webpack</li>
+</ul>
+
+<h3 id="section-1">安装</h3>
+<p>首先你要安装nodejs和npm</p>
+
+<p><code>
+ sudo npm install webpack -g
 </code></p>
 
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-<span class="kn">from</span> <span class="nn">dateutil</span> <span class="kn">import</span> <span class="n">tz</span>
+<p><img src="http://raoenhui.github.io/images/blog/webpackStepOne-1.png" alt="webpack" /></p>
 
-<span class="n">date_str</span> <span class="o">=</span> <span class="s">&quot;2014-08-08 19:18:01&quot;</span>
-<span class="n">fmt</span><span class="o">=</span><span class="s">&quot;%Y-%m-</span><span class="si">%d</span><span class="s"> %H:%M:%S&quot;</span>
-<span class="n">from_zone</span> <span class="o">=</span> <span class="n">tz</span><span class="o">.</span><span class="n">gettz</span><span class="p">(</span><span class="s">&#39;UTC&#39;</span><span class="p">)</span>
-<span class="n">to_zone</span> <span class="o">=</span> <span class="n">tz</span><span class="o">.</span><span class="n">gettz</span><span class="p">(</span><span class="s">&#39;America/New_York&#39;</span><span class="p">)</span>
+<h3 id="section-2">开始编辑</h3>
 
-<span class="n">utc</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date_str</span><span class="p">,</span> <span class="n">fmt</span><span class="p">)</span>
-<span class="n">utc</span> <span class="o">=</span> <span class="n">utc</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">from_zone</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">utc</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">fmt</span><span class="p">)</span>
-<span class="c"># Convert time zone</span>
-<span class="n">central</span> <span class="o">=</span> <span class="n">utc</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">to_zone</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">central</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">fmt</span><span class="p">)</span></code></pre></div>
+<blockquote>
+  <p>新建文件 entry.js</p>
+</blockquote>
 
-<p>Happy coding ….. :)</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./content.js&quot;</span><span class="p">));</span></code></pre></div>
+
+<blockquote>
+  <p>新建文件 index.html</p>
+</blockquote>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;bundle.js&quot;</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></div>
+
+<blockquote>
+  <p>新建文件 content.js</p>
+</blockquote>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="s2">&quot;It works from content.js.&quot;</span><span class="p">;</span></code></pre></div>
+
+<p>运行</p>
+
+<p><code>
+ webpack ./entry.js bundle.js
+</code></p>
+
+<p>编译结果为：</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">Hash: a5409e97d9575465c66c  
+Version: webpack 1.12.14  
+Time: 52ms  
+    Asset     Size  Chunks             Chunk Names  
+bundle.js  1.55 kB       <span class="m">0</span>  <span class="o">[</span>emitted<span class="o">]</span>  main  
+   <span class="o">[</span>0<span class="o">]</span> ./entry.js <span class="m">41</span> bytes <span class="o">{</span>0<span class="o">}</span> <span class="o">[</span>built<span class="o">]</span>  
+   <span class="o">[</span>1<span class="o">]</span> ./content.js <span class="m">42</span> bytes <span class="o">{</span>0<span class="o">}</span> <span class="o">[</span>built<span class="o">]</span></code></pre></div>
+
+<p><img src="http://raoenhui.github.io/images/blog/webpackStepOne-2.png" alt="webpack" /></p>
+
+<p>有兴趣的小伙伴们还可以看下下面文档:</p>
+
+<ul>
+  <li><a href="http://webpack.github.io/">webpack官网</a></li>
+  <li><a href="https://github.com/raoenhui/webpack">webpack入门例子</a></li>
+</ul>
+
+<p>Happy Codeing …. :)</p>
 
             </div>
         </article>
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Timezone conversion in python -Easy way&quot;%20http://raoenhui.github.io/python/2014/08/08/python-timezone-convertion/%20via%20&#64;raoenhui"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;webpack入门教程&quot;%20http://raoenhui.github.io/webpack/2016/06/25/webpack-step-one/%20via%20&#64;raoenhui"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=http://raoenhui.github.io/python/2014/08/08/python-timezone-convertion/"
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=http://raoenhui.github.io/webpack/2016/06/25/webpack-step-one/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a class="google-icon" href="https://plus.google.com/share?url=http://raoenhui.github.io/python/2014/08/08/python-timezone-convertion/"
+                <a class="google-icon" href="https://plus.google.com/share?url=http://raoenhui.github.io/webpack/2016/06/25/webpack-step-one/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
                     <i class="fa fa-google-plus"></i>
                 </a>
@@ -232,7 +283,7 @@ sudo pip install python-dateutil
 -->
 
  
-<div class="fb-comments" data-href="http://raoenhui.github.io/python/2014/08/08/python-timezone-convertion/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+<div class="fb-comments" data-href="http://raoenhui.github.io/webpack/2016/06/25/webpack-step-one/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
 
 <!--
 <div id="fb-root"></div>

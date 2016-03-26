@@ -78,6 +78,11 @@ callback([
   {
     "text": "ES6从入门到精通之常量与变量(一)",
     "href": "http://raoenhui.github.io/es6/2015/08/30/es6-one/"
+  } ,
+
+  {
+    "text": "webpack入门教程",
+    "href": "http://raoenhui.github.io/webpack/2016/06/25/webpack-step-one/"
   } 
 
 ])
