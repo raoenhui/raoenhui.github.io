@@ -8,17 +8,17 @@ category : webpack
 tags:
 - webpack
 ---
-#webpack入门教程
+webpack入门教程
 
 
-### 介绍
+## 介绍
 这是一个webpack的最简单教程
 你将会学到:
 
 - 如何安装webpack
 - 如何使用webpack
 
-###安装
+##安装
 首先你要安装nodejs和npm
 
 ``` 
@@ -27,7 +27,7 @@ tags:
 
 ![webpack]({{ site.url }}/images/blog/webpackStepOne-1.png)
 
-###开始编辑
+##开始编辑
 
 > 新建文件 entry.js
 
