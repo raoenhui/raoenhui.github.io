@@ -1,13 +1,12 @@
 ---
 author: raoenhui
 layout: post
-title: "Es6 featrues"
+title: "ES6 featrues"
 date: 2015-08-28 15:09
+category : ES6
 comments: true
-category: Es6
 tags:
-- Es6
-
+- R, ES6
 ---
 
 # ECMAScript 6 <sup>[git.io/es6features](http://git.io/es6features)</sup>
