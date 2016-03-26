@@ -9,7 +9,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://raoenhui.github.io/" />
-<updated>2016-03-26T13:46:37+05:30</updated>
+<updated>2016-03-26T13:53:11+05:30</updated>
 <id>http://raoenhui.github.io/</id>
 <author>
   <name>Enhui Rao</name>
@@ -34,7 +34,8 @@
   
     &lt;p&gt;webpack入门教程&lt;/p&gt;
 
-&lt;h2 id=&quot;section&quot;&gt;介绍&lt;/h2&gt;
+&lt;h3 id=&quot;section&quot;&gt;介绍&lt;/h3&gt;
+
 &lt;p&gt;这是一个webpack的最简单教程
 你将会学到:&lt;/p&gt;
 
@@ -43,7 +44,8 @@
   &lt;li&gt;如何使用webpack&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;section-1&quot;&gt;安装&lt;/h2&gt;
+&lt;h3 id=&quot;section-1&quot;&gt;安装&lt;/h3&gt;
+
 &lt;p&gt;首先你要安装nodejs和npm&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;
@@ -52,7 +54,7 @@
 
 &lt;p&gt;&lt;img src=&quot;http://raoenhui.github.io/images/blog/webpackStepOne-1.png&quot; alt=&quot;webpack&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;section-2&quot;&gt;开始编辑&lt;/h2&gt;
+&lt;h3 id=&quot;section-2&quot;&gt;开始编辑&lt;/h3&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;新建文件 entry.js&lt;/p&gt;
