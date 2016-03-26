@@ -2,7 +2,7 @@
 author: raoenhui
 layout: post
 title: "webpack入门教程"
-date: 2014-09-07 23:51
+date: 2016-06-25 23:51
 comments: true
 category : webpack
 tags:
@@ -10,70 +10,75 @@ tags:
 ---
 #webpack入门教程
 
+
+### 介绍
+这是一个webpack的最简单教程
+你将会学到:
+
+- 如何安装webpack
+- 如何使用webpack
+
 ###安装
 首先你要安装nodejs和npm
 
-javascript is so populer just because its more near to actual users of your system; server side code is as important as client side because user is belives what he see; javascript responds to events whatever user is doing with his actual gestures like click, mouseover, keypress etc, thats why the core of javascript is not just a data manupulation but the event handling.
+``` 
+ sudo npm install webpack -g
+```
 
-Its very easy wayto make your component responsive.
+![webpack]({{ site.url }}/images/blog/webpackStepOne-1.png)
 
-{%highlight html%}
+###开始编辑
+
+> 新建文件 entry.js
+
+{% highlight js %}
+document.write(require("./content.js"));
+{% endhighlight %}
+
+> 新建文件 index.html
+
+{% highlight html %}
 <html>
+    <head>
+        <meta charset="utf-8">
+    </head>
     <body>
-        <div id='myId'>Click Me!!</a>
+        <script type="text/javascript" src="bundle.js" charset="utf-8"></script>
     </body>
-    <script>
-	var id = document.getElementById("myId");
-	id.addEventListener("click", function(){
-    		document.getElementById("myId").innerHTML = "Wow, you just clicked me, i'm on 7th sky!";
-	},true);
-    </script>
 </html>
-{%endhighlight%}
+{% endhighlight %}
 
-it's so easy right? you can attach helllot of events, few of them i described below.
+> 新建文件 content.js
+
+{% highlight js %}
+module.exports = "It works from content.js.";
+{% endhighlight %}
 
 
+运行
 
+``` 
+ webpack ./entry.js bundle.js
+```
 
-<table style="margin: auto;" >
-<tr><th>Event</th><th>Description</th></tr>
-<tr><td>onchange</td><td>An HTML element has been changed</td></tr>
-<tr><td>onclicke</td><td>The user clicks an HTML element</td></tr>
-<tr><td>onmouseovere</td><td>The user moves the mouse over an HTML element</td></tr>
-<tr><td>onmouseoute</td><td>The user moves the mouse away from an HTML element</td></tr>
-<tr><td>onkeydowne</td><td>The user pushes a keyboard key</td></tr>
-<tr><td>onloade</td><td>The browser has finished loading the page</td></tr>
-</table>
+编译结果为：
 
-_Note : dont use 'on' when passing your event to method addEventListener_
+{% highlight bash %}
+Hash: a5409e97d9575465c66c  
+Version: webpack 1.12.14  
+Time: 52ms  
+    Asset     Size  Chunks             Chunk Names  
+bundle.js  1.55 kB       0  [emitted]  main  
+   [0] ./entry.js 41 bytes {0} [built]  
+   [1] ./content.js 42 bytes {0} [built]
+{% endhighlight %}
 
-Now as you see there are 3 parameters to method :
+![webpack]({{ site.url }}/images/blog/webpackStepOne-2.png)
 
-+ First is event you would like to attach.
-+ Second is function you want to execute on event happen.
-+ Third is called useCapture, its little intresting, let me explain you in brife below.
+有兴趣的小伙伴们还可以看下下面文档:
 
-When the browser event system was first designed, there were two conflicting ways that how shoudl it behave. That is called as *capture* and *bubbling*
++ [webpack官网](http://webpack.github.io/)
++ [webpack入门例子](https://github.com/raoenhui/webpack)
 
-If an event (e.g. a click) happens on the a element, should the parent elements know? It was widely accepted that they should. But the question was in what order they should be notified. The Microsoft and Netscape developers had differing opinions.
-
-One model was event capture (advocated by the Netscape developers). This notified the html element first and worked its way down the tree:
-
-+ html
-+ body
-+ div
-
-The other model was event bubbling (advocated by the Microsoft developers). This notified the target element first, and worked its way up the tree:
-
-+ div
-+ body
-+ html
-
-According to [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener)  ***useCapture*** is :
-
-<pre>
-If true, useCapture indicates that the user wishes to initiate capture. After initiating capture, all events of the specified type will be dispatched to the registered listener before being dispatched to any EventTargets beneath it in the DOM tree. Events which are bubbling upward through the tree will not trigger a listener designated to use capture. See DOM Level 3 Events for a detailed explanation
-</pre>
 
 Happy Codeing .... :)
