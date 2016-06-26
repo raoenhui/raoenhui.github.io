@@ -1,0 +1,57 @@
+<HTML>
+
+<HEAD>
+    <TITLE> draw lots </TITLE>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="draw lots,ballot,抽签,抽签网站" />
+    <meta name="description" content="抽签网站" />
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <SCRIPT LANGUAGE="JavaScript">
+    var time;
+
+    function begin() {
+        document.getElementById("btnBegin").disabled = true;
+        chouqian();
+    }
+
+    function chouqian() {
+        var name = document.getElementById("resultDate").innerHTML.trim();
+        var names = name.split(',');
+        //方法一
+        // var index = Math.floor(Math.random()*1000 % names.length);
+        //方法二
+        //最小值+Math.random()*(最大值-最小值+1)
+        var index = Math.floor(Math.random() * (names.length - 1));
+        var name = names[index];
+        document.getElementById("result").innerHTML = name;
+        time = window.setTimeout(chouqian, 2);
+    }
+
+    function end() {
+        window.clearTimeout(time);
+        document.getElementById("btnBegin").disabled = false;
+    }
+    </SCRIPT>
+</HEAD>
+
+<BODY>
+    <div class="container" style="text-align:center;margin-top:100px">
+        <h1>draw lots(抽签)</h1>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <textarea id="resultDate" class="form-control" rows="3" placeholder="data of draw lots">1,2,3,4,5,6,7</textarea>
+                <p class="bg-warning">Notes:Input the array elements,and please comma separated values
+                    <br>提示：抽签元素用英文逗号分割
+                </p>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <h3 id="result" style="color:blue"></h3>
+        <INPUT class="btn btn-success" TYPE="button" VALUE="start" id="btnBegin" ONCLICK="begin();">&nbsp;
+        <INPUT class="btn btn-danger" TYPE="button" VALUE="end" id="btnEnd" ONCLICK="end();">
+    </div>
+</BODY>
+
+</HTML>
