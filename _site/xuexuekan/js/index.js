@@ -98,7 +98,7 @@ $(function() {
     });
     $('#fullbutton').click(function() {
         $("#sliderrt").animate({
-            left: '-270px'
+            left: '-80%'
         }, 500, function() {
             $('#fullbutton').hide();
         });

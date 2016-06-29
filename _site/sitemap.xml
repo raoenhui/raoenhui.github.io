@@ -1,122 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://raoenhui.github.io</loc>
+        <loc>https://raoenhui.github.io</loc>
     </url>
     
     
     <url>
-        <loc>http://raoenhui.github.io/404/</loc>
+        <loc>https://raoenhui.github.io/404/</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/about/index.html</loc>
+        <loc>https://raoenhui.github.io/about/index.html</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/categories/index.html</loc>
+        <loc>https://raoenhui.github.io/categories/index.html</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/feed.xml</loc>
+        <loc>https://raoenhui.github.io/feed.xml</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/</loc>
+        <loc>https://raoenhui.github.io/</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/links.jsonp</loc>
+        <loc>https://raoenhui.github.io/links.jsonp</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/search.json</loc>
+        <loc>https://raoenhui.github.io/search.json</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/sitemap.xml</loc>
+        <loc>https://raoenhui.github.io/sitemap.xml</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/tags/index.html</loc>
+        <loc>https://raoenhui.github.io/tags/index.html</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/page2/</loc>
+        <loc>https://raoenhui.github.io/page2/</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/page3/</loc>
+        <loc>https://raoenhui.github.io/page3/</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/page4/</loc>
+        <loc>https://raoenhui.github.io/page4/</loc>
     </url>
     
 
     
     <url>
-        <loc>http://raoenhui.github.io/es6/2015/08/30/es6-one/</loc>
+        <loc>https://raoenhui.github.io/es6/2015/08/30/es6-one/</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/es6/2015/08/28/es6-featrue/</loc>
+        <loc>https://raoenhui.github.io/es6/2015/08/28/es6-featrue/</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/analytics/2015/05/10/sentiment-analysis-with-R/</loc>
+        <loc>https://raoenhui.github.io/analytics/2015/05/10/sentiment-analysis-with-R/</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/linux/2015/04/01/alias-makes-life-easy/</loc>
+        <loc>https://raoenhui.github.io/linux/2015/04/01/alias-makes-life-easy/</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/linux/2014/12/31/working-with-git-patch/</loc>
+        <loc>https://raoenhui.github.io/linux/2014/12/31/working-with-git-patch/</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/android/2014/11/23/install-lollipop-on-nexus-4/</loc>
+        <loc>https://raoenhui.github.io/android/2014/11/23/install-lollipop-on-nexus-4/</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/linux/2014/09/14/bang-bang/</loc>
+        <loc>https://raoenhui.github.io/linux/2014/09/14/bang-bang/</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/javascript/2014/09/07/javascript-attache-with-events/</loc>
+        <loc>https://raoenhui.github.io/javascript/2014/09/07/javascript-attache-with-events/</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/testing/2014/08/30/Super-awesome-automation/</loc>
+        <loc>https://raoenhui.github.io/testing/2014/08/30/Super-awesome-automation/</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/nodejs/2014/08/17/N-for-Node.js/</loc>
+        <loc>https://raoenhui.github.io/nodejs/2014/08/17/N-for-Node.js/</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/python/2014/08/08/python-timezone-convertion/</loc>
+        <loc>https://raoenhui.github.io/python/2014/08/08/python-timezone-convertion/</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/python/2014/08/04/killer-mailer/</loc>
+        <loc>https://raoenhui.github.io/python/2014/08/04/killer-mailer/</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/linux/2014/01/19/functions-in-shell-script/</loc>
+        <loc>https://raoenhui.github.io/linux/2014/01/19/functions-in-shell-script/</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/database/2013/12/17/using-mysql-dump/</loc>
+        <loc>https://raoenhui.github.io/database/2013/12/17/using-mysql-dump/</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/database/2013/12/15/checking-mysql-database-size/</loc>
+        <loc>https://raoenhui.github.io/database/2013/12/15/checking-mysql-database-size/</loc>
     </url>
     
     <url>
-        <loc>http://raoenhui.github.io/java/2013/12/10/capturing-http-header-in-JAX-RS/</loc>
+        <loc>https://raoenhui.github.io/java/2013/12/10/capturing-http-header-in-JAX-RS/</loc>
     </url>
     
 </urlset>

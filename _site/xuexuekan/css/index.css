@@ -18,7 +18,7 @@
 #search .xueicon-message{position: absolute;top: 0.15rem;right: 0.15rem;font-size: 65px;}
  #sliderrt{
     position: fixed;   top: 0;   
-    left: -270px;   width: 270px;   height: 100%;   
+    left: -80%;   width: 80%;   height: 100%;   
     overflow-x: hidden;   
     background: #FFFFFF;   
     z-index: 1101;   font-size: 12px;

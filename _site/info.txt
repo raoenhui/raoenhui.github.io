@@ -1,3 +1,8 @@
+
 jekyll server  --watch
+
+jekyll build  --watch
+
+jekyll build --watch && jekyll serve --watch
 
 git push origin master
