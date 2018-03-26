@@ -122,7 +122,7 @@
 
 <p>This badass script in python  worked well for me, hope it will help you too ;)</p>
 
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/python</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/python</span>
 
 <span class="c"># Import smtplib for the actual sending function</span>
 <span class="kn">import</span> <span class="nn">smtplib</span>
@@ -132,42 +132,42 @@
 <span class="kn">from</span> <span class="nn">email.mime.text</span> <span class="kn">import</span> <span class="n">MIMEText</span>
 
 
-<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s">&#39;This is a demo script by Enhui Rao&#39;</span><span class="p">)</span>
-<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;-s&#39;</span><span class="p">,</span><span class="s">&#39;--subject&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&#39;Subject&#39;</span><span class="p">,</span><span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;-b&#39;</span><span class="p">,</span><span class="s">&#39;--body&#39;</span><span class="p">,</span><span class="n">help</span><span class="o">=</span><span class="s">&#39;Body&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;-t&#39;</span><span class="p">,</span><span class="s">&#39;--to&#39;</span><span class="p">,</span><span class="n">help</span><span class="o">=</span><span class="s">&#39;To&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;-f&#39;</span><span class="p">,</span><span class="s">&#39;--sender&#39;</span><span class="p">,</span><span class="n">help</span><span class="o">=</span><span class="s">&#39;From&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s">'This is a demo script by Enhui Rao'</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">'-s'</span><span class="p">,</span><span class="s">'--subject'</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">'Subject'</span><span class="p">,</span><span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">'-b'</span><span class="p">,</span><span class="s">'--body'</span><span class="p">,</span><span class="n">help</span><span class="o">=</span><span class="s">'Body'</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">'-t'</span><span class="p">,</span><span class="s">'--to'</span><span class="p">,</span><span class="n">help</span><span class="o">=</span><span class="s">'To'</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">'-f'</span><span class="p">,</span><span class="s">'--sender'</span><span class="p">,</span><span class="n">help</span><span class="o">=</span><span class="s">'From'</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
 
 <span class="n">msg</span> <span class="o">=</span> <span class="n">MIMEText</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
-<span class="c"># me == the sender&#39;s email address</span>
-<span class="c"># you == the recipient&#39;s email address</span>
-<span class="n">me</span><span class="o">=</span><span class="s">&quot;demo@any-domain-you-want.com&quot;</span>
+<span class="c"># me == the sender's email address</span>
+<span class="c"># you == the recipient's email address</span>
+<span class="n">me</span><span class="o">=</span><span class="s">"demo@any-domain-you-want.com"</span>
 <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">sender</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
         <span class="n">me</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">sender</span>
 <span class="n">you</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">to</span>
-<span class="n">msg</span><span class="p">[</span><span class="s">&#39;Subject&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">subject</span>
-<span class="n">msg</span><span class="p">[</span><span class="s">&#39;From&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">me</span>
-<span class="n">msg</span><span class="p">[</span><span class="s">&#39;To&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">you</span>
+<span class="n">msg</span><span class="p">[</span><span class="s">'Subject'</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">subject</span>
+<span class="n">msg</span><span class="p">[</span><span class="s">'From'</span><span class="p">]</span> <span class="o">=</span> <span class="n">me</span>
+<span class="n">msg</span><span class="p">[</span><span class="s">'To'</span><span class="p">]</span> <span class="o">=</span> <span class="n">you</span>
 
-<span class="c"># Send the message via our own SMTP server, but don&#39;t include the</span>
+<span class="c"># Send the message via our own SMTP server, but don't include the</span>
 <span class="c"># envelope header.</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="s">&#39;localhost&#39;</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="s">'localhost'</span><span class="p">)</span>
 <span class="n">s</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="n">me</span><span class="p">,</span> <span class="p">[</span><span class="n">you</span><span class="p">],</span> <span class="n">msg</span><span class="o">.</span><span class="n">as_string</span><span class="p">())</span>
-<span class="n">s</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span></code></pre></div>
+<span class="n">s</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span></code></pre></figure>
 
 <p>if you do adjust following things you can send attachment too.</p>
 
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">email.mime.image</span> <span class="kn">import</span> <span class="n">MIMEImage</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">email.mime.image</span> <span class="kn">import</span> <span class="n">MIMEImage</span>
 <span class="kn">from</span> <span class="nn">email.mime.multipart</span> <span class="kn">import</span> <span class="n">MIMEMultipart</span>
 
-<span class="nb">file</span><span class="o">=</span><span class="s">&#39;/home/amey-xps/logs/server.out.png&#39;</span>
-<span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="s">&#39;rb&#39;</span><span class="p">)</span>
+<span class="nb">file</span><span class="o">=</span><span class="s">'/home/amey-xps/logs/server.out.png'</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">)</span>
 <span class="n">img</span> <span class="o">=</span> <span class="n">MIMEImage</span><span class="p">(</span><span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 <span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="n">msg</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
 
-<span class="c"># I used image here , you can use diffrent file types with MIMEText, MIMEImage, MIMEAudio, MIMEBase</span></code></pre></div>
+<span class="c"># I used image here , you can use diffrent file types with MIMEText, MIMEImage, MIMEAudio, MIMEBase</span></code></pre></figure>
 
 <p>Happy coding ….. :)</p>
 
@@ -296,7 +296,7 @@
 
     <footer class="notepad-site-footer">
     <div class="copyright">
-        <section>All content copyright <a href="https://raoenhui.github.io/about">Enhui Rao</a> &copy; 2016 &bull; All rights reserved.</section>
+        <section>All content copyright <a href="https://raoenhui.github.io/about">Enhui Rao</a> &copy; 2018 &bull; All rights reserved.</section>
 	<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>
           <a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>
     </div>

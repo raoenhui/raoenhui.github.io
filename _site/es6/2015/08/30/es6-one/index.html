@@ -124,17 +124,17 @@
 <p>let是ES6中新增关键字。
 它的作用类似于var，用来声明变量，但是所声明的变量，只在let命令所在的代码块内有效。</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/*E1*/</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/*E1*/</span>
 <span class="k">if</span><span class="p">(</span><span class="kc">true</span><span class="p">){</span>
     <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">a</span><span class="o">+</span><span class="s1">&#39;&lt;br/&gt;&#39;</span><span class="p">);</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">b</span><span class="o">+</span><span class="s1">&#39;&lt;br/&gt;&#39;</span><span class="p">);</span> <span class="c1">// Uncaught ReferenceError: b is not defined</span></code></pre></div>
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">a</span><span class="o">+</span><span class="s1">'&lt;br/&gt;'</span><span class="p">);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">b</span><span class="o">+</span><span class="s1">'&lt;br/&gt;'</span><span class="p">);</span> <span class="c1">// Uncaught ReferenceError: b is not defined</span></code></pre></figure>
 
 <p>Example2</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/*E2*/</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/*E2*/</span>
 <span class="kd">function</span> <span class="nx">f1</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
   <span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
@@ -145,22 +145,22 @@
   <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span> <span class="c1">// 5</span>
   <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 20</span>
 <span class="p">}</span>
-<span class="nx">f1</span><span class="p">();</span></code></pre></div>
+<span class="nx">f1</span><span class="p">();</span></code></pre></figure>
 
 <blockquote>
   <p>Q1：用let声明a变量默认为5，在if判断中let声明a为10，看a输出结果。</p>
 </blockquote>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/*Exercises1*/</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/*Exercises1*/</span>
 <span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span><span class="c1">//5</span></code></pre></div>
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span><span class="c1">//5</span></code></pre></figure>
 
 <p>for循环的计数器，就很合适使用let命令。</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/*E3*/</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/*E3*/</span>
 <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[];</span>
 <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
@@ -175,32 +175,32 @@
     <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
   <span class="p">};</span>
 <span class="p">}</span>
-<span class="nx">a</span><span class="p">[</span><span class="mi">6</span><span class="p">]();</span></code></pre></div>
+<span class="nx">a</span><span class="p">[</span><span class="mi">6</span><span class="p">]();</span> </code></pre></figure>
 
 <h3 id="const">const</h3>
 <p>const 声明的是常量，一旦声明，值将是不可变的。</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">PI</span> <span class="o">=</span> <span class="mf">3.1415</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">PI</span> <span class="o">=</span> <span class="mf">3.1415</span><span class="p">;</span>
 <span class="nx">PI</span> <span class="c1">// 3.1415</span>
  
 <span class="nx">PI</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
 <span class="nx">PI</span> <span class="c1">// 3.1415</span>
  
-<span class="kr">const</span> <span class="nx">PI</span> <span class="o">=</span> <span class="mf">3.1</span><span class="p">;</span>
-<span class="nx">PI</span> <span class="c1">// 3.1415</span></code></pre></div>
+<span class="kd">const</span> <span class="nx">PI</span> <span class="o">=</span> <span class="mf">3.1</span><span class="p">;</span>
+<span class="nx">PI</span> <span class="c1">// 3.1415</span></code></pre></figure>
 
 <p>const 也具有块级作用域</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/*E4*/</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/*E4*/</span>
 <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">max</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">max</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">max</span><span class="p">);</span>  <span class="c1">//Uncaught ReferenceError: max is not defined</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">max</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">max</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
   <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">max</span><span class="p">);</span>  <span class="c1">//5</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <ul>
   <li>const 不可重复声明</li>
@@ -208,114 +208,120 @@
 
 <p>/* E5*/</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">&quot;Hello!&quot;</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">"Hello!"</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">age</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
  
-<span class="kr">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">&quot;Goodbye!&quot;</span><span class="p">;</span>
-<span class="kr">const</span> <span class="nx">age</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span><span class="c1">//cli:Duplicate declaration &quot;age&quot;</span></code></pre></div>
+<span class="kd">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">"Goodbye!"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">age</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span><span class="c1">//cli:Duplicate declaration "age"</span></code></pre></figure>
 
 <p>const 指令指向变量所在的地址，所以对该变量进行属性设置是可行的（未改变变量地址），如果想完全不可变化（包括属性），那么可以使用冻结</p>
 
 <p>/* E6*/</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">C1</span> <span class="o">=</span> <span class="p">{};</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">C1</span> <span class="o">=</span> <span class="p">{};</span>
 <span class="nx">C1</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">C1</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 1 </span>
 <span class="nx">C1</span> <span class="o">=</span> <span class="p">{};</span>  <span class="c1">// cli: C1 = {};  // 报错  重新赋值，地址改变</span>
 
-<span class="kr">const</span> <span class="nx">C2</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">freeze</span><span class="p">({});</span> 
+<span class="kd">const</span> <span class="nx">C2</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">freeze</span><span class="p">({});</span> 
 <span class="nx">C2</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> 
-<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">C2</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span><span class="c1">//Uncaught TypeError: Can&#39;t add property a, object is not extensible</span></code></pre></div>
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">C2</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span><span class="c1">//Uncaught TypeError: Can't add property a, object is not extensible</span></code></pre></figure>
 
 <blockquote>
   <p>Q2:在if (true) { 声明一个const变量a，并为赋值为5， }在块级作用域中和外面，分别打印变量a看结果。</p>
 </blockquote>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/*Exercises2*/</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/*Exercises2*/</span>
 <span class="k">if</span><span class="p">(</span><span class="kc">true</span><span class="p">){</span>
-  <span class="kr">const</span> <span class="nx">a</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span>
-  <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;a1:&#39;</span><span class="o">+</span><span class="nx">a</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">a</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">'a1:'</span><span class="o">+</span><span class="nx">a</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;a2:&#39;</span><span class="o">+</span><span class="nx">a</span><span class="p">);</span><span class="c1">//Uncaught ReferenceError: a is not defined</span></code></pre></div>
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">'a2:'</span><span class="o">+</span><span class="nx">a</span><span class="p">);</span><span class="c1">//Uncaught ReferenceError: a is not defined</span></code></pre></figure>
 
 <p>是否包含字符串三种新方法
-传统上，JavaScript只有 indexOf 方法，可以用来确定一个字符串是否包含在另一个字符串中。ES6又提供了三种新方法。
-* includes()：返回布尔值，表示是否找到了参数字符串。
-* startsWith()：返回布尔值，表示参数字符串是否在源字符串的头部。
-* endsWith()：返回布尔值，表示参数字符串是否在源字符串的尾部。</p>
+传统上，JavaScript只有 indexOf 方法，可以用来确定一个字符串是否包含在另一个字符串中。ES6又提供了三种新方法。</p>
+<ul>
+  <li>includes()：返回布尔值，表示是否找到了参数字符串。</li>
+  <li>startsWith()：返回布尔值，表示参数字符串是否在源字符串的头部。</li>
+  <li>endsWith()：返回布尔值，表示参数字符串是否在源字符串的尾部。</li>
+</ul>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">&quot;Hello world!&quot;</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">"Hello world!"</span><span class="p">;</span>
  
-<span class="nx">str</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span> <span class="c1">// true</span>
-<span class="nx">str</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s2">&quot;!&quot;</span><span class="p">)</span> <span class="c1">// true</span>
-<span class="nx">str</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&quot;o&quot;</span><span class="p">)</span> <span class="c1">// true</span></code></pre></div>
+<span class="nx">str</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">"Hello"</span><span class="p">)</span> <span class="c1">// true</span>
+<span class="nx">str</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s2">"!"</span><span class="p">)</span> <span class="c1">// true</span>
+<span class="nx">str</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">"o"</span><span class="p">)</span> <span class="c1">// true</span></code></pre></figure>
 
-<p>这三个方法都支持第二个参数，表示开始搜索的位置。
-* 上面代码表示，使用第二个参数n时，endsWith 的行为与其他两个方法有所不同。它针对前n个字符，而其他两个方法针对从第n个位置直到字符串结束。</p>
+<p>这三个方法都支持第二个参数，表示开始搜索的位置。</p>
+<ul>
+  <li>上面代码表示，使用第二个参数n时，endsWith 的行为与其他两个方法有所不同。它针对前n个字符，而其他两个方法针对从第n个位置直到字符串结束。</li>
+</ul>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">&quot;Hello world!&quot;</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">"Hello world!"</span><span class="p">;</span>
  
-<span class="nx">str</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">&quot;world&quot;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="c1">// true</span>
-<span class="nx">str</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1">// true</span>
-<span class="nx">str</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="c1">// false</span></code></pre></div>
+<span class="nx">str</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">"world"</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="c1">// true</span>
+<span class="nx">str</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s2">"Hello"</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1">// true</span>
+<span class="nx">str</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">"Hello"</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="c1">// false</span></code></pre></figure>
 
 <p>repeat()原字符串重复</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">&quot;x&quot;</span><span class="p">;</span>
-<span class="nx">str</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1">// &quot;xxx&quot;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">"x"</span><span class="p">;</span>
+<span class="nx">str</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1">// "xxx"</span>
  
-<span class="kd">var</span> <span class="nx">str1</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="p">;</span>
-<span class="nx">str1</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1">// &quot;hellohello&quot;</span></code></pre></div>
+<span class="kd">var</span> <span class="nx">str1</span> <span class="o">=</span> <span class="s2">"hello"</span><span class="p">;</span>
+<span class="nx">str1</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1">// "hellohello"</span></code></pre></figure>
 
 <p>标签模板
 模板字符串前面有一个标识名tag，它是一个函数。整个表达式的返回值，就是tag函数处理模板字符串后的返回值。</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
  
-<span class="nx">tag</span><span class="err">`</span><span class="nx">Hello</span> <span class="nx">$</span><span class="p">{</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span> <span class="p">}</span> <span class="nx">world</span> <span class="nx">$</span><span class="p">{</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span> <span class="p">}</span><span class="err">`</span><span class="p">;</span></code></pre></div>
+<span class="nx">tag</span><span class="s2">`Hello </span><span class="p">${</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span> <span class="p">}</span><span class="s2"> world </span><span class="p">${</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span> <span class="p">}</span><span class="s2">`</span><span class="p">;</span></code></pre></figure>
 
-<p>tag函数所有参数的实际值如下。
-- 第一个参数：[‘Hello ‘, ‘ world ‘]
-- 第二个参数: 15
-- 第三个参数：50</p>
+<p>tag函数所有参数的实际值如下。</p>
+<ul>
+  <li>第一个参数：[‘Hello ‘, ‘ world ‘]</li>
+  <li>第二个参数: 15</li>
+  <li>第三个参数：50</li>
+</ul>
 
 <p>也就是说，tag函数实际上以下面的形式调用。</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">tag</span><span class="p">([</span><span class="s1">&#39;Hello &#39;</span><span class="p">,</span> <span class="s1">&#39; world &#39;</span><span class="p">],</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">tag</span><span class="p">([</span><span class="s1">'Hello '</span><span class="p">,</span> <span class="s1">' world '</span><span class="p">],</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span></code></pre></figure>
 
 <p>tag用法</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/*E7*/</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/*E7*/</span>
 <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
  
 <span class="kd">function</span> <span class="nx">tag</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">v1</span><span class="p">,</span> <span class="nx">v2</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;&lt;br/&gt;&#39;</span><span class="p">);</span>
-  <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;&lt;br/&gt;&#39;</span><span class="p">);</span>
-  <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">v1</span><span class="o">+</span><span class="s1">&#39;&lt;br/&gt;&#39;</span><span class="p">);</span>
-  <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">v2</span><span class="o">+</span><span class="s1">&#39;&lt;br/&gt;&#39;</span><span class="p">);</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s1">'&lt;br/&gt;'</span><span class="p">);</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="s1">'&lt;br/&gt;'</span><span class="p">);</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">v1</span><span class="o">+</span><span class="s1">'&lt;br/&gt;'</span><span class="p">);</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">v2</span><span class="o">+</span><span class="s1">'&lt;br/&gt;'</span><span class="p">);</span>
  
-  <span class="k">return</span> <span class="s2">&quot;OK&quot;</span><span class="p">;</span>
+  <span class="k">return</span> <span class="s2">"OK"</span><span class="p">;</span>
 <span class="p">}</span>
  
-<span class="nx">tag</span><span class="err">`</span><span class="nx">Hello</span> <span class="nx">$</span><span class="p">{</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span> <span class="p">}</span> <span class="nx">world</span> <span class="nx">$</span><span class="p">{</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">}</span><span class="err">`</span><span class="p">;</span>
-<span class="c1">// &quot;Hello &quot;</span>
-<span class="c1">// &quot; world &quot;</span>
+<span class="nx">tag</span><span class="s2">`Hello </span><span class="p">${</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span> <span class="p">}</span><span class="s2"> world </span><span class="p">${</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+<span class="c1">// "Hello "</span>
+<span class="c1">// " world "</span>
 <span class="c1">// 15</span>
 <span class="c1">// 50</span>
-<span class="c1">// &quot;OK&quot;</span></code></pre></div>
+<span class="c1">// "OK"</span></code></pre></figure>
 
 <p>模板字符串可以是原始的
 ES6还为原生的String对象，提供了一个raw方法。
 若使用String.raw 作为模板字符串的前缀，则模板字符串可以是原始(raw)的。反斜线也不再是特殊字符，\n 也不会被解释成换行符：</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/*E8*/</span>
-<span class="kd">var</span> <span class="nx">raw</span> <span class="o">=</span><span class="nb">String</span><span class="p">(</span><span class="s1">&#39;Not a newline: \n&#39;</span><span class="p">);</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">raw</span> <span class="o">===</span> <span class="s1">&#39;Not a newline: \\n&#39;</span><span class="p">);</span><span class="c1">// false</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/*E8*/</span>
+<span class="kd">var</span> <span class="nx">raw</span> <span class="o">=</span><span class="nb">String</span><span class="p">(</span><span class="s1">'Not a newline: </span><span class="err">\</span><span class="s1">n'</span><span class="p">);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">raw</span> <span class="o">===</span> <span class="s1">'Not a newline: </span><span class="err">\\</span><span class="s1">n'</span><span class="p">);</span><span class="c1">// false</span>
 
- <span class="kd">let</span> <span class="nx">raw</span> <span class="o">=</span> <span class="nb">String</span><span class="p">.</span><span class="nx">raw</span><span class="err">`</span><span class="nx">Not</span> <span class="nx">a</span> <span class="nx">newline</span><span class="o">:</span> <span class="err">\</span><span class="nx">n</span><span class="err">`</span><span class="p">;</span>
- <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">raw</span> <span class="o">===</span> <span class="s1">&#39;Not a newline: \\n&#39;</span><span class="p">);</span> <span class="c1">// true</span></code></pre></div>
+ <span class="kd">let</span> <span class="nx">raw</span> <span class="o">=</span> <span class="nb">String</span><span class="p">.</span><span class="nx">raw</span><span class="s2">`Not a newline: \n`</span><span class="p">;</span>
+ <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">raw</span> <span class="o">===</span> <span class="s1">'Not a newline: </span><span class="err">\\</span><span class="s1">n'</span><span class="p">);</span> <span class="c1">// true</span></code></pre></figure>
 
 <p>有兴趣的小伙伴们还可以看下下面文档:</p>
 
@@ -455,7 +461,7 @@ ES6还为原生的String对象，提供了一个raw方法。
 
     <footer class="notepad-site-footer">
     <div class="copyright">
-        <section>All content copyright <a href="https://raoenhui.github.io/about">Enhui Rao</a> &copy; 2016 &bull; All rights reserved.</section>
+        <section>All content copyright <a href="https://raoenhui.github.io/about">Enhui Rao</a> &copy; 2018 &bull; All rights reserved.</section>
 	<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>
           <a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>
     </div>

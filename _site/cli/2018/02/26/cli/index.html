@@ -2,23 +2,23 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>CHECKING MYSQL DATABASE SIZE &vert; 饶恩慧的博客</title>
+<title>创建脚手架 CLI 入门教程 &vert; 饶恩慧的博客</title>
 <meta name="description" content="一枚前端攻城狮!">
-<meta name="keywords" content="database, mysql">
+<meta name="keywords" content="Cli,">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raoenhui.github.io/images/logo.png">
-<meta name="twitter:title" content="Checking MySQL Database Size">
+<meta name="twitter:title" content="创建脚手架 cli 入门教程">
 <meta name="twitter:description" content="一枚前端攻城狮!">
 <meta name="twitter:creator" content="@raoenhui">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Checking MySQL Database Size">
+<meta property="og:title" content="创建脚手架 cli 入门教程">
 <meta property="og:description" content="一枚前端攻城狮!">
-<meta property="og:url" content="https://raoenhui.github.io/database/2013/12/15/checking-mysql-database-size/">
+<meta property="og:url" content="https://raoenhui.github.io/cli/2018/02/26/cli/">
 <meta property="og:site_name" content="饶恩慧的博客">
 <meta property="og:image" content="https://raoenhui.github.io/images/">
 
@@ -26,7 +26,7 @@
 
 
 
-<link rel="canonical" href="https://raoenhui.github.io/database/2013/12/15/checking-mysql-database-size/">
+<link rel="canonical" href="https://raoenhui.github.io/cli/2018/02/26/cli/">
 <link href="https://raoenhui.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="饶恩慧的博客 Feed">
 <link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
 
@@ -104,56 +104,82 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h1>Checking MySQL Database Size</h1>
-                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#database" data-toggle="tooltip" title="Posts tagged with database" rel="tag">database</a>&nbsp;&comma;&nbsp;<a href="https://raoenhui.github.io/tags/index.html#mysql" data-toggle="tooltip" title="Posts tagged with mysql" rel="tag">mysql</a> <strong><time datetime="2013-12-15T22:00:00+05:30">15 Dec 2013</time></strong></p>
+                            <h1>创建脚手架 cli 入门教程</h1>
+                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#Cli," data-toggle="tooltip" title="Posts tagged with Cli," rel="tag">Cli,</a> <strong><time datetime="2018-02-26T20:00:00+05:30">26 Feb 2018</time></strong></p>
                         </div>
                     </div>
                 </div>
             </header>
 
         <article class="notepad-post-content post tag-simple">
-            <div><p>Hi all , in this post i am going to show you how to check current mysql database size, below queries are tested on Mysql 5.5.8</p>
+            <div><h2 id="第一步-创建仓库">第一步 创建仓库</h2>
 
-<p>Just fire below queries on your mysql db you will have your results ready on terminal.</p>
+<p>创建一个git仓库，可以在GitHub创建个git仓库，如<a href="https://github.com/raoenhui/ice-first-cli">https://github.com/raoenhui/ice-first-cli</a></p>
 
-<p>For calculating db size 2 things should be considered</p>
+<h2 id="第二步-编辑package">第二步 编辑package</h2>
 
-<ul>
-  <li>Data length</li>
-  <li>Index length</li>
-</ul>
+<p>npm init 或直接创建package.json,将git仓库地址加入</p>
 
-<p>###Checking for full database size on server :-</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ice-first-cli"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.8"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"npm -v"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"bin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"ice-first-cli"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./bin/commit.js"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"repository"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"git"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"git+https://github.com/raoenhui/ice-first-cli.git"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"keywords"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"cli"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"devDependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"shelljs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^0.8.1"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"> 
-<span class="k">SELECT</span> <span class="n">table_schema</span> <span class="nv">"Database Name"</span><span class="p">,</span> <span class="k">SUM</span><span class="p">(</span> <span class="n">data_length</span> <span class="o">+</span> <span class="n">index_length</span><span class="p">)</span>
- <span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span><span class="mi">1024</span> <span class="nv">"Size in GB"</span> <span class="k">FROM</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">TABLES</span>
- <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">table_schema</span><span class="p">;</span></code></pre></figure>
+<h2 id="第三步-创建bin文件">第三步 创建bin文件</h2>
 
-<p>###Checking in details with each table size in single schema :-</p>
+<p>创建bin文件夹，在bin中再创建commit.js文件。</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#! /usr/bin/env node
+</span><span class="kd">var</span> <span class="nx">shell</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"shelljs"</span><span class="p">);</span>
+<span class="nx">shell</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="s2">"echo shell.exec works1"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'my first cli'</span><span class="p">);</span>     
+</code></pre></div></div>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="k">TABLE_NAME</span><span class="p">,</span> <span class="n">table_rows</span><span class="p">,</span> <span class="n">data_length</span><span class="p">,</span> <span class="n">index_length</span><span class="p">,</span> 
-<span class="n">round</span><span class="p">(((</span><span class="n">data_length</span> <span class="o">+</span> <span class="n">index_length</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span> <span class="nv">"Size in GB"</span>
-<span class="k">FROM</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">TABLES</span> <span class="k">WHERE</span> <span class="n">table_schema</span> <span class="o">=</span> <span class="nv">"your_schema_name"</span><span class="p">;</span></code></pre></figure>
+<h2 id="第四步-测试cli">第四步 测试cli</h2>
 
-<p><em>For checking the database size in MB just remove one ‘/1024’ from quries.</em></p>
+<p>控制台输入</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo npm link
+ice-first-cli
+npm publish
+</code></pre></div></div>
+<p><img src="https://raoenhui.github.io/images/150930/console.png" alt="console" /></p>
 
-<p>Happy coding.. :)</p>
+<h2 id="第五步-完成">第五步 完成</h2>
+
+<p>可从npm官网中找到，<a href="https://www.npmjs.com/package/ice-first-cli">https://www.npmjs.com/package/ice-first-cli</a> .</p>
+
+<p>Happy coding .. :)</p>
 
             </div>
         </article>
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Checking MySQL Database Size&quot;%20https://raoenhui.github.io/database/2013/12/15/checking-mysql-database-size/%20via%20&#64;raoenhui"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;创建脚手架 cli 入门教程&quot;%20https://raoenhui.github.io/cli/2018/02/26/cli/%20via%20&#64;raoenhui"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/database/2013/12/15/checking-mysql-database-size/"
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/cli/2018/02/26/cli/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/database/2013/12/15/checking-mysql-database-size/"
+                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/cli/2018/02/26/cli/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
                     <i class="fa fa-google-plus"></i>
                 </a>
@@ -237,7 +263,7 @@
 -->
 
  
-<div class="fb-comments" data-href="https://raoenhui.github.io/database/2013/12/15/checking-mysql-database-size/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+<div class="fb-comments" data-href="https://raoenhui.github.io/cli/2018/02/26/cli/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
 
 <!--
 <div id="fb-root"></div>

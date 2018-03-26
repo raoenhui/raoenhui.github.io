@@ -78,6 +78,11 @@ callback([
   {
     "text": "ES6从入门到精通之常量与变量(一)",
     "href": "https://raoenhui.github.io/es6/2015/08/30/es6-one/"
+  } ,
+
+  {
+    "text": "创建脚手架 cli 入门教程",
+    "href": "https://raoenhui.github.io/cli/2018/02/26/cli/"
   } 
 
 ])

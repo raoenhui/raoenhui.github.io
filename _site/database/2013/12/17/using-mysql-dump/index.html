@@ -120,31 +120,31 @@
   <li>To take a backup of data from mysqlserver itsself</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysqldump</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span><span class="s1">&#39;my_password&#39;</span> <span class="n">my_db_name</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">my_dump_file</span><span class="p">.</span><span class="k">sql</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysqldump</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span><span class="s1">'my_password'</span> <span class="n">my_db_name</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">my_dump_file</span><span class="p">.</span><span class="k">sql</span></code></pre></figure>
 
 <ul>
   <li>To take dump from remote server where i have access.</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysqldump</span> <span class="o">-</span><span class="n">h</span> <span class="n">xxxxx</span><span class="p">.</span><span class="n">xxx</span><span class="p">.</span><span class="n">us</span><span class="o">-</span><span class="n">east</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="n">rds</span><span class="p">.</span><span class="n">amazonaws</span><span class="p">.</span><span class="n">com</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span><span class="s1">&#39;my_aws_password&#39;</span> <span class="n">my_remot_db_name</span>   <span class="o">&gt;</span> <span class="o">/</span><span class="n">vol1</span><span class="o">/</span><span class="n">my_dump_file</span><span class="p">.</span><span class="k">sql</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysqldump</span> <span class="o">-</span><span class="n">h</span> <span class="n">xxxxx</span><span class="p">.</span><span class="n">xxx</span><span class="p">.</span><span class="n">us</span><span class="o">-</span><span class="n">east</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="n">rds</span><span class="p">.</span><span class="n">amazonaws</span><span class="p">.</span><span class="n">com</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span><span class="s1">'my_aws_password'</span> <span class="n">my_remot_db_name</span>   <span class="o">&gt;</span> <span class="o">/</span><span class="n">vol1</span><span class="o">/</span><span class="n">my_dump_file</span><span class="p">.</span><span class="k">sql</span></code></pre></figure>
 
 <ul>
   <li>To take dump from remote server but with only selected tables  where i have access.</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysqldump</span> <span class="o">-</span><span class="n">h</span> <span class="n">xxxxx</span><span class="p">.</span><span class="n">xxx</span><span class="p">.</span><span class="n">us</span><span class="o">-</span><span class="n">east</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="n">rds</span><span class="p">.</span><span class="n">amazonaws</span><span class="p">.</span><span class="n">com</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span><span class="s1">&#39;my_aws_password&#39;</span> <span class="n">my_remot_db_name</span>  <span class="n">table3</span> <span class="n">table2</span> <span class="n">table3</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">vol1</span><span class="o">/</span><span class="n">my_dump_file</span><span class="p">.</span><span class="k">sql</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysqldump</span> <span class="o">-</span><span class="n">h</span> <span class="n">xxxxx</span><span class="p">.</span><span class="n">xxx</span><span class="p">.</span><span class="n">us</span><span class="o">-</span><span class="n">east</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="n">rds</span><span class="p">.</span><span class="n">amazonaws</span><span class="p">.</span><span class="n">com</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span><span class="s1">'my_aws_password'</span> <span class="n">my_remot_db_name</span>  <span class="n">table3</span> <span class="n">table2</span> <span class="n">table3</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">vol1</span><span class="o">/</span><span class="n">my_dump_file</span><span class="p">.</span><span class="k">sql</span></code></pre></figure>
 
 <ul>
   <li>Resorting back dump  to local  mysqlserver</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysql</span>  <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span><span class="s1">&#39;my_aws_password&#39;</span> <span class="n">my_remot_db_name</span>   <span class="o">&lt;</span> <span class="o">/</span><span class="n">vol1</span><span class="o">/</span><span class="n">my_dump_file</span><span class="p">.</span><span class="k">sql</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysql</span>  <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span><span class="s1">'my_aws_password'</span> <span class="n">my_remot_db_name</span>   <span class="o">&lt;</span> <span class="o">/</span><span class="n">vol1</span><span class="o">/</span><span class="n">my_dump_file</span><span class="p">.</span><span class="k">sql</span></code></pre></figure>
 
 <ul>
   <li>Resorting back dump  to remote  mysqlserver</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysql</span>  <span class="o">-</span><span class="n">h</span> <span class="n">xxxxx</span><span class="p">.</span><span class="n">xxx</span><span class="p">.</span><span class="n">us</span><span class="o">-</span><span class="n">east</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="n">rds</span><span class="p">.</span><span class="n">amazonaws</span><span class="p">.</span><span class="n">com</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span><span class="s1">&#39;my_aws_password&#39;</span> <span class="n">my_remot_db_name</span>   <span class="o">&lt;</span> <span class="o">/</span><span class="n">vol1</span><span class="o">/</span><span class="n">my_dump_file</span><span class="p">.</span><span class="k">sql</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysql</span>  <span class="o">-</span><span class="n">h</span> <span class="n">xxxxx</span><span class="p">.</span><span class="n">xxx</span><span class="p">.</span><span class="n">us</span><span class="o">-</span><span class="n">east</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="n">rds</span><span class="p">.</span><span class="n">amazonaws</span><span class="p">.</span><span class="n">com</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span><span class="s1">'my_aws_password'</span> <span class="n">my_remot_db_name</span>   <span class="o">&lt;</span> <span class="o">/</span><span class="n">vol1</span><span class="o">/</span><span class="n">my_dump_file</span><span class="p">.</span><span class="k">sql</span></code></pre></figure>
 
 <p>Happy Coding …. :)</p>
 
@@ -273,7 +273,7 @@
 
     <footer class="notepad-site-footer">
     <div class="copyright">
-        <section>All content copyright <a href="https://raoenhui.github.io/about">Enhui Rao</a> &copy; 2016 &bull; All rights reserved.</section>
+        <section>All content copyright <a href="https://raoenhui.github.io/about">Enhui Rao</a> &copy; 2018 &bull; All rights reserved.</section>
 	<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>
           <a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>
     </div>

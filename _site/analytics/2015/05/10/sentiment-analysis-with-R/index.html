@@ -127,80 +127,80 @@
 
 <p>Full project can be found here  <a href="https://github.com/ameyjadiye/whatsapp-analyst">https://github.com/ameyjadiye/whatsapp-analyst</a></p>
 
-<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#!/usr/bin/r</span>
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#!/usr/bin/r</span><span class="w">
 
-<span class="c1"># Load the necessary packages</span>
-<span class="kn">library</span><span class="p">(</span>wordcloud<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>RColorBrewer<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>plyr<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
-<span class="kn">library</span><span class="p">(</span>sentiment<span class="p">)</span>
-
-
-whatsapp_chat_txt <span class="o">&lt;-</span> read.csv<span class="p">(</span><span class="s">&quot;__data_for_R&quot;</span><span class="p">,</span>header<span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span><span class="o">$</span>V3
-
-<span class="c1">#cat(whatsapp_chat_txt)</span>
-
-whatsapp_chat_txt <span class="o">=</span> <span class="kp">gsub</span><span class="p">(</span><span class="s">&quot;@\\w+&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> whatsapp_chat_txt<span class="p">)</span>
-whatsapp_chat_txt <span class="o">=</span> <span class="kp">gsub</span><span class="p">(</span><span class="s">&quot;[[:punct:]]&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> whatsapp_chat_txt<span class="p">)</span>
-whatsapp_chat_txt <span class="o">=</span> <span class="kp">gsub</span><span class="p">(</span><span class="s">&quot;[[:digit:]]&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> whatsapp_chat_txt<span class="p">)</span>
-whatsapp_chat_txt <span class="o">=</span> <span class="kp">gsub</span><span class="p">(</span><span class="s">&quot;http\\w+&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> whatsapp_chat_txt<span class="p">)</span>
-whatsapp_chat_txt <span class="o">=</span> <span class="kp">gsub</span><span class="p">(</span><span class="s">&quot;[ \t]{2,}&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> whatsapp_chat_txt<span class="p">)</span>
-whatsapp_chat_txt <span class="o">=</span> <span class="kp">gsub</span><span class="p">(</span><span class="s">&quot;^\\s+|\\s+$&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> whatsapp_chat_txt<span class="p">)</span>
+</span><span class="c1"># Load the necessary packages</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">wordcloud</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">RColorBrewer</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">plyr</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">sentiment</span><span class="p">)</span><span class="w">
 
 
-catch.error <span class="o">=</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">)</span>
-<span class="p">{</span>
-y <span class="o">=</span> <span class="kc">NA</span>
-catch_error <span class="o">=</span> <span class="kp">tryCatch</span><span class="p">(</span><span class="kp">tolower</span><span class="p">(</span>x<span class="p">),</span> error<span class="o">=</span><span class="kr">function</span><span class="p">(</span>e<span class="p">)</span> e<span class="p">)</span>
-<span class="kr">if</span> <span class="p">(</span><span class="o">!</span><span class="kp">inherits</span><span class="p">(</span>catch_error<span class="p">,</span> <span class="s">&quot;error&quot;</span><span class="p">))</span>
-y <span class="o">=</span> <span class="kp">tolower</span><span class="p">(</span>x<span class="p">)</span>
-<span class="kr">return</span><span class="p">(</span>y<span class="p">)</span>
-<span class="p">}</span>
-whatsapp_chat_txt <span class="o">=</span> <span class="kp">sapply</span><span class="p">(</span>whatsapp_chat_txt<span class="p">,</span> catch.error<span class="p">)</span>
+</span><span class="n">whatsapp_chat_txt</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="s2">"__data_for_R"</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span><span class="o">$</span><span class="n">V</span><span class="m">3</span><span class="w">
 
-whatsapp_chat_txt <span class="o">=</span> whatsapp_chat_txt<span class="p">[</span><span class="o">!</span><span class="kp">is.na</span><span class="p">(</span>whatsapp_chat_txt<span class="p">)]</span>
+</span><span class="c1">#cat(whatsapp_chat_txt)</span><span class="w">
 
-<span class="kp">names</span><span class="p">(</span>whatsapp_chat_txt<span class="p">)</span> <span class="o">=</span> <span class="kc">NULL</span>
+</span><span class="n">whatsapp_chat_txt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gsub</span><span class="p">(</span><span class="s2">"@\\w+"</span><span class="p">,</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">whatsapp_chat_txt</span><span class="p">)</span><span class="w">
+</span><span class="n">whatsapp_chat_txt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gsub</span><span class="p">(</span><span class="s2">"[[:punct:]]"</span><span class="p">,</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">whatsapp_chat_txt</span><span class="p">)</span><span class="w">
+</span><span class="n">whatsapp_chat_txt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gsub</span><span class="p">(</span><span class="s2">"[[:digit:]]"</span><span class="p">,</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">whatsapp_chat_txt</span><span class="p">)</span><span class="w">
+</span><span class="n">whatsapp_chat_txt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gsub</span><span class="p">(</span><span class="s2">"http\\w+"</span><span class="p">,</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">whatsapp_chat_txt</span><span class="p">)</span><span class="w">
+</span><span class="n">whatsapp_chat_txt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gsub</span><span class="p">(</span><span class="s2">"[ \t]{2,}"</span><span class="p">,</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">whatsapp_chat_txt</span><span class="p">)</span><span class="w">
+</span><span class="n">whatsapp_chat_txt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gsub</span><span class="p">(</span><span class="s2">"^\\s+|\\s+$"</span><span class="p">,</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">whatsapp_chat_txt</span><span class="p">)</span><span class="w">
 
-whatsapp_chat_class_emo <span class="o">=</span> classify_emotion<span class="p">(</span>whatsapp_chat_txt<span class="p">,</span> algorithm<span class="o">=</span><span class="s">&quot;bayes&quot;</span><span class="p">,</span> prior<span class="o">=</span><span class="m">1.0</span><span class="p">)</span>
 
-emotion <span class="o">=</span> whatsapp_chat_class_emo<span class="p">[,</span><span class="m">7</span><span class="p">]</span>
+</span><span class="n">catch.error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">
+</span><span class="p">{</span><span class="w">
+</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NA</span><span class="w">
+</span><span class="n">catch_error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tryCatch</span><span class="p">(</span><span class="n">tolower</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="n">error</span><span class="o">=</span><span class="k">function</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w">
+</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">inherits</span><span class="p">(</span><span class="n">catch_error</span><span class="p">,</span><span class="w"> </span><span class="s2">"error"</span><span class="p">))</span><span class="w">
+</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tolower</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">
+</span><span class="nf">return</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="n">whatsapp_chat_txt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sapply</span><span class="p">(</span><span class="n">whatsapp_chat_txt</span><span class="p">,</span><span class="w"> </span><span class="n">catch.error</span><span class="p">)</span><span class="w">
 
-emotion<span class="p">[</span><span class="kp">is.na</span><span class="p">(</span>emotion<span class="p">)]</span> <span class="o">=</span> <span class="s">&quot;unknown&quot;</span>
+</span><span class="n">whatsapp_chat_txt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">whatsapp_chat_txt</span><span class="p">[</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">whatsapp_chat_txt</span><span class="p">)]</span><span class="w">
 
-whatsapp_chat_class_pol <span class="o">=</span> classify_polarity<span class="p">(</span>whatsapp_chat_txt<span class="p">,</span> algorithm<span class="o">=</span><span class="s">&quot;bayes&quot;</span><span class="p">)</span>
+</span><span class="nf">names</span><span class="p">(</span><span class="n">whatsapp_chat_txt</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="w">
 
-polarity <span class="o">=</span> whatsapp_chat_class_pol<span class="p">[,</span><span class="m">4</span><span class="p">]</span>
+</span><span class="n">whatsapp_chat_class_emo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">classify_emotion</span><span class="p">(</span><span class="n">whatsapp_chat_txt</span><span class="p">,</span><span class="w"> </span><span class="n">algorithm</span><span class="o">=</span><span class="s2">"bayes"</span><span class="p">,</span><span class="w"> </span><span class="n">prior</span><span class="o">=</span><span class="m">1.0</span><span class="p">)</span><span class="w">
 
-sentiment_dataframe <span class="o">=</span> <span class="kt">data.frame</span><span class="p">(</span>text<span class="o">=</span>whatsapp_chat_txt<span class="p">,</span> emotion<span class="o">=</span>emotion<span class="p">,</span> polarity<span class="o">=</span>polarity<span class="p">,</span> stringsAsFactors<span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+</span><span class="n">emotion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">whatsapp_chat_class_emo</span><span class="p">[,</span><span class="m">7</span><span class="p">]</span><span class="w">
 
-sentiment_dataframe <span class="o">=</span> <span class="kp">within</span><span class="p">(</span>sentiment_dataframe<span class="p">,</span> emotion <span class="o">&lt;-</span> <span class="kp">factor</span><span class="p">(</span>emotion<span class="p">,</span> levels<span class="o">=</span><span class="kp">names</span><span class="p">(</span><span class="kp">sort</span><span class="p">(</span><span class="kp">table</span><span class="p">(</span>emotion<span class="p">),</span> decreasing<span class="o">=</span><span class="kc">TRUE</span><span class="p">))))</span>
+</span><span class="n">emotion</span><span class="p">[</span><span class="nf">is.na</span><span class="p">(</span><span class="n">emotion</span><span class="p">)]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"unknown"</span><span class="w">
 
-ggplot<span class="p">(</span>sentiment_dataframe<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>emotion<span class="p">))</span> <span class="o">+</span> geom_bar<span class="p">(</span>aes<span class="p">(</span>y<span class="o">=</span><span class="m">..</span>count..<span class="p">,</span> fill<span class="o">=</span>emotion<span class="p">))</span> <span class="o">+</span>
-scale_fill_brewer<span class="p">(</span>palette<span class="o">=</span><span class="s">&quot;Dark2&quot;</span><span class="p">)</span> <span class="o">+</span>
-ggtitle<span class="p">(</span><span class="s">&#39;Sentiment Analysis with emotions categotisation&#39;</span><span class="p">)</span> <span class="o">+</span>
-theme<span class="p">(</span>legend.position<span class="o">=</span><span class="s">&#39;right&#39;</span><span class="p">)</span> <span class="o">+</span> ylab<span class="p">(</span><span class="s">&#39;Number of messages&#39;</span><span class="p">)</span> <span class="o">+</span> xlab<span class="p">(</span><span class="s">&#39;Emotion Categories&#39;</span><span class="p">)</span>
+</span><span class="n">whatsapp_chat_class_pol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">classify_polarity</span><span class="p">(</span><span class="n">whatsapp_chat_txt</span><span class="p">,</span><span class="w"> </span><span class="n">algorithm</span><span class="o">=</span><span class="s2">"bayes"</span><span class="p">)</span><span class="w">
 
-ggsave<span class="p">(</span>filename<span class="o">=</span><span class="s">&quot;./output/SA1.png&quot;</span><span class="p">)</span>
+</span><span class="n">polarity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">whatsapp_chat_class_pol</span><span class="p">[,</span><span class="m">4</span><span class="p">]</span><span class="w">
 
-ggplot<span class="p">(</span>sentiment_dataframe<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>polarity<span class="p">))</span> <span class="o">+</span>
-geom_bar<span class="p">(</span>aes<span class="p">(</span>y<span class="o">=</span><span class="m">..</span>count..<span class="p">,</span> fill<span class="o">=</span>polarity<span class="p">))</span> <span class="o">+</span>
-scale_fill_brewer<span class="p">(</span>palette<span class="o">=</span><span class="s">&quot;Dark2&quot;</span><span class="p">)</span> <span class="o">+</span>
-ggtitle<span class="p">(</span><span class="s">&#39;Sentiment Analysis with polarity&#39;</span><span class="p">)</span> <span class="o">+</span>
-theme<span class="p">(</span>legend.position<span class="o">=</span><span class="s">&#39;right&#39;</span><span class="p">)</span> <span class="o">+</span> ylab<span class="p">(</span><span class="s">&#39;Number of messages&#39;</span><span class="p">)</span> <span class="o">+</span> xlab<span class="p">(</span><span class="s">&#39;Polarity Categories&#39;</span><span class="p">)</span>
+</span><span class="n">sentiment_dataframe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">whatsapp_chat_txt</span><span class="p">,</span><span class="w"> </span><span class="n">emotion</span><span class="o">=</span><span class="n">emotion</span><span class="p">,</span><span class="w"> </span><span class="n">polarity</span><span class="o">=</span><span class="n">polarity</span><span class="p">,</span><span class="w"> </span><span class="n">stringsAsFactors</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
 
-<span class="c1">#SA2</span>
-ggsave<span class="p">(</span>filename<span class="o">=</span><span class="s">&quot;./output/SA2.png&quot;</span><span class="p">)</span>
+</span><span class="n">sentiment_dataframe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">within</span><span class="p">(</span><span class="n">sentiment_dataframe</span><span class="p">,</span><span class="w"> </span><span class="n">emotion</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">factor</span><span class="p">(</span><span class="n">emotion</span><span class="p">,</span><span class="w"> </span><span class="n">levels</span><span class="o">=</span><span class="nf">names</span><span class="p">(</span><span class="n">sort</span><span class="p">(</span><span class="n">table</span><span class="p">(</span><span class="n">emotion</span><span class="p">),</span><span class="w"> </span><span class="n">decreasing</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">))))</span><span class="w">
 
-whatsapp_chat_emos <span class="o">=</span> <span class="kp">levels</span><span class="p">(</span><span class="kp">factor</span><span class="p">(</span>sentiment_dataframe<span class="o">$</span>emotion<span class="p">))</span>
-n_whatsapp_chat_emos <span class="o">=</span> <span class="kp">length</span><span class="p">(</span>whatsapp_chat_emos<span class="p">)</span>
-whatsapp_chat.emo.docs <span class="o">=</span> <span class="kp">rep</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> n_whatsapp_chat_emos<span class="p">)</span>
-<span class="kr">for</span> <span class="p">(</span>i <span class="kr">in</span> <span class="m">1</span><span class="o">:</span>n_whatsapp_chat_emos<span class="p">)</span>
-<span class="p">{</span>
-tmp <span class="o">=</span> whatsapp_chat_txt<span class="p">[</span>emotion <span class="o">==</span> whatsapp_chat_emos<span class="p">[</span>i<span class="p">]]</span>
-whatsapp_chat.emo.docs<span class="p">[</span>i<span class="p">]</span> <span class="o">=</span> <span class="kp">paste</span><span class="p">(</span>tmp<span class="p">,</span> collapse<span class="o">=</span><span class="s">&quot; &quot;</span><span class="p">)</span>
-<span class="p">}</span></code></pre></div>
+</span><span class="n">ggplot</span><span class="p">(</span><span class="n">sentiment_dataframe</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">emotion</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_bar</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">..count..</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="o">=</span><span class="n">emotion</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+</span><span class="n">scale_fill_brewer</span><span class="p">(</span><span class="n">palette</span><span class="o">=</span><span class="s2">"Dark2"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+</span><span class="n">ggtitle</span><span class="p">(</span><span class="s1">'Sentiment Analysis with emotions categotisation'</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+</span><span class="n">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="o">=</span><span class="s1">'right'</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ylab</span><span class="p">(</span><span class="s1">'Number of messages'</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">xlab</span><span class="p">(</span><span class="s1">'Emotion Categories'</span><span class="p">)</span><span class="w">
+
+</span><span class="n">ggsave</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">"./output/SA1.png"</span><span class="p">)</span><span class="w">
+
+</span><span class="n">ggplot</span><span class="p">(</span><span class="n">sentiment_dataframe</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">polarity</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+</span><span class="n">geom_bar</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">..count..</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="o">=</span><span class="n">polarity</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+</span><span class="n">scale_fill_brewer</span><span class="p">(</span><span class="n">palette</span><span class="o">=</span><span class="s2">"Dark2"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+</span><span class="n">ggtitle</span><span class="p">(</span><span class="s1">'Sentiment Analysis with polarity'</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+</span><span class="n">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="o">=</span><span class="s1">'right'</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ylab</span><span class="p">(</span><span class="s1">'Number of messages'</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">xlab</span><span class="p">(</span><span class="s1">'Polarity Categories'</span><span class="p">)</span><span class="w">
+
+</span><span class="c1">#SA2</span><span class="w">
+</span><span class="n">ggsave</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">"./output/SA2.png"</span><span class="p">)</span><span class="w">
+
+</span><span class="n">whatsapp_chat_emos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">levels</span><span class="p">(</span><span class="n">factor</span><span class="p">(</span><span class="n">sentiment_dataframe</span><span class="o">$</span><span class="n">emotion</span><span class="p">))</span><span class="w">
+</span><span class="n">n_whatsapp_chat_emos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">whatsapp_chat_emos</span><span class="p">)</span><span class="w">
+</span><span class="n">whatsapp_chat.emo.docs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">n_whatsapp_chat_emos</span><span class="p">)</span><span class="w">
+</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="n">n_whatsapp_chat_emos</span><span class="p">)</span><span class="w">
+</span><span class="p">{</span><span class="w">
+</span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">whatsapp_chat_txt</span><span class="p">[</span><span class="n">emotion</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">whatsapp_chat_emos</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="w">
+</span><span class="n">whatsapp_chat.emo.docs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">paste</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span><span class="w"> </span><span class="n">collapse</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
 
 <p>Happy coding .. :)</p>
 
@@ -329,7 +329,7 @@ whatsapp_chat.emo.docs<span class="p">[</span>i<span class="p">]</span> <span cl
 
     <footer class="notepad-site-footer">
     <div class="copyright">
-        <section>All content copyright <a href="https://raoenhui.github.io/about">Enhui Rao</a> &copy; 2016 &bull; All rights reserved.</section>
+        <section>All content copyright <a href="https://raoenhui.github.io/about">Enhui Rao</a> &copy; 2018 &bull; All rights reserved.</section>
 	<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>
           <a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>
     </div>

@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "创建脚手架 cli 入门教程",
+		  "category"   : "Cli",
+		  "url"        : "https://raoenhui.github.io/cli/2018/02/26/cli/",
+		  "date"       : "2018-02-26 20:00:00 +0530",
+		  "shortdate"  : "February 26, 2018"
+		} ,
+	
+		{
 		  "title"      : "ES6从入门到精通之常量与变量(一)",
 		  "category"   : "ES6",
 		  "url"        : "https://raoenhui.github.io/es6/2015/08/30/es6-one/",

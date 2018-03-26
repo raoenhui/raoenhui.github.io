@@ -130,35 +130,35 @@
   <li>First thing install it, you gonna need nodejs and <strong>npm</strong> (Node package manager), you will need it to  install diffrent node packages , packages are just like a gems in Ruby or Jars in Java.</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo apt-get update
-sudo apt-get install nodejs
-sudo apt-get install npm</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>apt-get update
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>nodejs
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>npm</code></pre></figure>
 
 <p>Walah .. you got all you want (y), not put the below code say in server.js</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"http"</span><span class="p">);</span>
 
 <span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">response</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="o">:</span> <span class="s2">&quot;text/plain&quot;</span><span class="p">});</span>
-  <span class="nx">response</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">);</span>
+  <span class="nx">response</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span><span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"text/plain"</span><span class="p">});</span>
+  <span class="nx">response</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">"Hello World"</span><span class="p">);</span>
   <span class="nx">response</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
-<span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mi">8080</span><span class="p">);</span></code></pre></div>
+<span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mi">8080</span><span class="p">);</span></code></pre></figure>
 
 <p>Run it</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">node server.js</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">node server.js</code></pre></figure>
 
 <p>But this gonna spawn the single threaded application for you sticking to only one core, we have quad, hexa, octa core processors now day, how node will adjust with it? well, node can do preety anything, <a href="http://nodejs.org/api/cluster.html">Cluster</a> is there for you.</p>
 
 <p>install package with npm</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo npm install cluster</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>npm <span class="nb">install </span>cluster</code></pre></figure>
 
 <p>and run below code say in cluster.js</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">cluster</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;cluster&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">numCPUs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;os&#39;</span><span class="p">).</span><span class="nx">cpus</span><span class="p">().</span><span class="nx">length</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">cluster</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'cluster'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'http'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">numCPUs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'os'</span><span class="p">).</span><span class="nx">cpus</span><span class="p">().</span><span class="nx">length</span><span class="p">;</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="nx">cluster</span><span class="p">.</span><span class="nx">isMaster</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Fork workers.</span>
@@ -166,37 +166,37 @@ sudo apt-get install npm</code></pre></div>
     <span class="nx">cluster</span><span class="p">.</span><span class="nx">fork</span><span class="p">();</span>
   <span class="p">}</span>
 
-  <span class="nx">cluster</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;exit&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">worker</span><span class="p">,</span> <span class="nx">code</span><span class="p">,</span> <span class="nx">signal</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;worker &#39;</span> <span class="o">+</span> <span class="nx">worker</span><span class="p">.</span><span class="nx">process</span><span class="p">.</span><span class="nx">pid</span> <span class="o">+</span> <span class="s1">&#39; died&#39;</span><span class="p">);</span>
+  <span class="nx">cluster</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'exit'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">worker</span><span class="p">,</span> <span class="nx">code</span><span class="p">,</span> <span class="nx">signal</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'worker '</span> <span class="o">+</span> <span class="nx">worker</span><span class="p">.</span><span class="nx">process</span><span class="p">.</span><span class="nx">pid</span> <span class="o">+</span> <span class="s1">' died'</span><span class="p">);</span>
   <span class="p">});</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
   <span class="c1">// Workers can share any TCP connection</span>
   <span class="c1">// In this case its a HTTP server</span>
   <span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">res</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
-    <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s2">&quot;hello world\n&quot;</span><span class="p">);</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s2">"hello world</span><span class="err">\</span><span class="s2">n"</span><span class="p">);</span>
   <span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mi">8080</span><span class="p">);</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>When i did a performacen testing of clustered code, it sucked all juice of my XPS, and fan was running like a Ferrari.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">amey@amey-xps:~/work/node<span class="nv">$ </span>ab -c <span class="m">8</span> -k -n <span class="m">1000000</span> <span class="s2">&quot;http://localhost:8080/&quot;</span>
-This is ApacheBench, Version 2.3 &lt;<span class="nv">$Revision</span>: <span class="m">655654</span> <span class="nv">$&gt;</span>
-Copyright <span class="m">1996</span> Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">amey@amey-xps:~/work/node<span class="nv">$ </span>ab <span class="nt">-c</span> 8 <span class="nt">-k</span> <span class="nt">-n</span> 1000000 <span class="s2">"http://localhost:8080/"</span>
+This is ApacheBench, Version 2.3 &lt;<span class="nv">$Revision</span>: 655654 <span class="nv">$&gt;</span>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
 
 Benchmarking localhost <span class="o">(</span>be patient<span class="o">)</span>
-Completed <span class="m">100000</span> requests
-Completed <span class="m">200000</span> requests
-Completed <span class="m">300000</span> requests
-Completed <span class="m">400000</span> requests
-Completed <span class="m">500000</span> requests
-Completed <span class="m">600000</span> requests
-Completed <span class="m">700000</span> requests
-Completed <span class="m">800000</span> requests
-Completed <span class="m">900000</span> requests
-Completed <span class="m">1000000</span> requests
-Finished <span class="m">1000000</span> requests
+Completed 100000 requests
+Completed 200000 requests
+Completed 300000 requests
+Completed 400000 requests
+Completed 500000 requests
+Completed 600000 requests
+Completed 700000 requests
+Completed 800000 requests
+Completed 900000 requests
+Completed 1000000 requests
+Finished 1000000 requests
 
 
 Server Software:        
@@ -204,27 +204,27 @@ Server Hostname:        localhost
 Server Port:            8080
 
 Document Path:          /
-Document Length:        <span class="m">12</span> bytes
+Document Length:        12 bytes
 
 Concurrency Level:      8
-Time taken <span class="k">for</span> tests:   75.377 seconds
+Time taken <span class="k">for </span>tests:   75.377 seconds
 Complete requests:      1000000
 Failed requests:        0
 Write errors:           0
 Keep-Alive requests:    0
-Total transferred:      <span class="m">87000000</span> bytes
-HTML transferred:       <span class="m">12000000</span> bytes
+Total transferred:      87000000 bytes
+HTML transferred:       12000000 bytes
 Requests per second:    13266.56 <span class="o">[</span><span class="c">#/sec] (mean)</span>
-Time per request:       0.603 <span class="o">[</span>ms<span class="o">]</span> <span class="o">(</span>mean<span class="o">)</span>
-Time per request:       0.075 <span class="o">[</span>ms<span class="o">]</span> <span class="o">(</span>mean, across all concurrent requests<span class="o">)</span>
-Transfer rate:          1127.14 <span class="o">[</span>Kbytes/sec<span class="o">]</span> received
+Time per request:       0.603 <span class="o">[</span>ms] <span class="o">(</span>mean<span class="o">)</span>
+Time per request:       0.075 <span class="o">[</span>ms] <span class="o">(</span>mean, across all concurrent requests<span class="o">)</span>
+Transfer rate:          1127.14 <span class="o">[</span>Kbytes/sec] received
 
 Connection Times <span class="o">(</span>ms<span class="o">)</span>
-              min  mean<span class="o">[</span>+/-sd<span class="o">]</span> median   max
-Connect:        <span class="m">0</span>    <span class="m">0</span>   0.1      <span class="m">0</span>       6
-Processing:     <span class="m">0</span>    <span class="m">0</span>   0.4      <span class="m">0</span>      28
-Waiting:        <span class="m">0</span>    <span class="m">0</span>   0.4      <span class="m">0</span>      28
-Total:          <span class="m">0</span>    <span class="m">1</span>   0.4      <span class="m">1</span>      28
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.1      0       6
+Processing:     0    0   0.4      0      28
+Waiting:        0    0   0.4      0      28
+Total:          0    1   0.4      1      28
 
 Percentage of the requests served within a certain <span class="nb">time</span> <span class="o">(</span>ms<span class="o">)</span>
   50%      1
@@ -235,7 +235,7 @@ Percentage of the requests served within a certain <span class="nb">time</span> 
   95%      1
   98%      1
   99%      1
- 100%     <span class="m">28</span> <span class="o">(</span>longest request<span class="o">)</span></code></pre></div>
+ 100%     28 <span class="o">(</span>longest request<span class="o">)</span></code></pre></figure>
 
 <p>And i said Req/sec : <strong>13266.56</strong> Wow :)
 Loved NodeJS ♥</p>
@@ -374,7 +374,7 @@ Loved NodeJS ♥</p>
 
     <footer class="notepad-site-footer">
     <div class="copyright">
-        <section>All content copyright <a href="https://raoenhui.github.io/about">Enhui Rao</a> &copy; 2016 &bull; All rights reserved.</section>
+        <section>All content copyright <a href="https://raoenhui.github.io/about">Enhui Rao</a> &copy; 2018 &bull; All rights reserved.</section>
 	<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>
           <a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>
     </div>

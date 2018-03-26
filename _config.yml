@@ -46,7 +46,7 @@ links:
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Asia/Calcutta
 future:      true
-highlighter: pygments
+highlighter: rouge
 markdown:    kramdown
 paginate:    5
 paginate_path: "page:num"
@@ -59,15 +59,16 @@ kramdown:
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
-  use_coderay: false
+  enable_coderay: false
 
   coderay:
-    coderay_line_numbers: 
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: class
+    line_numbers: 
+    line_numbers_start: 1
+    tab_width: 4
+    bold_every: 10
+    css: class
 
-gems:
+plugins:
 - jemoji
+- jekyll-paginate
 
