@@ -423,7 +423,9 @@ var interval = setInterval(function () {
     NProgress.inc();
     //如果大于60秒停止检测
     if(timeNum>60){
+        clearInterval(interval);
         NProgress.done();
+
     }
     timeNum++;
 }, 1000);
