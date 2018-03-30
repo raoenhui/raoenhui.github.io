@@ -41,12 +41,12 @@ var timeNum=0;
 var interval = setInterval(function () {
     NProgress.inc();
     //如果大于60秒停止检测
-    if(timeNum>60){
+    /*if(timeNum>60){
         clearInterval(interval);
         NProgress.done();
 
     }
-    timeNum++;
+    timeNum++;*/
 }, 1000);
 jQuery(window).load(function () {
     clearInterval(interval);

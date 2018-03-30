@@ -3,11 +3,11 @@
 
 
 
-<title type="text">饶恩慧的博客</title>
+<title type="text">前端妹子的博客</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2018-03-30T19:38:45+05:30</updated>
+<updated>2018-03-30T19:44:35+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>Enhui Rao</name>
@@ -77,7 +77,7 @@
 &lt;p&gt;Happy coding .. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/nodejs,git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/&quot;&gt;node自动生成最新tag版本&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;饶恩慧的博客&lt;/a&gt; on March 30, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/nodejs,git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/&quot;&gt;node自动生成最新tag版本&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on March 30, 2018.&lt;/p&gt;</content>
 </entry>
 
 
@@ -150,7 +150,7 @@ npm publish
 &lt;p&gt;Happy coding .. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/cli/2018/02/26/cli/&quot;&gt;创建脚手架 cli 入门教程&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;饶恩慧的博客&lt;/a&gt; on February 26, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/cli/2018/02/26/cli/&quot;&gt;创建脚手架 cli 入门教程&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on February 26, 2018.&lt;/p&gt;</content>
 </entry>
 
 
@@ -393,7 +393,7 @@ ES6还为原生的String对象，提供了一个raw方法。
 &lt;p&gt;Happy coding .. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/es6/2015/08/30/es6-one/&quot;&gt;ES6从入门到精通之常量与变量(一)&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;饶恩慧的博客&lt;/a&gt; on August 30, 2015.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/es6/2015/08/30/es6-one/&quot;&gt;ES6从入门到精通之常量与变量(一)&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on August 30, 2015.&lt;/p&gt;</content>
 </entry>
 
 
@@ -1342,7 +1342,7 @@ factorial(100000)
 
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/es6/2015/08/28/es6-featrue/&quot;&gt;Es6 featrues&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;饶恩慧的博客&lt;/a&gt; on August 28, 2015.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/es6/2015/08/28/es6-featrue/&quot;&gt;Es6 featrues&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on August 28, 2015.&lt;/p&gt;</content>
 </entry>
 
 
@@ -1453,7 +1453,7 @@ factorial(100000)
 &lt;p&gt;Happy coding .. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/analytics/2015/05/10/sentiment-analysis-with-R/&quot;&gt;Sentiment analysis with R&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;饶恩慧的博客&lt;/a&gt; on May 10, 2015.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/analytics/2015/05/10/sentiment-analysis-with-R/&quot;&gt;Sentiment analysis with R&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on May 10, 2015.&lt;/p&gt;</content>
 </entry>
 
 
@@ -1486,7 +1486,7 @@ factorial(100000)
 
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/linux/2015/04/01/alias-makes-life-easy/&quot;&gt;Alias makes life easy&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;饶恩慧的博客&lt;/a&gt; on April 01, 2015.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/linux/2015/04/01/alias-makes-life-easy/&quot;&gt;Alias makes life easy&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on April 01, 2015.&lt;/p&gt;</content>
 </entry>
 
 
@@ -1539,7 +1539,7 @@ First step is check the patch.&lt;/li&gt;
 &lt;p&gt;Happy coding and a happy new year 2015 :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/linux/2014/12/31/working-with-git-patch/&quot;&gt;Working with GIT patch&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;饶恩慧的博客&lt;/a&gt; on December 31, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/linux/2014/12/31/working-with-git-patch/&quot;&gt;Working with GIT patch&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on December 31, 2014.&lt;/p&gt;</content>
 </entry>
 
 
@@ -1708,7 +1708,7 @@ finished. total &lt;span class=&quot;nb&quot;&gt;time&lt;/span&gt;: 150.897s&lt;
 &lt;p&gt;Happy coding ….. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/android/2014/11/23/install-lollipop-on-nexus-4/&quot;&gt;Install lollipop 5.0 to Nexus 4&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;饶恩慧的博客&lt;/a&gt; on November 23, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/android/2014/11/23/install-lollipop-on-nexus-4/&quot;&gt;Install lollipop 5.0 to Nexus 4&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on November 23, 2014.&lt;/p&gt;</content>
 </entry>
 
 
@@ -1797,7 +1797,7 @@ amey@amey-xps:~/&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;/code&gt;&lt
 &lt;p&gt;Happy coding ….. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/linux/2014/09/14/bang-bang/&quot;&gt;Bang-Bang, Be lazy!!&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;饶恩慧的博客&lt;/a&gt; on September 14, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/linux/2014/09/14/bang-bang/&quot;&gt;Bang-Bang, Be lazy!!&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on September 14, 2014.&lt;/p&gt;</content>
 </entry>
 
 
@@ -1884,7 +1884,7 @@ If true, useCapture indicates that the user wishes to initiate capture. After in
 &lt;p&gt;Happy Codeing …. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/javascript/2014/09/07/javascript-attache-with-events/&quot;&gt;Javascript - ♥ Attach with events&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;饶恩慧的博客&lt;/a&gt; on September 07, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/javascript/2014/09/07/javascript-attache-with-events/&quot;&gt;Javascript - ♥ Attach with events&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on September 07, 2014.&lt;/p&gt;</content>
 </entry>
 
 
@@ -1998,7 +1998,7 @@ Done :  &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&qu
 &lt;p&gt;Happy coding …. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/testing/2014/08/30/Super-awesome-automation/&quot;&gt;Super awesome automation testing&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;饶恩慧的博客&lt;/a&gt; on August 30, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/testing/2014/08/30/Super-awesome-automation/&quot;&gt;Super awesome automation testing&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on August 30, 2014.&lt;/p&gt;</content>
 </entry>
 
 
@@ -2154,7 +2154,7 @@ Loved NodeJS ♥&lt;/p&gt;
 &lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/nodejs/2014/08/17/N-for-Node.js/&quot;&gt;'N' for NodeJS&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;饶恩慧的博客&lt;/a&gt; on August 17, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/nodejs/2014/08/17/N-for-Node.js/&quot;&gt;'N' for NodeJS&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on August 17, 2014.&lt;/p&gt;</content>
 </entry>
 
 
@@ -2195,7 +2195,7 @@ Loved NodeJS ♥&lt;/p&gt;
 &lt;p&gt;Happy coding ….. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/python/2014/08/08/python-timezone-convertion/&quot;&gt;Timezone conversion in python -Easy way&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;饶恩慧的博客&lt;/a&gt; on August 08, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/python/2014/08/08/python-timezone-convertion/&quot;&gt;Timezone conversion in python -Easy way&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on August 08, 2014.&lt;/p&gt;</content>
 </entry>
 
 
@@ -2273,7 +2273,7 @@ Loved NodeJS ♥&lt;/p&gt;
 &lt;p&gt;Happy coding ….. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/python/2014/08/04/killer-mailer/&quot;&gt;Killer mailer script in Python&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;饶恩慧的博客&lt;/a&gt; on August 04, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/python/2014/08/04/killer-mailer/&quot;&gt;Killer mailer script in Python&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on August 04, 2014.&lt;/p&gt;</content>
 </entry>
 
 
@@ -2328,7 +2328,7 @@ sql_exec&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
 &lt;p&gt;Happy coding ….. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/linux/2014/01/19/functions-in-shell-script/&quot;&gt;Functions in shell script&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;饶恩慧的博客&lt;/a&gt; on January 19, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/linux/2014/01/19/functions-in-shell-script/&quot;&gt;Functions in shell script&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on January 19, 2014.&lt;/p&gt;</content>
 </entry>
 
 
@@ -2383,7 +2383,7 @@ sql_exec&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
 &lt;p&gt;Happy Coding …. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/database/2013/12/17/using-mysql-dump/&quot;&gt;Using MySQL dump&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;饶恩慧的博客&lt;/a&gt; on December 17, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/database/2013/12/17/using-mysql-dump/&quot;&gt;Using MySQL dump&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on December 17, 2013.&lt;/p&gt;</content>
 </entry>
 
 
@@ -2430,7 +2430,7 @@ sql_exec&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
 &lt;p&gt;Happy coding.. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/database/2013/12/15/checking-mysql-database-size/&quot;&gt;Checking MySQL Database Size&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;饶恩慧的博客&lt;/a&gt; on December 15, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/database/2013/12/15/checking-mysql-database-size/&quot;&gt;Checking MySQL Database Size&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on December 15, 2013.&lt;/p&gt;</content>
 </entry>
 
 
@@ -2547,7 +2547,7 @@ user-agent&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; Mozilla/5.0 &l
 &lt;p&gt;Happy Coding .. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/java/2013/12/10/capturing-http-header-in-JAX-RS/&quot;&gt;Capturing HTTP Header In JAX-RS&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;饶恩慧的博客&lt;/a&gt; on December 10, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/java/2013/12/10/capturing-http-header-in-JAX-RS/&quot;&gt;Capturing HTTP Header In JAX-RS&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on December 10, 2013.&lt;/p&gt;</content>
 </entry>
 
 </feed>
