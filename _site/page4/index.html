@@ -304,39 +304,64 @@ Git(GitPath)
 </footer>
 
 
-    <script src="//apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="https://raoenhui.github.io/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
-    <script src="https://raoenhui.github.io/assets/js/vendor/modernizr.js"></script>
-    <script src="https://raoenhui.github.io/assets/js/foundation.min.js"></script>
-    
-    <script src="https://raoenhui.github.io/assets/js/notepad.js"></script>
-    <script src="https://raoenhui.github.io/assets/js/scripts.min.js"></script>
-    <script src="https://raoenhui.github.io/assets/js/vendor/nprogress.js"></script>
-    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/sigma.js/1.0.3/sigma.min.js"></script>-->
+<script src="//apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://raoenhui.github.io/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+<script src="https://raoenhui.github.io/assets/js/vendor/modernizr.js"></script>
+<script src="https://raoenhui.github.io/assets/js/foundation.min.js"></script>
+
+<script src="https://raoenhui.github.io/assets/js/notepad.js"></script>
+<script src="https://raoenhui.github.io/assets/js/scripts.min.js"></script>
+<script src="https://raoenhui.github.io/assets/js/vendor/nprogress.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/sigma.js/1.0.3/sigma.min.js"></script>-->
 <script src="//apps.bdimg.com/libs/sigma.js/0.1/sigma.min.js"></script>
 
-    <script>
-      $(document).foundation();
-    </script>
+<script>
+    $(document).foundation();
+</script>
 
 
 <!-- Asynchronous Google Analytics snippet -->
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-46791108-1', 'auto');
-  ga('require', 'displayfeatures');
-  ga('send', 'pageview');
+    ga('create', 'UA-46791108-1', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
 
 </script>
 
-<script>NProgress.start();var interval=setInterval(function(){NProgress.inc()},1000);jQuery(window).load(function(){clearInterval(interval);NProgress.done()});jQuery(window).unload(function(){NProgress.start()});</script>
+<script>NProgress.start();
+var timeNum=0;
+var interval = setInterval(function () {
+    NProgress.inc();
+    //如果大于60秒停止检测
+    if(timeNum>60){
+        NProgress.done();
+    }
+    timeNum++;
+}, 1000);
+jQuery(window).load(function () {
+    clearInterval(interval);
+    NProgress.done()
+});
+jQuery(window).unload(function () {
+    NProgress.start()
+});
 
-    <!-- ice start-->
-    <script id="dsq-count-scr" src="//raoenhui.disqus.com/count.js" async></script>
-    <!-- ice end-->  
+</script>
+
+<!-- ice start-->
+<script id="dsq-count-scr" src="//raoenhui.disqus.com/count.js" async></script>
+<!-- ice end-->  
 </body>
 </html>
