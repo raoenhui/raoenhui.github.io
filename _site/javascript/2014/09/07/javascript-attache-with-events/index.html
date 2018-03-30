@@ -47,7 +47,7 @@
 
 <div style ='margin:0 auto;width:0px;height:0px;overflow:hidden;' >
 
-<img src="https://raoenhui.github.io/assets/img/weixinlogo.jpg" />
+<img src="https://raoenhui.github.io/assets/img/avator.jpg" />
 
 </div>
 
@@ -377,7 +377,26 @@ If true, useCapture indicates that the user wishes to initiate capture. After in
         
         <a href="http://github.com/raoenhui">
             <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <var newVersion,//新标签
+    versionHint;//新标签的备注
+// update repo and get a list of tags
+Git(GitPath)
+    .pull()
+    .tags(function(err, tags) {
+        var oldVersion = tags.latest;
+        Bump('version:' + oldVersion.substr(1, oldVersion.lenght), function(err, out) {
+            //产生新代码
+            newVersion = 'v' + out.new;
+            //产生新标签的备注
+            versionHint = 'Relase version ' + newVersion + ' in ' + new Date();
+            //推动到远端
+            Git(GitPath).addAnnotatedTag(newVersion, versionHint, function() {
+                Git(GitPath).pushTags('origin', function() {
+                    console.log(versionHint);
+                })
+            });
+        });
+    });i class="fa fa-circle fa-stack-2x fa-inverse"></i>
                 <i class="fa fa-github fa-stack-1x"></i>
             </span>
         </a>

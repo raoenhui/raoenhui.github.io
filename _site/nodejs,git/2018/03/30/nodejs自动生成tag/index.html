@@ -2,23 +2,23 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>ALIAS MAKES LIFE EASY &vert; 饶恩慧的博客</title>
+<title>NODE自动生成最新TAG版本 &vert; 饶恩慧的博客</title>
 <meta name="description" content="一枚前端攻城狮!">
-<meta name="keywords" content="alias, commands">
+<meta name="keywords" content="nodejs, git">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raoenhui.github.io/images/logo.png">
-<meta name="twitter:title" content="Alias makes life easy">
+<meta name="twitter:title" content="node自动生成最新tag版本">
 <meta name="twitter:description" content="一枚前端攻城狮!">
 <meta name="twitter:creator" content="@raoenhui">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Alias makes life easy">
+<meta property="og:title" content="node自动生成最新tag版本">
 <meta property="og:description" content="一枚前端攻城狮!">
-<meta property="og:url" content="https://raoenhui.github.io/linux/2015/04/01/alias-makes-life-easy/">
+<meta property="og:url" content="https://raoenhui.github.io/nodejs,git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/">
 <meta property="og:site_name" content="饶恩慧的博客">
 <meta property="og:image" content="https://raoenhui.github.io/images/">
 
@@ -26,7 +26,7 @@
 
 
 
-<link rel="canonical" href="https://raoenhui.github.io/linux/2015/04/01/alias-makes-life-easy/">
+<link rel="canonical" href="https://raoenhui.github.io/nodejs,git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/">
 <link href="https://raoenhui.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="饶恩慧的博客 Feed">
 <link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
 
@@ -109,42 +109,74 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h1>Alias makes life easy</h1>
-                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#alias, commands" data-toggle="tooltip" title="Posts tagged with alias, commands" rel="tag">alias, commands</a> <strong><time datetime="2015-04-01T18:45:00+05:30">01 Apr 2015</time></strong></p>
+                            <h1>node自动生成最新tag版本</h1>
+                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#nodejs" data-toggle="tooltip" title="Posts tagged with nodejs" rel="tag">nodejs</a>&nbsp;&comma;&nbsp;<a href="https://raoenhui.github.io/tags/index.html#git" data-toggle="tooltip" title="Posts tagged with git" rel="tag">git</a> <strong><time datetime="2018-03-30T20:00:00+05:30">30 Mar 2018</time></strong></p>
                         </div>
                     </div>
                 </div>
             </header>
 
         <article class="notepad-post-content post tag-simple">
-            <div><p>From couple of years i’m using it but never thought its also shareable with community, alias is helping me shortning big and repeating commands, you just have to declare the short abbreviation of your short command and use it again n again, so here are usage :</p>
+            <div><h2 id="第一步-引入所需要的包">第一步 引入所需要的包</h2>
 
-<p>I use commandline git a lot, may be maven build and deploy too, so i have defined few commands for easy use.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//git命令组件</span>
+<span class="kd">const</span> <span class="nx">Git</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'simple-git'</span><span class="p">);</span>
+<span class="c1">//获取路径</span>
+<span class="kd">const</span> <span class="nx">Path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'path'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">GitPath</span> <span class="o">=</span> <span class="nx">Path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">'..'</span><span class="p">);</span>
+<span class="c1">//为git的version添加自动增长版本号组件</span>
+<span class="kd">const</span> <span class="nx">Bump</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'bump-regex'</span><span class="p">);</span>
 
-<p>Open the ~/.bashrc and copy-paste below lines, close .bashrc and repoen terminal to use it.</p>
+</code></pre></div></div>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">alias </span><span class="nv">gs</span><span class="o">=</span><span class="s1">'git status'</span>
-<span class="nb">alias </span><span class="nv">gps</span><span class="o">=</span><span class="s1">'git push origin master'</span> 
-<span class="nb">alias </span><span class="nv">gpl</span><span class="o">=</span><span class="s1">'git pull origin master'</span>
-<span class="nb">alias </span><span class="nv">gc</span><span class="o">=</span><span class="s1">'git commit -am'</span> <span class="c"># i use it like gc "this is commit message"</span>
-<span class="nb">alias </span><span class="nv">build</span><span class="o">=</span><span class="s1">'mvn clean compile install &amp;&amp; cd target \ 
-	     &amp;&amp; scp -i xxx.pem 1.3.4.zip ubuntu@192.168.0.9:~/build/.'</span></code></pre></figure>
+<h2 id="第二步-生成并提交tag号">第二步 生成并提交tag号</h2>
 
+<ul>
+  <li>先pull获取最新tag版本</li>
+  <li>然后用bump自动增加最小版本号</li>
+  <li>添加日期备注</li>
+  <li>将tag推送到远端</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">newVersion</span><span class="p">,</span><span class="c1">//新标签</span>
+    <span class="nx">versionHint</span><span class="p">;</span><span class="c1">//新标签的备注</span>
+<span class="c1">// update repo and get a list of tags </span>
+<span class="nx">Git</span><span class="p">(</span><span class="nx">GitPath</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">pull</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">tags</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">tags</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">oldVersion</span> <span class="o">=</span> <span class="nx">tags</span><span class="p">.</span><span class="nx">latest</span><span class="p">;</span>
+        <span class="nx">Bump</span><span class="p">(</span><span class="s1">'version:'</span> <span class="o">+</span> <span class="nx">oldVersion</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nx">oldVersion</span><span class="p">.</span><span class="nx">lenght</span><span class="p">),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">out</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">//产生新代码</span>
+            <span class="nx">newVersion</span> <span class="o">=</span> <span class="s1">'v'</span> <span class="o">+</span> <span class="nx">out</span><span class="p">.</span><span class="k">new</span><span class="p">;</span>
+            <span class="c1">//产生新标签的备注</span>
+            <span class="nx">versionHint</span> <span class="o">=</span> <span class="s1">'Relase version '</span> <span class="o">+</span> <span class="nx">newVersion</span> <span class="o">+</span> <span class="s1">' in '</span> <span class="o">+</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+            <span class="c1">//推动到远端</span>
+            <span class="nx">Git</span><span class="p">(</span><span class="nx">GitPath</span><span class="p">).</span><span class="nx">addAnnotatedTag</span><span class="p">(</span><span class="nx">newVersion</span><span class="p">,</span> <span class="nx">versionHint</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="nx">Git</span><span class="p">(</span><span class="nx">GitPath</span><span class="p">).</span><span class="nx">pushTags</span><span class="p">(</span><span class="s1">'origin'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">versionHint</span><span class="p">);</span>
+                <span class="p">})</span>
+            <span class="p">});</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+</code></pre></div></div>
+
+<p>Happy coding .. :)</p>
 
             </div>
         </article>
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Alias makes life easy&quot;%20https://raoenhui.github.io/linux/2015/04/01/alias-makes-life-easy/%20via%20&#64;raoenhui"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;node自动生成最新tag版本&quot;%20https://raoenhui.github.io/nodejs,git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/%20via%20&#64;raoenhui"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/linux/2015/04/01/alias-makes-life-easy/"
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/nodejs,git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/linux/2015/04/01/alias-makes-life-easy/"
+                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/nodejs,git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
                     <i class="fa fa-google-plus"></i>
                 </a>
@@ -252,7 +284,7 @@
 
 <!-- ice facebook start-->
 <!-- 
-<div class="fb-comments" data-href="https://raoenhui.github.io/linux/2015/04/01/alias-makes-life-easy/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+<div class="fb-comments" data-href="https://raoenhui.github.io/nodejs,git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {

@@ -47,7 +47,7 @@
 
 <div style ='margin:0 auto;width:0px;height:0px;overflow:hidden;' >
 
-<img src="https://raoenhui.github.io/assets/img/weixinlogo.jpg" />
+<img src="https://raoenhui.github.io/assets/img/avator.jpg" />
 
 </div>
 
@@ -133,7 +133,7 @@
      
     	<li><a href="#python">Python <span>3</span></a></li>
      
-    	<li><a href="#nodejs">Nodejs <span>1</span></a></li>
+    	<li><a href="#nodejs">Nodejs <span>2</span></a></li>
      
     	<li><a href="#testing">Testing <span>1</span></a></li>
      
@@ -154,6 +154,8 @@
     	<li><a href="#R, ES6,">R, es6, <span>1</span></a></li>
      
     	<li><a href="#Cli,">Cli, <span>1</span></a></li>
+     
+    	<li><a href="#git">Git <span>1</span></a></li>
     
   
 
@@ -291,6 +293,12 @@
 	<h2 id="nodejs">Nodejs</h2>
 	<ul class="post-list">
 		  
+		
+			
+			
+			<li><a href="https://raoenhui.github.io/nodejs,git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/">node自动生成最新tag版本<span class="entry-date"><time datetime="2018-03-30T20:00:00+05:30" itemprop="datePublished">March 30, 2018</time></a></li>
+			
+			
 		
 			
 			
@@ -441,6 +449,20 @@
 		
 		
 	</ul>
+ 
+	<h2 id="git">Git</h2>
+	<ul class="post-list">
+		  
+		
+			
+			
+			<li><a href="https://raoenhui.github.io/nodejs,git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/">node自动生成最新tag版本<span class="entry-date"><time datetime="2018-03-30T20:00:00+05:30" itemprop="datePublished">March 30, 2018</time></a></li>
+			
+			
+		
+		
+		
+	</ul>
 </div>
 </article>
         <div class="cf"></div>
@@ -479,7 +501,26 @@
         
         <a href="http://github.com/raoenhui">
             <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <var newVersion,//新标签
+    versionHint;//新标签的备注
+// update repo and get a list of tags
+Git(GitPath)
+    .pull()
+    .tags(function(err, tags) {
+        var oldVersion = tags.latest;
+        Bump('version:' + oldVersion.substr(1, oldVersion.lenght), function(err, out) {
+            //产生新代码
+            newVersion = 'v' + out.new;
+            //产生新标签的备注
+            versionHint = 'Relase version ' + newVersion + ' in ' + new Date();
+            //推动到远端
+            Git(GitPath).addAnnotatedTag(newVersion, versionHint, function() {
+                Git(GitPath).pushTags('origin', function() {
+                    console.log(versionHint);
+                })
+            });
+        });
+    });i class="fa fa-circle fa-stack-2x fa-inverse"></i>
                 <i class="fa fa-github fa-stack-1x"></i>
             </span>
         </a>

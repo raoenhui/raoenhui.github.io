@@ -47,7 +47,7 @@
 
 <div style ='margin:0 auto;width:0px;height:0px;overflow:hidden;' >
 
-<img src="https://raoenhui.github.io/assets/img/weixinlogo.jpg" />
+<img src="https://raoenhui.github.io/assets/img/avator.jpg" />
 
 </div>
 
@@ -116,7 +116,7 @@
 
 <article class="notepad-page-content">
                     <div>
-<p>Thanks For showing intrest to check about me, i’m <strong>Enhui Rao</strong>. I cook delicias code cousins for fun. I’m a Born engineer,Tech savvy, programmer, computer lover, automobiles fan, like to play anykind of machine!, curious towards css3,html5,ruby,nodejs,reactjs,ES6.This is my personal blog. It currently has 17 posts in 12 categories which combinedly have 7884 words, which will take an average reader ( WPM) approximately <span class="time">39.42</span> minutes to read.  The most recent post is <a href="https://raoenhui.github.io/cli/2018/02/26/cli/" title="Read more about 创建脚手架 cli 入门教程">“创建脚手架 cli 入门教程”</a> which was published on <time datetime="2018-02-26T20:00:00+05:30" class="post-time">26 Feb 2018</time>. The last commit was on Friday, 30 Mar 2018 at 04:38 PM <a href="http://en.wikipedia.org/wiki/Coordinated_Universal_Time" title="Temps Universel Coordonné">UTC</a>.</p>
+<p>Thanks For showing intrest to check about me, i’m <strong>Enhui Rao</strong>. I cook delicias code cousins for fun. I’m a Born engineer,Tech savvy, programmer, computer lover, automobiles fan, like to play anykind of machine!, curious towards css3,html5,ruby,nodejs,reactjs,ES6.This is my personal blog. It currently has 18 posts in 13 categories which combinedly have 7978 words, which will take an average reader ( WPM) approximately <span class="time">39.89</span> minutes to read.  The most recent post is <a href="https://raoenhui.github.io/nodejs,git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/" title="Read more about node自动生成最新tag版本">“node自动生成最新tag版本”</a> which was published on <time datetime="2018-03-30T20:00:00+05:30" class="post-time">30 Mar 2018</time>. The last commit was on Friday, 30 Mar 2018 at 07:09 PM <a href="http://en.wikipedia.org/wiki/Coordinated_Universal_Time" title="Temps Universel Coordonné">UTC</a>.</p>
 
 <p><strong>前端妹子一枚，我平时比较繁忙（打杂、犯花痴、偷窥帅锅是正业，副业：码农、前端）,所以知识点有些可能会有问题，看不过眼（强迫症的请重视我的后面一句），欢迎小伙伴们帮忙评论修改。</strong></p>
 
@@ -158,7 +158,26 @@
         
         <a href="http://github.com/raoenhui">
             <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <var newVersion,//新标签
+    versionHint;//新标签的备注
+// update repo and get a list of tags
+Git(GitPath)
+    .pull()
+    .tags(function(err, tags) {
+        var oldVersion = tags.latest;
+        Bump('version:' + oldVersion.substr(1, oldVersion.lenght), function(err, out) {
+            //产生新代码
+            newVersion = 'v' + out.new;
+            //产生新标签的备注
+            versionHint = 'Relase version ' + newVersion + ' in ' + new Date();
+            //推动到远端
+            Git(GitPath).addAnnotatedTag(newVersion, versionHint, function() {
+                Git(GitPath).pushTags('origin', function() {
+                    console.log(versionHint);
+                })
+            });
+        });
+    });i class="fa fa-circle fa-stack-2x fa-inverse"></i>
                 <i class="fa fa-github fa-stack-1x"></i>
             </span>
         </a>
