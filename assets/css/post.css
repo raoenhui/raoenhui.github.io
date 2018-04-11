@@ -218,7 +218,8 @@ html, body, .notepad-post-container, .notepad-post-header {
           text-align: center;
           padding-top: 1.125rem;
           padding-bottom: 1.125rem;
-          max-width: 75rem; }
+          /*ice max-width: 75rem;*/
+        }
   .post-template .notepad-post-content.tag-simple > div:not(.notepad-post-title) {
     margin: 0 auto 0; }
   @media screen and (max-width: 47em) {

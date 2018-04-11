@@ -2,23 +2,23 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>创建脚手架 CLI 入门教程 &vert; 前端妹子的博客</title>
+<title>CADDY WEB服务器初探 &vert; 前端妹子的博客</title>
 <meta name="description" content="一枚前端攻城狮!">
-<meta name="keywords" content="Cli,">
+<meta name="keywords" content="serve">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://localhost:4000/images/logo.png">
-<meta name="twitter:title" content="创建脚手架 cli 入门教程">
+<meta name="twitter:title" content="Caddy web服务器初探">
 <meta name="twitter:description" content="一枚前端攻城狮!">
 <meta name="twitter:creator" content="@raoenhui">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="创建脚手架 cli 入门教程">
+<meta property="og:title" content="Caddy web服务器初探">
 <meta property="og:description" content="一枚前端攻城狮!">
-<meta property="og:url" content="http://localhost:4000/cli/2018/02/26/cli/">
+<meta property="og:url" content="http://localhost:4000/serve/2018/04/11/caddy/">
 <meta property="og:site_name" content="前端妹子的博客">
 <meta property="og:image" content="http://localhost:4000/images/">
 
@@ -26,7 +26,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/cli/2018/02/26/cli/">
+<link rel="canonical" href="http://localhost:4000/serve/2018/04/11/caddy/">
 <link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="前端妹子的博客 Feed">
 <link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
 
@@ -109,65 +109,60 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h1>创建脚手架 cli 入门教程</h1>
-                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="http://localhost:4000/tags/index.html#Cli," data-toggle="tooltip" title="Posts tagged with Cli," rel="tag">Cli,</a> <strong><time datetime="2018-02-26T20:00:00+05:30">26 Feb 2018</time></strong></p>
+                            <h1>Caddy web服务器初探</h1>
+                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="http://localhost:4000/tags/index.html#serve" data-toggle="tooltip" title="Posts tagged with serve" rel="tag">serve</a> <strong><time datetime="2018-04-11T22:00:00+05:30">11 Apr 2018</time></strong></p>
                         </div>
                     </div>
                 </div>
             </header>
 
         <article class="notepad-post-content post tag-simple">
-            <div><h2 id="第一步-创建仓库">第一步 创建仓库</h2>
+            <div><h2 id="第一步-认识caddy">第一步 认识caddy</h2>
 
-<p>创建一个git仓库，可以在GitHub创建个git仓库，如<a href="https://github.com/raoenhui/ice-first-cli">https://github.com/raoenhui/ice-first-cli</a></p>
+<p>官方介绍：Caddy is the HTTP/2 web server with automatic HTTPS.
+通俗滴说就是一个类似node, nginx, 或Apache 的一种web服务器。
+而它最大的优势就是启动时默认使用HTTPS协议，无需任何配置，而且启动方式也非常简单，具体可看<a href="#第三步-启动caddy">第三步</a>。</p>
 
-<h2 id="第二步-编辑package">第二步 编辑package</h2>
+<h2 id="第二步-安装caddy">第二步 安装caddy</h2>
 
-<p>npm init 或直接创建package.json,将git仓库地址加入</p>
+<p>点击下载页面<a href="https://caddyserver.com/download">https://caddyserver.com/download</a>，根据电脑系统选择下载最新的安装包。</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ice-first-cli"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.8"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"npm -v"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"bin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"ice-first-cli"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./bin/commit.js"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"repository"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"git"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"git+https://github.com/raoenhui/ice-first-cli.git"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"keywords"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="s2">"cli"</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"devDependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"shelljs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^0.8.1"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
+<p><img src="http://localhost:4000/images/180411/install.jpg" alt="install" /></p>
 
-<h2 id="第三步-创建bin文件">第三步 创建bin文件</h2>
+<p>解压后将路径添加至环境变量中
+如mac下：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vi /private/etc/paths
+<span class="nv">$ </span><span class="nb">source</span> /private/etc/paths
 
-<p>创建bin文件夹，在bin中再创建commit.js文件。</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#! /usr/bin/env node
-</span><span class="kd">var</span> <span class="nx">shell</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"shelljs"</span><span class="p">);</span>
-<span class="nx">shell</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="s2">"echo shell.exec works1"</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'my first cli'</span><span class="p">);</span>     
+</code></pre></div></div>
+<p><img src="http://localhost:4000/images/180411/console.png" alt="console" /></p>
+
+<h2 id="第三步-启动caddy">第三步 启动caddy</h2>
+
+<p>到你所在的代码路径下执行caddy</p>
+
+<p><img src="http://localhost:4000/images/180411/caddy.jpg" alt="caddy" /></p>
+
+<p>想代理的话可新建个Caddyfile</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>matt.life   <span class="c"># Your site's address</span>
+
+ext .html   <span class="c"># Clean URLs</span>
+errors error.log <span class="o">{</span>       <span class="c"># Error log</span>
+    404 error-404.html   <span class="c"># Custom error page</span>
+<span class="o">}</span>
+
+<span class="c"># PHP backend</span>
+fastcgi /blog localhost:9000 php
+
+<span class="c"># API load balancer</span>
+proxy /api localhost:5001 localhost:5002
+
 </code></pre></div></div>
 
-<h2 id="第四步-测试cli">第四步 测试cli</h2>
+<p>运行则如下</p>
 
-<p>控制台输入</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo npm link
-ice-first-cli
-npm publish
-</code></pre></div></div>
-<p><img src="http://localhost:4000/images/150930/console.png" alt="console" /></p>
-
-<h2 id="第五步-完成">第五步 完成</h2>
-
-<p>可从npm官网中找到，<a href="https://www.npmjs.com/package/ice-first-cli">https://www.npmjs.com/package/ice-first-cli</a> .</p>
+<p><img src="http://localhost:4000/images/180411/website.png" alt="website" /></p>
 
 <p>Happy coding .. :)</p>
 
@@ -176,15 +171,15 @@ npm publish
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;创建脚手架 cli 入门教程&quot;%20http://localhost:4000/cli/2018/02/26/cli/%20via%20&#64;raoenhui"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Caddy web服务器初探&quot;%20http://localhost:4000/serve/2018/04/11/caddy/%20via%20&#64;raoenhui"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/cli/2018/02/26/cli/"
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/serve/2018/04/11/caddy/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a class="google-icon" href="https://plus.google.com/share?url=http://localhost:4000/cli/2018/02/26/cli/"
+                <a class="google-icon" href="https://plus.google.com/share?url=http://localhost:4000/serve/2018/04/11/caddy/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
                     <i class="fa fa-google-plus"></i>
                 </a>
@@ -293,7 +288,7 @@ npm publish
 
 <!-- ice facebook start-->
  
-<div class="fb-comments" data-href="http://localhost:4000/cli/2018/02/26/cli/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+<div class="fb-comments" data-href="http://localhost:4000/serve/2018/04/11/caddy/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {

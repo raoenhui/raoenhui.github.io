@@ -5,29 +5,97 @@
 
 <title type="text">前端妹子的博客</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
-<link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2018-03-30T19:44:35+05:30</updated>
-<id>https://raoenhui.github.io/</id>
+<link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
+<link rel="alternate" type="text/html" href="http://localhost:4000/" />
+<updated>2018-04-11T20:15:50+05:30</updated>
+<id>http://localhost:4000/</id>
 <author>
   <name>Enhui Rao</name>
-  <uri>https://raoenhui.github.io/</uri>
+  <uri>http://localhost:4000/</uri>
   <email>670615769@qq.com</email>
 </author>
 
 
 <entry>
+  <title type="html"><![CDATA[Caddy web服务器初探]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/serve/2018/04/11/caddy/"/>
+  <id>http://localhost:4000/serve/2018/04/11/caddy</id>
+  <published>2018-04-11T22:00:00+05:30</published>
+  <updated>2018-04-11T22:00:00+05:30</updated>
+  <author>
+    <name>Enhui Rao</name>
+    <uri>http://localhost:4000</uri>
+    <email>670615769@qq.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#serve" term="serve" />
+  <content type="html">
+  
+    &lt;h2 id=&quot;第一步-认识caddy&quot;&gt;第一步 认识caddy&lt;/h2&gt;
+
+&lt;p&gt;官方介绍：Caddy is the HTTP/2 web server with automatic HTTPS.
+通俗滴说就是一个类似node, nginx, 或Apache 的一种web服务器。
+而它最大的优势就是启动时默认使用HTTPS协议，无需任何配置，而且启动方式也非常简单，具体可看&lt;a href=&quot;#第三步-启动caddy&quot;&gt;第三步&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h2 id=&quot;第二步-安装caddy&quot;&gt;第二步 安装caddy&lt;/h2&gt;
+
+&lt;p&gt;点击下载页面&lt;a href=&quot;https://caddyserver.com/download&quot;&gt;https://caddyserver.com/download&lt;/a&gt;，根据电脑系统选择下载最新的安装包。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/180411/install.jpg&quot; alt=&quot;install&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;解压后将路径添加至环境变量中
+如mac下：&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;vi /private/etc/paths
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; /private/etc/paths
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/180411/console.png&quot; alt=&quot;console&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;第三步-启动caddy&quot;&gt;第三步 启动caddy&lt;/h2&gt;
+
+&lt;p&gt;到你所在的代码路径下执行caddy&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/180411/caddy.jpg&quot; alt=&quot;caddy&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;想代理的话可新建个Caddyfile&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;matt.life   &lt;span class=&quot;c&quot;&gt;# Your site's address&lt;/span&gt;
+
+ext .html   &lt;span class=&quot;c&quot;&gt;# Clean URLs&lt;/span&gt;
+errors error.log &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;       &lt;span class=&quot;c&quot;&gt;# Error log&lt;/span&gt;
+    404 error-404.html   &lt;span class=&quot;c&quot;&gt;# Custom error page&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# PHP backend&lt;/span&gt;
+fastcgi /blog localhost:9000 php
+
+&lt;span class=&quot;c&quot;&gt;# API load balancer&lt;/span&gt;
+proxy /api localhost:5001 localhost:5002
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;运行则如下&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/180411/website.png&quot; alt=&quot;website&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Happy coding .. :)&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/serve/2018/04/11/caddy/&quot;&gt;Caddy web服务器初探&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on April 11, 2018.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
   <title type="html"><![CDATA[node自动生成最新tag版本]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/nodejs,git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/"/>
-  <id>https://raoenhui.github.io/nodejs,git/2018/03/30/nodejs自动生成tag</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/nodejs,git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/"/>
+  <id>http://localhost:4000/nodejs,git/2018/03/30/nodejs自动生成tag</id>
   <published>2018-03-30T20:00:00+05:30</published>
   <updated>2018-03-30T20:00:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#nodejs" term="nodejs" /><category scheme="https://raoenhui.github.io/tags/#git" term="git" />
+  <category scheme="http://localhost:4000/tags/#nodejs" term="nodejs" /><category scheme="http://localhost:4000/tags/#git" term="git" />
   <content type="html">
   
     &lt;h2 id=&quot;第一步-引入所需要的包&quot;&gt;第一步 引入所需要的包&lt;/h2&gt;
@@ -77,22 +145,22 @@
 &lt;p&gt;Happy coding .. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/nodejs,git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/&quot;&gt;node自动生成最新tag版本&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on March 30, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/nodejs,git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/&quot;&gt;node自动生成最新tag版本&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on March 30, 2018.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[创建脚手架 cli 入门教程]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/cli/2018/02/26/cli/"/>
-  <id>https://raoenhui.github.io/cli/2018/02/26/cli</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/cli/2018/02/26/cli/"/>
+  <id>http://localhost:4000/cli/2018/02/26/cli</id>
   <published>2018-02-26T20:00:00+05:30</published>
   <updated>2018-02-26T20:00:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#Cli," term="Cli," />
+  <category scheme="http://localhost:4000/tags/#Cli," term="Cli," />
   <content type="html">
   
     &lt;h2 id=&quot;第一步-创建仓库&quot;&gt;第一步 创建仓库&lt;/h2&gt;
@@ -141,7 +209,7 @@
 ice-first-cli
 npm publish
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/150930/console.png&quot; alt=&quot;console&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/150930/console.png&quot; alt=&quot;console&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;第五步-完成&quot;&gt;第五步 完成&lt;/h2&gt;
 
@@ -150,22 +218,22 @@ npm publish
 &lt;p&gt;Happy coding .. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/cli/2018/02/26/cli/&quot;&gt;创建脚手架 cli 入门教程&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on February 26, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/cli/2018/02/26/cli/&quot;&gt;创建脚手架 cli 入门教程&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on February 26, 2018.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[ES6从入门到精通之常量与变量(一)]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/es6/2015/08/30/es6-one/"/>
-  <id>https://raoenhui.github.io/es6/2015/08/30/es6-one</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/es6/2015/08/30/es6-one/"/>
+  <id>http://localhost:4000/es6/2015/08/30/es6-one</id>
   <published>2015-08-30T20:00:00+05:30</published>
   <updated>2015-08-30T20:00:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#R,%20ES6," term="R, ES6," />
+  <category scheme="http://localhost:4000/tags/#R,%20ES6," term="R, ES6," />
   <content type="html">
   
     &lt;p&gt;ECMAScript 6（以下简称ES6）是JavaScript语言的下一代标准，已经在2015年6月正式发布了。&lt;/p&gt;
@@ -393,22 +461,22 @@ ES6还为原生的String对象，提供了一个raw方法。
 &lt;p&gt;Happy coding .. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/es6/2015/08/30/es6-one/&quot;&gt;ES6从入门到精通之常量与变量(一)&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on August 30, 2015.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/es6/2015/08/30/es6-one/&quot;&gt;ES6从入门到精通之常量与变量(一)&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on August 30, 2015.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Es6 featrues]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/es6/2015/08/28/es6-featrue/"/>
-  <id>https://raoenhui.github.io/es6/2015/08/28/es6-featrue</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/es6/2015/08/28/es6-featrue/"/>
+  <id>http://localhost:4000/es6/2015/08/28/es6-featrue</id>
   <published>2015-08-28T15:09:00+05:30</published>
   <updated>2015-08-28T15:09:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#Es6" term="Es6" />
+  <category scheme="http://localhost:4000/tags/#Es6" term="Es6" />
   <content type="html">
   
     &lt;h1 id=&quot;ecmascript-6-gitioes6features&quot;&gt;ECMAScript 6 &lt;sup&gt;&lt;a href=&quot;http://git.io/es6features&quot;&gt;git.io/es6features&lt;/a&gt;&lt;/sup&gt;&lt;/h1&gt;
@@ -1342,22 +1410,22 @@ factorial(100000)
 
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/es6/2015/08/28/es6-featrue/&quot;&gt;Es6 featrues&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on August 28, 2015.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/es6/2015/08/28/es6-featrue/&quot;&gt;Es6 featrues&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on August 28, 2015.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Sentiment analysis with R]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/analytics/2015/05/10/sentiment-analysis-with-R/"/>
-  <id>https://raoenhui.github.io/analytics/2015/05/10/sentiment-analysis-with-R</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/analytics/2015/05/10/sentiment-analysis-with-R/"/>
+  <id>http://localhost:4000/analytics/2015/05/10/sentiment-analysis-with-R</id>
   <published>2015-05-10T20:00:00+05:30</published>
   <updated>2015-05-10T20:00:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#R,%20analytics,%20sentiment,%20analysis" term="R, analytics, sentiment, analysis" />
+  <category scheme="http://localhost:4000/tags/#R,%20analytics,%20sentiment,%20analysis" term="R, analytics, sentiment, analysis" />
   <content type="html">
   
     &lt;p&gt;With lot of free time i did a small project based on WhatsApp group chat sentiment analysis with ‘R’. R is a great language for statistical calculations and analytics, this small code sample can show you a showcase usefullness of that.&lt;/p&gt;
@@ -1453,22 +1521,22 @@ factorial(100000)
 &lt;p&gt;Happy coding .. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/analytics/2015/05/10/sentiment-analysis-with-R/&quot;&gt;Sentiment analysis with R&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on May 10, 2015.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/analytics/2015/05/10/sentiment-analysis-with-R/&quot;&gt;Sentiment analysis with R&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on May 10, 2015.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Alias makes life easy]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/linux/2015/04/01/alias-makes-life-easy/"/>
-  <id>https://raoenhui.github.io/linux/2015/04/01/alias-makes-life-easy</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/linux/2015/04/01/alias-makes-life-easy/"/>
+  <id>http://localhost:4000/linux/2015/04/01/alias-makes-life-easy</id>
   <published>2015-04-01T18:45:00+05:30</published>
   <updated>2015-04-01T18:45:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#alias,%20commands" term="alias, commands" />
+  <category scheme="http://localhost:4000/tags/#alias,%20commands" term="alias, commands" />
   <content type="html">
   
     &lt;p&gt;From couple of years i’m using it but never thought its also shareable with community, alias is helping me shortning big and repeating commands, you just have to declare the short abbreviation of your short command and use it again n again, so here are usage :&lt;/p&gt;
@@ -1486,22 +1554,22 @@ factorial(100000)
 
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/linux/2015/04/01/alias-makes-life-easy/&quot;&gt;Alias makes life easy&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on April 01, 2015.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/linux/2015/04/01/alias-makes-life-easy/&quot;&gt;Alias makes life easy&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on April 01, 2015.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Working with GIT patch]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/linux/2014/12/31/working-with-git-patch/"/>
-  <id>https://raoenhui.github.io/linux/2014/12/31/working-with-git-patch</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/linux/2014/12/31/working-with-git-patch/"/>
+  <id>http://localhost:4000/linux/2014/12/31/working-with-git-patch</id>
   <published>2014-12-31T11:36:00+05:30</published>
   <updated>2014-12-31T11:36:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#git,%20patch" term="git, patch" />
+  <category scheme="http://localhost:4000/tags/#git,%20patch" term="git, patch" />
   <content type="html">
   
     &lt;p&gt;My last post in 2014 ;), &lt;em&gt;Working with git patches&lt;/em&gt;.&lt;/p&gt;
@@ -1539,22 +1607,22 @@ First step is check the patch.&lt;/li&gt;
 &lt;p&gt;Happy coding and a happy new year 2015 :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/linux/2014/12/31/working-with-git-patch/&quot;&gt;Working with GIT patch&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on December 31, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/linux/2014/12/31/working-with-git-patch/&quot;&gt;Working with GIT patch&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on December 31, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Install lollipop 5.0 to Nexus 4]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/android/2014/11/23/install-lollipop-on-nexus-4/"/>
-  <id>https://raoenhui.github.io/android/2014/11/23/install-lollipop-on-nexus-4</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/android/2014/11/23/install-lollipop-on-nexus-4/"/>
+  <id>http://localhost:4000/android/2014/11/23/install-lollipop-on-nexus-4</id>
   <published>2014-11-23T21:00:00+05:30</published>
   <updated>2014-11-23T21:00:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#android" term="android" /><category scheme="https://raoenhui.github.io/tags/#lollipop" term="lollipop" />
+  <category scheme="http://localhost:4000/tags/#android" term="android" /><category scheme="http://localhost:4000/tags/#lollipop" term="lollipop" />
   <content type="html">
   
     &lt;p&gt;Google takes lot of time to throw OTA update to your phone, may be they do it lot by lot for not loading their servers, if you are lucky you got it early else wait for may days :p.&lt;/p&gt;
@@ -1575,8 +1643,8 @@ First step is check the patch.&lt;/li&gt;
   &lt;li&gt;Now connect  Nexus 4 to your machine via USB, make sure you enable your USB debugging ON, so start USB Debugging go to Settings » Developer Options » USB debugging. (If you dont have Developer Options go to Settings » About Phone » Build number and tap on Build number until you become developer).&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/nxs2.png&quot; style=&quot;height: 25%;width: 25%;&quot; /&gt;
-&lt;img src=&quot;https://raoenhui.github.io/images/nxs1.png&quot; style=&quot;height: 25%;width: 25%;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/nxs2.png&quot; style=&quot;height: 25%;width: 25%;&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/images/nxs1.png&quot; style=&quot;height: 25%;width: 25%;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Now try below commands to make sure you are connected to machine.&lt;/p&gt;
 
@@ -1613,7 +1681,7 @@ unzip it&lt;/li&gt;
 
 &lt;p&gt;This command will  generate following logs on your terminal, put your password if prompted, your phone may be rebooted few times.&lt;/p&gt;
 
-&lt;p&gt;&lt;img style=&quot;height: 25%;width: 25%;&quot; src=&quot;https://raoenhui.github.io/images/nxs3.jpg&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img style=&quot;height: 25%;width: 25%;&quot; src=&quot;http://localhost:4000/images/nxs3.jpg&quot; /&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;amey@amey-xps:~/Downloads/occam-lrx21t&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; ./flash-all.sh
 Password:
@@ -1708,22 +1776,22 @@ finished. total &lt;span class=&quot;nb&quot;&gt;time&lt;/span&gt;: 150.897s&lt;
 &lt;p&gt;Happy coding ….. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/android/2014/11/23/install-lollipop-on-nexus-4/&quot;&gt;Install lollipop 5.0 to Nexus 4&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on November 23, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/android/2014/11/23/install-lollipop-on-nexus-4/&quot;&gt;Install lollipop 5.0 to Nexus 4&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on November 23, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Bang-Bang, Be lazy!!]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/linux/2014/09/14/bang-bang/"/>
-  <id>https://raoenhui.github.io/linux/2014/09/14/bang-bang</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/linux/2014/09/14/bang-bang/"/>
+  <id>http://localhost:4000/linux/2014/09/14/bang-bang</id>
   <published>2014-09-14T09:00:00+05:30</published>
   <updated>2014-09-14T09:00:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#linux" term="linux" />
+  <category scheme="http://localhost:4000/tags/#linux" term="linux" />
   <content type="html">
   
     &lt;p&gt;I found another great thing linux provides for the lazy programmers ;)
@@ -1736,7 +1804,7 @@ Most of the time we need to repeat the commands we entered in linux terminal and
 &lt;p&gt;Usually i work on servers and whenever try to fire few root access commands and it dont allow  me!! -_-,feels insulting. 
 Anyway &lt;strong&gt;sudo !!&lt;/strong&gt;  is here to rescue you :)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/bang-bang.jpg&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/bang-bang.jpg&quot; /&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;amey@amey-xps:~/&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;touch&lt;/span&gt; /etc/apache2/apache2.conf 
 &lt;span class=&quot;nb&quot;&gt;touch&lt;/span&gt;: cannot &lt;span class=&quot;nb&quot;&gt;touch&lt;/span&gt; ‘/etc/apache2/apache2.conf’: Permission denied
@@ -1797,22 +1865,22 @@ amey@amey-xps:~/&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;/code&gt;&lt
 &lt;p&gt;Happy coding ….. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/linux/2014/09/14/bang-bang/&quot;&gt;Bang-Bang, Be lazy!!&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on September 14, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/linux/2014/09/14/bang-bang/&quot;&gt;Bang-Bang, Be lazy!!&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on September 14, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Javascript - ♥ Attach with events]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/javascript/2014/09/07/javascript-attache-with-events/"/>
-  <id>https://raoenhui.github.io/javascript/2014/09/07/javascript-attache-with-events</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/javascript/2014/09/07/javascript-attache-with-events/"/>
+  <id>http://localhost:4000/javascript/2014/09/07/javascript-attache-with-events</id>
   <published>2014-09-07T23:51:00+05:30</published>
   <updated>2014-09-07T23:51:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#javascript" term="javascript" />
+  <category scheme="http://localhost:4000/tags/#javascript" term="javascript" />
   <content type="html">
   
     &lt;p&gt;Javascript is going very populer now days, javascript was created in 10 days in 1995 by &lt;em&gt;Brendan Eich&lt;/em&gt;, JavaScript was not always known as JavaScript: the original name was Mocha, a name chosen by Marc Andreessen, founder of Netscape. In September of 1995 the name was changed to LiveScript, then in December of the same year, upon receiving a trademark license from Sun, the name &lt;em&gt;JavaScript&lt;/em&gt; was adopted. This was somewhat of a marketing move at the time, with Java being very popular around then. I love javascript too much and started digging in that through Node.js which made boom of javascript everywhere as you can use it on serverside too.&lt;/p&gt;
@@ -1884,22 +1952,22 @@ If true, useCapture indicates that the user wishes to initiate capture. After in
 &lt;p&gt;Happy Codeing …. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/javascript/2014/09/07/javascript-attache-with-events/&quot;&gt;Javascript - ♥ Attach with events&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on September 07, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/javascript/2014/09/07/javascript-attache-with-events/&quot;&gt;Javascript - ♥ Attach with events&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on September 07, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Super awesome automation testing]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/testing/2014/08/30/Super-awesome-automation/"/>
-  <id>https://raoenhui.github.io/testing/2014/08/30/Super-awesome-automation</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/testing/2014/08/30/Super-awesome-automation/"/>
+  <id>http://localhost:4000/testing/2014/08/30/Super-awesome-automation</id>
   <published>2014-08-30T21:45:00+05:30</published>
   <updated>2014-08-30T21:45:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#python" term="python" /><category scheme="https://raoenhui.github.io/tags/#testing" term="testing" />
+  <category scheme="http://localhost:4000/tags/#python" term="python" /><category scheme="http://localhost:4000/tags/#testing" term="testing" />
   <content type="html">
   
     &lt;p&gt;As a &lt;strong&gt;&lt;em&gt;born&lt;/em&gt;&lt;/strong&gt; developer i never came across actual/serious testing of softwares, but some times you are the one man army of your project and gotta make all the things yourself.&lt;/p&gt;
@@ -1988,32 +2056,32 @@ Done :  &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&qu
 
 &lt;p&gt;below are the few screen shots taken from my test.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/screenshot-1.png&quot; alt=&quot;Automation page&quot; /&gt;
-&lt;img src=&quot;https://raoenhui.github.io/images/screenshot-2.jpeg&quot; alt=&quot;Screenshot1&quot; /&gt;
-&lt;img src=&quot;https://raoenhui.github.io/images/screenshot-3.jpeg&quot; alt=&quot;Screenshot2&quot; /&gt;
-&lt;img src=&quot;https://raoenhui.github.io/images/screenshot-4.jpeg&quot; alt=&quot;Screenshot3&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/screenshot-1.png&quot; alt=&quot;Automation page&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/images/screenshot-2.jpeg&quot; alt=&quot;Screenshot1&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/images/screenshot-3.jpeg&quot; alt=&quot;Screenshot2&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/images/screenshot-4.jpeg&quot; alt=&quot;Screenshot3&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Unknowingly i found a bug in browserstack, see the screeshot’s, by default they should use english but google page is in Dutch, may be their servers are located in europ with dutch version of OS :p&lt;/p&gt;
 
 &lt;p&gt;Happy coding …. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/testing/2014/08/30/Super-awesome-automation/&quot;&gt;Super awesome automation testing&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on August 30, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/testing/2014/08/30/Super-awesome-automation/&quot;&gt;Super awesome automation testing&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on August 30, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA['N' for NodeJS]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/nodejs/2014/08/17/N-for-Node.js/"/>
-  <id>https://raoenhui.github.io/nodejs/2014/08/17/N-for-Node.js</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/nodejs/2014/08/17/N-for-Node.js/"/>
+  <id>http://localhost:4000/nodejs/2014/08/17/N-for-Node.js</id>
   <published>2014-08-17T11:45:00+05:30</published>
   <updated>2014-08-17T11:45:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#nodejs" term="nodejs" />
+  <category scheme="http://localhost:4000/tags/#nodejs" term="nodejs" />
   <content type="html">
   
     &lt;p&gt;From last few months i came across the the coolest thing in programming and because of that i’m gonna teach my childrens that ‘N’ is for NodeJS ;)&lt;/p&gt;
@@ -2154,22 +2222,22 @@ Loved NodeJS ♥&lt;/p&gt;
 &lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/nodejs/2014/08/17/N-for-Node.js/&quot;&gt;'N' for NodeJS&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on August 17, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/nodejs/2014/08/17/N-for-Node.js/&quot;&gt;'N' for NodeJS&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on August 17, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Timezone conversion in python -Easy way]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/python/2014/08/08/python-timezone-convertion/"/>
-  <id>https://raoenhui.github.io/python/2014/08/08/python-timezone-convertion</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/python/2014/08/08/python-timezone-convertion/"/>
+  <id>http://localhost:4000/python/2014/08/08/python-timezone-convertion</id>
   <published>2014-08-08T10:17:00+05:30</published>
   <updated>2014-08-08T10:17:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#python" term="python" />
+  <category scheme="http://localhost:4000/tags/#python" term="python" />
   <content type="html">
   
     &lt;p&gt;This lib i found most usefulll &lt;a href=&quot;http://niemeyer.net/python-dateutil&quot;&gt;python-dateutil&lt;/a&gt;.&lt;/p&gt;
@@ -2195,22 +2263,22 @@ Loved NodeJS ♥&lt;/p&gt;
 &lt;p&gt;Happy coding ….. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/python/2014/08/08/python-timezone-convertion/&quot;&gt;Timezone conversion in python -Easy way&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on August 08, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/python/2014/08/08/python-timezone-convertion/&quot;&gt;Timezone conversion in python -Easy way&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on August 08, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Killer mailer script in Python]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/python/2014/08/04/killer-mailer/"/>
-  <id>https://raoenhui.github.io/python/2014/08/04/killer-mailer</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/python/2014/08/04/killer-mailer/"/>
+  <id>http://localhost:4000/python/2014/08/04/killer-mailer</id>
   <published>2014-08-04T09:23:00+05:30</published>
   <updated>2014-08-04T09:23:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#python" term="python" />
+  <category scheme="http://localhost:4000/tags/#python" term="python" />
   <content type="html">
   
     &lt;p&gt;Hey guys i always needed a mailer script which can send me hourly/daily/weekly updates of my diffrent programs running on linux box.&lt;/p&gt;
@@ -2273,22 +2341,22 @@ Loved NodeJS ♥&lt;/p&gt;
 &lt;p&gt;Happy coding ….. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/python/2014/08/04/killer-mailer/&quot;&gt;Killer mailer script in Python&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on August 04, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/python/2014/08/04/killer-mailer/&quot;&gt;Killer mailer script in Python&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on August 04, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Functions in shell script]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/linux/2014/01/19/functions-in-shell-script/"/>
-  <id>https://raoenhui.github.io/linux/2014/01/19/functions-in-shell-script</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/linux/2014/01/19/functions-in-shell-script/"/>
+  <id>http://localhost:4000/linux/2014/01/19/functions-in-shell-script</id>
   <published>2014-01-19T15:09:00+05:30</published>
   <updated>2014-01-19T15:09:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#shell" term="shell" /><category scheme="https://raoenhui.github.io/tags/#linux" term="linux" />
+  <category scheme="http://localhost:4000/tags/#shell" term="shell" /><category scheme="http://localhost:4000/tags/#linux" term="linux" />
   <content type="html">
   
     &lt;p&gt;Have  lot of repeated shell code ? try writing function in that :)&lt;/p&gt;
@@ -2328,22 +2396,22 @@ sql_exec&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
 &lt;p&gt;Happy coding ….. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/linux/2014/01/19/functions-in-shell-script/&quot;&gt;Functions in shell script&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on January 19, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/linux/2014/01/19/functions-in-shell-script/&quot;&gt;Functions in shell script&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on January 19, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Using MySQL dump]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/database/2013/12/17/using-mysql-dump/"/>
-  <id>https://raoenhui.github.io/database/2013/12/17/using-mysql-dump</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/database/2013/12/17/using-mysql-dump/"/>
+  <id>http://localhost:4000/database/2013/12/17/using-mysql-dump</id>
   <published>2013-12-17T20:00:00+05:30</published>
   <updated>2013-12-17T20:00:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#database" term="database" /><category scheme="https://raoenhui.github.io/tags/#mysql" term="mysql" />
+  <category scheme="http://localhost:4000/tags/#database" term="database" /><category scheme="http://localhost:4000/tags/#mysql" term="mysql" />
   <content type="html">
   
     &lt;p&gt;HI All, mysqldump is a very handy and useful command for keeping backup of your Db or to migrate them to another server.&lt;/p&gt;
@@ -2383,22 +2451,22 @@ sql_exec&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
 &lt;p&gt;Happy Coding …. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/database/2013/12/17/using-mysql-dump/&quot;&gt;Using MySQL dump&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on December 17, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/database/2013/12/17/using-mysql-dump/&quot;&gt;Using MySQL dump&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on December 17, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Checking MySQL Database Size]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/database/2013/12/15/checking-mysql-database-size/"/>
-  <id>https://raoenhui.github.io/database/2013/12/15/checking-mysql-database-size</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/database/2013/12/15/checking-mysql-database-size/"/>
+  <id>http://localhost:4000/database/2013/12/15/checking-mysql-database-size</id>
   <published>2013-12-15T22:00:00+05:30</published>
   <updated>2013-12-15T22:00:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#database" term="database" /><category scheme="https://raoenhui.github.io/tags/#mysql" term="mysql" />
+  <category scheme="http://localhost:4000/tags/#database" term="database" /><category scheme="http://localhost:4000/tags/#mysql" term="mysql" />
   <content type="html">
   
     &lt;p&gt;Hi all , in this post i am going to show you how to check current mysql database size, below queries are tested on Mysql 5.5.8&lt;/p&gt;
@@ -2430,22 +2498,22 @@ sql_exec&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
 &lt;p&gt;Happy coding.. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/database/2013/12/15/checking-mysql-database-size/&quot;&gt;Checking MySQL Database Size&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on December 15, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/database/2013/12/15/checking-mysql-database-size/&quot;&gt;Checking MySQL Database Size&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on December 15, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Capturing HTTP Header In JAX-RS]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/java/2013/12/10/capturing-http-header-in-JAX-RS/"/>
-  <id>https://raoenhui.github.io/java/2013/12/10/capturing-http-header-in-JAX-RS</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/java/2013/12/10/capturing-http-header-in-JAX-RS/"/>
+  <id>http://localhost:4000/java/2013/12/10/capturing-http-header-in-JAX-RS</id>
   <published>2013-12-10T20:30:00+05:30</published>
   <updated>2013-12-10T20:30:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#java" term="java" /><category scheme="https://raoenhui.github.io/tags/#webservices" term="webservices" />
+  <category scheme="http://localhost:4000/tags/#java" term="java" /><category scheme="http://localhost:4000/tags/#webservices" term="webservices" />
   <content type="html">
   
     &lt;p&gt;In this post i will explain you how to capture http-request header in JAX-RS.&lt;/p&gt;
@@ -2547,7 +2615,7 @@ user-agent&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; Mozilla/5.0 &l
 &lt;p&gt;Happy Coding .. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/java/2013/12/10/capturing-http-header-in-JAX-RS/&quot;&gt;Capturing HTTP Header In JAX-RS&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on December 10, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/java/2013/12/10/capturing-http-header-in-JAX-RS/&quot;&gt;Capturing HTTP Header In JAX-RS&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on December 10, 2013.&lt;/p&gt;</content>
 </entry>
 
 </feed>
