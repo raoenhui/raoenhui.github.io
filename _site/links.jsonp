@@ -101,8 +101,8 @@ callback([
   } ,
 
   {
-    "text": "几种自动生成博客工具介绍",
-    "href": "https://raoenhui.github.io/blog/2018/05/05/blog/"
+    "text": "几种自动生成静态站点介绍",
+    "href": "https://raoenhui.github.io/cli/2018/05/05/blog/"
   } 
 
 ])
