@@ -4,7 +4,7 @@ layout: post
 title: "Install lollipop 5.0 to Nexus 4"
 date: 2014-11-23 21:00
 comments: true
-category : android
+category : other
 tags:
 - android
 - lollipop

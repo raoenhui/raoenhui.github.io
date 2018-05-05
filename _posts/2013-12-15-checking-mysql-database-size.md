@@ -4,7 +4,7 @@ layout: post
 title: "Checking MySQL Database Size"
 date: 2013-12-15 22:00
 comments: true
-category : Database
+category : other
 tags:
 - database
 - mysql

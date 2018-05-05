@@ -5,29 +5,213 @@
 
 <title type="text">前端妹子的博客</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
-<link rel="alternate" type="text/html" href="http://localhost:4000/" />
-<updated>2018-04-11T20:15:50+05:30</updated>
-<id>http://localhost:4000/</id>
+<link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
+<link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
+<updated>2018-05-05T16:19:41+05:30</updated>
+<id>https://raoenhui.github.io/</id>
 <author>
   <name>Enhui Rao</name>
-  <uri>http://localhost:4000/</uri>
+  <uri>https://raoenhui.github.io/</uri>
   <email>670615769@qq.com</email>
 </author>
 
 
 <entry>
+  <title type="html"><![CDATA[几种自动生成博客工具介绍]]></title>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/blog/2018/05/05/blog/"/>
+  <id>https://raoenhui.github.io/blog/2018/05/05/blog</id>
+  <published>2018-05-05T13:00:00+05:30</published>
+  <updated>2018-05-05T13:00:00+05:30</updated>
+  <author>
+    <name>Enhui Rao</name>
+    <uri>https://raoenhui.github.io</uri>
+    <email>670615769@qq.com</email>
+  </author>
+  <category scheme="https://raoenhui.github.io/tags/#blog" term="blog" />
+  <content type="html">
+  
+    &lt;h2 id=&quot;第一步-前言&quot;&gt;第一步 前言&lt;/h2&gt;
+
+&lt;p&gt;如何创建一个CMS网站，WordPress无疑是最好的选择。但是如果只生成静态站点，那便有很多千秋各异的选择，下面我将一一介绍。&lt;/p&gt;
+
+&lt;h2 id=&quot;第二步-介绍&quot;&gt;第二步 介绍&lt;/h2&gt;
+
+&lt;h3 id=&quot;jekyll&quot;&gt;Jekyll&lt;/h3&gt;
+
+&lt;p&gt;Jekyll是最流行的生成器。它主要是通过Ruby编译自动生成GitHub页面，所以在个人项目和文档中非常流行
+。而且它还有一个庞大的用户群和一个大的插件目录，这是个很大的优势。&lt;/p&gt;
+
+&lt;h3 id=&quot;hugo&quot;&gt;Hugo&lt;/h3&gt;
+
+&lt;p&gt;Hugo很像Jekyll，但是它对比Jekyll的优势是编译速度特别快，当有很多篇博客时，Jekyll的编译速度会非常慢。&lt;br /&gt;
+而且Hugo创建一个网站只要几秒，里面剥离了很多抽象的东西，使用户不需要配置很多东西变可以快速建站，对用户来说更加简单。&lt;/p&gt;
+
+&lt;h3 id=&quot;hexo&quot;&gt;Hexo&lt;/h3&gt;
+
+&lt;p&gt;Hexo是一个新出现的技术，它是NodeJs编译生成的。大部分用于创建博客平台。它有着Jekyll的可扩展性和Hugo的速度，而且用nodejs起服务，对前端工程师来说是个不错的选择。&lt;/p&gt;
+
+&lt;h3 id=&quot;wintersmith&quot;&gt;Wintersmith&lt;/h3&gt;
+
+&lt;p&gt;Wintersmith也是一个用NodeJs来编译的生成器。它最大的不同点就是非常的简单，它就想一个平台，你可以安装很多插件来满足你的需求。它需要一些精力去安装插件调整后才能进行工作，但是这样也给了用户更多的空间去自定义化。&lt;/p&gt;
+
+&lt;h3 id=&quot;gatsby&quot;&gt;Gatsby&lt;/h3&gt;
+
+&lt;p&gt;Gatsby是最新也是最有趣的生成器。它将静态页面引入框架中，它使用React和Webpack来做单页应用管理你的网页内容。它根据自己的需求移除很多配置项，给开发人员提供了个简单高效的解决方案，最终将生成一个现代和高端应用程序。
+事实上，Gatsby可以用来做很多事情，而不仅仅是生成一个博客。它的真正极限还没有被发现。很多React开发人员正在自发参与Gatsby的开发，Gatsby会越来越完善。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/180505/stackshare.png&quot; alt=&quot;website&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://stackshare.io/stackups/gatsby-vs-wintersmith-vs-hugo-vs-hexo-vs-jekyll&quot;&gt;StackShare&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com&quot;&gt;https://jekyllrb.com&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://gohugo.io/&quot;&gt;https://gohugo.io&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://hexo.io&quot;&gt;https://hexo.io&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://wintersmith.io/&quot;&gt;http://wintersmith.io&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/&quot;&gt;https://www.gatsbyjs.org&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;来源译：&lt;a href=&quot;https://medium.freecodecamp.org/static-sites-are-back-24d01a01f11a&quot;&gt;https://medium.freecodecamp.org/static-sites-are-back-24d01a01f11a&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Happy coding .. :)&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/blog/2018/05/05/blog/&quot;&gt;几种自动生成博客工具介绍&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on May 05, 2018.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[自动生成不同大小形状的图片]]></title>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/nodejs/koa/2018/05/01/createImg/"/>
+  <id>https://raoenhui.github.io/nodejs/koa/2018/05/01/createImg</id>
+  <published>2018-05-01T20:00:00+05:30</published>
+  <updated>2018-05-01T20:00:00+05:30</updated>
+  <author>
+    <name>Enhui Rao</name>
+    <uri>https://raoenhui.github.io</uri>
+    <email>670615769@qq.com</email>
+  </author>
+  <category scheme="https://raoenhui.github.io/tags/#NodeJS" term="NodeJS" /><category scheme="https://raoenhui.github.io/tags/#koa" term="koa" />
+  <content type="html">
+  
+    &lt;h2 id=&quot;第一步-前言&quot;&gt;第一步 前言&lt;/h2&gt;
+
+&lt;p&gt;实际前端工作中，当UED没有给到确定的图片时，前端需要自己模拟一个图片来实现页面占位。于是写了份自动生成不同大小形状图片的服务。&lt;br /&gt;
+code地址为&lt;a href=&quot;https://github.com/raoenhui/create-img/tree/master/server&quot;&gt;https://github.com/raoenhui/create-img/tree/master/server&lt;/a&gt;。 
+demo访问地址还在部署中，尽请期待。&lt;/p&gt;
+
+&lt;h2 id=&quot;第二步-原理&quot;&gt;第二步 原理&lt;/h2&gt;
+
+&lt;p&gt;主要用到的技术是koa、koa-router和canvas。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;用koa启动一个webserver服务，用了logger中间键来方便查看记录。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;logger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'koa-logger'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;koaBody&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'koa-body'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Koa&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'koa'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Koa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// middleware&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;koaBody&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// listen&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;listen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;用koa-router获取用户访问的url，url中包含大小、形状和颜色信息，并调用canvas画图片。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;router&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'koa-router'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)();&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// route definitions&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/:size/:shape/:bg'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;routes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/**
+ * Post listing.
+ */&lt;/span&gt;
+
+ &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sizeAry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'x'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'rectangle'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//'rectangle||circle'&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bgColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`#&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`#000000`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;imgBuffer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getCanvas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sizeAry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sizeAry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bgColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;image/jpg&quot;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;imgBuffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;用canvas根据不同大小、形状和颜色信息画出图片。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Canvas&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'canvas'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bgColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Canvas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'2d'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'circle'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//圆形&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;beginPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fillStyle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bgColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;//矩形&lt;/span&gt;
+          &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fillStyle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bgColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fillRect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toBuffer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;第三步-demo&quot;&gt;第三步 demo&lt;/h2&gt;
+
+&lt;p&gt;如想获取宽高为300px，颜色为#e04c4c的圆形。
+localhost:3000/300x300/circle/e04c4c&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/180501/demo.png&quot; alt=&quot;website&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Happy coding .. :)&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/nodejs/koa/2018/05/01/createImg/&quot;&gt;自动生成不同大小形状的图片&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on May 01, 2018.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
   <title type="html"><![CDATA[Caddy web服务器初探]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/serve/2018/04/11/caddy/"/>
-  <id>http://localhost:4000/serve/2018/04/11/caddy</id>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/serve/2018/04/11/caddy/"/>
+  <id>https://raoenhui.github.io/serve/2018/04/11/caddy</id>
   <published>2018-04-11T22:00:00+05:30</published>
   <updated>2018-04-11T22:00:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://raoenhui.github.io</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="http://localhost:4000/tags/#serve" term="serve" />
+  <category scheme="https://raoenhui.github.io/tags/#serve" term="serve" />
   <content type="html">
   
     &lt;h2 id=&quot;第一步-认识caddy&quot;&gt;第一步 认识caddy&lt;/h2&gt;
@@ -40,7 +224,7 @@
 
 &lt;p&gt;点击下载页面&lt;a href=&quot;https://caddyserver.com/download&quot;&gt;https://caddyserver.com/download&lt;/a&gt;，根据电脑系统选择下载最新的安装包。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/180411/install.jpg&quot; alt=&quot;install&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/180411/install.jpg&quot; alt=&quot;install&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;解压后将路径添加至环境变量中
 如mac下：&lt;/p&gt;
@@ -48,13 +232,13 @@
 &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; /private/etc/paths
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/180411/console.png&quot; alt=&quot;console&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/180411/console.png&quot; alt=&quot;console&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;第三步-启动caddy&quot;&gt;第三步 启动caddy&lt;/h2&gt;
 
 &lt;p&gt;到你所在的代码路径下执行caddy&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/180411/caddy.jpg&quot; alt=&quot;caddy&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/180411/caddy.jpg&quot; alt=&quot;caddy&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;想代理的话可新建个Caddyfile&lt;/p&gt;
 
@@ -75,27 +259,27 @@ proxy /api localhost:5001 localhost:5002
 
 &lt;p&gt;运行则如下&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/180411/website.png&quot; alt=&quot;website&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/180411/website.png&quot; alt=&quot;website&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Happy coding .. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/serve/2018/04/11/caddy/&quot;&gt;Caddy web服务器初探&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on April 11, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/serve/2018/04/11/caddy/&quot;&gt;Caddy web服务器初探&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on April 11, 2018.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[node自动生成最新tag版本]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/nodejs,git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/"/>
-  <id>http://localhost:4000/nodejs,git/2018/03/30/nodejs自动生成tag</id>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/"/>
+  <id>https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs自动生成tag</id>
   <published>2018-03-30T20:00:00+05:30</published>
   <updated>2018-03-30T20:00:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://raoenhui.github.io</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="http://localhost:4000/tags/#nodejs" term="nodejs" /><category scheme="http://localhost:4000/tags/#git" term="git" />
+  <category scheme="https://raoenhui.github.io/tags/#NodeJS" term="NodeJS" /><category scheme="https://raoenhui.github.io/tags/#git" term="git" />
   <content type="html">
   
     &lt;h2 id=&quot;第一步-引入所需要的包&quot;&gt;第一步 引入所需要的包&lt;/h2&gt;
@@ -145,22 +329,22 @@ proxy /api localhost:5001 localhost:5002
 &lt;p&gt;Happy coding .. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/nodejs,git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/&quot;&gt;node自动生成最新tag版本&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on March 30, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/&quot;&gt;node自动生成最新tag版本&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on March 30, 2018.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[创建脚手架 cli 入门教程]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/cli/2018/02/26/cli/"/>
-  <id>http://localhost:4000/cli/2018/02/26/cli</id>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/cli/2018/02/26/cli/"/>
+  <id>https://raoenhui.github.io/cli/2018/02/26/cli</id>
   <published>2018-02-26T20:00:00+05:30</published>
   <updated>2018-02-26T20:00:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://raoenhui.github.io</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="http://localhost:4000/tags/#Cli," term="Cli," />
+  <category scheme="https://raoenhui.github.io/tags/#Cli," term="Cli," />
   <content type="html">
   
     &lt;h2 id=&quot;第一步-创建仓库&quot;&gt;第一步 创建仓库&lt;/h2&gt;
@@ -209,7 +393,7 @@ proxy /api localhost:5001 localhost:5002
 ice-first-cli
 npm publish
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/150930/console.png&quot; alt=&quot;console&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/150930/console.png&quot; alt=&quot;console&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;第五步-完成&quot;&gt;第五步 完成&lt;/h2&gt;
 
@@ -218,22 +402,22 @@ npm publish
 &lt;p&gt;Happy coding .. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/cli/2018/02/26/cli/&quot;&gt;创建脚手架 cli 入门教程&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on February 26, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/cli/2018/02/26/cli/&quot;&gt;创建脚手架 cli 入门教程&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on February 26, 2018.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[ES6从入门到精通之常量与变量(一)]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/es6/2015/08/30/es6-one/"/>
-  <id>http://localhost:4000/es6/2015/08/30/es6-one</id>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/es6/2015/08/30/es6-one/"/>
+  <id>https://raoenhui.github.io/es6/2015/08/30/es6-one</id>
   <published>2015-08-30T20:00:00+05:30</published>
   <updated>2015-08-30T20:00:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://raoenhui.github.io</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="http://localhost:4000/tags/#R,%20ES6," term="R, ES6," />
+  <category scheme="https://raoenhui.github.io/tags/#R,%20ES6," term="R, ES6," />
   <content type="html">
   
     &lt;p&gt;ECMAScript 6（以下简称ES6）是JavaScript语言的下一代标准，已经在2015年6月正式发布了。&lt;/p&gt;
@@ -461,22 +645,22 @@ ES6还为原生的String对象，提供了一个raw方法。
 &lt;p&gt;Happy coding .. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/es6/2015/08/30/es6-one/&quot;&gt;ES6从入门到精通之常量与变量(一)&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on August 30, 2015.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/es6/2015/08/30/es6-one/&quot;&gt;ES6从入门到精通之常量与变量(一)&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on August 30, 2015.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Es6 featrues]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/es6/2015/08/28/es6-featrue/"/>
-  <id>http://localhost:4000/es6/2015/08/28/es6-featrue</id>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/es6/2015/08/28/es6-featrue/"/>
+  <id>https://raoenhui.github.io/es6/2015/08/28/es6-featrue</id>
   <published>2015-08-28T15:09:00+05:30</published>
   <updated>2015-08-28T15:09:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://raoenhui.github.io</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="http://localhost:4000/tags/#Es6" term="Es6" />
+  <category scheme="https://raoenhui.github.io/tags/#Es6" term="Es6" />
   <content type="html">
   
     &lt;h1 id=&quot;ecmascript-6-gitioes6features&quot;&gt;ECMAScript 6 &lt;sup&gt;&lt;a href=&quot;http://git.io/es6features&quot;&gt;git.io/es6features&lt;/a&gt;&lt;/sup&gt;&lt;/h1&gt;
@@ -1410,22 +1594,22 @@ factorial(100000)
 
 
   
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/es6/2015/08/28/es6-featrue/&quot;&gt;Es6 featrues&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on August 28, 2015.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/es6/2015/08/28/es6-featrue/&quot;&gt;Es6 featrues&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on August 28, 2015.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Sentiment analysis with R]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/analytics/2015/05/10/sentiment-analysis-with-R/"/>
-  <id>http://localhost:4000/analytics/2015/05/10/sentiment-analysis-with-R</id>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/analytics/2015/05/10/sentiment-analysis-with-R/"/>
+  <id>https://raoenhui.github.io/analytics/2015/05/10/sentiment-analysis-with-R</id>
   <published>2015-05-10T20:00:00+05:30</published>
   <updated>2015-05-10T20:00:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://raoenhui.github.io</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="http://localhost:4000/tags/#R,%20analytics,%20sentiment,%20analysis" term="R, analytics, sentiment, analysis" />
+  <category scheme="https://raoenhui.github.io/tags/#R,%20analytics,%20sentiment,%20analysis" term="R, analytics, sentiment, analysis" />
   <content type="html">
   
     &lt;p&gt;With lot of free time i did a small project based on WhatsApp group chat sentiment analysis with ‘R’. R is a great language for statistical calculations and analytics, this small code sample can show you a showcase usefullness of that.&lt;/p&gt;
@@ -1521,22 +1705,22 @@ factorial(100000)
 &lt;p&gt;Happy coding .. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/analytics/2015/05/10/sentiment-analysis-with-R/&quot;&gt;Sentiment analysis with R&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on May 10, 2015.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/analytics/2015/05/10/sentiment-analysis-with-R/&quot;&gt;Sentiment analysis with R&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on May 10, 2015.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Alias makes life easy]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/linux/2015/04/01/alias-makes-life-easy/"/>
-  <id>http://localhost:4000/linux/2015/04/01/alias-makes-life-easy</id>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/linux/2015/04/01/alias-makes-life-easy/"/>
+  <id>https://raoenhui.github.io/linux/2015/04/01/alias-makes-life-easy</id>
   <published>2015-04-01T18:45:00+05:30</published>
   <updated>2015-04-01T18:45:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://raoenhui.github.io</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="http://localhost:4000/tags/#alias,%20commands" term="alias, commands" />
+  <category scheme="https://raoenhui.github.io/tags/#alias,%20commands" term="alias, commands" />
   <content type="html">
   
     &lt;p&gt;From couple of years i’m using it but never thought its also shareable with community, alias is helping me shortning big and repeating commands, you just have to declare the short abbreviation of your short command and use it again n again, so here are usage :&lt;/p&gt;
@@ -1554,22 +1738,22 @@ factorial(100000)
 
 
   
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/linux/2015/04/01/alias-makes-life-easy/&quot;&gt;Alias makes life easy&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on April 01, 2015.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/linux/2015/04/01/alias-makes-life-easy/&quot;&gt;Alias makes life easy&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on April 01, 2015.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Working with GIT patch]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/linux/2014/12/31/working-with-git-patch/"/>
-  <id>http://localhost:4000/linux/2014/12/31/working-with-git-patch</id>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/other/2014/12/31/working-with-git-patch/"/>
+  <id>https://raoenhui.github.io/other/2014/12/31/working-with-git-patch</id>
   <published>2014-12-31T11:36:00+05:30</published>
   <updated>2014-12-31T11:36:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://raoenhui.github.io</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="http://localhost:4000/tags/#git,%20patch" term="git, patch" />
+  <category scheme="https://raoenhui.github.io/tags/#git,%20patch" term="git, patch" />
   <content type="html">
   
     &lt;p&gt;My last post in 2014 ;), &lt;em&gt;Working with git patches&lt;/em&gt;.&lt;/p&gt;
@@ -1607,22 +1791,22 @@ First step is check the patch.&lt;/li&gt;
 &lt;p&gt;Happy coding and a happy new year 2015 :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/linux/2014/12/31/working-with-git-patch/&quot;&gt;Working with GIT patch&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on December 31, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/other/2014/12/31/working-with-git-patch/&quot;&gt;Working with GIT patch&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on December 31, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Install lollipop 5.0 to Nexus 4]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/android/2014/11/23/install-lollipop-on-nexus-4/"/>
-  <id>http://localhost:4000/android/2014/11/23/install-lollipop-on-nexus-4</id>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/other/2014/11/23/install-lollipop-on-nexus-4/"/>
+  <id>https://raoenhui.github.io/other/2014/11/23/install-lollipop-on-nexus-4</id>
   <published>2014-11-23T21:00:00+05:30</published>
   <updated>2014-11-23T21:00:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://raoenhui.github.io</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="http://localhost:4000/tags/#android" term="android" /><category scheme="http://localhost:4000/tags/#lollipop" term="lollipop" />
+  <category scheme="https://raoenhui.github.io/tags/#android" term="android" /><category scheme="https://raoenhui.github.io/tags/#lollipop" term="lollipop" />
   <content type="html">
   
     &lt;p&gt;Google takes lot of time to throw OTA update to your phone, may be they do it lot by lot for not loading their servers, if you are lucky you got it early else wait for may days :p.&lt;/p&gt;
@@ -1643,8 +1827,8 @@ First step is check the patch.&lt;/li&gt;
   &lt;li&gt;Now connect  Nexus 4 to your machine via USB, make sure you enable your USB debugging ON, so start USB Debugging go to Settings » Developer Options » USB debugging. (If you dont have Developer Options go to Settings » About Phone » Build number and tap on Build number until you become developer).&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/nxs2.png&quot; style=&quot;height: 25%;width: 25%;&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/images/nxs1.png&quot; style=&quot;height: 25%;width: 25%;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/nxs2.png&quot; style=&quot;height: 25%;width: 25%;&quot; /&gt;
+&lt;img src=&quot;https://raoenhui.github.io/images/nxs1.png&quot; style=&quot;height: 25%;width: 25%;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Now try below commands to make sure you are connected to machine.&lt;/p&gt;
 
@@ -1681,7 +1865,7 @@ unzip it&lt;/li&gt;
 
 &lt;p&gt;This command will  generate following logs on your terminal, put your password if prompted, your phone may be rebooted few times.&lt;/p&gt;
 
-&lt;p&gt;&lt;img style=&quot;height: 25%;width: 25%;&quot; src=&quot;http://localhost:4000/images/nxs3.jpg&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img style=&quot;height: 25%;width: 25%;&quot; src=&quot;https://raoenhui.github.io/images/nxs3.jpg&quot; /&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;amey@amey-xps:~/Downloads/occam-lrx21t&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; ./flash-all.sh
 Password:
@@ -1776,22 +1960,22 @@ finished. total &lt;span class=&quot;nb&quot;&gt;time&lt;/span&gt;: 150.897s&lt;
 &lt;p&gt;Happy coding ….. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/android/2014/11/23/install-lollipop-on-nexus-4/&quot;&gt;Install lollipop 5.0 to Nexus 4&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on November 23, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/other/2014/11/23/install-lollipop-on-nexus-4/&quot;&gt;Install lollipop 5.0 to Nexus 4&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on November 23, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Bang-Bang, Be lazy!!]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/linux/2014/09/14/bang-bang/"/>
-  <id>http://localhost:4000/linux/2014/09/14/bang-bang</id>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/linux/2014/09/14/bang-bang/"/>
+  <id>https://raoenhui.github.io/linux/2014/09/14/bang-bang</id>
   <published>2014-09-14T09:00:00+05:30</published>
   <updated>2014-09-14T09:00:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://raoenhui.github.io</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="http://localhost:4000/tags/#linux" term="linux" />
+  <category scheme="https://raoenhui.github.io/tags/#linux" term="linux" />
   <content type="html">
   
     &lt;p&gt;I found another great thing linux provides for the lazy programmers ;)
@@ -1804,7 +1988,7 @@ Most of the time we need to repeat the commands we entered in linux terminal and
 &lt;p&gt;Usually i work on servers and whenever try to fire few root access commands and it dont allow  me!! -_-,feels insulting. 
 Anyway &lt;strong&gt;sudo !!&lt;/strong&gt;  is here to rescue you :)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/bang-bang.jpg&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/bang-bang.jpg&quot; /&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;amey@amey-xps:~/&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;touch&lt;/span&gt; /etc/apache2/apache2.conf 
 &lt;span class=&quot;nb&quot;&gt;touch&lt;/span&gt;: cannot &lt;span class=&quot;nb&quot;&gt;touch&lt;/span&gt; ‘/etc/apache2/apache2.conf’: Permission denied
@@ -1865,22 +2049,22 @@ amey@amey-xps:~/&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;/code&gt;&lt
 &lt;p&gt;Happy coding ….. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/linux/2014/09/14/bang-bang/&quot;&gt;Bang-Bang, Be lazy!!&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on September 14, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/linux/2014/09/14/bang-bang/&quot;&gt;Bang-Bang, Be lazy!!&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on September 14, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Javascript - ♥ Attach with events]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/javascript/2014/09/07/javascript-attache-with-events/"/>
-  <id>http://localhost:4000/javascript/2014/09/07/javascript-attache-with-events</id>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/javascript/2014/09/07/javascript-attache-with-events/"/>
+  <id>https://raoenhui.github.io/javascript/2014/09/07/javascript-attache-with-events</id>
   <published>2014-09-07T23:51:00+05:30</published>
   <updated>2014-09-07T23:51:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://raoenhui.github.io</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="http://localhost:4000/tags/#javascript" term="javascript" />
+  <category scheme="https://raoenhui.github.io/tags/#javascript" term="javascript" />
   <content type="html">
   
     &lt;p&gt;Javascript is going very populer now days, javascript was created in 10 days in 1995 by &lt;em&gt;Brendan Eich&lt;/em&gt;, JavaScript was not always known as JavaScript: the original name was Mocha, a name chosen by Marc Andreessen, founder of Netscape. In September of 1995 the name was changed to LiveScript, then in December of the same year, upon receiving a trademark license from Sun, the name &lt;em&gt;JavaScript&lt;/em&gt; was adopted. This was somewhat of a marketing move at the time, with Java being very popular around then. I love javascript too much and started digging in that through Node.js which made boom of javascript everywhere as you can use it on serverside too.&lt;/p&gt;
@@ -1952,22 +2136,22 @@ If true, useCapture indicates that the user wishes to initiate capture. After in
 &lt;p&gt;Happy Codeing …. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/javascript/2014/09/07/javascript-attache-with-events/&quot;&gt;Javascript - ♥ Attach with events&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on September 07, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/javascript/2014/09/07/javascript-attache-with-events/&quot;&gt;Javascript - ♥ Attach with events&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on September 07, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Super awesome automation testing]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/testing/2014/08/30/Super-awesome-automation/"/>
-  <id>http://localhost:4000/testing/2014/08/30/Super-awesome-automation</id>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/testing/2014/08/30/Super-awesome-automation/"/>
+  <id>https://raoenhui.github.io/testing/2014/08/30/Super-awesome-automation</id>
   <published>2014-08-30T21:45:00+05:30</published>
   <updated>2014-08-30T21:45:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://raoenhui.github.io</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="http://localhost:4000/tags/#python" term="python" /><category scheme="http://localhost:4000/tags/#testing" term="testing" />
+  <category scheme="https://raoenhui.github.io/tags/#python" term="python" /><category scheme="https://raoenhui.github.io/tags/#testing" term="testing" />
   <content type="html">
   
     &lt;p&gt;As a &lt;strong&gt;&lt;em&gt;born&lt;/em&gt;&lt;/strong&gt; developer i never came across actual/serious testing of softwares, but some times you are the one man army of your project and gotta make all the things yourself.&lt;/p&gt;
@@ -2056,54 +2240,54 @@ Done :  &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&qu
 
 &lt;p&gt;below are the few screen shots taken from my test.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/screenshot-1.png&quot; alt=&quot;Automation page&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/images/screenshot-2.jpeg&quot; alt=&quot;Screenshot1&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/images/screenshot-3.jpeg&quot; alt=&quot;Screenshot2&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/images/screenshot-4.jpeg&quot; alt=&quot;Screenshot3&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/screenshot-1.png&quot; alt=&quot;Automation page&quot; /&gt;
+&lt;img src=&quot;https://raoenhui.github.io/images/screenshot-2.jpeg&quot; alt=&quot;Screenshot1&quot; /&gt;
+&lt;img src=&quot;https://raoenhui.github.io/images/screenshot-3.jpeg&quot; alt=&quot;Screenshot2&quot; /&gt;
+&lt;img src=&quot;https://raoenhui.github.io/images/screenshot-4.jpeg&quot; alt=&quot;Screenshot3&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Unknowingly i found a bug in browserstack, see the screeshot’s, by default they should use english but google page is in Dutch, may be their servers are located in europ with dutch version of OS :p&lt;/p&gt;
 
 &lt;p&gt;Happy coding …. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/testing/2014/08/30/Super-awesome-automation/&quot;&gt;Super awesome automation testing&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on August 30, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/testing/2014/08/30/Super-awesome-automation/&quot;&gt;Super awesome automation testing&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on August 30, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA['N' for NodeJS]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/nodejs/2014/08/17/N-for-Node.js/"/>
-  <id>http://localhost:4000/nodejs/2014/08/17/N-for-Node.js</id>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/nodejs/2014/08/17/N-for-Node.js/"/>
+  <id>https://raoenhui.github.io/nodejs/2014/08/17/N-for-Node.js</id>
   <published>2014-08-17T11:45:00+05:30</published>
   <updated>2014-08-17T11:45:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://raoenhui.github.io</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="http://localhost:4000/tags/#nodejs" term="nodejs" />
+  <category scheme="https://raoenhui.github.io/tags/#NodeJS" term="NodeJS" />
   <content type="html">
   
     &lt;p&gt;From last few months i came across the the coolest thing in programming and because of that i’m gonna teach my childrens that ‘N’ is for NodeJS ;)&lt;/p&gt;
 
-&lt;p&gt;Nodejs is the programmig platform developed by some super awesome people who love Javascript by heart over the Googles V8 VM which powers your crome.&lt;/p&gt;
+&lt;p&gt;NodeJS is the programmig platform developed by some super awesome people who love Javascript by heart over the Googles V8 VM which powers your crome.&lt;/p&gt;
 
 &lt;p&gt;I used to use the javascript scence i was 17 years old ,but never expected that node will make it work on servers, i’m really happy it works well :)&lt;/p&gt;
 
-&lt;p&gt;Their are many programming languages crowding out on streets like Ruby, Cloujur, Lua, Scala, Go …. any many more but NodeJs is little diffrent, its lightweight easy to build and maintain as its nothing but the javascript, a newbie in a crowd also can program it well, just need to think diffrently.&lt;/p&gt;
+&lt;p&gt;Their are many programming languages crowding out on streets like Ruby, Cloujur, Lua, Scala, Go …. any many more but NodeJS is little diffrent, its lightweight easy to build and maintain as its nothing but the javascript, a newbie in a crowd also can program it well, just need to think diffrently.&lt;/p&gt;
 
-&lt;p&gt;As &lt;a href=&quot;http://en.wikipedia.org/wiki/Nodejs&quot;&gt;Wikipedia&lt;/a&gt; says: “Node.js is a packaged compilation of Google’s V8 JavaScript engine, the libuv platform abstraction layer, and a core library, which is itself primarily written in JavaScript.” Beyond that, it’s worth noting that Ryan Dahl, the creator of Node.js, was aiming to create real-time websites with push capability, “inspired by applications like Gmail”. In Node.js, he gave developers a tool for working in the non-blocking, event-driven I/O paradigm.&lt;/p&gt;
+&lt;p&gt;As &lt;a href=&quot;http://en.wikipedia.org/wiki/NodeJS&quot;&gt;Wikipedia&lt;/a&gt; says: “Node.js is a packaged compilation of Google’s V8 JavaScript engine, the libuv platform abstraction layer, and a core library, which is itself primarily written in JavaScript.” Beyond that, it’s worth noting that Ryan Dahl, the creator of Node.js, was aiming to create real-time websites with push capability, “inspired by applications like Gmail”. In Node.js, he gave developers a tool for working in the non-blocking, event-driven I/O paradigm.&lt;/p&gt;
 
 &lt;p&gt;The main idea of Node.js is to use non-blocking, event-driven I/O to remain lightweight and efficient in the face of data-intensive real-time applications that run across distributed devices…… it means you can use node for whatever you want, the way you like.&lt;/p&gt;
 
-&lt;p&gt;Let me show you how to install and run few easy programs based on nodeJS.&lt;/p&gt;
+&lt;p&gt;Let me show you how to install and run few easy programs based on NodeJS.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;First thing install it, you gonna need nodejs and &lt;strong&gt;npm&lt;/strong&gt; (Node package manager), you will need it to  install diffrent node packages , packages are just like a gems in Ruby or Jars in Java.&lt;/li&gt;
+  &lt;li&gt;First thing install it, you gonna need NodeJS and &lt;strong&gt;npm&lt;/strong&gt; (Node package manager), you will need it to  install diffrent node packages , packages are just like a gems in Ruby or Jars in Java.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get update
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;nodejs
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;NodeJS
 &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;npm&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Walah .. you got all you want (y), not put the below code say in server.js&lt;/p&gt;
@@ -2120,7 +2304,7 @@ Done :  &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&qu
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;node server.js&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;But this gonna spawn the single threaded application for you sticking to only one core, we have quad, hexa, octa core processors now day, how node will adjust with it? well, node can do preety anything, &lt;a href=&quot;http://nodejs.org/api/cluster.html&quot;&gt;Cluster&lt;/a&gt; is there for you.&lt;/p&gt;
+&lt;p&gt;But this gonna spawn the single threaded application for you sticking to only one core, we have quad, hexa, octa core processors now day, how node will adjust with it? well, node can do preety anything, &lt;a href=&quot;http://NodeJS.org/api/cluster.html&quot;&gt;Cluster&lt;/a&gt; is there for you.&lt;/p&gt;
 
 &lt;p&gt;install package with npm&lt;/p&gt;
 
@@ -2222,22 +2406,22 @@ Loved NodeJS ♥&lt;/p&gt;
 &lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/nodejs/2014/08/17/N-for-Node.js/&quot;&gt;'N' for NodeJS&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on August 17, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/nodejs/2014/08/17/N-for-Node.js/&quot;&gt;'N' for NodeJS&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on August 17, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Timezone conversion in python -Easy way]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/python/2014/08/08/python-timezone-convertion/"/>
-  <id>http://localhost:4000/python/2014/08/08/python-timezone-convertion</id>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/other/2014/08/08/python-timezone-convertion/"/>
+  <id>https://raoenhui.github.io/other/2014/08/08/python-timezone-convertion</id>
   <published>2014-08-08T10:17:00+05:30</published>
   <updated>2014-08-08T10:17:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://raoenhui.github.io</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="http://localhost:4000/tags/#python" term="python" />
+  <category scheme="https://raoenhui.github.io/tags/#python" term="python" />
   <content type="html">
   
     &lt;p&gt;This lib i found most usefulll &lt;a href=&quot;http://niemeyer.net/python-dateutil&quot;&gt;python-dateutil&lt;/a&gt;.&lt;/p&gt;
@@ -2263,22 +2447,22 @@ Loved NodeJS ♥&lt;/p&gt;
 &lt;p&gt;Happy coding ….. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/python/2014/08/08/python-timezone-convertion/&quot;&gt;Timezone conversion in python -Easy way&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on August 08, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/other/2014/08/08/python-timezone-convertion/&quot;&gt;Timezone conversion in python -Easy way&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on August 08, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Killer mailer script in Python]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/python/2014/08/04/killer-mailer/"/>
-  <id>http://localhost:4000/python/2014/08/04/killer-mailer</id>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/other/2014/08/04/killer-mailer/"/>
+  <id>https://raoenhui.github.io/other/2014/08/04/killer-mailer</id>
   <published>2014-08-04T09:23:00+05:30</published>
   <updated>2014-08-04T09:23:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://raoenhui.github.io</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="http://localhost:4000/tags/#python" term="python" />
+  <category scheme="https://raoenhui.github.io/tags/#python" term="python" />
   <content type="html">
   
     &lt;p&gt;Hey guys i always needed a mailer script which can send me hourly/daily/weekly updates of my diffrent programs running on linux box.&lt;/p&gt;
@@ -2341,22 +2525,22 @@ Loved NodeJS ♥&lt;/p&gt;
 &lt;p&gt;Happy coding ….. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/python/2014/08/04/killer-mailer/&quot;&gt;Killer mailer script in Python&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on August 04, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/other/2014/08/04/killer-mailer/&quot;&gt;Killer mailer script in Python&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on August 04, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Functions in shell script]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/linux/2014/01/19/functions-in-shell-script/"/>
-  <id>http://localhost:4000/linux/2014/01/19/functions-in-shell-script</id>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/linux/2014/01/19/functions-in-shell-script/"/>
+  <id>https://raoenhui.github.io/linux/2014/01/19/functions-in-shell-script</id>
   <published>2014-01-19T15:09:00+05:30</published>
   <updated>2014-01-19T15:09:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://raoenhui.github.io</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="http://localhost:4000/tags/#shell" term="shell" /><category scheme="http://localhost:4000/tags/#linux" term="linux" />
+  <category scheme="https://raoenhui.github.io/tags/#shell" term="shell" /><category scheme="https://raoenhui.github.io/tags/#linux" term="linux" />
   <content type="html">
   
     &lt;p&gt;Have  lot of repeated shell code ? try writing function in that :)&lt;/p&gt;
@@ -2396,22 +2580,22 @@ sql_exec&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
 &lt;p&gt;Happy coding ….. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/linux/2014/01/19/functions-in-shell-script/&quot;&gt;Functions in shell script&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on January 19, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/linux/2014/01/19/functions-in-shell-script/&quot;&gt;Functions in shell script&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on January 19, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Using MySQL dump]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/database/2013/12/17/using-mysql-dump/"/>
-  <id>http://localhost:4000/database/2013/12/17/using-mysql-dump</id>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/other/2013/12/17/using-mysql-dump/"/>
+  <id>https://raoenhui.github.io/other/2013/12/17/using-mysql-dump</id>
   <published>2013-12-17T20:00:00+05:30</published>
   <updated>2013-12-17T20:00:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://raoenhui.github.io</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="http://localhost:4000/tags/#database" term="database" /><category scheme="http://localhost:4000/tags/#mysql" term="mysql" />
+  <category scheme="https://raoenhui.github.io/tags/#database" term="database" /><category scheme="https://raoenhui.github.io/tags/#mysql" term="mysql" />
   <content type="html">
   
     &lt;p&gt;HI All, mysqldump is a very handy and useful command for keeping backup of your Db or to migrate them to another server.&lt;/p&gt;
@@ -2451,22 +2635,22 @@ sql_exec&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
 &lt;p&gt;Happy Coding …. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/database/2013/12/17/using-mysql-dump/&quot;&gt;Using MySQL dump&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on December 17, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/other/2013/12/17/using-mysql-dump/&quot;&gt;Using MySQL dump&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on December 17, 2013.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Checking MySQL Database Size]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/database/2013/12/15/checking-mysql-database-size/"/>
-  <id>http://localhost:4000/database/2013/12/15/checking-mysql-database-size</id>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/other/2013/12/15/checking-mysql-database-size/"/>
+  <id>https://raoenhui.github.io/other/2013/12/15/checking-mysql-database-size</id>
   <published>2013-12-15T22:00:00+05:30</published>
   <updated>2013-12-15T22:00:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://raoenhui.github.io</uri>
     <email>670615769@qq.com</email>
   </author>
-  <category scheme="http://localhost:4000/tags/#database" term="database" /><category scheme="http://localhost:4000/tags/#mysql" term="mysql" />
+  <category scheme="https://raoenhui.github.io/tags/#database" term="database" /><category scheme="https://raoenhui.github.io/tags/#mysql" term="mysql" />
   <content type="html">
   
     &lt;p&gt;Hi all , in this post i am going to show you how to check current mysql database size, below queries are tested on Mysql 5.5.8&lt;/p&gt;
@@ -2498,124 +2682,7 @@ sql_exec&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
 &lt;p&gt;Happy coding.. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/database/2013/12/15/checking-mysql-database-size/&quot;&gt;Checking MySQL Database Size&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on December 15, 2013.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Capturing HTTP Header In JAX-RS]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/java/2013/12/10/capturing-http-header-in-JAX-RS/"/>
-  <id>http://localhost:4000/java/2013/12/10/capturing-http-header-in-JAX-RS</id>
-  <published>2013-12-10T20:30:00+05:30</published>
-  <updated>2013-12-10T20:30:00+05:30</updated>
-  <author>
-    <name>Enhui Rao</name>
-    <uri>http://localhost:4000</uri>
-    <email>670615769@qq.com</email>
-  </author>
-  <category scheme="http://localhost:4000/tags/#java" term="java" /><category scheme="http://localhost:4000/tags/#webservices" term="webservices" />
-  <content type="html">
-  
-    &lt;p&gt;In this post i will explain you how to capture http-request header in JAX-RS.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Using @HeaderParam&lt;/li&gt;
-  &lt;li&gt;Using @Context&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;###@HeaderParam Example&lt;/p&gt;
-
-&lt;p&gt;In this example we can have only the selected attribute we want , JAX-RS will have filter internally and return you the selected Attributes&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;javax.ws.rs.Consumes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;javax.ws.rs.GET&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;javax.ws.rs.Path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;javax.ws.rs.Produces&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;javax.ws.rs.QueryParam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;javax.ws.rs.core.Context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;javax.ws.rs.core.HttpHeaders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;javax.ws.rs.core.MediaType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
- 
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.apache.log4j.Logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
- 
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RequestHandler&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
- 
-&lt;span class=&quot;n&quot;&gt;Logger&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getLogger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RequestHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
- 
-&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DataServiceController&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dataServiceController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
- 
-&lt;span class=&quot;nd&quot;&gt;@Path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/ready&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nd&quot;&gt;@GET&lt;/span&gt;
-&lt;span class=&quot;nd&quot;&gt;@Produces&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MediaType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;TEXT_HTML&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ready&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@HeaderParam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;user-agent&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;userAgent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
- 
-&lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;User Agent : &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;userAgent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
- 
-&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
- &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This will going to print below output :&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;User Agent : Mozilla/5.0 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Windows NT 6.1&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; AppleWebKit/534.30 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;KHTML, like Gecko&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Chrome/12.0.742.112 Safari/534.30&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;context-example&quot;&gt;@Context Example&lt;/h3&gt;
-
-&lt;p&gt;@Context gives you the whole damn Request Header&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;javax.ws.rs.Consumes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;javax.ws.rs.GET&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;javax.ws.rs.Path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;javax.ws.rs.Produces&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;javax.ws.rs.QueryParam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;javax.ws.rs.core.Context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;javax.ws.rs.core.HttpHeaders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;javax.ws.rs.core.MediaType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
- 
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.apache.log4j.Logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
- 
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RequestHandler&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
- 
-    &lt;span class=&quot;n&quot;&gt;Logger&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Logger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getLogger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RequestHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
- 
-    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DataServiceController&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dataServiceController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
- 
-    &lt;span class=&quot;nd&quot;&gt;@Path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/ready&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@GET&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Produces&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MediaType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;TEXT_HTML&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ready&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@Context&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HttpHeaders&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
- 
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;header&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getRequestHeaders&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;keySet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()){&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;header&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;==&amp;gt; &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-             &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getRequestHeader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;:&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
- 
-&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This will going to print below output :&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;Accept&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; text/html:application/xhtml+xml:application/xml&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0.9:&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0.8:
-accept-encoding&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;gzip&lt;/span&gt;:deflate:
-accept-language&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; en-US:en&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0.5:
-&lt;span class=&quot;nv&quot;&gt;connection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; keep-alive:
-Content-Type&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; 
-&lt;span class=&quot;nv&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; localhost:8080:
-user-agent&lt;span class=&quot;o&quot;&gt;==&amp;gt;&lt;/span&gt; Mozilla/5.0 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Macintosh&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; Intel Mac OS X 10.8&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; rv:25.0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Gecko/20100101 Firefox/25.0:&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Happy Coding .. :)&lt;/p&gt;
-
-  
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/java/2013/12/10/capturing-http-header-in-JAX-RS/&quot;&gt;Capturing HTTP Header In JAX-RS&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on December 10, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/other/2013/12/15/checking-mysql-database-size/&quot;&gt;Checking MySQL Database Size&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on December 15, 2013.&lt;/p&gt;</content>
 </entry>
 
 </feed>

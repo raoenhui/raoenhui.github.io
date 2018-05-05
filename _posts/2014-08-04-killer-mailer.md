@@ -3,7 +3,7 @@ author: raoenhui
 layout: post
 title: "Killer mailer script in Python"
 date: 2014-08-04 09:23
-category : python
+category : other
 comments: true
 tags:
 - python

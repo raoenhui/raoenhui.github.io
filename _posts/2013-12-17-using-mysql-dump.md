@@ -3,7 +3,7 @@ author: raoenhui
 layout: post
 title: "Using MySQL dump"
 date: 2013-12-17 20:00
-category : Database
+category : other
 comments: true
 tags:
 - database

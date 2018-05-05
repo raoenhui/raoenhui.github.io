@@ -3,7 +3,7 @@ author: raoenhui
 layout: post
 title: "Working with GIT patch"
 date: 2014-12-31 11:36
-category : Linux
+category : other
 comments: true
 tags:
 - git, patch

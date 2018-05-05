@@ -3,10 +3,10 @@ author: raoenhui
 layout: post
 title: "node自动生成最新tag版本"
 date: 2018-03-30 20:00
-category : nodejs,git
+categories : NodeJS git
 comments: true
 tags:
-- nodejs
+- NodeJS
 - git
 ---
 

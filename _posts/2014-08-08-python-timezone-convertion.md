@@ -4,7 +4,7 @@ layout: post
 title: "Timezone conversion in python -Easy way"
 date: 2014-08-08 10:17
 comments: true
-category: python
+category: other
 tags:
 - python
 ---
