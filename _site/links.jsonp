@@ -103,6 +103,11 @@ callback([
   {
     "text": "几种自动生成静态站点介绍",
     "href": "https://raoenhui.github.io/cli/2018/05/05/blog/"
+  } ,
+
+  {
+    "text": "Typescript合成Webpack中",
+    "href": "https://raoenhui.github.io/typescript/2018/05/31/webbpack-ts/"
   } 
 
 ])
