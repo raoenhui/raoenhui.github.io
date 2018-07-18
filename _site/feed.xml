@@ -7,13 +7,93 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2018-06-01T08:13:58+05:30</updated>
+<updated>2018-07-18T16:43:18+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>Enhui Rao</name>
   <uri>https://raoenhui.github.io/</uri>
   <email>670615769@qq.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[小程序开发中的那些坑]]></title>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/wechat/2018/07/18/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+  <id>https://raoenhui.github.io/wechat/2018/07/18/小程序</id>
+  <published>2018-07-18T21:00:00+05:30</published>
+  <updated>2018-07-18T21:00:00+05:30</updated>
+  <author>
+    <name>Enhui Rao</name>
+    <uri>https://raoenhui.github.io</uri>
+    <email>670615769@qq.com</email>
+  </author>
+  <category scheme="https://raoenhui.github.io/tags/#Wechat" term="Wechat" /><category scheme="https://raoenhui.github.io/tags/#Es6" term="Es6" />
+  <content type="html">
+  
+    &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;最近小程序特别火，不用安装，即开即用，用完就走。省流量，省安装时间等等优势吸引了大量用户，几乎所有大厂的APP都有小程序版本。我厂也有开发，所以我也加入了开发小程序的队伍，开发中的那些注意点和各位小伙伴们分享下。&lt;/p&gt;
+
+&lt;h3 id=&quot;一css伪类看不到&quot;&gt;一.css伪类看不到&lt;/h3&gt;
+
+&lt;p&gt;在微信开发者工具中，Styles不会显示css伪类，喜欢写::before或:first-child的小伙伴们请注意了，你的伪类在控制台是看不到的。&lt;/p&gt;
+
+&lt;p&gt;建议不要在公共css文件夹下写伪类，本妹子就遇到过这个坑，某小伙伴在公共css上写了按钮的after加了个边框样式，找了好久才找到这个边框写在哪。&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nt&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;::after&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+ 	  &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rpx&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-f4ec3d52aa3df3dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;after.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;二https&quot;&gt;二.https&lt;/h3&gt;
+
+&lt;p&gt;小程序的图片只支持https://…的URL，后台接口不能传//或http://,否则有些安卓机会不兼容&lt;/p&gt;
+
+&lt;p&gt;在微信开发者工具中，可勾选”不校验合法域名、web-view（业务域名）、TLS 版本以及 HTTPS 证书”规则即可用http，但是在实体里并没有这个选项，所以建议开发时就用https路径。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-9e913b9a449c2f99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;https.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;三不要换行写有空格不行&quot;&gt;三.不要换行写，有空格不行&lt;/h3&gt;
+
+&lt;p&gt;微信开发者工具不会对代码进行trim操作，如果代码中换行，页面也直接换行。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-f7fbc578d51c2413.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;wrap.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;四部分css3属性不能用&quot;&gt;四.部分CSS3属性不能用&lt;/h3&gt;
+
+&lt;p&gt;如transform:rotate(180deg)，不能用。&lt;/p&gt;
+
+&lt;h3 id=&quot;五git-状态展示&quot;&gt;五.Git 状态展示&lt;/h3&gt;
+&lt;p&gt;project.config.json和.git需要在同层目录,Git 状态才能显示，所以project.config.json最好放在根目录中&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-03b914e0a738ae80.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;git.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;六页面跳转&quot;&gt;六.页面跳转&lt;/h3&gt;
+
+&lt;p&gt;wx.navigateTo 新窗口打开页面 新页面有返回按钮&lt;/p&gt;
+
+&lt;p&gt;wx.redirectTo 关闭当前页面，跳转到应用内的某个页面   新页面没有返回按钮&lt;/p&gt;
+
+&lt;h3 id=&quot;七ide更换&quot;&gt;七.IDE更换&lt;/h3&gt;
+
+&lt;p&gt;微信开发者工具有很多快捷键都不能用，对于很多熟悉其他IDE的前端开发者来说很不习惯。
+  可以隐藏编辑器或分开窗口，把微信开发者工具只当作浏览器，然后然后小伙伴们就可以用自己熟悉的IDE了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-52a2d9087fb98508.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;IDE.png&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://developers.weixin.qq.com/miniprogram/dev/api&quot;&gt;https://developers.weixin.qq.com/miniprogram/dev/api&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Happy coding .. :)&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/wechat/2018/07/18/%E5%B0%8F%E7%A8%8B%E5%BA%8F/&quot;&gt;小程序开发中的那些坑&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on July 18, 2018.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -2757,61 +2837,6 @@ sql_exec&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
 
   
   &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/linux/2014/01/19/functions-in-shell-script/&quot;&gt;Functions in shell script&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on January 19, 2014.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Using MySQL dump]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/other/2013/12/17/using-mysql-dump/"/>
-  <id>https://raoenhui.github.io/other/2013/12/17/using-mysql-dump</id>
-  <published>2013-12-17T20:00:00+05:30</published>
-  <updated>2013-12-17T20:00:00+05:30</updated>
-  <author>
-    <name>Enhui Rao</name>
-    <uri>https://raoenhui.github.io</uri>
-    <email>670615769@qq.com</email>
-  </author>
-  <category scheme="https://raoenhui.github.io/tags/#database" term="database" /><category scheme="https://raoenhui.github.io/tags/#mysql" term="mysql" />
-  <content type="html">
-  
-    &lt;p&gt;HI All, mysqldump is a very handy and useful command for keeping backup of your Db or to migrate them to another server.&lt;/p&gt;
-
-&lt;p&gt;lets see how can we use it in different way ..&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;To take a backup of data from mysqlserver itsself&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;n&quot;&gt;mysqldump&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'my_password'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;my_db_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_dump_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;sql&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;To take dump from remote server where i have access.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;n&quot;&gt;mysqldump&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xxxxx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xxx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;us&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;east&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;amazonaws&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;com&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'my_aws_password'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;my_remot_db_name&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vol1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_dump_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;sql&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;To take dump from remote server but with only selected tables  where i have access.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;n&quot;&gt;mysqldump&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xxxxx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xxx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;us&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;east&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;amazonaws&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;com&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'my_aws_password'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;my_remot_db_name&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;table3&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;table2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;table3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vol1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_dump_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;sql&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Resorting back dump  to local  mysqlserver&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'my_aws_password'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;my_remot_db_name&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vol1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_dump_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;sql&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Resorting back dump  to remote  mysqlserver&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xxxxx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xxx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;us&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;east&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;amazonaws&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;com&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'my_aws_password'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;my_remot_db_name&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vol1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_dump_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;sql&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Happy Coding …. :)&lt;/p&gt;
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/other/2013/12/17/using-mysql-dump/&quot;&gt;Using MySQL dump&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on December 17, 2013.&lt;/p&gt;</content>
 </entry>
 
 </feed>

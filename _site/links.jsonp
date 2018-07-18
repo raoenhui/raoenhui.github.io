@@ -108,6 +108,11 @@ callback([
   {
     "text": "Typescript合成Webpack中",
     "href": "https://raoenhui.github.io/typescript/2018/05/31/webbpack-ts/"
+  } ,
+
+  {
+    "text": "小程序开发中的那些坑",
+    "href": "https://raoenhui.github.io/wechat/2018/07/18/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"
   } 
 
 ])
