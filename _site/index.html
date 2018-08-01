@@ -279,7 +279,7 @@ Happy coding .. :)
                 </h3>
             </header>
             <section class="notepad-post-excerpt">
-                <p>第一步 前言 实际前端工作中，当UED没有给到确定的图片时，前端需要自己模拟一个图片来实现页面占位。于是写了份自动生成不同大小形状图片的服务。 code地址为https://github.com/raoenhui/create-img/tree/master/server。 demo访问地址还在部署中，尽请期待。 第二步 原理 主要用到的技术是koa、koa-router和canvas。 用koa启动一个webserver服务，用了logger中间键来方便查看记录。 const logger = require('koa-logger'); const koaBody = require('koa-body'); const Koa = require('koa'); const app = module.exports = new Koa(); // middleware app.use(logger()); app.use(koaBody()); // listen if (!module.parent) app.listen(3000); 用koa-router获取用户访问的url，url中包含大小、形状和颜色信息，并调用canvas画图片。 const router...</p>
+                <p>第一步 前言 实际前端工作中，当UED没有给到确定的图片时，前端需要自己模拟一个图片来实现页面占位。于是写了份自动生成不同大小形状图片的服务。 code地址为https://github.com/raoenhui/create-img/tree/master/server。 demo访问地址http://47.98.138.195/img。 第二步 原理 主要用到的技术是koa、koa-router和canvas。 用koa启动一个webserver服务，用了logger中间键来方便查看记录。 const logger = require('koa-logger'); const koaBody = require('koa-body'); const Koa = require('koa'); const app = module.exports = new Koa(); // middleware app.use(logger()); app.use(koaBody()); // listen if (!module.parent) app.listen(3000); 用koa-router获取用户访问的url，url中包含大小、形状和颜色信息，并调用canvas画图片。 const router...</p>
             </section>
             
                 <div class="notepad-index-post-tags">

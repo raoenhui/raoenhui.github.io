@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2018-07-18T16:43:18+05:30</updated>
+<updated>2018-08-01T21:12:58+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>Enhui Rao</name>
@@ -354,9 +354,11 @@
   
     &lt;h2 id=&quot;第一步-前言&quot;&gt;第一步 前言&lt;/h2&gt;
 
-&lt;p&gt;实际前端工作中，当UED没有给到确定的图片时，前端需要自己模拟一个图片来实现页面占位。于是写了份自动生成不同大小形状图片的服务。&lt;br /&gt;
-code地址为&lt;a href=&quot;https://github.com/raoenhui/create-img/tree/master/server&quot;&gt;https://github.com/raoenhui/create-img/tree/master/server&lt;/a&gt;。 
-demo访问地址还在部署中，尽请期待。&lt;/p&gt;
+&lt;p&gt;实际前端工作中，当UED没有给到确定的图片时，前端需要自己模拟一个图片来实现页面占位。于是写了份自动生成不同大小形状图片的服务。&lt;/p&gt;
+
+&lt;p&gt;code地址为&lt;a href=&quot;https://github.com/raoenhui/create-img/tree/master/server&quot;&gt;https://github.com/raoenhui/create-img/tree/master/server&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;demo访问地址&lt;a href=&quot;http://47.98.138.195/img&quot;&gt;http://47.98.138.195/img&lt;/a&gt;。&lt;/p&gt;
 
 &lt;h2 id=&quot;第二步-原理&quot;&gt;第二步 原理&lt;/h2&gt;
 
