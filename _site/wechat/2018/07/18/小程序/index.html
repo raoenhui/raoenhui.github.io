@@ -129,10 +129,11 @@
 
 <p>建议不要在公共css文件夹下写伪类，本妹子就遇到过这个坑，某小伙伴在公共css上写了按钮的after加了个边框样式，找了好久才找到这个边框写在哪。</p>
 
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">button</span><span class="nd">::after</span> <span class="p">{</span>
+<div class="language-css highlighter-rouge"><pre class="highlight"><code> <span class="nt">button</span><span class="nd">::after</span> <span class="p">{</span>
  	  <span class="nl">border</span><span class="p">:</span> <span class="m">2</span><span class="n">rpx</span> <span class="nb">solid</span> <span class="m">#000</span><span class="p">;</span>  
  <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p><img src="https://upload-images.jianshu.io/upload_images/9902136-f4ec3d52aa3df3dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="after.png" /></p>
 
@@ -300,6 +301,26 @@
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>-->
 <!-- ice disqus end-->
 
+<!-- ice gitment 评论 start-->
+    <div id="container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+// debugger
+var gitment = new Gitment({
+  id: location.href, // 可选。默认为 location.href
+  owner: 'raoenhui',
+  repo: 'raoenhui.github.io',
+  oauth: {
+    client_id: 'bd88b9824048b133f7ed',
+    client_secret: '193c97904472a0e380b70dd990c46853f52881c7',
+    // client_id: '5548df3eca52697fac71',
+    // client_secret: '5b9480b7b3d4a49e22db3f29557380e2711bbcd9',
+  },
+})
+gitment.render('container')
+</script>
+<!-- ice gitment 评论 end-->
 <hr />
 
 <!-- ice facebook start-->

@@ -135,7 +135,7 @@
   <li>Install few things as below.</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>pip <span class="nb">install </span>selenium
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo pip install selenium
 vim automation_testing.py</code></pre></figure>
 
 <p>copy and paste below code, modify according to your requirement.</p>
@@ -185,7 +185,7 @@ vim automation_testing.py</code></pre></figure>
 
 <p>Run the code, you will see something like below</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">amey@amey-xps:~/work/python<span class="nv">$ </span>python automated_test.py 
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">amey@amey-xps:~/work/python$ </span>python automated_test.py 
 Enhui Rao - Google Search
 Done :  <span class="o">{</span><span class="s1">'os_version'</span>: <span class="s1">'xp'</span>, <span class="s1">'browser_version'</span>: <span class="s1">'7.0'</span>, <span class="s1">'os'</span>: <span class="s1">'Windows'</span>, <span class="s1">'browserstack.debug'</span>: <span class="s1">'true'</span>, <span class="s1">'browser'</span>: <span class="s1">'IE'</span><span class="o">}</span>
 Enhui Rao - Google zoeken
@@ -334,6 +334,26 @@ Done :  <span class="o">{</span><span class="s1">'device'</span>: <span class="s
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>-->
 <!-- ice disqus end-->
 
+<!-- ice gitment 评论 start-->
+    <div id="container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+// debugger
+var gitment = new Gitment({
+  id: location.href, // 可选。默认为 location.href
+  owner: 'raoenhui',
+  repo: 'raoenhui.github.io',
+  oauth: {
+    client_id: 'bd88b9824048b133f7ed',
+    client_secret: '193c97904472a0e380b70dd990c46853f52881c7',
+    // client_id: '5548df3eca52697fac71',
+    // client_secret: '5b9480b7b3d4a49e22db3f29557380e2711bbcd9',
+  },
+})
+gitment.render('container')
+</script>
+<!-- ice gitment 评论 end-->
 <hr />
 
 <!-- ice facebook start-->

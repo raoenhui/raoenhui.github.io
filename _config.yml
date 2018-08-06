@@ -61,14 +61,19 @@ kramdown:
   toc_levels: 1..6
   enable_coderay: false
 
-  coderay:
+  syntax_highlighter_opts:
     line_numbers: 
     line_numbers_start: 1
     tab_width: 4
     bold_every: 10
     css: class
+    
+gems: [jekyll-paginate]
 
-plugins:
+plugins_dir:
 - jemoji
 - jekyll-paginate
+
+
+
 

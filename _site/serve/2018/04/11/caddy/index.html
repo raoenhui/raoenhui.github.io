@@ -133,10 +133,11 @@
 
 <p>解压后将路径添加至环境变量中
 如mac下：</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vi /private/etc/paths
-<span class="nv">$ </span><span class="nb">source</span> /private/etc/paths
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>vi /private/etc/paths
+<span class="gp">$ </span><span class="nb">source</span> /private/etc/paths
 
-</code></pre></div></div>
+</code></pre>
+</div>
 <p><img src="https://raoenhui.github.io/images/180411/console.png" alt="console" /></p>
 
 <h2 id="第三步-启动caddy">第三步 启动caddy</h2>
@@ -147,7 +148,7 @@
 
 <p>想代理的话可新建个Caddyfile</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>matt.life   <span class="c"># Your site's address</span>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>matt.life   <span class="c"># Your site's address</span>
 
 ext .html   <span class="c"># Clean URLs</span>
 errors error.log <span class="o">{</span>       <span class="c"># Error log</span>
@@ -160,7 +161,8 @@ fastcgi /blog localhost:9000 php
 <span class="c"># API load balancer</span>
 proxy /api localhost:5001 localhost:5002
 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>运行则如下</p>
 
@@ -288,6 +290,26 @@ proxy /api localhost:5001 localhost:5002
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>-->
 <!-- ice disqus end-->
 
+<!-- ice gitment 评论 start-->
+    <div id="container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+// debugger
+var gitment = new Gitment({
+  id: location.href, // 可选。默认为 location.href
+  owner: 'raoenhui',
+  repo: 'raoenhui.github.io',
+  oauth: {
+    client_id: 'bd88b9824048b133f7ed',
+    client_secret: '193c97904472a0e380b70dd990c46853f52881c7',
+    // client_id: '5548df3eca52697fac71',
+    // client_secret: '5b9480b7b3d4a49e22db3f29557380e2711bbcd9',
+  },
+})
+gitment.render('container')
+</script>
+<!-- ice gitment 评论 end-->
 <hr />
 
 <!-- ice facebook start-->

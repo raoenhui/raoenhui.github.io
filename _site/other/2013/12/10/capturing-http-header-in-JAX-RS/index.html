@@ -207,13 +207,13 @@
 
 <p>This will going to print below output :</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">Accept</span><span class="o">==&gt;</span> text/html:application/xhtml+xml:application/xml<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.9:<span class="k">*</span>/<span class="k">*</span><span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.8:
-accept-encoding<span class="o">==&gt;</span> <span class="nb">gzip</span>:deflate:
-accept-language<span class="o">==&gt;</span> en-US:en<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.5:
-<span class="nv">connection</span><span class="o">==&gt;</span> keep-alive:
-Content-Type<span class="o">==&gt;</span> 
-<span class="nv">host</span><span class="o">==&gt;</span> localhost:8080:
-user-agent<span class="o">==&gt;</span> Mozilla/5.0 <span class="o">(</span>Macintosh<span class="p">;</span> Intel Mac OS X 10.8<span class="p">;</span> rv:25.0<span class="o">)</span> Gecko/20100101 Firefox/25.0:</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">Accept==&gt; </span>text/html:application/xhtml+xml:application/xml;q<span class="o">=</span>0.9:<span class="k">*</span>/<span class="k">*</span>;<span class="nv">q</span><span class="o">=</span>0.8:
+<span class="gp">accept-encoding==&gt; </span>gzip:deflate:
+<span class="gp">accept-language==&gt; </span>en-US:en;q<span class="o">=</span>0.5:
+<span class="gp">connection==&gt; </span>keep-alive:
+<span class="gp">Content-Type==&gt; </span>
+<span class="gp">host==&gt; </span>localhost:8080:
+<span class="gp">user-agent==&gt; </span>Mozilla/5.0 <span class="o">(</span>Macintosh; Intel Mac OS X 10.8; rv:25.0<span class="o">)</span> Gecko/20100101 Firefox/25.0:</code></pre></figure>
 
 <p>Happy Coding .. :)</p>
 
@@ -337,6 +337,26 @@ user-agent<span class="o">==&gt;</span> Mozilla/5.0 <span class="o">(</span>Maci
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>-->
 <!-- ice disqus end-->
 
+<!-- ice gitment 评论 start-->
+    <div id="container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+// debugger
+var gitment = new Gitment({
+  id: location.href, // 可选。默认为 location.href
+  owner: 'raoenhui',
+  repo: 'raoenhui.github.io',
+  oauth: {
+    client_id: 'bd88b9824048b133f7ed',
+    client_secret: '193c97904472a0e380b70dd990c46853f52881c7',
+    // client_id: '5548df3eca52697fac71',
+    // client_secret: '5b9480b7b3d4a49e22db3f29557380e2711bbcd9',
+  },
+})
+gitment.render('container')
+</script>
+<!-- ice gitment 评论 end-->
 <hr />
 
 <!-- ice facebook start-->
