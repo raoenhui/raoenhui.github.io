@@ -470,7 +470,7 @@ ES6还为原生的String对象，提供了一个raw方法。
 <script>
 // debugger
 var gitment = new Gitment({
-  id: location.href, // 可选。默认为 location.href
+  id: location.pathname.split('/').reverse()[1], // 可选。默认为 location.href
   owner: 'raoenhui',
   repo: 'raoenhui.github.io',
   oauth: {

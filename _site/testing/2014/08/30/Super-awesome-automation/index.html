@@ -341,7 +341,7 @@ Done :  <span class="o">{</span><span class="s1">'device'</span>: <span class="s
 <script>
 // debugger
 var gitment = new Gitment({
-  id: location.href, // 可选。默认为 location.href
+  id: location.pathname.split('/').reverse()[1], // 可选。默认为 location.href
   owner: 'raoenhui',
   repo: 'raoenhui.github.io',
   oauth: {
