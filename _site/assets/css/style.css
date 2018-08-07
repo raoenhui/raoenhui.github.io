@@ -19,6 +19,9 @@ h1, h2, h3, h4, h5, h6 {
 a{
   word-wrap: break-word;}
 
+p{
+  word-wrap: break-word;}
+
 .notepad-parallax-background {
   position: fixed;
   top: 0;
