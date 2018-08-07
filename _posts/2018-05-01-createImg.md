@@ -104,7 +104,7 @@ module.exports = function (params) {
 ## 第三步 demo
 
 如想获取宽高为300px，颜色为#e04c4c的圆形。
-localhost:3000/300x300/circle/e04c4c
+http://47.98.138.195:3000/300x300/circle/e04c4c
 
 ![website]({{ site.url }}/images/180501/demo.png)
 

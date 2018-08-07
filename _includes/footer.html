@@ -6,7 +6,7 @@
     </div>
     <div class="social-icons">
         
-        {% if site.owner.twitter %}
+        <!--{% if site.owner.twitter %}
         <a href="http://twitter.com/{{ site.owner.twitter }}">
             <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
@@ -29,30 +29,11 @@
                 <i class="fa fa-instagram fa-stack-1x"></i>
             </span>
         </a>
-        {% endif %}
+        {% endif %}-->
         {% if site.owner.github %}
         <a href="http://github.com/{{ site.owner.github }}">
             <span class="fa-stack fa-lg">
-                <var newVersion,//新标签
-    versionHint;//新标签的备注
-// update repo and get a list of tags
-Git(GitPath)
-    .pull()
-    .tags(function(err, tags) {
-        var oldVersion = tags.latest;
-        Bump('version:' + oldVersion.substr(1, oldVersion.lenght), function(err, out) {
-            //产生新代码
-            newVersion = 'v' + out.new;
-            //产生新标签的备注
-            versionHint = 'Relase version ' + newVersion + ' in ' + new Date();
-            //推动到远端
-            Git(GitPath).addAnnotatedTag(newVersion, versionHint, function() {
-                Git(GitPath).pushTags('origin', function() {
-                    console.log(versionHint);
-                })
-            });
-        });
-    });i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
                 <i class="fa fa-github fa-stack-1x"></i>
             </span>
         </a>
