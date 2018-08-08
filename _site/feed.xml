@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2018-08-07T22:45:21+05:30</updated>
+<updated>2018-08-08T22:56:04+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>Enhui Rao</name>
@@ -83,6 +83,26 @@
   可以隐藏编辑器或分开窗口，把微信开发者工具只当作浏览器，然后然后小伙伴们就可以用自己熟悉的IDE了。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-52a2d9087fb98508.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;IDE.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;八分享事件不支持同步&quot;&gt;八.分享事件不支持同步&lt;/h3&gt;
+
+&lt;p&gt;如果你想自定义分享图片，则在生命周期onShareAppMessage中编写如下所示：&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;Page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;onShareAppMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'自定义转发标题'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;imageUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'https://raoenhui.github.io/images/logo.png'&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;但是&lt;code class=&quot;highlighter-rouge&quot;&gt;onShareAppMessage&lt;/code&gt;不能支持异步，如果你想从接口里获取分享图片URL，必须在&lt;code class=&quot;highlighter-rouge&quot;&gt;onLoad&lt;/code&gt;提前读取并放入Data中&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;原文地址为：&lt;a href=&quot;https://raoenhui.github.io/wechat/2018/07/18/%E5%B0%8F%E7%A8%8B%E5%BA%8F&quot;&gt;https://raoenhui.github.io/wechat/2018/07/18/%E5%B0%8F%E7%A8%8B%E5%BA%8F&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;参考资料&quot;&gt;参考资料&lt;/h4&gt;
 
 &lt;blockquote&gt;
   &lt;ul&gt;

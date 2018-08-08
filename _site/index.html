@@ -134,7 +134,7 @@
                 </h3>
             </header>
             <section class="notepad-post-excerpt">
-                <p>前言 最近小程序特别火，不用安装，即开即用，用完就走。省流量，省安装时间等等优势吸引了大量用户，几乎所有大厂的APP都有小程序版本。我厂也有开发，所以我也加入了开发小程序的队伍，开发中的那些注意点和各位小伙伴们分享下。 一.css伪类看不到 在微信开发者工具中，Styles不会显示css伪类，喜欢写::before或:first-child的小伙伴们请注意了，你的伪类在控制台是看不到的。 建议不要在公共css文件夹下写伪类，本妹子就遇到过这个坑，某小伙伴在公共css上写了按钮的after加了个边框样式，找了好久才找到这个边框写在哪。 button::after { border: 2rpx solid #000; } 二.https 小程序的图片只支持https://…的URL，后台接口不能传//或http://,否则有些安卓机会不兼容 在微信开发者工具中，可勾选”不校验合法域名、web-view（业务域名）、TLS 版本以及 HTTPS 证书”规则即可用http，但是在实体里并没有这个选项，所以建议开发时就用https路径。 三.不要换行写，有空格不行 微信开发者工具不会对代码进行trim操作，如果代码中换行，页面也直接换行。 四.部分CSS3属性不能用 如transform:rotate(180deg)，不能用。 五.Git 状态展示 project.config.json和.git需要在同层目录,Git 状态才能显示，所以project.config.json最好放在根目录中 六.页面跳转 wx.navigateTo 新窗口打开页面 新页面有返回按钮 wx.redirectTo 关闭当前页面，跳转到应用内的某个页面 新页面没有返回按钮 七.IDE更换 微信开发者工具有很多快捷键都不能用，对于很多熟悉其他IDE的前端开发者来说很不习惯。 可以隐藏编辑器或分开窗口，把微信开发者工具只当作浏览器，然后然后小伙伴们就可以用自己熟悉的IDE了。 https://developers.weixin.qq.com/miniprogram/dev/api Happy coding .....</p>
+                <p>前言 最近小程序特别火，不用安装，即开即用，用完就走。省流量，省安装时间等等优势吸引了大量用户，几乎所有大厂的APP都有小程序版本。我厂也有开发，所以我也加入了开发小程序的队伍，开发中的那些注意点和各位小伙伴们分享下。 一.css伪类看不到 在微信开发者工具中，Styles不会显示css伪类，喜欢写::before或:first-child的小伙伴们请注意了，你的伪类在控制台是看不到的。 建议不要在公共css文件夹下写伪类，本妹子就遇到过这个坑，某小伙伴在公共css上写了按钮的after加了个边框样式，找了好久才找到这个边框写在哪。 button::after { border: 2rpx solid #000; } 二.https 小程序的图片只支持https://…的URL，后台接口不能传//或http://,否则有些安卓机会不兼容 在微信开发者工具中，可勾选”不校验合法域名、web-view（业务域名）、TLS 版本以及 HTTPS 证书”规则即可用http，但是在实体里并没有这个选项，所以建议开发时就用https路径。 三.不要换行写，有空格不行 微信开发者工具不会对代码进行trim操作，如果代码中换行，页面也直接换行。 四.部分CSS3属性不能用 如transform:rotate(180deg)，不能用。 五.Git 状态展示 project.config.json和.git需要在同层目录,Git 状态才能显示，所以project.config.json最好放在根目录中 六.页面跳转 wx.navigateTo 新窗口打开页面 新页面有返回按钮 wx.redirectTo 关闭当前页面，跳转到应用内的某个页面 新页面没有返回按钮 七.IDE更换 微信开发者工具有很多快捷键都不能用，对于很多熟悉其他IDE的前端开发者来说很不习惯。 可以隐藏编辑器或分开窗口，把微信开发者工具只当作浏览器，然后然后小伙伴们就可以用自己熟悉的IDE了。 八.分享事件不支持同步 如果你想自定义分享图片，则在生命周期onShareAppMessage中编写如下所示： Page({ onShareAppMessage:...</p>
             </section>
             
                 <div class="notepad-index-post-tags">
@@ -450,7 +450,7 @@ jQuery(window).unload(function () {
 </script>
 
 <!-- ice start-->
-<script id="dsq-count-scr" src="//raoenhui.disqus.com/count.js" async></script>
+<!--<script id="dsq-count-scr" src="//raoenhui.disqus.com/count.js" async></script>-->
 <!-- ice end-->  
 </body>
 </html>

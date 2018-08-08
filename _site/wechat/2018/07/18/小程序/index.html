@@ -173,6 +173,26 @@
 
 <p><img src="https://upload-images.jianshu.io/upload_images/9902136-52a2d9087fb98508.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="IDE.png" /></p>
 
+<h3 id="八分享事件不支持同步">八.分享事件不支持同步</h3>
+
+<p>如果你想自定义分享图片，则在生命周期onShareAppMessage中编写如下所示：</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">Page</span><span class="p">({</span>
+  <span class="na">onShareAppMessage</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">title</span><span class="p">:</span> <span class="s1">'自定义转发标题'</span><span class="p">,</span>
+      <span class="na">imageUrl</span><span class="p">:</span> <span class="s1">'https://raoenhui.github.io/images/logo.png'</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre>
+</div>
+<p>但是<code class="highlighter-rouge">onShareAppMessage</code>不能支持异步，如果你想从接口里获取分享图片URL，必须在<code class="highlighter-rouge">onLoad</code>提前读取并放入Data中</p>
+
+<p><strong>原文地址为：<a href="https://raoenhui.github.io/wechat/2018/07/18/%E5%B0%8F%E7%A8%8B%E5%BA%8F">https://raoenhui.github.io/wechat/2018/07/18/%E5%B0%8F%E7%A8%8B%E5%BA%8F</a></strong></p>
+
+<h4 id="参考资料">参考资料</h4>
+
 <blockquote>
   <ul>
     <li><a href="https://developers.weixin.qq.com/miniprogram/dev/api">https://developers.weixin.qq.com/miniprogram/dev/api</a></li>
@@ -220,7 +240,7 @@
              
 
               <div class="fb-like" data-href="http://raoenhui.github.io/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-             <div id="fb-root"></div>
+       <!--      <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -236,7 +256,7 @@
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1757816481112269";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}(document, 'script', 'facebook-jssdk'));</script>-->
 <div class="fb-follow" data-href="https://www.facebook.com/raoenhui" data-width="200" data-height="100" data-layout="standard" data-show-faces="true"></div>
                         
                         
@@ -474,7 +494,7 @@ jQuery(window).unload(function () {
 </script>
 
 <!-- ice start-->
-<script id="dsq-count-scr" src="//raoenhui.disqus.com/count.js" async></script>
+<!--<script id="dsq-count-scr" src="//raoenhui.disqus.com/count.js" async></script>-->
 <!-- ice end--> 
 </body>
 </html>
