@@ -2,23 +2,23 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>NODE自动生成最新TAG版本 &vert; 前端妹子的博客</title>
+<title>GIT COMMIT前检测HUSKY与PRE-COMMIT &vert; 前端妹子的博客</title>
 <meta name="description" content="一枚前端攻城狮!">
-<meta name="keywords" content="NodeJS, git">
+<meta name="keywords" content="git, javascript, NodeJS">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raoenhui.github.io/images/logo.png">
-<meta name="twitter:title" content="node自动生成最新tag版本">
+<meta name="twitter:title" content="git commit前检测husky与pre-commit">
 <meta name="twitter:description" content="一枚前端攻城狮!">
 <meta name="twitter:creator" content="@raoenhui">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="node自动生成最新tag版本">
+<meta property="og:title" content="git commit前检测husky与pre-commit">
 <meta property="og:description" content="一枚前端攻城狮!">
-<meta property="og:url" content="https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/">
+<meta property="og:url" content="https://raoenhui.github.io/nodejs/git/2018/08/10/preventcommit/">
 <meta property="og:site_name" content="前端妹子的博客">
 <meta property="og:image" content="https://raoenhui.github.io/images/">
 
@@ -26,7 +26,7 @@
 
 
 
-<link rel="canonical" href="https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/">
+<link rel="canonical" href="https://raoenhui.github.io/nodejs/git/2018/08/10/preventcommit/">
 <link href="https://raoenhui.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="前端妹子的博客 Feed">
 <link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
 
@@ -111,57 +111,126 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h1>node自动生成最新tag版本</h1>
-                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#NodeJS" data-toggle="tooltip" title="Posts tagged with NodeJS" rel="tag">NodeJS</a>&nbsp;&comma;&nbsp;<a href="https://raoenhui.github.io/tags/index.html#git" data-toggle="tooltip" title="Posts tagged with git" rel="tag">git</a> <strong><time datetime="2018-03-30T20:00:00+05:30">30 Mar 2018</time></strong></p>
+                            <h1>git commit前检测husky与pre-commit</h1>
+                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#git" data-toggle="tooltip" title="Posts tagged with git" rel="tag">git</a>&nbsp;&comma;&nbsp;<a href="https://raoenhui.github.io/tags/index.html#javascript" data-toggle="tooltip" title="Posts tagged with javascript" rel="tag">javascript</a>&nbsp;&comma;&nbsp;<a href="https://raoenhui.github.io/tags/index.html#NodeJS" data-toggle="tooltip" title="Posts tagged with NodeJS" rel="tag">NodeJS</a> <strong><time datetime="2018-08-10T21:00:00+05:30">10 Aug 2018</time></strong></p>
                         </div>
                     </div>
                 </div>
             </header>
 
         <article class="notepad-post-content post tag-simple">
-            <div><h2 id="第一步-引入所需要的包">第一步 引入所需要的包</h2>
+            <div><h3 id="一前言">一、前言</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//git命令组件</span>
-<span class="kd">const</span> <span class="nx">Git</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'simple-git'</span><span class="p">);</span>
-<span class="c1">//获取路径</span>
-<span class="kd">const</span> <span class="nx">Path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'path'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">GitPath</span> <span class="o">=</span> <span class="nx">Path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">'..'</span><span class="p">);</span>
-<span class="c1">//为git的version添加自动增长版本号组件</span>
-<span class="kd">const</span> <span class="nx">Bump</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'bump-regex'</span><span class="p">);</span>
+<p>现在最流行的版本管理工具非<code class="highlighter-rouge">git</code>莫属，而良好的代码规范有助于项目的维护，为了防止一些不规范的代码  <code class="highlighter-rouge">commit</code>并<code class="highlighter-rouge">push</code>到远端,我们可以在<code class="highlighter-rouge">git</code>命令执行前用一些钩子来检测并阻止。现在大前端主要有两种<code class="highlighter-rouge">git</code>钩子插件：<code class="highlighter-rouge">husky</code>（jquery与next.js都在用），<code class="highlighter-rouge">pre-commit</code>(antd在用)。
+下面我将现介绍一个<code class="highlighter-rouge">git</code>钩子，再介绍下<code class="highlighter-rouge">husky</code>与<code class="highlighter-rouge">pre-commit</code>的用法</p>
 
+<h3 id="二git钩子">二、git钩子</h3>
+
+<p>用过<code class="highlighter-rouge">git</code>的小伙伴们都知道git有很多命令<code class="highlighter-rouge">commit</code>、<code class="highlighter-rouge">push</code>、<code class="highlighter-rouge">rebase</code>等等。那这些命令主要是在执行.git文件夹中的东西，那么git 钩子目录就是在.git文件夹的hooks下，如下所示：</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nb">cd</span> .git/hooks
+    <span class="nb">ls</span> <span class="nt">-l</span>
 </code></pre></div></div>
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-4f99e1c286d188fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hook.png" /></p>
 
-<h2 id="第二步-生成并提交tag号">第二步 生成并提交tag号</h2>
+<p>上图为各个钩子的案例脚本，可以把sample去掉，直接编写shell脚本来执行。
+而前端的小伙伴们则可以用插件<code class="highlighter-rouge">husky</code>与<code class="highlighter-rouge">pre-commit</code>，来使钩子生效。</p>
 
-<ul>
-  <li>先pull获取最新tag版本</li>
-  <li>然后用bump自动增加最小版本号</li>
-  <li>添加日期备注</li>
-  <li>将tag推送到远端</li>
-</ul>
+<blockquote>
+  <p>注意： 一般.git为隐藏文件，可以把项目拖入IDE中查看,.git文件里的内容一般不允许手动更改的。</p>
+</blockquote>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="kd">var</span> <span class="nx">newVersion</span><span class="p">,</span><span class="c1">//新标签</span>
-    <span class="nx">versionHint</span><span class="p">;</span><span class="c1">//新标签的备注</span>
-<span class="c1">// update repo and get a list of tags </span>
-<span class="nx">Git</span><span class="p">(</span><span class="nx">GitPath</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">pull</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">tags</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">tags</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">oldVersion</span> <span class="o">=</span> <span class="nx">tags</span><span class="p">.</span><span class="nx">latest</span><span class="p">;</span>
-        <span class="nx">Bump</span><span class="p">(</span><span class="s1">'version:'</span> <span class="o">+</span> <span class="nx">oldVersion</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nx">oldVersion</span><span class="p">.</span><span class="nx">lenght</span><span class="p">),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">out</span><span class="p">)</span> <span class="p">{</span>
-            <span class="c1">//产生新代码</span>
-            <span class="nx">newVersion</span> <span class="o">=</span> <span class="s1">'v'</span> <span class="o">+</span> <span class="nx">out</span><span class="p">.</span><span class="k">new</span><span class="p">;</span>
-            <span class="c1">//产生新标签的备注</span>
-            <span class="nx">versionHint</span> <span class="o">=</span> <span class="s1">'Relase version '</span> <span class="o">+</span> <span class="nx">newVersion</span> <span class="o">+</span> <span class="s1">' in '</span> <span class="o">+</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
-            <span class="c1">//推动到远端</span>
-            <span class="nx">Git</span><span class="p">(</span><span class="nx">GitPath</span><span class="p">).</span><span class="nx">addAnnotatedTag</span><span class="p">(</span><span class="nx">newVersion</span><span class="p">,</span> <span class="nx">versionHint</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-                <span class="nx">Git</span><span class="p">(</span><span class="nx">GitPath</span><span class="p">).</span><span class="nx">pushTags</span><span class="p">(</span><span class="s1">'origin'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">versionHint</span><span class="p">);</span>
-                <span class="p">})</span>
-            <span class="p">});</span>
-        <span class="p">});</span>
-    <span class="p">});</span>
+<h3 id="三husky">三、husky</h3>
+
+<p>husky能够防止不规范代码被commit、push、merge等等。
+首先安装husky</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    npm <span class="nb">install </span>husky <span class="nt">--save-dev</span>
 </code></pre></div></div>
+<p>或</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    yarn add husky <span class="nt">--dev</span>
+</code></pre></div></div>
+<p>编辑<code class="highlighter-rouge">package.json</code>文件，如：</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"precommit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webpack  --config ./web/webpack.config.js"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"..."</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>当你<code class="highlighter-rouge">git commit</code>的时候，将会现现执行 <code class="highlighter-rouge">precommit</code>里的脚本，没有问题了再提交。</p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-c5990aad96007801.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="husky.png" /></p>
+
+<blockquote>
+  <p>具体案例可查看<a href="https://github.com/raoenhui/create-img">https://github.com/raoenhui/create-img</a></p>
+</blockquote>
+
+<h3 id="四pre-commit">四、pre-commit</h3>
+
+<p><code class="highlighter-rouge">pre-commit</code>能够防止不规范代码被commit，没有husky这么全面，但是你可以接着安装<code class="highlighter-rouge">pre-push</code>等插件来防止对应的<code class="highlighter-rouge">git</code>操作。下面以pre-commit为例：</p>
+
+<p>首先安装pre-commit</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    npm <span class="nb">install </span>pre-commit <span class="nt">--save-dev</span>
+</code></pre></div></div>
+<p>编辑<code class="highlighter-rouge">package.json</code>文件，如：</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"echo </span><span class="se">\"</span><span class="s2">Error: I SHOULD FAIL LOLOLOLOLOL </span><span class="se">\"</span><span class="s2"> &amp;&amp; exit 1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"echo </span><span class="se">\"</span><span class="s2">fooo</span><span class="se">\"</span><span class="s2"> &amp;&amp; exit 0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"bar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"echo </span><span class="se">\"</span><span class="s2">bar</span><span class="se">\"</span><span class="s2"> &amp;&amp; exit 0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"pre-commit"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"foo"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"bar"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"test"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+<p>pre-commit的配置项非常灵活，还可以下面这样写：</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"precommit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo, bar, test"</span><span class="w">
+  </span><span class="s2">"pre-commit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo, bar, test"</span><span class="w">
+  </span><span class="s2">"pre-commit"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w"> </span><span class="s2">"test"</span><span class="p">]</span><span class="w">
+  </span><span class="s2">"precommit"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w"> </span><span class="s2">"test"</span><span class="p">],</span><span class="w">
+  </span><span class="s2">"precommit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"run"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo, bar, test"</span><span class="p">,</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"pre-commit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"run"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w"> </span><span class="s2">"test"</span><span class="p">],</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"precommit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"run"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w"> </span><span class="s2">"test"</span><span class="p">],</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"pre-commit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"run"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo, bar, test"</span><span class="p">,</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>你配置好后，执行<code class="highlighter-rouge">git commit</code>命令，它将会依次执行foo、bar、test来检测完善代码。</p>
+
+<h3 id="五总结">五、总结</h3>
+<p>我们已经怎么用<code class="highlighter-rouge">git</code>钩子插件了，那么我们一般用它来做什么呢。
+prevent commit时，我们可以把<code class="highlighter-rouge">eslint</code>以及<code class="highlighter-rouge">test</code>命令加上，检测代码规范：</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"precommit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lint-staged &amp;&amp; npm run test"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>prevent publish 主干分支时，我们可以把<code class="highlighter-rouge">tag</code>打上：</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"precommit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"npm run tag"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<blockquote>
+  <p>具体怎么自动化打<code class="highlighter-rouge">tag</code>标签，可以参考我的另外篇文章<a href="https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag">https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag</a></p>
+</blockquote>
+
+<h4 id="参考资料">参考资料</h4>
+
+<blockquote>
+  <ul>
+    <li><a href="https://www.npmjs.com/package/husky">https://www.npmjs.com/package/husky</a></li>
+    <li><a href="https://www.npmjs.com/package/pre-commit">https://www.npmjs.com/package/pre-commit</a></li>
+    <li><a href="https://www.jianshu.com/p/072a96633479">https://www.jianshu.com/p/072a96633479</a></li>
+  </ul>
+</blockquote>
 
 <p>Happy coding .. :)</p>
 
@@ -170,15 +239,15 @@
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;node自动生成最新tag版本&quot;%20https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/%20via%20&#64;raoenhui"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;git commit前检测husky与pre-commit&quot;%20https://raoenhui.github.io/nodejs/git/2018/08/10/preventcommit/%20via%20&#64;raoenhui"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/"
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/nodejs/git/2018/08/10/preventcommit/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/"
+                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/nodejs/git/2018/08/10/preventcommit/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
                     <i class="fa fa-google-plus"></i>
                 </a>
@@ -309,7 +378,7 @@ gitment.render('container')
 
 <!-- ice facebook start-->
  
-<!-- <div class="fb-comments" data-href="https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+<!-- <div class="fb-comments" data-href="https://raoenhui.github.io/nodejs/git/2018/08/10/preventcommit/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {

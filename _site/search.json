@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "git commit前检测husky与pre-commit",
+		  "category"   : "",
+		  "url"        : "https://raoenhui.github.io/nodejs/git/2018/08/10/preventcommit/",
+		  "date"       : "2018-08-10 21:00:00 +0530",
+		  "shortdate"  : "August 10, 2018"
+		} ,
+	
+		{
 		  "title"      : "小程序开发中的那些坑",
 		  "category"   : "",
 		  "url"        : "https://raoenhui.github.io/wechat/2018/07/18/%E5%B0%8F%E7%A8%8B%E5%BA%8F/",
@@ -50,7 +58,7 @@
 	
 		{
 		  "title"      : "创建脚手架 cli 入门教程",
-		  "category"   : "Cli",
+		  "category"   : "cli",
 		  "url"        : "https://raoenhui.github.io/cli/2018/02/26/cli/",
 		  "date"       : "2018-02-26 20:00:00 +0530",
 		  "shortdate"  : "February 26, 2018"

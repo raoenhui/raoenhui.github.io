@@ -134,9 +134,9 @@
 
 <p>Full project can be found here  <a href="https://github.com/ameyjadiye/whatsapp-analyst">https://github.com/ameyjadiye/whatsapp-analyst</a></p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#!/usr/bin/r
-</span><span class="w">
-</span><span class="c1"># Load the necessary packages
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#!/usr/bin/r</span><span class="w">
+
+</span><span class="c1"># Load the necessary packages</span><span class="w">
 </span><span class="n">library</span><span class="p">(</span><span class="n">wordcloud</span><span class="p">)</span><span class="w">
 </span><span class="n">library</span><span class="p">(</span><span class="n">RColorBrewer</span><span class="p">)</span><span class="w">
 </span><span class="n">library</span><span class="p">(</span><span class="n">plyr</span><span class="p">)</span><span class="w">
@@ -146,8 +146,8 @@
 
 </span><span class="n">whatsapp_chat_txt</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="s2">"__data_for_R"</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span><span class="o">$</span><span class="n">V</span><span class="m">3</span><span class="w">
 
-</span><span class="c1">#cat(whatsapp_chat_txt)
-</span><span class="w">
+</span><span class="c1">#cat(whatsapp_chat_txt)</span><span class="w">
+
 </span><span class="n">whatsapp_chat_txt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gsub</span><span class="p">(</span><span class="s2">"@\\w+"</span><span class="p">,</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">whatsapp_chat_txt</span><span class="p">)</span><span class="w">
 </span><span class="n">whatsapp_chat_txt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gsub</span><span class="p">(</span><span class="s2">"[[:punct:]]"</span><span class="p">,</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">whatsapp_chat_txt</span><span class="p">)</span><span class="w">
 </span><span class="n">whatsapp_chat_txt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gsub</span><span class="p">(</span><span class="s2">"[[:digit:]]"</span><span class="p">,</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">whatsapp_chat_txt</span><span class="p">)</span><span class="w">
@@ -197,7 +197,7 @@
 </span><span class="n">ggtitle</span><span class="p">(</span><span class="s1">'Sentiment Analysis with polarity'</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
 </span><span class="n">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="o">=</span><span class="s1">'right'</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ylab</span><span class="p">(</span><span class="s1">'Number of messages'</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">xlab</span><span class="p">(</span><span class="s1">'Polarity Categories'</span><span class="p">)</span><span class="w">
 
-</span><span class="c1">#SA2
+</span><span class="c1">#SA2</span><span class="w">
 </span><span class="n">ggsave</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">"./output/SA2.png"</span><span class="p">)</span><span class="w">
 
 </span><span class="n">whatsapp_chat_emos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">levels</span><span class="p">(</span><span class="n">factor</span><span class="p">(</span><span class="n">sentiment_dataframe</span><span class="o">$</span><span class="n">emotion</span><span class="p">))</span><span class="w">
