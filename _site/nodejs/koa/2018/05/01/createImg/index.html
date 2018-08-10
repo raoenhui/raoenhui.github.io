@@ -135,12 +135,12 @@
   <li>用koa启动一个webserver服务，用了logger中间键来方便查看记录。</li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="kd">const</span> <span class="nx">logger</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'koa-logger'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">koaBody</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'koa-body'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
+<span class="kr">const</span> <span class="nx">logger</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'koa-logger'</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">koaBody</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'koa-body'</span><span class="p">);</span>
 
-<span class="kd">const</span> <span class="nx">Koa</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'koa'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Koa</span><span class="p">();</span>
+<span class="kr">const</span> <span class="nx">Koa</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'koa'</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Koa</span><span class="p">();</span>
 
 <span class="c1">// middleware</span>
 
@@ -152,18 +152,19 @@
 
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">module</span><span class="p">.</span><span class="nx">parent</span><span class="p">)</span> <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <ul>
   <li>用koa-router获取用户访问的url，url中包含大小、形状和颜色信息，并调用canvas画图片。</li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'koa-router'</span><span class="p">)();</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
+<span class="kr">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'koa-router'</span><span class="p">)();</span>
 <span class="c1">// route definitions</span>
 
-<span class="nx">router</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'/:size/:shape/:bg'</span><span class="p">,</span> <span class="nx">list</span><span class="p">)</span>
-  <span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="nx">list</span><span class="p">);</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'/:size/:shape/:bg'</span><span class="p">,</span> <span class="nx">list</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="nx">list</span><span class="p">);</span>
 
 <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">router</span><span class="p">.</span><span class="nx">routes</span><span class="p">());</span>
 
@@ -174,7 +175,7 @@
  <span class="kd">function</span> <span class="nx">list</span><span class="p">(</span><span class="nx">ctx</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">sizeAry</span><span class="o">=</span><span class="nx">ctx</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">size</span><span class="p">?</span><span class="nx">ctx</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">size</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">'x'</span><span class="p">):[</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">];</span>
   <span class="kd">var</span> <span class="nx">shape</span><span class="o">=</span><span class="nx">ctx</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">shape</span><span class="p">?</span><span class="nx">ctx</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">shape</span><span class="p">:</span><span class="s1">'rectangle'</span><span class="p">;</span> <span class="c1">//'rectangle||circle'</span>
-  <span class="kd">var</span> <span class="nx">bgColor</span><span class="o">=</span><span class="nx">ctx</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">bg</span><span class="p">?</span><span class="s2">`#</span><span class="p">${</span><span class="nx">ctx</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">bg</span><span class="p">}</span><span class="s2">`</span><span class="p">:</span><span class="s2">`#e83632`</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">bgColor</span><span class="o">=</span><span class="nx">ctx</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">bg</span><span class="p">?</span><span class="err">`#</span><span class="nx">$</span><span class="p">{</span><span class="nx">ctx</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">bg</span><span class="p">}</span><span class="err">`</span><span class="p">:</span><span class="err">`#</span><span class="nx">e83632</span><span class="err">`</span><span class="p">;</span>
 
   <span class="kd">var</span> <span class="nx">imgBuffer</span><span class="o">=</span><span class="nx">getCanvas</span><span class="p">({</span><span class="na">width</span><span class="p">:</span><span class="nb">Number</span><span class="p">(</span><span class="nx">sizeAry</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="na">height</span><span class="p">:</span><span class="nb">Number</span><span class="p">(</span><span class="nx">sizeAry</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="nx">shape</span><span class="p">,</span><span class="nx">bgColor</span><span class="p">});</span>
   <span class="nx">ctx</span><span class="p">.</span><span class="nx">type</span><span class="o">=</span><span class="s2">"image/jpg"</span>
@@ -182,13 +183,14 @@
   <span class="nx">ctx</span><span class="p">.</span><span class="nx">body</span> <span class="o">=</span> <span class="nx">imgBuffer</span><span class="p">;</span>
 <span class="p">}</span>
 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <ul>
   <li>用canvas根据不同大小、形状和颜色信息画出图片。</li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
 <span class="kd">var</span> <span class="nx">Canvas</span><span class="o">=</span><span class="nx">require</span><span class="p">(</span><span class="s1">'canvas'</span><span class="p">);</span>
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="p">{</span><span class="nx">shape</span><span class="p">,</span><span class="nx">width</span><span class="p">,</span><span class="nx">height</span><span class="p">,</span><span class="nx">bgColor</span><span class="p">}</span><span class="o">=</span><span class="nx">params</span><span class="p">;</span>
@@ -209,7 +211,8 @@
   <span class="k">return</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">toBuffer</span><span class="p">();</span>
 <span class="p">};</span>
 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h2 id="第三步-demo">第三步 demo</h2>
 

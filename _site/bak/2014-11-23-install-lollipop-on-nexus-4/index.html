@@ -2,23 +2,23 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>NODE自动生成最新TAG版本 &vert; 前端妹子的博客</title>
+<title>INSTALL LOLLIPOP 5.0 TO NEXUS 4 &vert; 前端妹子的博客</title>
 <meta name="description" content="一枚前端攻城狮!">
-<meta name="keywords" content="NodeJS, git">
+<meta name="keywords" content="android, lollipop">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raoenhui.github.io/images/logo.png">
-<meta name="twitter:title" content="node自动生成最新tag版本">
+<meta name="twitter:title" content="Install lollipop 5.0 to Nexus 4">
 <meta name="twitter:description" content="一枚前端攻城狮!">
 <meta name="twitter:creator" content="@raoenhui">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="node自动生成最新tag版本">
+<meta property="og:title" content="Install lollipop 5.0 to Nexus 4">
 <meta property="og:description" content="一枚前端攻城狮!">
-<meta property="og:url" content="https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/">
+<meta property="og:url" content="https://raoenhui.github.io/bak/2014-11-23-install-lollipop-on-nexus-4/">
 <meta property="og:site_name" content="前端妹子的博客">
 <meta property="og:image" content="https://raoenhui.github.io/images/">
 
@@ -26,7 +26,7 @@
 
 
 
-<link rel="canonical" href="https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/">
+<link rel="canonical" href="https://raoenhui.github.io/bak/2014-11-23-install-lollipop-on-nexus-4/">
 <link href="https://raoenhui.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="前端妹子的博客 Feed">
 <link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
 
@@ -111,76 +111,178 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h1>node自动生成最新tag版本</h1>
-                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#NodeJS" data-toggle="tooltip" title="Posts tagged with NodeJS" rel="tag">NodeJS</a>&nbsp;&comma;&nbsp;<a href="https://raoenhui.github.io/tags/index.html#git" data-toggle="tooltip" title="Posts tagged with git" rel="tag">git</a> <strong><time datetime="2018-03-30T20:00:00+05:30">30 Mar 2018</time></strong></p>
+                            <h1>Install lollipop 5.0 to Nexus 4</h1>
+                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#android" data-toggle="tooltip" title="Posts tagged with android" rel="tag">android</a>&nbsp;&comma;&nbsp;<a href="https://raoenhui.github.io/tags/index.html#lollipop" data-toggle="tooltip" title="Posts tagged with lollipop" rel="tag">lollipop</a> <strong><time datetime="2014-11-23T21:00:00+05:30">23 Nov 2014</time></strong></p>
                         </div>
                     </div>
                 </div>
             </header>
 
         <article class="notepad-post-content post tag-simple">
-            <div><h2 id="第一步-引入所需要的包">第一步 引入所需要的包</h2>
+            <div><p>Google takes lot of time to throw OTA update to your phone, may be they do it lot by lot for not loading their servers, if you are lucky you got it early else wait for may days :p.</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//git命令组件</span>
-<span class="kr">const</span> <span class="nx">Git</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'simple-git'</span><span class="p">);</span>
-<span class="c1">//获取路径</span>
-<span class="kr">const</span> <span class="nx">Path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'path'</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">GitPath</span> <span class="o">=</span> <span class="nx">Path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">'..'</span><span class="p">);</span>
-<span class="c1">//为git的version添加自动增长版本号组件</span>
-<span class="kr">const</span> <span class="nx">Bump</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'bump-regex'</span><span class="p">);</span>
+<p>I was lucky i got it early but my nexus4 also had Ubuntu so at the time of reboot i lost that upgrade routine :(, and i was so eager to see brand new Android 5.0 Lollipop i Flashed my Nexus 4(worth it!).</p>
 
-</code></pre>
-</div>
-
-<h2 id="第二步-生成并提交tag号">第二步 生成并提交tag号</h2>
+<p>Here are few steps i did for flashing my Nexus 4, that will upgrade your kitkat 4.4.4 (KTU84P) to <strong>Lollipop 5.0 (LRX21T)</strong>, easy to do for you guys :)</p>
 
 <ul>
-  <li>先pull获取最新tag版本</li>
-  <li>然后用bump自动增加最小版本号</li>
-  <li>添加日期备注</li>
-  <li>将tag推送到远端</li>
+  <li>First thing is to install ADB and Fastboot to your machine, i use ubuntu so <strong>apt-get</strong> is easy way to get it.</li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
-<span class="kd">var</span> <span class="nx">newVersion</span><span class="p">,</span><span class="c1">//新标签</span>
-    <span class="nx">versionHint</span><span class="p">;</span><span class="c1">//新标签的备注</span>
-<span class="c1">// update repo and get a list of tags </span>
-<span class="nx">Git</span><span class="p">(</span><span class="nx">GitPath</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">pull</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">tags</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">tags</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">oldVersion</span> <span class="o">=</span> <span class="nx">tags</span><span class="p">.</span><span class="nx">latest</span><span class="p">;</span>
-        <span class="nx">Bump</span><span class="p">(</span><span class="s1">'version:'</span> <span class="o">+</span> <span class="nx">oldVersion</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nx">oldVersion</span><span class="p">.</span><span class="nx">lenght</span><span class="p">),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">out</span><span class="p">)</span> <span class="p">{</span>
-            <span class="c1">//产生新代码</span>
-            <span class="nx">newVersion</span> <span class="o">=</span> <span class="s1">'v'</span> <span class="o">+</span> <span class="nx">out</span><span class="p">.</span><span class="k">new</span><span class="p">;</span>
-            <span class="c1">//产生新标签的备注</span>
-            <span class="nx">versionHint</span> <span class="o">=</span> <span class="s1">'Relase version '</span> <span class="o">+</span> <span class="nx">newVersion</span> <span class="o">+</span> <span class="s1">' in '</span> <span class="o">+</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
-            <span class="c1">//推动到远端</span>
-            <span class="nx">Git</span><span class="p">(</span><span class="nx">GitPath</span><span class="p">).</span><span class="nx">addAnnotatedTag</span><span class="p">(</span><span class="nx">newVersion</span><span class="p">,</span> <span class="nx">versionHint</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-                <span class="nx">Git</span><span class="p">(</span><span class="nx">GitPath</span><span class="p">).</span><span class="nx">pushTags</span><span class="p">(</span><span class="s1">'origin'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">versionHint</span><span class="p">);</span>
-                <span class="p">})</span>
-            <span class="p">});</span>
-        <span class="p">});</span>
-    <span class="p">});</span>
-</code></pre>
-</div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo add-apt-repository ppa:phablet-team/tools
+sudo apt-get update
+sudo apt-get install android-tools-adb android-tools-fastboot</code></pre></figure>
 
-<p>Happy coding .. :)</p>
+<ul>
+  <li>Now connect  Nexus 4 to your machine via USB, make sure you enable your USB debugging ON, so start USB Debugging go to Settings » Developer Options » USB debugging. (If you dont have Developer Options go to Settings » About Phone » Build number and tap on Build number until you become developer).</li>
+</ul>
+
+<p><img src="https://raoenhui.github.io/images/nxs2.png" style="height: 25%;width: 25%;" />
+<img src="https://raoenhui.github.io/images/nxs1.png" style="height: 25%;width: 25%;" /></p>
+
+<p>Now try below commands to make sure you are connected to machine.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">amey@amey-xps:~$ </span>adb devices -l
+List of devices attached 
+0202dc7rh2934b2a    device usb:3-2 product:occam model:Nexus_4 device:mako</code></pre></figure>
+
+<ul>
+  <li>Now unlock bootloader 
+Turn off your Nexus 4.
+Press and hold Volume Down and Power to enter the Fastboot menu.
+Connect the Nexus 4 to your computer via USB cable.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">fastboot oem unlock</code></pre></figure>
+
+<p>Press the Volume Up button on the Nexus 4 to accept the command and press the Power button to confirm. The bootloader will now be unlocked, you will loss all data with this.</p>
+
+<ul>
+  <li>Download the factory image from <a href="https://developers.google.com/android/nexus/images">Google</a>, OR direct download clicking <a href="https://dl.google.com/dl/android/aosp/occam-lrx21t-factory-51cee750.tgz">HERE</a>.
+unzip it</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">tar -xf occam-lrx21t-factory-51cee750.tgz
+<span class="nb">cd </span>occam-lrx21t</code></pre></figure>
+
+<ul>
+  <li>Now the final step to Flash and install new lollipop image to your Nexus 4</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">adb reboot-bootloader
+sleep 15
+sudo ./flash-all.sh</code></pre></figure>
+
+<p>This command will  generate following logs on your terminal, put your password if prompted, your phone may be rebooted few times.</p>
+
+<p><img style="height: 25%;width: 25%;" src="https://raoenhui.github.io/images/nxs3.jpg" /></p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">amey@amey-xps:~/Downloads/occam-lrx21t$ </span>sudo ./flash-all.sh
+Password:
+sending <span class="s1">'bootloader'</span> <span class="o">(</span>2264 KB<span class="o">)</span>...
+OKAY <span class="o">[</span> 0.091s]
+writing <span class="s1">'bootloader'</span>...
+OKAY <span class="o">[</span> 0.667s]
+finished. total <span class="nb">time</span>: 0.758s
+rebooting into bootloader...
+OKAY <span class="o">[</span> 0.001s]
+finished. total <span class="nb">time</span>: 0.001s
+&lt; waiting <span class="k">for </span>device &gt;
+sending <span class="s1">'radio'</span> <span class="o">(</span>45537 KB<span class="o">)</span>...
+OKAY <span class="o">[</span> 1.607s]
+writing <span class="s1">'radio'</span>...
+OKAY <span class="o">[</span> 3.458s]
+finished. total <span class="nb">time</span>: 5.065s
+rebooting into bootloader...
+OKAY <span class="o">[</span> 0.001s]
+finished. total <span class="nb">time</span>: 0.001s
+&lt; waiting <span class="k">for </span>device &gt;
+archive does not contain <span class="s1">'boot.sig'</span>
+archive does not contain <span class="s1">'recovery.sig'</span>
+
+archive does not contain <span class="s1">'system.sig'</span>
+--------------------------------------------
+Bootloader Version...: MAKOZ30f
+Baseband Version.....: M9615A-CEFWMAZM-2.0.1701.04
+Serial Number........: 0202dc7d0b934b2a
+--------------------------------------------
+checking product...
+OKAY <span class="o">[</span> 0.002s]
+checking version-bootloader...
+OKAY <span class="o">[</span> 0.002s]
+checking version-baseband...
+OKAY <span class="o">[</span> 0.002s]
+sending <span class="s1">'boot'</span> <span class="o">(</span>6348 KB<span class="o">)</span>...
+OKAY <span class="o">[</span> 0.725s]
+writing <span class="s1">'boot'</span>...
+OKAY <span class="o">[</span> 0.357s]
+sending <span class="s1">'recovery'</span> <span class="o">(</span>6892 KB<span class="o">)</span>...
+OKAY <span class="o">[</span> 0.853s]
+writing <span class="s1">'recovery'</span>...
+OKAY <span class="o">[</span> 0.453s]
+erasing <span class="s1">'system'</span>...
+OKAY <span class="o">[</span> 2.274s]
+sending <span class="s1">'system'</span> <span class="o">(</span>809641 KB<span class="o">)</span>...
+OKAY <span class="o">[</span> 25.485s]
+writing <span class="s1">'system'</span>...
+OKAY <span class="o">[</span> 63.027s]
+erasing <span class="s1">'userdata'</span>...
+OKAY <span class="o">[</span> 40.306s]
+formatting <span class="s1">'userdata'</span> partition...
+Creating filesystem with parameters:
+Size: 14129561600
+Block size: 4096
+Blocks per group: 32768
+Inodes per group: 8144
+Inode size: 256
+Journal blocks: 32768
+Label: 
+Blocks: 3449600
+Block groups: 106
+Reserved block group size: 847
+Created filesystem with 11/863264 inodes and 95427/3449600 blocks
+sending <span class="s1">'userdata'</span> <span class="o">(</span>137438 KB<span class="o">)</span>...
+writing <span class="s1">'userdata'</span>...
+OKAY <span class="o">[</span> 15.651s]
+erasing <span class="s1">'cache'</span>...
+OKAY <span class="o">[</span> 0.662s]
+formatting <span class="s1">'cache'</span> partition...
+Creating filesystem with parameters:
+Size: 587202560
+Block size: 4096
+Blocks per group: 32768
+Inodes per group: 7168
+Inode size: 256
+Journal blocks: 2240
+Label: 
+Blocks: 143360
+Block groups: 5
+Reserved block group size: 39
+Created filesystem with 11/35840 inodes and 4616/143360 blocks
+sending <span class="s1">'cache'</span> <span class="o">(</span>10984 KB<span class="o">)</span>...
+writing <span class="s1">'cache'</span>...
+OKAY <span class="o">[</span> 1.090s]
+rebooting...
+finished. total <span class="nb">time</span>: 150.897s</code></pre></figure>
+
+<p>If your phone missbehave after finishing, just hard reboot it pressing power button for few seconds.</p>
+
+<p>Happy coding ….. :)</p>
 
             </div>
         </article>
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;node自动生成最新tag版本&quot;%20https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/%20via%20&#64;raoenhui"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Install lollipop 5.0 to Nexus 4&quot;%20https://raoenhui.github.io/bak/2014-11-23-install-lollipop-on-nexus-4/%20via%20&#64;raoenhui"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/"
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/bak/2014-11-23-install-lollipop-on-nexus-4/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/"
+                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/bak/2014-11-23-install-lollipop-on-nexus-4/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
                     <i class="fa fa-google-plus"></i>
                 </a>
@@ -311,7 +413,7 @@ gitment.render('container')
 
 <!-- ice facebook start-->
  
-<!-- <div class="fb-comments" data-href="https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+<!-- <div class="fb-comments" data-href="https://raoenhui.github.io/bak/2014-11-23-install-lollipop-on-nexus-4/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {

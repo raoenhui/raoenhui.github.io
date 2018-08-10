@@ -2,23 +2,23 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>NODE自动生成最新TAG版本 &vert; 前端妹子的博客</title>
+<title>CHECKING MYSQL DATABASE SIZE &vert; 前端妹子的博客</title>
 <meta name="description" content="一枚前端攻城狮!">
-<meta name="keywords" content="NodeJS, git">
+<meta name="keywords" content="database, mysql">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raoenhui.github.io/images/logo.png">
-<meta name="twitter:title" content="node自动生成最新tag版本">
+<meta name="twitter:title" content="Checking MySQL Database Size">
 <meta name="twitter:description" content="一枚前端攻城狮!">
 <meta name="twitter:creator" content="@raoenhui">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="node自动生成最新tag版本">
+<meta property="og:title" content="Checking MySQL Database Size">
 <meta property="og:description" content="一枚前端攻城狮!">
-<meta property="og:url" content="https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/">
+<meta property="og:url" content="https://raoenhui.github.io/bak/2013-12-15-checking-mysql-database-size/">
 <meta property="og:site_name" content="前端妹子的博客">
 <meta property="og:image" content="https://raoenhui.github.io/images/">
 
@@ -26,7 +26,7 @@
 
 
 
-<link rel="canonical" href="https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/">
+<link rel="canonical" href="https://raoenhui.github.io/bak/2013-12-15-checking-mysql-database-size/">
 <link href="https://raoenhui.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="前端妹子的博客 Feed">
 <link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
 
@@ -111,76 +111,56 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h1>node自动生成最新tag版本</h1>
-                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#NodeJS" data-toggle="tooltip" title="Posts tagged with NodeJS" rel="tag">NodeJS</a>&nbsp;&comma;&nbsp;<a href="https://raoenhui.github.io/tags/index.html#git" data-toggle="tooltip" title="Posts tagged with git" rel="tag">git</a> <strong><time datetime="2018-03-30T20:00:00+05:30">30 Mar 2018</time></strong></p>
+                            <h1>Checking MySQL Database Size</h1>
+                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#database" data-toggle="tooltip" title="Posts tagged with database" rel="tag">database</a>&nbsp;&comma;&nbsp;<a href="https://raoenhui.github.io/tags/index.html#mysql" data-toggle="tooltip" title="Posts tagged with mysql" rel="tag">mysql</a> <strong><time datetime="2013-12-15T22:00:00+05:30">15 Dec 2013</time></strong></p>
                         </div>
                     </div>
                 </div>
             </header>
 
         <article class="notepad-post-content post tag-simple">
-            <div><h2 id="第一步-引入所需要的包">第一步 引入所需要的包</h2>
+            <div><p>Hi all , in this post i am going to show you how to check current mysql database size, below queries are tested on Mysql 5.5.8</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//git命令组件</span>
-<span class="kr">const</span> <span class="nx">Git</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'simple-git'</span><span class="p">);</span>
-<span class="c1">//获取路径</span>
-<span class="kr">const</span> <span class="nx">Path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'path'</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">GitPath</span> <span class="o">=</span> <span class="nx">Path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">'..'</span><span class="p">);</span>
-<span class="c1">//为git的version添加自动增长版本号组件</span>
-<span class="kr">const</span> <span class="nx">Bump</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'bump-regex'</span><span class="p">);</span>
+<p>Just fire below queries on your mysql db you will have your results ready on terminal.</p>
 
-</code></pre>
-</div>
-
-<h2 id="第二步-生成并提交tag号">第二步 生成并提交tag号</h2>
+<p>For calculating db size 2 things should be considered</p>
 
 <ul>
-  <li>先pull获取最新tag版本</li>
-  <li>然后用bump自动增加最小版本号</li>
-  <li>添加日期备注</li>
-  <li>将tag推送到远端</li>
+  <li>Data length</li>
+  <li>Index length</li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
-<span class="kd">var</span> <span class="nx">newVersion</span><span class="p">,</span><span class="c1">//新标签</span>
-    <span class="nx">versionHint</span><span class="p">;</span><span class="c1">//新标签的备注</span>
-<span class="c1">// update repo and get a list of tags </span>
-<span class="nx">Git</span><span class="p">(</span><span class="nx">GitPath</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">pull</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">tags</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">tags</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">oldVersion</span> <span class="o">=</span> <span class="nx">tags</span><span class="p">.</span><span class="nx">latest</span><span class="p">;</span>
-        <span class="nx">Bump</span><span class="p">(</span><span class="s1">'version:'</span> <span class="o">+</span> <span class="nx">oldVersion</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nx">oldVersion</span><span class="p">.</span><span class="nx">lenght</span><span class="p">),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">out</span><span class="p">)</span> <span class="p">{</span>
-            <span class="c1">//产生新代码</span>
-            <span class="nx">newVersion</span> <span class="o">=</span> <span class="s1">'v'</span> <span class="o">+</span> <span class="nx">out</span><span class="p">.</span><span class="k">new</span><span class="p">;</span>
-            <span class="c1">//产生新标签的备注</span>
-            <span class="nx">versionHint</span> <span class="o">=</span> <span class="s1">'Relase version '</span> <span class="o">+</span> <span class="nx">newVersion</span> <span class="o">+</span> <span class="s1">' in '</span> <span class="o">+</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
-            <span class="c1">//推动到远端</span>
-            <span class="nx">Git</span><span class="p">(</span><span class="nx">GitPath</span><span class="p">).</span><span class="nx">addAnnotatedTag</span><span class="p">(</span><span class="nx">newVersion</span><span class="p">,</span> <span class="nx">versionHint</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-                <span class="nx">Git</span><span class="p">(</span><span class="nx">GitPath</span><span class="p">).</span><span class="nx">pushTags</span><span class="p">(</span><span class="s1">'origin'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">versionHint</span><span class="p">);</span>
-                <span class="p">})</span>
-            <span class="p">});</span>
-        <span class="p">});</span>
-    <span class="p">});</span>
-</code></pre>
-</div>
+<p>###Checking for full database size on server :-</p>
 
-<p>Happy coding .. :)</p>
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"> 
+<span class="k">SELECT</span> <span class="n">table_schema</span> <span class="nv">"Database Name"</span><span class="p">,</span> <span class="k">SUM</span><span class="p">(</span> <span class="n">data_length</span> <span class="o">+</span> <span class="n">index_length</span><span class="p">)</span>
+ <span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span><span class="mi">1024</span> <span class="nv">"Size in GB"</span> <span class="k">FROM</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">TABLES</span>
+ <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">table_schema</span><span class="p">;</span></code></pre></figure>
+
+<p>###Checking in details with each table size in single schema :-</p>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="k">TABLE_NAME</span><span class="p">,</span> <span class="n">table_rows</span><span class="p">,</span> <span class="n">data_length</span><span class="p">,</span> <span class="n">index_length</span><span class="p">,</span> 
+<span class="n">round</span><span class="p">(((</span><span class="n">data_length</span> <span class="o">+</span> <span class="n">index_length</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span> <span class="nv">"Size in GB"</span>
+<span class="k">FROM</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">TABLES</span> <span class="k">WHERE</span> <span class="n">table_schema</span> <span class="o">=</span> <span class="nv">"your_schema_name"</span><span class="p">;</span></code></pre></figure>
+
+<p><em>For checking the database size in MB just remove one ‘/1024’ from quries.</em></p>
+
+<p>Happy coding.. :)</p>
 
             </div>
         </article>
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;node自动生成最新tag版本&quot;%20https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/%20via%20&#64;raoenhui"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Checking MySQL Database Size&quot;%20https://raoenhui.github.io/bak/2013-12-15-checking-mysql-database-size/%20via%20&#64;raoenhui"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/"
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/bak/2013-12-15-checking-mysql-database-size/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/"
+                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/bak/2013-12-15-checking-mysql-database-size/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
                     <i class="fa fa-google-plus"></i>
                 </a>
@@ -311,7 +291,7 @@ gitment.render('container')
 
 <!-- ice facebook start-->
  
-<!-- <div class="fb-comments" data-href="https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+<!-- <div class="fb-comments" data-href="https://raoenhui.github.io/bak/2013-12-15-checking-mysql-database-size/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {

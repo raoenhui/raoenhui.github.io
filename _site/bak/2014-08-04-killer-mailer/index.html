@@ -2,23 +2,23 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>NODE自动生成最新TAG版本 &vert; 前端妹子的博客</title>
+<title>KILLER MAILER SCRIPT IN PYTHON &vert; 前端妹子的博客</title>
 <meta name="description" content="一枚前端攻城狮!">
-<meta name="keywords" content="NodeJS, git">
+<meta name="keywords" content="python">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raoenhui.github.io/images/logo.png">
-<meta name="twitter:title" content="node自动生成最新tag版本">
+<meta name="twitter:title" content="Killer mailer script in Python">
 <meta name="twitter:description" content="一枚前端攻城狮!">
 <meta name="twitter:creator" content="@raoenhui">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="node自动生成最新tag版本">
+<meta property="og:title" content="Killer mailer script in Python">
 <meta property="og:description" content="一枚前端攻城狮!">
-<meta property="og:url" content="https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/">
+<meta property="og:url" content="https://raoenhui.github.io/bak/2014-08-04-killer-mailer/">
 <meta property="og:site_name" content="前端妹子的博客">
 <meta property="og:image" content="https://raoenhui.github.io/images/">
 
@@ -26,7 +26,7 @@
 
 
 
-<link rel="canonical" href="https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/">
+<link rel="canonical" href="https://raoenhui.github.io/bak/2014-08-04-killer-mailer/">
 <link href="https://raoenhui.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="前端妹子的博客 Feed">
 <link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
 
@@ -111,76 +111,87 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h1>node自动生成最新tag版本</h1>
-                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#NodeJS" data-toggle="tooltip" title="Posts tagged with NodeJS" rel="tag">NodeJS</a>&nbsp;&comma;&nbsp;<a href="https://raoenhui.github.io/tags/index.html#git" data-toggle="tooltip" title="Posts tagged with git" rel="tag">git</a> <strong><time datetime="2018-03-30T20:00:00+05:30">30 Mar 2018</time></strong></p>
+                            <h1>Killer mailer script in Python</h1>
+                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#python" data-toggle="tooltip" title="Posts tagged with python" rel="tag">python</a> <strong><time datetime="2014-08-04T09:23:00+05:30">04 Aug 2014</time></strong></p>
                         </div>
                     </div>
                 </div>
             </header>
 
         <article class="notepad-post-content post tag-simple">
-            <div><h2 id="第一步-引入所需要的包">第一步 引入所需要的包</h2>
+            <div><p>Hey guys i always needed a mailer script which can send me hourly/daily/weekly updates of my diffrent programs running on linux box.</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//git命令组件</span>
-<span class="kr">const</span> <span class="nx">Git</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'simple-git'</span><span class="p">);</span>
-<span class="c1">//获取路径</span>
-<span class="kr">const</span> <span class="nx">Path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'path'</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">GitPath</span> <span class="o">=</span> <span class="nx">Path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">'..'</span><span class="p">);</span>
-<span class="c1">//为git的version添加自动增长版本号组件</span>
-<span class="kr">const</span> <span class="nx">Bump</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'bump-regex'</span><span class="p">);</span>
+<p>I tried <strong>sendmail</strong> and <strong>mutt</strong> but they were not much impressive.</p>
 
-</code></pre>
-</div>
+<p>I made a python script for myself and this works like KILLER.</p>
 
-<h2 id="第二步-生成并提交tag号">第二步 生成并提交tag号</h2>
+<p>I dont had a SMTP details of my clients server neither access to it.</p>
 
-<ul>
-  <li>先pull获取最新tag版本</li>
-  <li>然后用bump自动增加最小版本号</li>
-  <li>添加日期备注</li>
-  <li>将tag推送到远端</li>
-</ul>
+<p>This badass script in python  worked well for me, hope it will help you too ;)</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
-<span class="kd">var</span> <span class="nx">newVersion</span><span class="p">,</span><span class="c1">//新标签</span>
-    <span class="nx">versionHint</span><span class="p">;</span><span class="c1">//新标签的备注</span>
-<span class="c1">// update repo and get a list of tags </span>
-<span class="nx">Git</span><span class="p">(</span><span class="nx">GitPath</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">pull</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">tags</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">tags</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">oldVersion</span> <span class="o">=</span> <span class="nx">tags</span><span class="p">.</span><span class="nx">latest</span><span class="p">;</span>
-        <span class="nx">Bump</span><span class="p">(</span><span class="s1">'version:'</span> <span class="o">+</span> <span class="nx">oldVersion</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nx">oldVersion</span><span class="p">.</span><span class="nx">lenght</span><span class="p">),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">out</span><span class="p">)</span> <span class="p">{</span>
-            <span class="c1">//产生新代码</span>
-            <span class="nx">newVersion</span> <span class="o">=</span> <span class="s1">'v'</span> <span class="o">+</span> <span class="nx">out</span><span class="p">.</span><span class="k">new</span><span class="p">;</span>
-            <span class="c1">//产生新标签的备注</span>
-            <span class="nx">versionHint</span> <span class="o">=</span> <span class="s1">'Relase version '</span> <span class="o">+</span> <span class="nx">newVersion</span> <span class="o">+</span> <span class="s1">' in '</span> <span class="o">+</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
-            <span class="c1">//推动到远端</span>
-            <span class="nx">Git</span><span class="p">(</span><span class="nx">GitPath</span><span class="p">).</span><span class="nx">addAnnotatedTag</span><span class="p">(</span><span class="nx">newVersion</span><span class="p">,</span> <span class="nx">versionHint</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-                <span class="nx">Git</span><span class="p">(</span><span class="nx">GitPath</span><span class="p">).</span><span class="nx">pushTags</span><span class="p">(</span><span class="s1">'origin'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">versionHint</span><span class="p">);</span>
-                <span class="p">})</span>
-            <span class="p">});</span>
-        <span class="p">});</span>
-    <span class="p">});</span>
-</code></pre>
-</div>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/python</span>
 
-<p>Happy coding .. :)</p>
+<span class="c"># Import smtplib for the actual sending function</span>
+<span class="kn">import</span> <span class="nn">smtplib</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+
+<span class="c"># Import the email modules we will need</span>
+<span class="kn">from</span> <span class="nn">email.mime.text</span> <span class="kn">import</span> <span class="n">MIMEText</span>
+
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s">'This is a demo script by Enhui Rao'</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">'-s'</span><span class="p">,</span><span class="s">'--subject'</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">'Subject'</span><span class="p">,</span><span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">'-b'</span><span class="p">,</span><span class="s">'--body'</span><span class="p">,</span><span class="n">help</span><span class="o">=</span><span class="s">'Body'</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">'-t'</span><span class="p">,</span><span class="s">'--to'</span><span class="p">,</span><span class="n">help</span><span class="o">=</span><span class="s">'To'</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">'-f'</span><span class="p">,</span><span class="s">'--sender'</span><span class="p">,</span><span class="n">help</span><span class="o">=</span><span class="s">'From'</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+<span class="n">msg</span> <span class="o">=</span> <span class="n">MIMEText</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+<span class="c"># me == the sender's email address</span>
+<span class="c"># you == the recipient's email address</span>
+<span class="n">me</span><span class="o">=</span><span class="s">"demo@any-domain-you-want.com"</span>
+<span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">sender</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">me</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">sender</span>
+<span class="n">you</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">to</span>
+<span class="n">msg</span><span class="p">[</span><span class="s">'Subject'</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">subject</span>
+<span class="n">msg</span><span class="p">[</span><span class="s">'From'</span><span class="p">]</span> <span class="o">=</span> <span class="n">me</span>
+<span class="n">msg</span><span class="p">[</span><span class="s">'To'</span><span class="p">]</span> <span class="o">=</span> <span class="n">you</span>
+
+<span class="c"># Send the message via our own SMTP server, but don't include the</span>
+<span class="c"># envelope header.</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="s">'localhost'</span><span class="p">)</span>
+<span class="n">s</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="n">me</span><span class="p">,</span> <span class="p">[</span><span class="n">you</span><span class="p">],</span> <span class="n">msg</span><span class="o">.</span><span class="n">as_string</span><span class="p">())</span>
+<span class="n">s</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span></code></pre></figure>
+
+<p>if you do adjust following things you can send attachment too.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">email.mime.image</span> <span class="kn">import</span> <span class="n">MIMEImage</span>
+<span class="kn">from</span> <span class="nn">email.mime.multipart</span> <span class="kn">import</span> <span class="n">MIMEMultipart</span>
+
+<span class="nb">file</span><span class="o">=</span><span class="s">'/home/amey-xps/logs/server.out.png'</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">)</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">MIMEImage</span><span class="p">(</span><span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">msg</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+
+<span class="c"># I used image here , you can use diffrent file types with MIMEText, MIMEImage, MIMEAudio, MIMEBase</span></code></pre></figure>
+
+<p>Happy coding ….. :)</p>
 
             </div>
         </article>
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;node自动生成最新tag版本&quot;%20https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/%20via%20&#64;raoenhui"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Killer mailer script in Python&quot;%20https://raoenhui.github.io/bak/2014-08-04-killer-mailer/%20via%20&#64;raoenhui"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/"
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/bak/2014-08-04-killer-mailer/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/"
+                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/bak/2014-08-04-killer-mailer/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
                     <i class="fa fa-google-plus"></i>
                 </a>
@@ -311,7 +322,7 @@ gitment.render('container')
 
 <!-- ice facebook start-->
  
-<!-- <div class="fb-comments" data-href="https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+<!-- <div class="fb-comments" data-href="https://raoenhui.github.io/bak/2014-08-04-killer-mailer/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {

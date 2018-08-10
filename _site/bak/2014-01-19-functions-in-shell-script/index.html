@@ -2,23 +2,23 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>NODE自动生成最新TAG版本 &vert; 前端妹子的博客</title>
+<title>FUNCTIONS IN SHELL SCRIPT &vert; 前端妹子的博客</title>
 <meta name="description" content="一枚前端攻城狮!">
-<meta name="keywords" content="NodeJS, git">
+<meta name="keywords" content="shell, linux">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raoenhui.github.io/images/logo.png">
-<meta name="twitter:title" content="node自动生成最新tag版本">
+<meta name="twitter:title" content="Functions in shell script">
 <meta name="twitter:description" content="一枚前端攻城狮!">
 <meta name="twitter:creator" content="@raoenhui">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="node自动生成最新tag版本">
+<meta property="og:title" content="Functions in shell script">
 <meta property="og:description" content="一枚前端攻城狮!">
-<meta property="og:url" content="https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/">
+<meta property="og:url" content="https://raoenhui.github.io/bak/2014-01-19-functions-in-shell-script/">
 <meta property="og:site_name" content="前端妹子的博客">
 <meta property="og:image" content="https://raoenhui.github.io/images/">
 
@@ -26,7 +26,7 @@
 
 
 
-<link rel="canonical" href="https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/">
+<link rel="canonical" href="https://raoenhui.github.io/bak/2014-01-19-functions-in-shell-script/">
 <link href="https://raoenhui.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="前端妹子的博客 Feed">
 <link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
 
@@ -111,76 +111,64 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h1>node自动生成最新tag版本</h1>
-                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#NodeJS" data-toggle="tooltip" title="Posts tagged with NodeJS" rel="tag">NodeJS</a>&nbsp;&comma;&nbsp;<a href="https://raoenhui.github.io/tags/index.html#git" data-toggle="tooltip" title="Posts tagged with git" rel="tag">git</a> <strong><time datetime="2018-03-30T20:00:00+05:30">30 Mar 2018</time></strong></p>
+                            <h1>Functions in shell script</h1>
+                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#shell" data-toggle="tooltip" title="Posts tagged with shell" rel="tag">shell</a>&nbsp;&comma;&nbsp;<a href="https://raoenhui.github.io/tags/index.html#linux" data-toggle="tooltip" title="Posts tagged with linux" rel="tag">linux</a> <strong><time datetime="2014-01-19T15:09:00+05:30">19 Jan 2014</time></strong></p>
                         </div>
                     </div>
                 </div>
             </header>
 
         <article class="notepad-post-content post tag-simple">
-            <div><h2 id="第一步-引入所需要的包">第一步 引入所需要的包</h2>
+            <div><p>Have  lot of repeated shell code ? try writing function in that :)</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//git命令组件</span>
-<span class="kr">const</span> <span class="nx">Git</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'simple-git'</span><span class="p">);</span>
-<span class="c1">//获取路径</span>
-<span class="kr">const</span> <span class="nx">Path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'path'</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">GitPath</span> <span class="o">=</span> <span class="nx">Path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">'..'</span><span class="p">);</span>
-<span class="c1">//为git的version添加自动增长版本号组件</span>
-<span class="kr">const</span> <span class="nx">Bump</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'bump-regex'</span><span class="p">);</span>
+<p>writing functions in any languages lowers the headache of any programmer , it implements DRY (Do not Repeat Yourself!) rule and that’s cool to why would i write code again and again ? that’s bullshit!</p>
 
-</code></pre>
-</div>
+<p>i am explaining very usefull methods and tricks to write and use functions within shell.</p>
 
-<h2 id="第二步-生成并提交tag号">第二步 生成并提交tag号</h2>
+<p>taking an example ,i need to fetch data from mysql again and again and have to write big repeated code again and again ,let’s write a function for that and just pass your query to it</p>
 
-<ul>
-  <li>先pull获取最新tag版本</li>
-  <li>然后用bump自动增加最小版本号</li>
-  <li>添加日期备注</li>
-  <li>将tag推送到远端</li>
-</ul>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/bin/sh</span>
+ 
+sql_exec<span class="o">()</span>
+<span class="o">{</span>
+<span class="nv">user</span><span class="o">=</span>root
+<span class="nv">password</span><span class="o">=</span>rut@123
+<span class="nv">result</span><span class="o">=</span>mysql -u <span class="nv">$user</span> -p<span class="s1">'$password'</span> mydb -se <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
+<span class="nb">echo</span> <span class="nv">$result</span>
+<span class="o">}</span>
+ 
+<span class="nv">count</span><span class="o">=</span><span class="k">$(</span>sql_exec <span class="s2">"select count(*) from my_table"</span><span class="k">)</span>
+ 
+<span class="nb">echo</span> <span class="s1">'total number of rows are : '</span> <span class="nv">$count</span>
+ 
+<span class="nv">engr_count</span><span class="o">=</span><span class="k">$(</span>sql_exec <span class="s2">"select count(*) from my_table where job='ENGR'"</span><span class="k">)</span>
+ 
+<span class="nb">echo</span> <span class="s1">'total engineer count is '</span><span class="nv">$engr_count</span> <span class="s1">' this saved my code repeating '</span></code></pre></figure>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
-<span class="kd">var</span> <span class="nx">newVersion</span><span class="p">,</span><span class="c1">//新标签</span>
-    <span class="nx">versionHint</span><span class="p">;</span><span class="c1">//新标签的备注</span>
-<span class="c1">// update repo and get a list of tags </span>
-<span class="nx">Git</span><span class="p">(</span><span class="nx">GitPath</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">pull</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">tags</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">tags</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">oldVersion</span> <span class="o">=</span> <span class="nx">tags</span><span class="p">.</span><span class="nx">latest</span><span class="p">;</span>
-        <span class="nx">Bump</span><span class="p">(</span><span class="s1">'version:'</span> <span class="o">+</span> <span class="nx">oldVersion</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nx">oldVersion</span><span class="p">.</span><span class="nx">lenght</span><span class="p">),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">out</span><span class="p">)</span> <span class="p">{</span>
-            <span class="c1">//产生新代码</span>
-            <span class="nx">newVersion</span> <span class="o">=</span> <span class="s1">'v'</span> <span class="o">+</span> <span class="nx">out</span><span class="p">.</span><span class="k">new</span><span class="p">;</span>
-            <span class="c1">//产生新标签的备注</span>
-            <span class="nx">versionHint</span> <span class="o">=</span> <span class="s1">'Relase version '</span> <span class="o">+</span> <span class="nx">newVersion</span> <span class="o">+</span> <span class="s1">' in '</span> <span class="o">+</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
-            <span class="c1">//推动到远端</span>
-            <span class="nx">Git</span><span class="p">(</span><span class="nx">GitPath</span><span class="p">).</span><span class="nx">addAnnotatedTag</span><span class="p">(</span><span class="nx">newVersion</span><span class="p">,</span> <span class="nx">versionHint</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-                <span class="nx">Git</span><span class="p">(</span><span class="nx">GitPath</span><span class="p">).</span><span class="nx">pushTags</span><span class="p">(</span><span class="s1">'origin'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">versionHint</span><span class="p">);</span>
-                <span class="p">})</span>
-            <span class="p">});</span>
-        <span class="p">});</span>
-    <span class="p">});</span>
-</code></pre>
-</div>
+<p>Here i passed all the coming arguments to functions to mysql by $@ you can differentiate  arguments by $1 $2 $3 ….. $n</p>
 
-<p>Happy coding .. :)</p>
+<p>Always remember unlike C ,Java or any other language you must write functions before calling to it.</p>
+
+<p>you can either echo $result or return $result it doesn’t matter but i prefer echo as it doesn’t make side effects of escape characters like \t \n etc.</p>
+
+<p>Hope you got how to use functions in shell.</p>
+
+<p>Happy coding ….. :)</p>
 
             </div>
         </article>
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;node自动生成最新tag版本&quot;%20https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/%20via%20&#64;raoenhui"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Functions in shell script&quot;%20https://raoenhui.github.io/bak/2014-01-19-functions-in-shell-script/%20via%20&#64;raoenhui"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/"
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/bak/2014-01-19-functions-in-shell-script/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/"
+                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/bak/2014-01-19-functions-in-shell-script/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
                     <i class="fa fa-google-plus"></i>
                 </a>
@@ -311,7 +299,7 @@ gitment.render('container')
 
 <!-- ice facebook start-->
  
-<!-- <div class="fb-comments" data-href="https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+<!-- <div class="fb-comments" data-href="https://raoenhui.github.io/bak/2014-01-19-functions-in-shell-script/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {

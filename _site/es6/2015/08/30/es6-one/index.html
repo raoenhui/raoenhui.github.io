@@ -187,25 +187,25 @@
 <h3 id="const">const</h3>
 <p>const 声明的是常量，一旦声明，值将是不可变的。</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">PI</span> <span class="o">=</span> <span class="mf">3.1415</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">PI</span> <span class="o">=</span> <span class="mf">3.1415</span><span class="p">;</span>
 <span class="nx">PI</span> <span class="c1">// 3.1415</span>
  
 <span class="nx">PI</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
 <span class="nx">PI</span> <span class="c1">// 3.1415</span>
  
-<span class="kd">const</span> <span class="nx">PI</span> <span class="o">=</span> <span class="mf">3.1</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">PI</span> <span class="o">=</span> <span class="mf">3.1</span><span class="p">;</span>
 <span class="nx">PI</span> <span class="c1">// 3.1415</span></code></pre></figure>
 
 <p>const 也具有块级作用域</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/*E4*/</span>
 <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">max</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+  <span class="kr">const</span> <span class="nx">max</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">max</span><span class="p">);</span>  <span class="c1">//Uncaught ReferenceError: max is not defined</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">max</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+  <span class="kr">const</span> <span class="nx">max</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
   <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">max</span><span class="p">);</span>  <span class="c1">//5</span>
 <span class="p">}</span></code></pre></figure>
 
@@ -218,19 +218,19 @@
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">"Hello!"</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">age</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
  
-<span class="kd">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">"Goodbye!"</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">age</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span><span class="c1">//cli:Duplicate declaration "age"</span></code></pre></figure>
+<span class="kr">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">"Goodbye!"</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">age</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span><span class="c1">//cli:Duplicate declaration "age"</span></code></pre></figure>
 
 <p>const 指令指向变量所在的地址，所以对该变量进行属性设置是可行的（未改变变量地址），如果想完全不可变化（包括属性），那么可以使用冻结</p>
 
 <p>/* E6*/</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">C1</span> <span class="o">=</span> <span class="p">{};</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">C1</span> <span class="o">=</span> <span class="p">{};</span>
 <span class="nx">C1</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">C1</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 1 </span>
 <span class="nx">C1</span> <span class="o">=</span> <span class="p">{};</span>  <span class="c1">// cli: C1 = {};  // 报错  重新赋值，地址改变</span>
 
-<span class="kd">const</span> <span class="nx">C2</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">freeze</span><span class="p">({});</span> 
+<span class="kr">const</span> <span class="nx">C2</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">freeze</span><span class="p">({});</span> 
 <span class="nx">C2</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> 
 <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">C2</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span><span class="c1">//Uncaught TypeError: Can't add property a, object is not extensible</span></code></pre></figure>
 
@@ -240,7 +240,7 @@
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/*Exercises2*/</span>
 <span class="k">if</span><span class="p">(</span><span class="kc">true</span><span class="p">){</span>
-  <span class="kd">const</span> <span class="nx">a</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span>
+  <span class="kr">const</span> <span class="nx">a</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span>
   <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">'a1:'</span><span class="o">+</span><span class="nx">a</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">'a2:'</span><span class="o">+</span><span class="nx">a</span><span class="p">);</span><span class="c1">//Uncaught ReferenceError: a is not defined</span></code></pre></figure>
@@ -284,7 +284,7 @@
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
  
-<span class="nx">tag</span><span class="s2">`Hello </span><span class="p">${</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span> <span class="p">}</span><span class="s2"> world </span><span class="p">${</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span> <span class="p">}</span><span class="s2">`</span><span class="p">;</span></code></pre></figure>
+<span class="nx">tag</span><span class="err">`</span><span class="nx">Hello</span> <span class="nx">$</span><span class="p">{</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span> <span class="p">}</span> <span class="nx">world</span> <span class="nx">$</span><span class="p">{</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span> <span class="p">}</span><span class="err">`</span><span class="p">;</span></code></pre></figure>
 
 <p>tag函数所有参数的实际值如下。</p>
 <ul>
@@ -312,7 +312,7 @@
   <span class="k">return</span> <span class="s2">"OK"</span><span class="p">;</span>
 <span class="p">}</span>
  
-<span class="nx">tag</span><span class="s2">`Hello </span><span class="p">${</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span> <span class="p">}</span><span class="s2"> world </span><span class="p">${</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+<span class="nx">tag</span><span class="err">`</span><span class="nx">Hello</span> <span class="nx">$</span><span class="p">{</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span> <span class="p">}</span> <span class="nx">world</span> <span class="nx">$</span><span class="p">{</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span><span class="p">}</span><span class="err">`</span><span class="p">;</span>
 <span class="c1">// "Hello "</span>
 <span class="c1">// " world "</span>
 <span class="c1">// 15</span>
@@ -324,11 +324,11 @@ ES6还为原生的String对象，提供了一个raw方法。
 若使用String.raw 作为模板字符串的前缀，则模板字符串可以是原始(raw)的。反斜线也不再是特殊字符，\n 也不会被解释成换行符：</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/*E8*/</span>
-<span class="kd">var</span> <span class="nx">raw</span> <span class="o">=</span><span class="nb">String</span><span class="p">(</span><span class="s1">'Not a newline: </span><span class="err">\</span><span class="s1">n'</span><span class="p">);</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">raw</span> <span class="o">===</span> <span class="s1">'Not a newline: </span><span class="err">\\</span><span class="s1">n'</span><span class="p">);</span><span class="c1">// false</span>
+<span class="kd">var</span> <span class="nx">raw</span> <span class="o">=</span><span class="nb">String</span><span class="p">(</span><span class="s1">'Not a newline: \n'</span><span class="p">);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">raw</span> <span class="o">===</span> <span class="s1">'Not a newline: \\n'</span><span class="p">);</span><span class="c1">// false</span>
 
- <span class="kd">let</span> <span class="nx">raw</span> <span class="o">=</span> <span class="nb">String</span><span class="p">.</span><span class="nx">raw</span><span class="s2">`Not a newline: \n`</span><span class="p">;</span>
- <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">raw</span> <span class="o">===</span> <span class="s1">'Not a newline: </span><span class="err">\\</span><span class="s1">n'</span><span class="p">);</span> <span class="c1">// true</span></code></pre></figure>
+ <span class="kd">let</span> <span class="nx">raw</span> <span class="o">=</span> <span class="nb">String</span><span class="p">.</span><span class="nx">raw</span><span class="err">`</span><span class="nx">Not</span> <span class="nx">a</span> <span class="nx">newline</span><span class="err">:</span> <span class="err">\</span><span class="nx">n</span><span class="err">`</span><span class="p">;</span>
+ <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">raw</span> <span class="o">===</span> <span class="s1">'Not a newline: \\n'</span><span class="p">);</span> <span class="c1">// true</span></code></pre></figure>
 
 <p>有兴趣的小伙伴们还可以看下下面文档:</p>
 

@@ -6,6 +6,62 @@
     
     
     <url>
+        <loc>https://raoenhui.github.io/bak/2013-12-10-capturing-http-header-in-JAX-RS/</loc>
+    </url>
+    
+    <url>
+        <loc>https://raoenhui.github.io/bak/2013-12-15-checking-mysql-database-size/</loc>
+    </url>
+    
+    <url>
+        <loc>https://raoenhui.github.io/bak/2013-12-17-using-mysql-dump/</loc>
+    </url>
+    
+    <url>
+        <loc>https://raoenhui.github.io/bak/2014-01-19-functions-in-shell-script/</loc>
+    </url>
+    
+    <url>
+        <loc>https://raoenhui.github.io/bak/2014-08-04-killer-mailer/</loc>
+    </url>
+    
+    <url>
+        <loc>https://raoenhui.github.io/bak/2014-08-08-python-timezone-convertion/</loc>
+    </url>
+    
+    <url>
+        <loc>https://raoenhui.github.io/bak/2014-08-17-N-for-Node.js/</loc>
+    </url>
+    
+    <url>
+        <loc>https://raoenhui.github.io/bak/2014-08-30-Super-awesome-automation/</loc>
+    </url>
+    
+    <url>
+        <loc>https://raoenhui.github.io/bak/2014-09-07-javascript-attache-with-events/</loc>
+    </url>
+    
+    <url>
+        <loc>https://raoenhui.github.io/bak/2014-09-14-bang-bang/</loc>
+    </url>
+    
+    <url>
+        <loc>https://raoenhui.github.io/bak/2014-11-23-install-lollipop-on-nexus-4/</loc>
+    </url>
+    
+    <url>
+        <loc>https://raoenhui.github.io/bak/2014-12-31-working-with-git-patch/</loc>
+    </url>
+    
+    <url>
+        <loc>https://raoenhui.github.io/bak/2015-04-01-alias-makes-life-easy/</loc>
+    </url>
+    
+    <url>
+        <loc>https://raoenhui.github.io/bak/2015-05-10-sentiment-analysis-with-R/</loc>
+    </url>
+    
+    <url>
         <loc>https://raoenhui.github.io/404/</loc>
     </url>
     
@@ -43,18 +99,6 @@
     
     <url>
         <loc>https://raoenhui.github.io/page2/</loc>
-    </url>
-    
-    <url>
-        <loc>https://raoenhui.github.io/page3/</loc>
-    </url>
-    
-    <url>
-        <loc>https://raoenhui.github.io/page4/</loc>
-    </url>
-    
-    <url>
-        <loc>https://raoenhui.github.io/page5/</loc>
     </url>
     
 
@@ -97,62 +141,6 @@
     
     <url>
         <loc>https://raoenhui.github.io/es6/2015/08/28/es6-featrue/</loc>
-    </url>
-    
-    <url>
-        <loc>https://raoenhui.github.io/analytics/2015/05/10/sentiment-analysis-with-R/</loc>
-    </url>
-    
-    <url>
-        <loc>https://raoenhui.github.io/linux/2015/04/01/alias-makes-life-easy/</loc>
-    </url>
-    
-    <url>
-        <loc>https://raoenhui.github.io/other/2014/12/31/working-with-git-patch/</loc>
-    </url>
-    
-    <url>
-        <loc>https://raoenhui.github.io/other/2014/11/23/install-lollipop-on-nexus-4/</loc>
-    </url>
-    
-    <url>
-        <loc>https://raoenhui.github.io/linux/2014/09/14/bang-bang/</loc>
-    </url>
-    
-    <url>
-        <loc>https://raoenhui.github.io/javascript/2014/09/07/javascript-attache-with-events/</loc>
-    </url>
-    
-    <url>
-        <loc>https://raoenhui.github.io/testing/2014/08/30/Super-awesome-automation/</loc>
-    </url>
-    
-    <url>
-        <loc>https://raoenhui.github.io/nodejs/2014/08/17/N-for-Node.js/</loc>
-    </url>
-    
-    <url>
-        <loc>https://raoenhui.github.io/other/2014/08/08/python-timezone-convertion/</loc>
-    </url>
-    
-    <url>
-        <loc>https://raoenhui.github.io/other/2014/08/04/killer-mailer/</loc>
-    </url>
-    
-    <url>
-        <loc>https://raoenhui.github.io/linux/2014/01/19/functions-in-shell-script/</loc>
-    </url>
-    
-    <url>
-        <loc>https://raoenhui.github.io/other/2013/12/17/using-mysql-dump/</loc>
-    </url>
-    
-    <url>
-        <loc>https://raoenhui.github.io/other/2013/12/15/checking-mysql-database-size/</loc>
-    </url>
-    
-    <url>
-        <loc>https://raoenhui.github.io/other/2013/12/10/capturing-http-header-in-JAX-RS/</loc>
     </url>
     
 </urlset>
