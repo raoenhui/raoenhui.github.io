@@ -1,0 +1,2257 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>NEXTJS中文文档 &vert; 前端妹子的博客</title>
+<meta name="description" content="一枚前端攻城狮!">
+<meta name="keywords" content="Nextjs, SSR">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raoenhui.github.io/images/logo.png">
+<meta name="twitter:title" content="Nextjs中文文档">
+<meta name="twitter:description" content="一枚前端攻城狮!">
+<meta name="twitter:creator" content="@raoenhui">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nextjs中文文档">
+<meta property="og:description" content="一枚前端攻城狮!">
+<meta property="og:url" content="https://raoenhui.github.io/nextjs/2018/08/31/Nextjs%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/">
+<meta property="og:site_name" content="前端妹子的博客">
+<meta property="og:image" content="https://raoenhui.github.io/images/">
+
+
+
+
+
+<link rel="canonical" href="https://raoenhui.github.io/nextjs/2018/08/31/Nextjs%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/">
+<link href="https://raoenhui.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="前端妹子的博客 Feed">
+<link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+    <!--<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>-->
+	<!--<link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/font-awesome.min.css">-->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/normalize.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/nprogress.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/foundation.min.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/style.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/post.css">
+
+
+
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="https://raoenhui.github.io/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="https://raoenhui.github.io/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="https://raoenhui.github.io/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://raoenhui.github.io/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://raoenhui.github.io/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://raoenhui.github.io/images/apple-touch-icon-144x144-precomposed.png">
+
+<style type="text/css">@media only screen and (min-width:43.75em){.notepad-post-content div>p:first-child:first-letter{float:left;font-size:4.688rem;line-height:4.375rem;padding-top:.25rem;padding-right:.5rem;padding-left:.188rem;font-family:serif}}</style>
+</head>
+<body class="post-template" itemscope itemtype="http://schema.org/WebPage">
+<div style ='margin:0 auto;width:0px;height:0px;overflow:hidden;' >
+
+    <!--<img src="https://raoenhui.github.io/assets/img/avator.jpg" />-->
+    <img src="//chuantu.biz/t6/303/1525520078x-1566657998.png" />
+
+</div>
+
+        <main id="notepad-post-container-simple" class="notepad-post-container-simple" role="main">
+            <header class="notepad-post-header-simple">
+                <div class="notepad-post-menu-header-simple">
+
+                    <a class="notepad-blog-logo" href="https://raoenhui.github.io">
+                        <img src="https://raoenhui.github.io/images/logo.png" alt="Blog Logo" />
+                    </a>
+
+                <div class="notepad-blog-menu">      
+    <div class="notepad-mobile-menu show-for-small">
+        <a href="#"><i class="fa fa-bars"></i></a>
+    </div>
+    <ul class="notepad-menu">
+        <li class="notepad-mobile-close-btn show-for-small text-right">
+            <a href="#"><i class="fa fa-times"></i></a>
+        </li>
+
+            <li>
+                    <a href="https://raoenhui.github.io/">主页</a>
+                 </li>
+
+            <li>
+                    <a href="https://raoenhui.github.io/categories">目录</a>
+                 </li>
+
+            <li>
+                    <a href="https://raoenhui.github.io/about">关于</a>
+                 </li>
+            
+           <li><a href="https://raoenhui.github.io/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+    </ul>
+
+</div>
+            </div>
+
+                <div class="notepad-post-title-simple row">
+                    <div class="small-12 columns">
+                        <div class="notepad-post-meta-simple">
+                            <h1>Nextjs中文文档</h1>
+                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#Nextjs" data-toggle="tooltip" title="Posts tagged with Nextjs" rel="tag">Nextjs</a>&nbsp;&comma;&nbsp;<a href="https://raoenhui.github.io/tags/index.html#SSR" data-toggle="tooltip" title="Posts tagged with SSR" rel="tag">SSR</a> <strong><time datetime="2018-08-31T21:00:00+05:30">31 Aug 2018</time></strong></p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+        <article class="notepad-post-content post tag-simple">
+            <div><p>Next.js 是一个轻量级的 React 服务端渲染应用框架。</p>
+
+<p>翻译版本为 7.0.0-canary.8。</p>
+
+<hr />
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<!-- https://github.com/thlorenz/doctoc -->
+
+<ul>
+  <li><a href="#how-to-use">怎么使用</a>
+    <ul>
+      <li><a href="#setup">安装</a></li>
+      <li><a href="#automatic-code-splitting">代码自动分割</a></li>
+      <li><a href="#css">CSS</a>
+        <ul>
+          <li><a href="#built-in-css-support">支持嵌入样式</a></li>
+          <li><a href="#css-in-js">内嵌样式</a></li>
+          <li><a href="#importing-css--sass--less--stylus-files">使用 CSS / Sass / Less / Stylus files</a></li>
+        </ul>
+      </li>
+      <li><a href="#static-file-serving-eg-images">静态文件服务（如图像)</a></li>
+      <li><a href="#populating-head"><code class="highlighter-rouge">&lt;head&gt;</code></a></li>
+      <li><a href="#fetching-data-and-component-lifecycle">获取数据以及组件生命周期</a></li>
+      <li><a href="#routing">路由</a>
+        <ul>
+          <li><a href="#with-link"><code class="highlighter-rouge">&lt;Link&gt;</code> 用法</a>
+            <ul>
+              <li><a href="#with-url-object">URL 对象</a></li>
+              <li><a href="#replace-instead-of-push-url">替换路由</a></li>
+              <li><a href="#using-a-component-that-supports-onclick">组件支持点击事件<code class="highlighter-rouge">onClick</code></a></li>
+              <li><a href="#forcing-the-link-to-expose-href-to-its-child">暴露<code class="highlighter-rouge">href</code>给子元素</a></li>
+              <li><a href="#disabling-the-scroll-changes-to-top-on-page">禁止滚动到页面顶部</a></li>
+            </ul>
+          </li>
+          <li><a href="#imperatively">命令式</a></li>
+          <li><a href="#intercepting-popstate">拦截器 <code class="highlighter-rouge">popstate</code></a>
+            <ul>
+              <li><a href="#with-url-object-1">URL 对象用法</a></li>
+              <li><a href="#router-events">路由事件</a></li>
+              <li><a href="#shallow-routing">浅层路由</a></li>
+            </ul>
+          </li>
+          <li><a href="#using-a-higher-order-component">高阶组件</a></li>
+        </ul>
+      </li>
+      <li><a href="#prefetching-pages">预加载页面</a>
+        <ul>
+          <li><a href="#with-link-1"><code class="highlighter-rouge">&lt;Link&gt;</code>用法</a></li>
+          <li><a href="#imperatively-1">命令式 prefetch 写法</a></li>
+        </ul>
+      </li>
+      <li><a href="#custom-server-and-routing">自定义服务端路由</a>
+        <ul>
+          <li><a href="#disabling-file-system-routing">禁止文件路由</a></li>
+          <li><a href="#dynamic-assetprefix">动态前缀</a></li>
+        </ul>
+      </li>
+      <li><a href="#dynamic-import">动态导入</a>
+        <ul>
+          <li><a href="#1-basic-usage-also-does-ssr">1. 基础支持 (同样支持 SSR)</a></li>
+          <li><a href="#2-with-custom-loading-component">2. 自定义加载组件</a></li>
+          <li><a href="#3-with-no-ssr">3. 禁止使用 SSR</a></li>
+          <li><a href="#4-with-multiple-modules-at-once">4. 同时加载多个模块</a></li>
+        </ul>
+      </li>
+      <li><a href="#custom-app">自定义 <code class="highlighter-rouge">&lt;App&gt;</code></a></li>
+      <li><a href="#custom-document">自定义 <code class="highlighter-rouge">&lt;Document&gt;</code></a></li>
+      <li><a href="#custom-error-handling">自定义错误处理</a></li>
+      <li><a href="#reusing-the-built-in-error-page">渲染内置错误页面</a></li>
+      <li><a href="#custom-configuration">自定义配置</a>
+        <ul>
+          <li><a href="#setting-a-custom-build-directory">设置自定义构建目录</a></li>
+          <li><a href="#disabling-etag-generation">禁止 etag 生成</a></li>
+          <li><a href="#configuring-the-ondemandentries">配置 onDemandEntries</a></li>
+          <li><a href="#configuring-extensions-looked-for-when-resolving-pages-in-pages">配置页面后缀名解析扩展</a></li>
+          <li><a href="#configuring-the-build-id">配置构建 ID</a></li>
+        </ul>
+      </li>
+      <li><a href="#customizing-webpack-config">自定义 webpack 配置</a></li>
+      <li><a href="#customizing-babel-config">自定义 babel 配置</a></li>
+      <li><a href="#exposing-configuration-to-the-server--client-side">暴露配置到服务端和客户端</a></li>
+      <li><a href="#starting-the-server-on-alternative-hostname">启动服务选择 hostname</a></li>
+      <li><a href="#cdn-support-with-asset-prefix">CDN 支持前缀</a></li>
+    </ul>
+  </li>
+  <li><a href="#production-deployment">项目部署</a></li>
+  <li><a href="#browser-support">浏览器支持</a></li>
+  <li><a href="#static-html-export">导出静态页面</a>
+    <ul>
+      <li><a href="#usage">使用</a></li>
+      <li><a href="#limitation">限制</a></li>
+    </ul>
+  </li>
+  <li><a href="#multi-zones">多 zone</a>
+    <ul>
+      <li><a href="#how-to-define-a-zone">怎么定义一个 zone</a></li>
+      <li><a href="#how-to-merge-them">怎么合并他们</a></li>
+    </ul>
+  </li>
+  <li><a href="#recipes">技巧</a></li>
+  <li><a href="#faq">FAQ</a></li>
+  <li><a href="#contributing">贡献</a></li>
+  <li><a href="#authors">作者</a></li>
+</ul>
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+<p><a id="how-to-use" style="display: none"></a></p>
+<h2 id="怎么使用">怎么使用</h2>
+
+<p><a id="setup" style="display: none"></a></p>
+<h3 id="安装">安装</h3>
+
+<p>安装它:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>npm install --save next react react-dom
+</code></pre>
+</div>
+
+<p>将下面脚本添加到 package.json 中:</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"dev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next build"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next start"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>下面, 文件系统是主要的 API. 每个<code class="highlighter-rouge">.js</code> 文件将变成一个路由，自动处理和渲染。</p>
+
+<p>新建 <code class="highlighter-rouge">./pages/index.js</code> 到你的项目中:</p>
+
+<pre><code class="language-jsx">export default () =&gt; &lt;div&gt;Welcome to next.js!&lt;/div&gt;
+</code></pre>
+
+<p>运行 <code class="highlighter-rouge">npm run dev</code> 命令并打开 <code class="highlighter-rouge">http://localhost:3000</code>。 如果你想使用其他端口，可运行 <code class="highlighter-rouge">npm run dev -- -p &lt;设置端口号&gt;</code>.</p>
+
+<p>目前为止我们可以了解到:</p>
+
+<ul>
+  <li>自动打包编译 (使用 webpack 和 babel)</li>
+  <li>热加载</li>
+  <li>以 <code class="highlighter-rouge">./pages</code>作为服务端的渲染和索引</li>
+  <li>Static file serving. <code class="highlighter-rouge">./static/</code> is mapped to <code class="highlighter-rouge">/static/</code> (given you <a href="#static-file-serving-eg-images">create a <code class="highlighter-rouge">./static/</code> directory</a> inside your project)</li>
+  <li>静态文件服务. <code class="highlighter-rouge">./static/</code> 映射到 <code class="highlighter-rouge">/static/</code> (可以 <a href="#static-file-serving-eg-images">创建一个静态目录</a> 在你的项目中)</li>
+</ul>
+
+<p>这里有个简单的案例，可以下载看看 <a href="https://github.com/zeit/nextgram">sample app - nextgram</a></p>
+
+<p><a id="automatic-code-splitting" style="display: none"></a></p>
+<h3 id="代码自动分割">代码自动分割</h3>
+
+<p>每个页面只会导入<code class="highlighter-rouge">import</code>中绑定以及被用到的代码. 也就是说并不会加载不需要的代码!</p>
+
+<pre><code class="language-jsx">import cowsay from 'cowsay-browser'
+
+export default () =&gt;
+  &lt;pre&gt;
+    {cowsay.say({ text: 'hi there!' })}
+  &lt;/pre&gt;
+</code></pre>
+
+<p><a id="css" style="display: none"></a></p>
+<h3 id="css">CSS</h3>
+
+<p><a id="built-in-css-support" style="display: none"></a></p>
+<h4 id="支持嵌入样式">支持嵌入样式</h4>
+
+<p><details>
+  <summary><b>案例</b></summary>
+  <ul><li><a href="https://github.com/zeit/next.js/tree/canary/examples/basic-css">Basic css</a></li></ul>
+</details></p>
+
+<p>我们绑定 <a href="https://github.com/zeit/styled-jsx">styled-jsx</a> 来生成独立作用域的 CSS. 目标是支持 “shadow CSS”,但是 <a href="https://github.com/w3c/webcomponents/issues/71">不支持独立模块作用域的 JS</a>.</p>
+
+<pre><code class="language-jsx">export default () =&gt;
+  &lt;div&gt;
+    Hello world
+    &lt;p&gt;scoped!&lt;/p&gt;
+    &lt;style jsx&gt;{`
+      p {
+        color: blue;
+      }
+      div {
+        background: red;
+      }
+      @media (max-width: 600px) {
+        div {
+          background: blue;
+        }
+      }
+    `}&lt;/style&gt;
+    &lt;style global jsx&gt;{`
+      body {
+        background: black;
+      }
+    `}&lt;/style&gt;
+  &lt;/div&gt;
+</code></pre>
+
+<p>想查看更多案例可以点击 <a href="https://www.npmjs.com/package/styled-jsx">styled-jsx documentation</a>查看.</p>
+
+<p><a id="css-in-js" style="display: none"></a></p>
+<h4 id="内嵌样式">内嵌样式</h4>
+
+<p><details>
+  <summary>
+    <b>Examples</b>
+    </summary>
+  <ul><li><a href="./examples/with-styled-components">Styled components</a></li><li><a href="./examples/with-styletron">Styletron</a></li><li><a href="./examples/with-glamor">Glamor</a></li><li><a href="./examples/with-glamorous">Glamorous</a></li><li><a href="./examples/with-cxs">Cxs</a></li><li><a href="./examples/with-aphrodite">Aphrodite</a></li><li><a href="./examples/with-fela">Fela</a></li></ul>
+</details></p>
+
+<p>有些情况可以使用 CSS 内嵌 JS 写法。如下所示：</p>
+
+<pre><code class="language-jsx">export default () =&gt; &lt;p style=&gt;hi there&lt;/p&gt;
+</code></pre>
+
+<p>更复杂的内嵌样式解决方案，特别是服务端渲染的时样式更改。我们可以通过包裹自定义 Document，来添加样式，案例如下：<a href="#user-content-custom-document">custom <code class="highlighter-rouge">&lt;Document&gt;</code></a></p>
+
+<p><a id="importing-css--sass--less--stylus-files" style="display: none"></a></p>
+<h4 id="使用-css--sass--less--stylus-files">使用 CSS / Sass / Less / Stylus files</h4>
+
+<p>支持用<code class="highlighter-rouge">.css</code>, <code class="highlighter-rouge">.scss</code>, <code class="highlighter-rouge">.less</code> or <code class="highlighter-rouge">.styl</code>，需要配置默认文件 next.config.js，具体可查看下面链接</p>
+
+<ul>
+  <li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-css">@zeit/next-css</a></li>
+  <li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-sass">@zeit/next-sass</a></li>
+  <li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-less">@zeit/next-less</a></li>
+  <li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-stylus">@zeit/next-stylus</a></li>
+</ul>
+
+<p><a id="static-file-serving-eg-images" style="display: none"></a></p>
+<h3 id="静态文件服务如图像">静态文件服务（如图像）</h3>
+
+<p>在根目录下新建文件夹叫<code class="highlighter-rouge">static</code>。代码可以通过<code class="highlighter-rouge">/static/</code>来引入相关的静态资源。</p>
+
+<pre><code class="language-jsx">export default () =&gt; &lt;img src="/static/my-image.png" alt="my image" /&gt;
+</code></pre>
+
+<p>_注意：不要自定义静态文件夹的名字，只能叫<code class="highlighter-rouge">static</code> ，因为只有这个名字 Next.js 才会把它当作静态资源。</p>
+
+<p><a id="populating-head" style="display: none"></a></p>
+<h3 id="生成head">生成<code class="highlighter-rouge">&lt;head&gt;</code></h3>
+
+<p><code class="highlighter-rouge">&lt;head&gt;</code></p>
+
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul>
+    <li><a href="./examples/head-elements">Head elements</a></li>
+    <li><a href="./examples/layout-component">Layout component</a></li>
+  </ul>
+</details></p>
+
+<p>我们设置一个内置组件来装载<code class="highlighter-rouge">&lt;head&gt;</code>到页面中。</p>
+
+<pre><code class="language-jsx">import Head from 'next/head'
+
+export default () =&gt;
+  &lt;div&gt;
+    &lt;Head&gt;
+      &lt;title&gt;My page title&lt;/title&gt;
+      &lt;meta name="viewport" content="initial-scale=1.0, width=device-width" /&gt;
+    &lt;/Head&gt;
+    &lt;p&gt;Hello world!&lt;/p&gt;
+  &lt;/div&gt;
+</code></pre>
+
+<p>我们定义<code class="highlighter-rouge">key</code>属性来避免重复的<code class="highlighter-rouge">&lt;head&gt;</code>标签，保证<code class="highlighter-rouge">&lt;head&gt;</code>只渲染一次，如下所示：</p>
+
+<pre><code class="language-jsx">import Head from 'next/head'
+export default () =&gt; (
+  &lt;div&gt;
+    &lt;Head&gt;
+      &lt;title&gt;My page title&lt;/title&gt;
+      &lt;meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" /&gt;
+    &lt;/Head&gt;
+    &lt;Head&gt;
+      &lt;meta name="viewport" content="initial-scale=1.2, width=device-width" key="viewport" /&gt;
+    &lt;/Head&gt;
+    &lt;p&gt;Hello world!&lt;/p&gt;
+  &lt;/div&gt;
+)
+</code></pre>
+
+<p>只有第二个<code class="highlighter-rouge">&lt;meta name="viewport" /&gt;</code>才被渲染。</p>
+
+<p>注意：在卸载组件时，<code class="highlighter-rouge">&lt;head&gt;</code>的内容将被清除。请确保每个页面都在其<code class="highlighter-rouge">&lt;head&gt;</code>定义了所需要的内容，而不是假设其他页面已经加过了</p>
+
+<p><a id="fetching-data-and-component-lifecycle" style="display: none"></a></p>
+<h3 id="获取数据以及组件生命周期">获取数据以及组件生命周期</h3>
+
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul><li><a href="./examples/data-fetch">Data fetch</a></li></ul>
+</details></p>
+
+<p>如果你需要一个有状态、生命周期或有初始数据的 React 组件（而不是上面的无状态函数），如下所示：</p>
+
+<pre><code class="language-jsx">import React from 'react'
+
+export default class extends React.Component {
+  static async getInitialProps({ req }) {
+    const userAgent = req ? req.headers['user-agent'] : navigator.userAgent
+    return { userAgent }
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        Hello World {this.props.userAgent}
+      &lt;/div&gt;
+    )
+  }
+}
+</code></pre>
+
+<p>相信你注意到，当页面渲染时加载数据，我们使用了一个异步方法<code class="highlighter-rouge">getInitialProps</code>。它能异步获取 JS 普通对象，并绑定在<code class="highlighter-rouge">props</code>上</p>
+
+<p>当服务渲染时，<code class="highlighter-rouge">getInitialProps</code>将会把数据序列化，就像<code class="highlighter-rouge">JSON.stringify</code>。所以确保<code class="highlighter-rouge">getInitialProps</code>返回的是一个普通 JS 对象，而不是<code class="highlighter-rouge">Date</code>, <code class="highlighter-rouge">Map</code> 或 <code class="highlighter-rouge">Set</code>类型。</p>
+
+<p>当页面初次加载时，<code class="highlighter-rouge">getInitialProps</code>只会在服务端执行一次。<code class="highlighter-rouge">getInitialProps</code>只有在路由切换的时候（如<code class="highlighter-rouge">Link</code>组件跳转或路由自定义跳转）时，客户端的才会被执行。</p>
+
+<p>当页面初始化加载时，<code class="highlighter-rouge">getInitialProps</code>只会加载在服务端。只有当路由跳转（<code class="highlighter-rouge">Link</code>组件跳转或 API 方法跳转）时，客户端才会执行<code class="highlighter-rouge">getInitialProps</code>。</p>
+
+<p>注意：<code class="highlighter-rouge">getInitialProps</code>将不能使用在子组件中。只能使用在<code class="highlighter-rouge">pages</code>页面中。</p>
+
+<p><br /></p>
+
+<blockquote>
+  <p>只有服务端用到的模块放在<code class="highlighter-rouge">getInitialProps</code>里，请确保正确的导入了它们，可参考<a href="https://arunoda.me/blog/ssr-and-server-only-modules">import them properly</a>。
+否则会拖慢你的应用速度。</p>
+</blockquote>
+
+<p><br /></p>
+
+<p>你也可以给无状态组件定义<code class="highlighter-rouge">getInitialProps</code>：</p>
+
+<pre><code class="language-jsx">const Page = ({ stars }) =&gt;
+  &lt;div&gt;
+    Next stars: {stars}
+  &lt;/div&gt;
+
+Page.getInitialProps = async ({ req }) =&gt; {
+  const res = await fetch('https://api.github.com/repos/zeit/next.js')
+  const json = await res.json()
+  return { stars: json.stargazers_count }
+}
+
+export default Page
+</code></pre>
+
+<p><code class="highlighter-rouge">getInitialProps</code>入参对象的属性如下：</p>
+
+<ul>
+  <li><code class="highlighter-rouge">pathname</code> - URL 的 path 部分</li>
+  <li><code class="highlighter-rouge">query</code> - URL 的 query 部分，并被解析成对象</li>
+  <li><code class="highlighter-rouge">asPath</code> - 显示在浏览器中的实际路径（包含查询部分），为<code class="highlighter-rouge">String</code>类型</li>
+  <li><code class="highlighter-rouge">req</code> - HTTP 请求对象 (只有服务器端有)</li>
+  <li><code class="highlighter-rouge">res</code> - HTTP 返回对象 (只有服务器端有)</li>
+  <li><code class="highlighter-rouge">jsonPageRes</code> - <a href="https://developer.mozilla.org/en-US/docs/Web/API/Response">获取数据响应对象</a> (只有客户端有)</li>
+  <li><code class="highlighter-rouge">err</code> - 渲染过程中的任何错误</li>
+</ul>
+
+<p><a id="routing" style="display: none"></a></p>
+<h3 id="路由">路由</h3>
+
+<p><a id="with-link" style="display: none"></a></p>
+<h4 id="link用法"><code class="highlighter-rouge">&lt;Link&gt;</code>用法</h4>
+
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul>
+    <li><a href="./examples/hello-world">Hello World</a></li>
+  </ul>
+</details></p>
+
+<p>可以用 <code class="highlighter-rouge">&lt;Link&gt;</code> 组件实现客户端的路由切换。</p>
+
+<pre><code class="language-jsx">// pages/index.js
+import Link from 'next/link'
+
+export default () =&gt;
+  &lt;div&gt;
+    Click{' '}
+    &lt;Link href="/about"&gt;
+      &lt;a&gt;here&lt;/a&gt;
+    &lt;/Link&gt;{' '}
+    to read more
+  &lt;/div&gt;
+</code></pre>
+
+<pre><code class="language-jsx">// pages/about.js
+export default () =&gt; &lt;p&gt;Welcome to About!&lt;/p&gt;
+</code></pre>
+
+<p>注意：可以使用<a href="#prefetching-pages"><code class="highlighter-rouge">&lt;Link prefetch&gt;</code></a>使链接和预加载在后台同时进行，来达到页面的最佳性能。</p>
+
+<p>客户端路由行为与浏览器很相似：</p>
+
+<ol>
+  <li>组件获取</li>
+  <li>如果组件定义了<code class="highlighter-rouge">getInitialProps</code>，数据获取了。如果有错误情况将会渲染 <code class="highlighter-rouge">_error.js</code>。</li>
+  <li>1和2都完成了，<code class="highlighter-rouge">pushState</code>执行，新组件被渲染。</li>
+</ol>
+
+<p>如果需要注入<code class="highlighter-rouge">pathname</code>, <code class="highlighter-rouge">query</code> 或 <code class="highlighter-rouge">asPath</code>到你组件中，你可以使用<a href="#using-a-higher-order-component">withRouter</a>。</p>
+
+<p><a id="with-url-object" style="display: none"></a></p>
+<h5 id="url-对象">URL 对象</h5>
+
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul>
+    <li><a href="./examples/with-url-object-routing">With URL Object Routing</a></li>
+  </ul>
+</details></p>
+
+<p>组件<code class="highlighter-rouge">&lt;Link&gt;</code>接收 URL 对象，而且它会自动格式化生成 URL 字符串</p>
+
+<pre><code class="language-jsx">// pages/index.js
+import Link from 'next/link'
+
+export default () =&gt;
+  &lt;div&gt;
+    Click{' '}
+    &lt;Link href=}&gt;
+      &lt;a&gt;here&lt;/a&gt;
+    &lt;/Link&gt;{' '}
+    to read more
+  &lt;/div&gt;
+</code></pre>
+
+<p>将生成 URL 字符串<code class="highlighter-rouge">/about?name=Zeit</code>，你可以使用任何在<a href="https://nodejs.org/api/url.html#url_url_strings_and_url_objects">Node.js URL module documentation</a>定义过的属性。</p>
+
+<p><a id="replace-instead-of-push-url" style="display: none"></a></p>
+<h5 id="替换路由">替换路由</h5>
+
+<p><code class="highlighter-rouge">&lt;Link&gt;</code>组件默认将新 url 推入路由栈中。你可以使用<code class="highlighter-rouge">replace</code>属性来防止添加新输入。</p>
+
+<pre><code class="language-jsx">// pages/index.js
+import Link from 'next/link'
+
+export default () =&gt;
+  &lt;div&gt;
+    Click{' '}
+    &lt;Link href="/about" replace&gt;
+      &lt;a&gt;here&lt;/a&gt;
+    &lt;/Link&gt;{' '}
+    to read more
+  &lt;/div&gt;
+</code></pre>
+
+<p><a id="using-a-component-that-supports-onclick" style="display: none"></a></p>
+<h5 id="组件支持点击事件-onclick">组件支持点击事件 <code class="highlighter-rouge">onClick</code></h5>
+
+<p><code class="highlighter-rouge">&lt;Link&gt;</code>支持每个组件所支持的<code class="highlighter-rouge">onClick</code>事件。如果你不提供<code class="highlighter-rouge">&lt;a&gt;</code>标签，只会处理<code class="highlighter-rouge">onClick</code>事件而<code class="highlighter-rouge">href</code>将不起作用。</p>
+
+<pre><code class="language-jsx">// pages/index.js
+import Link from 'next/link'
+
+export default () =&gt;
+  &lt;div&gt;
+    Click{' '}
+    &lt;Link href="/about"&gt;
+      &lt;img src="/static/image.png" alt="image" /&gt;
+    &lt;/Link&gt;
+  &lt;/div&gt;
+</code></pre>
+
+<p><a id="forcing-the-link-to-expose-href-to-its-child" style="display: none"></a></p>
+<h5 id="暴露-href-给子元素">暴露 <code class="highlighter-rouge">href</code> 给子元素</h5>
+
+<p>如子元素是一个没有 href 属性的<code class="highlighter-rouge">&lt;a&gt;</code>标签，我们将会指定它以免用户重复操作。然而有些时候，我们需要里面有<code class="highlighter-rouge">&lt;a&gt;</code>标签，但是<code class="highlighter-rouge">Link</code>组件不会被识别成<em>超链接</em>，结果不能将<code class="highlighter-rouge">href</code>传递给子元素。在这种场景下，你可以定义一个<code class="highlighter-rouge">Link</code>组件中的布尔属性<code class="highlighter-rouge">passHref</code>，强制将<code class="highlighter-rouge">href</code>传递给子元素。</p>
+
+<p><strong>注意</strong>: 使用<code class="highlighter-rouge">a</code>之外的标签而且没有通过<code class="highlighter-rouge">passHref</code>的链接可能会使导航看上去正确，但是当搜索引擎爬行检测时，将不会识别成链接（由于缺乏 href 属性），这会对你网站的 SEO 产生负面影响。</p>
+
+<pre><code class="language-jsx">import Link from 'next/link'
+import Unexpected_A from 'third-library'
+
+export default ({ href, name }) =&gt;
+  &lt;Link href={href} passHref&gt;
+    &lt;Unexpected_A&gt;
+      {name}
+    &lt;/Unexpected_A&gt;
+  &lt;/Link&gt;
+</code></pre>
+
+<p><a id="disabling-the-scroll-changes-to-top-on-page" style="display: none"></a></p>
+<h5 id="禁止滚动到页面顶部">禁止滚动到页面顶部</h5>
+
+<p><code class="highlighter-rouge">&lt;Link&gt;</code>的默认行为就是滚到页面顶部。当有 hash 定义时（＃），页面将会滚动到对应的 id 上，就像<code class="highlighter-rouge">&lt;a&gt;</code>标签一样。为了预防滚动到顶部，可以给<code class="highlighter-rouge">&lt;Link&gt;</code>加
+<code class="highlighter-rouge">scroll={false}</code>属性：</p>
+
+<pre><code class="language-jsx">&lt;Link scroll={false} href="/?counter=10"&gt;&lt;a&gt;Disables scrolling&lt;/a&gt;&lt;/Link&gt;
+&lt;Link href="/?counter=10"&gt;&lt;a&gt;Changes with scrolling to top&lt;/a&gt;&lt;/Link&gt;
+</code></pre>
+
+<p><a id="imperatively" style="display: none"></a></p>
+<h4 id="命令式">命令式</h4>
+
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul>
+    <li><a href="./examples/using-router">Basic routing</a></li>
+    <li><a href="./examples/with-loading">With a page loading indicator</a></li>
+  </ul>
+</details></p>
+
+<p>你也可以用<code class="highlighter-rouge">next/router</code>实现客户端路由切换</p>
+
+<pre><code class="language-jsx">import Router from 'next/router'
+
+export default () =&gt;
+  &lt;div&gt;
+    Click &lt;span onClick={() =&gt; Router.push('/about')}&gt;here&lt;/span&gt; to read more
+  &lt;/div&gt;
+</code></pre>
+
+<p><a id="intercepting-popstate" style="display: none"></a></p>
+<h4 id="拦截器-popstate">拦截器 <code class="highlighter-rouge">popstate</code></h4>
+
+<p>有些情况（比如使用<a href="#custom-server-and-routing">custom router</a>），你可能想监听<a href="https://developer.mozilla.org/en-US/docs/Web/Events/popstate"><code class="highlighter-rouge">popstate</code></a>，在路由跳转前做一些动作。
+比如，你可以操作 request 或强制 SSR 刷新</p>
+
+<pre><code class="language-jsx">import Router from 'next/router'
+
+Router.beforePopState(({ url, as, options }) =&gt; {
+  // I only want to allow these two routes!
+  if (as !== "/" || as !== "/other") {
+    // Have SSR render bad routes as a 404.
+    window.location.href = as
+    return false
+  }
+
+  return true
+});
+</code></pre>
+
+<p>如果你在<code class="highlighter-rouge">beforePopState</code>中返回 false，<code class="highlighter-rouge">Router</code>将不会执行<code class="highlighter-rouge">popstate</code>事件。
+例如<a href="#disabling-file-system-routing">Disabling File-System Routing</a>。</p>
+
+<p>以上<code class="highlighter-rouge">Router</code>对象的 API 如下：</p>
+
+<ul>
+  <li><code class="highlighter-rouge">route</code> - 当前路由的<code class="highlighter-rouge">String</code>类型</li>
+  <li><code class="highlighter-rouge">pathname</code> - 不包含查询内容的当前路径，为<code class="highlighter-rouge">String</code>类型</li>
+  <li><code class="highlighter-rouge">query</code> - 查询内容，被解析成<code class="highlighter-rouge">Object</code>类型. 默认为<code class="highlighter-rouge"><span class="p">{}</span></code></li>
+  <li><code class="highlighter-rouge">asPath</code> - 展现在浏览器上的实际路径，包含查询内容，为<code class="highlighter-rouge">String</code>类型</li>
+  <li><code class="highlighter-rouge">push(url, as=url)</code> - 页面渲染第一个参数 url 的页面，浏览器栏显示的是第二个参数 url</li>
+  <li><code class="highlighter-rouge">replace(url, as=url)</code> - performs a <code class="highlighter-rouge">replaceState</code> call with the given url</li>
+  <li><code class="highlighter-rouge">beforePopState(cb=function)</code> - 在路由器处理事件之前拦截.</li>
+</ul>
+
+<p><code class="highlighter-rouge">push</code> 和 <code class="highlighter-rouge">replace</code> 函数的第二个参数<code class="highlighter-rouge">as</code>，是为了装饰 URL 作用。如果你在服务器端设置了自定义路由将会起作用。</p>
+
+<p><a id="with-url-object-1" style="display: none"></a></p>
+<h5 id="url-对象用法">URL 对象用法</h5>
+
+<p><code class="highlighter-rouge">push</code> 或 <code class="highlighter-rouge">replace</code>可接收的 URL 对象（<code class="highlighter-rouge">&lt;Link&gt;</code>组件的 URL 对象一样）来生成 URL。</p>
+
+<pre><code class="language-jsx">import Router from 'next/router'
+
+const handler = () =&gt;
+  Router.push({
+    pathname: '/about',
+    query: { name: 'Zeit' }
+  })
+
+export default () =&gt;
+  &lt;div&gt;
+    Click &lt;span onClick={handler}&gt;here&lt;/span&gt; to read more
+  &lt;/div&gt;
+</code></pre>
+
+<p>也可以像<code class="highlighter-rouge">&lt;Link&gt;</code>组件一样添加额外的参数。</p>
+
+<p><a id="router-events" style="display: none"></a></p>
+<h5 id="路由事件">路由事件</h5>
+
+<p>你可以监听路由相关事件。
+下面是事件支持列表：</p>
+
+<ul>
+  <li><code class="highlighter-rouge">routeChangeStart(url)</code> - 路由开始切换时触发</li>
+  <li><code class="highlighter-rouge">routeChangeComplete(url)</code> - 完成路由切换时触发</li>
+  <li><code class="highlighter-rouge">routeChangeError(err, url)</code> - 路由切换报错时触发</li>
+  <li><code class="highlighter-rouge">beforeHistoryChange(url)</code> - 浏览器 history 模式开始切换时触发</li>
+  <li><code class="highlighter-rouge">hashChangeStart(url)</code> - 开始切换 hash 值但是没有切换页面路由时触发</li>
+  <li><code class="highlighter-rouge">hashChangeComplete(url)</code> - 完成切换 hash 值但是没有切换页面路由时触发</li>
+</ul>
+
+<blockquote>
+  <p>这里的<code class="highlighter-rouge">url</code>是指显示在浏览器中的 url。如果你用了<code class="highlighter-rouge">Router.push(url, as)</code>（或类似的方法），那浏览器中的 url 将会显示 as 的值。</p>
+</blockquote>
+
+<p>下面是如何正确使用路由事件<code class="highlighter-rouge">routeChangeStart</code>的例子：</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">handleRouteChange</span> <span class="o">=</span> <span class="nx">url</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'App is changing to: '</span><span class="p">,</span> <span class="nx">url</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">Router</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'routeChangeStart'</span><span class="p">,</span> <span class="nx">handleRouteChange</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>如果你不想长期监听该事件，你可以用<code class="highlighter-rouge">off</code>事件去取消监听：</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">Router</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">off</span><span class="p">(</span><span class="s1">'routeChangeStart'</span><span class="p">,</span> <span class="nx">handleRouteChange</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>如果路由加载被取消（比如快速连续双击链接）</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">Router</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'routeChangeError'</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">url</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">cancelled</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">`</span><span class="nx">Route</span> <span class="nx">to</span> <span class="nx">$</span><span class="p">{</span><span class="nx">url</span><span class="p">}</span> <span class="nx">was</span> <span class="nx">cancelled</span><span class="o">!</span><span class="err">`</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre>
+</div>
+
+<p><a id="shallow-routing" style="display: none"></a></p>
+<h5 id="浅层路由">浅层路由</h5>
+
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul>
+    <li><a href="./examples/with-shallow-routing">Shallow Routing</a></li>
+  </ul>
+</details></p>
+
+<p>浅层路由允许你改变 URL 但是不执行<code class="highlighter-rouge">getInitialProps</code>生命周期。你可以加载相同页面的 URL，得到更新后的路由属性<code class="highlighter-rouge">pathname</code>和<code class="highlighter-rouge">query</code>，并不失去 state 状态。</p>
+
+<p>你可以给<code class="highlighter-rouge">Router.push</code> 或 <code class="highlighter-rouge">Router.replace</code>方法加<code class="highlighter-rouge">shallow: true</code>参数。如下面的例子所示：</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// Current URL is "/"</span>
+<span class="kr">const</span> <span class="nx">href</span> <span class="o">=</span> <span class="s1">'/?counter=10'</span>
+<span class="kr">const</span> <span class="nx">as</span> <span class="o">=</span> <span class="nx">href</span>
+<span class="nx">Router</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">href</span><span class="p">,</span> <span class="nx">as</span><span class="p">,</span> <span class="p">{</span> <span class="na">shallow</span><span class="p">:</span> <span class="kc">true</span> <span class="p">})</span>
+</code></pre>
+</div>
+
+<p>现在 URL 更新为<code class="highlighter-rouge">/?counter=10</code>。在组件里查看<code class="highlighter-rouge">this.props.router.query</code>你将会看到更新的 URL。</p>
+
+<p>你可以在<a href="https://facebook.github.io/react/docs/react-component.html#componentdidupdate"><code class="highlighter-rouge">componentdidupdate</code></a>钩子函数中监听 URL 的变化。</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">componentDidUpdate</span><span class="p">(</span><span class="nx">prevProps</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="p">{</span> <span class="nx">pathname</span><span class="p">,</span> <span class="nx">query</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">router</span>
+  <span class="c1">// verify props have changed to avoid an infinite loop</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">query</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">prevProps</span><span class="p">.</span><span class="nx">router</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// fetch data based on the new query</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <p>注意:</p>
+
+  <p>浅层路由只作用于相同 URL 的参数改变，比如我们假定有个其他路由<code class="highlighter-rouge">about</code>，而你向下面代码样运行:</p>
+  <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">Router</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">'/?counter=10'</span><span class="p">,</span> <span class="s1">'/about?counter=10'</span><span class="p">,</span> <span class="p">{</span> <span class="na">shallow</span><span class="p">:</span> <span class="kc">true</span> <span class="p">})</span>
+</code></pre>
+  </div>
+  <p>那么这将会出现新页面，即使我们加了浅层路由，但是它还是会卸载当前页，会加载新的页面并触发新页面的<code class="highlighter-rouge">getInitialProps</code>。</p>
+</blockquote>
+
+<p><a id="using-a-higher-order-component" style="display: none"></a></p>
+<h4 id="高阶组件">高阶组件</h4>
+
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul>
+    <li><a href="./examples/using-with-router">Using the `withRouter` utility</a></li>
+  </ul>
+</details></p>
+
+<p>如果你想应用里每个组件都处理路由对象，你可以使用<code class="highlighter-rouge">withRouter</code>高阶组件。下面是如何使用它：</p>
+
+<pre><code class="language-jsx">import { withRouter } from 'next/router'
+
+const ActiveLink = ({ children, router, href }) =&gt; {
+  const style = {
+    marginRight: 10,
+    color: router.pathname === href? 'red' : 'black'
+  }
+
+  const handleClick = (e) =&gt; {
+    e.preventDefault()
+    router.push(href)
+  }
+
+  return (
+    &lt;a href={href} onClick={handleClick} style={style}&gt;
+      {children}
+    &lt;/a&gt;
+  )
+}
+
+export default withRouter(ActiveLink)
+</code></pre>
+
+<p>上面路由对象的 API 可以参考<a href="#imperatively"><code class="highlighter-rouge">next/router</code></a>.</p>
+
+<p><a id="prefetching-pages" style="display: none"></a></p>
+<h3 id="预加载页面">预加载页面</h3>
+
+<p>⚠️ 只有生产环境才有此功能 ⚠️</p>
+
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul><li><a href="./examples/with-prefetching">Prefetching</a></li></ul>
+</details></p>
+
+<p>Next.js 有允许你预加载页面的 API。</p>
+
+<p>用 Next.js 服务端渲染你的页面，可以达到所有你应用里所有未来会跳转的路径即时响应，有效的应用 Next.js，可以通过预加载应用程序的功能，最大程度的初始化网站性能。<a href="https://zeit.co/blog/next#anticipation-is-the-key-to-performance">查看更多</a>.</p>
+
+<blockquote>
+  <p>Next.js 的预加载功能只预加载 JS 代码。当页面渲染时，你可能需要等待数据请求。</p>
+</blockquote>
+
+<p><a id="with-link-1" style="display: none"></a></p>
+<h4 id="link用法-1"><code class="highlighter-rouge">&lt;Link&gt;</code>用法</h4>
+
+<p>你可以给<link />添加 <code class="highlighter-rouge">prefetch</code> 属性，Next.js 将会在后台预加载这些页面。</p>
+
+<pre><code class="language-jsx">import Link from 'next/link'
+
+// example header component
+export default () =&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;Link prefetch href="/"&gt;
+          &lt;a&gt;Home&lt;/a&gt;
+        &lt;/Link&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;Link prefetch href="/about"&gt;
+          &lt;a&gt;About&lt;/a&gt;
+        &lt;/Link&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;Link prefetch href="/contact"&gt;
+          &lt;a&gt;Contact&lt;/a&gt;
+        &lt;/Link&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+</code></pre>
+
+<p><a id="imperatively-1" style="display: none"></a></p>
+<h4 id="命令式-prefetch-写法">命令式 prefetch 写法</h4>
+
+<p>大多数预加载是通过<link />处理的，但是我们还提供了命令式 API 用于更复杂的场景。</p>
+
+<pre><code class="language-jsx">import { withRouter } from 'next/router'
+
+export default withRouter(({ router }) =&gt;
+  &lt;div&gt;
+    &lt;a onClick={() =&gt; setTimeout(() =&gt; router.push('/dynamic'), 100)}&gt;
+      A route transition will happen after 100ms
+    &lt;/a&gt;
+    {// but we can prefetch it!
+    router.prefetch('/dynamic')}
+  &lt;/div&gt;
+)
+</code></pre>
+
+<p>路由实例只允许在应用程序的客户端。以防服务端渲染发生错误，建议 prefetch 事件写在<code class="highlighter-rouge">componentDidMount()</code>生命周期里。</p>
+
+<pre><code class="language-jsx">import React from 'react'
+import { withRouter } from 'next/router'
+
+class MyLink extends React.Component {
+  componentDidMount() {
+    const { router } = this.props
+    router.prefetch('/dynamic')
+  }
+  
+  render() {
+    const { router } = this.props
+    return (
+       &lt;div&gt;
+        &lt;a onClick={() =&gt; setTimeout(() =&gt; router.push('/dynamic'), 100)}&gt;
+          A route transition will happen after 100ms
+        &lt;/a&gt;
+      &lt;/div&gt;   
+    )
+  }
+}
+
+export default withRouter(MyLink)
+</code></pre>
+
+<p><a id="custom-server-and-routing" style="display: none"></a></p>
+<h3 id="自定义服务端路由">自定义服务端路由</h3>
+
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul>
+    <li><a href="./examples/custom-server">Basic custom server</a></li>
+    <li><a href="./examples/custom-server-express">Express integration</a></li>
+    <li><a href="./examples/custom-server-hapi">Hapi integration</a></li>
+    <li><a href="./examples/custom-server-koa">Koa integration</a></li>
+    <li><a href="./examples/parameterized-routing">Parameterized routing</a></li>
+    <li><a href="./examples/ssr-caching">SSR caching</a></li>
+  </ul>
+</details></p>
+
+<p>一般你使用<code class="highlighter-rouge">next start</code>命令来启动 next 服务，你还可以编写代码来自定义路由，如使用路由正则等。</p>
+
+<p>当使用自定义服务文件，如下面例子所示叫 server.js 时，确保你更新了 package.json 中的脚本。</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"dev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"node server.js"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next build"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NODE_ENV=production node server.js"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>下面这个例子使 <code class="highlighter-rouge">/a</code> 路由解析为<code class="highlighter-rouge">./pages/b</code>，以及<code class="highlighter-rouge">/b</code> 路由解析为<code class="highlighter-rouge">./pages/a</code>;</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// This file doesn't go through babel or webpack transformation.</span>
+<span class="c1">// Make sure the syntax and sources this file requires are compatible with the current node version you are running</span>
+<span class="c1">// See https://github.com/zeit/next.js/issues/1245 for discussions on Universal Webpack or universal Babel</span>
+<span class="kr">const</span> <span class="p">{</span> <span class="nx">createServer</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'http'</span><span class="p">)</span>
+<span class="kr">const</span> <span class="p">{</span> <span class="nx">parse</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'url'</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'next'</span><span class="p">)</span>
+
+<span class="kr">const</span> <span class="nx">dev</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">!==</span> <span class="s1">'production'</span>
+<span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">next</span><span class="p">({</span> <span class="nx">dev</span> <span class="p">})</span>
+<span class="kr">const</span> <span class="nx">handle</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">getRequestHandler</span><span class="p">()</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">prepare</span><span class="p">().</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">createServer</span><span class="p">((</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// Be sure to pass `true` as the second argument to `url.parse`.</span>
+    <span class="c1">// This tells it to parse the query portion of the URL.</span>
+    <span class="kr">const</span> <span class="nx">parsedUrl</span> <span class="o">=</span> <span class="nx">parse</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+    <span class="kr">const</span> <span class="p">{</span> <span class="nx">pathname</span><span class="p">,</span> <span class="nx">query</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">parsedUrl</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">pathname</span> <span class="o">===</span> <span class="s1">'/a'</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">app</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="s1">'/b'</span><span class="p">,</span> <span class="nx">query</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">pathname</span> <span class="o">===</span> <span class="s1">'/b'</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">app</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="s1">'/a'</span><span class="p">,</span> <span class="nx">query</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">handle</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">parsedUrl</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'&gt; Ready on http://localhost:3000'</span><span class="p">)</span>
+  <span class="p">})</span>
+<span class="p">})</span>
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">next</code>的 API 如下所示</p>
+<ul>
+  <li><code class="highlighter-rouge">next(opts: object)</code></li>
+</ul>
+
+<p>opts 的属性如下:</p>
+<ul>
+  <li><code class="highlighter-rouge">dev</code> (<code class="highlighter-rouge">boolean</code>) 判断 Next.js 应用是否在开发环境 - 默认<code class="highlighter-rouge">false</code></li>
+  <li><code class="highlighter-rouge">dir</code> (<code class="highlighter-rouge">string</code>) Next 项目路径 - 默认<code class="highlighter-rouge">'.'</code></li>
+  <li><code class="highlighter-rouge">quiet</code> (<code class="highlighter-rouge">boolean</code>) 是否隐藏包含服务端消息在内的错误信息 - 默认<code class="highlighter-rouge">false</code></li>
+  <li><code class="highlighter-rouge">conf</code> (<code class="highlighter-rouge">object</code>) 与<code class="highlighter-rouge">next.config.js</code>的对象相同 - 默认<code class="highlighter-rouge"><span class="p">{}</span></code></li>
+</ul>
+
+<p>生产环境的话，可以更改 package.json 里的<code class="highlighter-rouge">start</code>脚本为<code class="highlighter-rouge">NODE_ENV=production node server.js</code>。</p>
+
+<p><a id="disabling-file-system-routing" style="display: none"></a></p>
+<h4 id="禁止文件路由">禁止文件路由</h4>
+<p>默认情况，<code class="highlighter-rouge">Next</code>将会把<code class="highlighter-rouge">/pages</code>下的所有文件匹配路由（如<code class="highlighter-rouge">/pages/some-file.js</code> 渲染为 <code class="highlighter-rouge">site.com/some-file</code>）</p>
+
+<p>如果你的项目使用自定义路由，那么有可能不同的路由会得到相同的内容，可以优化 SEO 和用户体验。</p>
+
+<p>禁止路由链接到<code class="highlighter-rouge">/pages</code>下的文件，只需设置<code class="highlighter-rouge">next.config.js</code>文件如下所示：</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// next.config.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">useFileSystemPublicRoutes</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>注意<code class="highlighter-rouge">useFileSystemPublicRoutes</code>只禁止服务端的文件路由；但是客户端的还是禁止不了。</p>
+
+<p>你如果想配置客户端路由不能跳转文件路由，可以参考<a href="#intercepting-popstate">Intercepting <code class="highlighter-rouge">popstate</code></a>。</p>
+
+<p><a id="dynamic-assetprefix" style="display: none"></a></p>
+<h4 id="动态前缀">动态前缀</h4>
+
+<p>有时你需要设置动态前缀，可以在请求时设置<code class="highlighter-rouge">assetPrefix</code>改变前缀。</p>
+
+<p>使用方法如下：</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'next'</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">micro</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'micro'</span><span class="p">)</span>
+
+<span class="kr">const</span> <span class="nx">dev</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">!==</span> <span class="s1">'production'</span>
+<span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">next</span><span class="p">({</span> <span class="nx">dev</span> <span class="p">})</span>
+<span class="kr">const</span> <span class="nx">handleNextRequests</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">getRequestHandler</span><span class="p">()</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">prepare</span><span class="p">().</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">server</span> <span class="o">=</span> <span class="nx">micro</span><span class="p">((</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// Add assetPrefix support based on the hostname</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">host</span> <span class="o">===</span> <span class="s1">'my-app.com'</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">app</span><span class="p">.</span><span class="nx">setAssetPrefix</span><span class="p">(</span><span class="s1">'http://cdn.com/myapp'</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">app</span><span class="p">.</span><span class="nx">setAssetPrefix</span><span class="p">(</span><span class="s1">''</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="nx">handleNextRequests</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span>
+  <span class="p">})</span>
+
+  <span class="nx">server</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="nx">err</span>
+    <span class="p">}</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">`</span><span class="o">&gt;</span> <span class="nx">Ready</span> <span class="nx">on</span> <span class="na">http</span><span class="p">:</span><span class="c1">//localhost:${port}`)</span>
+  <span class="p">})</span>
+<span class="p">})</span>
+
+</code></pre>
+</div>
+
+<p><a id="dynamic-import" style="display: none"></a></p>
+<h3 id="动态导入">动态导入</h3>
+
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul>
+    <li><a href="./examples/with-dynamic-import">With Dynamic Import</a></li>
+  </ul>
+</details></p>
+
+<p>ext.js 支持 JavaScript 的 TC39 提议<a href="https://github.com/tc39/proposal-dynamic-import">dynamic import proposal</a>。你可以动态导入 JavaScript 模块（如 React 组件）。</p>
+
+<p>动态导入相当于把代码分成各个块管理。Next.js 服务端动态导入功能，你可以做很多炫酷事情。</p>
+
+<p>下面介绍一些动态导入方式：</p>
+
+<p><a id="1-basic-usage-also-does-ssr" style="display: none"></a></p>
+<h4 id="1-基础支持-同样支持-ssr">1. 基础支持 (同样支持 SSR)</h4>
+
+<pre><code class="language-jsx">import dynamic from 'next/dynamic'
+
+const DynamicComponent = dynamic(import('../components/hello'))
+
+export default () =&gt;
+  &lt;div&gt;
+    &lt;Header /&gt;
+    &lt;DynamicComponent /&gt;
+    &lt;p&gt;HOME PAGE is here!&lt;/p&gt;
+  &lt;/div&gt;
+</code></pre>
+
+<p><a id="2-with-custom-loading-componen" style="display: none"></a></p>
+<h4 id="2-自定义加载组件">2. 自定义加载组件</h4>
+
+<pre><code class="language-jsx">import dynamic from 'next/dynamic'
+
+const DynamicComponentWithCustomLoading = dynamic(
+  import('../components/hello2'),
+  {
+    loading: () =&gt; &lt;p&gt;...&lt;/p&gt;
+  }
+)
+
+export default () =&gt;
+  &lt;div&gt;
+    &lt;Header /&gt;
+    &lt;DynamicComponentWithCustomLoading /&gt;
+    &lt;p&gt;HOME PAGE is here!&lt;/p&gt;
+  &lt;/div&gt;
+</code></pre>
+
+<p><a id="3-with-no-ssr" style="display: none"></a></p>
+<h4 id="3-禁止使用-ssr">3. 禁止使用 SSR</h4>
+
+<pre><code class="language-jsx">import dynamic from 'next/dynamic'
+
+const DynamicComponentWithNoSSR = dynamic(import('../components/hello3'), {
+  ssr: false
+})
+
+export default () =&gt;
+  &lt;div&gt;
+    &lt;Header /&gt;
+    &lt;DynamicComponentWithNoSSR /&gt;
+    &lt;p&gt;HOME PAGE is here!&lt;/p&gt;
+  &lt;/div&gt;
+</code></pre>
+
+<p><a id="4-with-multiple-modules-at-once" style="display: none"></a></p>
+<h4 id="4-同时加载多个模块">4. 同时加载多个模块</h4>
+
+<pre><code class="language-jsx">import dynamic from 'next/dynamic'
+
+const HelloBundle = dynamic({
+  modules: () =&gt; {
+    const components = {
+      Hello1: import('../components/hello1'),
+      Hello2: import('../components/hello2')
+    }
+
+    return components
+  },
+  render: (props, { Hello1, Hello2 }) =&gt;
+    &lt;div&gt;
+      &lt;h1&gt;
+        {props.title}
+      &lt;/h1&gt;
+      &lt;Hello1 /&gt;
+      &lt;Hello2 /&gt;
+    &lt;/div&gt;
+})
+
+export default () =&gt; &lt;HelloBundle title="Dynamic Bundle" /&gt;
+</code></pre>
+
+<p><a id="custom-app" style="display: none"></a></p>
+<h3 id="自定义-app">自定义 <code class="highlighter-rouge">&lt;App&gt;</code></h3>
+
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul><li><a href="./examples/with-app-layout">Using `_app.js` for layout</a></li></ul>
+  <ul><li><a href="./examples/with-componentdidcatch">Using `_app.js` to override `componentDidCatch`</a></li></ul>
+</details></p>
+
+<p>组件来初始化页面。你可以重写它来控制页面初始化，如下面的事：</p>
+
+<ul>
+  <li>当页面变化时保持页面布局</li>
+  <li>当路由变化时保持页面状态</li>
+  <li>使用<code class="highlighter-rouge">componentDidCatch</code>自定义处理错误</li>
+  <li>注入额外数据到页面里 (如 GraphQL 查询)</li>
+</ul>
+
+<p>重写的话，新建<code class="highlighter-rouge">./pages/_app.js</code>文件，重写 App 模块如下所示：</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="nx">App</span><span class="p">,</span> <span class="p">{</span><span class="nx">Container</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">'next/app'</span>
+<span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">'react'</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="kr">class</span> <span class="nx">MyApp</span> <span class="kr">extends</span> <span class="nx">App</span> <span class="p">{</span>
+  <span class="kr">static</span> <span class="nx">async</span> <span class="nx">getInitialProps</span> <span class="p">({</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">router</span><span class="p">,</span> <span class="nx">ctx</span> <span class="p">})</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">pageProps</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">Component</span><span class="p">.</span><span class="nx">getInitialProps</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">pageProps</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">Component</span><span class="p">.</span><span class="nx">getInitialProps</span><span class="p">(</span><span class="nx">ctx</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span><span class="nx">pageProps</span><span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="nx">render</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="p">{</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">pageProps</span><span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">Container</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Component</span> <span class="p">{...</span><span class="nx">pageProps</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/Container</span><span class="err">&gt;
+</span>  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><a id="custom-document" style="display: none"></a></p>
+<h3 id="自定义-document">自定义 <code class="highlighter-rouge">&lt;Document&gt;</code></h3>
+
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul><li><a href="./examples/with-styled-components">Styled components custom document</a></li></ul>
+  <ul><li><a href="./examples/with-amp">Google AMP</a></li></ul>
+</details></p>
+
+<ul>
+  <li>在服务端呈现</li>
+  <li>初始化服务端时添加文档标记元素</li>
+  <li>通常实现服务端渲染会使用一些 css-in-js 库，如<a href="./examples/with-styled-components">styled-components</a>, <a href="./examples/with-glamorous">glamorous</a> 或 <a href="with-emotion">emotion</a>。<a href="https://github.com/zeit/styled-jsx">styled-jsx</a>是 Next.js 自带默认使用的 css-in-js 库</li>
+</ul>
+
+<p><code class="highlighter-rouge">Next.js</code>会自动定义文档标记，比如，你从来不需要添加<code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code>, <code class="highlighter-rouge">&lt;body&gt;</code>等。如果想自定义文档标记，你可以新建<code class="highlighter-rouge">./pages/_document.js</code>，然后扩展<code class="highlighter-rouge">Document</code>类：</p>
+
+<pre><code class="language-jsx">// _document is only rendered on the server side and not on the client side
+// Event handlers like onClick can't be added to this file
+
+// ./pages/_document.js
+import Document, { Head, Main, NextScript } from 'next/document'
+
+export default class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx)
+    return { ...initialProps }
+  }
+
+  render() {
+    return (
+      &lt;html&gt;
+        &lt;Head&gt;
+          &lt;style&gt;{`body { margin: 0 } /* custom! */`}&lt;/style&gt;
+        &lt;/Head&gt;
+        &lt;body className="custom_class"&gt;
+          &lt;Main /&gt;
+          &lt;NextScript /&gt;
+        &lt;/body&gt;
+      &lt;/html&gt;
+    )
+  }
+}
+</code></pre>
+
+<p>钩子<a href="#fetching-data-and-component-lifecycle"><code class="highlighter-rouge">getInitialProps</code></a>接收到的参数<code class="highlighter-rouge">ctx</code>对象都是一样的</p>
+
+<ul>
+  <li>回调函数<code class="highlighter-rouge">renderPage</code>是会执行 React 渲染逻辑的函数(同步)，这种做法有助于此函数支持一些类似于 Aphrodite 的 renderStatic 等一些服务器端渲染容器。</li>
+</ul>
+
+<p><strong>注意：<code class="highlighter-rouge">&lt;Main /&gt;</code>外的 React 组件将不会渲染到浏览器中，所以那添加应用逻辑代码。如果你页面需要公共组件（菜单或工具栏），可以参照上面说的<code class="highlighter-rouge">App</code>组件代替。</strong></p>
+
+<p><a id="custom-error-handling" style="display: none"></a></p>
+<h3 id="自定义错误处理">自定义错误处理</h3>
+
+<p>404和500错误客户端和服务端都会通过<code class="highlighter-rouge">error.js</code>组件处理。如果你想改写它，则新建<code class="highlighter-rouge">_error.js</code>在文件夹中：</p>
+
+<pre><code class="language-jsx">import React from 'react'
+
+export default class Error extends React.Component {
+  static getInitialProps({ res, err }) {
+    const statusCode = res ? res.statusCode : err ? err.statusCode : null;
+    return { statusCode }
+  }
+
+  render() {
+    return (
+      &lt;p&gt;
+        {this.props.statusCode
+          ? `An error ${this.props.statusCode} occurred on server`
+          : 'An error occurred on client'}
+      &lt;/p&gt;
+    )
+  }
+}
+</code></pre>
+
+<p><a id="reusing-the-built-in-error-page" style="display: none"></a></p>
+<h3 id="渲染内置错误页面">渲染内置错误页面</h3>
+
+<p>如果你想渲染内置错误页面，你可以使用<code class="highlighter-rouge">next/error</code>：</p>
+
+<pre><code class="language-jsx">import React from 'react'
+import Error from 'next/error'
+import fetch from 'isomorphic-unfetch'
+
+export default class Page extends React.Component {
+  static async getInitialProps() {
+    const res = await fetch('https://api.github.com/repos/zeit/next.js')
+    const statusCode = res.statusCode &gt; 200 ? res.statusCode : false
+    const json = await res.json()
+
+    return { statusCode, stars: json.stargazers_count }
+  }
+
+  render() {
+    if (this.props.statusCode) {
+      return &lt;Error statusCode={this.props.statusCode} /&gt;
+    }
+
+    return (
+      &lt;div&gt;
+        Next stars: {this.props.stars}
+      &lt;/div&gt;
+    )
+  }
+}
+</code></pre>
+
+<blockquote>
+  <p>如果你自定义了个错误页面，你可以引入自己的错误页面来代替<code class="highlighter-rouge">next/error</code></p>
+</blockquote>
+
+<p><a id="custom-configuration" style="display: none"></a></p>
+<h3 id="自定义配置">自定义配置</h3>
+
+<p>如果你想自定义 Next.js 的高级配置，可以在根目录下新建<code class="highlighter-rouge">next.config.js</code>文件（与<code class="highlighter-rouge">pages/</code> 和 <code class="highlighter-rouge">package.json</code>一起）</p>
+
+<p>注意：<code class="highlighter-rouge">next.config.js</code>是一个 Node.js 模块，不是一个 JSON 文件，可以用于 Next 启动服务已经构建阶段，但是不作用于浏览器端。</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// next.config.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="cm">/* config options here */</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>或使用一个函数：</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">(</span><span class="nx">phase</span><span class="p">,</span> <span class="p">{</span><span class="nx">defaultConfig</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">//</span>
+  <span class="c1">// https://github.com/zeit/</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="cm">/* config options here */</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">phase</code>是配置文件被加载时的当前内容。你可看到所有的 phases 常量：<a href="./lib/constants.js">constants</a>
+这些常量可以通过<code class="highlighter-rouge">next/constants</code>引入：</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="p">{</span><span class="nx">PHASE_DEVELOPMENT_SERVER</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'next/constants'</span><span class="p">)</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">(</span><span class="nx">phase</span><span class="p">,</span> <span class="p">{</span><span class="nx">defaultConfig</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">phase</span> <span class="o">===</span> <span class="nx">PHASE_DEVELOPMENT_SERVER</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="cm">/* development only config options here */</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="cm">/* config options for all phases except development here */</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><a id="setting-a-custom-build-directory" style="display: none"></a></p>
+<h4 id="设置自定义构建目录">设置自定义构建目录</h4>
+
+<p>你可以自定义一个构建目录，如新建<code class="highlighter-rouge">build</code>文件夹来代替<code class="highlighter-rouge">.next</code> 文件夹成为构建目录。如果没有配置构建目录，构建时将会自动新建<code class="highlighter-rouge">.next</code>文件夹</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// next.config.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">distDir</span><span class="p">:</span> <span class="s1">'build'</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><a id="disabling-etag-generation" style="display: none"></a></p>
+<h4 id="禁止-etag-生成">禁止 etag 生成</h4>
+
+<p>你可以禁止 etag 生成根据你的缓存策略。如果没有配置，Next 将会生成 etags 到每个页面中。</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// next.config.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">generateEtags</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><a id="configuring-the-ondemandentries" style="display: none"></a></p>
+<h4 id="配置-ondemandentries">配置 onDemandEntries</h4>
+
+<p>Next 暴露一些选项来给你控制服务器部署以及缓存页面：</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">onDemandEntries</span><span class="p">:</span> <span class="p">{</span>
+    <span class="c1">// period (in ms) where the server will keep pages in the buffer</span>
+    <span class="na">maxInactiveAge</span><span class="p">:</span> <span class="mi">25</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span>
+    <span class="c1">// number of pages that should be kept simultaneously without being disposed</span>
+    <span class="na">pagesBufferLength</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>这个只是在开发环境才有的功能。如果你在生成环境中想缓存 SSR 页面，请查看<a href="https://github.com/zeit/next.js/tree/canary/examples/ssr-caching">SSR-caching</a></p>
+
+<p><a id="configuring-extensions-looked-for-when-resolving-pages-in-pages" style="display: none"></a></p>
+<h4 id="配置页面后缀名解析扩展">配置页面后缀名解析扩展</h4>
+
+<p>如 typescript 模块<a href="https://github.com/zeit/next-plugins/tree/master/packages/next-typescript"><code class="highlighter-rouge">@zeit/next-typescript</code></a>，需要支持解析后缀名为<code class="highlighter-rouge">.ts</code>的文件。<code class="highlighter-rouge">pageExtensions</code> 允许你扩展后缀名来解析各种 pages 下的文件。</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// next.config.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">pageExtensions</span><span class="p">:</span> <span class="p">[</span><span class="s1">'jsx'</span><span class="p">,</span> <span class="s1">'js'</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><a id="configuring-the-build-id" style="display: none"></a></p>
+<h4 id="配置构建-id">配置构建 ID</h4>
+
+<p>Next.js 使用构建时生成的常量来标识你的应用服务是哪个版本。在每台服务器上运行构建命令时，可能会导致多服务器部署出现问题。为了保持同一个构建 ID，可以配置<code class="highlighter-rouge">generateBuildId</code>函数：</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// next.config.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">generateBuildId</span><span class="p">:</span> <span class="nx">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// For example get the latest git commit hash here</span>
+    <span class="k">return</span> <span class="s1">'my-build-id'</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><a id="customizing-webpack-config" style="display: none"></a></p>
+<h3 id="自定义-webpack-配置">自定义 webpack 配置</h3>
+
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul><li><a href="./examples/with-webpack-bundle-analyzer">Custom webpack bundle analyzer</a></li></ul>
+</details></p>
+
+<p>可以使用些一些常见的模块</p>
+
+<ul>
+  <li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-css">@zeit/next-css</a></li>
+  <li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-sass">@zeit/next-sass</a></li>
+  <li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-less">@zeit/next-less</a></li>
+  <li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-preact">@zeit/next-preact</a></li>
+  <li><a href="https://github.com/zeit/next-plugins/tree/master/packages/next-typescript">@zeit/next-typescript</a></li>
+</ul>
+
+<p><em>注意： <code class="highlighter-rouge">webpack</code>方法将被执行两次，一次在服务端一次在客户端。你可以用<code class="highlighter-rouge">isServer</code>属性区分客户端和服务端来配置</em></p>
+
+<p>多配置可以组合在一起，如：</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">withTypescript</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'@zeit/next-typescript'</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">withSass</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'@zeit/next-sass'</span><span class="p">)</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">withTypescript</span><span class="p">(</span><span class="nx">withSass</span><span class="p">({</span>
+  <span class="nx">webpack</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Further custom configuration here</span>
+    <span class="k">return</span> <span class="nx">config</span>
+  <span class="p">}</span>
+<span class="p">}))</span>
+</code></pre>
+</div>
+
+<p>为了扩展<code class="highlighter-rouge">webpack</code>使用，可以在<code class="highlighter-rouge">next.config.js</code>定义函数。</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// next.config.js is not transformed by Babel. So you can only use javascript features supported by your version of Node.js.</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">webpack</span><span class="p">:</span> <span class="p">(</span><span class="nx">config</span><span class="p">,</span> <span class="p">{</span> <span class="nx">buildId</span><span class="p">,</span> <span class="nx">dev</span><span class="p">,</span> <span class="nx">isServer</span><span class="p">,</span> <span class="nx">defaultLoaders</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// Perform customizations to webpack config</span>
+    <span class="c1">// Important: return the modified config</span>
+    <span class="k">return</span> <span class="nx">config</span>
+  <span class="p">},</span>
+  <span class="na">webpackDevMiddleware</span><span class="p">:</span> <span class="nx">config</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// Perform customizations to webpack dev middleware config</span>
+    <span class="c1">// Important: return the modified config</span>
+    <span class="k">return</span> <span class="nx">config</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">webpack</code>的第二个参数是个对象，你可以自定义配置它，对象属性如下所示：</p>
+
+<ul>
+  <li><code class="highlighter-rouge">buildId</code> - 字符串类型，构建的唯一标示</li>
+  <li><code class="highlighter-rouge">dev</code> - <code class="highlighter-rouge">Boolean</code>型，判断你是否在开发环境下</li>
+  <li><code class="highlighter-rouge">isServer</code> - <code class="highlighter-rouge">Boolean</code> 型，为<code class="highlighter-rouge">true</code>使用在服务端, 为<code class="highlighter-rouge">false</code>使用在客户端.</li>
+  <li><code class="highlighter-rouge">defaultLoaders</code> - 对象型 ，内部加载器, 你可以如下配置
+    <ul>
+      <li><code class="highlighter-rouge">babel</code> - 对象型，配置<code class="highlighter-rouge">babel-loader</code>.</li>
+      <li><code class="highlighter-rouge">hotSelfAccept</code> - 对象型， <code class="highlighter-rouge">hot-self-accept-loader</code>配置选项.这个加载器只能用于高阶案例。如 <a href="https://github.com/zeit/next-plugins/tree/master/packages/next-typescript"><code class="highlighter-rouge">@zeit/next-typescript</code></a>添加顶层 typescript 页面。</li>
+    </ul>
+  </li>
+</ul>
+
+<p><code class="highlighter-rouge">defaultLoaders.babel</code>使用案例如下：</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// Example next.config.js for adding a loader that depends on babel-loader</span>
+<span class="c1">// This source was taken from the @zeit/next-mdx plugin source: </span>
+<span class="c1">// https://github.com/zeit/next-plugins/blob/master/packages/next-mdx</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">webpack</span><span class="p">:</span> <span class="p">(</span><span class="nx">config</span><span class="p">,</span> <span class="p">{})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">config</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">rules</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+      <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">mdx/</span><span class="p">,</span>
+      <span class="na">use</span><span class="p">:</span> <span class="p">[</span>
+        <span class="nx">options</span><span class="p">.</span><span class="nx">defaultLoaders</span><span class="p">.</span><span class="nx">babel</span><span class="p">,</span>
+        <span class="p">{</span>
+          <span class="na">loader</span><span class="p">:</span> <span class="s1">'@mdx-js/loader'</span><span class="p">,</span>
+          <span class="na">options</span><span class="p">:</span> <span class="nx">pluginOptions</span><span class="p">.</span><span class="nx">options</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">})</span>
+
+    <span class="k">return</span> <span class="nx">config</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><a id="customizing-babel-config" style="display: none"></a></p>
+<h3 id="自定义-babel-配置">自定义 babel 配置</h3>
+
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul><li><a href="./examples/with-custom-babel-config">Custom babel configuration</a></li></ul>
+</details></p>
+
+<p>为了扩展方便我们使用<code class="highlighter-rouge">babel</code>，可以在应用根目录新建<code class="highlighter-rouge">.babelrc</code>文件，该文件可配置。</p>
+
+<p>如果有该文件，我们将会考虑数据源，因此也需要定义 next 项目需要的东西，也就是 <code class="highlighter-rouge">next/babel</code>预设。</p>
+
+<p>这种设计方案将会使你不诧异于我们可以定制 babel 配置。</p>
+
+<p>下面是<code class="highlighter-rouge">.babelrc</code>文件案例：</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"presets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"next/babel"</span><span class="p">],</span><span class="w">
+  </span><span class="nt">"plugins"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p><code class="highlighter-rouge">next/babel</code>预设可处理各种 React 应用所需要的情况。包括：</p>
+
+<ul>
+  <li>preset-env</li>
+  <li>preset-react</li>
+  <li>plugin-proposal-class-properties</li>
+  <li>plugin-proposal-object-rest-spread</li>
+  <li>plugin-transform-runtime</li>
+  <li>styled-jsx</li>
+</ul>
+
+<p>presets / plugins 不允许添加到<code class="highlighter-rouge">.babelrc</code>中，然而你可以配置<code class="highlighter-rouge">next/babel</code>预设：</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"presets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">[</span><span class="s2">"next/babel"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"preset-env"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="nt">"transform-runtime"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="nt">"styled-jsx"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="nt">"class-properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"plugins"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p><code class="highlighter-rouge">"preset-env"</code>模块选项应该保持为 false，否则 webpack 代码分割将被禁用。</p>
+
+<p><a id="exposing-configuration-to-the-server--client-side" style="display: none"></a></p>
+<h3 id="暴露配置到服务端和客户端">暴露配置到服务端和客户端</h3>
+
+<p><code class="highlighter-rouge">next/config</code>模块使你应用运行时可以读取些存储在<code class="highlighter-rouge">next.config.js</code>的配置项。<code class="highlighter-rouge">serverRuntimeConfig</code>属性只在服务器端可用，<code class="highlighter-rouge">publicRuntimeConfig</code>属性在服务端和客户端可用。</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// next.config.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">serverRuntimeConfig</span><span class="p">:</span> <span class="p">{</span> <span class="c1">// Will only be available on the server side</span>
+    <span class="na">mySecret</span><span class="p">:</span> <span class="s1">'secret'</span>
+  <span class="p">},</span>
+  <span class="na">publicRuntimeConfig</span><span class="p">:</span> <span class="p">{</span> <span class="c1">// Will be available on both server and client</span>
+    <span class="na">staticFolder</span><span class="p">:</span> <span class="s1">'/static'</span><span class="p">,</span>
+    <span class="na">mySecret</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">MY_SECRET</span> <span class="c1">// Pass through env variables</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// pages/index.js</span>
+<span class="kr">import</span> <span class="nx">getConfig</span> <span class="nx">from</span> <span class="s1">'next/config'</span>
+<span class="c1">// Only holds serverRuntimeConfig and publicRuntimeConfig from next.config.js nothing else.</span>
+<span class="kr">const</span> <span class="p">{</span><span class="nx">serverRuntimeConfig</span><span class="p">,</span> <span class="nx">publicRuntimeConfig</span><span class="p">}</span> <span class="o">=</span> <span class="nx">getConfig</span><span class="p">()</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">serverRuntimeConfig</span><span class="p">.</span><span class="nx">mySecret</span><span class="p">)</span> <span class="c1">// Will only be available on the server side</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">publicRuntimeConfig</span><span class="p">.</span><span class="nx">staticFolder</span><span class="p">)</span> <span class="c1">// Will be available on both server and client</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">publicRuntimeConfig</span><span class="p">.</span><span class="nx">staticFolder</span><span class="p">}</span><span class="sr">/logo.png`} alt="logo" /</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span></code></pre>
+</div>
+
+<p><a id="starting-the-server-on-alternative-hostname" style="display: none"></a></p>
+<h3 id="启动服务选择-hostname">启动服务选择 hostname</h3>
+
+<p>启动开发环境服务可以设置不同的 hostname，你可以在启动命令后面加上<code class="highlighter-rouge">--hostname 主机名</code> 或 <code class="highlighter-rouge">-H 主机名</code>。它将会启动一个 TCP 服务器来监听连接所提供的主机。</p>
+
+<p><a id="cdn-support-with-asset-prefix" style="display: none"></a></p>
+<h3 id="cdn-支持前缀">CDN 支持前缀</h3>
+
+<p>建立一个 CDN，你能配置<code class="highlighter-rouge">assetPrefix</code>选项，去配置你的 CDN 源。</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">isProd</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">===</span> <span class="s1">'production'</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">// You may only need to add assetPrefix in the production.</span>
+  <span class="na">assetPrefix</span><span class="p">:</span> <span class="nx">isProd</span> <span class="p">?</span> <span class="s1">'https://cdn.mydomain.com'</span> <span class="p">:</span> <span class="s1">''</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>注意：Next.js 运行时将会自动添加前缀，但是对于<code class="highlighter-rouge">/static</code>是没有效果的，如果你想这些静态资源也能使用 CDN，你需要自己添加前缀。有一个方法可以判断你的环境来加前缀，如 <a href="https://github.com/zeit/next.js/tree/master/examples/with-universal-configuration">in this example</a>。</p>
+
+<p><a id="production-deployment" style="display: none"></a></p>
+<h2 id="项目部署">项目部署</h2>
+
+<p>部署中，你可以先构建打包生成环境代码，再启动服务。因此，构建和启动分为下面两条命令：</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>next build
+next start
+</code></pre>
+</div>
+
+<p>例如，使用<a href="https://zeit.co/now"><code class="highlighter-rouge">now</code></a>去部署<code class="highlighter-rouge">package.json</code>配置文件如下：</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-app"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"latest"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"dev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next build"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next start"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>然后就可以直接运行<code class="highlighter-rouge">now</code>了。</p>
+
+<p>Next.js 也有其他托管解决方案。请查考 wiki 章节<a href="https://github.com/zeit/next.js/wiki/Deployment">‘Deployment’</a> 。</p>
+
+<p>注意：<code class="highlighter-rouge">NODE_ENV</code>可以通过<code class="highlighter-rouge">next</code>命令配置，如果没有配置，会最大渲染，如果你使用编程式写法的话<a href="#custom-server-and-routing">programmatically</a>，你需要手动设置<code class="highlighter-rouge">NODE_ENV=production</code>。</p>
+
+<p>注意：推荐将<code class="highlighter-rouge">.next</code>或自定义打包文件夹<a href="https://github.com/zeit/next.js#custom-configuration">custom dist folder</a>放入<code class="highlighter-rouge">.gitignore</code> 或 <code class="highlighter-rouge">.npmignore</code>中。否则，使用<code class="highlighter-rouge">files</code> 或 <code class="highlighter-rouge">now.files</code>
+添加部署白名单，并排除<code class="highlighter-rouge">.next</code>或自定义打包文件夹。</p>
+
+<p><a id="browser-support" style="display: none"></a></p>
+<h2 id="浏览器支持">浏览器支持</h2>
+
+<p>Next.js 支持 IE11 和所有的现代浏览器使用了<a href="https://new.babeljs.io/docs/en/next/babel-preset-env.html"><code class="highlighter-rouge">@babel/preset-env</code></a>。为了支持 IE11，Next.js 需要全局添加<code class="highlighter-rouge">Promise</code>的 polyfill。有时你的代码或引入的其他 NPM 包的部分功能现代浏览器不支持，则需要用 polyfills 去实现。</p>
+
+<p>ployflls 实现案例为<a href="https://github.com/zeit/next.js/tree/canary/examples/with-polyfills">polyfills</a>。</p>
+
+<p><a id="static-html-export" style="display: none"></a></p>
+<h2 id="导出静态页面">导出静态页面</h2>
+
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul><li><a href="./examples/with-static-export">Static export</a></li></ul>
+</details></p>
+
+<p><code class="highlighter-rouge">next export</code>可以输出一个 Next.js 应用作为静态资源应用而不依靠 Node.js 服务。
+这个输出的应用几乎支持 Next.js 的所有功能，包括动态路由，预获取，预加载以及动态导入。</p>
+
+<p><code class="highlighter-rouge">next export</code>将把所有有可能渲染出的 HTML 都生成。这是基于映射对象的<code class="highlighter-rouge">pathname</code>关键字关联到页面对象。这个映射叫做<code class="highlighter-rouge">exportPathMap</code>。</p>
+
+<p>页面对象有2个属性:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">page</code> - 字符串类型，页面生成目录</li>
+  <li><code class="highlighter-rouge">query</code> - 对象类型，当预渲染时，<code class="highlighter-rouge">query</code>对象将会传入页面的生命周期<code class="highlighter-rouge">getInitialProps</code>中。默认为<code class="highlighter-rouge"><span class="p">{}</span></code>。</li>
+</ul>
+
+<p><a id="usage" style="display: none"></a></p>
+<h3 id="使用">使用</h3>
+
+<p>通常开发 Next.js 应用你将会运行：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>next build
+next export
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">next export</code>命令默认不需要任何配置，将会自动生成默认<code class="highlighter-rouge">exportPathMap</code>生成<code class="highlighter-rouge">pages</code>目录下的路由你页面。</p>
+
+<p>如果你想动态配置路由，可以在<code class="highlighter-rouge">next.config.js</code>中添加异步函数<code class="highlighter-rouge">exportPathMap</code>。</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// next.config.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">exportPathMap</span><span class="p">:</span> <span class="nx">async</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">defaultPathMap</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="s1">'/'</span><span class="p">:</span> <span class="p">{</span> <span class="na">page</span><span class="p">:</span> <span class="s1">'/'</span> <span class="p">},</span>
+      <span class="s1">'/about'</span><span class="p">:</span> <span class="p">{</span> <span class="na">page</span><span class="p">:</span> <span class="s1">'/about'</span> <span class="p">},</span>
+      <span class="s1">'/readme.md'</span><span class="p">:</span> <span class="p">{</span> <span class="na">page</span><span class="p">:</span> <span class="s1">'/readme'</span> <span class="p">},</span>
+      <span class="s1">'/p/hello-nextjs'</span><span class="p">:</span> <span class="p">{</span> <span class="na">page</span><span class="p">:</span> <span class="s1">'/post'</span><span class="p">,</span> <span class="na">query</span><span class="p">:</span> <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="s1">'hello-nextjs'</span> <span class="p">}</span> <span class="p">},</span>
+      <span class="s1">'/p/learn-nextjs'</span><span class="p">:</span> <span class="p">{</span> <span class="na">page</span><span class="p">:</span> <span class="s1">'/post'</span><span class="p">,</span> <span class="na">query</span><span class="p">:</span> <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="s1">'learn-nextjs'</span> <span class="p">}</span> <span class="p">},</span>
+      <span class="s1">'/p/deploy-nextjs'</span><span class="p">:</span> <span class="p">{</span> <span class="na">page</span><span class="p">:</span> <span class="s1">'/post'</span><span class="p">,</span> <span class="na">query</span><span class="p">:</span> <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="s1">'deploy-nextjs'</span> <span class="p">}</span> <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <p>注意：如果 path 的结尾是目录名，则将导出<code class="highlighter-rouge">/dir-name/index.html</code>，但是如果结尾有扩展名，将会导出对应的文件，如上<code class="highlighter-rouge">/readme.md</code>。如果你使用<code class="highlighter-rouge">.html</code>以外的扩展名解析文件时，你需要设置 header 的<code class="highlighter-rouge">Content-Type</code>头为”text/html”.</p>
+</blockquote>
+
+<p>输入下面命令：</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>next build
+next <span class="nb">export</span>
+</code></pre>
+</div>
+
+<p>你可以在<code class="highlighter-rouge">package.json</code>添加一个 NPM 脚本，如下所示：</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next build"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"export"</span><span class="p">:</span><span class="w"> </span><span class="s2">"npm run build &amp;&amp; next export"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>接着只用执行一次下面命令：</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>npm run <span class="nb">export</span>
+</code></pre>
+</div>
+
+<p>然后你将会有一个静态页面应用在<code class="highlighter-rouge">out</code> 目录下。</p>
+
+<blockquote>
+  <p>你也可以自定义输出目录。可以运行<code class="highlighter-rouge">next export -h</code>命令查看帮助。</p>
+</blockquote>
+
+<p>现在你可以部署<code class="highlighter-rouge">out</code>目录到任意静态资源服务器上。注意如果部署 GitHub Pages 需要加个额外的步骤，<a href="https://github.com/zeit/next.js/wiki/Deploying-a-Next.js-app-into-GitHub-Pages">文档如下</a></p>
+
+<p>例如，访问<code class="highlighter-rouge">out</code>目录并用下面命令部署应用<a href="https://zeit.co/now">ZEIT Now</a>.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>now
+</code></pre>
+</div>
+
+<p><a id="limitation" style="display: none"></a></p>
+<h3 id="限制">限制</h3>
+
+<p>使用<code class="highlighter-rouge">next export</code>，我们创建了个静态 HTML 应用。构建时将会运行页面里生命周期<code class="highlighter-rouge">getInitialProps</code> 函数。</p>
+
+<p><code class="highlighter-rouge">req</code>和<code class="highlighter-rouge">res</code>只在服务端可用，不能通过<code class="highlighter-rouge">getInitialProps</code>。</p>
+
+<blockquote>
+  <p>所以你不能预构建 HTML 文件时动态渲染 HTML 页面。如果你想动态渲染可以运行<code class="highlighter-rouge">next start</code>或其他自定义服务端 API。</p>
+</blockquote>
+
+<p><a id="multi-zones" style="display: none"></a></p>
+<h2 id="多-zone">多 zone</h2>
+
+<p><details>
+  <summary><b>Examples</b></summary>
+  <ul><li><a href="./examples/with-zones">With Zones</a></li></ul>
+</details></p>
+
+<p>一个 zone 时一个单独的 Next.js 应用。如果你有很多 zone，你可以合并成一个应用。</p>
+
+<p>例如，你如下有两个 zone：</p>
+
+<ul>
+  <li>https://docs.my-app.com 服务于路由 <code class="highlighter-rouge">/docs/**</code></li>
+  <li>https://ui.my-app.com 服务于所有页面</li>
+</ul>
+
+<p>有多 zone 应用技术支持，你可以将几个应用合并到一个，而且可以自定义 URL 路径，使你能同时单独开发各个应用。</p>
+
+<blockquote>
+  <p>与 microservices 观念类似, 只是应用于前端应用.</p>
+</blockquote>
+
+<p><a id="how-to-define-a-zone" style="display: none"></a></p>
+<h3 id="怎么定义一个-zone">怎么定义一个 zone</h3>
+
+<p>zone 没有单独的 API 文档。你需要做下面事即可：</p>
+
+<ul>
+  <li>确保你的应用里只有需要的页面 (例如, https://ui.my-app.com 不包含 <code class="highlighter-rouge">/docs/**</code>)</li>
+  <li>确保你的应用有个前缀<a href="https://github.com/zeit/next.js#cdn-support-with-asset-prefix">assetPrefix</a>。（你也可以定义动态前缀<a href="https://github.com/zeit/next.js#dynamic-assetprefix">dynamically</a>）</li>
+</ul>
+
+<p><a id="how-to-merge-them" style="display: none"></a></p>
+<h3 id="怎么合并他们">怎么合并他们</h3>
+
+<p>你能使用 HTTP 代理合并 zone</p>
+
+<p>你能使用代理<a href="https://github.com/zeit/micro-proxy">micro proxy</a>来作为你的本地代理服务。它允许你定义路由规则如下：</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"rules"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="nt">"pathname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/docs**"</span><span class="p">,</span><span class="w"> </span><span class="nt">"method"</span><span class="p">:[</span><span class="s2">"GET"</span><span class="p">,</span><span class="w"> </span><span class="s2">"POST"</span><span class="p">,</span><span class="w"> </span><span class="s2">"OPTIONS"</span><span class="p">],</span><span class="w"> </span><span class="nt">"dest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://docs.my-app.com"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="nt">"pathname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/**"</span><span class="p">,</span><span class="w"> </span><span class="nt">"dest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ui.my-app.com"</span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>生产环境部署，如果你使用了<a href="https://zeit.co/now">ZEIT now</a>，可以它的使用<a href="https://zeit.co/docs/features/path-aliases">path alias</a> 功能。否则，你可以设置你已使用的代理服务编写上面规则来路由 HTML 页面</p>
+
+<p><a id="recipes" style="display: none"></a></p>
+<h2 id="技巧">技巧</h2>
+
+<ul>
+  <li><a href="https://www.raygesualdo.com/posts/301-redirects-with-nextjs/">设置301重定向</a></li>
+  <li><a href="https://arunoda.me/blog/ssr-and-server-only-modules">只处理服务器端模块</a></li>
+  <li><a href="https://github.com/builderbook/builderbook">构建项目 React-Material-UI-Next-Express-Mongoose-Mongodb</a></li>
+  <li><a href="https://github.com/async-labs/saas">构建一个 SaaS 产品 React-Material-UI-Next-MobX-Express-Mongoose-MongoDB-TypeScript</a></li>
+</ul>
+
+<p><a id="faq" style="display: none"></a></p>
+<h2 id="问答">问答</h2>
+
+<details>
+  <summary>这个产品可以用于生产环境吗？</summary>
+  https://zeit.co 都是一直用 Next.js 写的。
+
+  它的开发体验和终端用户体验都很好，所以我们决定开源出来给大家共享。
+</details>
+
+<details>
+  <summary>体积多大？</summary>
+
+客户端大小根据应用需求不一样大小也不一样。
+
+一个最简单 Next 应该用 gzip 压缩后大约65kb
+
+</details>
+
+<details>
+  <summary>这个像 `create-react-app`?</summary>
+
+是或不是.
+
+是，因为它让你的 SSR 开发更简单。
+
+不是，因为它规定了一定的目录结构，使我们能做以下更高级的事：
+- 服务端渲染
+- 自动代码分割
+
+此外，Next.js 还提供两个内置特性：
+- 路由与懒加载组件: `<link />` (通过引入 `next/link`)
+- 修改`<head>`的组件: `<head>` (通过引入 `next/head`)
+
+如果你想写共用组件，可以嵌入 Next.js 应用和 React 应用中，推荐使用`create-react-app`。你可以更改`import`保持代码清晰。
+
+
+&lt;/details&gt;
+
+<details>
+  <summary>怎么解决 CSS 嵌入 JS 问题?</summary>
+
+Next.js 自带[styled-jsx](https://github.com/zeit/styled-jsx)库支持 CSS 嵌入 JS。而且你可以选择其他嵌入方法到你的项目中，可参考文档[as mentioned before](#css-in-js)。
+
+</details>
+
+<details>
+  <summary>哪些语法会被转换？怎么转换它们？</summary>
+
+我们遵循 V8 引擎的，如今 V8 引擎广泛支持 ES6 语法以及`async`和`await`语法，所以我们支持转换它们。但是 V8 引擎不支持修饰器语法，所以我们也不支持转换这语法。
+
+可以参照[这些](https://github.com/zeit/next.js/blob/master/server/build/webpack.js#L79) 以及 [这些](https://github.com/zeit/next.js/issues/26)
+
+</details>
+
+<details>
+  <summary>为什么使用新路由?</summary>
+
+Next.js 的特别之处如下所示:
+
+- 路由不需要被提前知道
+- 路由总是被懒加载
+- 顶层组件可以定义生命周期`getInitialProps`来阻止路由加载（当服务端渲染或路由懒加载时）
+
+因此,我们可以介绍一个非常简单的路由方法,它由下面两部分组成:
+
+- 每个顶层组件都将会收到一个`url`对象，来检查 url 或修改历史记录
+- `<link />`组件用于包装如(`<a />`)标签的元素容器，来执行客户端转换。
+
+我们使用了些有趣的场景来测试路由的灵活性，例如，可查看[nextgram](https://github.com/zeit/nextgram)。
+
+</details>
+
+<details>
+<summary>我怎么定义自定义路由?</summary>
+
+我们通过请求处理来[添加](#custom-server-and-routing)任意 URL 与任意组件之前的映射关系。
+
+在客户端，我们`<link />`组件有个属性`as`，可以装饰改变获取到的 URL。
+</details>
+
+<details>
+<summary>怎么获取数据?</summary>
+
+这由你决定。`getInitialProps`是一个异步函数`async`（也就是函数将会返回个`Promise`）。你可以在任意位置获取数据。
+</details>
+
+<details>
+  <summary>我可以使用 GraphQL 吗?</summary>
+
+是的! 这里有个例子[Apollo](./examples/with-apollo).
+
+</details>
+
+<details>
+<summary>我可以使用 Redux 吗?</summary>
+
+是的! 这里有个[例子](./examples/with-redux)
+</details>
+
+<details>
+<summary>我可以在 Next 应用中使用我喜欢的 Javascript 库或工具包吗?</summary>
+
+从我们第一次发版就已经提供**很多**例子，你可以查看这些[例子](./examples)。
+</details>
+
+<details>
+<summary>什么启发我们做这个?</summary>
+
+我们实现的大部分目标都是通过 Guillermo Rauch 的[Web 应用的7原则](http://rauchg.com/2014/7-principles-of-rich-web-applications/)来启发出的。
+
+PHP 的易用性也是个很好的灵感来源，我们觉得 Next.js 可以替代很多需要用 PHP 输出 HTML 的场景。
+
+与 PHP 不同的是，我们得利于 ES6 模块系统，每个文件会输出一个**组件或方法**，以便可以轻松的导入用于懒加载和测试
+
+我们研究 React 的服务器渲染时并没有花费很大的步骤，因为我们发现一个类似于 Next.js 的产品，React 作者 Jordan Walke 写的[react-page](https://github.com/facebookarchive/react-page) (现在已经废弃)
+
+</details>
+
+<a id="contributing" style="display: none"></a>
+## 贡献
+
+可查看 [contributing.md](./contributing.md)
+
+<a id="authors" style="display: none"></a>
+## 作者
+
+- Arunoda Susiripala ([@arunoda](https://twitter.com/arunoda)) – [ZEIT](https://zeit.co)
+- Tim Neutkens ([@timneutkens](https://twitter.com/timneutkens)) – [ZEIT](https://zeit.co)
+- Naoyuki Kanezawa ([@nkzawa](https://twitter.com/nkzawa)) – [ZEIT](https://zeit.co)
+- Tony Kovanen ([@tonykovanen](https://twitter.com/tonykovanen)) – [ZEIT](https://zeit.co)
+- Guillermo Rauch ([@rauchg](https://twitter.com/rauchg)) – [ZEIT](https://zeit.co)
+- Dan Zajdband ([@impronunciable](https://twitter.com/impronunciable)) – Knight-Mozilla / Coral Project
+</head></head></details>
+
+            </div>
+        </article>
+        <div class="cf"></div>
+        <div class="row text-center">
+            <section class="notepad-post-share">
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Nextjs中文文档&quot;%20https://raoenhui.github.io/nextjs/2018/08/31/Nextjs%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/%20via%20&#64;raoenhui"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/nextjs/2018/08/31/Nextjs%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/nextjs/2018/08/31/Nextjs%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </section>
+        </div>
+        <div class="cf"></div>
+        
+            <div class="notepad-author-info">
+                <div class="row">
+                    <section class="notepad-post-author small-12 columns">
+                        
+                            <img src="https://raoenhui.github.io/images/logo.png" class="notepad-post-author-avatar" alt="Enhui Rao's photo">
+                        
+                        
+                            <span class="author-label">Author</span>
+                            <h1>Enhui Rao</h1>
+                        
+                        
+                            <p><a href="mailto:670615769@qq.com" class="author-website">670615769@qq.com</a>
+
+			   <!--  <iframe src="//www.facebook.com/plugins/follow?href=https%3A%2F%2Fwww.facebook.com%2Fameyjadiye&amp;layout=standard&amp;show_faces=true&amp;colorscheme=light&amp;width=450&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe>  -->
+             <!--      <iframe src="//www.facebook.com/plugins/follow?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100004203407645&amp;layout=standard&amp;show_faces=true&amp;colorscheme=light&amp;width=450&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe> -->
+             
+
+              <div class="fb-like" data-href="http://raoenhui.github.io/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+       <!--      <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1757816481112269";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+			    </p>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1757816481112269";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>-->
+<div class="fb-follow" data-href="https://www.facebook.com/raoenhui" data-width="200" data-height="100" data-layout="standard" data-show-faces="true"></div>
+                        
+                        
+                            <p>Programming is 1% knowledge, 2% ability and 97% getting the ability to work with the knowledge :)</p>
+                        
+                    </section>
+                </div>
+            </div>
+ 
+        
+        <div class="cf"></div>
+        
+        <section class="notepad-disqus row">
+    <div class="small-12 columns">
+        <h1 class="notepad-comments-header">Comments评论</h1>
+   <!--      <p>国内网速超慢，建议翻墙评论，或直接在此评论
+            <a href="https://github.com/raoenhui/raoenhui.github.io/issues" target="_blank">https://github.com/raoenhui/raoenhui.github.io/issues</a></p> -->
+
+        <div id="disqus_thread"></div>
+        
+<!--
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = '饶恩慧'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+-->
+<!-- ice disqus https://raoenhui.disqus.com/admin/ start-->
+<!--<script>
+
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://raoenhui.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>-->
+<!-- ice disqus end-->
+
+<!-- ice gitment 评论 start-->
+    <div id="container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+// debugger
+var gitment = new Gitment({
+  id: location.pathname.split('/').reverse()[1], // 可选。默认为 location.href
+  owner: 'raoenhui',
+  repo: 'raoenhui.github.io',
+  oauth: {
+    client_id: 'bd88b9824048b133f7ed',
+    client_secret: '193c97904472a0e380b70dd990c46853f52881c7',
+    // client_id: '5548df3eca52697fac71',
+    // client_secret: '5b9480b7b3d4a49e22db3f29557380e2711bbcd9',
+  },
+})
+gitment.render('container')
+</script>
+<!-- ice gitment 评论 end-->
+<hr />
+
+<!-- ice facebook start-->
+ 
+<!-- <div class="fb-comments" data-href="https://raoenhui.github.io/nextjs/2018/08/31/Nextjs%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1757816481112269";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script> -->
+<!-- ice facebook end-->
+
+<!-- 来必力 start https://livere.com/my_Livere-->
+<!-- <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTMzMC8xMTg2Ng==">
+    <script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+    </script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div> -->
+<!-- 来必力 end-->
+
+    </div>
+</section>
+
+        <div class="cf"></div>
+
+    <footer class="notepad-site-footer">
+    <div class="copyright">
+        <section>All content copyright <a href="https://raoenhui.github.io/about">Enhui Rao</a> &copy; 2018 &bull; All rights reserved.</section>
+	<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>
+          <a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>
+    </div>
+    <div class="social-icons">
+        
+        <!--
+        <a href="http://twitter.com/raoenhui">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="https://plus.google.com/u/0/+AmeyJadiye">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-google-plus fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="http://instagram.com/raoenhui">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-instagram fa-stack-1x"></i>
+            </span>
+        </a>
+        -->
+        
+        <a href="http://github.com/raoenhui">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="http://facebook.com/raoenhui">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+        </a>
+        
+    </div>
+    
+    <div class="cf"></div>
+</footer>
+ 
+</main>    
+<script src="//apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://raoenhui.github.io/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+<script src="https://raoenhui.github.io/assets/js/vendor/modernizr.js"></script>
+<script src="https://raoenhui.github.io/assets/js/foundation.min.js"></script>
+
+<script src="https://raoenhui.github.io/assets/js/notepad.js"></script>
+<script src="https://raoenhui.github.io/assets/js/scripts.min.js"></script>
+<script src="https://raoenhui.github.io/assets/js/vendor/nprogress.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/sigma.js/1.0.3/sigma.min.js"></script>-->
+<script src="//apps.bdimg.com/libs/sigma.js/0.1/sigma.min.js"></script>
+
+<script>
+    $(document).foundation();
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-46791108-1', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+
+</script>
+
+<script>NProgress.start();
+var timeNum=0;
+var interval = setInterval(function () {
+    NProgress.inc();
+    //如果大于60秒停止检测
+    /*if(timeNum>60){
+        clearInterval(interval);
+        NProgress.done();
+
+    }
+    timeNum++;*/
+}, 1000);
+jQuery(window).load(function () {
+    clearInterval(interval);
+    NProgress.done()
+});
+jQuery(window).unload(function () {
+    NProgress.start()
+});
+
+</script>
+
+<!-- ice start-->
+<!--<script id="dsq-count-scr" src="//raoenhui.disqus.com/count.js" async></script>-->
+<!-- ice end--> 
+</body>
+</html>

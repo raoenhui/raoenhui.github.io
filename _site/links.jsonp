@@ -48,6 +48,11 @@ callback([
   {
     "text": "git commit前检测husky与pre-commit",
     "href": "https://raoenhui.github.io/nodejs/git/2018/08/10/preventcommit/"
+  } ,
+
+  {
+    "text": "Nextjs中文文档",
+    "href": "https://raoenhui.github.io/nextjs/2018/08/31/Nextjs%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/"
   } 
 
 ])
