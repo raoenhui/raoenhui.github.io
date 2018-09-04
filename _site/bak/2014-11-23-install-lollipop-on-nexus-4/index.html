@@ -129,9 +129,9 @@
   <li>First thing is to install ADB and Fastboot to your machine, i use ubuntu so <strong>apt-get</strong> is easy way to get it.</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo add-apt-repository ppa:phablet-team/tools
-sudo apt-get update
-sudo apt-get install android-tools-adb android-tools-fastboot</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>add-apt-repository ppa:phablet-team/tools
+<span class="nb">sudo </span>apt-get update
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>android-tools-adb android-tools-fastboot</code></pre></figure>
 
 <ul>
   <li>Now connect  Nexus 4 to your machine via USB, make sure you enable your USB debugging ON, so start USB Debugging go to Settings » Developer Options » USB debugging. (If you dont have Developer Options go to Settings » About Phone » Build number and tap on Build number until you become developer).</li>
@@ -142,7 +142,7 @@ sudo apt-get install android-tools-adb android-tools-fastboot</code></pre></figu
 
 <p>Now try below commands to make sure you are connected to machine.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">amey@amey-xps:~$ </span>adb devices -l
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">amey@amey-xps:~<span class="nv">$ </span>adb devices <span class="nt">-l</span>
 List of devices attached 
 0202dc7rh2934b2a    device usb:3-2 product:occam model:Nexus_4 device:mako</code></pre></figure>
 
@@ -162,7 +162,7 @@ Connect the Nexus 4 to your computer via USB cable.</li>
 unzip it</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">tar -xf occam-lrx21t-factory-51cee750.tgz
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">tar</span> <span class="nt">-xf</span> occam-lrx21t-factory-51cee750.tgz
 <span class="nb">cd </span>occam-lrx21t</code></pre></figure>
 
 <ul>
@@ -170,14 +170,14 @@ unzip it</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">adb reboot-bootloader
-sleep 15
-sudo ./flash-all.sh</code></pre></figure>
+<span class="nb">sleep </span>15
+<span class="nb">sudo</span> ./flash-all.sh</code></pre></figure>
 
 <p>This command will  generate following logs on your terminal, put your password if prompted, your phone may be rebooted few times.</p>
 
 <p><img style="height: 25%;width: 25%;" src="https://raoenhui.github.io/images/nxs3.jpg" /></p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">amey@amey-xps:~/Downloads/occam-lrx21t$ </span>sudo ./flash-all.sh
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">amey@amey-xps:~/Downloads/occam-lrx21t<span class="nv">$ </span><span class="nb">sudo</span> ./flash-all.sh
 Password:
 sending <span class="s1">'bootloader'</span> <span class="o">(</span>2264 KB<span class="o">)</span>...
 OKAY <span class="o">[</span> 0.091s]
@@ -187,7 +187,7 @@ finished. total <span class="nb">time</span>: 0.758s
 rebooting into bootloader...
 OKAY <span class="o">[</span> 0.001s]
 finished. total <span class="nb">time</span>: 0.001s
-&lt; waiting <span class="k">for </span>device &gt;
+&lt; waiting <span class="k">for </span>device <span class="o">&gt;</span>
 sending <span class="s1">'radio'</span> <span class="o">(</span>45537 KB<span class="o">)</span>...
 OKAY <span class="o">[</span> 1.607s]
 writing <span class="s1">'radio'</span>...
@@ -196,16 +196,16 @@ finished. total <span class="nb">time</span>: 5.065s
 rebooting into bootloader...
 OKAY <span class="o">[</span> 0.001s]
 finished. total <span class="nb">time</span>: 0.001s
-&lt; waiting <span class="k">for </span>device &gt;
+&lt; waiting <span class="k">for </span>device <span class="o">&gt;</span>
 archive does not contain <span class="s1">'boot.sig'</span>
 archive does not contain <span class="s1">'recovery.sig'</span>
 
 archive does not contain <span class="s1">'system.sig'</span>
---------------------------------------------
+<span class="nt">--------------------------------------------</span>
 Bootloader Version...: MAKOZ30f
 Baseband Version.....: M9615A-CEFWMAZM-2.0.1701.04
 Serial Number........: 0202dc7d0b934b2a
---------------------------------------------
+<span class="nt">--------------------------------------------</span>
 checking product...
 OKAY <span class="o">[</span> 0.002s]
 checking version-bootloader...
@@ -238,7 +238,7 @@ Inode size: 256
 Journal blocks: 32768
 Label: 
 Blocks: 3449600
-Block groups: 106
+Block <span class="nb">groups</span>: 106
 Reserved block group size: 847
 Created filesystem with 11/863264 inodes and 95427/3449600 blocks
 sending <span class="s1">'userdata'</span> <span class="o">(</span>137438 KB<span class="o">)</span>...
@@ -256,7 +256,7 @@ Inode size: 256
 Journal blocks: 2240
 Label: 
 Blocks: 143360
-Block groups: 5
+Block <span class="nb">groups</span>: 5
 Reserved block group size: 39
 Created filesystem with 11/35840 inodes and 4616/143360 blocks
 sending <span class="s1">'cache'</span> <span class="o">(</span>10984 KB<span class="o">)</span>...

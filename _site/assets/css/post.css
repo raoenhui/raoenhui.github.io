@@ -637,3 +637,12 @@ iframe {
     vertical-align: super;
     color: black;
 }
+
+details{
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 1.125rem;
+}
+details summary{
+  color: #E971BE;
+}
