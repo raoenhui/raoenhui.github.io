@@ -129,11 +129,9 @@
   <li>First thing is to install ADB and Fastboot to your machine, i use ubuntu so <strong>apt-get</strong> is easy way to get it.</li>
 </ul>
 
-<figure class="highlight">
-  <pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>add-apt-repository ppa:phablet-team/tools
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>add-apt-repository ppa:phablet-team/tools
 <span class="nb">sudo </span>apt-get update
-<span class="nb">sudo </span>apt-get <span class="nb">install </span>android-tools-adb android-tools-fastboot</code></pre>
-</figure>
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>android-tools-adb android-tools-fastboot</code></pre></figure>
 
 <ul>
   <li>Now connect  Nexus 4 to your machine via USB, make sure you enable your USB debugging ON, so start USB Debugging go to Settings » Developer Options » USB debugging. (If you dont have Developer Options go to Settings » About Phone » Build number and tap on Build number until you become developer).</li>
@@ -144,11 +142,9 @@
 
 <p>Now try below commands to make sure you are connected to machine.</p>
 
-<figure class="highlight">
-  <pre><code class="language-bash" data-lang="bash">amey@amey-xps:~<span class="nv">$ </span>adb devices <span class="nt">-l</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">amey@amey-xps:~<span class="nv">$ </span>adb devices <span class="nt">-l</span>
 List of devices attached 
-0202dc7rh2934b2a    device usb:3-2 product:occam model:Nexus_4 device:mako</code></pre>
-</figure>
+0202dc7rh2934b2a    device usb:3-2 product:occam model:Nexus_4 device:mako</code></pre></figure>
 
 <ul>
   <li>Now unlock bootloader 
@@ -157,9 +153,7 @@ Press and hold Volume Down and Power to enter the Fastboot menu.
 Connect the Nexus 4 to your computer via USB cable.</li>
 </ul>
 
-<figure class="highlight">
-  <pre><code class="language-bash" data-lang="bash">fastboot oem unlock</code></pre>
-</figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">fastboot oem unlock</code></pre></figure>
 
 <p>Press the Volume Up button on the Nexus 4 to accept the command and press the Power button to confirm. The bootloader will now be unlocked, you will loss all data with this.</p>
 
@@ -168,27 +162,22 @@ Connect the Nexus 4 to your computer via USB cable.</li>
 unzip it</li>
 </ul>
 
-<figure class="highlight">
-  <pre><code class="language-bash" data-lang="bash"><span class="nb">tar</span> <span class="nt">-xf</span> occam-lrx21t-factory-51cee750.tgz
-<span class="nb">cd </span>occam-lrx21t</code></pre>
-</figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">tar</span> <span class="nt">-xf</span> occam-lrx21t-factory-51cee750.tgz
+<span class="nb">cd </span>occam-lrx21t</code></pre></figure>
 
 <ul>
   <li>Now the final step to Flash and install new lollipop image to your Nexus 4</li>
 </ul>
 
-<figure class="highlight">
-  <pre><code class="language-bash" data-lang="bash">adb reboot-bootloader
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">adb reboot-bootloader
 <span class="nb">sleep </span>15
-<span class="nb">sudo</span> ./flash-all.sh</code></pre>
-</figure>
+<span class="nb">sudo</span> ./flash-all.sh</code></pre></figure>
 
 <p>This command will  generate following logs on your terminal, put your password if prompted, your phone may be rebooted few times.</p>
 
 <p><img style="height: 25%;width: 25%;" src="https://raoenhui.github.io/images/nxs3.jpg" /></p>
 
-<figure class="highlight">
-  <pre><code class="language-bash" data-lang="bash">amey@amey-xps:~/Downloads/occam-lrx21t<span class="nv">$ </span><span class="nb">sudo</span> ./flash-all.sh
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">amey@amey-xps:~/Downloads/occam-lrx21t<span class="nv">$ </span><span class="nb">sudo</span> ./flash-all.sh
 Password:
 sending <span class="s1">'bootloader'</span> <span class="o">(</span>2264 KB<span class="o">)</span>...
 OKAY <span class="o">[</span> 0.091s]
@@ -274,8 +263,7 @@ sending <span class="s1">'cache'</span> <span class="o">(</span>10984 KB<span cl
 writing <span class="s1">'cache'</span>...
 OKAY <span class="o">[</span> 1.090s]
 rebooting...
-finished. total <span class="nb">time</span>: 150.897s</code></pre>
-</figure>
+finished. total <span class="nb">time</span>: 150.897s</code></pre></figure>
 
 <p>If your phone missbehave after finishing, just hard reboot it pressing power button for few seconds.</p>
 

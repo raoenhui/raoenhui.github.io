@@ -129,8 +129,7 @@
 
 <p>This badass script in python  worked well for me, hope it will help you too ;)</p>
 
-<figure class="highlight">
-  <pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/python</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/python</span>
 
 <span class="c"># Import smtplib for the actual sending function</span>
 <span class="kn">import</span> <span class="nn">smtplib</span>
@@ -162,13 +161,11 @@
 <span class="c"># envelope header.</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="s">'localhost'</span><span class="p">)</span>
 <span class="n">s</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="n">me</span><span class="p">,</span> <span class="p">[</span><span class="n">you</span><span class="p">],</span> <span class="n">msg</span><span class="o">.</span><span class="n">as_string</span><span class="p">())</span>
-<span class="n">s</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span></code></pre>
-</figure>
+<span class="n">s</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span></code></pre></figure>
 
 <p>if you do adjust following things you can send attachment too.</p>
 
-<figure class="highlight">
-  <pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">email.mime.image</span> <span class="kn">import</span> <span class="n">MIMEImage</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">email.mime.image</span> <span class="kn">import</span> <span class="n">MIMEImage</span>
 <span class="kn">from</span> <span class="nn">email.mime.multipart</span> <span class="kn">import</span> <span class="n">MIMEMultipart</span>
 
 <span class="nb">file</span><span class="o">=</span><span class="s">'/home/amey-xps/logs/server.out.png'</span>
@@ -177,8 +174,7 @@
 <span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="n">msg</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
 
-<span class="c"># I used image here , you can use diffrent file types with MIMEText, MIMEImage, MIMEAudio, MIMEBase</span></code></pre>
-</figure>
+<span class="c"># I used image here , you can use diffrent file types with MIMEText, MIMEImage, MIMEAudio, MIMEBase</span></code></pre></figure>
 
 <p>Happy coding ….. :)</p>
 

@@ -135,15 +135,12 @@
   <li>Install few things as below.</li>
 </ul>
 
-<figure class="highlight">
-  <pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>pip <span class="nb">install </span>selenium
-vim automation_testing.py</code></pre>
-</figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>pip <span class="nb">install </span>selenium
+vim automation_testing.py</code></pre></figure>
 
 <p>copy and paste below code, modify according to your requirement.</p>
 
-<figure class="highlight">
-  <pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
 <span class="kn">from</span> <span class="nn">selenium.webdriver.common.keys</span> <span class="kn">import</span> <span class="n">Keys</span>
 <span class="kn">from</span> <span class="nn">selenium.webdriver.common.desired_capabilities</span> <span class="kn">import</span> <span class="n">DesiredCapabilities</span>
 
@@ -184,13 +181,11 @@ vim automation_testing.py</code></pre>
                 <span class="k">print</span> <span class="s">"Done : "</span><span class="p">,</span> <span class="n">test_platform</span>
 
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
-        <span class="n">go_test</span><span class="p">()</span></code></pre>
-</figure>
+        <span class="n">go_test</span><span class="p">()</span></code></pre></figure>
 
 <p>Run the code, you will see something like below</p>
 
-<figure class="highlight">
-  <pre><code class="language-bash" data-lang="bash">amey@amey-xps:~/work/python<span class="nv">$ </span>python automated_test.py 
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">amey@amey-xps:~/work/python<span class="nv">$ </span>python automated_test.py 
 Enhui Rao - Google Search
 Done :  <span class="o">{</span><span class="s1">'os_version'</span>: <span class="s1">'xp'</span>, <span class="s1">'browser_version'</span>: <span class="s1">'7.0'</span>, <span class="s1">'os'</span>: <span class="s1">'Windows'</span>, <span class="s1">'browserstack.debug'</span>: <span class="s1">'true'</span>, <span class="s1">'browser'</span>: <span class="s1">'IE'</span><span class="o">}</span>
 Enhui Rao - Google zoeken
@@ -204,8 +199,7 @@ Done :  <span class="o">{</span><span class="s1">'device'</span>: <span class="s
 Enhui Rao - Google zoeken
 Done :  <span class="o">{</span><span class="s1">'device'</span>: <span class="s1">'iPad mini Retina'</span>, <span class="s1">'platform'</span>: <span class="s1">'MAC'</span>, <span class="s1">'browserName'</span>: <span class="s1">'iPad'</span>, <span class="s1">'browserstack.debug'</span>: <span class="s1">'true'</span><span class="o">}</span>
 Enhui Rao - Google zoeken
-Done :  <span class="o">{</span><span class="s1">'device'</span>: <span class="s1">'iPhone 5S'</span>, <span class="s1">'platform'</span>: <span class="s1">'MAC'</span>, <span class="s1">'browserName'</span>: <span class="s1">'iPhone'</span><span class="o">}</span></code></pre>
-</figure>
+Done :  <span class="o">{</span><span class="s1">'device'</span>: <span class="s1">'iPhone 5S'</span>, <span class="s1">'platform'</span>: <span class="s1">'MAC'</span>, <span class="s1">'browserName'</span>: <span class="s1">'iPhone'</span><span class="o">}</span></code></pre></figure>
 
 <p>Another Awesome thing browserstack provides is visual logs i.e Screenshots for test done by them, you just have to give <em>‘browserstack.debug’: ‘true’</em> as a extra parameter.</p>
 

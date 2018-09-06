@@ -132,20 +132,16 @@
 
 <p>###Checking for full database size on server :-</p>
 
-<figure class="highlight">
-  <pre><code class="language-sql" data-lang="sql"> 
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"> 
 <span class="k">SELECT</span> <span class="n">table_schema</span> <span class="nv">"Database Name"</span><span class="p">,</span> <span class="k">SUM</span><span class="p">(</span> <span class="n">data_length</span> <span class="o">+</span> <span class="n">index_length</span><span class="p">)</span>
  <span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span><span class="mi">1024</span> <span class="nv">"Size in GB"</span> <span class="k">FROM</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">TABLES</span>
- <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">table_schema</span><span class="p">;</span></code></pre>
-</figure>
+ <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">table_schema</span><span class="p">;</span></code></pre></figure>
 
 <p>###Checking in details with each table size in single schema :-</p>
 
-<figure class="highlight">
-  <pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="k">TABLE_NAME</span><span class="p">,</span> <span class="n">table_rows</span><span class="p">,</span> <span class="n">data_length</span><span class="p">,</span> <span class="n">index_length</span><span class="p">,</span> 
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="k">TABLE_NAME</span><span class="p">,</span> <span class="n">table_rows</span><span class="p">,</span> <span class="n">data_length</span><span class="p">,</span> <span class="n">index_length</span><span class="p">,</span> 
 <span class="n">round</span><span class="p">(((</span><span class="n">data_length</span> <span class="o">+</span> <span class="n">index_length</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span> <span class="nv">"Size in GB"</span>
-<span class="k">FROM</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">TABLES</span> <span class="k">WHERE</span> <span class="n">table_schema</span> <span class="o">=</span> <span class="nv">"your_schema_name"</span><span class="p">;</span></code></pre>
-</figure>
+<span class="k">FROM</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">TABLES</span> <span class="k">WHERE</span> <span class="n">table_schema</span> <span class="o">=</span> <span class="nv">"your_schema_name"</span><span class="p">;</span></code></pre></figure>
 
 <p><em>For checking the database size in MB just remove one ‘/1024’ from quries.</em></p>
 

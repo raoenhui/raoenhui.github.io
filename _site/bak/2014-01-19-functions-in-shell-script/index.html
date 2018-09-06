@@ -127,8 +127,7 @@
 
 <p>taking an example ,i need to fetch data from mysql again and again and have to write big repeated code again and again ,let’s write a function for that and just pass your query to it</p>
 
-<figure class="highlight">
-  <pre><code class="language-bash" data-lang="bash"><span class="c">#!/bin/sh</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/bin/sh</span>
  
 sql_exec<span class="o">()</span>
 <span class="o">{</span>
@@ -144,8 +143,7 @@ sql_exec<span class="o">()</span>
  
 <span class="nv">engr_count</span><span class="o">=</span><span class="k">$(</span>sql_exec <span class="s2">"select count(*) from my_table where job='ENGR'"</span><span class="k">)</span>
  
-<span class="nb">echo</span> <span class="s1">'total engineer count is '</span><span class="nv">$engr_count</span> <span class="s1">' this saved my code repeating '</span></code></pre>
-</figure>
+<span class="nb">echo</span> <span class="s1">'total engineer count is '</span><span class="nv">$engr_count</span> <span class="s1">' this saved my code repeating '</span></code></pre></figure>
 
 <p>Here i passed all the coming arguments to functions to mysql by $@ you can differentiate  arguments by $1 $2 $3 ….. $n</p>
 

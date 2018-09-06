@@ -56,7 +56,8 @@ permalink:   pretty
 
 kramdown:
   auto_ids: true
-  parse_block_html: true
+  parse_block_html: false
+  parse_span_html: false
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6

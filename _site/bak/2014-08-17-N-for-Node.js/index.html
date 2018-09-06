@@ -137,42 +137,33 @@
   <li>First thing install it, you gonna need NodeJS and <strong>npm</strong> (Node package manager), you will need it to  install diffrent node packages , packages are just like a gems in Ruby or Jars in Java.</li>
 </ul>
 
-<figure class="highlight">
-  <pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>apt-get update
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>apt-get update
 <span class="nb">sudo </span>apt-get <span class="nb">install </span>NodeJS
-<span class="nb">sudo </span>apt-get <span class="nb">install </span>npm</code></pre>
-</figure>
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>npm</code></pre></figure>
 
 <p>Walah .. you got all you want (y), not put the below code say in server.js</p>
 
-<figure class="highlight">
-  <pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"http"</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"http"</span><span class="p">);</span>
 
 <span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">response</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span><span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"text/plain"</span><span class="p">});</span>
   <span class="nx">response</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">"Hello World"</span><span class="p">);</span>
   <span class="nx">response</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
-<span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mi">8080</span><span class="p">);</span></code></pre>
-</figure>
+<span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mi">8080</span><span class="p">);</span></code></pre></figure>
 
 <p>Run it</p>
 
-<figure class="highlight">
-  <pre><code class="language-bash" data-lang="bash">node server.js</code></pre>
-</figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">node server.js</code></pre></figure>
 
 <p>But this gonna spawn the single threaded application for you sticking to only one core, we have quad, hexa, octa core processors now day, how node will adjust with it? well, node can do preety anything, <a href="http://NodeJS.org/api/cluster.html">Cluster</a> is there for you.</p>
 
 <p>install package with npm</p>
 
-<figure class="highlight">
-  <pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>npm <span class="nb">install </span>cluster</code></pre>
-</figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>npm <span class="nb">install </span>cluster</code></pre></figure>
 
 <p>and run below code say in cluster.js</p>
 
-<figure class="highlight">
-  <pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">cluster</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'cluster'</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">cluster</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'cluster'</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'http'</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">numCPUs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'os'</span><span class="p">).</span><span class="nx">cpus</span><span class="p">().</span><span class="nx">length</span><span class="p">;</span>
 
@@ -192,13 +183,11 @@
     <span class="nx">res</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
     <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s2">"hello world</span><span class="err">\</span><span class="s2">n"</span><span class="p">);</span>
   <span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mi">8080</span><span class="p">);</span>
-<span class="p">}</span></code></pre>
-</figure>
+<span class="p">}</span></code></pre></figure>
 
 <p>When i did a performacen testing of clustered code, it sucked all juice of my XPS, and fan was running like a Ferrari.</p>
 
-<figure class="highlight">
-  <pre><code class="language-bash" data-lang="bash">amey@amey-xps:~/work/node<span class="nv">$ </span>ab <span class="nt">-c</span> 8 <span class="nt">-k</span> <span class="nt">-n</span> 1000000 <span class="s2">"http://localhost:8080/"</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">amey@amey-xps:~/work/node<span class="nv">$ </span>ab <span class="nt">-c</span> 8 <span class="nt">-k</span> <span class="nt">-n</span> 1000000 <span class="s2">"http://localhost:8080/"</span>
 This is ApacheBench, Version 2.3 &lt;<span class="nv">$Revision</span>: 655654 <span class="nv">$&gt;</span>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
@@ -253,8 +242,7 @@ Percentage of the requests served within a certain <span class="nb">time</span> 
   95%      1
   98%      1
   99%      1
- 100%     28 <span class="o">(</span>longest request<span class="o">)</span></code></pre>
-</figure>
+ 100%     28 <span class="o">(</span>longest request<span class="o">)</span></code></pre></figure>
 
 <p>And i said Req/sec : <strong>13266.56</strong> Wow :)
 Loved NodeJS ♥</p>
@@ -264,8 +252,8 @@ Loved NodeJS ♥</p>
 <p>Happy coding .. :)</p>
 
 <p id="vidn">
-&lt;iframe style="height: 315px;width: 560px;text-align: center !important;" src="https://www.youtube.com/embed/ndKRjmA6WNA"  frameborder="0"&gt;
-&lt;/iframe&gt; 
+<iframe style="height: 315px;width: 560px;text-align: center !important;" src="https://www.youtube.com/embed/ndKRjmA6WNA" frameborder="0">
+</iframe> 
 </p>
 
             </div>

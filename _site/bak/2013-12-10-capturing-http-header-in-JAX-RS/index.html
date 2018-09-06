@@ -130,8 +130,7 @@
 
 <p>In this example we can have only the selected attribute we want , JAX-RS will have filter internally and return you the selected Attributes</p>
 
-<figure class="highlight">
-  <pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">javax.ws.rs.Consumes</span><span class="o">;</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">javax.ws.rs.Consumes</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">javax.ws.rs.GET</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">javax.ws.rs.Path</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">javax.ws.rs.Produces</span><span class="o">;</span>
@@ -160,21 +159,17 @@
 <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
 <span class="o">}</span>
 <span class="o">}</span>
- </code></pre>
-</figure>
+ </code></pre></figure>
 
 <p>This will going to print below output :</p>
 
-<figure class="highlight">
-  <pre><code class="language-bash" data-lang="bash">User Agent : Mozilla/5.0 <span class="o">(</span>Windows NT 6.1<span class="o">)</span> AppleWebKit/534.30 <span class="o">(</span>KHTML, like Gecko<span class="o">)</span> Chrome/12.0.742.112 Safari/534.30</code></pre>
-</figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">User Agent : Mozilla/5.0 <span class="o">(</span>Windows NT 6.1<span class="o">)</span> AppleWebKit/534.30 <span class="o">(</span>KHTML, like Gecko<span class="o">)</span> Chrome/12.0.742.112 Safari/534.30</code></pre></figure>
 
 <h3 id="context-example">@Context Example</h3>
 
 <p>@Context gives you the whole damn Request Header</p>
 
-<figure class="highlight">
-  <pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">javax.ws.rs.Consumes</span><span class="o">;</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">javax.ws.rs.Consumes</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">javax.ws.rs.GET</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">javax.ws.rs.Path</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">javax.ws.rs.Produces</span><span class="o">;</span>
@@ -208,20 +203,17 @@
  
 <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
 <span class="o">}</span>
-<span class="o">}</span></code></pre>
-</figure>
+<span class="o">}</span></code></pre></figure>
 
 <p>This will going to print below output :</p>
 
-<figure class="highlight">
-  <pre><code class="language-bash" data-lang="bash"><span class="nv">Accept</span><span class="o">==&gt;</span> text/html:application/xhtml+xml:application/xml<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.9:<span class="k">*</span>/<span class="k">*</span><span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.8:
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">Accept</span><span class="o">==&gt;</span> text/html:application/xhtml+xml:application/xml<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.9:<span class="k">*</span>/<span class="k">*</span><span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.8:
 accept-encoding<span class="o">==&gt;</span> <span class="nb">gzip</span>:deflate:
 accept-language<span class="o">==&gt;</span> en-US:en<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.5:
 <span class="nv">connection</span><span class="o">==&gt;</span> keep-alive:
 Content-Type<span class="o">==&gt;</span> 
 <span class="nv">host</span><span class="o">==&gt;</span> localhost:8080:
-user-agent<span class="o">==&gt;</span> Mozilla/5.0 <span class="o">(</span>Macintosh<span class="p">;</span> Intel Mac OS X 10.8<span class="p">;</span> rv:25.0<span class="o">)</span> Gecko/20100101 Firefox/25.0:</code></pre>
-</figure>
+user-agent<span class="o">==&gt;</span> Mozilla/5.0 <span class="o">(</span>Macintosh<span class="p">;</span> Intel Mac OS X 10.8<span class="p">;</span> rv:25.0<span class="o">)</span> Gecko/20100101 Firefox/25.0:</code></pre></figure>
 
 <p>Happy Coding .. :)</p>
 

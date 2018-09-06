@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2018-09-06T09:45:42+05:30</updated>
+<updated>2018-09-06T11:46:16+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>Enhui Rao</name>
@@ -202,8 +202,8 @@
 &lt;h4 id=&quot;支持嵌入样式&quot;&gt;支持嵌入样式&lt;/h4&gt;
 
 &lt;p&gt;&lt;details&gt;
-  &amp;lt;summary markdown=&quot;span&quot;&amp;gt;&lt;b&gt;Examples&lt;/b&gt;&amp;lt;/summary&amp;gt;
-  &amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/basic-css&quot;&gt;Basic css&lt;/a&gt;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;
+  &lt;summary&gt;&lt;b&gt;Examples&lt;/b&gt;&lt;/summary&gt;
+  &lt;ul&gt;&lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/basic-css&quot;&gt;Basic css&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 &lt;/details&gt;&lt;/p&gt;
 
 &lt;p&gt;我们绑定 &lt;a href=&quot;https://github.com/zeit/styled-jsx&quot;&gt;styled-jsx&lt;/a&gt; 来生成独立作用域的 CSS. 目标是支持 “shadow CSS”,但是 &lt;a href=&quot;https://github.com/w3c/webcomponents/issues/71&quot;&gt;不支持独立模块作用域的 JS&lt;/a&gt;.&lt;/p&gt;
@@ -239,10 +239,10 @@
 &lt;h4 id=&quot;内嵌样式&quot;&gt;内嵌样式&lt;/h4&gt;
 
 &lt;p&gt;&lt;details&gt;
-  &amp;lt;summary markdown=&quot;span&quot;&amp;gt;
+  &lt;summary&gt;
     &lt;b&gt;Examples&lt;/b&gt;
-    &amp;lt;/summary&amp;gt;
-  &amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-styled-components&quot;&gt;Styled components&lt;/a&gt;&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-styletron&quot;&gt;Styletron&lt;/a&gt;&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-glamor&quot;&gt;Glamor&lt;/a&gt;&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-glamorous&quot;&gt;Glamorous&lt;/a&gt;&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-cxs&quot;&gt;Cxs&lt;/a&gt;&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-aphrodite&quot;&gt;Aphrodite&lt;/a&gt;&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-fela&quot;&gt;Fela&lt;/a&gt;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;
+    &lt;/summary&gt;
+  &lt;ul&gt;&lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-styled-components&quot;&gt;Styled components&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-styletron&quot;&gt;Styletron&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-glamor&quot;&gt;Glamor&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-glamorous&quot;&gt;Glamorous&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-cxs&quot;&gt;Cxs&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-aphrodite&quot;&gt;Aphrodite&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-fela&quot;&gt;Fela&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 &lt;/details&gt;&lt;/p&gt;
 
 &lt;p&gt;有些情况可以使用 CSS 内嵌 JS 写法。如下所示：&lt;/p&gt;
@@ -278,11 +278,11 @@
 &lt;h3 id=&quot;生成head&quot;&gt;生成&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt;&lt;/h3&gt;
 
 &lt;p&gt;&lt;details&gt;
-  &amp;lt;summary markdown=&quot;span&quot;&amp;gt;&lt;b&gt;Examples&lt;/b&gt;&amp;lt;/summary&amp;gt;
-  &amp;lt;ul&amp;gt;
-    &amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/head-elements&quot;&gt;Head elements&lt;/a&gt;&amp;lt;/li&amp;gt;
-    &amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/layout-component&quot;&gt;Layout component&lt;/a&gt;&amp;lt;/li&amp;gt;
-  &amp;lt;/ul&amp;gt;
+  &lt;summary&gt;&lt;b&gt;Examples&lt;/b&gt;&lt;/summary&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/head-elements&quot;&gt;Head elements&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/layout-component&quot;&gt;Layout component&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/details&gt;&lt;/p&gt;
 
 &lt;p&gt;我们设置一个内置组件来装载&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt;到页面中。&lt;/p&gt;
@@ -324,8 +324,8 @@
 &lt;h3 id=&quot;获取数据以及组件生命周期&quot;&gt;获取数据以及组件生命周期&lt;/h3&gt;
 
 &lt;p&gt;&lt;details&gt;
-  &amp;lt;summary markdown=&quot;span&quot;&amp;gt;&lt;b&gt;Examples&lt;/b&gt;&amp;lt;/summary&amp;gt;
-  &amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/data-fetch&quot;&gt;Data fetch&lt;/a&gt;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;
+  &lt;summary&gt;&lt;b&gt;Examples&lt;/b&gt;&lt;/summary&gt;
+  &lt;ul&gt;&lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/data-fetch&quot;&gt;Data fetch&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 &lt;/details&gt;&lt;/p&gt;
 
 &lt;p&gt;如果你需要一个有状态、生命周期或有初始数据的 React 组件（而不是上面的无状态函数），如下所示：&lt;/p&gt;
@@ -402,10 +402,10 @@
 &lt;h4 id=&quot;link用法&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;Link&amp;gt;&lt;/code&gt;用法&lt;/h4&gt;
 
 &lt;p&gt;&lt;details&gt;
-  &amp;lt;summary markdown=&quot;span&quot;&amp;gt;&lt;b&gt;Examples&lt;/b&gt;&amp;lt;/summary&amp;gt;
-  &amp;lt;ul&amp;gt;
-    &amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/hello-world&quot;&gt;Hello World&lt;/a&gt;&amp;lt;/li&amp;gt;
-  &amp;lt;/ul&amp;gt;
+  &lt;summary&gt;&lt;b&gt;Examples&lt;/b&gt;&lt;/summary&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/hello-world&quot;&gt;Hello World&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/details&gt;&lt;/p&gt;
 
 &lt;p&gt;可以用 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;Link&amp;gt;&lt;/code&gt; 组件实现客户端的路由切换。&lt;/p&gt;
@@ -443,10 +443,10 @@
 &lt;h5 id=&quot;url-对象&quot;&gt;URL 对象&lt;/h5&gt;
 
 &lt;p&gt;&lt;details&gt;
-  &amp;lt;summary markdown=&quot;span&quot;&amp;gt;&lt;b&gt;Examples&lt;/b&gt;&amp;lt;/summary&amp;gt;
-  &amp;lt;ul&amp;gt;
-    &amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-url-object-routing&quot;&gt;With URL Object Routing&lt;/a&gt;&amp;lt;/li&amp;gt;
-  &amp;lt;/ul&amp;gt;
+  &lt;summary&gt;&lt;b&gt;Examples&lt;/b&gt;&lt;/summary&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-url-object-routing&quot;&gt;With URL Object Routing&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/details&gt;&lt;/p&gt;
 
 &lt;p&gt;组件&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;Link&amp;gt;&lt;/code&gt;接收 URL 对象，而且它会自动格式化生成 URL 字符串&lt;/p&gt;
@@ -533,11 +533,11 @@
 &lt;h4 id=&quot;命令式&quot;&gt;命令式&lt;/h4&gt;
 
 &lt;p&gt;&lt;details&gt;
-  &amp;lt;summary markdown=&quot;span&quot;&amp;gt;&lt;b&gt;Examples&lt;/b&gt;&amp;lt;/summary&amp;gt;
-  &amp;lt;ul&amp;gt;
-    &amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/using-router&quot;&gt;Basic routing&lt;/a&gt;&amp;lt;/li&amp;gt;
-    &amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-loading&quot;&gt;With a page loading indicator&lt;/a&gt;&amp;lt;/li&amp;gt;
-  &amp;lt;/ul&amp;gt;
+  &lt;summary&gt;&lt;b&gt;Examples&lt;/b&gt;&lt;/summary&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/using-router&quot;&gt;Basic routing&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-loading&quot;&gt;With a page loading indicator&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/details&gt;&lt;/p&gt;
 
 &lt;p&gt;你也可以用&lt;code class=&quot;highlighter-rouge&quot;&gt;next/router&lt;/code&gt;实现客户端路由切换&lt;/p&gt;
@@ -654,10 +654,10 @@
 &lt;h5 id=&quot;浅层路由&quot;&gt;浅层路由&lt;/h5&gt;
 
 &lt;p&gt;&lt;details&gt;
-  &amp;lt;summary markdown=&quot;span&quot;&amp;gt;&lt;b&gt;Examples&lt;/b&gt;&amp;lt;/summary&amp;gt;
-  &amp;lt;ul&amp;gt;
-    &amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-shallow-routing&quot;&gt;Shallow Routing&lt;/a&gt;&amp;lt;/li&amp;gt;
-  &amp;lt;/ul&amp;gt;
+  &lt;summary&gt;&lt;b&gt;Examples&lt;/b&gt;&lt;/summary&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-shallow-routing&quot;&gt;Shallow Routing&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/details&gt;&lt;/p&gt;
 
 &lt;p&gt;浅层路由允许你改变 URL 但是不执行&lt;code class=&quot;highlighter-rouge&quot;&gt;getInitialProps&lt;/code&gt;生命周期。你可以加载相同页面的 URL，得到更新后的路由属性&lt;code class=&quot;highlighter-rouge&quot;&gt;pathname&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;query&lt;/code&gt;，并不失去 state 状态。&lt;/p&gt;
@@ -696,10 +696,10 @@
 &lt;h4 id=&quot;高阶组件&quot;&gt;高阶组件&lt;/h4&gt;
 
 &lt;p&gt;&lt;details&gt;
-  &amp;lt;summary markdown=&quot;span&quot;&amp;gt;&lt;b&gt;Examples&lt;/b&gt;&amp;lt;/summary&amp;gt;
-  &amp;lt;ul&amp;gt;
-    &amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/using-with-router&quot;&gt;Using the &lt;code class=&quot;highlighter-rouge&quot;&gt;withRouter&lt;/code&gt; utility&lt;/a&gt;&amp;lt;/li&amp;gt;
-  &amp;lt;/ul&amp;gt;
+  &lt;summary&gt;&lt;b&gt;Examples&lt;/b&gt;&lt;/summary&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/using-with-router&quot;&gt;Using the `withRouter` utility&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/details&gt;&lt;/p&gt;
 
 &lt;p&gt;如果你想应用里每个组件都处理路由对象，你可以使用&lt;code class=&quot;highlighter-rouge&quot;&gt;withRouter&lt;/code&gt;高阶组件。下面是如何使用它：&lt;/p&gt;
@@ -735,8 +735,8 @@
 &lt;p&gt;⚠️ 只有生产环境才有此功能 ⚠️&lt;/p&gt;
 
 &lt;p&gt;&lt;details&gt;
-  &amp;lt;summary markdown=&quot;span&quot;&amp;gt;&lt;b&gt;Examples&lt;/b&gt;&amp;lt;/summary&amp;gt;
-  &amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-prefetching&quot;&gt;Prefetching&lt;/a&gt;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;
+  &lt;summary&gt;&lt;b&gt;Examples&lt;/b&gt;&lt;/summary&gt;
+  &lt;ul&gt;&lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-prefetching&quot;&gt;Prefetching&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 &lt;/details&gt;&lt;/p&gt;
 
 &lt;p&gt;Next.js 有允许你预加载页面的 API。&lt;/p&gt;
@@ -825,15 +825,15 @@
 &lt;h3 id=&quot;自定义服务端路由&quot;&gt;自定义服务端路由&lt;/h3&gt;
 
 &lt;p&gt;&lt;details&gt;
-  &amp;lt;summary markdown=&quot;span&quot;&amp;gt;&lt;b&gt;Examples&lt;/b&gt;&amp;lt;/summary&amp;gt;
-  &amp;lt;ul&amp;gt;
-    &amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/custom-server&quot;&gt;Basic custom server&lt;/a&gt;&amp;lt;/li&amp;gt;
-    &amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/custom-server-express&quot;&gt;Express integration&lt;/a&gt;&amp;lt;/li&amp;gt;
-    &amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/custom-server-hapi&quot;&gt;Hapi integration&lt;/a&gt;&amp;lt;/li&amp;gt;
-    &amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/custom-server-koa&quot;&gt;Koa integration&lt;/a&gt;&amp;lt;/li&amp;gt;
-    &amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/parameterized-routing&quot;&gt;Parameterized routing&lt;/a&gt;&amp;lt;/li&amp;gt;
-    &amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/ssr-caching&quot;&gt;SSR caching&lt;/a&gt;&amp;lt;/li&amp;gt;
-  &amp;lt;/ul&amp;gt;
+  &lt;summary&gt;&lt;b&gt;Examples&lt;/b&gt;&lt;/summary&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/custom-server&quot;&gt;Basic custom server&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/custom-server-express&quot;&gt;Express integration&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/custom-server-hapi&quot;&gt;Hapi integration&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/custom-server-koa&quot;&gt;Koa integration&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/parameterized-routing&quot;&gt;Parameterized routing&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/ssr-caching&quot;&gt;SSR caching&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/details&gt;&lt;/p&gt;
 
 &lt;p&gt;一般你使用&lt;code class=&quot;highlighter-rouge&quot;&gt;next start&lt;/code&gt;命令来启动 next 服务，你还可以编写代码来自定义路由，如使用路由正则等。&lt;/p&gt;
@@ -957,10 +957,10 @@
 &lt;h3 id=&quot;动态导入&quot;&gt;动态导入&lt;/h3&gt;
 
 &lt;p&gt;&lt;details&gt;
-  &amp;lt;summary markdown=&quot;span&quot;&amp;gt;&lt;b&gt;Examples&lt;/b&gt;&amp;lt;/summary&amp;gt;
-  &amp;lt;ul&amp;gt;
-    &amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-dynamic-import&quot;&gt;With Dynamic Import&lt;/a&gt;&amp;lt;/li&amp;gt;
-  &amp;lt;/ul&amp;gt;
+  &lt;summary&gt;&lt;b&gt;Examples&lt;/b&gt;&lt;/summary&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-dynamic-import&quot;&gt;With Dynamic Import&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/details&gt;&lt;/p&gt;
 
 &lt;p&gt;ext.js 支持 JavaScript 的 TC39 提议&lt;a href=&quot;https://github.com/tc39/proposal-dynamic-import&quot;&gt;dynamic import proposal&lt;/a&gt;。你可以动态导入 JavaScript 模块（如 React 组件）。&lt;/p&gt;
@@ -1052,9 +1052,9 @@
 &lt;h3 id=&quot;自定义-app&quot;&gt;自定义 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;App&amp;gt;&lt;/code&gt;&lt;/h3&gt;
 
 &lt;p&gt;&lt;details&gt;
-  &amp;lt;summary markdown=&quot;span&quot;&amp;gt;&lt;b&gt;Examples&lt;/b&gt;&amp;lt;/summary&amp;gt;
-  &amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-app-layout&quot;&gt;Using &lt;code class=&quot;highlighter-rouge&quot;&gt;_app.js&lt;/code&gt; for layout&lt;/a&gt;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;
-  &amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-componentdidcatch&quot;&gt;Using &lt;code class=&quot;highlighter-rouge&quot;&gt;_app.js&lt;/code&gt; to override &lt;code class=&quot;highlighter-rouge&quot;&gt;componentDidCatch&lt;/code&gt;&lt;/a&gt;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;
+  &lt;summary&gt;&lt;b&gt;Examples&lt;/b&gt;&lt;/summary&gt;
+  &lt;ul&gt;&lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-app-layout&quot;&gt;Using `_app.js` for layout&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+  &lt;ul&gt;&lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-componentdidcatch&quot;&gt;Using `_app.js` to override `componentDidCatch`&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 &lt;/details&gt;&lt;/p&gt;
 
 &lt;p&gt;组件来初始化页面。你可以重写它来控制页面初始化，如下面的事：&lt;/p&gt;
@@ -1095,9 +1095,9 @@
 &lt;h3 id=&quot;自定义-document&quot;&gt;自定义 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;Document&amp;gt;&lt;/code&gt;&lt;/h3&gt;
 
 &lt;p&gt;&lt;details&gt;
-  &amp;lt;summary markdown=&quot;span&quot;&amp;gt;&lt;b&gt;Examples&lt;/b&gt;&amp;lt;/summary&amp;gt;
-  &amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-styled-components&quot;&gt;Styled components custom document&lt;/a&gt;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;
-  &amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-amp&quot;&gt;Google AMP&lt;/a&gt;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;
+  &lt;summary&gt;&lt;b&gt;Examples&lt;/b&gt;&lt;/summary&gt;
+  &lt;ul&gt;&lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-styled-components&quot;&gt;Styled components custom document&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+  &lt;ul&gt;&lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-amp&quot;&gt;Google AMP&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 &lt;/details&gt;&lt;/p&gt;
 
 &lt;ul&gt;
@@ -1314,8 +1314,8 @@
 &lt;h3 id=&quot;自定义-webpack-配置&quot;&gt;自定义 webpack 配置&lt;/h3&gt;
 
 &lt;p&gt;&lt;details&gt;
-  &amp;lt;summary markdown=&quot;span&quot;&amp;gt;&lt;b&gt;Examples&lt;/b&gt;&amp;lt;/summary&amp;gt;
-  &amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-webpack-bundle-analyzer&quot;&gt;Custom webpack bundle analyzer&lt;/a&gt;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;
+  &lt;summary&gt;&lt;b&gt;Examples&lt;/b&gt;&lt;/summary&gt;
+  &lt;ul&gt;&lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-webpack-bundle-analyzer&quot;&gt;Custom webpack bundle analyzer&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 &lt;/details&gt;&lt;/p&gt;
 
 &lt;p&gt;可以使用些一些常见的模块&lt;/p&gt;
@@ -1402,8 +1402,8 @@
 &lt;h3 id=&quot;自定义-babel-配置&quot;&gt;自定义 babel 配置&lt;/h3&gt;
 
 &lt;p&gt;&lt;details&gt;
-  &amp;lt;summary markdown=&quot;span&quot;&amp;gt;&lt;b&gt;Examples&lt;/b&gt;&amp;lt;/summary&amp;gt;
-  &amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-custom-babel-config&quot;&gt;Custom babel configuration&lt;/a&gt;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;
+  &lt;summary&gt;&lt;b&gt;Examples&lt;/b&gt;&lt;/summary&gt;
+  &lt;ul&gt;&lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-custom-babel-config&quot;&gt;Custom babel configuration&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 &lt;/details&gt;&lt;/p&gt;
 
 &lt;p&gt;为了扩展方便我们使用&lt;code class=&quot;highlighter-rouge&quot;&gt;babel&lt;/code&gt;，可以在应用根目录新建&lt;code class=&quot;highlighter-rouge&quot;&gt;.babelrc&lt;/code&gt;文件，该文件可配置。&lt;/p&gt;
@@ -1541,8 +1541,8 @@ next start
 &lt;h2 id=&quot;导出静态页面&quot;&gt;导出静态页面&lt;/h2&gt;
 
 &lt;p&gt;&lt;details&gt;
-  &amp;lt;summary markdown=&quot;span&quot;&amp;gt;&lt;b&gt;Examples&lt;/b&gt;&amp;lt;/summary&amp;gt;
-  &amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-static-export&quot;&gt;Static export&lt;/a&gt;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;
+  &lt;summary&gt;&lt;b&gt;Examples&lt;/b&gt;&lt;/summary&gt;
+  &lt;ul&gt;&lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-static-export&quot;&gt;Static export&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 &lt;/details&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;next export&lt;/code&gt;可以输出一个 Next.js 应用作为静态资源应用而不依靠 Node.js 服务。
@@ -1638,8 +1638,8 @@ next &lt;span class=&quot;nb&quot;&gt;export&lt;/span&gt;
 &lt;h2 id=&quot;多-zone&quot;&gt;多 zone&lt;/h2&gt;
 
 &lt;p&gt;&lt;details&gt;
-  &amp;lt;summary markdown=&quot;span&quot;&amp;gt;&lt;b&gt;Examples&lt;/b&gt;&amp;lt;/summary&amp;gt;
-  &amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-zones&quot;&gt;With Zones&lt;/a&gt;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;
+  &lt;summary&gt;&lt;b&gt;Examples&lt;/b&gt;&lt;/summary&gt;
+  &lt;ul&gt;&lt;li&gt;&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-zones&quot;&gt;With Zones&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 &lt;/details&gt;&lt;/p&gt;
 
 &lt;p&gt;一个 zone 时一个单独的 Next.js 应用。如果你有很多 zone，你可以合并成一个应用。&lt;/p&gt;
@@ -1699,125 +1699,123 @@ next &lt;span class=&quot;nb&quot;&gt;export&lt;/span&gt;
 
 &lt;details&gt;
   &lt;summary&gt;这个产品可以用于生产环境吗？&lt;/summary&gt;
-  &lt;p&gt;https://zeit.co 都是一直用 Next.js 写的。&lt;/p&gt;
+  &lt;div&gt;
+  https://zeit.co 都是一直用 Next.js 写的。
 
-  &lt;p&gt;它的开发体验和终端用户体验都很好，所以我们决定开源出来给大家共享。&lt;/p&gt;
+  它的开发体验和终端用户体验都很好，所以我们决定开源出来给大家共享。
+  &lt;/div&gt;
 &lt;/details&gt;
 
 &lt;details&gt;
   &lt;summary&gt;体积多大？&lt;/summary&gt;
+&lt;div&gt;
+客户端大小根据应用需求不一样大小也不一样。
 
-  &lt;p&gt;客户端大小根据应用需求不一样大小也不一样。&lt;/p&gt;
-
-  &lt;p&gt;一个最简单 Next 应该用 gzip 压缩后大约65kb&lt;/p&gt;
-
+一个最简单 Next 应该用 gzip 压缩后大约65kb
+&lt;/div&gt;
 &lt;/details&gt;
 
 &lt;details&gt;
   &lt;summary&gt;这个像 &lt;code class=&quot;highlighter-rouge&quot;&gt;create-react-app&lt;/code&gt;?&lt;/summary&gt;
+&lt;div&gt;
+是或不是.
 
-  &lt;p&gt;是或不是.&lt;/p&gt;
+是，因为它让你的 SSR 开发更简单。
 
-  &lt;p&gt;是，因为它让你的 SSR 开发更简单。&lt;/p&gt;
+不是，因为它规定了一定的目录结构，使我们能做以下更高级的事：
+- 服务端渲染
+- 自动代码分割
 
-  &lt;p&gt;不是，因为它规定了一定的目录结构，使我们能做以下更高级的事：&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;服务端渲染&lt;/li&gt;
-    &lt;li&gt;自动代码分割&lt;/li&gt;
-  &lt;/ul&gt;
+此外，Next.js 还提供两个内置特性：
+- 路由与懒加载组件: &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;Link&amp;gt;&lt;/code&gt; (通过引入 &lt;code class=&quot;highlighter-rouge&quot;&gt;next/link&lt;/code&gt;)
+- 修改&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt;的组件: &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;Head&amp;gt;&lt;/code&gt; (通过引入 &lt;code class=&quot;highlighter-rouge&quot;&gt;next/head&lt;/code&gt;)
 
-  &lt;p&gt;此外，Next.js 还提供两个内置特性：&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;路由与懒加载组件: &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;Link&amp;gt;&lt;/code&gt; (通过引入 &lt;code class=&quot;highlighter-rouge&quot;&gt;next/link&lt;/code&gt;)&lt;/li&gt;
-    &lt;li&gt;修改&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt;的组件: &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;Head&amp;gt;&lt;/code&gt; (通过引入 &lt;code class=&quot;highlighter-rouge&quot;&gt;next/head&lt;/code&gt;)&lt;/li&gt;
-  &lt;/ul&gt;
-
-  &lt;p&gt;如果你想写共用组件，可以嵌入 Next.js 应用和 React 应用中，推荐使用&lt;code class=&quot;highlighter-rouge&quot;&gt;create-react-app&lt;/code&gt;。你可以更改&lt;code class=&quot;highlighter-rouge&quot;&gt;import&lt;/code&gt;保持代码清晰。&lt;/p&gt;
-
+如果你想写共用组件，可以嵌入 Next.js 应用和 React 应用中，推荐使用&lt;code class=&quot;highlighter-rouge&quot;&gt;create-react-app&lt;/code&gt;。你可以更改&lt;code class=&quot;highlighter-rouge&quot;&gt;import&lt;/code&gt;保持代码清晰。
+&lt;/div&gt;
 &lt;/details&gt;
 
 &lt;details&gt;
   &lt;summary&gt;怎么解决 CSS 嵌入 JS 问题?&lt;/summary&gt;
-
-  &lt;p&gt;Next.js 自带&lt;a href=&quot;https://github.com/zeit/styled-jsx&quot;&gt;styled-jsx&lt;/a&gt;库支持 CSS 嵌入 JS。而且你可以选择其他嵌入方法到你的项目中，可参考文档&lt;a href=&quot;#css-in-js&quot;&gt;as mentioned before&lt;/a&gt;。&lt;/p&gt;
-
+&lt;div&gt;
+Next.js 自带&lt;a href=&quot;https://github.com/zeit/styled-jsx&quot;&gt;styled-jsx&lt;/a&gt;库支持 CSS 嵌入 JS。而且你可以选择其他嵌入方法到你的项目中，可参考文档&lt;a href=&quot;#css-in-js&quot;&gt;as mentioned before&lt;/a&gt;。
+&lt;/div&gt;
 &lt;/details&gt;
 
 &lt;details&gt;
   &lt;summary&gt;哪些语法会被转换？怎么转换它们？&lt;/summary&gt;
+&lt;div&gt;
+我们遵循 V8 引擎的，如今 V8 引擎广泛支持 ES6 语法以及&lt;code class=&quot;highlighter-rouge&quot;&gt;async&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;await&lt;/code&gt;语法，所以我们支持转换它们。但是 V8 引擎不支持修饰器语法，所以我们也不支持转换这语法。
 
-  &lt;p&gt;我们遵循 V8 引擎的，如今 V8 引擎广泛支持 ES6 语法以及&lt;code class=&quot;highlighter-rouge&quot;&gt;async&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;await&lt;/code&gt;语法，所以我们支持转换它们。但是 V8 引擎不支持修饰器语法，所以我们也不支持转换这语法。&lt;/p&gt;
-
-  &lt;p&gt;可以参照&lt;a href=&quot;https://github.com/zeit/next.js/blob/master/server/build/webpack.js#L79&quot;&gt;这些&lt;/a&gt; 以及 &lt;a href=&quot;https://github.com/zeit/next.js/issues/26&quot;&gt;这些&lt;/a&gt;&lt;/p&gt;
-
+可以参照&lt;a href=&quot;https://github.com/zeit/next.js/blob/master/server/build/webpack.js#L79&quot;&gt;这些&lt;/a&gt; 以及 &lt;a href=&quot;https://github.com/zeit/next.js/issues/26&quot;&gt;这些&lt;/a&gt;
+&lt;/div&gt;
 &lt;/details&gt;
 
 &lt;details&gt;
   &lt;summary&gt;为什么使用新路由?&lt;/summary&gt;
+&lt;div&gt;
+Next.js 的特别之处如下所示:
 
-  &lt;p&gt;Next.js 的特别之处如下所示:&lt;/p&gt;
+- 路由不需要被提前知道
+- 路由总是被懒加载
+- 顶层组件可以定义生命周期&lt;code class=&quot;highlighter-rouge&quot;&gt;getInitialProps&lt;/code&gt;来阻止路由加载（当服务端渲染或路由懒加载时）
 
-  &lt;ul&gt;
-    &lt;li&gt;路由不需要被提前知道&lt;/li&gt;
-    &lt;li&gt;路由总是被懒加载&lt;/li&gt;
-    &lt;li&gt;顶层组件可以定义生命周期&lt;code class=&quot;highlighter-rouge&quot;&gt;getInitialProps&lt;/code&gt;来阻止路由加载（当服务端渲染或路由懒加载时）&lt;/li&gt;
-  &lt;/ul&gt;
+因此,我们可以介绍一个非常简单的路由方法,它由下面两部分组成:
 
-  &lt;p&gt;因此,我们可以介绍一个非常简单的路由方法,它由下面两部分组成:&lt;/p&gt;
+- 每个顶层组件都将会收到一个&lt;code class=&quot;highlighter-rouge&quot;&gt;url&lt;/code&gt;对象，来检查 url 或修改历史记录
+- &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;Link /&amp;gt;&lt;/code&gt;组件用于包装如(&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;a/&amp;gt;&lt;/code&gt;)标签的元素容器，来执行客户端转换。
 
-  &lt;ul&gt;
-    &lt;li&gt;每个顶层组件都将会收到一个&lt;code class=&quot;highlighter-rouge&quot;&gt;url&lt;/code&gt;对象，来检查 url 或修改历史记录&lt;/li&gt;
-    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;Link /&amp;gt;&lt;/code&gt;组件用于包装如(&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;a/&amp;gt;&lt;/code&gt;)标签的元素容器，来执行客户端转换。&lt;/li&gt;
-  &lt;/ul&gt;
-
-  &lt;p&gt;我们使用了些有趣的场景来测试路由的灵活性，例如，可查看&lt;a href=&quot;https://github.com/zeit/nextgram&quot;&gt;nextgram&lt;/a&gt;。&lt;/p&gt;
-
+我们使用了些有趣的场景来测试路由的灵活性，例如，可查看&lt;a href=&quot;https://github.com/zeit/nextgram&quot;&gt;nextgram&lt;/a&gt;。
+&lt;/div&gt;
 &lt;/details&gt;
 
 &lt;details&gt;
-  &lt;summary&gt;我怎么定义自定义路由?&lt;/summary&gt;
+&lt;summary&gt;我怎么定义自定义路由?&lt;/summary&gt;
+&lt;div&gt;
+我们通过请求处理来&lt;a href=&quot;#custom-server-and-routing&quot;&gt;添加&lt;/a&gt;任意 URL 与任意组件之前的映射关系。
 
-  &lt;p&gt;我们通过请求处理来&lt;a href=&quot;#custom-server-and-routing&quot;&gt;添加&lt;/a&gt;任意 URL 与任意组件之前的映射关系。&lt;/p&gt;
-
-  &lt;p&gt;在客户端，我们&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;Link&amp;gt;&lt;/code&gt;组件有个属性&lt;code class=&quot;highlighter-rouge&quot;&gt;as&lt;/code&gt;，可以装饰改变获取到的 URL。&lt;/p&gt;
+在客户端，我们&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;Link&amp;gt;&lt;/code&gt;组件有个属性&lt;code class=&quot;highlighter-rouge&quot;&gt;as&lt;/code&gt;，可以装饰改变获取到的 URL。
+&lt;/div&gt;
 &lt;/details&gt;
 
 &lt;details&gt;
-  &lt;summary&gt;怎么获取数据?&lt;/summary&gt;
-
-  &lt;p&gt;这由你决定。&lt;code class=&quot;highlighter-rouge&quot;&gt;getInitialProps&lt;/code&gt;是一个异步函数&lt;code class=&quot;highlighter-rouge&quot;&gt;async&lt;/code&gt;（也就是函数将会返回个&lt;code class=&quot;highlighter-rouge&quot;&gt;Promise&lt;/code&gt;）。你可以在任意位置获取数据。&lt;/p&gt;
+&lt;summary&gt;怎么获取数据?&lt;/summary&gt;
+&lt;div&gt;
+这由你决定。&lt;code class=&quot;highlighter-rouge&quot;&gt;getInitialProps&lt;/code&gt;是一个异步函数&lt;code class=&quot;highlighter-rouge&quot;&gt;async&lt;/code&gt;（也就是函数将会返回个&lt;code class=&quot;highlighter-rouge&quot;&gt;Promise&lt;/code&gt;）。你可以在任意位置获取数据。
+&lt;/div&gt;
 &lt;/details&gt;
 
 &lt;details&gt;
   &lt;summary&gt;我可以使用 GraphQL 吗?&lt;/summary&gt;
-
-  &lt;p&gt;是的! 这里有个例子&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-apollo&quot;&gt;Apollo&lt;/a&gt;.&lt;/p&gt;
-
+&lt;div&gt;
+是的! 这里有个例子&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-apollo&quot;&gt;Apollo&lt;/a&gt;.
+&lt;/div&gt;
 &lt;/details&gt;
 
 &lt;details&gt;
-  &lt;summary&gt;我可以使用 Redux 吗?&lt;/summary&gt;
-
-  &lt;p&gt;是的! 这里有个&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-redux&quot;&gt;例子&lt;/a&gt;&lt;/p&gt;
+&lt;summary&gt;我可以使用 Redux 吗?&lt;/summary&gt;
+&lt;div&gt;
+是的! 这里有个&lt;a href=&quot;https://github.com/zeit/next.js/tree/7.0.0-canary.11/examples/with-redux&quot;&gt;例子&lt;/a&gt;
+&lt;/div&gt;
 &lt;/details&gt;
 
 &lt;details&gt;
-  &lt;summary&gt;我可以在 Next 应用中使用我喜欢的 Javascript 库或工具包吗?&lt;/summary&gt;
-
-  &lt;p&gt;从我们第一次发版就已经提供&lt;strong&gt;很多&lt;/strong&gt;例子，你可以查看这些&lt;a href=&quot;./examples&quot;&gt;例子&lt;/a&gt;。&lt;/p&gt;
+&lt;summary&gt;我可以在 Next 应用中使用我喜欢的 Javascript 库或工具包吗?&lt;/summary&gt;
+&lt;div&gt;
+从我们第一次发版就已经提供&lt;strong&gt;很多&lt;/strong&gt;例子，你可以查看这些&lt;a href=&quot;./examples&quot;&gt;例子&lt;/a&gt;。
+&lt;/div&gt;
 &lt;/details&gt;
 
 &lt;details&gt;
-  &lt;summary&gt;什么启发我们做这个?&lt;/summary&gt;
+&lt;summary&gt;什么启发我们做这个?&lt;/summary&gt;
+&lt;div&gt;
+我们实现的大部分目标都是通过 Guillermo Rauch 的&lt;a href=&quot;http://rauchg.com/2014/7-principles-of-rich-web-applications/&quot;&gt;Web 应用的7原则&lt;/a&gt;来启发出的。
 
-  &lt;p&gt;我们实现的大部分目标都是通过 Guillermo Rauch 的&lt;a href=&quot;http://rauchg.com/2014/7-principles-of-rich-web-applications/&quot;&gt;Web 应用的7原则&lt;/a&gt;来启发出的。&lt;/p&gt;
+PHP 的易用性也是个很好的灵感来源，我们觉得 Next.js 可以替代很多需要用 PHP 输出 HTML 的场景。
 
-  &lt;p&gt;PHP 的易用性也是个很好的灵感来源，我们觉得 Next.js 可以替代很多需要用 PHP 输出 HTML 的场景。&lt;/p&gt;
+与 PHP 不同的是，我们得利于 ES6 模块系统，每个文件会输出一个&lt;strong&gt;组件或方法&lt;/strong&gt;，以便可以轻松的导入用于懒加载和测试
 
-  &lt;p&gt;与 PHP 不同的是，我们得利于 ES6 模块系统，每个文件会输出一个&lt;strong&gt;组件或方法&lt;/strong&gt;，以便可以轻松的导入用于懒加载和测试&lt;/p&gt;
-
-  &lt;p&gt;我们研究 React 的服务器渲染时并没有花费很大的步骤，因为我们发现一个类似于 Next.js 的产品，React 作者 Jordan Walke 写的&lt;a href=&quot;https://github.com/facebookarchive/react-page&quot;&gt;react-page&lt;/a&gt; (现在已经废弃)&lt;/p&gt;
-
+我们研究 React 的服务器渲染时并没有花费很大的步骤，因为我们发现一个类似于 Next.js 的产品，React 作者 Jordan Walke 写的&lt;a href=&quot;https://github.com/facebookarchive/react-page&quot;&gt;react-page&lt;/a&gt; (现在已经废弃)
+&lt;/div&gt;
 &lt;/details&gt;
 
 &lt;p&gt;&lt;a id=&quot;contributing&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -2669,20 +2667,17 @@ npm publish
 &lt;p&gt;let是ES6中新增关键字。
 它的作用类似于var，用来声明变量，但是所声明的变量，只在let命令所在的代码块内有效。&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;
-  &lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*E1*/&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*E1*/&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&amp;lt;br/&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&amp;lt;br/&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Uncaught ReferenceError: b is not defined&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/figure&gt;
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&amp;lt;br/&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Uncaught ReferenceError: b is not defined&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Example2&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;
-  &lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*E2*/&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*E2*/&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -2693,26 +2688,22 @@ npm publish
   &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 5&lt;/span&gt;
   &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 20&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/figure&gt;
+&lt;span class=&quot;nx&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Q1：用let声明a变量默认为5，在if判断中let声明a为10，看a输出结果。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;
-  &lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*Exercises1*/&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*Exercises1*/&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//5&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/figure&gt;
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//5&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;for循环的计数器，就很合适使用let命令。&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;
-  &lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*E3*/&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*E3*/&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -2727,27 +2718,23 @@ npm publish
     &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]();&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;
-&lt;/figure&gt;
+&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]();&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;const&quot;&gt;const&lt;/h3&gt;
 &lt;p&gt;const 声明的是常量，一旦声明，值将是不可变的。&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;
-  &lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;PI&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.1415&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;PI&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.1415&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;PI&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 3.1415&lt;/span&gt;
  
 &lt;span class=&quot;nx&quot;&gt;PI&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;PI&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 3.1415&lt;/span&gt;
  
 &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;PI&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;PI&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 3.1415&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/figure&gt;
+&lt;span class=&quot;nx&quot;&gt;PI&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 3.1415&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;const 也具有块级作用域&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;
-  &lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*E4*/&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*E4*/&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;max&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -2756,8 +2743,7 @@ npm publish
 &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;max&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//5&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/figure&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;ul&gt;
   &lt;li&gt;const 不可重复声明&lt;/li&gt;
@@ -2765,41 +2751,35 @@ npm publish
 
 &lt;p&gt;/* E5*/&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;
-  &lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
  
 &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Goodbye!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//cli:Duplicate declaration &quot;age&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/figure&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//cli:Duplicate declaration &quot;age&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;const 指令指向变量所在的地址，所以对该变量进行属性设置是可行的（未改变变量地址），如果想完全不可变化（包括属性），那么可以使用冻结&lt;/p&gt;
 
 &lt;p&gt;/* E6*/&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;
-  &lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;C1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;C1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;C1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;C1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 1 &lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;C1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// cli: C1 = {};  // 报错  重新赋值，地址改变&lt;/span&gt;
 
 &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;C2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;freeze&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({});&lt;/span&gt; 
 &lt;span class=&quot;nx&quot;&gt;C2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
-&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;C2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//Uncaught TypeError: Can't add property a, object is not extensible&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/figure&gt;
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;C2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//Uncaught TypeError: Can't add property a, object is not extensible&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Q2:在if (true) { 声明一个const变量a，并为赋值为5， }在块级作用域中和外面，分别打印变量a看结果。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;
-  &lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*Exercises2*/&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*Exercises2*/&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'a1:'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'a2:'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//Uncaught ReferenceError: a is not defined&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/figure&gt;
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'a2:'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//Uncaught ReferenceError: a is not defined&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;是否包含字符串三种新方法
 传统上，JavaScript只有 indexOf 方法，可以用来确定一个字符串是否包含在另一个字符串中。ES6又提供了三种新方法。&lt;/p&gt;
@@ -2809,46 +2789,38 @@ npm publish
   &lt;li&gt;endsWith()：返回布尔值，表示参数字符串是否在源字符串的尾部。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;
-  &lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello world!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello world!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
  
 &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;startsWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;endsWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;includes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;o&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/figure&gt;
+&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;includes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;o&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;这三个方法都支持第二个参数，表示开始搜索的位置。&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;上面代码表示，使用第二个参数n时，endsWith 的行为与其他两个方法有所不同。它针对前n个字符，而其他两个方法针对从第n个位置直到字符串结束。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;
-  &lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello world!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello world!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
  
 &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;startsWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;world&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;endsWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;includes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/figure&gt;
+&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;includes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;repeat()原字符串重复&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;
-  &lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;x&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;x&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;repeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &quot;xxx&quot;&lt;/span&gt;
  
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;str1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;repeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &quot;hellohello&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/figure&gt;
+&lt;span class=&quot;nx&quot;&gt;str1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;repeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &quot;hellohello&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;标签模板
 模板字符串前面有一个标识名tag，它是一个函数。整个表达式的返回值，就是tag函数处理模板字符串后的返回值。&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;
-  &lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
  
-&lt;span class=&quot;nx&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`Hello &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; world &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/figure&gt;
+&lt;span class=&quot;nx&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`Hello &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; world &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;tag函数所有参数的实际值如下。&lt;/p&gt;
 &lt;ul&gt;
@@ -2859,14 +2831,11 @@ npm publish
 
 &lt;p&gt;也就是说，tag函数实际上以下面的形式调用。&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;
-  &lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Hello '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;' world '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Hello '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;' world '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;tag用法&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;
-  &lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*E7*/&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*E7*/&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
  
@@ -2884,21 +2853,18 @@ npm publish
 &lt;span class=&quot;c1&quot;&gt;// &quot; world &quot;&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// 15&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// 50&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// &quot;OK&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/figure&gt;
+&lt;span class=&quot;c1&quot;&gt;// &quot;OK&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;模板字符串可以是原始的
 ES6还为原生的String对象，提供了一个raw方法。
 若使用String.raw 作为模板字符串的前缀，则模板字符串可以是原始(raw)的。反斜线也不再是特殊字符，\n 也不会被解释成换行符：&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;
-  &lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*E8*/&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/*E8*/&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;raw&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Not a newline: &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;n'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;raw&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Not a newline: &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;n'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;
 
  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;raw&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;raw&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`Not a newline: \n`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;raw&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Not a newline: &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;n'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/figure&gt;
+ &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;raw&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Not a newline: &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;n'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;有兴趣的小伙伴们还可以看下下面文档:&lt;/p&gt;
 
@@ -2932,7 +2898,7 @@ ES6还为原生的String对象，提供了一个raw方法。
   <category scheme="https://raoenhui.github.io/tags/#Es6" term="Es6" />
   <content type="html">
   
-    &lt;h1 id=&quot;ecmascript-6-gitioes6features&quot;&gt;ECMAScript 6 &lt;sup&gt;&lt;a href=&quot;http://git.io/es6features&quot;&gt;git.io/es6features&lt;/a&gt;&lt;/sup&gt;&lt;/h1&gt;
+    &lt;h1 id=&quot;ecmascript-6-gitioes6featureshttpgitioes6features&quot;&gt;ECMAScript 6 &lt;sup&gt;[git.io/es6features](http://git.io/es6features)&lt;/sup&gt;&lt;/h1&gt;
 
 &lt;h2 id=&quot;介绍&quot;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;ECMAScript 6,2015年也被称为ECMAScript 标准的最新版本。标志着最新的语言，是及2009年ES5发布后相继6年出的版本。这些功能的实现主要的JavaScript引擎统计如右边链接(现在正在完善)(http://kangax.github.io/es5-compat-table/es6/)&lt;/p&gt;
@@ -2971,8 +2937,7 @@ ES6还为原生的String对象，提供了一个raw方法。
 
 &lt;p&gt;箭头函数简单的说是用＝&amp;gt;语法。其语法的相关特性类似于c,Java 8和CoffeeScript。他们同时支持声明块体以及表达身体的返回值的表达式。与方法不同，箭头函数分享了相同语法的this以及它周边代码&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;
-  &lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;// Expression bodies
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;// Expression bodies
 var odds &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; evens.map&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;v &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; v + 1&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 var nums &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; evens.map&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;v, i&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; v + i&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 var pairs &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; evens.map&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;v &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;({&lt;/span&gt;even: v, odd: v + 1&lt;span class=&quot;o&quot;&gt;}))&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -2991,8 +2956,7 @@ var bob &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&qu
     this._friends.forEach&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;f &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
       console.log&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;this._name + &lt;span class=&quot;s2&quot;&gt;&quot; knows &quot;&lt;/span&gt; + f&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/figure&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;ES5与ES6对比&lt;/p&gt;
 
