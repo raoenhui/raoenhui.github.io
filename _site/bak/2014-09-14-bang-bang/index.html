@@ -131,61 +131,85 @@ Anyway <strong>sudo !!</strong>  is here to rescue you :)</p>
 
 <p><img src="https://raoenhui.github.io/images/bang-bang.jpg" /></p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">amey@amey-xps:~/<span class="nv">$ </span><span class="nb">touch</span> /etc/apache2/apache2.conf 
+<figure class="highlight">
+  <pre><code class="language-bash" data-lang="bash">amey@amey-xps:~/<span class="nv">$ </span><span class="nb">touch</span> /etc/apache2/apache2.conf 
 <span class="nb">touch</span>: cannot <span class="nb">touch</span> ‘/etc/apache2/apache2.conf’: Permission denied
 amey@amey-xps:~/work/blog/codeinventory.github.io/_posts<span class="nv">$ </span><span class="nb">sudo</span> <span class="o">!!</span>
 <span class="nb">sudo touch</span> /etc/apache2/apache2.conf 
 <span class="o">[</span><span class="nb">sudo</span><span class="o">]</span> password <span class="k">for </span>amey: 
-amey@amey-xps:~/<span class="nv">$ </span></code></pre></figure>
+amey@amey-xps:~/<span class="nv">$ </span></code></pre>
+</figure>
 
 <p>Not only <em>sudo</em>, Bang (!) can do may more things &lt;3</p>
 
 <h2 id="repeating-commands">Repeating Commands</h2>
 <h3 id="repeat-last-command">Repeat last command</h3>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">!!</span></code></pre></figure>
+<figure class="highlight">
+  <pre><code class="language-bash" data-lang="bash"><span class="o">!!</span></code></pre>
+</figure>
 
 <h3 id="repeat-last-command-that-started-with-x">Repeat last command that started with x</h3>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">!</span>x</code></pre></figure>
+<figure class="highlight">
+  <pre><code class="language-bash" data-lang="bash"><span class="o">!</span>x</code></pre>
+</figure>
 
 <h3 id="repeat-last-command-that-has-the-substring-x">Repeat last command that has the substring x</h3>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">!</span>?x</code></pre></figure>
+<figure class="highlight">
+  <pre><code class="language-bash" data-lang="bash"><span class="o">!</span>?x</code></pre>
+</figure>
 
 <h3 id="repeat-10th-command-in-the-history-file">Repeat 10th command in the history file</h3>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">!</span>10</code></pre></figure>
+<figure class="highlight">
+  <pre><code class="language-bash" data-lang="bash"><span class="o">!</span>10</code></pre>
+</figure>
 
 <h3 id="repeat-10th-from-last-command-in-the-history-file">Repeat 10th from last command in the history file</h3>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">!</span><span class="nt">-10</span></code></pre></figure>
+<figure class="highlight">
+  <pre><code class="language-bash" data-lang="bash"><span class="o">!</span><span class="nt">-10</span></code></pre>
+</figure>
 
 <h2 id="fetching-parameters">Fetching Parameters</h2>
 <h3 id="fetch-parameters-from-last-command">Fetch parameters from last command</h3>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">!!</span><span class="k">*</span></code></pre></figure>
+<figure class="highlight">
+  <pre><code class="language-bash" data-lang="bash"><span class="o">!!</span><span class="k">*</span></code></pre>
+</figure>
 
 <h3 id="fetch-first-parameter-from-last-command">Fetch first parameter from last command</h3>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">!!</span>^</code></pre></figure>
+<figure class="highlight">
+  <pre><code class="language-bash" data-lang="bash"><span class="o">!!</span>^</code></pre>
+</figure>
 
 <h3 id="fetch-last-parameter-from-last-command">Fetch last parameter from last command</h3>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">!!</span><span class="err">$</span></code></pre></figure>
+<figure class="highlight">
+  <pre><code class="language-bash" data-lang="bash"><span class="o">!!</span><span class="err">$</span></code></pre>
+</figure>
 
 <h3 id="fetch-third-parameter-from-last-command">Fetch third parameter from last command</h3>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">!!</span>3</code></pre></figure>
+<figure class="highlight">
+  <pre><code class="language-bash" data-lang="bash"><span class="o">!!</span>3</code></pre>
+</figure>
 
 <h2 id="modifiers">Modifiers</h2>
 <h3 id="repeat-last-command-substituting-foo-for-bar">Repeat last command substituting foo for bar</h3>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">!!</span>:s/foo/bar/</code></pre></figure>
+<figure class="highlight">
+  <pre><code class="language-bash" data-lang="bash"><span class="o">!!</span>:s/foo/bar/</code></pre>
+</figure>
 
 <h3 id="print-last-command-without-running-it">Print last command without running it</h3>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">!!</span>:p</code></pre></figure>
+<figure class="highlight">
+  <pre><code class="language-bash" data-lang="bash"><span class="o">!!</span>:p</code></pre>
+</figure>
 
 <p>Happy coding ….. :)</p>
 

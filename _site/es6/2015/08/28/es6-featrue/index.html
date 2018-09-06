@@ -158,7 +158,8 @@
 
 <p>箭头函数简单的说是用＝&gt;语法。其语法的相关特性类似于c,Java 8和CoffeeScript。他们同时支持声明块体以及表达身体的返回值的表达式。与方法不同，箭头函数分享了相同语法的this以及它周边代码</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">// Expression bodies
+<figure class="highlight">
+  <pre><code class="language-bash" data-lang="bash">// Expression bodies
 var odds <span class="o">=</span> evens.map<span class="o">(</span>v <span class="o">=&gt;</span> v + 1<span class="o">)</span><span class="p">;</span>
 var nums <span class="o">=</span> evens.map<span class="o">((</span>v, i<span class="o">)</span> <span class="o">=&gt;</span> v + i<span class="o">)</span><span class="p">;</span>
 var pairs <span class="o">=</span> evens.map<span class="o">(</span>v <span class="o">=&gt;</span> <span class="o">({</span>even: v, odd: v + 1<span class="o">}))</span><span class="p">;</span>
@@ -177,7 +178,8 @@ var bob <span class="o">=</span> <span class="o">{</span>
     this._friends.forEach<span class="o">(</span>f <span class="o">=&gt;</span>
       console.log<span class="o">(</span>this._name + <span class="s2">" knows "</span> + f<span class="o">))</span><span class="p">;</span>
   <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span></code></pre>
+</figure>
 
 <p>ES5与ES6对比</p>
 

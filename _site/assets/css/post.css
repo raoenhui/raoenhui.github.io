@@ -646,3 +646,6 @@ details{
 details summary{
   color: #E971BE;
 }
+.post-template .notepad-post-content > div:not(.notepad-post-title) details p{
+  margin-bottom: 0;
+}
