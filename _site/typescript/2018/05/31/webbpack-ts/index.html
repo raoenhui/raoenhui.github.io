@@ -570,6 +570,20 @@ jQuery(window).unload(function () {
 
 <!-- ice start-->
 <!--<script id="dsq-count-scr" src="//raoenhui.disqus.com/count.js" async></script>-->
+<script>
+  (function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
 <!-- ice end--> 
 </body>
 </html>
