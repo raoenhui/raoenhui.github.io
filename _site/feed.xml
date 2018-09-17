@@ -7,13 +7,72 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2018-09-11T17:21:24+05:30</updated>
+<updated>2018-09-17T19:34:17+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>Enhui Rao</name>
   <uri>https://raoenhui.github.io/</uri>
   <email>670615769@qq.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[小程序加载svg图片]]></title>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/wechat/2018/09/10/miniAppSvg/"/>
+  <id>https://raoenhui.github.io/wechat/2018/09/10/miniAppSvg</id>
+  <published>2018-09-10T12:00:00+05:30</published>
+  <updated>2018-09-10T12:00:00+05:30</updated>
+  <author>
+    <name>Enhui Rao</name>
+    <uri>https://raoenhui.github.io</uri>
+    <email>670615769@qq.com</email>
+  </author>
+  <category scheme="https://raoenhui.github.io/tags/#Wechat" term="Wechat" /><category scheme="https://raoenhui.github.io/tags/#Es6" term="Es6" />
+  <content type="html">
+  
+    &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;小程序的&lt;a href=&quot;https://developers.weixin.qq.com/miniprogram/dev/component/&quot;&gt;组件&lt;/a&gt;中是没有支持&lt;code class=&quot;highlighter-rouge&quot;&gt;SVG&lt;/code&gt;标签的。
+但是在前端小伙伴的实际开发中，UED经常提供SVG图片过来，如果不想用引入&lt;code class=&quot;highlighter-rouge&quot;&gt;iconfont&lt;/code&gt;的话，那么妹子我将介绍个很好用的方法。&lt;/p&gt;
+
+&lt;h3 id=&quot;svg-简介&quot;&gt;SVG 简介&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;SVG 指可伸缩矢量图形 (Scalable Vector Graphics)&lt;/li&gt;
+  &lt;li&gt;SVG 使用 XML 格式定义图形&lt;/li&gt;
+  &lt;li&gt;SVG 图像在放大或改变尺寸的情况下其图形质量不会有所损失&lt;/li&gt;
+  &lt;li&gt;SVG 与JPEG和GIF图像比起来，尺寸更小，且可压缩性更强。&lt;/li&gt;
+  &lt;li&gt;适合各种icon和图标&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;去除-svg-中不需要的代码&quot;&gt;去除 SVG 中不需要的代码&lt;/h3&gt;
+
+&lt;p&gt;我们知道 &lt;code class=&quot;highlighter-rouge&quot;&gt;SVG&lt;/code&gt; 实际是由代码组成，可以将 &lt;code class=&quot;highlighter-rouge&quot;&gt;SVG&lt;/code&gt; 图片直接用IDE打开(如sublime),可以查看并修改其颜色形状大小。
+&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-83b36f53e4d21616.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;sublime&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;其中有很多 &lt;code class=&quot;highlighter-rouge&quot;&gt;SVG&lt;/code&gt; 代码我们可以去除，如注释、多余空格等等，可以用网站 &lt;a href=&quot;https://jakearchibald.github.io/svgomg&quot;&gt;https://jakearchibald.github.io/svgomg&lt;/a&gt;，来精简SVG：
+&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-cc196a2d1e0dd193.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;将-svg-转化成base64&quot;&gt;将 SVG 转化成Base64&lt;/h3&gt;
+
+&lt;p&gt;打开网站&lt;a href=&quot;https://www.sojson.com/image2base64.html&quot;&gt;https://www.sojson.com/image2base64.html&lt;/a&gt;来转Base64
+&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-4bb377140d6ea9ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;接着在WXSS和WXML中使用&lt;/p&gt;
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;Base64&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;在&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;CSS&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;中的使用&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.box&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background-image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;url(&quot;刚刚转的Base64&quot;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Base64 在HTML中的使用
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;data:image/jpg;base64,/9j/4QMZR...&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Happy coding .. :)&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/wechat/2018/09/10/miniAppSvg/&quot;&gt;小程序加载svg图片&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on September 10, 2018.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
