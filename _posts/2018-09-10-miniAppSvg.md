@@ -47,5 +47,9 @@ tags:
 // Base64 在HTML中的使用
 <img src="data:image/jpg;base64,/9j/4QMZR..." />
 ```
+小程序中引用完成
+
+![image.png](https://upload-images.jianshu.io/upload_images/9902136-43512b3b11b7c91b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 Happy coding .. :)
