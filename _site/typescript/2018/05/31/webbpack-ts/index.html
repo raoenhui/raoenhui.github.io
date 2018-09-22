@@ -68,8 +68,8 @@
 <body class="post-template" itemscope itemtype="http://schema.org/WebPage">
 <div style ='margin:0 auto;width:0px;height:0px;overflow:hidden;' >
 
-    <!--<img src="https://raoenhui.github.io/assets/img/avator.jpg" />-->
-    <img src="//chuantu.biz/t6/303/1525520078x-1566657998.png" />
+    <img src="https://raoenhui.github.io/assets/img/avator.jpg" />
+    <!--<img src="//chuantu.biz/t6/303/1525520078x-1566657998.png" />-->
 
 </div>
 
@@ -131,31 +131,34 @@
 
 <p>可直接安装npm包，一般包前面加@types，就是加载该包的声明文件以.d.ts结尾</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> npm <span class="nb">install</span> <span class="nt">--save</span> @types/react @types/react-dom @types/react-router-dom @types/react-redux
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code> npm install --save @types/react @types/react-dom @types/react-router-dom @types/react-redux
+</code></pre>
+</div>
 <p>或 安装typings包进行搜索安装</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c"># Install Typings CLI utility. </span>
- npm <span class="nb">install </span>typings <span class="nt">--global</span>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code> <span class="c"># Install Typings CLI utility. </span>
+ npm install typings --global
  
  <span class="c"># Search for definitions. </span>
  typings search react
  
- typings <span class="nb">install </span>react <span class="nt">--save</span>
-</code></pre></div></div>
+ typings install react --save
+</code></pre>
+</div>
 
 <h3 id="第二步-安装webpack对应的加载器loader">第二步 安装Webpack对应的加载器loader</h3>
 
 <p>awesome-typescript-loader是typescript官网推荐的loader，ts-loader是wepack官网推荐的loader，两者用法一样都可用，但是要注意版本。</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c"># 安装Ts</span>
-  npm <span class="nb">install </span>typescript <span class="nt">--save-dev</span>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>  <span class="c"># 安装Ts</span>
+  npm install typescript --save-dev
   <span class="c"># 安装Webpack的ts loader</span>
-  npm <span class="nb">install </span>awesome-typescript-loader <span class="nt">--save-dev</span>
-  npm <span class="nb">install </span>ts-loader <span class="nt">--save-dev</span>
+  npm install awesome-typescript-loader --save-dev
+  npm install ts-loader --save-dev
   <span class="c"># 安装源文件，方便调试</span>
-  npm <span class="nb">install </span>source-map-loader <span class="nt">--save-dev</span>
-</code></pre></div></div>
+  npm install <span class="nb">source</span>-map-loader --save-dev
+</code></pre>
+</div>
 
 <p>提示</p>
 
@@ -169,7 +172,7 @@
 
 <h3 id="第三步-修改webpack配置文件">第三步 修改Webpack配置文件</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
 
     <span class="na">resolve</span><span class="p">:</span> <span class="p">{</span>
         <span class="c1">// Add '.ts' and '.tsx' as resolvable extensions.</span>
@@ -187,33 +190,35 @@
         <span class="p">]</span>
     <span class="p">}</span>
 <span class="p">};</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h3 id="第四步-新建ts配置文件">第四步 新建Ts配置文件</h3>
 
 <p>新建tsconfig.json,</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"compilerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"outDir"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./ts/"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"sourceMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"noImplicitAny"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"es6"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"jsx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"react"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"allowJs"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"moduleResolution"</span><span class="p">:</span><span class="s2">"node"</span><span class="w">
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"compilerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"outDir"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./ts/"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"sourceMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"noImplicitAny"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"es6"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"jsx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"react"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"allowJs"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"moduleResolution"</span><span class="p">:</span><span class="s2">"node"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"include"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nt">"include"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"./src/**/*"</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"exclude"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nt">"exclude"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"node_modules"</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nt">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"./node_modules/immutable/dist/immutable.d.ts"</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
+</span></code></pre>
+</div>
 <blockquote>
   <ul>
     <li>outDir：输出文件夹路径</li>
@@ -230,19 +235,19 @@
 
 <h3 id="下面可以尽情编写ts文件了">下面可以尽情编写TS文件了</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">React</span> <span class="k">from</span> <span class="s2">"React"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">Baseinfo</span> <span class="k">from</span> <span class="s2">"./baseinfo/baseinfo"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Switch</span><span class="p">,</span> <span class="nx">Route</span><span class="p">,</span><span class="nx">Link</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react-router-dom'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span><span class="nx">is</span><span class="p">,</span> <span class="nx">fromJS</span><span class="p">}</span> <span class="k">from</span> <span class="s1">'immutable'</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
+<span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s2">"React"</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">Baseinfo</span> <span class="nx">from</span> <span class="s2">"./baseinfo/baseinfo"</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Switch</span><span class="p">,</span> <span class="nx">Route</span><span class="p">,</span><span class="nx">Link</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'react-router-dom'</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">is</span><span class="p">,</span> <span class="nx">fromJS</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">'immutable'</span><span class="p">;</span>
 
 
-<span class="k">export</span> <span class="kr">interface</span> <span class="nx">Props</span> <span class="p">{</span> <span class="nl">match</span><span class="p">:</span> <span class="p">{</span><span class="nl">url</span><span class="p">:</span><span class="nx">string</span><span class="p">}}</span>
+<span class="kr">export</span> <span class="kr">interface</span> <span class="nx">Props</span> <span class="p">{</span> <span class="nl">match</span><span class="p">:</span> <span class="p">{</span><span class="nl">url</span><span class="p">:</span><span class="nx">string</span><span class="p">}}</span>
 
 
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">ConvertBean</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span><span class="o">&lt;</span><span class="nx">Props</span><span class="p">,</span> <span class="p">{}</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="kd">constructor</span><span class="p">(</span><span class="na">props</span><span class="p">:</span><span class="nx">Props</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">ConvertBean</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span><span class="o">&lt;</span><span class="nx">Props</span><span class="p">,</span> <span class="p">{}</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="na">props</span><span class="p">:</span><span class="nx">Props</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kr">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
 
     <span class="p">}</span>
 
@@ -251,19 +256,20 @@
     <span class="p">}</span>
 
     <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="p">{</span> <span class="nx">match</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span>
+        <span class="kr">const</span> <span class="p">{</span> <span class="nx">match</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s2">"toast-wrapper"</span><span class="o">&gt;</span>
-                <span class="o">&lt;</span><span class="nx">Link</span> <span class="nx">to</span><span class="o">=</span><span class="p">{</span><span class="s2">`</span><span class="p">${</span><span class="nx">match</span><span class="p">.</span><span class="nx">url</span><span class="p">}</span><span class="s2">/baseinfo`</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">baseinfo</span><span class="o">&lt;</span><span class="sr">/Link</span><span class="err">&gt;
-</span>                <span class="o">&lt;</span><span class="nx">Switch</span><span class="o">&gt;</span>
-                    <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="p">{</span><span class="s2">`</span><span class="p">${</span><span class="nx">match</span><span class="p">.</span><span class="nx">url</span><span class="p">}</span><span class="s2">/baseinfo`</span><span class="p">}</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">Baseinfo</span><span class="p">}</span><span class="sr">/</span><span class="err">&gt;
-</span>                <span class="o">&lt;</span><span class="sr">/Switch</span><span class="err">&gt;
+                <span class="o">&lt;</span><span class="nx">Link</span> <span class="nx">to</span><span class="o">=</span><span class="p">{</span><span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">match</span><span class="p">.</span><span class="nx">url</span><span class="p">}</span><span class="sr">/baseinfo`}&gt;baseinfo&lt;/</span><span class="nx">Link</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">Switch</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="p">{</span><span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="nx">match</span><span class="p">.</span><span class="nx">url</span><span class="p">}</span><span class="sr">/baseinfo`} component={Baseinfo}/</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="sr">/Switch</span><span class="err">&gt;
 </span>            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
 </span>        <span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <blockquote>
   <ul>

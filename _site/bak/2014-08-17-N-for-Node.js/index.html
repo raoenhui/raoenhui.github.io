@@ -68,8 +68,8 @@
 <body class="post-template" itemscope itemtype="http://schema.org/WebPage">
 <div style ='margin:0 auto;width:0px;height:0px;overflow:hidden;' >
 
-    <!--<img src="https://raoenhui.github.io/assets/img/avator.jpg" />-->
-    <img src="//chuantu.biz/t6/303/1525520078x-1566657998.png" />
+    <img src="https://raoenhui.github.io/assets/img/avator.jpg" />
+    <!--<img src="//chuantu.biz/t6/303/1525520078x-1566657998.png" />-->
 
 </div>
 
@@ -137,9 +137,9 @@
   <li>First thing install it, you gonna need NodeJS and <strong>npm</strong> (Node package manager), you will need it to  install diffrent node packages , packages are just like a gems in Ruby or Jars in Java.</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>apt-get update
-<span class="nb">sudo </span>apt-get <span class="nb">install </span>NodeJS
-<span class="nb">sudo </span>apt-get <span class="nb">install </span>npm</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo apt-get update
+sudo apt-get install NodeJS
+sudo apt-get install npm</code></pre></figure>
 
 <p>Walah .. you got all you want (y), not put the below code say in server.js</p>
 
@@ -159,7 +159,7 @@
 
 <p>install package with npm</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>npm <span class="nb">install </span>cluster</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo npm install cluster</code></pre></figure>
 
 <p>and run below code say in cluster.js</p>
 
@@ -181,13 +181,13 @@
   <span class="c1">// In this case its a HTTP server</span>
   <span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">res</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
-    <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s2">"hello world</span><span class="err">\</span><span class="s2">n"</span><span class="p">);</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s2">"hello world\n"</span><span class="p">);</span>
   <span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mi">8080</span><span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
 
 <p>When i did a performacen testing of clustered code, it sucked all juice of my XPS, and fan was running like a Ferrari.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">amey@amey-xps:~/work/node<span class="nv">$ </span>ab <span class="nt">-c</span> 8 <span class="nt">-k</span> <span class="nt">-n</span> 1000000 <span class="s2">"http://localhost:8080/"</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">amey@amey-xps:~/work/node$ </span>ab -c 8 -k -n 1000000 <span class="s2">"http://localhost:8080/"</span>
 This is ApacheBench, Version 2.3 &lt;<span class="nv">$Revision</span>: 655654 <span class="nv">$&gt;</span>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
