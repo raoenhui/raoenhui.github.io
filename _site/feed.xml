@@ -7,13 +7,97 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
+<<<<<<< HEAD
 <updated>2018-09-22T07:44:49+05:30</updated>
+=======
+<updated>2018-09-23T14:37:12+05:30</updated>
+>>>>>>> compare1 article
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>Enhui Rao</name>
   <uri>https://raoenhui.github.io/</uri>
   <email>670615769@qq.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[js双等号探索(一): [] == ![]为Ture ？]]></title>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/wechat/2018/09/22/compare1/"/>
+  <id>https://raoenhui.github.io/wechat/2018/09/22/compare1</id>
+  <published>2018-09-22T12:00:00+05:30</published>
+  <updated>2018-09-22T12:00:00+05:30</updated>
+  <author>
+    <name>Enhui Rao</name>
+    <uri>https://raoenhui.github.io</uri>
+    <email>670615769@qq.com</email>
+  </author>
+  <category scheme="https://raoenhui.github.io/tags/#js" term="js" />
+  <content type="html">
+  
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//为True&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;第一步-转成--false&quot;&gt;第一步 转成&lt;code class=&quot;highlighter-rouge&quot;&gt;[] == false&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;根据 &lt;strong&gt;MDN Web 文档-运算符优先级&lt;/strong&gt;:&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence&quot;&gt;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-e79e6e4918062b3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;感叹号.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-48f91d66e4a6a15d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;等号.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;!&lt;/code&gt;的优先级为&lt;strong&gt;16&lt;/strong&gt; ,&lt;code class=&quot;highlighter-rouge&quot;&gt;=&lt;/code&gt;的优先级为&lt;strong&gt;10&lt;/strong&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;!&lt;/code&gt;的优先级更高，所以先运行&lt;code class=&quot;highlighter-rouge&quot;&gt;![]&lt;/code&gt;为&lt;strong&gt;false&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;第二步-转成--0&quot;&gt;第二步 转成&lt;code class=&quot;highlighter-rouge&quot;&gt;[] == 0&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;根据 &lt;strong&gt;MDN Web 文档-比较操作符&lt;/strong&gt;:&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators&quot;&gt;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-9095106c1abdb3d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;0.png&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;如果其中一个操作数为布尔类型，那么布尔操作数如果为true，那么会转换为1，如果为false，会转换为整数0，即0。
+所以&lt;code class=&quot;highlighter-rouge&quot;&gt;![]&lt;/code&gt;为&lt;strong&gt;false&lt;/strong&gt;为&lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;第三步-转成--0&quot;&gt;第三步 转成&lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&quot; == 0&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;根据 &lt;strong&gt;MDN Web 文档-比较操作符&lt;/strong&gt;:&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators&quot;&gt;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-65d3e3b5e9664afb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;如果一个对象与数字或字符串相比较，JavaScript会尝试返回对象的默认值。操作符会尝试通过方法valueOf和toString将对象转换为其原始值（一个字符串或数字类型的值）。
+所以&lt;code class=&quot;highlighter-rouge&quot;&gt;[].valueOf().toString()&lt;/code&gt;为&lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&quot;&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;第四步-转成0--0&quot;&gt;第四步 转成&lt;code class=&quot;highlighter-rouge&quot;&gt;0 == 0&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;根据 &lt;strong&gt;MDN Web 文档-比较操作符&lt;/strong&gt;:&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators&quot;&gt;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-c98955d2dd379de9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;当比较数字和字符串时，字符串会转换成数字值。 JavaScript 尝试将数字字面量转换为数字类型的值。
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Number(&quot;&quot;)&lt;/code&gt;为&lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;最后&lt;code class=&quot;highlighter-rouge&quot;&gt;0==0&lt;/code&gt;位&lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt;,所以&lt;code class=&quot;highlighter-rouge&quot;&gt;[] == ![]&lt;/code&gt;为&lt;code class=&quot;highlighter-rouge&quot;&gt;Ture&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Happy coding .. :)&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/wechat/2018/09/22/compare1/&quot;&gt;js双等号探索(一): [] == ![]为Ture ？&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on September 22, 2018.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>

@@ -58,6 +58,11 @@ callback([
   {
     "text": "小程序加载svg图片",
     "href": "https://raoenhui.github.io/wechat/2018/09/10/miniAppSvg/"
+  } ,
+
+  {
+    "text": "js双等号探索(一): [] == ![]为Ture ？",
+    "href": "https://raoenhui.github.io/wechat/2018/09/22/compare1/"
   } 
 
 ])

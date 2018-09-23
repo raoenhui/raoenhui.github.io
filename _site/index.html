@@ -116,6 +116,39 @@
     <article class="notepad-index-post post row">
         <div class="small-12 medium-3 large-2 columns datetime">
             <span class="notepad-post-meta">
+                <time datetime="2018-09-22T12:00:00+05:30">
+                    <span class="day">
+                        22
+                    </span>
+                    <span class="month-year">
+                        September 2018
+                    </span>
+                </time>
+            </span>
+        </div>
+        <div class="small-12 medium-9 large-10 columns">
+            <header class="notepad-post-header">
+                <h3 class="notepad-post-title">
+                    <a href="https://raoenhui.github.io/wechat/2018/09/22/compare1/">
+                        js双等号探索(一): [] == ![]为Ture ？
+                    </a>
+                </h3>
+            </header>
+            <section class="notepad-post-excerpt">
+                <p>[] == ![] //为True 第一步 转成[] == false 根据 MDN Web 文档-运算符优先级:https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence !的优先级为16 ,=的优先级为10，!的优先级更高，所以先运行![]为false [] == false 第二步 转成[] == 0 根据 MDN Web 文档-比较操作符:https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators 如果其中一个操作数为布尔类型，那么布尔操作数如果为true，那么会转换为1，如果为false，会转换为整数0，即0。 所以![]为false为0. [] == 0 第三步 转成"" == 0 根据 MDN Web 文档-比较操作符:https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators 如果一个对象与数字或字符串相比较，JavaScript会尝试返回对象的默认值。操作符会尝试通过方法valueOf和toString将对象转换为其原始值（一个字符串或数字类型的值）。 所以[].valueOf().toString()为""...</p>
+            </section>
+            
+                <div class="notepad-index-post-tags">
+                <a href="https://raoenhui.github.io/categories/index.html#wechat" title="Other posts from the Wechat category">Wechat</a>
+                    
+                </div>
+            
+        </div>
+    </article>
+	
+    <article class="notepad-index-post post row">
+        <div class="small-12 medium-3 large-2 columns datetime">
+            <span class="notepad-post-meta">
                 <time datetime="2018-09-10T12:00:00+05:30">
                     <span class="day">
                         10
@@ -239,39 +272,6 @@
             
                 <div class="notepad-index-post-tags">
                 <a href="https://raoenhui.github.io/categories/index.html#wechat" title="Other posts from the Wechat category">Wechat</a>
-                    
-                </div>
-            
-        </div>
-    </article>
-	
-    <article class="notepad-index-post post row">
-        <div class="small-12 medium-3 large-2 columns datetime">
-            <span class="notepad-post-meta">
-                <time datetime="2018-05-31T21:00:00+05:30">
-                    <span class="day">
-                        31
-                    </span>
-                    <span class="month-year">
-                        May 2018
-                    </span>
-                </time>
-            </span>
-        </div>
-        <div class="small-12 medium-9 large-10 columns">
-            <header class="notepad-post-header">
-                <h3 class="notepad-post-title">
-                    <a href="https://raoenhui.github.io/typescript/2018/05/31/webbpack-ts/">
-                        Typescript合成Webpack中
-                    </a>
-                </h3>
-            </header>
-            <section class="notepad-post-excerpt">
-                <p>前言 TypeScript是JavaScript类型的超集，它可以编译成纯JavaScript，简称ts。相对于ES6,TypeScript最大的改善是增加了类型系统，国内外很多大型工程都用它，如AngularJs,白鹭引擎、Antd。 下面我将在React&amp;Webpack代码库下基础下搭建TypeScript开发环境。 安装 第一步 安装React相关包的声明文件 可直接安装npm包，一般包前面加@types，就是加载该包的声明文件以.d.ts结尾 npm install --save @types/react @types/react-dom @types/react-router-dom @types/react-redux 或 安装typings包进行搜索安装 # Install Typings CLI utility. npm install typings --global # Search for definitions. typings search react typings install react --save 第二步 安装Webpack对应的加载器loader awesome-typescript-loader是typescript官网推荐的loader，ts-loader是wepack官网推荐的loader，两者用法一样都可用，但是要注意版本。 #...</p>
-            </section>
-            
-                <div class="notepad-index-post-tags">
-                <a href="https://raoenhui.github.io/categories/index.html#Typescript" title="Other posts from the Typescript category">Typescript</a>
                     
                 </div>
             

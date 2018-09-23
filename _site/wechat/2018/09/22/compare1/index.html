@@ -2,23 +2,23 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>JS探索之一 为什么`[] == ![]`为TURE &vert; 前端妹子的博客</title>
+<title>JS双等号探索(一): [] == ![]为TURE ？ &vert; 前端妹子的博客</title>
 <meta name="description" content="一枚前端攻城狮!">
 <meta name="keywords" content="js">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raoenhui.github.io/images/logo.png">
-<meta name="twitter:title" content="js探索之一 为什么`[] == ![]`为Ture">
+<meta name="twitter:title" content="js双等号探索(一): [] == ![]为Ture ？">
 <meta name="twitter:description" content="一枚前端攻城狮!">
 <meta name="twitter:creator" content="@raoenhui">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js探索之一 为什么`[] == ![]`为Ture">
+<meta property="og:title" content="js双等号探索(一): [] == ![]为Ture ？">
 <meta property="og:description" content="一枚前端攻城狮!">
-<meta property="og:url" content="https://raoenhui.github.io/bak/2018-09-22-compare/">
+<meta property="og:url" content="https://raoenhui.github.io/wechat/2018/09/22/compare1/">
 <meta property="og:site_name" content="前端妹子的博客">
 <meta property="og:image" content="https://raoenhui.github.io/images/">
 
@@ -26,7 +26,7 @@
 
 
 
-<link rel="canonical" href="https://raoenhui.github.io/bak/2018-09-22-compare/">
+<link rel="canonical" href="https://raoenhui.github.io/wechat/2018/09/22/compare1/">
 <link href="https://raoenhui.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="前端妹子的博客 Feed">
 <link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
 
@@ -101,7 +101,8 @@
             <li>
                     <a href="https://raoenhui.github.io/about">关于</a>
                  </li>
-            
+
+           <li><a href="https://github.com/raoenhui/raoenhui.github.io" target="_blank" title="Github"><i class="icon-rss"></i> Github</a></li>
            <li><a href="https://raoenhui.github.io/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
     </ul>
 
@@ -111,7 +112,7 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h1>js探索之一 为什么`[] == ![]`为Ture</h1>
+                            <h1>js双等号探索(一): [] == ![]为Ture ？</h1>
                             <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#js" data-toggle="tooltip" title="Posts tagged with js" rel="tag">js</a> <strong><time datetime="2018-09-22T12:00:00+05:30">22 Sep 2018</time></strong></p>
                         </div>
                     </div>
@@ -119,34 +120,48 @@
             </header>
 
         <article class="notepad-post-content post tag-simple">
-            <div><h2 id="前言">前言</h2>
+            <div><div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[]</span> <span class="o">==</span> <span class="o">!</span><span class="p">[]</span> <span class="c1">//为True</span>
+</code></pre></div></div>
 
-<p>小程序的<a href="https://developers.weixin.qq.com/miniprogram/dev/component/">组件</a>中是没有支持<code class="highlighter-rouge">SVG</code>标签的。
-但是在前端小伙伴的实际开发中，UED经常提供SVG图片过来，如果不想用引入<code class="highlighter-rouge">iconfont</code>的话，那么妹子我将介绍个很好用的方法。</p>
+<h3 id="第一步-转成--false">第一步 转成<code class="highlighter-rouge">[] == false</code></h3>
 
-<h3 id="svg-简介">SVG 简介</h3>
+<p>根据 <strong>MDN Web 文档-运算符优先级</strong>:<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+</a></p>
 
-<ul>
-  <li>SVG 指可伸缩矢量图形 (Scalable Vector Graphics)</li>
-  <li>SVG 使用 XML 格式定义图形</li>
-  <li>SVG 图像在放大或改变尺寸的情况下其图形质量不会有所损失</li>
-  <li>SVG 与JPEG和GIF图像比起来，尺寸更小，且可压缩性更强。</li>
-  <li>适合各种icon和图标</li>
-</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-e79e6e4918062b3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="感叹号.png" /></p>
 
-<h3 id="去除-svg-中不需要的代码">去除 SVG 中不需要的代码</h3>
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-48f91d66e4a6a15d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="等号.png" /></p>
 
-<p>我们知道 <code class="highlighter-rouge">SVG</code> 实际是由代码组成，可以将 <code class="highlighter-rouge">SVG</code> 图片直接用IDE打开(如sublime),可以查看并修改其颜色形状大小。
-<img src="https://upload-images.jianshu.io/upload_images/9902136-83b36f53e4d21616.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="sublime" /></p>
+<p><code class="highlighter-rouge">!</code>的优先级为<strong>16</strong> ,<code class="highlighter-rouge">=</code>的优先级为<strong>10</strong>，<code class="highlighter-rouge">!</code>的优先级更高，所以先运行<code class="highlighter-rouge">![]</code>为<strong>false</strong></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[]</span> <span class="o">==</span> <span class="kc">false</span>
+</code></pre></div></div>
 
-<p>其中有很多 <code class="highlighter-rouge">SVG</code> 代码我们可以去除，如注释、多余空格等等，可以用网站 <a href="https://jakearchibald.github.io/svgomg">https://jakearchibald.github.io/svgomg</a>，来精简SVG：
-<img src="https://upload-images.jianshu.io/upload_images/9902136-cc196a2d1e0dd193.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<h3 id="第二步-转成--0">第二步 转成<code class="highlighter-rouge">[] == 0</code></h3>
 
-<h3 id="将-svg-转化成base64">将 SVG 转化成Base64</h3>
+<p>根据 <strong>MDN Web 文档-比较操作符</strong>:<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators</a></p>
 
-<p>打开网站<a href="https://www.sojson.com/image2base64.html">https://www.sojson.com/image2base64.html</a>来转Base64
-<img src="https://upload-images.jianshu.io/upload_images/9902136-4bb377140d6ea9ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-9095106c1abdb3d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="0.png" /></p>
 
+<blockquote>
+  <p>如果其中一个操作数为布尔类型，那么布尔操作数如果为true，那么会转换为1，如果为false，会转换为整数0，即0。
+所以<code class="highlighter-rouge">![]</code>为<strong>false</strong>为<code class="highlighter-rouge">0</code>.</p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[]</span> <span class="o">==</span> <span class="mi">0</span>
+</code></pre></div></div>
+
+<h3 id="第三步-转成--0">第三步 转成<code class="highlighter-rouge">"" == 0</code></h3>
+
+<p>根据 <strong>MDN Web 文档-比较操作符</strong>:<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators</a></p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-65d3e3b5e9664afb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<blockquote>
+  <p>如果一个对象与数字或字符串相比较，JavaScript会尝试返回对象的默认值。操作符会尝试通过方法valueOf和toString将对象转换为其原始值（一个字符串或数字类型的值）。
+所以<code class="highlighter-rouge">[].valueOf().toString()</code>为<code class="highlighter-rouge">""</code></p>
+</blockquote>
+
+<<<<<<< HEAD:_site/bak/2018-09-22-compare/index.html
 <p>接着在WXSS和WXML中使用</p>
 <div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="o">//</span> <span class="nt">Base64</span> <span class="err">在</span><span class="nt">CSS</span><span class="err">中的使用</span>
 <span class="nc">.box</span><span class="p">{</span>
@@ -159,8 +174,25 @@
 </code></pre>
 </div>
 <p>小程序中引用完成</p>
+=======
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">""</span> <span class="o">==</span> <span class="mi">0</span>
+</code></pre></div></div>
 
-<p><img src="https://upload-images.jianshu.io/upload_images/9902136-43512b3b11b7c91b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<h3 id="第四步-转成0--0">第四步 转成<code class="highlighter-rouge">0 == 0</code></h3>
+<p>根据 <strong>MDN Web 文档-比较操作符</strong>:<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators</a></p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-c98955d2dd379de9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<blockquote>
+  <p>当比较数字和字符串时，字符串会转换成数字值。 JavaScript 尝试将数字字面量转换为数字类型的值。
+<code class="highlighter-rouge">Number("")</code>为<code class="highlighter-rouge">0</code>。</p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">0</span> <span class="o">==</span> <span class="mi">0</span>
+</code></pre></div></div>
+>>>>>>> compare1 article:_site/wechat/2018/09/22/compare1/index.html
+
+<p>最后<code class="highlighter-rouge">0==0</code>位<code class="highlighter-rouge">True</code>,所以<code class="highlighter-rouge">[] == ![]</code>为<code class="highlighter-rouge">Ture</code></p>
 
 <p>Happy coding .. :)</p>
 
@@ -169,15 +201,15 @@
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;js探索之一 为什么`[] == ![]`为Ture&quot;%20https://raoenhui.github.io/bak/2018-09-22-compare/%20via%20&#64;raoenhui"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;js双等号探索(一): [] == ![]为Ture ？&quot;%20https://raoenhui.github.io/wechat/2018/09/22/compare1/%20via%20&#64;raoenhui"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/bak/2018-09-22-compare/"
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/wechat/2018/09/22/compare1/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/bak/2018-09-22-compare/"
+                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/wechat/2018/09/22/compare1/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
                     <i class="fa fa-google-plus"></i>
                 </a>
@@ -308,7 +340,7 @@ gitment.render('container')
 
 <!-- ice facebook start-->
  
-<!-- <div class="fb-comments" data-href="https://raoenhui.github.io/bak/2018-09-22-compare/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+<!-- <div class="fb-comments" data-href="https://raoenhui.github.io/wechat/2018/09/22/compare1/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
