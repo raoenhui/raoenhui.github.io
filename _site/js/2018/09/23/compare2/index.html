@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS双等号探索(二): A==3&&A==4 为TRUE ？ &vert; 前端妹子的博客</title>
+<meta name="description" content="一枚前端攻城狮!">
+<meta name="keywords" content="js">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raoenhui.github.io/images/logo.png">
+<meta name="twitter:title" content="js双等号探索(二): a==3&&a==4 为true ？">
+<meta name="twitter:description" content="一枚前端攻城狮!">
+<meta name="twitter:creator" content="@raoenhui">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js双等号探索(二): a==3&&a==4 为true ？">
+<meta property="og:description" content="一枚前端攻城狮!">
+<meta property="og:url" content="https://raoenhui.github.io/js/2018/09/23/compare2/">
+<meta property="og:site_name" content="前端妹子的博客">
+<meta property="og:image" content="https://raoenhui.github.io/images/">
+
+
+
+
+
+<link rel="canonical" href="https://raoenhui.github.io/js/2018/09/23/compare2/">
+<link href="https://raoenhui.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="前端妹子的博客 Feed">
+<link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+    <!--<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>-->
+	<!--<link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/font-awesome.min.css">-->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/normalize.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/nprogress.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/foundation.min.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/style.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/post.css">
+
+
+
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="https://raoenhui.github.io/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="https://raoenhui.github.io/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="https://raoenhui.github.io/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://raoenhui.github.io/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://raoenhui.github.io/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://raoenhui.github.io/images/apple-touch-icon-144x144-precomposed.png">
+
+<style type="text/css">@media only screen and (min-width:43.75em){.notepad-post-content div>p:first-child:first-letter{float:left;font-size:4.688rem;line-height:4.375rem;padding-top:.25rem;padding-right:.5rem;padding-left:.188rem;font-family:serif}}</style>
+</head>
+<body class="post-template" itemscope itemtype="http://schema.org/WebPage">
+<div style ='margin:0 auto;width:0px;height:0px;overflow:hidden;' >
+
+    <img src="https://raoenhui.github.io/assets/img/avator.jpg" />
+    <!--<img src="//chuantu.biz/t6/303/1525520078x-1566657998.png" />-->
+
+</div>
+
+        <main id="notepad-post-container-simple" class="notepad-post-container-simple" role="main">
+            <header class="notepad-post-header-simple">
+                <div class="notepad-post-menu-header-simple">
+
+                    <a class="notepad-blog-logo" href="https://raoenhui.github.io">
+                        <img src="https://raoenhui.github.io/images/logo.png" alt="Blog Logo" />
+                    </a>
+
+                <div class="notepad-blog-menu">      
+    <div class="notepad-mobile-menu show-for-small">
+        <a href="#"><i class="fa fa-bars"></i></a>
+    </div>
+    <ul class="notepad-menu">
+        <li class="notepad-mobile-close-btn show-for-small text-right">
+            <a href="#"><i class="fa fa-times"></i></a>
+        </li>
+
+            <li>
+                    <a href="https://raoenhui.github.io/">主页</a>
+                 </li>
+
+            <li>
+                    <a href="https://raoenhui.github.io/categories">目录</a>
+                 </li>
+
+            <li>
+                    <a href="https://raoenhui.github.io/about">关于</a>
+                 </li>
+
+           <li><a href="https://github.com/raoenhui/raoenhui.github.io" target="_blank" title="Github"><i class="icon-rss"></i> Github</a></li>
+           <li><a href="https://raoenhui.github.io/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+    </ul>
+
+</div>
+            </div>
+
+                <div class="notepad-post-title-simple row">
+                    <div class="small-12 columns">
+                        <div class="notepad-post-meta-simple">
+                            <h1>js双等号探索(二): a==3&&a==4 为true ？</h1>
+                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#js" data-toggle="tooltip" title="Posts tagged with js" rel="tag">js</a> <strong><time datetime="2018-09-23T15:03:00+05:30">23 Sep 2018</time></strong></p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+        <article class="notepad-post-content post tag-simple">
+            <div><h3 id="前言">前言</h3>
+<p><code class="highlighter-rouge">a==3 &amp;&amp; a==4</code>为<code class="highlighter-rouge">True</code>是可以实现的。
+具体代码如下所示：</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="o">=</span><span class="p">[];</span>
+<span class="kd">var</span> <span class="nx">x</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">valueOf</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
+   <span class="k">return</span> <span class="nx">x</span><span class="o">++</span>
+<span class="p">};</span>
+<span class="nx">a</span><span class="o">==</span><span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="nx">a</span><span class="o">==</span><span class="mi">4</span> <span class="p">?</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"succeed"</span><span class="p">)</span> <span class="p">:</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"failed"</span><span class="p">);</span>
+<span class="c1">//succeed</span>
+</code></pre></div></div>
+<p>下面妹子我将一一解析其原理。</p>
+
+<h3 id="第一步-let-a">第一步 <code class="highlighter-rouge">let a=[]</code></h3>
+<p>定义一个变量<code class="highlighter-rouge">a</code>,并赋值一个对象，方便后面重写它的<code class="highlighter-rouge">valueOf</code>方法。
+可以通过<code class="highlighter-rouge">Object.isFrozen()</code>方法来判断一个对象的属性是否可以重写。</p>
+
+<p>根据 <strong>MDN Web 文档-Object.isFrozen()</strong>:<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/isFrozen">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/isFrozen</a></p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-8671c1f3b386ad3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="isFrozen.png" /></p>
+
+<blockquote>
+  <p>在 ES5 中，如果参数不是一个对象类型，将抛出一个<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/TypeError" title="TypeError（类型错误） 对象用来表示值的类型非预期类型时发生的错误。"><code class="highlighter-rouge">TypeError</code></a>异常。在 ES2015 中，非对象参数将被视为一个冻结的普通对象，因此会返回<code class="highlighter-rouge">true</code>。</p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">isFrozen</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
+<span class="c1">// true                         (ES2015 code)</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">isFrozen</span><span class="p">({});</span>
+<span class="c1">// false                        (ES2015 code)</span>
+</code></pre></div></div>
+
+<p><strong>注意</strong>：所以<code class="highlighter-rouge">a</code>一定要是对象，如果a是非对象的其他基本类型如<code class="highlighter-rouge">String</code>，，被视为冻结对象，不能重写<code class="highlighter-rouge">valueOf</code>，则不起效果。</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="o">=</span><span class="s2">""</span><span class="p">;</span> <span class="c1">//非对象</span>
+<span class="kd">var</span> <span class="nx">x</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">valueOf</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
+   <span class="k">return</span> <span class="nx">x</span><span class="o">++</span>
+<span class="p">};</span>
+<span class="nx">a</span><span class="o">==</span><span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="nx">a</span><span class="o">==</span><span class="mi">4</span> <span class="p">?</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"succeed"</span><span class="p">)</span> <span class="p">:</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"failed"</span><span class="p">);</span>
+<span class="c1">//failed</span>
+</code></pre></div></div>
+<h3 id="第二步-a3--a4">第二步 <code class="highlighter-rouge">a==3 &amp;&amp; a==4</code></h3>
+<p>根据 <strong>MDN Web 文档-运算符优先级</strong>:<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+</a></p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-620aa6b8ec1f8008.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="compare.png" /></p>
+
+<p><code class="highlighter-rouge">==</code>的优先级为<strong>10</strong> ,<code class="highlighter-rouge">&amp;&amp;</code>的优先级为<strong>6</strong>，<code class="highlighter-rouge">==</code>的优先级更高，所以先运行<code class="highlighter-rouge">a==3</code>，再运行<code class="highlighter-rouge">a==3</code>，最后进行<code class="highlighter-rouge">&amp;&amp;</code>判断。</p>
+
+<h3 id="第三步-a3为true">第三步 <code class="highlighter-rouge">a==3</code>为True</h3>
+<p>根据 <strong>MDN Web 文档-比较操作符</strong>:<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators</a></p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-65d3e3b5e9664afb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<blockquote>
+  <p>如果一个对象与数字或字符串相比较，JavaScript会尝试返回对象的默认值。操作符会尝试通过方法valueOf和toString将对象转换为其原始值（一个字符串或数字类型的值）。</p>
+</blockquote>
+
+<p>所以将会运行<code class="highlighter-rouge">a.valueOf()</code>，<code class="highlighter-rouge">x</code>加<code class="highlighter-rouge">1</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="o">=</span><span class="p">[];</span>
+<span class="kd">var</span> <span class="nx">x</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">valueOf</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
+   <span class="k">return</span> <span class="nx">x</span><span class="o">++</span>
+<span class="p">};</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="o">==</span><span class="mi">3</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> 
+<span class="p">}</span>
+<span class="c1">//4</span>
+</code></pre></div></div>
+<h3 id="第四步-a4为true">第四步 <code class="highlighter-rouge">a==4</code>为True</h3>
+<p>这时<code class="highlighter-rouge">x</code>已经为<code class="highlighter-rouge">4</code>，运行<code class="highlighter-rouge">a.valueOf</code>返回值也为<code class="highlighter-rouge">4</code>。</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="o">=</span><span class="p">[];</span>
+<span class="kd">var</span> <span class="nx">x</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">valueOf</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
+   <span class="k">return</span> <span class="nx">x</span><span class="o">++</span>
+<span class="p">};</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="o">==</span><span class="mi">3</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> 
+<span class="p">}</span>
+<span class="c1">//4</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="o">==</span><span class="mi">4</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> 
+<span class="p">}</span>
+<span class="c1">//5</span>
+</code></pre></div></div>
+<h3 id="最后a3--a4-为true">最后<code class="highlighter-rouge">a==3 &amp;&amp; a==4</code> 为true</h3>
+<p>如上所示<code class="highlighter-rouge">a==3</code>为<code class="highlighter-rouge">True</code>，<code class="highlighter-rouge">a==4</code>为<code class="highlighter-rouge">True</code>，则<code class="highlighter-rouge">true &amp;&amp; true</code>为<code class="highlighter-rouge">True</code></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="o">=</span><span class="p">[];</span>
+<span class="kd">var</span> <span class="nx">x</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">valueOf</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
+   <span class="k">return</span> <span class="nx">x</span><span class="o">++</span>
+<span class="p">};</span>
+<span class="nx">a</span><span class="o">==</span><span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="nx">a</span><span class="o">==</span><span class="mi">4</span> <span class="p">?</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"succeed"</span><span class="p">)</span> <span class="p">:</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"failed"</span><span class="p">);</span>
+<span class="c1">//succeed</span>
+</code></pre></div></div>
+
+<p>Happy coding .. :)</p>
+
+            </div>
+        </article>
+        <div class="cf"></div>
+        <div class="row text-center">
+            <section class="notepad-post-share">
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;js双等号探索(二): a==3&&a==4 为true ？&quot;%20https://raoenhui.github.io/js/2018/09/23/compare2/%20via%20&#64;raoenhui"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/js/2018/09/23/compare2/"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/js/2018/09/23/compare2/"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </section>
+        </div>
+        <div class="cf"></div>
+        
+            <div class="notepad-author-info">
+                <div class="row">
+                    <section class="notepad-post-author small-12 columns">
+                        
+                            <img src="https://raoenhui.github.io/images/logo.png" class="notepad-post-author-avatar" alt="Enhui Rao's photo">
+                        
+                        
+                            <span class="author-label">Author</span>
+                            <h1>Enhui Rao</h1>
+                        
+                        
+                            <p><a href="mailto:670615769@qq.com" class="author-website">670615769@qq.com</a>
+
+			   <!--  <iframe src="//www.facebook.com/plugins/follow?href=https%3A%2F%2Fwww.facebook.com%2Fameyjadiye&amp;layout=standard&amp;show_faces=true&amp;colorscheme=light&amp;width=450&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe>  -->
+             <!--      <iframe src="//www.facebook.com/plugins/follow?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100004203407645&amp;layout=standard&amp;show_faces=true&amp;colorscheme=light&amp;width=450&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe> -->
+             
+
+              <div class="fb-like" data-href="http://raoenhui.github.io/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+       <!--      <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1757816481112269";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+			    </p>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1757816481112269";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>-->
+<div class="fb-follow" data-href="https://www.facebook.com/raoenhui" data-width="200" data-height="100" data-layout="standard" data-show-faces="true"></div>
+                        
+                        
+                            <p>Programming is 1% knowledge, 2% ability and 97% getting the ability to work with the knowledge :)</p>
+                        
+                    </section>
+                </div>
+            </div>
+ 
+        
+        <div class="cf"></div>
+        
+        <section class="notepad-disqus row">
+    <div class="small-12 columns">
+        <h1 class="notepad-comments-header">Comments评论</h1>
+   <!--      <p>国内网速超慢，建议翻墙评论，或直接在此评论
+            <a href="https://github.com/raoenhui/raoenhui.github.io/issues" target="_blank">https://github.com/raoenhui/raoenhui.github.io/issues</a></p> -->
+
+        <div id="disqus_thread"></div>
+        
+<!--
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = '饶恩慧'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+-->
+<!-- ice disqus https://raoenhui.disqus.com/admin/ start-->
+<!--<script>
+
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://raoenhui.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>-->
+<!-- ice disqus end-->
+
+<!-- ice gitment 评论 start-->
+    <div id="container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+// debugger
+var gitment = new Gitment({
+  id: location.pathname.split('/').reverse()[1], // 可选。默认为 location.href
+  owner: 'raoenhui',
+  repo: 'raoenhui.github.io',
+  oauth: {
+    client_id: 'bd88b9824048b133f7ed',
+    client_secret: '193c97904472a0e380b70dd990c46853f52881c7',
+    // client_id: '5548df3eca52697fac71',
+    // client_secret: '5b9480b7b3d4a49e22db3f29557380e2711bbcd9',
+  },
+})
+gitment.render('container')
+</script>
+<!-- ice gitment 评论 end-->
+<hr />
+
+<!-- ice facebook start-->
+ 
+<!-- <div class="fb-comments" data-href="https://raoenhui.github.io/js/2018/09/23/compare2/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1757816481112269";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script> -->
+<!-- ice facebook end-->
+
+<!-- 来必力 start https://livere.com/my_Livere-->
+<!-- <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTMzMC8xMTg2Ng==">
+    <script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+    </script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div> -->
+<!-- 来必力 end-->
+
+    </div>
+</section>
+
+        <div class="cf"></div>
+
+    <footer class="notepad-site-footer">
+    <div class="copyright">
+        <section>All content copyright <a href="https://raoenhui.github.io/about">Enhui Rao</a> &copy; 2018 &bull; All rights reserved.</section>
+	<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>
+          <a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>
+    </div>
+    <div class="social-icons">
+        
+        <!--
+        <a href="http://twitter.com/raoenhui">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="https://plus.google.com/u/0/+AmeyJadiye">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-google-plus fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="http://instagram.com/raoenhui">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-instagram fa-stack-1x"></i>
+            </span>
+        </a>
+        -->
+        
+        <a href="http://github.com/raoenhui">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="http://facebook.com/raoenhui">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+        </a>
+        
+    </div>
+    
+    <div class="cf"></div>
+</footer>
+ 
+</main>    
+<script src="//apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://raoenhui.github.io/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+<script src="https://raoenhui.github.io/assets/js/vendor/modernizr.js"></script>
+<script src="https://raoenhui.github.io/assets/js/foundation.min.js"></script>
+
+<script src="https://raoenhui.github.io/assets/js/notepad.js"></script>
+<script src="https://raoenhui.github.io/assets/js/scripts.min.js"></script>
+<script src="https://raoenhui.github.io/assets/js/vendor/nprogress.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/sigma.js/1.0.3/sigma.min.js"></script>-->
+<script src="//apps.bdimg.com/libs/sigma.js/0.1/sigma.min.js"></script>
+
+<script>
+    $(document).foundation();
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-46791108-1', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+
+</script>
+
+<script>NProgress.start();
+var timeNum=0;
+var interval = setInterval(function () {
+    NProgress.inc();
+    //如果大于60秒停止检测
+    /*if(timeNum>60){
+        clearInterval(interval);
+        NProgress.done();
+
+    }
+    timeNum++;*/
+}, 1000);
+jQuery(window).load(function () {
+    clearInterval(interval);
+    NProgress.done()
+});
+jQuery(window).unload(function () {
+    NProgress.start()
+});
+
+</script>
+
+<!-- ice start-->
+<!--<script id="dsq-count-scr" src="//raoenhui.disqus.com/count.js" async></script>-->
+<script>
+  (function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+<!-- ice end--> 
+</body>
+</html>
