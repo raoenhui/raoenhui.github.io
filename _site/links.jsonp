@@ -66,7 +66,7 @@ callback([
   } ,
 
   {
-    "text": "js双等号探索(二): a==3&&a==4 为true ？",
+    "text": "js双等号探索(二): a==3&&a==4 为True ？",
     "href": "https://raoenhui.github.io/js/2018/09/23/compare2/"
   } 
 
