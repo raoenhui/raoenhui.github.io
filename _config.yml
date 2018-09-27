@@ -70,7 +70,7 @@ kramdown:
     bold_every: 10
     css: class
     
-plugins: [jekyll-paginate]
+gems: [jekyll-paginate]
 
 plugins_dir:
 - jemoji

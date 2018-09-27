@@ -5,6 +5,8 @@ jekyll build  --watch
 
 jekyll build --watch && jekyll serve --watch
 
+jekyll build && git add --all
+
 git push origin master
 
 jekyll 3.4.0
