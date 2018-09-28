@@ -1,7 +1,19 @@
 [
 	
 		{
+<<<<<<< HEAD
 		  "title"      : "js双等号探索(二): a==3&amp;&amp;a==4 为True ？",
+=======
+		  "title"      : "js双等号探索(三): [] == false为True,而!![] == false为False ？",
+		  "category"   : "",
+		  "url"        : "https://raoenhui.github.io/js/2018/09/28/compare3/",
+		  "date"       : "2018-09-28 22:03:00 +0530",
+		  "shortdate"  : "September 28, 2018"
+		} ,
+	
+		{
+		  "title"      : "js双等号探索(二): a==3&amp;&amp;a==4 为true ？",
+>>>>>>> add article about compare3
 		  "category"   : "",
 		  "url"        : "https://raoenhui.github.io/js/2018/09/23/compare2/",
 		  "date"       : "2018-09-23 15:03:00 +0530",

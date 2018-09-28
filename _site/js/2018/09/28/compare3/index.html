@@ -2,23 +2,23 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>JS双等号探索(二): A==3&&A==4 为TRUE ？ &vert; 前端妹子的博客</title>
+<title>JS双等号探索(三): [] == FALSE为TRUE,而!![] == FALSE为FALSE ？ &vert; 前端妹子的博客</title>
 <meta name="description" content="一枚前端攻城狮!">
 <meta name="keywords" content="js">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raoenhui.github.io/images/logo.png">
-<meta name="twitter:title" content="js双等号探索(二): a==3&&a==4 为True ？">
+<meta name="twitter:title" content="js双等号探索(三): [] == false为True,而!![] == false为False ？">
 <meta name="twitter:description" content="一枚前端攻城狮!">
 <meta name="twitter:creator" content="@raoenhui">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js双等号探索(二): a==3&&a==4 为True ？">
+<meta property="og:title" content="js双等号探索(三): [] == false为True,而!![] == false为False ？">
 <meta property="og:description" content="一枚前端攻城狮!">
-<meta property="og:url" content="https://raoenhui.github.io/js/2018/09/23/compare2/">
+<meta property="og:url" content="https://raoenhui.github.io/js/2018/09/28/compare3/">
 <meta property="og:site_name" content="前端妹子的博客">
 <meta property="og:image" content="https://raoenhui.github.io/images/">
 
@@ -26,7 +26,7 @@
 
 
 
-<link rel="canonical" href="https://raoenhui.github.io/js/2018/09/23/compare2/">
+<link rel="canonical" href="https://raoenhui.github.io/js/2018/09/28/compare3/">
 <link href="https://raoenhui.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="前端妹子的博客 Feed">
 <link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
 
@@ -112,124 +112,91 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h1>js双等号探索(二): a==3&&a==4 为True ？</h1>
-                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#js" data-toggle="tooltip" title="Posts tagged with js" rel="tag">js</a> <strong><time datetime="2018-09-23T15:03:00+05:30">23 Sep 2018</time></strong></p>
+                            <h1>js双等号探索(三): [] == false为True,而!![] == false为False ？</h1>
+                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#js" data-toggle="tooltip" title="Posts tagged with js" rel="tag">js</a> <strong><time datetime="2018-09-28T22:03:00+05:30">28 Sep 2018</time></strong></p>
                         </div>
                     </div>
                 </div>
             </header>
 
         <article class="notepad-post-content post tag-simple">
-            <div><h3 id="前言">前言</h3>
-<p><code class="highlighter-rouge">a==3 &amp;&amp; a==4</code>为<code class="highlighter-rouge">True</code>是可以实现的。
-具体代码如下所示：</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="o">=</span><span class="p">[];</span>
-<span class="kd">var</span> <span class="nx">x</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span>
-<span class="nx">a</span><span class="p">.</span><span class="nx">valueOf</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
-   <span class="k">return</span> <span class="nx">x</span><span class="o">++</span>
-<span class="p">};</span>
-<span class="nx">a</span><span class="o">==</span><span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="nx">a</span><span class="o">==</span><span class="mi">4</span> <span class="p">?</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"succeed"</span><span class="p">)</span> <span class="p">:</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"failed"</span><span class="p">);</span>
-<span class="c1">//succeed</span>
-</code></pre>
-</div>
-<p>下面妹子我将一一解析其原理。</p>
+            <div><div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[]</span> <span class="o">==</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">//为True</span>
+<span class="o">!!</span><span class="p">[]</span> <span class="o">==</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">//为False</span>
+</code></pre></div></div>
 
-<h3 id="第一步-let-a">第一步 <code class="highlighter-rouge">let a=[]</code></h3>
-<p>定义一个变量<code class="highlighter-rouge">a</code>,并赋值一个对象，方便后面重写它的<code class="highlighter-rouge">valueOf</code>方法。
-可以通过<code class="highlighter-rouge">Object.isFrozen()</code>方法来判断一个对象的属性是否可以重写。</p>
+<h2 id="一--false为true">一、<code class="highlighter-rouge">[] == false</code>为True</h2>
 
-<p>根据 <strong>MDN Web 文档-Object.isFrozen()</strong>:<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/isFrozen">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/isFrozen</a></p>
+<h3 id="第一步-转成--0">第一步 转成<code class="highlighter-rouge">[] == 0</code></h3>
 
-<p><img src="https://upload-images.jianshu.io/upload_images/9902136-8671c1f3b386ad3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="isFrozen.png" /></p>
+<p>根据 <strong>MDN Web 文档-比较操作符</strong>:<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators</a></p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-9095106c1abdb3d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="0.png" /></p>
 
 <blockquote>
-  <p>在 ES5 中，如果参数不是一个对象类型，将抛出一个<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/TypeError" title="TypeError（类型错误） 对象用来表示值的类型非预期类型时发生的错误。"><code class="highlighter-rouge">TypeError</code></a>异常。在 ES2015 中，非对象参数将被视为一个冻结的普通对象，因此会返回<code class="highlighter-rouge">true</code>。</p>
+  <p>如果其中一个操作数为布尔类型，那么布尔操作数如果为true，那么会转换为1，如果为false，会转换为整数0，即0。
+所以<code class="highlighter-rouge">![]</code>为<strong>false</strong>为<code class="highlighter-rouge">0</code>.</p>
 </blockquote>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">isFrozen</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
-<span class="c1">// true                         (ES2015 code)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[]</span> <span class="o">==</span> <span class="mi">0</span>
+</code></pre></div></div>
 
-<span class="nb">Object</span><span class="p">.</span><span class="nx">isFrozen</span><span class="p">({});</span>
-<span class="c1">// false                        (ES2015 code)</span>
-</code></pre>
-</div>
+<h3 id="第二步-转成--0">第二步 转成<code class="highlighter-rouge">"" == 0</code></h3>
 
-<p><strong>注意</strong>：所以<code class="highlighter-rouge">a</code>一定要是对象，如果a是非对象的其他基本类型如<code class="highlighter-rouge">String</code>，，被视为冻结对象，不能重写<code class="highlighter-rouge">valueOf</code>，则不起效果。</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="o">=</span><span class="s2">""</span><span class="p">;</span> <span class="c1">//非对象</span>
-<span class="kd">var</span> <span class="nx">x</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span>
-<span class="nx">a</span><span class="p">.</span><span class="nx">valueOf</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
-   <span class="k">return</span> <span class="nx">x</span><span class="o">++</span>
-<span class="p">};</span>
-<span class="nx">a</span><span class="o">==</span><span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="nx">a</span><span class="o">==</span><span class="mi">4</span> <span class="p">?</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"succeed"</span><span class="p">)</span> <span class="p">:</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"failed"</span><span class="p">);</span>
-<span class="c1">//failed</span>
-</code></pre>
-</div>
-<h3 id="第二步-a3--a4">第二步 <code class="highlighter-rouge">a==3 &amp;&amp; a==4</code></h3>
-<p>根据 <strong>MDN Web 文档-运算符优先级</strong>:<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
-</a></p>
-
-<p><img src="https://upload-images.jianshu.io/upload_images/9902136-620aa6b8ec1f8008.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="compare.png" /></p>
-
-<p><code class="highlighter-rouge">==</code>的优先级为<strong>10</strong> ,<code class="highlighter-rouge">&amp;&amp;</code>的优先级为<strong>6</strong>，<code class="highlighter-rouge">==</code>的优先级更高，所以先运行<code class="highlighter-rouge">a==3</code>，再运行<code class="highlighter-rouge">a==4</code>，最后进行<code class="highlighter-rouge">&amp;&amp;</code>判断。</p>
-
-<h3 id="第三步-a3为true">第三步 <code class="highlighter-rouge">a==3</code>为True</h3>
 <p>根据 <strong>MDN Web 文档-比较操作符</strong>:<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators</a></p>
 
 <p><img src="https://upload-images.jianshu.io/upload_images/9902136-65d3e3b5e9664afb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
 
 <blockquote>
-  <p>如果一个对象与数字或字符串相比较，JavaScript会尝试返回对象的默认值。操作符会尝试通过方法valueOf和toString将对象转换为其原始值（一个字符串或数字类型的值）。</p>
+  <p>如果一个对象与数字或字符串相比较，JavaScript会尝试返回对象的默认值。操作符会尝试通过方法valueOf和toString将对象转换为其原始值（一个字符串或数字类型的值）。
+所以<code class="highlighter-rouge">[].valueOf().toString()</code>为<code class="highlighter-rouge">""</code></p>
 </blockquote>
 
-<p>所以将会运行<code class="highlighter-rouge">a.valueOf()</code>，<code class="highlighter-rouge">x</code>加<code class="highlighter-rouge">1</code>。</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">""</span> <span class="o">==</span> <span class="mi">0</span>
+</code></pre></div></div>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="o">=</span><span class="p">[];</span>
-<span class="kd">var</span> <span class="nx">x</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span>
-<span class="nx">a</span><span class="p">.</span><span class="nx">valueOf</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
-   <span class="k">return</span> <span class="nx">x</span><span class="o">++</span>
-<span class="p">};</span>
-<span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="o">==</span><span class="mi">3</span><span class="p">){</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> 
-<span class="p">}</span>
-<span class="c1">//4</span>
-</code></pre>
-</div>
-<h3 id="第四步-a4为true">第四步 <code class="highlighter-rouge">a==4</code>为True</h3>
-<p>这时<code class="highlighter-rouge">x</code>已经为<code class="highlighter-rouge">4</code>，运行<code class="highlighter-rouge">a.valueOf</code>返回值也为<code class="highlighter-rouge">4</code>。</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="o">=</span><span class="p">[];</span>
-<span class="kd">var</span> <span class="nx">x</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span>
-<span class="nx">a</span><span class="p">.</span><span class="nx">valueOf</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
-   <span class="k">return</span> <span class="nx">x</span><span class="o">++</span>
-<span class="p">};</span>
-<span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="o">==</span><span class="mi">3</span><span class="p">){</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> 
-<span class="p">}</span>
-<span class="c1">//4</span>
-<span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="o">==</span><span class="mi">4</span><span class="p">){</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> 
-<span class="p">}</span>
-<span class="c1">//5</span>
-</code></pre>
-</div>
-<h3 id="最后a3--a4-为true">最后<code class="highlighter-rouge">a==3 &amp;&amp; a==4</code> 为true</h3>
-<p>如上所示<code class="highlighter-rouge">a==3</code>为<code class="highlighter-rouge">True</code>，<code class="highlighter-rouge">a==4</code>为<code class="highlighter-rouge">True</code>，则<code class="highlighter-rouge">true &amp;&amp; true</code>为<code class="highlighter-rouge">True</code></p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="o">=</span><span class="p">[];</span>
-<span class="kd">var</span> <span class="nx">x</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span>
-<span class="nx">a</span><span class="p">.</span><span class="nx">valueOf</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
-   <span class="k">return</span> <span class="nx">x</span><span class="o">++</span>
-<span class="p">};</span>
-<span class="nx">a</span><span class="o">==</span><span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="nx">a</span><span class="o">==</span><span class="mi">4</span> <span class="p">?</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"succeed"</span><span class="p">)</span> <span class="p">:</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"failed"</span><span class="p">);</span>
-<span class="c1">//succeed</span>
-</code></pre>
-</div>
+<h3 id="第三步-转成0--0">第三步 转成<code class="highlighter-rouge">0 == 0</code></h3>
+<p>根据 <strong>MDN Web 文档-比较操作符</strong>:<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators</a></p>
 
-<h4 id="其他链接">其他链接</h4>
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-c98955d2dd379de9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
 
 <blockquote>
-  <ul>
-    <li><a href="https://raoenhui.github.io/js/2018/09/22/compare1/">js双等号探索(一): [] == ![]为Ture</a></li>
-  </ul>
+  <p>当比较数字和字符串时，字符串会转换成数字值。 JavaScript 尝试将数字字面量转换为数字类型的值。
+<code class="highlighter-rouge">Number("")</code>为<code class="highlighter-rouge">0</code>。</p>
 </blockquote>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">0</span> <span class="o">==</span> <span class="mi">0</span>
+</code></pre></div></div>
+
+<p>最后<code class="highlighter-rouge">0==0</code>位<code class="highlighter-rouge">True</code>,所以<code class="highlighter-rouge">[] == false</code>为<code class="highlighter-rouge">Ture</code></p>
+
+<h2 id="二--false为false">二、<code class="highlighter-rouge">!![] == false</code>为False</h2>
+
+<h3 id="第一步-先运行">第一步 先运行<code class="highlighter-rouge">!![]</code></h3>
+
+<p>根据 <strong>MDN Web 文档-运算符优先级</strong>:<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+</a>
+<img src="https://upload-images.jianshu.io/upload_images/9902136-e79e6e4918062b3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="感叹号.png" /></p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-48f91d66e4a6a15d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="等号.png" /></p>
+
+<p><code class="highlighter-rouge">!</code>的优先级为<strong>16</strong> ,<code class="highlighter-rouge">==</code>的优先级为<strong>10</strong>，<code class="highlighter-rouge">!</code>的优先级更高，所以先运行<code class="highlighter-rouge">!![]</code></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!!</span><span class="p">[]</span>
+</code></pre></div></div>
+<h3 id="第二步-先运行false">第二步 先运行<code class="highlighter-rouge">!false</code></h3>
+
+<p>根据 <strong>《Javascript高级程序设计》</strong>这本书第44页中<code class="highlighter-rouge">逻辑非</code>的说明：
+<img src="https://upload-images.jianshu.io/upload_images/9902136-cc3de1635fe5dfc3.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="!.jpeg" /></p>
+
+<blockquote>
+  <p>如果操作数是一个对象，返回false</p>
+</blockquote>
+
+<p>所以运行<code class="highlighter-rouge">!false</code>，为<code class="highlighter-rouge">True</code></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!</span><span class="kc">false</span> <span class="c1">//为True</span>
+</code></pre></div></div>
+<p>最后<code class="highlighter-rouge">true == false</code>为<code class="highlighter-rouge">False</code>,所以<code class="highlighter-rouge">!![] == false</code>为<code class="highlighter-rouge">False</code></p>
+
+<p>则<code class="highlighter-rouge">[] == false</code>为<code class="highlighter-rouge">True</code>而<code class="highlighter-rouge">!![] == false</code>为<code class="highlighter-rouge">False</code>。</p>
 
 <h4 id="其他链接">其他链接</h4>
 
@@ -240,22 +207,22 @@
   </ul>
 </blockquote>
 
-<p>Happy coding .. :)</p>
+<p>Happy coding ..</p>
 
             </div>
         </article>
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;js双等号探索(二): a==3&&a==4 为True ？&quot;%20https://raoenhui.github.io/js/2018/09/23/compare2/%20via%20&#64;raoenhui"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;js双等号探索(三): [] == false为True,而!![] == false为False ？&quot;%20https://raoenhui.github.io/js/2018/09/28/compare3/%20via%20&#64;raoenhui"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/js/2018/09/23/compare2/"
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/js/2018/09/28/compare3/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/js/2018/09/23/compare2/"
+                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/js/2018/09/28/compare3/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
                     <i class="fa fa-google-plus"></i>
                 </a>
@@ -386,7 +353,7 @@ gitment.render('container')
 
 <!-- ice facebook start-->
  
-<!-- <div class="fb-comments" data-href="https://raoenhui.github.io/js/2018/09/23/compare2/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+<!-- <div class="fb-comments" data-href="https://raoenhui.github.io/js/2018/09/28/compare3/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {

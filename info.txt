@@ -5,7 +5,7 @@ jekyll build  --watch
 
 jekyll build --watch && jekyll serve --watch
 
-jekyll build && git add --all
+jekyll build && git add --all && git status
 
 git push origin master
 
