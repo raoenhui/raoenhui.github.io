@@ -123,15 +123,14 @@
             <div><h3 id="前言">前言</h3>
 <p><code class="highlighter-rouge">a==3 &amp;&amp; a==4</code>为<code class="highlighter-rouge">True</code>是可以实现的。
 具体代码如下所示：</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="o">=</span><span class="p">[];</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="o">=</span><span class="p">[];</span>
 <span class="kd">var</span> <span class="nx">x</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span>
 <span class="nx">a</span><span class="p">.</span><span class="nx">valueOf</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
    <span class="k">return</span> <span class="nx">x</span><span class="o">++</span>
 <span class="p">};</span>
 <span class="nx">a</span><span class="o">==</span><span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="nx">a</span><span class="o">==</span><span class="mi">4</span> <span class="p">?</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"succeed"</span><span class="p">)</span> <span class="p">:</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"failed"</span><span class="p">);</span>
 <span class="c1">//succeed</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>下面妹子我将一一解析其原理。</p>
 
 <h3 id="第一步-let-a">第一步 <code class="highlighter-rouge">let a=[]</code></h3>
@@ -146,24 +145,22 @@
   <p>在 ES5 中，如果参数不是一个对象类型，将抛出一个<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/TypeError" title="TypeError（类型错误） 对象用来表示值的类型非预期类型时发生的错误。"><code class="highlighter-rouge">TypeError</code></a>异常。在 ES2015 中，非对象参数将被视为一个冻结的普通对象，因此会返回<code class="highlighter-rouge">true</code>。</p>
 </blockquote>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">isFrozen</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">isFrozen</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
 <span class="c1">// true                         (ES2015 code)</span>
 
 <span class="nb">Object</span><span class="p">.</span><span class="nx">isFrozen</span><span class="p">({});</span>
 <span class="c1">// false                        (ES2015 code)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>注意</strong>：所以<code class="highlighter-rouge">a</code>一定要是对象，如果a是非对象的其他基本类型如<code class="highlighter-rouge">String</code>，，被视为冻结对象，不能重写<code class="highlighter-rouge">valueOf</code>，则不起效果。</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="o">=</span><span class="s2">""</span><span class="p">;</span> <span class="c1">//非对象</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="o">=</span><span class="s2">""</span><span class="p">;</span> <span class="c1">//非对象</span>
 <span class="kd">var</span> <span class="nx">x</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span>
 <span class="nx">a</span><span class="p">.</span><span class="nx">valueOf</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
    <span class="k">return</span> <span class="nx">x</span><span class="o">++</span>
 <span class="p">};</span>
 <span class="nx">a</span><span class="o">==</span><span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="nx">a</span><span class="o">==</span><span class="mi">4</span> <span class="p">?</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"succeed"</span><span class="p">)</span> <span class="p">:</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"failed"</span><span class="p">);</span>
 <span class="c1">//failed</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <h3 id="第二步-a3--a4">第二步 <code class="highlighter-rouge">a==3 &amp;&amp; a==4</code></h3>
 <p>根据 <strong>MDN Web 文档-运算符优先级</strong>:<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 </a></p>
@@ -183,7 +180,7 @@
 
 <p>所以将会运行<code class="highlighter-rouge">a.valueOf()</code>，<code class="highlighter-rouge">x</code>加<code class="highlighter-rouge">1</code>。</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="o">=</span><span class="p">[];</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="o">=</span><span class="p">[];</span>
 <span class="kd">var</span> <span class="nx">x</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span>
 <span class="nx">a</span><span class="p">.</span><span class="nx">valueOf</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
    <span class="k">return</span> <span class="nx">x</span><span class="o">++</span>
@@ -192,11 +189,10 @@
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> 
 <span class="p">}</span>
 <span class="c1">//4</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <h3 id="第四步-a4为true">第四步 <code class="highlighter-rouge">a==4</code>为True</h3>
 <p>这时<code class="highlighter-rouge">x</code>已经为<code class="highlighter-rouge">4</code>，运行<code class="highlighter-rouge">a.valueOf</code>返回值也为<code class="highlighter-rouge">4</code>。</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="o">=</span><span class="p">[];</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="o">=</span><span class="p">[];</span>
 <span class="kd">var</span> <span class="nx">x</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span>
 <span class="nx">a</span><span class="p">.</span><span class="nx">valueOf</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
    <span class="k">return</span> <span class="nx">x</span><span class="o">++</span>
@@ -209,34 +205,24 @@
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> 
 <span class="p">}</span>
 <span class="c1">//5</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <h3 id="最后a3--a4-为true">最后<code class="highlighter-rouge">a==3 &amp;&amp; a==4</code> 为true</h3>
 <p>如上所示<code class="highlighter-rouge">a==3</code>为<code class="highlighter-rouge">True</code>，<code class="highlighter-rouge">a==4</code>为<code class="highlighter-rouge">True</code>，则<code class="highlighter-rouge">true &amp;&amp; true</code>为<code class="highlighter-rouge">True</code></p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="o">=</span><span class="p">[];</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="o">=</span><span class="p">[];</span>
 <span class="kd">var</span> <span class="nx">x</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span>
 <span class="nx">a</span><span class="p">.</span><span class="nx">valueOf</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
    <span class="k">return</span> <span class="nx">x</span><span class="o">++</span>
 <span class="p">};</span>
 <span class="nx">a</span><span class="o">==</span><span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="nx">a</span><span class="o">==</span><span class="mi">4</span> <span class="p">?</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"succeed"</span><span class="p">)</span> <span class="p">:</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"failed"</span><span class="p">);</span>
 <span class="c1">//succeed</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="其他链接">其他链接</h4>
 
 <blockquote>
   <ul>
     <li><a href="https://raoenhui.github.io/js/2018/09/22/compare1/">js双等号探索(一): [] == ![]为Ture</a></li>
-  </ul>
-</blockquote>
-
-<h4 id="其他链接">其他链接</h4>
-
-<blockquote>
-  <ul>
-    <li><a href="https://raoenhui.github.io/js/2018/09/22/compare1/">https://raoenhui.github.io/js/2018/09/22/compare1/</a></li>
-    <li><a href="https://raoenhui.github.io/js/2018/09/23/compare2/">https://raoenhui.github.io/js/2018/09/23/compare2/</a></li>
+    <li><a href="https://raoenhui.github.io/js/2018/09/28/compare3/">js双等号探索(三): [] == false为True,而!![] == false为False</a></li>
   </ul>
 </blockquote>
 
