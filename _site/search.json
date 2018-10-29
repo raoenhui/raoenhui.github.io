@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "Pa11y测试网站可访问性工具",
+		  "category"   : "",
+		  "url"        : "https://raoenhui.github.io/tool/2018/10/28/Pa11y/",
+		  "date"       : "2018-10-28 22:03:00 +0530",
+		  "shortdate"  : "October 28, 2018"
+		} ,
+	
+		{
 		  "title"      : "js双等号探索(三): [] == false为True,而!![] == false为False ？",
 		  "category"   : "",
 		  "url"        : "https://raoenhui.github.io/js/2018/09/28/compare3/",

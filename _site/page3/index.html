@@ -116,6 +116,39 @@
     <article class="notepad-index-post post row">
         <div class="small-12 medium-3 large-2 columns datetime">
             <span class="notepad-post-meta">
+                <time datetime="2018-05-01T20:00:00+05:30">
+                    <span class="day">
+                        01
+                    </span>
+                    <span class="month-year">
+                        May 2018
+                    </span>
+                </time>
+            </span>
+        </div>
+        <div class="small-12 medium-9 large-10 columns">
+            <header class="notepad-post-header">
+                <h3 class="notepad-post-title">
+                    <a href="https://raoenhui.github.io/nodejs/koa/2018/05/01/createImg/">
+                        自动生成不同大小形状的图片
+                    </a>
+                </h3>
+            </header>
+            <section class="notepad-post-excerpt">
+                <p>第一步 前言 实际前端工作中，当UED没有给到确定的图片时，前端需要自己模拟一个图片来实现页面占位。于是写了份自动生成不同大小形状图片的服务。 code地址为https://github.com/raoenhui/create-img/tree/master/server。 demo访问地址http://47.98.138.195/img。 第二步 原理 主要用到的技术是koa、koa-router和canvas。 用koa启动一个webserver服务，用了logger中间键来方便查看记录。 const logger = require('koa-logger'); const koaBody = require('koa-body'); const Koa = require('koa'); const app = module.exports = new Koa(); // middleware app.use(logger()); app.use(koaBody()); // listen if (!module.parent) app.listen(3000); 用koa-router获取用户访问的url，url中包含大小、形状和颜色信息，并调用canvas画图片。 const router...</p>
+            </section>
+            
+                <div class="notepad-index-post-tags">
+                <a href="https://raoenhui.github.io/categories/index.html#NodeJSKoa" title="Other posts from the Nodejs category">Nodejs</a>&nbsp;<a href="https://raoenhui.github.io/categories/index.html#NodeJSKoa" title="Other posts from the Koa category">Koa</a>
+                    
+                </div>
+            
+        </div>
+    </article>
+	
+    <article class="notepad-index-post post row">
+        <div class="small-12 medium-3 large-2 columns datetime">
+            <span class="notepad-post-meta">
                 <time datetime="2018-04-11T22:00:00+05:30">
                     <span class="day">
                         11
@@ -245,39 +278,6 @@
         </div>
     </article>
 	
-    <article class="notepad-index-post post row">
-        <div class="small-12 medium-3 large-2 columns datetime">
-            <span class="notepad-post-meta">
-                <time datetime="2015-08-28T15:09:00+05:30">
-                    <span class="day">
-                        28
-                    </span>
-                    <span class="month-year">
-                        August 2015
-                    </span>
-                </time>
-            </span>
-        </div>
-        <div class="small-12 medium-9 large-10 columns">
-            <header class="notepad-post-header">
-                <h3 class="notepad-post-title">
-                    <a href="https://raoenhui.github.io/es6/2015/08/28/es6-featrue/">
-                        Es6 featrues
-                    </a>
-                </h3>
-            </header>
-            <section class="notepad-post-excerpt">
-                <p>ECMAScript 6 [git.io/es6features](http://git.io/es6features) 介绍 ECMAScript 6,2015年也被称为ECMAScript 标准的最新版本。标志着最新的语言，是及2009年ES5发布后相继6年出的版本。这些功能的实现主要的JavaScript引擎统计如右边链接(现在正在完善)(http://kangax.github.io/es5-compat-table/es6/) ES6的完整规范如左边网址下ES6 standard。 ES6包括以下几个新功能: arrows classes enhanced object literals template strings destructuring default + rest + spread let + const iterators + for..of generators unicode modules module loaders map + set + weakmap +...</p>
-            </section>
-            
-                <div class="notepad-index-post-tags">
-                <a href="https://raoenhui.github.io/categories/index.html#ES6" title="Other posts from the Es6 category">Es6</a>
-                    
-                </div>
-            
-        </div>
-    </article>
-	
     <nav class="pagination" role="navigation">
     
 	    
@@ -286,9 +286,9 @@
 	
 
     
-    <span class="page-number">页 3 一共 3</span>
-    	
-    	<span class="older-posts faded">上一页 <i class="fa fa-chevron-right"></i></span>
+    <span class="page-number">页 3 一共 4</span>
+    	 
+        <a class="older-posts" href="https://raoenhui.github.io/page4/">下一页 <i class="fa fa-chevron-right"></i></a>
     	
 	</nav>
 

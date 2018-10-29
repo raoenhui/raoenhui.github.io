@@ -7,13 +7,133 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2018-10-29T14:12:22+05:30</updated>
+<updated>2018-10-29T15:54:33+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>Enhui Rao</name>
   <uri>https://raoenhui.github.io/</uri>
   <email>670615769@qq.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Pa11y测试网站可访问性工具]]></title>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/tool/2018/10/28/Pa11y/"/>
+  <id>https://raoenhui.github.io/tool/2018/10/28/Pa11y</id>
+  <published>2018-10-28T22:03:00+05:30</published>
+  <updated>2018-10-28T22:03:00+05:30</updated>
+  <author>
+    <name>Enhui Rao</name>
+    <uri>https://raoenhui.github.io</uri>
+    <email>670615769@qq.com</email>
+  </author>
+  <category scheme="https://raoenhui.github.io/tags/#tool" term="tool" />
+  <content type="html">
+  
+    &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;非常感谢&lt;strong&gt;wapyce&lt;/strong&gt;和&lt;strong&gt;carlsonsantana&lt;/strong&gt;测试我的博客网站，并给我发出Issue，让我知道了网站有些&lt;code class=&quot;highlighter-rouge&quot;&gt;bug&lt;/code&gt;，以及&lt;code class=&quot;highlighter-rouge&quot;&gt;Pa11y&lt;/code&gt;这个测试利器。&lt;/p&gt;
+
+&lt;h2 id=&quot;简介&quot;&gt;简介&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Pa11y&lt;/code&gt;是自动化测试网站可访问性的工具。 它原理是用命令行的形式运行 &lt;a href=&quot;http://squizlabs.github.com/HTML_CodeSniffer/&quot;&gt;HTML CodeSniffer&lt;/a&gt;
+，得到可访问性报告。&lt;/p&gt;
+
+&lt;h2 id=&quot;用法&quot;&gt;用法&lt;/h2&gt;
+&lt;p&gt;可以用&lt;code class=&quot;highlighter-rouge&quot;&gt;node&lt;/code&gt;来全局安装&lt;code class=&quot;highlighter-rouge&quot;&gt;pa11y&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   npm &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;pa11y &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;直接运行命令行,pa11y加自己的网址&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  pa11y https://raoenhui.github.io
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;也可在&lt;code class=&quot;highlighter-rouge&quot;&gt;js&lt;/code&gt;中使用,pa11y(‘网址’)返回的是一个承诺对象。&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pa11y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'pa11y'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;pa11y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'http://example.com/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Options go here&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Do something with the results&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;pa11y中可以配置很多，如给请求头加&lt;code class=&quot;highlighter-rouge&quot;&gt;Cookie&lt;/code&gt;，忽视某些警告等，详情可看&lt;a href=&quot;https://bitsofco.de/pa11y&quot;&gt;pally 教程&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;dashboard&quot;&gt;DashBoard&lt;/h2&gt;
+
+&lt;p&gt;首先本地创建 &lt;code class=&quot;highlighter-rouge&quot;&gt;mongoDb&lt;/code&gt;，下载&lt;code class=&quot;highlighter-rouge&quot;&gt;dashboard&lt;/code&gt;代码再安装&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/pa11y/dashboard.git
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;dashboard
+npm i
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;更改&lt;code class=&quot;highlighter-rouge&quot;&gt;pa11y&lt;/code&gt;的配置文件，主要是数据地址以及启动端口号&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;config/development.sample.json config/development.json
+&lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;config/production.sample.json config/production.json
+&lt;span class=&quot;nb&quot;&gt;cp &lt;/span&gt;config/test.sample.json config/test.json
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;如连接本地&lt;code class=&quot;highlighter-rouge&quot;&gt;mongoDb&lt;/code&gt;,并配置启动端口号为&lt;em&gt;4000&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;port&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;noindex&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;readonly&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;webservice&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+		&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;database&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;mongodb://localhost/pa11y-webservice&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+		&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;host&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;localhost&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+		&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;port&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;27017&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+		&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;cron&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;0 30 0 * * *&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;最后启动&lt;code class=&quot;highlighter-rouge&quot;&gt;dashboard&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;node index
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;也可用&lt;code class=&quot;highlighter-rouge&quot;&gt;pm2&lt;/code&gt;去启动生成后台进程 NODE_ENV=production pm2 start index.js
+添加URL并查看网站信息
+&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-de3e9b0c57003850.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;
+&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-c73c19ea9f1fc4fc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;我的案例可忽视&quot;&gt;我的案例（可忽视）&lt;/h2&gt;
+&lt;p&gt;通过&lt;code class=&quot;highlighter-rouge&quot;&gt;pa11y&lt;/code&gt;命令测试我的网址，发现些bug，如下所示
+&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-07c9f0fc079ba844.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1the-html-element-should-have-a-lang-or-xmllang-attribute-which-describes-the-language-of-the-document&quot;&gt;1.The html element should have a lang or xml:lang attribute which describes the language of the document.&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;没有给&lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt;加上语言标识。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;修复办法：加上中文语言标示&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'zh'&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;2-anchor-element-found-with-a-valid-href-attribute-but-no-link-content-has-been-supplied&quot;&gt;2. Anchor element found with a valid href attribute, but no link content has been supplied.&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;无效的&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;a&amp;gt;&lt;/code&gt;标签&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;修复办法：删除&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;a&amp;gt;&lt;/code&gt;标签&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- &amp;lt;a href=&quot;#&quot;&amp;gt;&amp;lt;i class=&quot;fa fa-bars&quot;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;/a&amp;gt; --&amp;gt;&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fa fa-bars&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;3this-element-has-insufficient-contrast-at-this-conformance-level-expected-a-contrast-ratio-of-at-least-451-but-text-in-this-element-has-a-contrast-ratio-of-2771-recommendation-change-background-to-717171&quot;&gt;3.This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.77:1. Recommendation: change background to #717171&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;提示颜色对比度不足，建议更换颜色。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;由于我网站需要保持统一色，这条我决定忽略。&lt;/p&gt;
+
+&lt;h3 id=&quot;4-img-element-is-the-only-content-of-the-link-but-is-missing-alt-text-the-alt-text-should-describe-the-purpose-of-the-link&quot;&gt;4. Img element is the only content of the link, but is missing alt text. The alt text should describe the purpose of the link.&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;图片缺少&lt;code class=&quot;highlighter-rouge&quot;&gt;alt&lt;/code&gt;标签&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;修复办法：给&lt;code class=&quot;highlighter-rouge&quot;&gt;img&lt;/code&gt;添加&lt;code class=&quot;highlighter-rouge&quot;&gt;tag&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Happy coding ..&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/tool/2018/10/28/Pa11y/&quot;&gt;Pa11y测试网站可访问性工具&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on October 28, 2018.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
