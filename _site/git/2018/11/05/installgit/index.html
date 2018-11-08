@@ -2,23 +2,23 @@
 <html lang='zh'>
 <head>
 <meta charset="utf-8">
-<title>USING MYSQL DUMP &vert; 前端妹子的博客</title>
+<title>CENTOS安装高版本GIT &vert; 前端妹子的博客</title>
 <meta name="description" content="一枚前端攻城狮!">
-<meta name="keywords" content="database, mysql">
+<meta name="keywords" content="git">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raoenhui.github.io/images/logo.png">
-<meta name="twitter:title" content="Using MySQL dump">
+<meta name="twitter:title" content="centos安装高版本git">
 <meta name="twitter:description" content="一枚前端攻城狮!">
 <meta name="twitter:creator" content="@raoenhui">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Using MySQL dump">
+<meta property="og:title" content="centos安装高版本git">
 <meta property="og:description" content="一枚前端攻城狮!">
-<meta property="og:url" content="https://raoenhui.github.io/bak/2013-12-17-using-mysql-dump/">
+<meta property="og:url" content="https://raoenhui.github.io/git/2018/11/05/installgit/">
 <meta property="og:site_name" content="前端妹子的博客">
 <meta property="og:image" content="https://raoenhui.github.io/images/">
 
@@ -26,7 +26,7 @@
 
 
 
-<link rel="canonical" href="https://raoenhui.github.io/bak/2013-12-17-using-mysql-dump/">
+<link rel="canonical" href="https://raoenhui.github.io/git/2018/11/05/installgit/">
 <link href="https://raoenhui.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="前端妹子的博客 Feed">
 <link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
 
@@ -112,64 +112,77 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h1>Using MySQL dump</h1>
-                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#database" data-toggle="tooltip" title="Posts tagged with database" rel="tag">database</a>&nbsp;&comma;&nbsp;<a href="https://raoenhui.github.io/tags/index.html#mysql" data-toggle="tooltip" title="Posts tagged with mysql" rel="tag">mysql</a> <strong><time datetime="2013-12-17T20:00:00+05:30">17 Dec 2013</time></strong></p>
+                            <h1>centos安装高版本git</h1>
+                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#git" data-toggle="tooltip" title="Posts tagged with git" rel="tag">git</a> <strong><time datetime="2018-11-05T22:03:00+05:30">05 Nov 2018</time></strong></p>
                         </div>
                     </div>
                 </div>
             </header>
 
         <article class="notepad-post-content post tag-simple">
-            <div><p>HI All, mysqldump is a very handy and useful command for keeping backup of your Db or to migrate them to another server.</p>
+            <div><h2 id="方法一">方法一</h2>
+<p>根据<code class="highlighter-rouge">git</code>官网所示<a href="https://git-scm.com/download/linux">https://git-scm.com/download/linux</a>,当操作系统为<code class="highlighter-rouge">CentOS </code>时，推荐<a href="https://mirrors.ede.kernel.org/pub/software/scm/git/">下载源码包</a>,然后编译安装。
+<img src="https://upload-images.jianshu.io/upload_images/9902136-e882a5233026b86e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
 
-<p>lets see how can we use it in different way ..</p>
+<p>不多说了，开始干货了。
+首先应该安装好必要的依赖包，省得在安装过程中出现各种问题。</p>
 
-<ul>
-  <li>To take a backup of data from mysqlserver itsself</li>
-</ul>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum <span class="nb">install </span>curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils-MakeMaker
+</code></pre></div></div>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysqldump</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span><span class="s1">'my_password'</span> <span class="n">my_db_name</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">my_dump_file</span><span class="p">.</span><span class="k">sql</span></code></pre></figure>
+<p>下载并编译git 
+下载、解压</p>
 
-<ul>
-  <li>To take dump from remote server where i have access.</li>
-</ul>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget https://www.kernel.org/pub/software/scm/git/git-2.19.1.tar.gz
+<span class="nb">tar </span>xzf git-2.19.1.tar.gz
+</code></pre></div></div>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysqldump</span> <span class="o">-</span><span class="n">h</span> <span class="n">xxxxx</span><span class="p">.</span><span class="n">xxx</span><span class="p">.</span><span class="n">us</span><span class="o">-</span><span class="n">east</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="n">rds</span><span class="p">.</span><span class="n">amazonaws</span><span class="p">.</span><span class="n">com</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span><span class="s1">'my_aws_password'</span> <span class="n">my_remot_db_name</span>   <span class="o">&gt;</span> <span class="o">/</span><span class="n">vol1</span><span class="o">/</span><span class="n">my_dump_file</span><span class="p">.</span><span class="k">sql</span></code></pre></figure>
+<p>编译并验证</p>
 
-<ul>
-  <li>To take dump from remote server but with only selected tables  where i have access.</li>
-</ul>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd  </span>git-2.19.1
+make <span class="nv">prefix</span><span class="o">=</span>/usr/local/git all
+make <span class="nv">prefix</span><span class="o">=</span>/usr/local/git <span class="nb">install
+echo</span> <span class="s2">"export PATH=</span><span class="nv">$PATH</span><span class="s2">:/usr/local/git/bin"</span> <span class="o">&gt;&gt;</span>/etc/bashrc
+<span class="nb">source</span> /etc/bashrc
+git <span class="nt">--version</span>
+<span class="c"># git version 2.19.1</span>
+</code></pre></div></div>
+<blockquote>
+  <p>如果之前用<code class="highlighter-rouge">yum</code>安装过需要现移除<code class="highlighter-rouge">git</code>，<code class="highlighter-rouge">yum remove git</code></p>
+</blockquote>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysqldump</span> <span class="o">-</span><span class="n">h</span> <span class="n">xxxxx</span><span class="p">.</span><span class="n">xxx</span><span class="p">.</span><span class="n">us</span><span class="o">-</span><span class="n">east</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="n">rds</span><span class="p">.</span><span class="n">amazonaws</span><span class="p">.</span><span class="n">com</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span><span class="s1">'my_aws_password'</span> <span class="n">my_remot_db_name</span>  <span class="n">table3</span> <span class="n">table2</span> <span class="n">table3</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">vol1</span><span class="o">/</span><span class="n">my_dump_file</span><span class="p">.</span><span class="k">sql</span></code></pre></figure>
+<p>## 方法二</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum <span class="nb">install </span>git
+</code></pre></div></div>
+<blockquote>
+  <p>注意：centos中用<code class="highlighter-rouge">yum</code>只能安装到<code class="highlighter-rouge">git</code>版本为<code class="highlighter-rouge">1.8.3.1</code>,但是现在最新的<code class="highlighter-rouge">git</code>包已经有<code class="highlighter-rouge">2.19.1</code>版本了，所以推荐方法一。</p>
+</blockquote>
 
-<ul>
-  <li>Resorting back dump  to local  mysqlserver</li>
-</ul>
+<h4 id="参考资料">参考资料</h4>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysql</span>  <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span><span class="s1">'my_aws_password'</span> <span class="n">my_remot_db_name</span>   <span class="o">&lt;</span> <span class="o">/</span><span class="n">vol1</span><span class="o">/</span><span class="n">my_dump_file</span><span class="p">.</span><span class="k">sql</span></code></pre></figure>
+<blockquote>
+  <ul>
+    <li><a href="[https://git-scm.com/download/linux">https://git-scm.com/download/linux</a></li>
+    <li><a href="https://blog.csdn.net/huashao0602/article/details/53507781">https://blog.csdn.net/huashao0602/article/details/53507781</a></li>
+  </ul>
+</blockquote>
 
-<ul>
-  <li>Resorting back dump  to remote  mysqlserver</li>
-</ul>
-
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysql</span>  <span class="o">-</span><span class="n">h</span> <span class="n">xxxxx</span><span class="p">.</span><span class="n">xxx</span><span class="p">.</span><span class="n">us</span><span class="o">-</span><span class="n">east</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="n">rds</span><span class="p">.</span><span class="n">amazonaws</span><span class="p">.</span><span class="n">com</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span><span class="s1">'my_aws_password'</span> <span class="n">my_remot_db_name</span>   <span class="o">&lt;</span> <span class="o">/</span><span class="n">vol1</span><span class="o">/</span><span class="n">my_dump_file</span><span class="p">.</span><span class="k">sql</span></code></pre></figure>
-
-<p>Happy Coding …. :)</p>
+<p>Happy coding .. :)</p>
 
             </div>
         </article>
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Using MySQL dump&quot;%20https://raoenhui.github.io/bak/2013-12-17-using-mysql-dump/%20via%20&#64;raoenhui"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;centos安装高版本git&quot;%20https://raoenhui.github.io/git/2018/11/05/installgit/%20via%20&#64;raoenhui"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/bak/2013-12-17-using-mysql-dump/"
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/git/2018/11/05/installgit/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/bak/2013-12-17-using-mysql-dump/"
+                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/git/2018/11/05/installgit/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
                     <i class="fa fa-google-plus"></i>
                 </a>
@@ -300,7 +313,7 @@ gitment.render('container')
 
 <!-- ice facebook start-->
  
-<!-- <div class="fb-comments" data-href="https://raoenhui.github.io/bak/2013-12-17-using-mysql-dump/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+<!-- <div class="fb-comments" data-href="https://raoenhui.github.io/git/2018/11/05/installgit/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {

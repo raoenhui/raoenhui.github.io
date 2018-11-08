@@ -7,13 +7,81 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2018-10-29T15:54:33+05:30</updated>
+<updated>2018-11-08T19:15:43+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>Enhui Rao</name>
   <uri>https://raoenhui.github.io/</uri>
   <email>670615769@qq.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[centos安装高版本git]]></title>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/git/2018/11/05/installgit/"/>
+  <id>https://raoenhui.github.io/git/2018/11/05/installgit</id>
+  <published>2018-11-05T22:03:00+05:30</published>
+  <updated>2018-11-05T22:03:00+05:30</updated>
+  <author>
+    <name>Enhui Rao</name>
+    <uri>https://raoenhui.github.io</uri>
+    <email>670615769@qq.com</email>
+  </author>
+  <category scheme="https://raoenhui.github.io/tags/#git" term="git" />
+  <content type="html">
+  
+    &lt;h2 id=&quot;方法一&quot;&gt;方法一&lt;/h2&gt;
+&lt;p&gt;根据&lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;官网所示&lt;a href=&quot;https://git-scm.com/download/linux&quot;&gt;https://git-scm.com/download/linux&lt;/a&gt;,当操作系统为&lt;code class=&quot;highlighter-rouge&quot;&gt;CentOS &lt;/code&gt;时，推荐&lt;a href=&quot;https://mirrors.ede.kernel.org/pub/software/scm/git/&quot;&gt;下载源码包&lt;/a&gt;,然后编译安装。
+&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-e882a5233026b86e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;不多说了，开始干货了。
+首先应该安装好必要的依赖包，省得在安装过程中出现各种问题。&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yum &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils-MakeMaker
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;下载并编译git 
+下载、解压&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget https://www.kernel.org/pub/software/scm/git/git-2.19.1.tar.gz
+&lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xzf git-2.19.1.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;编译并验证&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd  &lt;/span&gt;git-2.19.1
+make &lt;span class=&quot;nv&quot;&gt;prefix&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/git all
+make &lt;span class=&quot;nv&quot;&gt;prefix&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/local/git &lt;span class=&quot;nb&quot;&gt;install
+echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;export PATH=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;:/usr/local/git/bin&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;/etc/bashrc
+&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; /etc/bashrc
+git &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# git version 2.19.1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;如果之前用&lt;code class=&quot;highlighter-rouge&quot;&gt;yum&lt;/code&gt;安装过需要现移除&lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;yum remove git&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;## 方法二&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yum &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;注意：centos中用&lt;code class=&quot;highlighter-rouge&quot;&gt;yum&lt;/code&gt;只能安装到&lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;版本为&lt;code class=&quot;highlighter-rouge&quot;&gt;1.8.3.1&lt;/code&gt;,但是现在最新的&lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;包已经有&lt;code class=&quot;highlighter-rouge&quot;&gt;2.19.1&lt;/code&gt;版本了，所以推荐方法一。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;参考资料&quot;&gt;参考资料&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;[https://git-scm.com/download/linux&quot;&gt;https://git-scm.com/download/linux&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/huashao0602/article/details/53507781&quot;&gt;https://blog.csdn.net/huashao0602/article/details/53507781&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Happy coding .. :)&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/git/2018/11/05/installgit/&quot;&gt;centos安装高版本git&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on November 05, 2018.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -129,7 +197,7 @@ npm i
 
 &lt;p&gt;修复办法：给&lt;code class=&quot;highlighter-rouge&quot;&gt;img&lt;/code&gt;添加&lt;code class=&quot;highlighter-rouge&quot;&gt;tag&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Happy coding ..&lt;/p&gt;
+&lt;p&gt;Happy coding .. :)&lt;/p&gt;
 
   
   &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/tool/2018/10/28/Pa11y/&quot;&gt;Pa11y测试网站可访问性工具&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on October 28, 2018.&lt;/p&gt;</content>
@@ -237,7 +305,7 @@ npm i
   &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Happy coding ..&lt;/p&gt;
+&lt;p&gt;Happy coding .. :)&lt;/p&gt;
 
   
   &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/js/2018/09/28/compare3/&quot;&gt;js双等号探索(三): [] == false为True,而!![] == false为False ？&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on September 28, 2018.&lt;/p&gt;</content>

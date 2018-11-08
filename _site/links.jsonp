@@ -78,6 +78,11 @@ callback([
   {
     "text": "Pa11y测试网站可访问性工具",
     "href": "https://raoenhui.github.io/tool/2018/10/28/Pa11y/"
+  } ,
+
+  {
+    "text": "centos安装高版本git",
+    "href": "https://raoenhui.github.io/git/2018/11/05/installgit/"
   } 
 
 ])
