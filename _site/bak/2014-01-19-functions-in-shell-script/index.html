@@ -134,7 +134,7 @@ sql_exec<span class="o">()</span>
 <span class="o">{</span>
 <span class="nv">user</span><span class="o">=</span>root
 <span class="nv">password</span><span class="o">=</span>rut@123
-<span class="nv">result</span><span class="o">=</span>mysql <span class="nt">-u</span> <span class="nv">$user</span> <span class="nt">-p</span><span class="s1">'$password'</span> mydb <span class="nt">-se</span> <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
+<span class="nv">result</span><span class="o">=</span>mysql -u <span class="nv">$user</span> -p<span class="s1">'$password'</span> mydb -se <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
 <span class="nb">echo</span> <span class="nv">$result</span>
 <span class="o">}</span>
  

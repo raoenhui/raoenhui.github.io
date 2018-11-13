@@ -128,44 +128,47 @@
 
 <p>npm init 或直接创建package.json,将git仓库地址加入</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ice-first-cli"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.8"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"npm -v"</span><span class="w">
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ice-first-cli"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.8"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"npm -v"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"bin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"ice-first-cli"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./bin/commit.js"</span><span class="w">
+  </span><span class="nt">"bin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"ice-first-cli"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./bin/commit.js"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"repository"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"git"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"git+https://github.com/raoenhui/ice-first-cli.git"</span><span class="w">
+  </span><span class="nt">"repository"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"git"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"git+https://github.com/raoenhui/ice-first-cli.git"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"keywords"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nt">"keywords"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"cli"</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"devDependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"shelljs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^0.8.1"</span><span class="w">
+  </span><span class="nt">"devDependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"shelljs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^0.8.1"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
+</span></code></pre>
+</div>
 
 <h2 id="第三步-创建bin文件">第三步 创建bin文件</h2>
 
 <p>创建bin文件夹，在bin中再创建commit.js文件。</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#! /usr/bin/env node
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">#! /usr/bin/env node
 </span><span class="kd">var</span> <span class="nx">shell</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"shelljs"</span><span class="p">);</span>
 <span class="nx">shell</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="s2">"echo shell.exec works1"</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'my first cli'</span><span class="p">);</span>     
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h2 id="第四步-测试cli">第四步 测试cli</h2>
 
 <p>控制台输入</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo npm link
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo npm link
 ice-first-cli
 npm publish
-</code></pre></div></div>
+</code></pre>
+</div>
 <p><img src="https://raoenhui.github.io/images/150930/console.png" alt="console" /></p>
 
 <h2 id="第五步-完成">第五步 完成</h2>

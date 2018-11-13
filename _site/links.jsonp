@@ -83,6 +83,11 @@ callback([
   {
     "text": "centos安装高版本git",
     "href": "https://raoenhui.github.io/git/2018/11/05/installgit/"
+  } ,
+
+  {
+    "text": "pm2 远程发版",
+    "href": "https://raoenhui.github.io/nodejs/2018/11/12/pm2/"
   } 
 
 ])

@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "pm2 远程发版",
+		  "category"   : "",
+		  "url"        : "https://raoenhui.github.io/nodejs/2018/11/12/pm2/",
+		  "date"       : "2018-11-12 22:03:00 +0530",
+		  "shortdate"  : "November 12, 2018"
+		} ,
+	
+		{
 		  "title"      : "centos安装高版本git",
 		  "category"   : "",
 		  "url"        : "https://raoenhui.github.io/git/2018/11/05/installgit/",

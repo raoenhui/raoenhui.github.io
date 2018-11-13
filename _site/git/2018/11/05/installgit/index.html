@@ -127,33 +127,37 @@
 <p>不多说了，开始干货了。
 首先应该安装好必要的依赖包，省得在安装过程中出现各种问题。</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum <span class="nb">install </span>curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils-MakeMaker
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils-MakeMaker
+</code></pre>
+</div>
 
 <p>下载并编译git 
 下载、解压</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget https://www.kernel.org/pub/software/scm/git/git-2.19.1.tar.gz
-<span class="nb">tar </span>xzf git-2.19.1.tar.gz
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>wget https://www.kernel.org/pub/software/scm/git/git-2.19.1.tar.gz
+tar xzf git-2.19.1.tar.gz
+</code></pre>
+</div>
 
 <p>编译并验证</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd  </span>git-2.19.1
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">cd  </span>git-2.19.1
 make <span class="nv">prefix</span><span class="o">=</span>/usr/local/git all
-make <span class="nv">prefix</span><span class="o">=</span>/usr/local/git <span class="nb">install
-echo</span> <span class="s2">"export PATH=</span><span class="nv">$PATH</span><span class="s2">:/usr/local/git/bin"</span> <span class="o">&gt;&gt;</span>/etc/bashrc
+make <span class="nv">prefix</span><span class="o">=</span>/usr/local/git install
+<span class="nb">echo</span> <span class="s2">"export PATH=</span><span class="nv">$PATH</span><span class="s2">:/usr/local/git/bin"</span> &gt;&gt;/etc/bashrc
 <span class="nb">source</span> /etc/bashrc
-git <span class="nt">--version</span>
+git --version
 <span class="c"># git version 2.19.1</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 <blockquote>
   <p>如果之前用<code class="highlighter-rouge">yum</code>安装过需要现移除<code class="highlighter-rouge">git</code>，<code class="highlighter-rouge">yum remove git</code></p>
 </blockquote>
 
 <p>## 方法二</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum <span class="nb">install </span>git
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>yum install git
+</code></pre>
+</div>
 <blockquote>
   <p>注意：centos中用<code class="highlighter-rouge">yum</code>只能安装到<code class="highlighter-rouge">git</code>版本为<code class="highlighter-rouge">1.8.3.1</code>,但是现在最新的<code class="highlighter-rouge">git</code>包已经有<code class="highlighter-rouge">2.19.1</code>版本了，所以推荐方法一。</p>
 </blockquote>
