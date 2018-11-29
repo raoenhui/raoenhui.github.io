@@ -88,6 +88,11 @@ callback([
   {
     "text": "pm2 远程发版",
     "href": "https://raoenhui.github.io/nodejs/2018/11/12/pm2/"
+  } ,
+
+  {
+    "text": "表连接类型",
+    "href": "https://raoenhui.github.io/sql/2018/11/30/sqlLink/"
   } 
 
 ])
