@@ -209,11 +209,11 @@ html, body, .notepad-post-container, .notepad-post-header {
         max-width: 56.25rem;
         font-size: 1.125rem; }
         .post-template .notepad-post-content > div:not(.notepad-post-title) p:first-child {
-          font-size: 1.375rem;
+          font-size: 1.2rem;
           font-weight: 300; }
           @media only screen and (min-width: 40.063em) {
             .post-template .notepad-post-content > div:not(.notepad-post-title) p:first-child {
-              font-size: 1.625rem; } }
+              font-size: 1.3rem; } }
         .post-template .notepad-post-content > div:not(.notepad-post-title) p.with-image {
           text-align: center;
           padding-top: 1.125rem;
