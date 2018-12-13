@@ -83,11 +83,11 @@
 
                 <div class="notepad-blog-menu">      
     <div class="notepad-mobile-menu show-for-small">
-        <i class="fa fa-bars"></i>
+        <a><i class="fa fa-bars"></i></a>
     </div>
     <ul class="notepad-menu">
         <li class="notepad-mobile-close-btn show-for-small text-right">
-            <i class="fa fa-times"></i>
+            <a><i class="fa fa-times"></i></a>
         </li>
 
             <li>
@@ -133,24 +133,24 @@
 </ul>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"> 
-git format-patch <span class="nt">-3</span> HEAD <span class="nt">--stdout</span> <span class="o">&gt;</span> my-last-3-commits.patch</code></pre></figure>
+git format-patch -3 HEAD --stdout &gt; my-last-3-commits.patch</code></pre></figure>
 
 <ul>
   <li>Applying patch (this is for reviewer)
 First step is check the patch.</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git apply <span class="nt">--stat</span> my-last-3-commits.patch</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git apply --stat my-last-3-commits.patch</code></pre></figure>
 
 <p>Second  step is check the patch, git allows you to try it and see how troublesome is the code.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git apply <span class="nt">--check</span> my-last-3-commits.patch</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git apply --check my-last-3-commits.patch</code></pre></figure>
 
 <p>If it didnt gave any error, you are good to go.</p>
 
 <p>Now final part is to use git am rather than git apply as it allows you to <em>sign off</em> the commit for future reffrence.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git am <span class="nt">--signoff</span> &lt; my-last-3-commits.patch</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git am --signoff &lt; my-last-3-commits.patch</code></pre></figure>
 
 <p>Happy coding and a happy new year 2015 :)</p>
 

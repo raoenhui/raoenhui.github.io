@@ -83,11 +83,11 @@
 
                 <div class="notepad-blog-menu">      
     <div class="notepad-mobile-menu show-for-small">
-        <i class="fa fa-bars"></i>
+        <a><i class="fa fa-bars"></i></a>
     </div>
     <ul class="notepad-menu">
         <li class="notepad-mobile-close-btn show-for-small text-right">
-            <i class="fa fa-times"></i>
+            <a><i class="fa fa-times"></i></a>
         </li>
 
             <li>
@@ -120,9 +120,10 @@
             </header>
 
         <article class="notepad-post-content post tag-simple">
-            <div><div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[]</span> <span class="o">==</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">//为True</span>
+            <div><div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">[]</span> <span class="o">==</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">//为True</span>
 <span class="o">!!</span><span class="p">[]</span> <span class="o">==</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">//为False</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h2 id="一--false为true">一、<code class="highlighter-rouge">[] == false</code>为True</h2>
 
@@ -137,8 +138,9 @@
 所以<code class="highlighter-rouge">![]</code>为<strong>false</strong>为<code class="highlighter-rouge">0</code>.</p>
 </blockquote>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[]</span> <span class="o">==</span> <span class="mi">0</span>
-</code></pre></div></div>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">[]</span> <span class="o">==</span> <span class="mi">0</span>
+</code></pre>
+</div>
 
 <h3 id="第二步-转成--0">第二步 转成<code class="highlighter-rouge">"" == 0</code></h3>
 
@@ -151,8 +153,9 @@
 所以<code class="highlighter-rouge">[].valueOf().toString()</code>为<code class="highlighter-rouge">""</code></p>
 </blockquote>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">""</span> <span class="o">==</span> <span class="mi">0</span>
-</code></pre></div></div>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="s2">""</span> <span class="o">==</span> <span class="mi">0</span>
+</code></pre>
+</div>
 
 <h3 id="第三步-转成0--0">第三步 转成<code class="highlighter-rouge">0 == 0</code></h3>
 <p>根据 <strong>MDN Web 文档-比较操作符</strong>:<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators</a></p>
@@ -164,8 +167,9 @@
 <code class="highlighter-rouge">Number("")</code>为<code class="highlighter-rouge">0</code>。</p>
 </blockquote>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">0</span> <span class="o">==</span> <span class="mi">0</span>
-</code></pre></div></div>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="mi">0</span> <span class="o">==</span> <span class="mi">0</span>
+</code></pre>
+</div>
 
 <p>最后<code class="highlighter-rouge">0==0</code>位<code class="highlighter-rouge">True</code>,所以<code class="highlighter-rouge">[] == false</code>为<code class="highlighter-rouge">Ture</code></p>
 
@@ -180,8 +184,9 @@
 <p><img src="https://upload-images.jianshu.io/upload_images/9902136-48f91d66e4a6a15d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="等号.png" /></p>
 
 <p><code class="highlighter-rouge">!</code>的优先级为<strong>16</strong> ,<code class="highlighter-rouge">==</code>的优先级为<strong>10</strong>，<code class="highlighter-rouge">!</code>的优先级更高，所以先运行<code class="highlighter-rouge">!![]</code></p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!!</span><span class="p">[]</span>
-</code></pre></div></div>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="o">!!</span><span class="p">[]</span>
+</code></pre>
+</div>
 <h3 id="第二步-先运行false">第二步 先运行<code class="highlighter-rouge">!false</code></h3>
 
 <p>根据 <strong>《Javascript高级程序设计》</strong>这本书第44页中<code class="highlighter-rouge">逻辑非</code>的说明：
@@ -192,8 +197,9 @@
 </blockquote>
 
 <p>所以运行<code class="highlighter-rouge">!false</code>，为<code class="highlighter-rouge">True</code></p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!</span><span class="kc">false</span> <span class="c1">//为True</span>
-</code></pre></div></div>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="o">!</span><span class="kc">false</span> <span class="c1">//为True</span>
+</code></pre>
+</div>
 <p>最后<code class="highlighter-rouge">true == false</code>为<code class="highlighter-rouge">False</code>,所以<code class="highlighter-rouge">!![] == false</code>为<code class="highlighter-rouge">False</code></p>
 
 <p>则<code class="highlighter-rouge">[] == false</code>为<code class="highlighter-rouge">True</code>而<code class="highlighter-rouge">!![] == false</code>为<code class="highlighter-rouge">False</code>。</p>

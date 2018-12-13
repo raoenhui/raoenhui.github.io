@@ -83,11 +83,11 @@
 
                 <div class="notepad-blog-menu">      
     <div class="notepad-mobile-menu show-for-small">
-        <i class="fa fa-bars"></i>
+        <a><i class="fa fa-bars"></i></a>
     </div>
     <ul class="notepad-menu">
         <li class="notepad-mobile-close-btn show-for-small text-right">
-            <i class="fa fa-times"></i>
+            <a><i class="fa fa-times"></i></a>
         </li>
 
             <li>
@@ -122,15 +122,16 @@
         <article class="notepad-post-content post tag-simple">
             <div><h2 id="第一步-引入所需要的包">第一步 引入所需要的包</h2>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//git命令组件</span>
-<span class="kd">const</span> <span class="nx">Git</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'simple-git'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//git命令组件</span>
+<span class="kr">const</span> <span class="nx">Git</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'simple-git'</span><span class="p">);</span>
 <span class="c1">//获取路径</span>
-<span class="kd">const</span> <span class="nx">Path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'path'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">GitPath</span> <span class="o">=</span> <span class="nx">Path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">'..'</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">Path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'path'</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">GitPath</span> <span class="o">=</span> <span class="nx">Path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">'..'</span><span class="p">);</span>
 <span class="c1">//为git的version添加自动增长版本号组件</span>
-<span class="kd">const</span> <span class="nx">Bump</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'bump-regex'</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">Bump</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'bump-regex'</span><span class="p">);</span>
 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h2 id="第二步-生成并提交tag号">第二步 生成并提交tag号</h2>
 
@@ -141,7 +142,7 @@
   <li>将tag推送到远端</li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
 <span class="kd">var</span> <span class="nx">newVersion</span><span class="p">,</span><span class="c1">//新标签</span>
     <span class="nx">versionHint</span><span class="p">;</span><span class="c1">//新标签的备注</span>
 <span class="c1">// update repo and get a list of tags </span>
@@ -162,7 +163,8 @@
             <span class="p">});</span>
         <span class="p">});</span>
     <span class="p">});</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Happy coding .. :)</p>
 
