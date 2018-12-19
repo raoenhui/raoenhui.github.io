@@ -98,11 +98,6 @@ callback([
   {
     "text": "require 和 import 详解",
     "href": "https://raoenhui.github.io/es6/2018/12/06/import/"
-  } ,
-
-  {
-    "text": "慎用try catch",
-    "href": "https://raoenhui.github.io/js/2018/12/16/tryCatch/"
   } 
 
 ])
