@@ -103,7 +103,7 @@
                  </li>
 
            <li><a href="https://github.com/raoenhui/raoenhui.github.io" target="_blank" title="Github"><i class="icon-rss"></i> Github</a></li>
-           <li><a href="https://raoenhui.github.io/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+           <li><a href="http://www.frontendx.cn" target="_blank" title="Index">Index</a></li>
     </ul>
 
 </div>
@@ -128,9 +128,10 @@
 <h3 id="二git钩子">二、git钩子</h3>
 
 <p>用过<code class="highlighter-rouge">git</code>的小伙伴们都知道git有很多命令<code class="highlighter-rouge">commit</code>、<code class="highlighter-rouge">push</code>、<code class="highlighter-rouge">rebase</code>等等。那这些命令主要是在执行.git文件夹中的东西，那么git 钩子目录就是在.git文件夹的hooks下，如下所示：</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nb">cd</span> .git/hooks
-    <span class="nb">ls</span> <span class="nt">-l</span>
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>    <span class="nb">cd</span> .git/hooks
+    ls -l
+</code></pre>
+</div>
 <p><img src="https://upload-images.jianshu.io/upload_images/9902136-4f99e1c286d188fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hook.png" /></p>
 
 <p>上图为各个钩子的案例脚本，可以把sample去掉，直接编写shell脚本来执行。
@@ -144,19 +145,22 @@
 
 <p>husky能够防止不规范代码被commit、push、merge等等。
 首先安装husky</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    npm <span class="nb">install </span>husky <span class="nt">--save-dev</span>
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>    npm install husky --save-dev
+</code></pre>
+</div>
 <p>或</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    yarn add husky <span class="nt">--dev</span>
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>    yarn add husky --dev
+</code></pre>
+</div>
 <p>编辑<code class="highlighter-rouge">package.json</code>文件，如：</p>
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"precommit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webpack  --config ./web/webpack.config.js"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"..."</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="w">
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"precommit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webpack  --config ./web/webpack.config.js"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"..."</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
+</span></code></pre>
+</div>
 
 <p>当你<code class="highlighter-rouge">git commit</code>的时候，将会现现执行 <code class="highlighter-rouge">precommit</code>里的脚本，没有问题了再提交。</p>
 
@@ -171,54 +175,59 @@
 <p><code class="highlighter-rouge">pre-commit</code>能够防止不规范代码被commit，没有husky这么全面，但是你可以接着安装<code class="highlighter-rouge">pre-push</code>等插件来防止对应的<code class="highlighter-rouge">git</code>操作。下面以pre-commit为例：</p>
 
 <p>首先安装pre-commit</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    npm <span class="nb">install </span>pre-commit <span class="nt">--save-dev</span>
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>    npm install pre-commit --save-dev
+</code></pre>
+</div>
 <p>编辑<code class="highlighter-rouge">package.json</code>文件，如：</p>
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"echo </span><span class="se">\"</span><span class="s2">Error: I SHOULD FAIL LOLOLOLOLOL </span><span class="se">\"</span><span class="s2"> &amp;&amp; exit 1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"echo </span><span class="se">\"</span><span class="s2">fooo</span><span class="se">\"</span><span class="s2"> &amp;&amp; exit 0"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"bar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"echo </span><span class="se">\"</span><span class="s2">bar</span><span class="se">\"</span><span class="s2"> &amp;&amp; exit 0"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"pre-commit"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="s2">"scripts"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"echo \"Error: I SHOULD FAIL LOLOLOLOLOL \" &amp;&amp; exit 1"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"echo \"fooo\" &amp;&amp; exit 0"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"bar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"echo \"bar\" &amp;&amp; exit 0"</span><span class="w">
+  </span><span class="p">}</span><span class="err">,</span><span class="w">
+  </span><span class="s2">"pre-commit"</span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"foo"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"bar"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"test"</span><span class="w">
   </span><span class="p">]</span><span class="w">
-</span></code></pre></div></div>
+</span></code></pre>
+</div>
 <p>pre-commit的配置项非常灵活，还可以下面这样写：</p>
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"precommit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo, bar, test"</span><span class="w">
-  </span><span class="s2">"pre-commit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo, bar, test"</span><span class="w">
-  </span><span class="s2">"pre-commit"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w"> </span><span class="s2">"test"</span><span class="p">]</span><span class="w">
-  </span><span class="s2">"precommit"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w"> </span><span class="s2">"test"</span><span class="p">],</span><span class="w">
-  </span><span class="s2">"precommit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"run"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo, bar, test"</span><span class="p">,</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"pre-commit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"run"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w"> </span><span class="s2">"test"</span><span class="p">],</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"precommit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"run"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w"> </span><span class="s2">"test"</span><span class="p">],</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"pre-commit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"run"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo, bar, test"</span><span class="p">,</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"precommit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo, bar, test"</span><span class="w">
+  </span><span class="s2">"pre-commit"</span><span class="err">:</span><span class="w"> </span><span class="s2">"foo, bar, test"</span><span class="w">
+  </span><span class="s2">"pre-commit"</span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w"> </span><span class="s2">"test"</span><span class="p">]</span><span class="w">
+  </span><span class="s2">"precommit"</span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w"> </span><span class="s2">"test"</span><span class="p">],</span><span class="w">
+  </span><span class="nt">"precommit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"run"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo, bar, test"</span><span class="p">,</span><span class="w">
+  </span><span class="err">}</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"pre-commit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"run"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w"> </span><span class="s2">"test"</span><span class="p">],</span><span class="w">
+  </span><span class="err">}</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"precommit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"run"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w"> </span><span class="s2">"test"</span><span class="p">],</span><span class="w">
+  </span><span class="err">}</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"pre-commit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"run"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo, bar, test"</span><span class="p">,</span><span class="w">
+  </span><span class="err">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
+</span></code></pre>
+</div>
 <p>你配置好后，执行<code class="highlighter-rouge">git commit</code>命令，它将会依次执行foo、bar、test来检测完善代码。</p>
 
 <h3 id="五总结">五、总结</h3>
 <p>我们已经怎么用<code class="highlighter-rouge">git</code>钩子插件了，那么我们一般用它来做什么呢。
 prevent commit时，我们可以把<code class="highlighter-rouge">eslint</code>以及<code class="highlighter-rouge">test</code>命令加上，检测代码规范：</p>
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"precommit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lint-staged &amp;&amp; npm run test"</span><span class="w">
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="s2">"scripts"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"precommit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lint-staged &amp;&amp; npm run test"</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
+</span></code></pre>
+</div>
 <p>prevent publish 主干分支时，我们可以把<code class="highlighter-rouge">tag</code>打上：</p>
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"precommit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"npm run tag"</span><span class="w">
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="s2">"scripts"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"precommit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"npm run tag"</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
+</span></code></pre>
+</div>
 <blockquote>
   <p>具体怎么自动化打<code class="highlighter-rouge">tag</code>标签，可以参考我的另外篇文章<a href="https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag">https://raoenhui.github.io/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag</a></p>
 </blockquote>

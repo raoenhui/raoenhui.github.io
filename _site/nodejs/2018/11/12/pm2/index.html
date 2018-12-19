@@ -103,7 +103,7 @@
                  </li>
 
            <li><a href="https://github.com/raoenhui/raoenhui.github.io" target="_blank" title="Github"><i class="icon-rss"></i> Github</a></li>
-           <li><a href="https://raoenhui.github.io/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+           <li><a href="http://www.frontendx.cn" target="_blank" title="Index">Index</a></li>
     </ul>
 
 </div>
@@ -122,7 +122,7 @@
         <article class="notepad-post-content post tag-simple">
             <div><h2 id="创建配置项">创建配置项</h2>
 <p>在你的git仓库根目录中新建pm2配置文件<code class="highlighter-rouge">ecosystem.config.js</code>,如注释所示，或者执行<code class="highlighter-rouge">pm2 init</code>初始化文件<code class="highlighter-rouge">ecosystem.config.js</code>。</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">apps</span> <span class="p">:</span> <span class="p">[{</span>
     <span class="c1">//pm2名字</span>
     <span class="na">name</span><span class="p">:</span> <span class="s2">"nextcn"</span><span class="p">,</span>
@@ -166,29 +166,34 @@
     <span class="p">},</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 <h2 id="安装">安装</h2>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 deploy production setup
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>pm2 deploy production setup
+</code></pre>
+</div>
 <blockquote>
   <p>服务器上的git版本需要在v1.8以上，否则fetch不成功，代码更新不了。可参照<a href="https://raoenhui.github.io/git/2018/11/05/installgit/">CENTOS安装高版本GIT</a>
 <img src="https://upload-images.jianshu.io/upload_images/9902136-dc5196e8b47f06a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
 </blockquote>
 
 <h2 id="更新">更新</h2>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 deploy production update
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>pm2 deploy production update
+</code></pre>
+</div>
 
 <h2 id="回滚">回滚</h2>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 deploy production revert 1
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>pm2 deploy production revert 1
+</code></pre>
+</div>
 <blockquote>
   <p>可查看提交记录，回滚到想要的版本<code class="highlighter-rouge">pm2 deploy production list</code></p>
 </blockquote>
 
 <h2 id="强制提交">强制提交</h2>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 deploy production <span class="nt">--force</span>
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>pm2 deploy production --force
+</code></pre>
+</div>
 <blockquote>
   <p>当你代码有修改但是不想提交时可以强制发布</p>
 </blockquote>
