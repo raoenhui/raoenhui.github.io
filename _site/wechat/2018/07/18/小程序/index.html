@@ -130,11 +130,10 @@
 
 <p>建议不要在公共css文件夹下写伪类，本妹子就遇到过这个坑，某小伙伴在公共css上写了按钮的after加了个边框样式，找了好久才找到这个边框写在哪。</p>
 
-<div class="language-css highlighter-rouge"><pre class="highlight"><code> <span class="nt">button</span><span class="nd">::after</span> <span class="p">{</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">button</span><span class="nd">::after</span> <span class="p">{</span>
  	  <span class="nl">border</span><span class="p">:</span> <span class="m">2</span><span class="n">rpx</span> <span class="nb">solid</span> <span class="m">#000</span><span class="p">;</span>  
  <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><img src="https://upload-images.jianshu.io/upload_images/9902136-f4ec3d52aa3df3dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="after.png" /></p>
 
@@ -178,7 +177,7 @@
 
 <p>如果你想自定义分享图片，则在生命周期onShareAppMessage中编写如下所示：</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">Page</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Page</span><span class="p">({</span>
   <span class="na">onShareAppMessage</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">{</span>
       <span class="na">title</span><span class="p">:</span> <span class="s1">'自定义转发标题'</span><span class="p">,</span>
@@ -186,8 +185,7 @@
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">})</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>但是<code class="highlighter-rouge">onShareAppMessage</code>不能支持异步，如果你想从接口里获取分享图片URL，必须在<code class="highlighter-rouge">onLoad</code>提前读取并放入Data中</p>
 
 <p><strong>原文地址为：<a href="https://raoenhui.github.io/wechat/2018/07/18/%E5%B0%8F%E7%A8%8B%E5%BA%8F">https://raoenhui.github.io/wechat/2018/07/18/%E5%B0%8F%E7%A8%8B%E5%BA%8F</a></strong></p>

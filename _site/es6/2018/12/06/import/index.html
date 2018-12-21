@@ -138,22 +138,19 @@
 在CommonJS中，有一个全局性方法require()，用于加载模块。</p>
 
 <h5 id="111-用法">1.1.1 用法</h5>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">math</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'math'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">math</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'math'</span><span class="p">);</span>
 <span class="nx">math</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
-</code></pre>
-</div>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">math</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'math'</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nb">Math</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">math</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">math</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'math'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nb">Math</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">math</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="nb">Math</span><span class="p">.</span><span class="nx">add</span><span class="p">();</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <h5 id="112-模块写法">1.1.2 模块写法</h5>
 <p>模块写法分exports和module.exports。</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">exports</span><span class="p">.</span><span class="nx">add</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">x</span><span class="o">+</span><span class="nx">y</span><span class="p">;</span>
-</code></pre>
-</div>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kr">class</span> <span class="nx">math</span> <span class="p">{</span>
-  <span class="nx">constructor</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">exports</span><span class="p">.</span><span class="nx">add</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">x</span><span class="o">+</span><span class="nx">y</span><span class="p">;</span>
+</code></pre></div></div>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">class</span> <span class="nx">math</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">y</span><span class="p">;</span>
   <span class="p">}</span>
@@ -162,8 +159,7 @@
     <span class="k">return</span>  <span class="nx">x</span><span class="o">+</span><span class="nx">y</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">};</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="12-amd">1.2 AMD</h4>
 <p>require.js和cujo.js就是用AMD思想。</p>
@@ -175,12 +171,11 @@
 因此，浏览器端的模块，不能采用”同步加载”（synchronous），只能采用”异步加载”（asynchronous）。这就是AMD规范诞生的背景。</p>
 
 <h5 id="121-用法">1.2.1 用法</h5>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//require([module], callback);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//require([module], callback);</span>
 <span class="nx">require</span><span class="p">([</span><span class="s1">'math'</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">math</span><span class="p">)</span> <span class="p">{</span>
 <span class="err">　</span><span class="nx">math</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
 <span class="p">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h5 id="121-模块写法">1.2.1 模块写法</h5>
 <p>define(id?, dependencies?, factory)</p>
@@ -191,7 +186,7 @@
 </ul>
 
 <p>一个模块不依赖其他模块写法</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// math.js</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// math.js</span>
 <span class="err">　　</span><span class="nx">define</span><span class="p">(</span><span class="kd">function</span> <span class="p">(){</span>
 <span class="err">　　　　</span><span class="kd">var</span> <span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">){</span>
 <span class="err">　　　　　　</span><span class="k">return</span> <span class="nx">x</span><span class="o">+</span><span class="nx">y</span><span class="p">;</span>
@@ -200,10 +195,9 @@
 <span class="err">　　　　　　</span><span class="na">add</span><span class="p">:</span> <span class="nx">add</span>
 <span class="err">　　　　</span><span class="p">};</span>
 <span class="err">　　</span><span class="p">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>模块还依赖其他模块</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">define</span><span class="p">([</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">define</span><span class="p">([</span><span class="s1">'a'</span><span class="p">,</span><span class="s1">'b'</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span>
 <span class="err">　　　　</span><span class="kd">function</span> <span class="nx">foo</span><span class="p">(){</span>
 <span class="err">　　　　　　</span><span class="nx">a</span><span class="p">.</span><span class="nx">doSomething</span><span class="p">();</span><span class="c1">// 依赖前置，提前执行</span>
 <span class="err">　　　　　　</span><span class="nx">b</span><span class="p">.</span><span class="nx">doSomething</span><span class="p">();</span>
@@ -212,8 +206,7 @@
 <span class="err">　　　　　　</span><span class="na">foo</span> <span class="p">:</span> <span class="nx">foo</span>
 <span class="err">　　　　</span><span class="p">};</span>
 <span class="err">　　</span><span class="p">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <blockquote>
   <p>当require()函数加载上面这个模块的时候，就会先加载Lib.js文件。</p>
 </blockquote>
@@ -222,7 +215,7 @@
 <p>sea.js就是用CMD思想。
 CMD是”Common Module Definition”的缩写。类似于requirejs，但是seajs是依赖就近，延迟执行，requirejs是依赖前置，提前执行。</p>
 <h5 id="131-用法">1.3.1 用法</h5>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">seajs</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">seajs</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
   <span class="na">alias</span><span class="p">:</span> <span class="p">{</span>
     <span class="s1">'jquery'</span><span class="p">:</span> <span class="s1">'http://modules.seajs.org/jquery/1.7.2/jquery.js'</span>
   <span class="p">}</span>
@@ -231,10 +224,9 @@ CMD是”Common Module Definition”的缩写。类似于requirejs，但是seajs
 <span class="nx">seajs</span><span class="p">.</span><span class="nx">use</span><span class="p">([</span><span class="s1">'./hello'</span><span class="p">,</span> <span class="s1">'jquery'</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">hello</span><span class="p">,</span> <span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">$</span><span class="p">(</span><span class="s1">'#beautiful-sea'</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="nx">hello</span><span class="p">.</span><span class="nx">sayHello</span><span class="p">);</span>
 <span class="p">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <h5 id="131-模块写法">1.3.1 模块写法</h5>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">define</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">require</span><span class="p">,</span> <span class="nx">exports</span><span class="p">,</span> <span class="nx">module</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">define</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">require</span><span class="p">,</span> <span class="nx">exports</span><span class="p">,</span> <span class="nx">module</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'jquery'</span><span class="p">);</span>
 
   <span class="nx">exports</span><span class="p">.</span><span class="nx">sayHello</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
@@ -243,8 +235,7 @@ CMD是”Common Module Definition”的缩写。类似于requirejs，但是seajs
    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"b"</span><span class="p">);</span>
    <span class="nx">b</span><span class="p">.</span><span class="nx">doSomething</span><span class="p">();</span>    <span class="c1">// 依赖就近，延迟执行</span>
 <span class="p">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="2-import">2 import</h3>
 <p>特点：</p>
@@ -261,17 +252,16 @@ CMD是”Common Module Definition”的缩写。类似于requirejs，但是seajs
 <h5 id="211-用法">2.1.1 用法</h5>
 
 <p>import有两种模块导入方式：命名式导入（名称导入）和默认导入（定义式导入），以及 <code class="highlighter-rouge">import()</code>。</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="nx">defaultMember</span> <span class="nx">from</span> <span class="s2">"module-name"</span><span class="p">;</span>
-<span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">name</span> <span class="nx">from</span> <span class="s2">"module-name"</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">member</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">"module-name"</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">member</span> <span class="nx">as</span> <span class="nx">alias</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">"module-name"</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">member1</span> <span class="p">,</span> <span class="nx">member2</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">"module-name"</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">member1</span> <span class="p">,</span> <span class="nx">member2</span> <span class="nx">as</span> <span class="nx">alias2</span> <span class="p">,</span> <span class="p">[...]</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">"module-name"</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">defaultMember</span><span class="p">,</span> <span class="p">{</span> <span class="nx">member</span> <span class="p">[</span> <span class="p">,</span> <span class="p">[...]</span> <span class="p">]</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">"module-name"</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">defaultMember</span><span class="p">,</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">name</span> <span class="nx">from</span> <span class="s2">"module-name"</span><span class="p">;</span>
-<span class="kr">import</span> <span class="s2">"module-name"</span><span class="p">;</span>
-</code></pre>
-</div>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">defaultMember</span> <span class="k">from</span> <span class="s2">"module-name"</span><span class="p">;</span>
+<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">name</span> <span class="k">from</span> <span class="s2">"module-name"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">member</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"module-name"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">member</span> <span class="k">as</span> <span class="nx">alias</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"module-name"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">member1</span> <span class="p">,</span> <span class="nx">member2</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"module-name"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">member1</span> <span class="p">,</span> <span class="nx">member2</span> <span class="k">as</span> <span class="nx">alias2</span> <span class="p">,</span> <span class="p">[...]</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"module-name"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">defaultMember</span><span class="p">,</span> <span class="p">{</span> <span class="nx">member</span> <span class="p">[</span> <span class="p">,</span> <span class="p">[...]</span> <span class="p">]</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"module-name"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">defaultMember</span><span class="p">,</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">name</span> <span class="k">from</span> <span class="s2">"module-name"</span><span class="p">;</span>
+<span class="k">import</span> <span class="s2">"module-name"</span><span class="p">;</span>
+</code></pre></div></div>
 <ul>
   <li>name－从将要导入模块中收到的导出值的名称</li>
   <li>member, memberN－从导出模块，导入指定名称的多个成员</li>
@@ -285,39 +275,36 @@ CMD是”Common Module Definition”的缩写。类似于requirejs，但是seajs
 <h6 id="import">import()</h6>
 
 <p>import()返回一个 Promise 对象。</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// 报错</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 报错</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">===</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kr">import</span> <span class="nx">MyModual</span> <span class="nx">from</span> <span class="s1">'./myModual'</span><span class="p">;</span>
+  <span class="k">import</span> <span class="nx">MyModual</span> <span class="k">from</span> <span class="s1">'./myModual'</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>引擎处理import语句是在编译时，这时不会去分析或执行if语句，所以import语句放在if代码块之中毫无意义，因此会报句法错误，而不是执行时错误。没办法像require样根据条件动态加载。
 于是<a href="https://github.com/tc39/proposal-dynamic-import">提案</a>引入import()函数，编译时分析if语句,完成动态加载。</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="nx">x</span> <span class="o">===</span> <span class="mi">2</span><span class="p">){</span>
-  <span class="kr">import</span><span class="p">(</span><span class="s1">'myModual'</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">MyModual</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="nx">x</span> <span class="o">===</span> <span class="mi">2</span><span class="p">){</span>
+  <span class="k">import</span><span class="p">(</span><span class="s1">'myModual'</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">MyModual</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
     <span class="k">new</span> <span class="nx">MyModual</span><span class="p">();</span>
   <span class="p">})</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h5 id="221-模块写法">2.2.1 模块写法</h5>
 <p>export有两种模块导出方式：命名式导出（名称导出）和默认导出（定义式导出），命名式导出每个模块可以多个，而默认导出每个模块仅一个。</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="p">{</span> <span class="nx">name1</span><span class="p">,</span> <span class="nx">name2</span><span class="p">,</span> <span class="err">…</span><span class="p">,</span> <span class="nx">nameN</span> <span class="p">};</span>
-<span class="kr">export</span> <span class="p">{</span> <span class="nx">variable1</span> <span class="nx">as</span> <span class="nx">name1</span><span class="p">,</span> <span class="nx">variable2</span> <span class="nx">as</span> <span class="nx">name2</span><span class="p">,</span> <span class="err">…</span><span class="p">,</span> <span class="nx">nameN</span> <span class="p">};</span>
-<span class="kr">export</span> <span class="kd">let</span> <span class="nx">name1</span><span class="p">,</span> <span class="nx">name2</span><span class="p">,</span> <span class="err">…</span><span class="p">,</span> <span class="nx">nameN</span><span class="p">;</span> <span class="c1">// also var</span>
-<span class="kr">export</span> <span class="kd">let</span> <span class="nx">name1</span> <span class="o">=</span> <span class="err">…</span><span class="p">,</span> <span class="nx">name2</span> <span class="o">=</span> <span class="err">…</span><span class="p">,</span> <span class="err">…</span><span class="p">,</span> <span class="nx">nameN</span><span class="p">;</span> <span class="c1">// also var, const</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="p">{</span> <span class="nx">name1</span><span class="p">,</span> <span class="nx">name2</span><span class="p">,</span> <span class="err">…</span><span class="p">,</span> <span class="nx">nameN</span> <span class="p">};</span>
+<span class="k">export</span> <span class="p">{</span> <span class="nx">variable1</span> <span class="k">as</span> <span class="nx">name1</span><span class="p">,</span> <span class="nx">variable2</span> <span class="k">as</span> <span class="nx">name2</span><span class="p">,</span> <span class="err">…</span><span class="p">,</span> <span class="nx">nameN</span> <span class="p">};</span>
+<span class="k">export</span> <span class="kd">let</span> <span class="nx">name1</span><span class="p">,</span> <span class="nx">name2</span><span class="p">,</span> <span class="err">…</span><span class="p">,</span> <span class="nx">nameN</span><span class="p">;</span> <span class="c1">// also var</span>
+<span class="k">export</span> <span class="kd">let</span> <span class="nx">name1</span> <span class="o">=</span> <span class="err">…</span><span class="p">,</span> <span class="nx">name2</span> <span class="o">=</span> <span class="err">…</span><span class="p">,</span> <span class="err">…</span><span class="p">,</span> <span class="nx">nameN</span><span class="p">;</span> <span class="c1">// also var, const</span>
  
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">expression</span><span class="p">;</span>
-<span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="p">(</span><span class="err">…</span><span class="p">)</span> <span class="p">{</span> <span class="err">…</span> <span class="p">}</span> <span class="c1">// also class, function*</span>
-<span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">name1</span><span class="p">(</span><span class="err">…</span><span class="p">)</span> <span class="p">{</span> <span class="err">…</span> <span class="p">}</span> <span class="c1">// also class, function*</span>
-<span class="kr">export</span> <span class="p">{</span> <span class="nx">name1</span> <span class="nx">as</span> <span class="k">default</span><span class="p">,</span> <span class="err">…</span> <span class="p">};</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">expression</span><span class="p">;</span>
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="p">(</span><span class="err">…</span><span class="p">)</span> <span class="p">{</span> <span class="err">…</span> <span class="p">}</span> <span class="c1">// also class, function*</span>
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">name1</span><span class="p">(</span><span class="err">…</span><span class="p">)</span> <span class="p">{</span> <span class="err">…</span> <span class="p">}</span> <span class="c1">// also class, function*</span>
+<span class="k">export</span> <span class="p">{</span> <span class="nx">name1</span> <span class="k">as</span> <span class="k">default</span><span class="p">,</span> <span class="err">…</span> <span class="p">};</span>
  
-<span class="kr">export</span> <span class="o">*</span> <span class="nx">from</span> <span class="err">…</span><span class="p">;</span>
-<span class="kr">export</span> <span class="p">{</span> <span class="nx">name1</span><span class="p">,</span> <span class="nx">name2</span><span class="p">,</span> <span class="err">…</span><span class="p">,</span> <span class="nx">nameN</span> <span class="p">}</span> <span class="nx">from</span> <span class="err">…</span><span class="p">;</span>
-<span class="kr">export</span> <span class="p">{</span> <span class="nx">import1</span> <span class="nx">as</span> <span class="nx">name1</span><span class="p">,</span> <span class="nx">import2</span> <span class="nx">as</span> <span class="nx">name2</span><span class="p">,</span> <span class="err">…</span><span class="p">,</span> <span class="nx">nameN</span> <span class="p">}</span> <span class="nx">from</span> <span class="err">…</span><span class="p">;</span>
-</code></pre>
-</div>
+<span class="k">export</span> <span class="o">*</span> <span class="k">from</span> <span class="err">…</span><span class="p">;</span>
+<span class="k">export</span> <span class="p">{</span> <span class="nx">name1</span><span class="p">,</span> <span class="nx">name2</span><span class="p">,</span> <span class="err">…</span><span class="p">,</span> <span class="nx">nameN</span> <span class="p">}</span> <span class="k">from</span> <span class="err">…</span><span class="p">;</span>
+<span class="k">export</span> <span class="p">{</span> <span class="nx">import1</span> <span class="k">as</span> <span class="nx">name1</span><span class="p">,</span> <span class="nx">import2</span> <span class="k">as</span> <span class="nx">name2</span><span class="p">,</span> <span class="err">…</span><span class="p">,</span> <span class="nx">nameN</span> <span class="p">}</span> <span class="k">from</span> <span class="err">…</span><span class="p">;</span>
+</code></pre></div></div>
 <ul>
   <li>name1… nameN－导出的“标识符”。导出后，可以通过这个“标识符”在另一个模块中使用* import引用</li>
   <li>default－设置模块的默认导出。设置后import不通过“标识符”而直接引用默认导入</li>

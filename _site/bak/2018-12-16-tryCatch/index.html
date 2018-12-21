@@ -2,21 +2,21 @@
 <html lang='zh'>
 <head>
 <meta charset="utf-8">
-<title>慎用TRY CATCH &vert; 前端妹子的博客</title>
+<title>善用TRY CATCH &vert; 前端妹子的博客</title>
 <meta name="description" content="一枚前端攻城狮!">
 <meta name="keywords" content="Js">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raoenhui.github.io/images/logo.png">
-<meta name="twitter:title" content="慎用try catch">
+<meta name="twitter:title" content="善用try catch">
 <meta name="twitter:description" content="一枚前端攻城狮!">
 <meta name="twitter:creator" content="@raoenhui">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="慎用try catch">
+<meta property="og:title" content="善用try catch">
 <meta property="og:description" content="一枚前端攻城狮!">
 <meta property="og:url" content="https://raoenhui.github.io/bak/2018-12-16-tryCatch/">
 <meta property="og:site_name" content="前端妹子的博客">
@@ -112,7 +112,7 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h1>慎用try catch</h1>
+                            <h1>善用try catch</h1>
                             <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#Js" data-toggle="tooltip" title="Posts tagged with Js" rel="tag">Js</a> <strong><time datetime="2018-12-16T22:00:00+05:30">16 Dec 2018</time></strong></p>
                         </div>
                     </div>
@@ -121,69 +121,171 @@
 
         <article class="notepad-post-content post tag-simple">
             <div><h3 id="前言">前言</h3>
-<p>ECMA-262第3版引入了<code class="highlighter-rouge">try catch</code>语句，作为JavaScript中处理异常的一种标准方式。基本的语法如下所示。
-但是在前端<code class="highlighter-rouge">js</code>代码中很少看到<code class="highlighter-rouge">try catch</code>语句,并不是所以代码都需要加<code class="highlighter-rouge">try catch</code>来作得不偿失的“保险”，下面来分析作为前端代码，哪些地方才需要真正加<code class="highlighter-rouge">try catch</code>。</p>
+<p>周末终于有时间更新下bolg了，首先非常感谢”justjavac”针对我的文章专门写了篇<a href="https://juejin.im/post/5c199882f265da617464c745">驳《慎用 try catch》</a>，让我学到了很多知识（如<code class="highlighter-rouge">Chrome</code>的<code class="highlighter-rouge">Pause on exceptions</code>功能），也让我意识到了有些知识点讲的的确不够深入，没有足够的引经据点,有些地方用词不当，但是”justjavac”的有些言语比较偏激，容易让读者误导了我的思想，也导致对某些知识直接断章取义，以偏概全（如：<code class="highlighter-rouge">try catch</code>完全不用再担心性能问题）。于是我决定重新修改这篇博客，希望给大家展示最正确的知识点，欢迎各位小伙伴们评论留言。</p>
 
-<h3 id="一try-catch语法">一、try catch语法</h3>
+<p>自从ECMA-262第3版引入了<code class="highlighter-rouge">try catch</code>语句，作为JavaScript中处理异常的一种标准方式。基本的语法如下所示。</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">try</span> <span class="p">{</span>
+<h3 id="一try-catch基本语法">一、try catch基本语法</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span> <span class="p">{</span>
     <span class="c1">//可能会导致错误的代码</span>
 <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">//在错误发生时怎么处理</span>
 <span class="p">}</span><span class="k">finally</span> <span class="p">{</span>
      <span class="c1">//即使报错始终执行</span>
  <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h3 id="二try-catch缺点">二、try catch缺点</h3>
+<h3 id="二try-catch特点">二、try catch特点</h3>
 
 <h5 id="1try-catch耗性能">1.try catch耗性能</h5>
 
-<p>众所周知，<code class="highlighter-rouge">js</code>以一个大括号{}决定一个块级作用域，代码进入 <code class="highlighter-rouge">try catch</code> 的时候 js引擎会拷贝当前的词法环境，拷贝的其实就是当前 scope 下的所有的变量，这样消耗的性能是很大的，性能消耗与<code class="highlighter-rouge">try catch</code>代码量以及变量成正比。</p>
+<h5 id="11-try-catch耗性能原理">1.1 try catch耗性能原理</h5>
+<p><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-try-statement-static-semantics-varscopeddeclarations">ECMAScript 2015 -The try Statement</a></p>
+
+<p><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-try-statement-static-semantics-vardeclarednames" title="link to this section">13.15.5</a> Static Semantics: VarDeclaredNames</p>
+<ul>
+  <li>TryStatement : try Block Catch Finally</li>
+  <li>1.Let names be VarDeclaredNames of Block.</li>
+  <li>2.Append to names the elements of the VarDeclaredNames of Catch.</li>
+  <li>3.Append to names the elements of the VarDeclaredNames of Finally.</li>
+  <li>4.Return names.</li>
+</ul>
+
+<p><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-try-statement-static-semantics-varscopeddeclarations" title="link to this section">13.15.6</a> Static Semantics: VarScopedDeclarations</p>
+<ul>
+  <li>TryStatement : try Block Catch Finally</li>
+  <li>1.Let declarations be VarScopedDeclarations of Block.</li>
+  <li>2.Append to declarations the elements of the VarScopedDeclarations of Catch.</li>
+  <li>3.Append to declarations the elements of the VarScopedDeclarations of Finally.</li>
+  <li>4.Return declarations.</li>
+</ul>
+
+<p>根据上面<a href="https://www.ecma-international.org/ecma-262/6.0">ECMAScript</a><code class="highlighter-rouge">文档的</code>13.15.5<code class="highlighter-rouge">和</code>13.15.6`。</p>
+
+<p><strong>下面仅为本妹子自己的翻译理解，仅供参考</strong></p>
+
+<p>运行<code class="highlighter-rouge">try catch</code> 时，需要将当前的词法环境和作用域全部分别添加到<code class="highlighter-rouge">catch</code>和<code class="highlighter-rouge">Finally</code>所要执行的代码块中。从上可以推断出<code class="highlighter-rouge">try catch</code>是消耗性能的。</p>
+
+<h5 id="12-try-catch耗性能实验">1.2 try catch耗性能实验</h5>
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-a3bcaa5ff6db6c45.jpeg?imageMogr2/auto-orient/strip" alt="webwxgetmsgimg.jpeg" /></p>
+
+<p>下面我用<code class="highlighter-rouge">Chrome62</code>和<code class="highlighter-rouge">IE9</code>分别添加多个<code class="highlighter-rouge">try catch</code>,进行对比实验，虽然，很想抛弃<code class="highlighter-rouge">万恶的IE</code>，但是很多国内的产品不答应呀，除非我们去健身房再多练练，打一架，嘿嘿～～</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//没有加try catch</span>
+<span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">time</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">10000</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">i</span><span class="o">++</span>
+    <span class="k">new</span> <span class="nb">Object</span><span class="p">();</span> <span class="c1">//对比增加new Error()的耗时</span>
+  <span class="p">}</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'没有try catch'</span><span class="p">,</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">-</span> <span class="nx">time</span><span class="p">)</span>
+<span class="p">}())</span>
+</code></pre></div></div>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//有try catch</span>
+<span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">time</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">10000</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="nx">i</span><span class="o">++</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">()</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">ex</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'有try catch'</span><span class="p">,</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">-</span> <span class="nx">time</span><span class="p">)</span>
+<span class="p">}())</span>
+</code></pre></div></div>
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-96a8a6f995b0a7d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<p><code class="highlighter-rouge">Chrome</code>62版本，没加<code class="highlighter-rouge">try catch</code>，10次取平均值，耗时1ms左右</p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-192fa7181d273da3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<p><code class="highlighter-rouge">Chrome</code>62版本，加<code class="highlighter-rouge">try catch</code>，10次取平均值，耗时50ms左右</p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-337cd1c3703e5030.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<p><code class="highlighter-rouge">IE9</code>版本，没加<code class="highlighter-rouge">try catch</code>，10次取平均值，耗时8ms左右</p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-5d9216a3951654b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<p><code class="highlighter-rouge">IE9</code>版本，加<code class="highlighter-rouge">try catch</code>，10次取平均值，耗时158ms左右</p>
+
+<p>上面实验数据对比得知，<code class="highlighter-rouge">try catch</code>会消耗性能，但是<code class="highlighter-rouge">try catch</code>对<code class="highlighter-rouge">Chrome</code>的影响比<code class="highlighter-rouge">IE9</code>小很多。这就根据小伙伴们的业务对象了，如果只面向现代浏览器和微信小程序（小程序内核<code class="highlighter-rouge">V8</code>引擎），<code class="highlighter-rouge">try catch</code>消耗性能影响会很小；如果需要兼容<code class="highlighter-rouge">IE</code>或内嵌在低端的<code class="highlighter-rouge">webView</code>时，可适当考虑下<code class="highlighter-rouge">try catch</code>消耗性能。</p>
 
 <h5 id="2try-catch捕获不到异步错误">2.try catch捕获不到异步错误</h5>
 
-<p>尝试对异步方法进行<code class="highlighter-rouge">try catch</code>操作只能捕获当次事件循环内的异常，对call back执行时抛出的异常将无能为力。</p>
+<p>尝试对异步方法进行<code class="highlighter-rouge">try catch</code>操作只能捕获当次事件循环内的异常，对callback执行时抛出的异常将无能为力。</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">try</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span> <span class="p">{</span>
     <span class="nx">setTimeout</span><span class="p">(()</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="kr">const</span> <span class="nx">A</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="kd">const</span> <span class="nx">A</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="nx">A</span> <span class="o">=</span> <span class="mi">2</span>
     <span class="p">},</span><span class="mi">0</span><span class="p">)</span>
-<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// 这里并不能捕获回调里面抛出的异常</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"-----catch error------"</span><span class="p">)</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
 <span class="p">}</span>
-</code></pre>
-</div>
-
-<h5 id="3try-catch可能会导致报错点更模糊">3.try catch可能会导致报错点更模糊</h5>
-
-<p><code class="highlighter-rouge">try catch</code>语句中报错直接到<code class="highlighter-rouge">catch</code>中处理，而浏览器控制台看不到报错信息。但很多人并没有在<code class="highlighter-rouge">catch</code>中抛出报错信息，或改写成自己随意写的报错文言，这样其实不如直接看浏览器原生的报错修改bug更方便。</p>
-
-<h3 id="三try-catch总结">三、try catch总结</h3>
-
-<p>说了这么多<code class="highlighter-rouge">try catch</code>的缺点，有些小伙伴们就会奇怪到里那里用<code class="highlighter-rouge">try catch</code>比较合适呢？</p>
-
-<p><code class="highlighter-rouge">try catch</code>最适合处理那些我们无法控制的错误，如<code class="highlighter-rouge">I/O</code>操作，后端<code class="highlighter-rouge">java</code>读取<code class="highlighter-rouge">I/O</code>操作比较多比如读数据库，所以用<code class="highlighter-rouge">try catch</code>比较多。前端可以用在上传图片或<code class="highlighter-rouge">async await</code>同步调接口。</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">async</span> <span class="kd">function</span> <span class="nx">f</span><span class="p">()</span> <span class="p">{</span>
+</code></pre></div></div>
+<p>异步情况想捕获异常，建议在异步函数里包一层<code class="highlighter-rouge">try catch</code>。</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="k">try</span> <span class="p">{</span>
-    <span class="nx">await</span> <span class="nx">Promise</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="s1">'出错了'</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">A</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="nx">A</span> <span class="o">=</span> <span class="mi">2</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">},</span> <span class="mi">0</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<h5 id="3try-catch抛出错误">3.try catch抛出错误</h5>
+
+<p>与 <code class="highlighter-rouge">try-catch</code> 语句相配的还有一个 <code class="highlighter-rouge">throw</code> 操作符，随时抛出自定义错误，可以根据不同错误类型，创建自定义错误消息。</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">"Something bad happened."</span><span class="p">);</span>
+<span class="k">throw</span> <span class="k">new</span> <span class="nx">SyntaxError</span><span class="p">(</span><span class="s2">"I don’t like your syntax."</span><span class="p">);</span>
+<span class="k">throw</span> <span class="k">new</span> <span class="nx">TypeError</span><span class="p">(</span><span class="s2">"What type of variable do you take me for?"</span><span class="p">);</span> <span class="k">throw</span> <span class="k">new</span> <span class="nx">RangeError</span><span class="p">(</span><span class="s2">"Sorry, you just don’t have the range."</span><span class="p">);</span>
+<span class="k">throw</span> <span class="k">new</span> <span class="nx">EvalError</span><span class="p">(</span><span class="s2">"That doesn’t evaluate."</span><span class="p">);</span>
+<span class="k">throw</span> <span class="k">new</span> <span class="nx">URIError</span><span class="p">(</span><span class="s2">"Uri, is that you?"</span><span class="p">);</span>
+<span class="k">throw</span> <span class="k">new</span> <span class="nx">ReferenceError</span><span class="p">(</span><span class="s2">"You didn’t cite your references properly."</span><span class="p">);</span>
+</code></pre></div></div>
+<p>如果觉得自定义的报错不合理，想看原生报错，可以使用<code class="highlighter-rouge">Chrome</code>的<code class="highlighter-rouge">Pause on exceptions</code>功能
+<img src="https://upload-images.jianshu.io/upload_images/9902136-00ba74e0bf47877a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<h3 id="三善用try-catch">三、善用try catch</h3>
+
+<p><code class="highlighter-rouge">try catch</code>最适合处理那些我们无法控制的错误，如<code class="highlighter-rouge">I/O</code>操作等，后端<code class="highlighter-rouge">java</code>读取<code class="highlighter-rouge">I/O</code>操作比较多比如读数据库，所以用<code class="highlighter-rouge">try catch</code>比较多。前端可以用在上传图片、使用别人的<code class="highlighter-rouge">js</code>库报错、<code class="highlighter-rouge">async await</code>同步调接口等地方适用。</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">f</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kr">await</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="s1">'出错了'</span><span class="p">);</span>
   <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
   <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">await</span> <span class="nx">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s1">'hello world'</span><span class="p">);</span>
+  <span class="k">return</span> <span class="kr">await</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s1">'hello world'</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre>
-</div>
-<p>但是大部分前端代码处理都不怎么依赖环境也没有<code class="highlighter-rouge">I/O</code>操作，都是自己写的代码，在明明白白地知道自己的代码会发生错误时，再使用<code class="highlighter-rouge">try catch</code>语句就不太合适了，所以慎用try catch。</p>
+</code></pre></div></div>
+<p>但是大部分前端代码处理都不怎么依赖环境也没有<code class="highlighter-rouge">I/O</code>操作，都是自己写的代码，在明明白白地知道自己的代码会发生错误时，再使用<code class="highlighter-rouge">try catch</code>语句就不太合适了，对应数据类型的错误，建议小伙伴们用解构赋值指定默认值、<code class="highlighter-rouge">&amp;&amp;</code>和<code class="highlighter-rouge">||</code>来规避:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">foo</span> <span class="o">=</span> <span class="p">(</span><span class="nx">obj</span> <span class="o">=</span> <span class="p">{})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">obj1</span> <span class="o">=</span> <span class="nx">result</span> <span class="o">||</span> <span class="p">{};</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">obj</span> <span class="o">&amp;&amp;</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">code</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'obj.code'</span><span class="p">,</span><span class="nx">obj</span><span class="p">.</span><span class="nx">code</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>所以善用try catch。</p>
 
 <h3 id="参考资料">参考资料</h3>
 
 <blockquote>
   <ul>
-    <li><a href="https://www.jb51.net/article/101291.htm">https://www.jb51.net/article/101291.htm</a></li>
+    <li><a href="https://raoenhui.github.io/js/2018/12/16/tryCatch/index.html">https://raoenhui.github.io/js/2018/12/16/tryCatch/index.html</a></li>
+    <li><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-try-statement-static-semantics-varscopeddeclarations">ECMAScript 2015 -The try Statement</a></li>
+    <li><a href="https://developers.google.com/web/updates/2015/05/automatically-pause-on-any-exception">https://developers.google.com/web/updates/2015/05/automatically-pause-on-any-exception</a></li>
     <li><a href="http://es6.ruanyifeng.com/#docs/async">http://es6.ruanyifeng.com/#docs/async</a></li>
   </ul>
 </blockquote>
@@ -195,7 +297,7 @@
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;慎用try catch&quot;%20https://raoenhui.github.io/bak/2018-12-16-tryCatch/%20via%20&#64;raoenhui"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;善用try catch&quot;%20https://raoenhui.github.io/bak/2018-12-16-tryCatch/%20via%20&#64;raoenhui"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>

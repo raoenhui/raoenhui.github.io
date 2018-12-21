@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang='zh'>
+<head>
+  <meta charset="utf-8">
+  <title>善用TRY CATCH &vert; 前端妹子的博客</title>
+  <meta name="description" content="一枚前端攻城狮!">
+  <meta name="keywords" content="Js">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://raoenhui.github.io/images/logo.png">
+  <meta name="twitter:title" content="善用try catch">
+  <meta name="twitter:description" content="一枚前端攻城狮!">
+  <meta name="twitter:creator" content="@raoenhui">
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="善用try catch">
+  <meta property="og:description" content="一枚前端攻城狮!">
+  <meta property="og:url" content="https://raoenhui.github.io/js/2018/12/16/tryCatch/">
+  <meta property="og:site_name" content="前端妹子的博客">
+  <meta property="og:image" content="https://raoenhui.github.io/images/">
+
+
+
+
+
+  <link rel="canonical" href="https://raoenhui.github.io/js/2018/12/16/tryCatch/">
+  <link href="https://raoenhui.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="前端妹子的博客 Feed">
+  <link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+  <!--<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>-->
+  <!--<link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/font-awesome.min.css">-->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.1.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/normalize.css">
+  <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/nprogress.css">
+  <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/foundation.min.css">
+  <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/style.css">
+  <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/post.css">
+
+
+
+
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="https://raoenhui.github.io/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="https://raoenhui.github.io/favicon.png">
+  <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+  <link rel="apple-touch-icon-precomposed" href="https://raoenhui.github.io/images/apple-touch-icon-precomposed.png">
+  <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://raoenhui.github.io/images/apple-touch-icon-72x72-precomposed.png">
+  <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://raoenhui.github.io/images/apple-touch-icon-114x114-precomposed.png">
+  <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://raoenhui.github.io/images/apple-touch-icon-144x144-precomposed.png">
+
+  <style type="text/css">@media only screen and (min-width:43.75em){.notepad-post-content div>p:first-child:first-letter{float:left;font-size:4.688rem;line-height:4.375rem;padding-top:.25rem;padding-right:.5rem;padding-left:.188rem;font-family:serif}}</style>
+</head>
+<body class="post-template" itemscope itemtype="http://schema.org/WebPage">
+<div style ='margin:0 auto;width:0px;height:0px;overflow:hidden;' >
+
+  <img src="https://raoenhui.github.io/assets/img/avator.jpg" />
+  <!--<img src="//chuantu.biz/t6/303/1525520078x-1566657998.png" />-->
+
+</div>
+
+<main id="notepad-post-container-simple" class="notepad-post-container-simple" role="main">
+  <header class="notepad-post-header-simple">
+    <div class="notepad-post-menu-header-simple">
+
+      <a class="notepad-blog-logo" href="https://raoenhui.github.io">
+        <img src="https://raoenhui.github.io/images/logo.png" alt="Blog Logo" />
+      </a>
+
+      <div class="notepad-blog-menu">
+        <div class="notepad-mobile-menu show-for-small">
+          <a><i class="fa fa-bars"></i></a>
+        </div>
+        <ul class="notepad-menu">
+          <li class="notepad-mobile-close-btn show-for-small text-right">
+            <a><i class="fa fa-times"></i></a>
+          </li>
+
+          <li>
+            <a href="https://raoenhui.github.io/">主页</a>
+          </li>
+
+          <li>
+            <a href="https://raoenhui.github.io/categories">目录</a>
+          </li>
+
+          <li>
+            <a href="https://raoenhui.github.io/about">关于</a>
+          </li>
+
+          <li><a href="https://github.com/raoenhui/raoenhui.github.io" target="_blank" title="Github"><i class="icon-rss"></i> Github</a></li>
+          <li><a href="http://www.frontendx.cn" target="_blank" title="Index">Index</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="notepad-post-title-simple row">
+      <div class="small-12 columns">
+        <div class="notepad-post-meta-simple">
+          <h1>善用try catch</h1>
+          <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#Js" data-toggle="tooltip" title="Posts tagged with Js" rel="tag">Js</a> <strong><time datetime="2018-12-16T22:00:00+05:30">16 Dec 2018</time></strong></p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <article class="notepad-post-content post tag-simple">
+    <div><h3 id="前言">前言</h3>
+      <p>周末终于有时间更新下bolg了，首先非常感谢”justjavac”针对我的文章专门写了篇<a href="https://juejin.im/post/5c199882f265da617464c745">驳《慎用 try catch》</a>，让我学到了很多知识（如<code class="highlighter-rouge">Chrome</code>的<code class="highlighter-rouge">Pause on exceptions</code>功能），也让我意识到了有些知识点讲的的确不够深入，没有足够的引经据点,有些地方用词不当，但是”justjavac”的有些言语比较偏激，容易让读者误导了我的思想，也导致对某些知识直接断章取义，以偏概全（如：<code class="highlighter-rouge">try catch</code>完全不用再担心性能问题）。于是我决定重新修改这篇博客，希望给大家展示最正确的知识点，欢迎各位小伙伴们评论留言。</p>
+
+      <p>自从ECMA-262第3版引入了<code class="highlighter-rouge">try catch</code>语句，作为JavaScript中处理异常的一种标准方式。基本的语法如下所示。</p>
+
+      <h3 id="一try-catch基本语法">一、try catch基本语法</h3>
+
+      <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span> <span class="p">{</span>
+    <span class="c1">//可能会导致错误的代码</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//在错误发生时怎么处理</span>
+<span class="p">}</span><span class="k">finally</span> <span class="p">{</span>
+     <span class="c1">//即使报错始终执行</span>
+ <span class="p">}</span>
+</code></pre></div></div>
+
+      <h3 id="二try-catch特点">二、try catch特点</h3>
+
+      <h5 id="1try-catch耗性能">1.try catch耗性能</h5>
+
+      <h5 id="11-try-catch耗性能原理">1.1 try catch耗性能原理</h5>
+      <p><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-try-statement-static-semantics-varscopeddeclarations">ECMAScript 2015 -The try Statement</a></p>
+
+      <p><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-try-statement-static-semantics-vardeclarednames" title="link to this section">13.15.5</a> Static Semantics: VarDeclaredNames</p>
+      <ul>
+        <li>TryStatement : try Block Catch Finally</li>
+        <li>1.Let names be VarDeclaredNames of Block.</li>
+        <li>2.Append to names the elements of the VarDeclaredNames of Catch.</li>
+        <li>3.Append to names the elements of the VarDeclaredNames of Finally.</li>
+        <li>4.Return names.</li>
+      </ul>
+
+      <p><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-try-statement-static-semantics-varscopeddeclarations" title="link to this section">13.15.6</a> Static Semantics: VarScopedDeclarations</p>
+      <ul>
+        <li>TryStatement : try Block Catch Finally</li>
+        <li>1.Let declarations be VarScopedDeclarations of Block.</li>
+        <li>2.Append to declarations the elements of the VarScopedDeclarations of Catch.</li>
+        <li>3.Append to declarations the elements of the VarScopedDeclarations of Finally.</li>
+        <li>4.Return declarations.</li>
+      </ul>
+
+      <p>根据上面<a href="https://www.ecma-international.org/ecma-262/6.0">ECMAScript</a><code class="highlighter-rouge">文档的</code>13.15.5<code class="highlighter-rouge">和</code>13.15.6`。</p>
+
+      <p><strong>下面仅为本妹子自己的翻译理解，仅供参考</strong></p>
+
+      <p>运行<code class="highlighter-rouge">try catch</code> 时，需要将当前的词法环境和作用域全部分别添加到<code class="highlighter-rouge">catch</code>和<code class="highlighter-rouge">Finally</code>所要执行的代码块中。从上可以推断出<code class="highlighter-rouge">try catch</code>是消耗性能的。</p>
+
+      <h5 id="12-try-catch耗性能实验">1.2 try catch耗性能实验</h5>
+      <p><img src="https://upload-images.jianshu.io/upload_images/9902136-a3bcaa5ff6db6c45.jpeg?imageMogr2/auto-orient/strip" alt="webwxgetmsgimg.jpeg" /></p>
+
+      <p>下面我用<code class="highlighter-rouge">Chrome62</code>和<code class="highlighter-rouge">IE9</code>分别添加多个<code class="highlighter-rouge">try catch</code>,进行对比实验，虽然，很想抛弃<code class="highlighter-rouge">万恶的IE</code>，但是很多国内的产品不答应呀，除非我们去健身房再多练练，打一架，嘿嘿～～</p>
+      <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//没有加try catch</span>
+<span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">time</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">10000</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">i</span><span class="o">++</span>
+    <span class="k">new</span> <span class="nb">Object</span><span class="p">();</span> <span class="c1">//对比增加new Error()的耗时</span>
+  <span class="p">}</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'没有try catch'</span><span class="p">,</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">-</span> <span class="nx">time</span><span class="p">)</span>
+<span class="p">}())</span>
+</code></pre></div></div>
+      <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//有try catch</span>
+<span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">time</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">10000</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="nx">i</span><span class="o">++</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">()</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">ex</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'有try catch'</span><span class="p">,</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">-</span> <span class="nx">time</span><span class="p">)</span>
+<span class="p">}())</span>
+</code></pre></div></div>
+      <p><img src="https://upload-images.jianshu.io/upload_images/9902136-96a8a6f995b0a7d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+      <p><code class="highlighter-rouge">Chrome</code>62版本，没加<code class="highlighter-rouge">try catch</code>，10次取平均值，耗时1ms左右</p>
+
+      <p><img src="https://upload-images.jianshu.io/upload_images/9902136-192fa7181d273da3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+      <p><code class="highlighter-rouge">Chrome</code>62版本，加<code class="highlighter-rouge">try catch</code>，10次取平均值，耗时50ms左右</p>
+
+      <p><img src="https://upload-images.jianshu.io/upload_images/9902136-337cd1c3703e5030.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+      <p><code class="highlighter-rouge">IE9</code>版本，没加<code class="highlighter-rouge">try catch</code>，10次取平均值，耗时8ms左右</p>
+
+      <p><img src="https://upload-images.jianshu.io/upload_images/9902136-5d9216a3951654b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+      <p><code class="highlighter-rouge">IE9</code>版本，加<code class="highlighter-rouge">try catch</code>，10次取平均值，耗时158ms左右</p>
+
+      <p>上面实验数据对比得知，<code class="highlighter-rouge">try catch</code>会消耗性能，但是<code class="highlighter-rouge">try catch</code>对<code class="highlighter-rouge">Chrome</code>的影响比<code class="highlighter-rouge">IE9</code>小很多。这就根据小伙伴们的业务对象了，如果只面向现代浏览器和微信小程序（小程序内核<code class="highlighter-rouge">V8</code>引擎），<code class="highlighter-rouge">try catch</code>消耗性能影响会很小；如果需要兼容<code class="highlighter-rouge">IE</code>或内嵌在低端的<code class="highlighter-rouge">webView</code>时，可适当考虑下<code class="highlighter-rouge">try catch</code>消耗性能。</p>
+
+      <h5 id="2try-catch捕获不到异步错误">2.try catch捕获不到异步错误</h5>
+
+      <p>尝试对异步方法进行<code class="highlighter-rouge">try catch</code>操作只能捕获当次事件循环内的异常，对callback执行时抛出的异常将无能为力。</p>
+
+      <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(()</span><span class="o">=&gt;</span><span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">A</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="nx">A</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="p">},</span><span class="mi">0</span><span class="p">)</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 这里并不能捕获回调里面抛出的异常</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"-----catch error------"</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+      <p>异步情况想捕获异常，建议在异步函数里包一层<code class="highlighter-rouge">try catch</code>。</p>
+      <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">A</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="nx">A</span> <span class="o">=</span> <span class="mi">2</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">},</span> <span class="mi">0</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+      <h5 id="3try-catch抛出错误">3.try catch抛出错误</h5>
+
+      <p>与 <code class="highlighter-rouge">try-catch</code> 语句相配的还有一个 <code class="highlighter-rouge">throw</code> 操作符，随时抛出自定义错误，可以根据不同错误类型，创建自定义错误消息。</p>
+      <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">"Something bad happened."</span><span class="p">);</span>
+<span class="k">throw</span> <span class="k">new</span> <span class="nx">SyntaxError</span><span class="p">(</span><span class="s2">"I don’t like your syntax."</span><span class="p">);</span>
+<span class="k">throw</span> <span class="k">new</span> <span class="nx">TypeError</span><span class="p">(</span><span class="s2">"What type of variable do you take me for?"</span><span class="p">);</span> <span class="k">throw</span> <span class="k">new</span> <span class="nx">RangeError</span><span class="p">(</span><span class="s2">"Sorry, you just don’t have the range."</span><span class="p">);</span>
+<span class="k">throw</span> <span class="k">new</span> <span class="nx">EvalError</span><span class="p">(</span><span class="s2">"That doesn’t evaluate."</span><span class="p">);</span>
+<span class="k">throw</span> <span class="k">new</span> <span class="nx">URIError</span><span class="p">(</span><span class="s2">"Uri, is that you?"</span><span class="p">);</span>
+<span class="k">throw</span> <span class="k">new</span> <span class="nx">ReferenceError</span><span class="p">(</span><span class="s2">"You didn’t cite your references properly."</span><span class="p">);</span>
+</code></pre></div></div>
+      <p>如果觉得自定义的报错不合理，想看原生报错，可以使用<code class="highlighter-rouge">Chrome</code>的<code class="highlighter-rouge">Pause on exceptions</code>功能
+        <img src="https://upload-images.jianshu.io/upload_images/9902136-00ba74e0bf47877a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+      <h3 id="三善用try-catch">三、善用try catch</h3>
+
+      <p><code class="highlighter-rouge">try catch</code>最适合处理那些我们无法控制的错误，如<code class="highlighter-rouge">I/O</code>操作等，后端<code class="highlighter-rouge">java</code>读取<code class="highlighter-rouge">I/O</code>操作比较多比如读数据库，所以用<code class="highlighter-rouge">try catch</code>比较多。前端可以用在上传图片、使用别人的<code class="highlighter-rouge">js</code>库报错、<code class="highlighter-rouge">async await</code>同步调接口等地方适用。</p>
+      <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">f</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kr">await</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="s1">'出错了'</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="kr">await</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s1">'hello world'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+      <p>但是大部分前端代码处理都不怎么依赖环境也没有<code class="highlighter-rouge">I/O</code>操作，都是自己写的代码，在明明白白地知道自己的代码会发生错误时，再使用<code class="highlighter-rouge">try catch</code>语句就不太合适了，对应数据类型的错误，建议小伙伴们用解构赋值指定默认值、<code class="highlighter-rouge">&amp;&amp;</code>和<code class="highlighter-rouge">||</code>来规避:</p>
+      <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">foo</span> <span class="o">=</span> <span class="p">(</span><span class="nx">obj</span> <span class="o">=</span> <span class="p">{})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">obj1</span> <span class="o">=</span> <span class="nx">result</span> <span class="o">||</span> <span class="p">{};</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">obj</span> <span class="o">&amp;&amp;</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">code</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'obj.code'</span><span class="p">,</span><span class="nx">obj</span><span class="p">.</span><span class="nx">code</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+      <p>所以善用try catch。</p>
+
+      <h3 id="参考资料">参考资料</h3>
+
+      <blockquote>
+        <ul>
+          <li><a href="https://raoenhui.github.io/js/2018/12/16/tryCatch/index.html">https://raoenhui.github.io/js/2018/12/16/tryCatch/index.html</a></li>
+          <li><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-try-statement-static-semantics-varscopeddeclarations">ECMAScript 2015 -The try Statement</a></li>
+          <li><a href="https://developers.google.com/web/updates/2015/05/automatically-pause-on-any-exception">https://developers.google.com/web/updates/2015/05/automatically-pause-on-any-exception</a></li>
+          <li><a href="http://es6.ruanyifeng.com/#docs/async">http://es6.ruanyifeng.com/#docs/async</a></li>
+        </ul>
+      </blockquote>
+
+      <p>Happy coding .. :)</p>
+
+    </div>
+  </article>
+  <div class="cf"></div>
+  <div class="row text-center">
+    <section class="notepad-post-share">
+      <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;善用try catch&quot;%20https://raoenhui.github.io/js/2018/12/16/tryCatch/%20via%20&#64;raoenhui"
+         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+        <i class="fa fa-twitter"></i>
+      </a>
+      <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/js/2018/12/16/tryCatch/"
+         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+        <i class="fa fa-facebook"></i>
+      </a>
+      <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/js/2018/12/16/tryCatch/"
+         onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+        <i class="fa fa-google-plus"></i>
+      </a>
+    </section>
+  </div>
+  <div class="cf"></div>
+
+  <div class="notepad-author-info">
+    <div class="row">
+      <section class="notepad-post-author small-12 columns">
+
+        <img src="https://raoenhui.github.io/images/logo.png" class="notepad-post-author-avatar" alt="Enhui Rao's photo">
+
+
+        <span class="author-label">Author</span>
+        <h1>Enhui Rao</h1>
+
+
+        <p><a href="mailto:raoenhui@jd.com" class="author-website">raoenhui@jd.com</a>
+
+          <!--  <iframe src="//www.facebook.com/plugins/follow?href=https%3A%2F%2Fwww.facebook.com%2Fameyjadiye&amp;layout=standard&amp;show_faces=true&amp;colorscheme=light&amp;width=450&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe>  -->
+          <!--      <iframe src="//www.facebook.com/plugins/follow?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100004203407645&amp;layout=standard&amp;show_faces=true&amp;colorscheme=light&amp;width=450&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe> -->
+
+
+        <div class="fb-like" data-href="http://raoenhui.github.io/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+        <!--      <div id="fb-root"></div>
+ <script>(function(d, s, id) {
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) return;
+   js = d.createElement(s); js.id = id;
+   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1757816481112269";
+   fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));</script>
+           </p>
+ <div id="fb-root"></div>
+ <script>(function(d, s, id) {
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) return;
+   js = d.createElement(s); js.id = id;
+   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1757816481112269";
+   fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));</script>-->
+        <div class="fb-follow" data-href="https://www.facebook.com/raoenhui" data-width="200" data-height="100" data-layout="standard" data-show-faces="true"></div>
+
+
+        <p>Programming is 1% knowledge, 2% ability and 97% getting the ability to work with the knowledge :)</p>
+
+      </section>
+    </div>
+  </div>
+
+
+  <div class="cf"></div>
+
+  <section class="notepad-disqus row">
+    <div class="small-12 columns">
+      <h1 class="notepad-comments-header">Comments评论</h1>
+      <!--      <p>国内网速超慢，建议翻墙评论，或直接在此评论
+               <a href="https://github.com/raoenhui/raoenhui.github.io/issues" target="_blank">https://github.com/raoenhui/raoenhui.github.io/issues</a></p> -->
+
+      <div id="disqus_thread"></div>
+
+      <!--
+      <script type="text/javascript">
+          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+          var disqus_shortname = '饶恩慧'; // required: replace example with your forum shortname
+
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function () {
+              var s = document.createElement('script'); s.async = true;
+              s.type = 'text/javascript';
+              s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+              (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+          }());
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      -->
+      <!-- ice disqus https://raoenhui.disqus.com/admin/ start-->
+      <!--<script>
+
+          /**
+           *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+           *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+          /*
+          var disqus_config = function () {
+          this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+          this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+          };
+          */
+          (function() { // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+              s.src = 'https://raoenhui.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+          })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>-->
+      <!-- ice disqus end-->
+
+      <!-- ice gitment 评论 start-->
+      <div id="container"></div>
+      <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+      <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+      <script>
+        // debugger
+        var gitment = new Gitment({
+          id: location.pathname.split('/').reverse()[1], // 可选。默认为 location.href
+          owner: 'raoenhui',
+          repo: 'raoenhui.github.io',
+          oauth: {
+            client_id: 'bd88b9824048b133f7ed',
+            client_secret: '193c97904472a0e380b70dd990c46853f52881c7',
+            // client_id: '5548df3eca52697fac71',
+            // client_secret: '5b9480b7b3d4a49e22db3f29557380e2711bbcd9',
+          },
+        })
+        gitment.render('container')
+      </script>
+      <!-- ice gitment 评论 end-->
+      <hr />
+
+      <!-- ice facebook start-->
+
+      <!-- <div class="fb-comments" data-href="https://raoenhui.github.io/js/2018/12/16/tryCatch/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1757816481112269";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script> -->
+      <!-- ice facebook end-->
+
+      <!-- 来必力 start https://livere.com/my_Livere-->
+      <!-- <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTMzMC8xMTg2Ng==">
+          <script type="text/javascript">
+         (function(d, s) {
+             var j, e = d.getElementsByTagName(s)[0];
+
+             if (typeof LivereTower === 'function') { return; }
+
+             j = d.createElement(s);
+             j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+             j.async = true;
+
+             e.parentNode.insertBefore(j, e);
+         })(document, 'script');
+          </script>
+      <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+      </div> -->
+      <!-- 来必力 end-->
+
+    </div>
+  </section>
+
+  <div class="cf"></div>
+
+  <footer class="notepad-site-footer">
+    <div class="copyright">
+      <section>All content copyright <a href="https://raoenhui.github.io/about">Enhui Rao</a> &copy; 2018 &bull; All rights reserved.</section>
+      <!--<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>-->
+      <!--<a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>-->
+    </div>
+    <div class="social-icons">
+
+      <!--
+      <a href="http://twitter.com/raoenhui">
+          <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+              <i class="fa fa-twitter fa-stack-1x"></i>
+          </span>
+      </a>
+
+
+      <a href="https://plus.google.com/u/0/+AmeyJadiye">
+          <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+              <i class="fa fa-google-plus fa-stack-1x"></i>
+          </span>
+      </a>
+
+
+      <a href="http://instagram.com/raoenhui">
+          <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+              <i class="fa fa-instagram fa-stack-1x"></i>
+          </span>
+      </a>
+      -->
+
+      <a href="https://github.com/raoenhui" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+        <span style="position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0,0,0,0);border: 0;">Github</span>
+      </a>
+
+
+      <a href="https://facebook.com/raoenhui" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+        <span style="position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0,0,0,0);border: 0;">Facebook</span>
+      </a>
+
+    </div>
+
+    <div class="cf"></div>
+  </footer>
+
+</main>
+<script src="//apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://raoenhui.github.io/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+<script src="https://raoenhui.github.io/assets/js/vendor/modernizr.js"></script>
+<script src="https://raoenhui.github.io/assets/js/foundation.min.js"></script>
+
+<script src="https://raoenhui.github.io/assets/js/notepad.js"></script>
+<script src="https://raoenhui.github.io/assets/js/scripts.min.js"></script>
+<script src="https://raoenhui.github.io/assets/js/vendor/nprogress.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/sigma.js/1.0.3/sigma.min.js"></script>-->
+<script src="//apps.bdimg.com/libs/sigma.js/0.1/sigma.min.js"></script>
+
+<script>
+  $(document).foundation();
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+  ga('create', 'UA-46791108-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+
+</script>
+
+<script>NProgress.start();
+var timeNum=0;
+var interval = setInterval(function () {
+  NProgress.inc();
+  //如果大于60秒停止检测
+  /*if(timeNum>60){
+      clearInterval(interval);
+      NProgress.done();
+
+  }
+  timeNum++;*/
+}, 1000);
+jQuery(window).load(function () {
+  clearInterval(interval);
+  NProgress.done()
+});
+jQuery(window).unload(function () {
+  NProgress.start()
+});
+
+</script>
+
+<!-- ice start-->
+<!--<script id="dsq-count-scr" src="//raoenhui.disqus.com/count.js" async></script>-->
+<script>
+  (function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+<!-- ice end-->
+</body>
+</html>

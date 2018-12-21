@@ -192,7 +192,7 @@ html, body, .notepad-post-container, .notepad-post-header {
           margin: -18% auto 0; } }
       @media only screen and (min-width: 70em) {
         .post-template .notepad-post-content > div:not(.notepad-post-title) {
-          margin: -10% auto 0; } }
+          margin: -10% auto 0; }  }
       .post-template .notepad-post-content > div:not(.notepad-post-title) a, .post-template .notepad-post-content > div:not(.notepad-post-title) code {
         color: #E971BE; }
       .post-template .notepad-post-content > div:not(.notepad-post-title) ul, .post-template .notepad-post-content > div:not(.notepad-post-title) ol {
@@ -224,7 +224,15 @@ html, body, .notepad-post-container, .notepad-post-header {
     margin: 0 auto 0; }
   @media screen and (max-width: 47em) {
     .post-template .notepad-post-title, .post-template .notepad-post-content {
-      font-size: 70%; } }
+      font-size: 70%; }
+    code,
+    kbd,
+    pre,
+    samp {
+      font-family: monospace, monospace;
+      font-size: 1.2em;
+    }
+  }
   @media screen and (max-width: 27em) {
     .post-template .notepad-post-title, .post-template .notepad-post-content {
       font-size: 50%; }
@@ -532,6 +540,7 @@ html, body, .notepad-post-container, .notepad-post-header {
 
 pre {
   word-wrap: break-word;
+  overflow: hidden;
   margin-bottom: 1.5625rem; }
 
 p code {
