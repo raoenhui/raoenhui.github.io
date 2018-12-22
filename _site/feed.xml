@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2018-12-22T11:34:07+05:30</updated>
+<updated>2018-12-22T11:39:48+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>Enhui Rao</name>
@@ -31,7 +31,7 @@
   <content type="html">
   
     &lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
-&lt;p&gt;周末终于有时间更新下bolg了，首先非常感谢”justjavac”针对我的文章专门写了篇&lt;a href=&quot;https://juejin.im/post/5c199882f265da617464c745&quot;&gt;驳《慎用 try catch》&lt;/a&gt;，让我学到了很多知识（如&lt;code class=&quot;highlighter-rouge&quot;&gt;Chrome&lt;/code&gt;的&lt;code class=&quot;highlighter-rouge&quot;&gt;Pause on exceptions&lt;/code&gt;功能），也让我意识到了有些知识点讲的的确不够深入，没有足够的引经据点,有些地方用词不当，但是”justjavac”的有些言语比较偏激，容易让读者误导了我的思想，也导致对某些知识直接断章取义，以偏概全（如：&lt;code class=&quot;highlighter-rouge&quot;&gt;try catch&lt;/code&gt;完全不用再担心性能问题）。于是我决定重新修改这篇博客，希望给大家盘展示最准确的干货，欢迎各位小伙伴们评论留言。&lt;/p&gt;
+&lt;p&gt;周末终于有时间更新下bolg了，首先非常感谢”justjavac”针对我的文章专门写了篇&lt;a href=&quot;https://juejin.im/post/5c199882f265da617464c745&quot;&gt;驳《慎用 try catch》&lt;/a&gt;，让我学到了很多知识（如&lt;code class=&quot;highlighter-rouge&quot;&gt;Chrome&lt;/code&gt;的&lt;code class=&quot;highlighter-rouge&quot;&gt;Pause on exceptions&lt;/code&gt;功能），也让我意识到了有些知识点讲的的确不够深入，没有足够的引经据点,有些地方用词不当，但是”justjavac”的有些言语比较偏激，容易让读者误导了我的思想，也导致对某些知识直接断章取义，以偏概全（如：&lt;code class=&quot;highlighter-rouge&quot;&gt;try catch&lt;/code&gt;完全不用再担心性能问题）。于是我决定重新修改这篇博客，希望给大家展示最准确的干货，欢迎各位小伙伴们评论留言。&lt;/p&gt;
 
 &lt;p&gt;自从ECMA-262第3版引入了&lt;code class=&quot;highlighter-rouge&quot;&gt;try catch&lt;/code&gt;语句，作为JavaScript中处理异常的一种标准方式。基本的语法如下所示。&lt;/p&gt;
 
@@ -192,7 +192,6 @@
 
 &lt;blockquote&gt;
   &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&quot;https://raoenhui.github.io/js/2018/12/16/tryCatch/index.html&quot;&gt;https://raoenhui.github.io/js/2018/12/16/tryCatch/index.html&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://www.ecma-international.org/ecma-262/6.0/#sec-try-statement-static-semantics-varscopeddeclarations&quot;&gt;ECMAScript 2015 -The try Statement&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2015/05/automatically-pause-on-any-exception&quot;&gt;https://developers.google.com/web/updates/2015/05/automatically-pause-on-any-exception&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;http://es6.ruanyifeng.com/#docs/async&quot;&gt;http://es6.ruanyifeng.com/#docs/async&lt;/a&gt;&lt;/li&gt;
