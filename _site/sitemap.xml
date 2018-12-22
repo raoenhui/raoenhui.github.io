@@ -62,10 +62,6 @@
     </url>
     
     <url>
-        <loc>https://raoenhui.github.io/bak/2018-12-16-tryCatch/</loc>
-    </url>
-    
-    <url>
         <loc>https://raoenhui.github.io/404/</loc>
     </url>
     
@@ -113,7 +109,15 @@
         <loc>https://raoenhui.github.io/page4/</loc>
     </url>
     
+    <url>
+        <loc>https://raoenhui.github.io/page5/</loc>
+    </url>
+    
 
+    
+    <url>
+        <loc>https://raoenhui.github.io/js/2018/12/16/tryCatch/</loc>
+    </url>
     
     <url>
         <loc>https://raoenhui.github.io/es6/2018/12/06/import/</loc>

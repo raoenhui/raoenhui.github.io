@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "慎用try catch",
+		  "category"   : "",
+		  "url"        : "https://raoenhui.github.io/js/2018/12/16/tryCatch/",
+		  "date"       : "2018-12-16 22:00:00 +0530",
+		  "shortdate"  : "December 16, 2018"
+		} ,
+	
+		{
 		  "title"      : "require 和 import 详解",
 		  "category"   : "",
 		  "url"        : "https://raoenhui.github.io/es6/2018/12/06/import/",

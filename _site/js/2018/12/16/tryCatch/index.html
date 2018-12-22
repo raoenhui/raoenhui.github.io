@@ -2,23 +2,23 @@
 <html lang='zh'>
 <head>
 <meta charset="utf-8">
-<title>善用TRY CATCH &vert; 前端妹子的博客</title>
+<title>慎用TRY CATCH &vert; 前端妹子的博客</title>
 <meta name="description" content="一枚前端攻城狮!">
 <meta name="keywords" content="Js">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raoenhui.github.io/images/logo.png">
-<meta name="twitter:title" content="善用try catch">
+<meta name="twitter:title" content="慎用try catch">
 <meta name="twitter:description" content="一枚前端攻城狮!">
 <meta name="twitter:creator" content="@raoenhui">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="善用try catch">
+<meta property="og:title" content="慎用try catch">
 <meta property="og:description" content="一枚前端攻城狮!">
-<meta property="og:url" content="https://raoenhui.github.io/bak/2018-12-16-tryCatch/">
+<meta property="og:url" content="https://raoenhui.github.io/js/2018/12/16/tryCatch/">
 <meta property="og:site_name" content="前端妹子的博客">
 <meta property="og:image" content="https://raoenhui.github.io/images/">
 
@@ -26,7 +26,7 @@
 
 
 
-<link rel="canonical" href="https://raoenhui.github.io/bak/2018-12-16-tryCatch/">
+<link rel="canonical" href="https://raoenhui.github.io/js/2018/12/16/tryCatch/">
 <link href="https://raoenhui.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="前端妹子的博客 Feed">
 <link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
 
@@ -112,7 +112,7 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h1>善用try catch</h1>
+                            <h1>慎用try catch</h1>
                             <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#Js" data-toggle="tooltip" title="Posts tagged with Js" rel="tag">Js</a> <strong><time datetime="2018-12-16T22:00:00+05:30">16 Dec 2018</time></strong></p>
                         </div>
                     </div>
@@ -121,7 +121,7 @@
 
         <article class="notepad-post-content post tag-simple">
             <div><h3 id="前言">前言</h3>
-<p>周末终于有时间更新下bolg了，首先非常感谢”justjavac”针对我的文章专门写了篇<a href="https://juejin.im/post/5c199882f265da617464c745">驳《慎用 try catch》</a>，让我学到了很多知识（如<code class="highlighter-rouge">Chrome</code>的<code class="highlighter-rouge">Pause on exceptions</code>功能），也让我意识到了有些知识点讲的的确不够深入，没有足够的引经据点,有些地方用词不当，但是”justjavac”的有些言语比较偏激，容易让读者误导了我的思想，也导致对某些知识直接断章取义，以偏概全（如：<code class="highlighter-rouge">try catch</code>完全不用再担心性能问题）。于是我决定重新修改这篇博客，希望给大家展示最正确的知识点，欢迎各位小伙伴们评论留言。</p>
+<p>周末终于有时间更新下bolg了，首先非常感谢”justjavac”针对我的文章专门写了篇<a href="https://juejin.im/post/5c199882f265da617464c745">驳《慎用 try catch》</a>，让我学到了很多知识（如<code class="highlighter-rouge">Chrome</code>的<code class="highlighter-rouge">Pause on exceptions</code>功能），也让我意识到了有些知识点讲的的确不够深入，没有足够的引经据点,有些地方用词不当，但是”justjavac”的有些言语比较偏激，容易让读者误导了我的思想，也导致对某些知识直接断章取义，以偏概全（如：<code class="highlighter-rouge">try catch</code>完全不用再担心性能问题）。于是我决定重新修改这篇博客，希望给大家盘展示最准确的干货，欢迎各位小伙伴们评论留言。</p>
 
 <p>自从ECMA-262第3版引入了<code class="highlighter-rouge">try catch</code>语句，作为JavaScript中处理异常的一种标准方式。基本的语法如下所示。</p>
 
@@ -215,7 +215,7 @@
 
 <p><code class="highlighter-rouge">IE9</code>版本，加<code class="highlighter-rouge">try catch</code>，10次取平均值，耗时158ms左右</p>
 
-<p>上面实验数据对比得知，<code class="highlighter-rouge">try catch</code>会消耗性能，但是<code class="highlighter-rouge">try catch</code>对<code class="highlighter-rouge">Chrome</code>的影响比<code class="highlighter-rouge">IE9</code>小很多。这就根据小伙伴们的业务对象了，如果只面向现代浏览器和微信小程序（小程序内核<code class="highlighter-rouge">V8</code>引擎），<code class="highlighter-rouge">try catch</code>消耗性能影响会很小；如果需要兼容<code class="highlighter-rouge">IE</code>或内嵌在低端的<code class="highlighter-rouge">webView</code>时，可适当考虑下<code class="highlighter-rouge">try catch</code>消耗性能。</p>
+<p>上面实验数据对比得知，<code class="highlighter-rouge">try catch</code>会消耗性能，但是<code class="highlighter-rouge">try catch</code>对<code class="highlighter-rouge">Chrome</code>的影响比<code class="highlighter-rouge">IE9</code>小很多。这就根据小伙伴们的业务对象了，如果只面向现代浏览器，<code class="highlighter-rouge">try catch</code>消耗性能影响会很小；如果需要兼容<code class="highlighter-rouge">IE</code>或内嵌在低端的<code class="highlighter-rouge">webView</code>时，可适当考虑下<code class="highlighter-rouge">try catch</code>消耗性能。</p>
 
 <h5 id="2try-catch捕获不到异步错误">2.try catch捕获不到异步错误</h5>
 
@@ -258,7 +258,7 @@
 <p>如果觉得自定义的报错不合理，想看原生报错，可以使用<code class="highlighter-rouge">Chrome</code>的<code class="highlighter-rouge">Pause on exceptions</code>功能
 <img src="https://upload-images.jianshu.io/upload_images/9902136-00ba74e0bf47877a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
 
-<h3 id="三善用try-catch">三、善用try catch</h3>
+<h3 id="三慎用try-catch">三、慎用try catch</h3>
 
 <p><code class="highlighter-rouge">try catch</code>最适合处理那些我们无法控制的错误，如<code class="highlighter-rouge">I/O</code>操作等，后端<code class="highlighter-rouge">java</code>读取<code class="highlighter-rouge">I/O</code>操作比较多比如读数据库，所以用<code class="highlighter-rouge">try catch</code>比较多。前端可以用在上传图片、使用别人的<code class="highlighter-rouge">js</code>库报错、<code class="highlighter-rouge">async await</code>同步调接口等地方适用。</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">f</span><span class="p">()</span> <span class="p">{</span>
@@ -269,7 +269,7 @@
   <span class="k">return</span> <span class="kr">await</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s1">'hello world'</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
-<p>但是大部分前端代码处理都不怎么依赖环境也没有<code class="highlighter-rouge">I/O</code>操作，都是自己写的代码，在明明白白地知道自己的代码会发生错误时，再使用<code class="highlighter-rouge">try catch</code>语句就不太合适了，对应数据类型的错误，建议小伙伴们用解构赋值指定默认值、<code class="highlighter-rouge">&amp;&amp;</code>和<code class="highlighter-rouge">||</code>来规避:</p>
+<p>但是大部分前端代码处理都不怎么依赖环境也没有<code class="highlighter-rouge">I/O</code>操作，都是自己写的代码，在明明白白地知道自己的代码会发生错误时，再使用<code class="highlighter-rouge">try catch</code>语句就不太合适了，对应数据类型的错误，建议小伙伴们用解构赋值指定默认值、<code class="highlighter-rouge">&amp;&amp;</code>和<code class="highlighter-rouge">||</code>来规避，所以慎用try catch。</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">foo</span> <span class="o">=</span> <span class="p">(</span><span class="nx">obj</span> <span class="o">=</span> <span class="p">{})</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="nx">obj1</span> <span class="o">=</span> <span class="nx">result</span> <span class="o">||</span> <span class="p">{};</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">obj</span> <span class="o">&amp;&amp;</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">code</span><span class="p">)</span> <span class="p">{</span>
@@ -277,7 +277,6 @@
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
-<p>所以善用try catch。</p>
 
 <h3 id="参考资料">参考资料</h3>
 
@@ -297,15 +296,15 @@
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;善用try catch&quot;%20https://raoenhui.github.io/bak/2018-12-16-tryCatch/%20via%20&#64;raoenhui"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;慎用try catch&quot;%20https://raoenhui.github.io/js/2018/12/16/tryCatch/%20via%20&#64;raoenhui"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/bak/2018-12-16-tryCatch/"
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/js/2018/12/16/tryCatch/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/bak/2018-12-16-tryCatch/"
+                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/js/2018/12/16/tryCatch/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
                     <i class="fa fa-google-plus"></i>
                 </a>
@@ -436,7 +435,7 @@ gitment.render('container')
 
 <!-- ice facebook start-->
  
-<!-- <div class="fb-comments" data-href="https://raoenhui.github.io/bak/2018-12-16-tryCatch/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+<!-- <div class="fb-comments" data-href="https://raoenhui.github.io/js/2018/12/16/tryCatch/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
