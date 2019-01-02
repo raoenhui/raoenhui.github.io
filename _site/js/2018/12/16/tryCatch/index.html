@@ -121,8 +121,6 @@
 
         <article class="notepad-post-content post tag-simple">
             <div><h3 id="前言">前言</h3>
-<p>周末终于有时间更新下bolg了，首先非常感谢”justjavac”针对我的文章专门写了篇<a href="https://juejin.im/post/5c199882f265da617464c745">驳《慎用 try catch》</a>，让我学到了很多知识（如<code class="highlighter-rouge">Chrome</code>的<code class="highlighter-rouge">Pause on exceptions</code>功能），也让我意识到了有些知识点讲的的确不够深入，没有足够的引经据点,有些地方用词不当，但是”justjavac”的有些言语比较偏激，容易让读者误导了我的思想，也导致对某些知识直接断章取义，以偏概全（如：<code class="highlighter-rouge">try catch</code>完全不用再担心性能问题）。于是我决定重新修改这篇博客，希望给大家展示最准确的干货，欢迎各位小伙伴们评论留言。</p>
-
 <p>自从ECMA-262第3版引入了<code class="highlighter-rouge">try catch</code>语句，作为JavaScript中处理异常的一种标准方式。基本的语法如下所示。</p>
 
 <h3 id="一try-catch基本语法">一、try catch基本语法</h3>
@@ -165,7 +163,7 @@
 
 <p><strong>下面仅为本妹子自己的翻译理解，仅供参考</strong></p>
 
-<p>运行<code class="highlighter-rouge">try catch</code> 时，需要将当前的词法环境和作用域全部分别添加到<code class="highlighter-rouge">catch</code>和<code class="highlighter-rouge">Finally</code>所要执行的代码块中。从上可以推断出<code class="highlighter-rouge">try catch</code>是消耗性能的。</p>
+<p>上面大概说运行<code class="highlighter-rouge">try catch</code> 时，需要将当前的词法环境和作用域全部分别添加到<code class="highlighter-rouge">catch</code>和<code class="highlighter-rouge">Finally</code>所要执行的代码块中。从上可以推断出<code class="highlighter-rouge">try catch</code>是消耗性能的。</p>
 
 <h5 id="12-try-catch耗性能实验">1.2 try catch耗性能实验</h5>
 <p><img src="https://upload-images.jianshu.io/upload_images/9902136-a3bcaa5ff6db6c45.jpeg?imageMogr2/auto-orient/strip" alt="webwxgetmsgimg.jpeg" /></p>
@@ -472,7 +470,7 @@ gitment.render('container')
 
     <footer class="notepad-site-footer">
     <div class="copyright">
-        <section>All content copyright <a href="https://raoenhui.github.io/about">Enhui Rao</a> &copy; 2018 &bull; All rights reserved.</section>
+        <section>All content copyright <a href="https://raoenhui.github.io/about">Enhui Rao</a> &copy; 2019 &bull; All rights reserved.</section>
 	<!--<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>-->
           <!--<a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>-->
     </div>
