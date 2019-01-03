@@ -2,23 +2,23 @@
 <html lang='zh'>
 <head>
 <meta charset="utf-8">
-<title>慎用TRY CATCH &vert; 前端妹子的博客</title>
+<title>INTERSECTION OBSERVER检测元素是否在视窗内 &vert; 前端妹子的博客</title>
 <meta name="description" content="一枚前端攻城狮!">
 <meta name="keywords" content="Js">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raoenhui.github.io/images/logo.png">
-<meta name="twitter:title" content="慎用try catch">
+<meta name="twitter:title" content="Intersection observer检测元素是否在视窗内">
 <meta name="twitter:description" content="一枚前端攻城狮!">
 <meta name="twitter:creator" content="@raoenhui">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="慎用try catch">
+<meta property="og:title" content="Intersection observer检测元素是否在视窗内">
 <meta property="og:description" content="一枚前端攻城狮!">
-<meta property="og:url" content="https://raoenhui.github.io/js/2018/12/16/tryCatch/">
+<meta property="og:url" content="https://raoenhui.github.io/js/2019/01/03/IntersectionObserver/">
 <meta property="og:site_name" content="前端妹子的博客">
 <meta property="og:image" content="https://raoenhui.github.io/images/">
 
@@ -26,7 +26,7 @@
 
 
 
-<link rel="canonical" href="https://raoenhui.github.io/js/2018/12/16/tryCatch/">
+<link rel="canonical" href="https://raoenhui.github.io/js/2019/01/03/IntersectionObserver/">
 <link href="https://raoenhui.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="前端妹子的博客 Feed">
 <link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
 
@@ -112,165 +112,103 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h1>慎用try catch</h1>
-                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#Js" data-toggle="tooltip" title="Posts tagged with Js" rel="tag">Js</a> <strong><time datetime="2018-12-16T22:00:00+05:30">16 Dec 2018</time></strong></p>
+                            <h1>Intersection observer检测元素是否在视窗内</h1>
+                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#Js" data-toggle="tooltip" title="Posts tagged with Js" rel="tag">Js</a> <strong><time datetime="2019-01-03T23:00:00+05:30">03 Jan 2019</time></strong></p>
                         </div>
                     </div>
                 </div>
             </header>
 
         <article class="notepad-post-content post tag-simple">
-            <div><h3 id="前言">前言</h3>
-<p>自从ECMA-262第3版引入了<code class="highlighter-rouge">try catch</code>语句，作为JavaScript中处理异常的一种标准方式。基本的语法如下所示。</p>
+            <div><h2 id="前言">前言</h2>
 
-<h3 id="一try-catch基本语法">一、try catch基本语法</h3>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span> <span class="p">{</span>
-    <span class="c1">//可能会导致错误的代码</span>
-<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">//在错误发生时怎么处理</span>
-<span class="p">}</span><span class="k">finally</span> <span class="p">{</span>
-     <span class="c1">//即使报错始终执行</span>
- <span class="p">}</span>
-</code></pre></div></div>
-
-<h3 id="二try-catch特点">二、try catch特点</h3>
-
-<h5 id="1try-catch耗性能">1.try catch耗性能</h5>
-
-<h5 id="11-try-catch耗性能原理">1.1 try catch耗性能原理</h5>
-<p><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-try-statement-static-semantics-varscopeddeclarations">ECMAScript 2015 -The try Statement</a></p>
-
-<p><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-try-statement-static-semantics-vardeclarednames" title="link to this section">13.15.5</a> Static Semantics: VarDeclaredNames</p>
-<ul>
-  <li>TryStatement : try Block Catch Finally</li>
-  <li>1.Let names be VarDeclaredNames of Block.</li>
-  <li>2.Append to names the elements of the VarDeclaredNames of Catch.</li>
-  <li>3.Append to names the elements of the VarDeclaredNames of Finally.</li>
-  <li>4.Return names.</li>
-</ul>
-
-<p><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-try-statement-static-semantics-varscopeddeclarations" title="link to this section">13.15.6</a> Static Semantics: VarScopedDeclarations</p>
-<ul>
-  <li>TryStatement : try Block Catch Finally</li>
-  <li>1.Let declarations be VarScopedDeclarations of Block.</li>
-  <li>2.Append to declarations the elements of the VarScopedDeclarations of Catch.</li>
-  <li>3.Append to declarations the elements of the VarScopedDeclarations of Finally.</li>
-  <li>4.Return declarations.</li>
-</ul>
-
-<p>根据上面<a href="https://www.ecma-international.org/ecma-262/6.0">ECMAScript</a><code class="highlighter-rouge">文档的</code>13.15.5<code class="highlighter-rouge">和</code>13.15.6`。</p>
-
-<p><strong>下面仅为本妹子自己的翻译理解，仅供参考</strong></p>
-
-<p>上面大概说运行<code class="highlighter-rouge">try catch</code>时，需要将当前的词法环境和作用域全部分别添加到<code class="highlighter-rouge">catch</code>和<code class="highlighter-rouge">Finally</code>所要执行的代码块中。从上可以推断出<code class="highlighter-rouge">try catch</code>是消耗性能的。</p>
-
-<h5 id="12-try-catch耗性能实验">1.2 try catch耗性能实验</h5>
-<p><img src="http://upload-images.jianshu.io/upload_images/9902136-1df0bee220c7aadb?imageMogr2/auto-orient/strip" alt="webwxgetmsgimg.jpeg" /></p>
-
-<p>下面我用<code class="highlighter-rouge">Chrome62</code>和<code class="highlighter-rouge">IE9</code>分别添加多个<code class="highlighter-rouge">try catch</code>,进行对比实验，虽然，很想抛弃<code class="highlighter-rouge">万恶的IE</code>，但是很多国内的产品不答应呀，除非我们去健身房再多练练，打一架，嘿嘿～～
-1.2.1 实验数据：</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//没有加try catch</span>
-<span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-     <span class="nx">i</span><span class="o">++</span><span class="p">;</span>
-<span class="p">}())</span>
-</code></pre></div></div>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//有try catch</span>
-<span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">try</span> <span class="p">{</span>
-      <span class="nx">i</span><span class="o">++</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">ex</span><span class="p">)</span> <span class="p">{</span>
-    <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
-    <span class="p">}</span>
-<span class="p">}())</span>
-</code></pre></div></div>
-<p>1.2.2 实验结果：
-<img src="http://upload-images.jianshu.io/upload_images/9902136-78857d903038a84d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="chrome62-simple.png" /></p>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/9902136-ff46791595f72bc5?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="IE11-simple.png" /></p>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/9902136-4341796d2474eb1f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="chrome62-more.png" /></p>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/9902136-de5acf017224cb21?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="IE11-more.png" /></p>
-
-<p>1.2.3 实验链接：</p>
-
-<p><a href="https://jsperf.com/test-try-catch3">https://jsperf.com/test-try-catch3</a></p>
-
-<p><a href="https://jsperf.com/test-try-catch">https://jsperf.com/test-try-catch</a></p>
-
-<p>上面实验数据对比得知，<code class="highlighter-rouge">try catch</code>会消耗性能，但是<code class="highlighter-rouge">try catch</code>对<code class="highlighter-rouge">Chrome</code>的影响比<code class="highlighter-rouge">IE11</code>小很多,据说是V8引擎新的编译器<code class="highlighter-rouge">TurboFan </code>起到的作用，有兴趣的小伙伴们可以看下<a href="https://v8docs.nodesource.com/node-0.8/d4/da0/v8_8h_source.html">v8_8h_source的3354行起</a>，但是<code class="highlighter-rouge">IE11</code>是slower不少的。这就根据小伙伴们的业务对象了，如果只面向现代浏览器，<code class="highlighter-rouge">try catch</code>消耗性能影响会很小；如果需要兼容<code class="highlighter-rouge">IE</code>或内嵌在低端的<code class="highlighter-rouge">webView</code>时，可适当考虑下<code class="highlighter-rouge">try catch</code>消耗性能。</p>
-
-<h5 id="2try-catch捕获不到异步错误">2.try catch捕获不到异步错误</h5>
-
-<p>尝试对异步方法进行<code class="highlighter-rouge">try catch</code>操作只能捕获当次事件循环内的异常，对callback执行时抛出的异常将无能为力。</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span> <span class="p">{</span>
-    <span class="nx">setTimeout</span><span class="p">(()</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="kd">const</span> <span class="nx">A</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="nx">A</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="p">},</span><span class="mi">0</span><span class="p">)</span>
-<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// 这里并不能捕获回调里面抛出的异常</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"-----catch error------"</span><span class="p">)</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<p>异步情况想捕获异常，建议在异步函数里包一层<code class="highlighter-rouge">try catch</code>。</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">A</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="nx">A</span> <span class="o">=</span> <span class="mi">2</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-  <span class="p">}</span>
-<span class="p">},</span> <span class="mi">0</span><span class="p">)</span>
-
-</code></pre></div></div>
-
-<h5 id="3try-catch抛出错误">3.try catch抛出错误</h5>
-
-<p>与 <code class="highlighter-rouge">try-catch</code> 语句相配的还有一个 <code class="highlighter-rouge">throw</code> 操作符，随时抛出自定义错误，可以根据不同错误类型，创建自定义错误消息。</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">"Something bad happened."</span><span class="p">);</span>
-<span class="k">throw</span> <span class="k">new</span> <span class="nx">SyntaxError</span><span class="p">(</span><span class="s2">"I don’t like your syntax."</span><span class="p">);</span>
-<span class="k">throw</span> <span class="k">new</span> <span class="nx">TypeError</span><span class="p">(</span><span class="s2">"What type of variable do you take me for?"</span><span class="p">);</span> <span class="k">throw</span> <span class="k">new</span> <span class="nx">RangeError</span><span class="p">(</span><span class="s2">"Sorry, you just don’t have the range."</span><span class="p">);</span>
-<span class="k">throw</span> <span class="k">new</span> <span class="nx">EvalError</span><span class="p">(</span><span class="s2">"That doesn’t evaluate."</span><span class="p">);</span>
-<span class="k">throw</span> <span class="k">new</span> <span class="nx">URIError</span><span class="p">(</span><span class="s2">"Uri, is that you?"</span><span class="p">);</span>
-<span class="k">throw</span> <span class="k">new</span> <span class="nx">ReferenceError</span><span class="p">(</span><span class="s2">"You didn’t cite your references properly."</span><span class="p">);</span>
-</code></pre></div></div>
-<p>如果觉得自定义的报错不合理，想看原生报错，可以使用<code class="highlighter-rouge">Chrome</code>的<code class="highlighter-rouge">Pause on exceptions</code>功能
-<img src="http://upload-images.jianshu.io/upload_images/9902136-e4cbfcb116381944?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
-
-<h3 id="三慎用try-catch">三、慎用try catch</h3>
-
-<p><code class="highlighter-rouge">try catch</code>最适合处理那些我们无法控制的错误，如<code class="highlighter-rouge">I/O</code>操作等，后端<code class="highlighter-rouge">nodeJs</code>或<code class="highlighter-rouge">java</code>读取<code class="highlighter-rouge">I/O</code>操作比较多比如读数据库，所以用<code class="highlighter-rouge">try catch</code>比较多。前端可以用在上传图片、使用别人的<code class="highlighter-rouge">js</code>库报错、<code class="highlighter-rouge">async await</code>同步调接口等地方适用。</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">f</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="kr">await</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="s1">'出错了'</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="kr">await</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s1">'hello world'</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<p>但是大部分前端客户端代码处理都不怎么依赖环境也没有<code class="highlighter-rouge">I/O</code>操作，都是自己写的代码，在明明白白地知道自己的代码会发生错误时，再使用<code class="highlighter-rouge">try catch</code>语句就不太合适了，对应数据类型的错误，建议小伙伴们用解构赋值指定默认值、<code class="highlighter-rouge">&amp;&amp;</code>和<code class="highlighter-rouge">||</code>来规避，所以慎用try catch。</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">foo</span> <span class="o">=</span> <span class="p">(</span><span class="nx">obj</span> <span class="o">=</span> <span class="p">{})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">obj1</span> <span class="o">=</span> <span class="nx">result</span> <span class="o">||</span> <span class="p">{};</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">obj</span> <span class="o">&amp;&amp;</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">code</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'obj.code'</span><span class="p">,</span><span class="nx">obj</span><span class="p">.</span><span class="nx">code</span><span class="p">)</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h3 id="参考资料">参考资料</h3>
-
+<p>一直以来，检测元素在浏览器视窗口内不是件容易的事，很多解决方案都不能很准确的判断，计算量也有可能拖慢网站性能。
+但是很多场景都需要用到：</p>
 <blockquote>
   <ul>
-    <li><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-try-statement-static-semantics-varscopeddeclarations">ECMAScript 2015 -The try Statement</a></li>
-    <li><a href="https://developers.google.com/web/updates/2015/05/automatically-pause-on-any-exception">https://developers.google.com/web/updates/2015/05/automatically-pause-on-any-exception</a></li>
-    <li><a href="https://v8docs.nodesource.com/node-0.8/d4/da0/v8_8h_source.html">https://v8docs.nodesource.com/node-0.8/d4/da0/v8_8h_source.html</a></li>
+    <li>当页面滚动时，懒加载图片或其他内容。</li>
+    <li>实现“可无限滚动”网站，也就是当用户滚动网页时直接加载更多内容，无需翻页。</li>
+    <li>为计算广告收益，检测其广告元素的曝光情况。</li>
+    <li>根据用户是否已滚动到相应区域来灵活开始执行任务或动画。</li>
+  </ul>
+</blockquote>
+
+<h2 id="通常检测是否在视窗内原理">通常检测是否在视窗内原理</h2>
+
+<p>监听浏览器滚动事件<code class="highlighter-rouge">scroll</code>，对每个目标元素执行<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect">Element.getBoundingClientRect()</a>,<code class="highlighter-rouge">getBoundingClientRect</code>方法返回元素的大小及其相对于视口的位置。 此方法可获取整个网页左上角定位 ，及距浏览器顶部的或左侧的距离，然后用<code class="highlighter-rouge">innerHeight </code>、<code class="highlighter-rouge">innerwidth </code>等得到视窗大小，以此相减来判断是否在视窗范围内。
+具体代码如下：
+<a href="https://codepen.io/raoenhui/pen/BGBYpX">https://codepen.io/raoenhui/pen/BGBYpX</a>
+还有其他检测原理大多都是通过计算得到，但是下面我将要介绍由浏览器自带方法检测元素是否在视窗内。</p>
+
+<h2 id="新检测原理intersection-observer">新检测原理Intersection observer</h2>
+
+<p>Intersection observer 允许你配置一个回调函数，每当<code class="highlighter-rouge">target</code>进入浏览器视窗时，触发回调函数。
+<img src="https://upload-images.jianshu.io/upload_images/9902136-f8077160e5fc757a.gif?imageMogr2/auto-orient/strip" alt="example1.gif" /></p>
+
+<p>源码地址：<a href="https://codepen.io/raoenhui/pen/XoVEjK">https://codepen.io/raoenhui/pen/XoVEjK</a></p>
+
+<h3 id="用法">用法</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">root</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'#scrollArea'</span><span class="p">),</span> 
+    <span class="na">rootMargin</span><span class="p">:</span> <span class="s1">'0px'</span><span class="p">,</span> 
+    <span class="na">threshold</span><span class="p">:</span> <span class="mf">1.0</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">callback</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">entries</span><span class="p">,</span> <span class="nx">observer</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="cm">/* Content excerpted, show below */</span> 
+<span class="p">};</span>
+<span class="kd">var</span> <span class="nx">observer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">IntersectionObserver</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+</code></pre></div></div>
+<h3 id="参数">参数</h3>
+<p>options 配置项</p>
+<blockquote>
+  <ul>
+    <li>root 目标元素。默认使用浏览器视口做为root</li>
+    <li>rootMargin root元素的外边距。</li>
+    <li>threshold 阈值。可以是单一的number也可以是number数组，一般取1。</li>
+  </ul>
+</blockquote>
+
+<p>callback 回调函数</p>
+
+<h3 id="案例">案例</h3>
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-63762fade545cfbe.gif?imageMogr2/auto-orient/strip" alt="example.gif" />
+源码地址：<a href="https://codepen.io/raoenhui/pen/xQKPaK">https://codepen.io/raoenhui/pen/xQKPaK</a></p>
+
+<p>target元素和root元素相交程度达到该值的时候IntersectionObserver注册的回调函数将会被执行。
+如果你只是想要探测当target元素的在root元素中的可见性超过50%的时候，你可以指定该属性值为0.5。如果你想要target元素在root元素的可见程度每多25%就执行一次回调，那么你可以指定一个数组[0, 0.25, 0.5, 0.75, 1]。默认值是0(意味着只要有一个target像素出现在root元素中，回调函数将会被执行)。该值为1.0含义是当target完全出现在root元素中时候 回调才会被执行。</p>
+
+<p>插件<code class="highlighter-rouge">jquery_lazyload</code>懒加载就是用到了此方法，
+源码地址：<a href="https://github.com/tuupola/jquery_lazyload/blob/2.x/lazyload.js">https://github.com/tuupola/jquery_lazyload</a></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">this</span><span class="p">.</span><span class="nx">observer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">IntersectionObserver</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">entries</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">entries</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">entry</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="nx">entry</span><span class="p">.</span><span class="nx">intersectionRatio</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nb">self</span><span class="p">.</span><span class="nx">observer</span><span class="p">.</span><span class="nx">unobserve</span><span class="p">(</span><span class="nx">entry</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+                        <span class="kd">let</span> <span class="nx">src</span> <span class="o">=</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="nb">self</span><span class="p">.</span><span class="nx">settings</span><span class="p">.</span><span class="nx">src</span><span class="p">);</span>
+                        <span class="kd">let</span> <span class="nx">srcset</span> <span class="o">=</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="nb">self</span><span class="p">.</span><span class="nx">settings</span><span class="p">.</span><span class="nx">srcset</span><span class="p">);</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="s2">"img"</span> <span class="o">===</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">tagName</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">())</span> <span class="p">{</span>
+                            <span class="k">if</span> <span class="p">(</span><span class="nx">src</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="nx">entry</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">src</span><span class="p">;</span>
+                            <span class="p">}</span>
+                            <span class="k">if</span> <span class="p">(</span><span class="nx">srcset</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="nx">entry</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">srcset</span> <span class="o">=</span> <span class="nx">srcset</span><span class="p">;</span>
+                            <span class="p">}</span>
+                        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                            <span class="nx">entry</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundImage</span> <span class="o">=</span> <span class="s2">"url("</span> <span class="o">+</span> <span class="nx">src</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">});</span>
+            <span class="p">},</span> <span class="nx">observerConfig</span><span class="p">);</span>
+</code></pre></div></div>
+<h3 id="兼容性">兼容性</h3>
+<p>兼容性<code class="highlighter-rouge">chrome</code>基本支持，但是意外的是<code class="highlighter-rouge">safari</code>支持性不好，用到的小伙伴们要注意这点了，兼容性具体看下图：
+<img src="https://upload-images.jianshu.io/upload_images/9902136-ab7a39b24d7dbe8e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<h2 id="其他链接">其他链接</h2>
+<blockquote>
+  <ul>
+    <li>官方链接<a href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API">Intersection Observer API
+</a></li>
   </ul>
 </blockquote>
 
@@ -281,15 +219,15 @@
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;慎用try catch&quot;%20https://raoenhui.github.io/js/2018/12/16/tryCatch/%20via%20&#64;raoenhui"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Intersection observer检测元素是否在视窗内&quot;%20https://raoenhui.github.io/js/2019/01/03/IntersectionObserver/%20via%20&#64;raoenhui"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/js/2018/12/16/tryCatch/"
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/js/2019/01/03/IntersectionObserver/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/js/2018/12/16/tryCatch/"
+                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/js/2019/01/03/IntersectionObserver/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
                     <i class="fa fa-google-plus"></i>
                 </a>
@@ -420,7 +358,7 @@ gitment.render('container')
 
 <!-- ice facebook start-->
  
-<!-- <div class="fb-comments" data-href="https://raoenhui.github.io/js/2018/12/16/tryCatch/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+<!-- <div class="fb-comments" data-href="https://raoenhui.github.io/js/2019/01/03/IntersectionObserver/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
