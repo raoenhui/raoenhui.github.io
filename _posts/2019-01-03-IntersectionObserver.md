@@ -21,8 +21,9 @@ tags:
 ## 通常检测是否在视窗内原理
 
 监听浏览器滚动事件`scroll`，对每个目标元素执行[Element.getBoundingClientRect()](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect),`getBoundingClientRect`方法返回元素的大小及其相对于视口的位置。 此方法可获取整个网页左上角定位 ，及距浏览器顶部的或左侧的距离，然后用`innerHeight `、`innerwidth `等得到视窗大小，以此相减来判断是否在视窗范围内。
-具体代码如下：
-[https://codepen.io/raoenhui/pen/BGBYpX](https://codepen.io/raoenhui/pen/BGBYpX)
+
+具体代码如下：[https://codepen.io/raoenhui/pen/BGBYpX](https://codepen.io/raoenhui/pen/BGBYpX)
+
 还有其他检测原理大多都是通过计算得到，但是下面我将要介绍由浏览器自带方法检测元素是否在视窗内。
 
 ## 新检测原理Intersection observer 
@@ -55,12 +56,14 @@ callback 回调函数
 
 ### 案例
 ![example.gif](https://upload-images.jianshu.io/upload_images/9902136-63762fade545cfbe.gif?imageMogr2/auto-orient/strip)
+
 源码地址：[https://codepen.io/raoenhui/pen/xQKPaK](https://codepen.io/raoenhui/pen/xQKPaK)
 
 target元素和root元素相交程度达到该值的时候IntersectionObserver注册的回调函数将会被执行。
 如果你只是想要探测当target元素的在root元素中的可见性超过50%的时候，你可以指定该属性值为0.5。如果你想要target元素在root元素的可见程度每多25%就执行一次回调，那么你可以指定一个数组[0, 0.25, 0.5, 0.75, 1]。默认值是0(意味着只要有一个target像素出现在root元素中，回调函数将会被执行)。该值为1.0含义是当target完全出现在root元素中时候 回调才会被执行。
 
 插件`jquery_lazyload`懒加载就是用到了此方法，
+
 源码地址：[https://github.com/tuupola/jquery_lazyload](https://github.com/tuupola/jquery_lazyload/blob/2.x/lazyload.js)
 ```javascript
  this.observer = new IntersectionObserver(function(entries) {
@@ -88,7 +91,9 @@ target元素和root元素相交程度达到该值的时候IntersectionObserver�
 ![image.png](https://upload-images.jianshu.io/upload_images/9902136-ab7a39b24d7dbe8e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 其他链接
-> * 官方链接[Intersection Observer API
-](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+> * 官方链接[Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+> * [https://codepen.io/raoenhui/pen/BGBYpX](https://codepen.io/raoenhui/pen/BGBYpX)
+> * [https://codepen.io/raoenhui/pen/XoVEjK](https://codepen.io/raoenhui/pen/XoVEjK)
+> * [https://codepen.io/raoenhui/pen/xQKPaK](https://codepen.io/raoenhui/pen/xQKPaK)
 
 Happy coding .. :)

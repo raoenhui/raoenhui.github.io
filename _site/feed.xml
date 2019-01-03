@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2019-01-03T20:06:37+05:30</updated>
+<updated>2019-01-03T20:46:26+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>Enhui Rao</name>
@@ -45,10 +45,11 @@
 
 &lt;h2 id=&quot;通常检测是否在视窗内原理&quot;&gt;通常检测是否在视窗内原理&lt;/h2&gt;
 
-&lt;p&gt;监听浏览器滚动事件&lt;code class=&quot;highlighter-rouge&quot;&gt;scroll&lt;/code&gt;，对每个目标元素执行&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect&quot;&gt;Element.getBoundingClientRect()&lt;/a&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;getBoundingClientRect&lt;/code&gt;方法返回元素的大小及其相对于视口的位置。 此方法可获取整个网页左上角定位 ，及距浏览器顶部的或左侧的距离，然后用&lt;code class=&quot;highlighter-rouge&quot;&gt;innerHeight &lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;innerwidth &lt;/code&gt;等得到视窗大小，以此相减来判断是否在视窗范围内。
-具体代码如下：
-&lt;a href=&quot;https://codepen.io/raoenhui/pen/BGBYpX&quot;&gt;https://codepen.io/raoenhui/pen/BGBYpX&lt;/a&gt;
-还有其他检测原理大多都是通过计算得到，但是下面我将要介绍由浏览器自带方法检测元素是否在视窗内。&lt;/p&gt;
+&lt;p&gt;监听浏览器滚动事件&lt;code class=&quot;highlighter-rouge&quot;&gt;scroll&lt;/code&gt;，对每个目标元素执行&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect&quot;&gt;Element.getBoundingClientRect()&lt;/a&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;getBoundingClientRect&lt;/code&gt;方法返回元素的大小及其相对于视口的位置。 此方法可获取整个网页左上角定位 ，及距浏览器顶部的或左侧的距离，然后用&lt;code class=&quot;highlighter-rouge&quot;&gt;innerHeight &lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;innerwidth &lt;/code&gt;等得到视窗大小，以此相减来判断是否在视窗范围内。&lt;/p&gt;
+
+&lt;p&gt;具体代码如下：&lt;a href=&quot;https://codepen.io/raoenhui/pen/BGBYpX&quot;&gt;https://codepen.io/raoenhui/pen/BGBYpX&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;还有其他检测原理大多都是通过计算得到，但是下面我将要介绍由浏览器自带方法检测元素是否在视窗内。&lt;/p&gt;
 
 &lt;h2 id=&quot;新检测原理intersection-observer&quot;&gt;新检测原理Intersection observer&lt;/h2&gt;
 
@@ -82,14 +83,16 @@
 &lt;p&gt;callback 回调函数&lt;/p&gt;
 
 &lt;h3 id=&quot;案例&quot;&gt;案例&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-63762fade545cfbe.gif?imageMogr2/auto-orient/strip&quot; alt=&quot;example.gif&quot; /&gt;
-源码地址：&lt;a href=&quot;https://codepen.io/raoenhui/pen/xQKPaK&quot;&gt;https://codepen.io/raoenhui/pen/xQKPaK&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-63762fade545cfbe.gif?imageMogr2/auto-orient/strip&quot; alt=&quot;example.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;源码地址：&lt;a href=&quot;https://codepen.io/raoenhui/pen/xQKPaK&quot;&gt;https://codepen.io/raoenhui/pen/xQKPaK&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;target元素和root元素相交程度达到该值的时候IntersectionObserver注册的回调函数将会被执行。
 如果你只是想要探测当target元素的在root元素中的可见性超过50%的时候，你可以指定该属性值为0.5。如果你想要target元素在root元素的可见程度每多25%就执行一次回调，那么你可以指定一个数组[0, 0.25, 0.5, 0.75, 1]。默认值是0(意味着只要有一个target像素出现在root元素中，回调函数将会被执行)。该值为1.0含义是当target完全出现在root元素中时候 回调才会被执行。&lt;/p&gt;
 
-&lt;p&gt;插件&lt;code class=&quot;highlighter-rouge&quot;&gt;jquery_lazyload&lt;/code&gt;懒加载就是用到了此方法，
-源码地址：&lt;a href=&quot;https://github.com/tuupola/jquery_lazyload/blob/2.x/lazyload.js&quot;&gt;https://github.com/tuupola/jquery_lazyload&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;插件&lt;code class=&quot;highlighter-rouge&quot;&gt;jquery_lazyload&lt;/code&gt;懒加载就是用到了此方法，&lt;/p&gt;
+
+&lt;p&gt;源码地址：&lt;a href=&quot;https://github.com/tuupola/jquery_lazyload/blob/2.x/lazyload.js&quot;&gt;https://github.com/tuupola/jquery_lazyload&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;observer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IntersectionObserver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
                 &lt;span class=&quot;nx&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
                     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;intersectionRatio&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -117,8 +120,10 @@
 &lt;h2 id=&quot;其他链接&quot;&gt;其他链接&lt;/h2&gt;
 &lt;blockquote&gt;
   &lt;ul&gt;
-    &lt;li&gt;官方链接&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API&quot;&gt;Intersection Observer API
-&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;官方链接&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API&quot;&gt;Intersection Observer API&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://codepen.io/raoenhui/pen/BGBYpX&quot;&gt;https://codepen.io/raoenhui/pen/BGBYpX&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://codepen.io/raoenhui/pen/XoVEjK&quot;&gt;https://codepen.io/raoenhui/pen/XoVEjK&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://codepen.io/raoenhui/pen/xQKPaK&quot;&gt;https://codepen.io/raoenhui/pen/xQKPaK&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/blockquote&gt;
 

@@ -135,7 +135,7 @@
                 </h3>
             </header>
             <section class="notepad-post-excerpt">
-                <p>前言 一直以来，检测元素在浏览器视窗口内不是件容易的事，很多解决方案都不能很准确的判断，计算量也有可能拖慢网站性能。 但是很多场景都需要用到： 当页面滚动时，懒加载图片或其他内容。 实现“可无限滚动”网站，也就是当用户滚动网页时直接加载更多内容，无需翻页。 为计算广告收益，检测其广告元素的曝光情况。 根据用户是否已滚动到相应区域来灵活开始执行任务或动画。 通常检测是否在视窗内原理 监听浏览器滚动事件scroll，对每个目标元素执行Element.getBoundingClientRect(),getBoundingClientRect方法返回元素的大小及其相对于视口的位置。 此方法可获取整个网页左上角定位 ，及距浏览器顶部的或左侧的距离，然后用innerHeight 、innerwidth 等得到视窗大小，以此相减来判断是否在视窗范围内。 具体代码如下： https://codepen.io/raoenhui/pen/BGBYpX 还有其他检测原理大多都是通过计算得到，但是下面我将要介绍由浏览器自带方法检测元素是否在视窗内。 新检测原理Intersection observer Intersection observer 允许你配置一个回调函数，每当target进入浏览器视窗时，触发回调函数。 源码地址：https://codepen.io/raoenhui/pen/XoVEjK 用法 var options = { root: document.querySelector('#scrollArea'), rootMargin: '0px', threshold: 1.0 } var callback = function(entries, observer) { /*...</p>
+                <p>前言 一直以来，检测元素在浏览器视窗口内不是件容易的事，很多解决方案都不能很准确的判断，计算量也有可能拖慢网站性能。 但是很多场景都需要用到： 当页面滚动时，懒加载图片或其他内容。 实现“可无限滚动”网站，也就是当用户滚动网页时直接加载更多内容，无需翻页。 为计算广告收益，检测其广告元素的曝光情况。 根据用户是否已滚动到相应区域来灵活开始执行任务或动画。 通常检测是否在视窗内原理 监听浏览器滚动事件scroll，对每个目标元素执行Element.getBoundingClientRect(),getBoundingClientRect方法返回元素的大小及其相对于视口的位置。 此方法可获取整个网页左上角定位 ，及距浏览器顶部的或左侧的距离，然后用innerHeight 、innerwidth 等得到视窗大小，以此相减来判断是否在视窗范围内。 具体代码如下：https://codepen.io/raoenhui/pen/BGBYpX 还有其他检测原理大多都是通过计算得到，但是下面我将要介绍由浏览器自带方法检测元素是否在视窗内。 新检测原理Intersection observer Intersection observer 允许你配置一个回调函数，每当target进入浏览器视窗时，触发回调函数。 源码地址：https://codepen.io/raoenhui/pen/XoVEjK 用法 var options = { root: document.querySelector('#scrollArea'), rootMargin: '0px', threshold: 1.0 } var callback = function(entries, observer) { /* Content...</p>
             </section>
             
                 <div class="notepad-index-post-tags">

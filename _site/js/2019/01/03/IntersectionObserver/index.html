@@ -135,10 +135,11 @@
 
 <h2 id="通常检测是否在视窗内原理">通常检测是否在视窗内原理</h2>
 
-<p>监听浏览器滚动事件<code class="highlighter-rouge">scroll</code>，对每个目标元素执行<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect">Element.getBoundingClientRect()</a>,<code class="highlighter-rouge">getBoundingClientRect</code>方法返回元素的大小及其相对于视口的位置。 此方法可获取整个网页左上角定位 ，及距浏览器顶部的或左侧的距离，然后用<code class="highlighter-rouge">innerHeight </code>、<code class="highlighter-rouge">innerwidth </code>等得到视窗大小，以此相减来判断是否在视窗范围内。
-具体代码如下：
-<a href="https://codepen.io/raoenhui/pen/BGBYpX">https://codepen.io/raoenhui/pen/BGBYpX</a>
-还有其他检测原理大多都是通过计算得到，但是下面我将要介绍由浏览器自带方法检测元素是否在视窗内。</p>
+<p>监听浏览器滚动事件<code class="highlighter-rouge">scroll</code>，对每个目标元素执行<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect">Element.getBoundingClientRect()</a>,<code class="highlighter-rouge">getBoundingClientRect</code>方法返回元素的大小及其相对于视口的位置。 此方法可获取整个网页左上角定位 ，及距浏览器顶部的或左侧的距离，然后用<code class="highlighter-rouge">innerHeight </code>、<code class="highlighter-rouge">innerwidth </code>等得到视窗大小，以此相减来判断是否在视窗范围内。</p>
+
+<p>具体代码如下：<a href="https://codepen.io/raoenhui/pen/BGBYpX">https://codepen.io/raoenhui/pen/BGBYpX</a></p>
+
+<p>还有其他检测原理大多都是通过计算得到，但是下面我将要介绍由浏览器自带方法检测元素是否在视窗内。</p>
 
 <h2 id="新检测原理intersection-observer">新检测原理Intersection observer</h2>
 
@@ -172,14 +173,16 @@
 <p>callback 回调函数</p>
 
 <h3 id="案例">案例</h3>
-<p><img src="https://upload-images.jianshu.io/upload_images/9902136-63762fade545cfbe.gif?imageMogr2/auto-orient/strip" alt="example.gif" />
-源码地址：<a href="https://codepen.io/raoenhui/pen/xQKPaK">https://codepen.io/raoenhui/pen/xQKPaK</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-63762fade545cfbe.gif?imageMogr2/auto-orient/strip" alt="example.gif" /></p>
+
+<p>源码地址：<a href="https://codepen.io/raoenhui/pen/xQKPaK">https://codepen.io/raoenhui/pen/xQKPaK</a></p>
 
 <p>target元素和root元素相交程度达到该值的时候IntersectionObserver注册的回调函数将会被执行。
 如果你只是想要探测当target元素的在root元素中的可见性超过50%的时候，你可以指定该属性值为0.5。如果你想要target元素在root元素的可见程度每多25%就执行一次回调，那么你可以指定一个数组[0, 0.25, 0.5, 0.75, 1]。默认值是0(意味着只要有一个target像素出现在root元素中，回调函数将会被执行)。该值为1.0含义是当target完全出现在root元素中时候 回调才会被执行。</p>
 
-<p>插件<code class="highlighter-rouge">jquery_lazyload</code>懒加载就是用到了此方法，
-源码地址：<a href="https://github.com/tuupola/jquery_lazyload/blob/2.x/lazyload.js">https://github.com/tuupola/jquery_lazyload</a></p>
+<p>插件<code class="highlighter-rouge">jquery_lazyload</code>懒加载就是用到了此方法，</p>
+
+<p>源码地址：<a href="https://github.com/tuupola/jquery_lazyload/blob/2.x/lazyload.js">https://github.com/tuupola/jquery_lazyload</a></p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">this</span><span class="p">.</span><span class="nx">observer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">IntersectionObserver</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">entries</span><span class="p">)</span> <span class="p">{</span>
                 <span class="nx">entries</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">entry</span><span class="p">)</span> <span class="p">{</span>
                     <span class="k">if</span> <span class="p">(</span><span class="nx">entry</span><span class="p">.</span><span class="nx">intersectionRatio</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
@@ -207,8 +210,10 @@
 <h2 id="其他链接">其他链接</h2>
 <blockquote>
   <ul>
-    <li>官方链接<a href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API">Intersection Observer API
-</a></li>
+    <li>官方链接<a href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API">Intersection Observer API</a></li>
+    <li><a href="https://codepen.io/raoenhui/pen/BGBYpX">https://codepen.io/raoenhui/pen/BGBYpX</a></li>
+    <li><a href="https://codepen.io/raoenhui/pen/XoVEjK">https://codepen.io/raoenhui/pen/XoVEjK</a></li>
+    <li><a href="https://codepen.io/raoenhui/pen/xQKPaK">https://codepen.io/raoenhui/pen/xQKPaK</a></li>
   </ul>
 </blockquote>
 
