@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2019-04-01T18:16:18+05:30</updated>
+<updated>2019-04-01T18:20:45+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>Enhui Rao</name>
@@ -18,10 +18,10 @@
 
 <entry>
   <title type="html"><![CDATA[假设最后一个css元素是html标签，则选择器解析从左往右的提案]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/css/2019/03/03/left-to-right/"/>
-  <id>https://raoenhui.github.io/css/2019/03/03/left-to-right</id>
-  <published>2019-03-03T22:00:00+05:30</published>
-  <updated>2019-03-03T22:00:00+05:30</updated>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/css/2019/03/30/left-to-right/"/>
+  <id>https://raoenhui.github.io/css/2019/03/30/left-to-right</id>
+  <published>2019-03-30T16:00:00+05:30</published>
+  <updated>2019-03-30T16:00:00+05:30</updated>
   <author>
     <name>Enhui Rao</name>
     <uri>https://raoenhui.github.io</uri>
@@ -95,7 +95,7 @@
 &lt;p&gt;Happy coding .. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/css/2019/03/03/left-to-right/&quot;&gt;假设最后一个css元素是html标签，则选择器解析从左往右的提案&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on March 03, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/css/2019/03/30/left-to-right/&quot;&gt;假设最后一个css元素是html标签，则选择器解析从左往右的提案&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on March 30, 2019.&lt;/p&gt;</content>
 </entry>
 
 
