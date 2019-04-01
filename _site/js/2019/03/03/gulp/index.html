@@ -128,8 +128,10 @@
 
 <h2 id="二解决浏览器缓存问题">二、解决浏览器缓存问题</h2>
 <h4 id="gulp-rev">gulp-rev</h4>
-<p>1.为静态文件添加唯一<code class="highlighter-rouge">hash</code>值，如 unicorn.css → unicorn-d41d8cd98f.css。
-2.生成<code class="highlighter-rouge">map</code>映射文件，方便后面<code class="highlighter-rouge">html</code>更换文件名</p>
+
+<p>1.为静态文件添加唯一<code class="highlighter-rouge">hash</code>值，如 unicorn.css → unicorn-d41d8cd98f.css。</p>
+
+<p>2.生成<code class="highlighter-rouge">map</code>映射文件，方便后面<code class="highlighter-rouge">html</code>更换文件名</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'js'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span>
     <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">([</span><span class="s1">'./src/app.js'</span><span class="p">,</span> <span class="s1">'./src/app2.js'</span><span class="p">])</span>
         <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'dist'</span><span class="p">))</span> <span class="c1">// 将源文件拷贝到打包目录</span>

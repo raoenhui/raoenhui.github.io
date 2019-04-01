@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2019-03-31T13:49:28+05:30</updated>
+<updated>2019-04-01T18:16:18+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>Enhui Rao</name>
@@ -17,7 +17,7 @@
 
 
 <entry>
-  <title type="html"><![CDATA[假设最后一个css元素是标签，则选择器解析从左往右的提案]]></title>
+  <title type="html"><![CDATA[假设最后一个css元素是html标签，则选择器解析从左往右的提案]]></title>
   <link rel="alternate" type="text/html" href="https://raoenhui.github.io/css/2019/03/03/left-to-right/"/>
   <id>https://raoenhui.github.io/css/2019/03/03/left-to-right</id>
   <published>2019-03-03T22:00:00+05:30</published>
@@ -70,28 +70,32 @@
 &lt;p&gt;当然也有情况是，如果&lt;code class=&quot;highlighter-rouge&quot;&gt;.root&lt;/code&gt;下面有很多复杂子节点，需要遍历与回溯很多次，而&lt;code class=&quot;highlighter-rouge&quot;&gt;.root&lt;/code&gt;外的&lt;code class=&quot;highlighter-rouge&quot;&gt;span&lt;/code&gt;不多，则&lt;code class=&quot;highlighter-rouge&quot;&gt; right-to-left &lt;/code&gt;解析效率更高。&lt;/p&gt;
 
 &lt;h2 id=&quot;提案&quot;&gt;提案&lt;/h2&gt;
-&lt;p&gt;大部分书写习惯是不想每个标签都加&lt;code class=&quot;highlighter-rouge&quot;&gt;class name&lt;/code&gt;，可以用不同标签选择出来的。&lt;/p&gt;
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;root&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sub&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;p&gt;大部分书写习惯是不想每个&lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt;标签都加&lt;code class=&quot;highlighter-rouge&quot;&gt;class name&lt;/code&gt;，可以用不同&lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt;标签选择出来的。如下所示：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sub&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&amp;gt;&lt;/span&gt;1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&amp;lt;label&amp;gt;&lt;/span&gt;2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/label&amp;gt;&amp;lt;div&amp;gt;&lt;/span&gt;3&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  ...  &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 里面有很多span，label，div标签 --&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.sub&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;span&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-&lt;span class=&quot;nc&quot;&gt;.sub&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-&lt;span class=&quot;nc&quot;&gt;.sub&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;#sub&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;span&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;nf&quot;&gt;#sub&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;nf&quot;&gt;#sub&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;所以提案如下：
-&lt;strong&gt;假设最后一个css元素是标签，而父元素有ID或Class选择器时，则选择器解析从左往右的，其他情况还是从右往左。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;先找到&lt;code class=&quot;highlighter-rouge&quot;&gt;#sub&lt;/code&gt;再找&lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt;标签的话，css解析效率会高些。
+那么&lt;code class=&quot;highlighter-rouge&quot;&gt; left-to-right &lt;/code&gt;比&lt;code class=&quot;highlighter-rouge&quot;&gt; right-to-left &lt;/code&gt;解析效率高。
+所以提案如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;假设最后一个css元素是html标签，而父元素有ID或Class选择器时，则选择器解析从左往右的，其他情况还是从右往左。&lt;/strong&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Ps：这里我的一个想法，欢迎各位小伙伴们一起讨论，如果大部分都觉得有道理的话，我想试着向&lt;code class=&quot;highlighter-rouge&quot;&gt;w3c&lt;/code&gt;或&lt;code class=&quot;highlighter-rouge&quot;&gt;v8&lt;/code&gt;组织提出建议需求。&lt;/p&gt;
+  &lt;p&gt;Ps：这里本妹子的一个想法，欢迎各位小伙伴们一起讨论，如果大部分都觉得有道理的话，我想试着向&lt;code class=&quot;highlighter-rouge&quot;&gt;w3c&lt;/code&gt;组织提出建议需求。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Happy coding .. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/css/2019/03/03/left-to-right/&quot;&gt;假设最后一个css元素是标签，则选择器解析从左往右的提案&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on March 03, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/css/2019/03/03/left-to-right/&quot;&gt;假设最后一个css元素是html标签，则选择器解析从左往右的提案&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on March 03, 2019.&lt;/p&gt;</content>
 </entry>
 
 
@@ -117,8 +121,10 @@
 
 &lt;h2 id=&quot;二解决浏览器缓存问题&quot;&gt;二、解决浏览器缓存问题&lt;/h2&gt;
 &lt;h4 id=&quot;gulp-rev&quot;&gt;gulp-rev&lt;/h4&gt;
-&lt;p&gt;1.为静态文件添加唯一&lt;code class=&quot;highlighter-rouge&quot;&gt;hash&lt;/code&gt;值，如 unicorn.css → unicorn-d41d8cd98f.css。
-2.生成&lt;code class=&quot;highlighter-rouge&quot;&gt;map&lt;/code&gt;映射文件，方便后面&lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt;更换文件名&lt;/p&gt;
+
+&lt;p&gt;1.为静态文件添加唯一&lt;code class=&quot;highlighter-rouge&quot;&gt;hash&lt;/code&gt;值，如 unicorn.css → unicorn-d41d8cd98f.css。&lt;/p&gt;
+
+&lt;p&gt;2.生成&lt;code class=&quot;highlighter-rouge&quot;&gt;map&lt;/code&gt;映射文件，方便后面&lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt;更换文件名&lt;/p&gt;
 &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'js'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'./src/app.js'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'./src/app2.js'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'dist'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 将源文件拷贝到打包目录&lt;/span&gt;
@@ -3655,9 +3661,12 @@ prevent commit时，我们可以把&lt;code class=&quot;highlighter-rouge&quot;&
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;但是&lt;code class=&quot;highlighter-rouge&quot;&gt;onShareAppMessage&lt;/code&gt;不能支持异步，如果你想从接口里获取分享图片URL，必须在&lt;code class=&quot;highlighter-rouge&quot;&gt;onLoad&lt;/code&gt;提前读取并放入Data中&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;原文地址为：&lt;a href=&quot;https://raoenhui.github.io/wechat/2018/07/18/%E5%B0%8F%E7%A8%8B%E5%BA%8F&quot;&gt;https://raoenhui.github.io/wechat/2018/07/18/%E5%B0%8F%E7%A8%8B%E5%BA%8F&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;九小程序有并发限制&quot;&gt;九.小程序有并发限制&lt;/h3&gt;
+&lt;p&gt;wx.request、wx.uploadFile、wx.downloadFile 的最大并发限制是 10 个。&lt;/p&gt;
 
-&lt;h4 id=&quot;参考资料&quot;&gt;参考资料&lt;/h4&gt;
+&lt;p&gt;所有为了保险起见，需要写个请求队列，如果并发量大于10，则等待请求。&lt;/p&gt;
+
+&lt;h4 id=&quot;其他链接&quot;&gt;其他链接&lt;/h4&gt;
 
 &lt;blockquote&gt;
   &lt;ul&gt;

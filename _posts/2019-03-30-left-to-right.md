@@ -1,7 +1,7 @@
 ---
 author: raoenhui
 layout: post
-title: "假设最后一个css元素是标签，则选择器解析从左往右的提案"
+title: "假设最后一个css元素是html标签，则选择器解析从左往右的提案"
 date: 2019-03-03 22:00
 categories : Css
 comments: true
@@ -52,25 +52,26 @@ tags:
 当然也有情况是，如果`.root`下面有很多复杂子节点，需要遍历与回溯很多次，而`.root`外的`span`不多，则` right-to-left `解析效率更高。
 
 ## 提案
-大部分书写习惯是不想每个标签都加`class name`，可以用不同标签选择出来的。
+大部分书写习惯是不想每个`html`标签都加`class name`，可以用不同`html`标签选择出来的。如下所示：
 ```html  
-<div class="root">
-  <div class="sub">
+<div>
+  <div id="sub">
     <span>1</span><label>2</label><div>3</div>
   </div>
+  ...  <!-- 里面有很多span，label，div标签 -->
 </div>
 ```
 ```css  
-.sub span{}
-.sub label{}
-.sub>div{}
+#sub span{}
+#sub label{}
+#sub>div{}
 ```
+先找到`#sub`再找`html`标签的话，css解析效率会高些。
+那么` left-to-right `比` right-to-left `解析效率高。
 所以提案如下：
-**假设最后一个css元素是标签，而父元素有ID或Class选择器时，则选择器解析从左往右的，其他情况还是从右往左。**
 
+**假设最后一个css元素是html标签，而父元素有ID或Class选择器时，则选择器解析从左往右的，其他情况还是从右往左。**
 
 > Ps：这里本妹子的一个想法，欢迎各位小伙伴们一起讨论，如果大部分都觉得有道理的话，我想试着向`w3c`组织提出建议需求。
-
-
 
 Happy coding .. :)

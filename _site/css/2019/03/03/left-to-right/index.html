@@ -2,21 +2,21 @@
 <html lang='zh'>
 <head>
 <meta charset="utf-8">
-<title>假设最后一个CSS元素是标签，则选择器解析从左往右的提案 &vert; 前端妹子的博客</title>
+<title>假设最后一个CSS元素是HTML标签，则选择器解析从左往右的提案 &vert; 前端妹子的博客</title>
 <meta name="description" content="一枚前端攻城狮!">
 <meta name="keywords" content="Css">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raoenhui.github.io/images/logo.png">
-<meta name="twitter:title" content="假设最后一个css元素是标签，则选择器解析从左往右的提案">
+<meta name="twitter:title" content="假设最后一个css元素是html标签，则选择器解析从左往右的提案">
 <meta name="twitter:description" content="一枚前端攻城狮!">
 <meta name="twitter:creator" content="@raoenhui">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="假设最后一个css元素是标签，则选择器解析从左往右的提案">
+<meta property="og:title" content="假设最后一个css元素是html标签，则选择器解析从左往右的提案">
 <meta property="og:description" content="一枚前端攻城狮!">
 <meta property="og:url" content="https://raoenhui.github.io/css/2019/03/03/left-to-right/">
 <meta property="og:site_name" content="前端妹子的博客">
@@ -112,7 +112,7 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h1>假设最后一个css元素是标签，则选择器解析从左往右的提案</h1>
+                            <h1>假设最后一个css元素是html标签，则选择器解析从左往右的提案</h1>
                             <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#Css" data-toggle="tooltip" title="Posts tagged with Css" rel="tag">Css</a> <strong><time datetime="2019-03-03T22:00:00+05:30">03 Mar 2019</time></strong></p>
                         </div>
                     </div>
@@ -160,22 +160,26 @@
 <p>当然也有情况是，如果<code class="highlighter-rouge">.root</code>下面有很多复杂子节点，需要遍历与回溯很多次，而<code class="highlighter-rouge">.root</code>外的<code class="highlighter-rouge">span</code>不多，则<code class="highlighter-rouge"> right-to-left </code>解析效率更高。</p>
 
 <h2 id="提案">提案</h2>
-<p>大部分书写习惯是不想每个标签都加<code class="highlighter-rouge">class name</code>，可以用不同标签选择出来的。</p>
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"root"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sub"</span><span class="nt">&gt;</span>
+<p>大部分书写习惯是不想每个<code class="highlighter-rouge">html</code>标签都加<code class="highlighter-rouge">class name</code>，可以用不同<code class="highlighter-rouge">html</code>标签选择出来的。如下所示：</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"sub"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;span&gt;</span>1<span class="nt">&lt;/span&gt;&lt;label&gt;</span>2<span class="nt">&lt;/label&gt;&lt;div&gt;</span>3<span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
+  ...  <span class="c">&lt;!-- 里面有很多span，label，div标签 --&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div></div>
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.sub</span> <span class="nt">span</span><span class="p">{}</span>
-<span class="nc">.sub</span> <span class="nt">label</span><span class="p">{}</span>
-<span class="nc">.sub</span><span class="o">&gt;</span><span class="nt">div</span><span class="p">{}</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">#sub</span> <span class="nt">span</span><span class="p">{}</span>
+<span class="nf">#sub</span> <span class="nt">label</span><span class="p">{}</span>
+<span class="nf">#sub</span><span class="o">&gt;</span><span class="nt">div</span><span class="p">{}</span>
 </code></pre></div></div>
-<p>所以提案如下：
-<strong>假设最后一个css元素是标签，而父元素有ID或Class选择器时，则选择器解析从左往右的，其他情况还是从右往左。</strong></p>
+<p>先找到<code class="highlighter-rouge">#sub</code>再找<code class="highlighter-rouge">html</code>标签的话，css解析效率会高些。
+那么<code class="highlighter-rouge"> left-to-right </code>比<code class="highlighter-rouge"> right-to-left </code>解析效率高。
+所以提案如下：</p>
+
+<p><strong>假设最后一个css元素是html标签，而父元素有ID或Class选择器时，则选择器解析从左往右的，其他情况还是从右往左。</strong></p>
 
 <blockquote>
-  <p>Ps：这里我的一个想法，欢迎各位小伙伴们一起讨论，如果大部分都觉得有道理的话，我想试着向<code class="highlighter-rouge">w3c</code>或<code class="highlighter-rouge">v8</code>组织提出建议需求。</p>
+  <p>Ps：这里本妹子的一个想法，欢迎各位小伙伴们一起讨论，如果大部分都觉得有道理的话，我想试着向<code class="highlighter-rouge">w3c</code>组织提出建议需求。</p>
 </blockquote>
 
 <p>Happy coding .. :)</p>
@@ -185,7 +189,7 @@
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;假设最后一个css元素是标签，则选择器解析从左往右的提案&quot;%20https://raoenhui.github.io/css/2019/03/03/left-to-right/%20via%20&#64;raoenhui"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;假设最后一个css元素是html标签，则选择器解析从左往右的提案&quot;%20https://raoenhui.github.io/css/2019/03/03/left-to-right/%20via%20&#64;raoenhui"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>

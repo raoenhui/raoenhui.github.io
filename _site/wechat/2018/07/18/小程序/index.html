@@ -188,9 +188,12 @@
 </code></pre></div></div>
 <p>但是<code class="highlighter-rouge">onShareAppMessage</code>不能支持异步，如果你想从接口里获取分享图片URL，必须在<code class="highlighter-rouge">onLoad</code>提前读取并放入Data中</p>
 
-<p><strong>原文地址为：<a href="https://raoenhui.github.io/wechat/2018/07/18/%E5%B0%8F%E7%A8%8B%E5%BA%8F">https://raoenhui.github.io/wechat/2018/07/18/%E5%B0%8F%E7%A8%8B%E5%BA%8F</a></strong></p>
+<h3 id="九小程序有并发限制">九.小程序有并发限制</h3>
+<p>wx.request、wx.uploadFile、wx.downloadFile 的最大并发限制是 10 个。</p>
 
-<h4 id="参考资料">参考资料</h4>
+<p>所有为了保险起见，需要写个请求队列，如果并发量大于10，则等待请求。</p>
+
+<h4 id="其他链接">其他链接</h4>
 
 <blockquote>
   <ul>
