@@ -7,13 +7,121 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2019-04-01T18:20:45+05:30</updated>
+<updated>2019-04-09T20:28:48+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>Enhui Rao</name>
   <uri>https://raoenhui.github.io/</uri>
   <email>raoenhui@jd.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[免费搭建VPN服务]]></title>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/vpn/2019/04/09/vpn/"/>
+  <id>https://raoenhui.github.io/vpn/2019/04/09/vpn</id>
+  <published>2019-04-09T22:07:00+05:30</published>
+  <updated>2019-04-09T22:07:00+05:30</updated>
+  <author>
+    <name>Enhui Rao</name>
+    <uri>https://raoenhui.github.io</uri>
+    <email>raoenhui@jd.com</email>
+  </author>
+  <category scheme="https://raoenhui.github.io/tags/#VPN" term="VPN" />
+  <content type="html">
+  
+    &lt;h3 id=&quot;一-注册亚马逊aws云&quot;&gt;一 、注册亚马逊AWS云&lt;/h3&gt;
+
+&lt;p&gt;1.1 浏览器输入&lt;a href=&quot;https://aws.amazon.com/free&quot;&gt;https://aws.amazon.com/free&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-65bb89826de60215.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;注册过程需要绑定信用卡，我用的是visa卡绑定的,只有一年免费的，所以一年后记得删掉所有实例，解绑信用卡，关闭掉AWS账户。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;本妹子薅羊毛不亦乐乎&amp;gt; &amp;lt; &lt;img src=&quot;http://upload-images.jianshu.io/upload_images/9902136-b31760c6051b6c05.gif?imageMogr2/auto-orient/strip&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;1.2 注册后登录，选择services-&amp;gt;EC2&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-79cd7d94a812260a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Amazon EC2全称Amazon Elastic Compute Cloud，亚马逊弹性云服务器，是一个虚拟机，用户将可以在这个虚拟机上运行任何自己想要的软件或应用程序。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;1.3 生成实例&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-c71d1e701c0d3f29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;1.4 在亚马逊镜像库中选择你最熟悉的系统
+    我习惯用的是&lt;code class=&quot;highlighter-rouge&quot;&gt;centos7&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-d710f9fa6a8f0929.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;1.5 选择免费类型，其他选择按照默认就好&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-bef2a50a92f98fbe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;1.6 生成添加秘钥，并将秘钥下载到本地&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-f0500859154ab7d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;1.7 生成实例成功&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-2829ace8133f7c92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;1.8 添加安全组，更改成添加的安全组&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-4bd8186004415228.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;如上配置是所以端口都能被访问，如果想要做限制的话，可以选择特殊的&lt;code class=&quot;highlighter-rouge&quot;&gt;IP&lt;/code&gt;和端口&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;二-安装ss服务&quot;&gt;二 、安装ss服务&lt;/h3&gt;
+&lt;p&gt;2.1 服务端开启ss服务&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#用ssh登录&lt;/span&gt;
+ssh &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;a.pem&quot;&lt;/span&gt; centos@ec2-3-16-129-69.us-east-2.compute.amazonaws.com
+&lt;span class=&quot;c&quot;&gt;#切换root用户&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;su
+&lt;span class=&quot;c&quot;&gt;#用pip安装ss服务&lt;/span&gt;
+yum &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;python-setuptools &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; easy_install pip
+&lt;span class=&quot;c&quot;&gt;#安装小飞机&lt;/span&gt;
+pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;shadowsocks
+&lt;span class=&quot;c&quot;&gt;#启动ssserver&lt;/span&gt;
+ssserver &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 443 &lt;span class=&quot;nt&quot;&gt;-k&lt;/span&gt; MyPass &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; rc4-md5 &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;停止ss服务可用 ssserver -d stop&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;2.2 客户端链接
+下载&lt;code class=&quot;highlighter-rouge&quot;&gt;shadowsocks&lt;/code&gt;软件，编辑server，Address输入公网IP，Password输入MyPass，其他按截图所示即可&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-56c2d685a00383ff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;手机端可下载NetShuttle软件访问&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;2.3 哈哈，愉快的访问youtobe了&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-d4176fbe31178ccb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;PC.png&quot; /&gt;
+&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-935844438d8002ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;MOBILE.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;其他链接&quot;&gt;其他链接&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/vpn-connections.html&quot;&gt;https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/vpn-connections.html&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;[http://www.gengzhibo.com/2017/02/05/vpn/](http://www.gengzhibo.com/2017/02/05/vpn/)&quot;&gt;[http://www.gengzhibo.com/2017/02/05/vpn/](http://www.gengzhibo.com/2017/02/05/vpn/)
+&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Happy coding .. :)&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/vpn/2019/04/09/vpn/&quot;&gt;免费搭建VPN服务&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on April 09, 2019.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -4040,74 +4148,6 @@ prevent commit时，我们可以把&lt;code class=&quot;highlighter-rouge&quot;&
 
   
   &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/nodejs/koa/2018/05/01/createImg/&quot;&gt;自动生成不同大小形状的图片&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on May 01, 2018.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Caddy web服务器初探]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/serve/2018/04/11/caddy/"/>
-  <id>https://raoenhui.github.io/serve/2018/04/11/caddy</id>
-  <published>2018-04-11T22:00:00+05:30</published>
-  <updated>2018-04-11T22:00:00+05:30</updated>
-  <author>
-    <name>Enhui Rao</name>
-    <uri>https://raoenhui.github.io</uri>
-    <email>raoenhui@jd.com</email>
-  </author>
-  <category scheme="https://raoenhui.github.io/tags/#serve" term="serve" />
-  <content type="html">
-  
-    &lt;h2 id=&quot;第一步-认识caddy&quot;&gt;第一步 认识caddy&lt;/h2&gt;
-
-&lt;p&gt;官方介绍：Caddy is the HTTP/2 web server with automatic HTTPS.
-通俗滴说就是一个类似node, nginx, 或Apache 的一种web服务器。
-而它最大的优势就是启动时默认使用HTTPS协议，无需任何配置，而且启动方式也非常简单，具体可看&lt;a href=&quot;#第三步-启动caddy&quot;&gt;第三步&lt;/a&gt;。&lt;/p&gt;
-
-&lt;h2 id=&quot;第二步-安装caddy&quot;&gt;第二步 安装caddy&lt;/h2&gt;
-
-&lt;p&gt;点击下载页面&lt;a href=&quot;https://caddyserver.com/download&quot;&gt;https://caddyserver.com/download&lt;/a&gt;，根据电脑系统选择下载最新的安装包。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/180411/install.jpg&quot; alt=&quot;install&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;解压后将路径添加至环境变量中
-如mac下：&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;vi /private/etc/paths
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; /private/etc/paths
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/180411/console.png&quot; alt=&quot;console&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;第三步-启动caddy&quot;&gt;第三步 启动caddy&lt;/h2&gt;
-
-&lt;p&gt;到你所在的代码路径下执行caddy&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/180411/caddy.jpg&quot; alt=&quot;caddy&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;想代理的话可新建个Caddyfile&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;matt.life   &lt;span class=&quot;c&quot;&gt;# Your site's address&lt;/span&gt;
-
-ext .html   &lt;span class=&quot;c&quot;&gt;# Clean URLs&lt;/span&gt;
-errors error.log &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;       &lt;span class=&quot;c&quot;&gt;# Error log&lt;/span&gt;
-    404 error-404.html   &lt;span class=&quot;c&quot;&gt;# Custom error page&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# PHP backend&lt;/span&gt;
-fastcgi /blog localhost:9000 php
-
-&lt;span class=&quot;c&quot;&gt;# API load balancer&lt;/span&gt;
-proxy /api localhost:5001 localhost:5002
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;运行则如下&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/180411/website.png&quot; alt=&quot;website&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Happy coding .. :)&lt;/p&gt;
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/serve/2018/04/11/caddy/&quot;&gt;Caddy web服务器初探&lt;/a&gt; was originally published by Enhui Rao at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on April 11, 2018.&lt;/p&gt;</content>
 </entry>
 
 </feed>
