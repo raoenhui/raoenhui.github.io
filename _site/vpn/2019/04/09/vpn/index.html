@@ -142,8 +142,8 @@
 
 <p><img src="https://upload-images.jianshu.io/upload_images/9902136-c71d1e701c0d3f29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
 
-<p>1.4 在亚马逊镜像库中选择你最熟悉的系统
-    我习惯用的是<code class="highlighter-rouge">centos7</code></p>
+<p>1.4 在亚马逊镜像库中搜索你最熟悉的系统
+    我习惯用的是<code class="highlighter-rouge">centos7</code>，所以我选择了它。</p>
 
 <p><img src="https://upload-images.jianshu.io/upload_images/9902136-d710f9fa6a8f0929.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
 
@@ -172,6 +172,8 @@
 ssh <span class="nt">-i</span> <span class="s2">"a.pem"</span> centos@ec2-3-16-129-69.us-east-2.compute.amazonaws.com
 <span class="c">#切换root用户</span>
 <span class="nb">sudo </span>su
+
+<span class="c">#开始真正安装啦</span>
 <span class="c">#用pip安装ss服务</span>
 yum <span class="nb">install </span>python-setuptools <span class="o">&amp;&amp;</span> easy_install pip
 <span class="c">#安装小飞机</span>
@@ -179,6 +181,10 @@ pip <span class="nb">install </span>shadowsocks
 <span class="c">#启动ssserver</span>
 ssserver <span class="nt">-p</span> 443 <span class="nt">-k</span> MyPass <span class="nt">-m</span> rc4-md5 <span class="nt">-d</span> start
 </code></pre></div></div>
+<blockquote>
+  <p>ssserver命令中 443是指端口 MyPass是指密码 rc4-md5是指加密方式，这些小伙伴们都可以自定义修改</p>
+</blockquote>
+
 <blockquote>
   <p>停止ss服务可用 ssserver -d stop</p>
 </blockquote>
@@ -192,7 +198,7 @@ ssserver <span class="nt">-p</span> 443 <span class="nt">-k</span> MyPass <span 
   <p>手机端可下载NetShuttle软件访问</p>
 </blockquote>
 
-<p>2.3 哈哈，愉快的访问youtobe了</p>
+<p>2.3 哈哈，愉快的访问<code class="highlighter-rouge">youtobe</code>了</p>
 
 <p><img src="https://upload-images.jianshu.io/upload_images/9902136-d4176fbe31178ccb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="PC.png" />
 <img src="https://upload-images.jianshu.io/upload_images/9902136-935844438d8002ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="MOBILE.png" /></p>
@@ -201,8 +207,7 @@ ssserver <span class="nt">-p</span> 443 <span class="nt">-k</span> MyPass <span 
 <blockquote>
   <ul>
     <li><a href="https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/vpn-connections.html">https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/vpn-connections.html</a></li>
-    <li><a href="[http://www.gengzhibo.com/2017/02/05/vpn/](http://www.gengzhibo.com/2017/02/05/vpn/)">[http://www.gengzhibo.com/2017/02/05/vpn/](http://www.gengzhibo.com/2017/02/05/vpn/)
-</a></li>
+    <li><a href="http://www.gengzhibo.com/2017/02/05/vpn/">http://www.gengzhibo.com/2017/02/05/vpn/</a></li>
   </ul>
 </blockquote>
 

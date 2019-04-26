@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2019-04-09T20:28:48+05:30</updated>
+<updated>2019-04-26T13:42:33+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>Enhui Rao</name>
@@ -52,8 +52,8 @@
 
 &lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-c71d1e701c0d3f29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;1.4 在亚马逊镜像库中选择你最熟悉的系统
-    我习惯用的是&lt;code class=&quot;highlighter-rouge&quot;&gt;centos7&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;1.4 在亚马逊镜像库中搜索你最熟悉的系统
+    我习惯用的是&lt;code class=&quot;highlighter-rouge&quot;&gt;centos7&lt;/code&gt;，所以我选择了它。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-d710f9fa6a8f0929.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
 
@@ -82,6 +82,8 @@
 ssh &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;a.pem&quot;&lt;/span&gt; centos@ec2-3-16-129-69.us-east-2.compute.amazonaws.com
 &lt;span class=&quot;c&quot;&gt;#切换root用户&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;su
+
+&lt;span class=&quot;c&quot;&gt;#开始真正安装啦&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;#用pip安装ss服务&lt;/span&gt;
 yum &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;python-setuptools &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; easy_install pip
 &lt;span class=&quot;c&quot;&gt;#安装小飞机&lt;/span&gt;
@@ -89,6 +91,10 @@ pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;shadowsocks
 &lt;span class=&quot;c&quot;&gt;#启动ssserver&lt;/span&gt;
 ssserver &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 443 &lt;span class=&quot;nt&quot;&gt;-k&lt;/span&gt; MyPass &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; rc4-md5 &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; start
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;ssserver命令中 443是指端口 MyPass是指密码 rc4-md5是指加密方式，这些小伙伴们都可以自定义修改&lt;/p&gt;
+&lt;/blockquote&gt;
+
 &lt;blockquote&gt;
   &lt;p&gt;停止ss服务可用 ssserver -d stop&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -102,7 +108,7 @@ ssserver &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 443 &lt;span class=&qu
   &lt;p&gt;手机端可下载NetShuttle软件访问&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;2.3 哈哈，愉快的访问youtobe了&lt;/p&gt;
+&lt;p&gt;2.3 哈哈，愉快的访问&lt;code class=&quot;highlighter-rouge&quot;&gt;youtobe&lt;/code&gt;了&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-d4176fbe31178ccb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;PC.png&quot; /&gt;
 &lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-935844438d8002ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;MOBILE.png&quot; /&gt;&lt;/p&gt;
@@ -111,8 +117,7 @@ ssserver &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 443 &lt;span class=&qu
 &lt;blockquote&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&quot;https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/vpn-connections.html&quot;&gt;https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/vpn-connections.html&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;[http://www.gengzhibo.com/2017/02/05/vpn/](http://www.gengzhibo.com/2017/02/05/vpn/)&quot;&gt;[http://www.gengzhibo.com/2017/02/05/vpn/](http://www.gengzhibo.com/2017/02/05/vpn/)
-&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://www.gengzhibo.com/2017/02/05/vpn/&quot;&gt;http://www.gengzhibo.com/2017/02/05/vpn/&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/blockquote&gt;
 
