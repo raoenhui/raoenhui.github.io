@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2019-04-26T13:42:33+05:30</updated>
+<updated>2019-04-28T19:00:11+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>Enhui Rao</name>
@@ -99,13 +99,16 @@ ssserver &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 443 &lt;span class=&qu
   &lt;p&gt;停止ss服务可用 ssserver -d stop&lt;/p&gt;
 &lt;/blockquote&gt;
 
+&lt;h3 id=&quot;三-下载客户端软件&quot;&gt;三 、下载客户端软件&lt;/h3&gt;
 &lt;p&gt;2.2 客户端链接
 下载&lt;code class=&quot;highlighter-rouge&quot;&gt;shadowsocks&lt;/code&gt;软件，编辑server，Address输入公网IP，Password输入MyPass，其他按截图所示即可&lt;/p&gt;
+
+&lt;p&gt;下载地址：链接: https://pan.baidu.com/s/1YuT1uFqvxtPHWtBXPzsZYg 提取码: xqe4  （里面mac和windows的安装包都有）&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-56c2d685a00383ff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;手机端可下载NetShuttle软件访问&lt;/p&gt;
+  &lt;p&gt;手机端可下载NetShuttle软件访问，注意美区appleID账号才能下载&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;2.3 哈哈，愉快的访问&lt;code class=&quot;highlighter-rouge&quot;&gt;youtobe&lt;/code&gt;了&lt;/p&gt;
@@ -113,11 +116,23 @@ ssserver &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 443 &lt;span class=&qu
 &lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-d4176fbe31178ccb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;PC.png&quot; /&gt;
 &lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-935844438d8002ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;MOBILE.png&quot; /&gt;&lt;/p&gt;
 
+&lt;h3 id=&quot;四-注意事项&quot;&gt;四 、注意事项&lt;/h3&gt;
+
+&lt;p&gt;1.只有一年免费的,一年后扣信用卡的钱&lt;/p&gt;
+
+&lt;p&gt;2.每月流量有上限，上限为15G;&lt;/p&gt;
+
+&lt;p&gt;限制详情可看 &lt;a href=&quot;https://aws.amazon.com/cn/free/faqs/&quot;&gt;https://aws.amazon.com/cn/free/faqs/&lt;/a&gt;;&lt;/p&gt;
+
+&lt;p&gt;建议实时查看下自己的流量使用情况，具体操作可查看 &lt;a href=&quot;https://www.peels.cn/225.html&quot;&gt;https://www.peels.cn/225.html&lt;/a&gt;;&lt;/p&gt;
+
 &lt;h2 id=&quot;其他链接&quot;&gt;其他链接&lt;/h2&gt;
 &lt;blockquote&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&quot;https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/vpn-connections.html&quot;&gt;https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/vpn-connections.html&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;http://www.gengzhibo.com/2017/02/05/vpn/&quot;&gt;http://www.gengzhibo.com/2017/02/05/vpn/&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://aws.amazon.com/cn/free/faqs/&quot;&gt;https://aws.amazon.com/cn/free/faqs/&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://www.peels.cn/225.html&quot;&gt;https://www.peels.cn/225.html&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/blockquote&gt;
 
