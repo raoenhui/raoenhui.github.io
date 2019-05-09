@@ -123,6 +123,11 @@ callback([
   {
     "text": "免费搭建VPN服务",
     "href": "https://raoenhui.github.io/vpn/2019/04/09/vpn/"
+  } ,
+
+  {
+    "text": "react-router中的exact和strict",
+    "href": "https://raoenhui.github.io/react/2019/05/04/exact-strict/"
   } 
 
 ])

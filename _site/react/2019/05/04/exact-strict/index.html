@@ -2,23 +2,23 @@
 <html lang='zh'>
 <head>
 <meta charset="utf-8">
-<title>免费搭建VPN服务 &vert; 前端妹子的博客</title>
+<title>REACT-ROUTER中的EXACT和STRICT &vert; 前端妹子的博客</title>
 <meta name="description" content="一枚前端攻城狮!">
-<meta name="keywords" content="VPN">
+<meta name="keywords" content="React">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raoenhui.github.io/images/logo.png">
-<meta name="twitter:title" content="免费搭建VPN服务">
+<meta name="twitter:title" content="react-router中的exact和strict">
 <meta name="twitter:description" content="一枚前端攻城狮!">
 <meta name="twitter:creator" content="@raoenhui">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="免费搭建VPN服务">
+<meta property="og:title" content="react-router中的exact和strict">
 <meta property="og:description" content="一枚前端攻城狮!">
-<meta property="og:url" content="https://raoenhui.github.io/vpn/2019/04/09/vpn/">
+<meta property="og:url" content="https://raoenhui.github.io/react/2019/05/04/exact-strict/">
 <meta property="og:site_name" content="前端妹子的博客">
 <meta property="og:image" content="https://raoenhui.github.io/images/">
 
@@ -26,7 +26,7 @@
 
 
 
-<link rel="canonical" href="https://raoenhui.github.io/vpn/2019/04/09/vpn/">
+<link rel="canonical" href="https://raoenhui.github.io/react/2019/05/04/exact-strict/">
 <link href="https://raoenhui.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="前端妹子的博客 Feed">
 <link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
 
@@ -112,118 +112,52 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h1>免费搭建VPN服务</h1>
-                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#VPN" data-toggle="tooltip" title="Posts tagged with VPN" rel="tag">VPN</a> <strong><time datetime="2019-04-09T22:07:00+05:30">09 Apr 2019</time></strong></p>
+                            <h1>react-router中的exact和strict</h1>
+                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#React" data-toggle="tooltip" title="Posts tagged with React" rel="tag">React</a> <strong><time datetime="2019-05-04T22:07:00+05:30">04 May 2019</time></strong></p>
                         </div>
                     </div>
                 </div>
             </header>
 
         <article class="notepad-post-content post tag-simple">
-            <div><h3 id="一-注册亚马逊aws云">一 、注册亚马逊AWS云</h3>
-
-<p>1.1 浏览器输入<a href="https://aws.amazon.com/free">https://aws.amazon.com/free</a></p>
-
-<p><img src="https://upload-images.jianshu.io/upload_images/9902136-65bb89826de60215.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+            <div><h3 id="前言">前言</h3>
+<p>每次用配置<code class="highlighter-rouge">react</code>路由都会考虑是否应该给给<code class="highlighter-rouge">&lt;Route&gt;</code>组件加上<code class="highlighter-rouge">exact</code>或<code class="highlighter-rouge">strict</code>。下面妹子将于自认为比较清晰的方式列举出来什么场景需要加和不加。</p>
 <blockquote>
-  <p>注册过程需要绑定信用卡，我用的是visa卡绑定的,只有一年免费的，所以一年后记得删掉所有实例，解绑信用卡，关闭掉AWS账户。</p>
+  <p>本文案例主要以react-router v4+为主，v5版本是因为发布时版本依赖有问题而直接跳成这个大版本的,用法和4完全相同，就是这么任性 &gt; &lt; ，升级详情可看本文最后链接</p>
 </blockquote>
 
-<p>本妹子薅羊毛不亦乐乎&gt; &lt; <img src="http://upload-images.jianshu.io/upload_images/9902136-b31760c6051b6c05.gif?imageMogr2/auto-orient/strip" alt="image" /></p>
+<h3 id="exact">exact</h3>
+<p><code class="highlighter-rouge">exact</code>默认为false，如果为true时，需要和路由相同时才能匹配，但是如果有斜杠也是可以匹配上的。
+如果在父路由中加了<code class="highlighter-rouge">exact</code>，是不能匹配子路由的,建议在子路由中加<code class="highlighter-rouge">exact</code>，如下所示</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//父路由</span>
+<span class="o">&lt;</span><span class="nx">Switch</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="s2">"/a"</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">ComponentA</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/Switch</span><span class="err">&gt;
+</span></code></pre></div></div>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//子路由，tuanDetail组件里</span>
+<span class="o">&lt;</span><span class="nx">Switch</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="s2">"/a/b"</span> <span class="nx">exact</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">ComponentB</span><span class="p">}</span><span class="sr">/</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/Switch</span><span class="err">&gt;
+</span></code></pre></div></div>
 
-<p>1.2 注册后登录，选择services-&gt;EC2</p>
+<h3 id="strict">strict</h3>
 
-<p><img src="https://upload-images.jianshu.io/upload_images/9902136-79cd7d94a812260a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
-<blockquote>
-  <p>Amazon EC2全称Amazon Elastic Compute Cloud，亚马逊弹性云服务器，是一个虚拟机，用户将可以在这个虚拟机上运行任何自己想要的软件或应用程序。</p>
-</blockquote>
+<p>&lt;Route strict path=”/one” component={About} /&gt;</p>
 
-<p>1.3 生成实例</p>
+<p><code class="highlighter-rouge">strict</code>默认为false，如果为true时，路由后面有斜杠而url中没有斜杠，是不匹配的</p>
 
-<p><img src="https://upload-images.jianshu.io/upload_images/9902136-c71d1e701c0d3f29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<h3 id="案例">案例</h3>
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-f074f8bbfa8e394b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
 
-<p>1.4 在亚马逊镜像库中搜索你最熟悉的系统
-    我习惯用的是<code class="highlighter-rouge">centos7</code>，所以我选择了它。</p>
+<h3 id="总结">总结</h3>
+<p>如果没有子路由的情况，建议大家配都加一个<code class="highlighter-rouge">exact</code>；如果有子路由，建议在子路由中加<code class="highlighter-rouge">exact</code>，父路由不加；</p>
 
-<p><img src="https://upload-images.jianshu.io/upload_images/9902136-d710f9fa6a8f0929.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
-
-<p>1.5 选择免费类型，其他选择按照默认就好</p>
-
-<p><img src="https://upload-images.jianshu.io/upload_images/9902136-bef2a50a92f98fbe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
-
-<p>1.6 生成添加秘钥，并将秘钥下载到本地</p>
-
-<p><img src="https://upload-images.jianshu.io/upload_images/9902136-f0500859154ab7d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
-
-<p>1.7 生成实例成功</p>
-
-<p><img src="https://upload-images.jianshu.io/upload_images/9902136-2829ace8133f7c92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
-
-<p>1.8 添加安全组，更改成添加的安全组</p>
-
-<p><img src="https://upload-images.jianshu.io/upload_images/9902136-4bd8186004415228.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
-<blockquote>
-  <p>如上配置是所以端口都能被访问，如果想要做限制的话，可以选择特殊的<code class="highlighter-rouge">IP</code>和端口</p>
-</blockquote>
-
-<h3 id="二-安装ss服务">二 、安装ss服务</h3>
-<p>2.1 服务端开启ss服务</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#用ssh登录</span>
-ssh <span class="nt">-i</span> <span class="s2">"a.pem"</span> centos@ec2-3-16-129-69.us-east-2.compute.amazonaws.com
-<span class="c">#切换root用户</span>
-<span class="nb">sudo </span>su
-
-<span class="c">#开始真正安装啦</span>
-<span class="c">#用pip安装ss服务</span>
-yum <span class="nb">install </span>python-setuptools <span class="o">&amp;&amp;</span> easy_install pip
-<span class="c">#安装小飞机</span>
-pip <span class="nb">install </span>shadowsocks
-<span class="c">#启动ssserver</span>
-ssserver <span class="nt">-p</span> 443 <span class="nt">-k</span> MyPass <span class="nt">-m</span> rc4-md5 <span class="nt">-d</span> start
-</code></pre></div></div>
-<blockquote>
-  <p>ssserver命令中 443是指端口 MyPass是指密码 rc4-md5是指加密方式，这些小伙伴们都可以自定义修改</p>
-</blockquote>
-
-<blockquote>
-  <p>停止ss服务可用 ssserver -d stop</p>
-</blockquote>
-
-<h3 id="三-下载客户端软件地址">三 、下载客户端软件地址</h3>
-<p>2.2 客户端链接
-下载<code class="highlighter-rouge">shadowsocks</code>软件，编辑server，Address输入公网IP，Password输入MyPass，其他按截图所示即可</p>
-
-<p>下载地址：链接: https://pan.baidu.com/s/1YuT1uFqvxtPHWtBXPzsZYg 提取码: xqe4  （里面mac和windows的安装包都有）</p>
-
-<p><img src="https://upload-images.jianshu.io/upload_images/9902136-56c2d685a00383ff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
-
-<blockquote>
-  <p>手机端可下载NetShuttle软件访问，注意美区appleID账号才能下载</p>
-</blockquote>
-
-<p>2.3 哈哈，愉快的访问<code class="highlighter-rouge">youtobe</code>了</p>
-
-<p><img src="https://upload-images.jianshu.io/upload_images/9902136-d4176fbe31178ccb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="PC.png" />
-<img src="https://upload-images.jianshu.io/upload_images/9902136-935844438d8002ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="MOBILE.png" /></p>
-
-<h3 id="四-注意事项">四 、注意事项</h3>
-
-<p>1.只有一年免费的,一年后扣信用卡的钱</p>
-
-<p>2.每月流量有上限，上限为15G;</p>
-
-<p>限制详情可看 <a href="https://aws.amazon.com/cn/free/faqs/">https://aws.amazon.com/cn/free/faqs/</a>;</p>
-
-<p>建议实时查看下自己的流量使用情况，具体操作可查看 <a href="https://www.peels.cn/225.html">https://www.peels.cn/225.html</a>;</p>
+<p>而<code class="highlighter-rouge">strict</code>是针对是否有斜杠的，一般可以忽略不配置。</p>
 
 <h2 id="其他链接">其他链接</h2>
 <blockquote>
-  <ul>
-    <li><a href="https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/vpn-connections.html">https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/vpn-connections.html</a></li>
-    <li><a href="http://www.gengzhibo.com/2017/02/05/vpn/">http://www.gengzhibo.com/2017/02/05/vpn/</a></li>
-    <li><a href="https://aws.amazon.com/cn/free/faqs/">https://aws.amazon.com/cn/free/faqs/</a></li>
-    <li><a href="https://www.peels.cn/225.html">https://www.peels.cn/225.html</a></li>
-  </ul>
+  <p>https://reacttraining.com/react-router/web/api/Route/exact-bool
+https://reacttraining.com/blog/react-router-v5/</p>
 </blockquote>
 
 <p>Happy coding .. :)</p>
@@ -234,15 +168,15 @@ ssserver <span class="nt">-p</span> 443 <span class="nt">-k</span> MyPass <span 
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;免费搭建VPN服务&quot;%20https://raoenhui.github.io/vpn/2019/04/09/vpn/%20via%20&#64;raoenhui"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;react-router中的exact和strict&quot;%20https://raoenhui.github.io/react/2019/05/04/exact-strict/%20via%20&#64;raoenhui"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/vpn/2019/04/09/vpn/"
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/react/2019/05/04/exact-strict/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/vpn/2019/04/09/vpn/"
+                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/react/2019/05/04/exact-strict/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
                     <i class="fa fa-google-plus"></i>
                 </a>
@@ -373,7 +307,7 @@ gitment.render('container')
 
 <!-- ice facebook start-->
  
-<!-- <div class="fb-comments" data-href="https://raoenhui.github.io/vpn/2019/04/09/vpn/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+<!-- <div class="fb-comments" data-href="https://raoenhui.github.io/react/2019/05/04/exact-strict/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
