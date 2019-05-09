@@ -135,7 +135,25 @@
                 </h3>
             </header>
             <section class="notepad-post-excerpt">
-                <p>Next.js 是一个轻量级的 React 服务端渲染应用框架。 Next.js中文站点 http://nextjs.frontendx.cn Next.js中文站Github https://github.com/raoenhui/next-site-cn 当前翻译版本为 7.0.0-canary.8。 怎么使用 安装 代码自动分割 CSS 支持嵌入样式 内嵌样式 使用 CSS / Sass / Less / Stylus files 静态文件服务（如图像) &lt;head&gt; 获取数据以及组件生命周期 路由 &lt;Link&gt; 用法 URL 对象 替换路由 组件支持点击事件onClick 暴露href给子元素 禁止滚动到页面顶部 命令式 拦截器 popstate...</p>
+                <p>Next.js 是一个轻量级的 React 服务端渲染应用框架。
+
+Next.js中文站点 http://nextjs.frontendx.cn
+
+Next.js中文站Github https://github.com/raoenhui/next-site-cn
+
+当前翻译版本为 7.0.0-canary.8。
+
+
+
+
+
+
+
+
+  怎么使用
+    
+      安装
+      代码自动分...</p>
             </section>
             
                 <div class="notepad-index-post-tags">
@@ -168,7 +186,10 @@
                 </h3>
             </header>
             <section class="notepad-post-excerpt">
-                <p>一、前言 现在最流行的版本管理工具非git莫属，而良好的代码规范有助于项目的维护，为了防止一些不规范的代码 commit并push到远端,我们可以在git命令执行前用一些钩子来检测并阻止。现在大前端主要有两种git钩子插件：husky（jquery与next.js都在用），pre-commit(antd在用)。 下面我将现介绍一个git钩子，再介绍下husky与pre-commit的用法 二、git钩子 用过git的小伙伴们都知道git有很多命令commit、push、rebase等等。那这些命令主要是在执行.git文件夹中的东西，那么git 钩子目录就是在.git文件夹的hooks下，如下所示： cd .git/hooks ls -l 上图为各个钩子的案例脚本，可以把sample去掉，直接编写shell脚本来执行。 而前端的小伙伴们则可以用插件husky与pre-commit，来使钩子生效。 注意： 一般.git为隐藏文件，可以把项目拖入IDE中查看,.git文件里的内容一般不允许手动更改的。 三、husky husky能够防止不规范代码被commit、push、merge等等。 首先安装husky npm install husky --save-dev 或 yarn add husky --dev 编辑package.json文件，如： { "scripts": { "precommit": "webpack --config ./web/webpack.config.js", "...": "..." } } 当你git...</p>
+                <p>一、前言
+
+现在最流行的版本管理工具非git莫属，而良好的代码规范有助于项目的维护，为了防止一些不规范的代码  commit并push到远端,我们可以在git命令执行前用一些钩子来检测并阻止。现在大前端主要有两种git钩子插件：husky（jquery与next.js都在用），pre-commit(antd在用)。
+下面我将现介绍一个git钩子，再介绍下husky与pre-commit的用法...</p>
             </section>
             
                 <div class="notepad-index-post-tags">
@@ -201,7 +222,13 @@
                 </h3>
             </header>
             <section class="notepad-post-excerpt">
-                <p>前言 最近小程序特别火，不用安装，即开即用，用完就走。省流量，省安装时间等等优势吸引了大量用户，几乎所有大厂的APP都有小程序版本。我厂也有开发，所以我也加入了开发小程序的队伍，开发中的那些注意点和各位小伙伴们分享下。 一.css伪类看不到 在微信开发者工具中，Styles不会显示css伪类，喜欢写::before或:first-child的小伙伴们请注意了，你的伪类在控制台是看不到的。 建议不要在公共css文件夹下写伪类，本妹子就遇到过这个坑，某小伙伴在公共css上写了按钮的after加了个边框样式，找了好久才找到这个边框写在哪。 button::after { border: 2rpx solid #000; } 二.https 小程序的图片只支持https://…的URL，后台接口不能传//或http://,否则有些安卓机会不兼容 在微信开发者工具中，可勾选”不校验合法域名、web-view（业务域名）、TLS 版本以及 HTTPS 证书”规则即可用http，但是在实体里并没有这个选项，所以建议开发时就用https路径。 三.不要换行写，有空格不行 微信开发者工具不会对代码进行trim操作，如果代码中换行，页面也直接换行。 四.部分CSS3属性不能用 如transform:rotate(180deg)，不能用。 五.Git 状态展示 project.config.json和.git需要在同层目录,Git 状态才能显示，所以project.config.json最好放在根目录中 六.页面跳转 wx.navigateTo 新窗口打开页面 新页面有返回按钮 wx.redirectTo 关闭当前页面，跳转到应用内的某个页面 新页面没有返回按钮 七.IDE更换 微信开发者工具有很多快捷键都不能用，对于很多熟悉其他IDE的前端开发者来说很不习惯。 可以隐藏编辑器或分开窗口，把微信开发者工具只当作浏览器，然后然后小伙伴们就可以用自己熟悉的IDE了。 八.分享事件不支持同步 如果你想自定义分享图片，则在生命周期onShareAppMessage中编写如下所示： Page({ onShareAppMessage:...</p>
+                <p>前言
+
+最近小程序特别火，不用安装，即开即用，用完就走。省流量，省安装时间等等优势吸引了大量用户，几乎所有大厂的APP都有小程序版本。我厂也有开发，所以我也加入了开发小程序的队伍，开发中的那些注意点和各位小伙伴们分享下。
+
+一.css伪类看不到
+
+在微信开发者工具中，Styles不会显示css伪类，喜欢写::before或:first-child的小伙伴们请注意了，你的伪类在控制台是看不到的...</p>
             </section>
             
                 <div class="notepad-index-post-tags">
@@ -234,7 +261,17 @@
                 </h3>
             </header>
             <section class="notepad-post-excerpt">
-                <p>前言 TypeScript是JavaScript类型的超集，它可以编译成纯JavaScript，简称ts。相对于ES6,TypeScript最大的改善是增加了类型系统，国内外很多大型工程都用它，如AngularJs,白鹭引擎、Antd。 下面我将在React&amp;Webpack代码库下基础下搭建TypeScript开发环境。 安装 第一步 安装React相关包的声明文件 可直接安装npm包，一般包前面加@types，就是加载该包的声明文件以.d.ts结尾 npm install --save @types/react @types/react-dom @types/react-router-dom @types/react-redux 或 安装typings包进行搜索安装 # Install Typings CLI utility. npm install typings --global # Search for definitions. typings search react typings install react --save 第二步 安装Webpack对应的加载器loader awesome-typescript-loader是typescript官网推荐的loader，ts-loader是wepack官网推荐的loader，两者用法一样都可用，但是要注意版本。 #...</p>
+                <p>前言
+
+TypeScript是JavaScript类型的超集，它可以编译成纯JavaScript，简称ts。相对于ES6,TypeScript最大的改善是增加了类型系统，国内外很多大型工程都用它，如AngularJs,白鹭引擎、Antd。
+
+下面我将在React&amp;Webpack代码库下基础下搭建TypeScript开发环境。
+
+安装
+
+第一步 安装React相关包的声明文件
+
+可直接...</p>
             </section>
             
                 <div class="notepad-index-post-tags">
@@ -280,40 +317,7 @@ Jekyll是最流行的生成器。它主要是通过Ruby编译自动生成GitHub�
 
 Hugo
 
-Hugo很像Jekyll，但是它对比Jekyll的优势是编译速度特别快，当有很多篇博客时，Jekyll的编译速度会非常慢。
-而且Hugo创建一个网站只要几秒，里面剥离了很多抽象的东西，使用户不需要配置很多东西变可以快速建站，对用户来说更加简单。
-
-Hexo
-
-Hexo是一个新出现的技术，它是NodeJs编译生成的。大部分用于创建博客平台。它有着Jekyll的可扩展性和Hugo的速度，而且用nodejs起服务，对前端工程师来说是个不错的选择。
-
-Wintersmith
-
-Wintersmith也是一个用NodeJs来编译的生成器。它最大的不同点就是非常的简单，它就想一个平台，你可以安装很多插件来满足你的需求。它需要一些精力去安装插件调整后才能进行工作，但是这样也给了用户更多的空间去自定义化。
-
-Gatsby
-
-Gatsby是最新也是最有趣的生成器。它将静态页面引入框架中，它使用React和Webpack来做单页应用管理你的网页内容。它根据自己的需求移除很多配置项，给开发人员提供了个简单高效的解决方案，最终将生成一个现代和高端应用程序。
-事实上，Gatsby可以用来做很多事情，而不仅仅是生成一个博客。它的真正极限还没有被发现。很多React开发人员正在自发参与Gatsby的开发，Gatsby会越来越完善。
-
-
-
-StackShare
-
-
-  
-    https://jekyllrb.com
-    https://gohugo.io
-    https://hexo.io
-    http://wintersmith.io
-    https://www.gatsbyjs.org
-  
-
-
-来源译：https://medium.freecodecamp.org/static-sites-are-back-24d01a01f11a
-
-Happy coding .. :)
-</p>
+Hugo很像Jeky...</p>
             </section>
             
                 <div class="notepad-index-post-tags">

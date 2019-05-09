@@ -135,7 +135,14 @@
                 </h3>
             </header>
             <section class="notepad-post-excerpt">
-                <p>前言 每次用配置react路由都会考虑是否应该给给&lt;Route&gt;组件加上exact或strict。下面妹子将于自认为比较清晰的方式列举出来什么场景需要加和不加。 本文案例主要以react-router v4+为主，v5版本是因为发布时版本依赖有问题而直接跳成这个大版本的,用法和4完全相同，就是这么任性 &gt; &lt; ，升级详情可看本文最后链接 exact exact默认为false，如果为true时，需要和路由相同时才能匹配，但是如果有斜杠也是可以匹配上的。 如果在父路由中加了exact，是不能匹配子路由的,建议在子路由中加exact，如下所示 //父路由 &lt;Switch&gt; &lt;Route path="/a" component={ComponentA} /&gt; &lt;/Switch&gt; //子路由，tuanDetail组件里 &lt;Switch&gt; &lt;Route path="/a/b" exact component={ComponentB}/&gt; &lt;/Switch&gt; strict &lt;Route strict path=”/one” component={About} /&gt; strict默认为false，如果为true时，路由后面有斜杠而url中没有斜杠，是不匹配的 案例 总结 如果没有子路由的情况，建议大家配都加一个exact；如果有子路由，建议在子路由中加exact，父路由不加； 而strict是针对是否有斜杠的，一般可以忽略不配置。 其他链接 https://reacttraining.com/react-router/web/api/Route/exact-bool https://reacttraining.com/blog/react-router-v5/ Happy coding...</p>
+                <p>前言
+每次用配置react路由都会考虑是否应该给给&lt;Route&gt;组件加上exact或strict。下面妹子将于自认为比较清晰的方式列举出来什么场景需要加和不加。
+
+  本文案例主要以react-router v4+为主，v5版本是因为发布时版本依赖有问题而直接跳成这个大版本的,用法和4完全相同，就是这么任性 &gt; &lt; ，升级详情可看本文最后链接
+
+
+exact
+exac...</p>
             </section>
             
                 <div class="notepad-index-post-tags">
@@ -168,7 +175,22 @@
                 </h3>
             </header>
             <section class="notepad-post-excerpt">
-                <p>一 、注册亚马逊AWS云 1.1 浏览器输入https://aws.amazon.com/free 注册过程需要绑定信用卡，我用的是visa卡绑定的,只有一年免费的，所以一年后记得删掉所有实例，解绑信用卡，关闭掉AWS账户。 本妹子薅羊毛不亦乐乎&gt; &lt; 1.2 注册后登录，选择services-&gt;EC2 Amazon EC2全称Amazon Elastic Compute Cloud，亚马逊弹性云服务器，是一个虚拟机，用户将可以在这个虚拟机上运行任何自己想要的软件或应用程序。 1.3 生成实例 1.4 在亚马逊镜像库中搜索你最熟悉的系统 我习惯用的是centos7，所以我选择了它。 1.5 选择免费类型，其他选择按照默认就好 1.6 生成添加秘钥，并将秘钥下载到本地 1.7 生成实例成功 1.8 添加安全组，更改成添加的安全组 如上配置是所以端口都能被访问，如果想要做限制的话，可以选择特殊的IP和端口 二 、安装ss服务 2.1 服务端开启ss服务 #用ssh登录 ssh -i "a.pem" centos@ec2-3-16-129-69.us-east-2.compute.amazonaws.com #切换root用户 sudo su...</p>
+                <p>一 、注册亚马逊AWS云
+
+1.1 浏览器输入https://aws.amazon.com/free
+
+
+
+  注册过程需要绑定信用卡，我用的是visa卡绑定的,只有一年免费的，所以一年后记得删掉所有实例，解绑信用卡，关闭掉AWS账户。
+
+
+本妹子薅羊毛不亦乐乎&gt; &lt; 
+
+1.2 注册后登录，选择services-&gt;EC2
+
+
+
+  Amazon EC2全称Amazon E...</p>
             </section>
             
                 <div class="notepad-index-post-tags">
@@ -201,7 +223,11 @@
                 </h3>
             </header>
             <section class="notepad-post-excerpt">
-                <p>现状 现在浏览器css匹配核心算法的规则都是是以 right-to-left 方式匹配节点的。 如.root .sub span {…}，浏览器渲染方式是 span -&gt; .sub -&gt; .root 它的读取顺序变成：先找到所有的span，沿着span的父元素查找.sub,再找.root，中途找到了符合匹配规则的节点就加入结果集；如果直到根元素html都没有匹配，则不再遍历这条路径，从下一个span开始重复这个过程。 举例 如果整个html只有一个span标签，那 right-to-left 方式的确是最快的，但是往往大部分网页都不只一个span标签，多个span标签将会有很多无效的匹配，那这时是不是 left-to-right 会更好一点。 案例： &lt;html&gt; &lt;div class="root"&gt; &lt;div class="sub"&gt;&lt;span&gt;1&lt;/span&gt;&lt;/div&gt; &lt;/div&gt; &lt;div&gt; &lt;div&gt;&lt;span&gt;2&lt;/span&gt;&lt;/div&gt; &lt;/div&gt; &lt;div&gt; &lt;span&gt;3&lt;/span&gt; &lt;/div&gt; &lt;span&gt;4&lt;/span&gt; &lt;/html&gt; .root .sub span {} right-to-left...</p>
+                <p>现状
+现在浏览器css匹配核心算法的规则都是是以 right-to-left 方式匹配节点的。
+
+如.root .sub span {…}，浏览器渲染方式是 span -&gt; .sub -&gt; .root
+它的读取顺序变成：先找到所有的span，沿着span的父元素查找.sub,再找.root，中途找到了符合匹配规则的节点就加入结果集；如果直到根元素html都没有匹配，则不再遍历这条...</p>
             </section>
             
                 <div class="notepad-index-post-tags">
@@ -234,7 +260,16 @@
                 </h3>
             </header>
             <section class="notepad-post-excerpt">
-                <p>一、前言 有些简单前端小项目，不需要涉及框架，前端打包压缩的话本妹子还是喜欢用gulp。 本文将用gulp-rev和gulp-rev-rewrite解决cdn缓存问题。 以及列出的是本妹子最常用的gulp插件，小伙伴们可以参考。 案例地址：https://github.com/raoenhui/gulpExample.git 二、解决浏览器缓存问题 gulp-rev 1.为静态文件添加唯一hash值，如 unicorn.css → unicorn-d41d8cd98f.css。 2.生成map映射文件，方便后面html更换文件名 gulp.task('js', () =&gt; gulp.src(['./src/app.js', './src/app2.js']) .pipe(gulp.dest('dist')) // 将源文件拷贝到打包目录 .pipe(rev()) .pipe(gulp.dest('dist')) // 将生成的hash文件添加到打包目录 .pipe(rev.manifest('js-rev.json')) .pipe(gulp.dest('dist')) // 将map映射文件添加到打包目录 ); gulp.task('css',()=&gt; { gulp.src('./src/*.css') .pipe(gulp.dest('dist')) // 将生成的hash文件添加到打包目录 .pipe(rev()) .pipe(gulp.dest('dist'))// write rev'd assets...</p>
+                <p>一、前言
+有些简单前端小项目，不需要涉及框架，前端打包压缩的话本妹子还是喜欢用gulp。
+本文将用gulp-rev和gulp-rev-rewrite解决cdn缓存问题。
+以及列出的是本妹子最常用的gulp插件，小伙伴们可以参考。
+案例地址：https://github.com/raoenhui/gulpExample.git
+
+二、解决浏览器缓存问题
+gulp-rev
+
+1.为静态文件添加唯...</p>
             </section>
             
                 <div class="notepad-index-post-tags">
@@ -267,7 +302,16 @@
                 </h3>
             </header>
             <section class="notepad-post-excerpt">
-                <p>前言 一直以来，检测元素在浏览器视窗口内不是件容易的事，很多解决方案都不能很准确的判断，计算量也有可能拖慢网站性能。 但是很多场景都需要用到： 当页面滚动时，懒加载图片或其他内容。 实现“可无限滚动”网站，也就是当用户滚动网页时直接加载更多内容，无需翻页。 为计算广告收益，检测其广告元素的曝光情况。 根据用户是否已滚动到相应区域来灵活开始执行任务或动画。 通常检测是否在视窗内原理 监听浏览器滚动事件scroll，对每个目标元素执行Element.getBoundingClientRect(),getBoundingClientRect方法返回元素的大小及其相对于视口的位置。 此方法可获取整个网页左上角定位 ，及距浏览器顶部的或左侧的距离，然后用innerHeight 、innerwidth 等得到视窗大小，以此相减来判断是否在视窗范围内。 具体代码如下：https://codepen.io/raoenhui/pen/BGBYpX 还有其他检测原理大多都是通过计算得到，但是下面我将要介绍由浏览器自带方法检测元素是否在视窗内。 新检测原理Intersection observer Intersection observer 允许你配置一个回调函数，每当target进入浏览器视窗时，触发回调函数。 源码地址：https://codepen.io/raoenhui/pen/XoVEjK 用法 var options = { root: document.querySelector('#scrollArea'), rootMargin: '0px', threshold: 1.0 } var callback = function(entries, observer) { /* Content...</p>
+                <p>前言
+
+一直以来，检测元素在浏览器视窗口内不是件容易的事，很多解决方案都不能很准确的判断，计算量也有可能拖慢网站性能。
+但是很多场景都需要用到：
+
+  
+    当页面滚动时，懒加载图片或其他内容。
+    实现“可无限滚动”网站，也就是当用户滚动网页时直接加载更多内容，无需翻页。
+    为计算广告收益，检测其广告元素的曝光情况。
+    根据用户是否已滚动到相应区域来灵活开始执行任务或动...</p>
             </section>
             
                 <div class="notepad-index-post-tags">

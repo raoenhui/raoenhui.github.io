@@ -29,7 +29,7 @@ tags: [Amey, Jadiye, CodeInvemtory]
                 </h3>
             </header>
             <section class="notepad-post-excerpt">
-                <p>{{ post.content | strip_html | truncatewords:40 }}</p>
+                <p>{{ post.content | strip_html | truncate:200 }}</p>
             </section>
             
                 <div class="notepad-index-post-tags">

@@ -135,7 +135,17 @@
                 </h3>
             </header>
             <section class="notepad-post-excerpt">
-                <p>第一步 前言 实际前端工作中，当UED没有给到确定的图片时，前端需要自己模拟一个图片来实现页面占位。于是写了份自动生成不同大小形状图片的服务。 code地址为https://github.com/raoenhui/create-img/tree/master/server。 demo访问地址http://47.98.138.195/img。 第二步 原理 主要用到的技术是koa、koa-router和canvas。 用koa启动一个webserver服务，用了logger中间键来方便查看记录。 const logger = require('koa-logger'); const koaBody = require('koa-body'); const Koa = require('koa'); const app = module.exports = new Koa(); // middleware app.use(logger()); app.use(koaBody()); // listen if (!module.parent) app.listen(3000); 用koa-router获取用户访问的url，url中包含大小、形状和颜色信息，并调用canvas画图片。 const router...</p>
+                <p>第一步 前言
+
+实际前端工作中，当UED没有给到确定的图片时，前端需要自己模拟一个图片来实现页面占位。于是写了份自动生成不同大小形状图片的服务。
+
+code地址为https://github.com/raoenhui/create-img/tree/master/server。
+
+demo访问地址http://47.98.138.195/img。
+
+第二步 原理
+
+主要用到的技术是koa、k...</p>
             </section>
             
                 <div class="notepad-index-post-tags">
@@ -168,7 +178,15 @@
                 </h3>
             </header>
             <section class="notepad-post-excerpt">
-                <p>第一步 认识caddy 官方介绍：Caddy is the HTTP/2 web server with automatic HTTPS. 通俗滴说就是一个类似node, nginx, 或Apache 的一种web服务器。 而它最大的优势就是启动时默认使用HTTPS协议，无需任何配置，而且启动方式也非常简单，具体可看第三步。 第二步 安装caddy 点击下载页面https://caddyserver.com/download，根据电脑系统选择下载最新的安装包。 解压后将路径添加至环境变量中 如mac下： $ vi /private/etc/paths $ source /private/etc/paths 第三步 启动caddy 到你所在的代码路径下执行caddy 想代理的话可新建个Caddyfile matt.life # Your site's address ext .html # Clean...</p>
+                <p>第一步 认识caddy
+
+官方介绍：Caddy is the HTTP/2 web server with automatic HTTPS.
+通俗滴说就是一个类似node, nginx, 或Apache 的一种web服务器。
+而它最大的优势就是启动时默认使用HTTPS协议，无需任何配置，而且启动方式也非常简单，具体可看第三步。
+
+第二步 安装caddy
+
+点击下载页面https://cadd...</p>
             </section>
             
                 <div class="notepad-index-post-tags">
@@ -201,7 +219,15 @@
                 </h3>
             </header>
             <section class="notepad-post-excerpt">
-                <p>第一步 引入所需要的包 //git命令组件 const Git = require('simple-git'); //获取路径 const Path = require('path'); const GitPath = Path.resolve(__dirname, '..'); //为git的version添加自动增长版本号组件 const Bump = require('bump-regex'); 第二步 生成并提交tag号 先pull获取最新tag版本 然后用bump自动增加最小版本号 添加日期备注 将tag推送到远端 var newVersion,//新标签 versionHint;//新标签的备注 // update repo and get a list of tags...</p>
+                <p>第一步 引入所需要的包
+
+//git命令组件
+const Git = require('simple-git');
+//获取路径
+const Path = require('path');
+const GitPath = Path.resolve(__dirname, '..');
+//为git的version添加自动增长版本号组件
+const Bump = require('bump-re...</p>
             </section>
             
                 <div class="notepad-index-post-tags">
@@ -234,7 +260,18 @@
                 </h3>
             </header>
             <section class="notepad-post-excerpt">
-                <p>第一步 创建仓库 创建一个git仓库，可以在GitHub创建个git仓库，如https://github.com/raoenhui/ice-first-cli 第二步 编辑package npm init 或直接创建package.json,将git仓库地址加入 { "name": "ice-first-cli", "version": "1.0.8", "scripts": { "test": "npm -v" }, "bin": { "ice-first-cli": "./bin/commit.js" }, "repository": { "type": "git", "url": "git+https://github.com/raoenhui/ice-first-cli.git" }, "keywords": [ "cli" ], "devDependencies": { "shelljs": "^0.8.1" }...</p>
+                <p>第一步 创建仓库
+
+创建一个git仓库，可以在GitHub创建个git仓库，如https://github.com/raoenhui/ice-first-cli
+
+第二步 编辑package
+
+npm init 或直接创建package.json,将git仓库地址加入
+
+{
+  "name": "ice-first-cli",
+  "version": "1.0.8",
+  "scripts...</p>
             </section>
             
                 <div class="notepad-index-post-tags">
@@ -267,7 +304,11 @@
                 </h3>
             </header>
             <section class="notepad-post-excerpt">
-                <p>ECMAScript 6（以下简称ES6）是JavaScript语言的下一代标准，已经在2015年6月正式发布了。 Mozilla公司将在这个标准的基础上，推出JavaScript 2.而ES6有着强大的目标，是使得JavaScript语言可以用来编写大型的复杂的应用程序，成为企业级开发语言。 对ES6的支持可以查看http://kangax.github.io/compat-table/es6/，在这里可以清晰的了解到不同版本的浏览器对ES6功能的支持情况。如果你想现在就在浏览器使用ES6的特性，还可以通过引用兼容包的方式提前尝尝鲜。 https://github.com/paulmillr/es6-shim。 环境支持推荐用js工具babel来编译http://babeljs.io/。 变量与字符串 let是ES6中新增关键字。 它的作用类似于var，用来声明变量，但是所声明的变量，只在let命令所在的代码块内有效。 /*E1*/ if(true){ var a = 1; let b = 2; } document.write(a+'&lt;br/&gt;'); document.write(b+'&lt;br/&gt;'); // Uncaught ReferenceError: b is not defined Example2 /*E2*/ function f1() { var a = 8; let...</p>
+                <p>ECMAScript 6（以下简称ES6）是JavaScript语言的下一代标准，已经在2015年6月正式发布了。
+
+Mozilla公司将在这个标准的基础上，推出JavaScript 2.而ES6有着强大的目标，是使得JavaScript语言可以用来编写大型的复杂的应用程序，成为企业级开发语言。
+
+对ES6的支持可以查看http://kangax.github.io/compat-table...</p>
             </section>
             
                 <div class="notepad-index-post-tags">

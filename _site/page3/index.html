@@ -135,7 +135,21 @@
                 </h3>
             </header>
             <section class="notepad-post-excerpt">
-                <p>前言 非常感谢wapyce和carlsonsantana测试我的博客网站，并给我发出Issue，让我知道了网站有些bug，以及Pa11y这个测试利器。 简介 Pa11y是自动化测试网站可访问性的工具。 它原理是用命令行的形式运行 HTML CodeSniffer ，得到可访问性报告。 用法 可以用node来全局安装pa11y. npm install pa11y -g 直接运行命令行,pa11y加自己的网址 pa11y https://raoenhui.github.io 也可在js中使用,pa11y(‘网址’)返回的是一个承诺对象。 const pa11y = require('pa11y'); pa11y('http://example.com/', { // Options go here }).then((results) =&gt; { // Do something with the results }); pa11y中可以配置很多，如给请求头加Cookie，忽视某些警告等，详情可看pally 教程 DashBoard...</p>
+                <p>前言
+
+非常感谢wapyce和carlsonsantana测试我的博客网站，并给我发出Issue，让我知道了网站有些bug，以及Pa11y这个测试利器。
+
+简介
+
+Pa11y是自动化测试网站可访问性的工具。 它原理是用命令行的形式运行 HTML CodeSniffer
+，得到可访问性报告。
+
+用法
+可以用node来全局安装pa11y.
+   npm install pa11y -g 
+
+
+直...</p>
             </section>
             
                 <div class="notepad-index-post-tags">
@@ -168,7 +182,15 @@
                 </h3>
             </header>
             <section class="notepad-post-excerpt">
-                <p>[] == false; //为True !![] == false; //为False 一、[] == false为True 第一步 转成[] == 0 根据 MDN Web 文档-比较操作符:https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators 如果其中一个操作数为布尔类型，那么布尔操作数如果为true，那么会转换为1，如果为false，会转换为整数0，即0。 所以![]为false为0. [] == 0 第二步 转成"" == 0 根据 MDN Web 文档-比较操作符:https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators 如果一个对象与数字或字符串相比较，JavaScript会尝试返回对象的默认值。操作符会尝试通过方法valueOf和toString将对象转换为其原始值（一个字符串或数字类型的值）。 所以[].valueOf().toString()为"" "" == 0 第三步 转成0 ==...</p>
+                <p>[] == false; //为True
+!![] == false; //为False
+
+
+一、[] == false为True
+
+第一步 转成[] == 0
+
+根据 MDN Web 文档-比较操作符:https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operator...</p>
             </section>
             
                 <div class="notepad-index-post-tags">
@@ -201,7 +223,18 @@
                 </h3>
             </header>
             <section class="notepad-post-excerpt">
-                <p>前言 a==3 &amp;&amp; a==4为True是可以实现的。 具体代码如下所示： let a=[]; var x=3; a.valueOf=()=&gt;{ return x++ }; a==3 &amp;&amp; a==4 ? console.log("succeed") : console.log("failed"); //succeed 下面妹子我将一一解析其原理。 第一步 let a=[] 定义一个变量a,并赋值一个对象，方便后面重写它的valueOf方法。 可以通过Object.isFrozen()方法来判断一个对象的属性是否可以重写。 根据 MDN Web 文档-Object.isFrozen():https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/isFrozen 在 ES5 中，如果参数不是一个对象类型，将抛出一个TypeError异常。在 ES2015 中，非对象参数将被视为一个冻结的普通对象，因此会返回true。 Object.isFrozen(""); // true (ES2015...</p>
+                <p>前言
+a==3 &amp;&amp; a==4为True是可以实现的。
+具体代码如下所示：
+let a=[];
+var x=3;
+a.valueOf=()=&gt;{
+   return x++
+};
+a==3 &amp;&amp; a==4 ? console.log("succeed") : console.log("failed");
+//succeed
+
+下面妹子我将一一解析其原理。...</p>
             </section>
             
                 <div class="notepad-index-post-tags">
@@ -234,7 +267,19 @@
                 </h3>
             </header>
             <section class="notepad-post-excerpt">
-                <p>[] == ![] //为True 第一步 转成[] == false 根据 MDN Web 文档-运算符优先级:https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence !的优先级为16 ,=的优先级为10，!的优先级更高，所以先运行![]为false [] == false 第二步 转成[] == 0 根据 MDN Web 文档-比较操作符:https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators 如果其中一个操作数为布尔类型，那么布尔操作数如果为true，那么会转换为1，如果为false，会转换为整数0，即0。 所以![]为false为0. [] == 0 第三步 转成"" == 0 根据 MDN Web 文档-比较操作符:https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators 如果一个对象与数字或字符串相比较，JavaScript会尝试返回对象的默认值。操作符会尝试通过方法valueOf和toString将对象转换为其原始值（一个字符串或数字类型的值）。 所以[].valueOf().toString()为""...</p>
+                <p>[] == ![] //为True
+
+
+第一步 转成[] == false
+
+根据 MDN Web 文档-运算符优先级:https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+
+
+
+
+
+
+!的优先级为16 ,=的优先级为10，!的优先级更高，所以先运行![]...</p>
             </section>
             
                 <div class="notepad-index-post-tags">
@@ -267,7 +312,18 @@
                 </h3>
             </header>
             <section class="notepad-post-excerpt">
-                <p>前言 小程序的组件中是没有支持SVG标签的。 但是在前端小伙伴的实际开发中，UED经常提供SVG图片过来，如果不想用引入iconfont的话，那么妹子我将介绍个很好用的方法。 SVG 简介 SVG 指可伸缩矢量图形 (Scalable Vector Graphics) SVG 使用 XML 格式定义图形 SVG 图像在放大或改变尺寸的情况下其图形质量不会有所损失 SVG 与JPEG和GIF图像比起来，尺寸更小，且可压缩性更强。 适合各种icon和图标 去除 SVG 中不需要的代码 我们知道 SVG 实际是由代码组成，可以将 SVG 图片直接用IDE打开(如sublime),可以查看并修改其颜色形状大小。 其中有很多 SVG 代码我们可以去除，如注释、多余空格等等，可以用网站 https://jakearchibald.github.io/svgomg，来精简SVG： 将 SVG 转化成Base64 打开网站https://www.sojson.com/image2base64.html来转Base64 接着在WXSS和WXML中使用 // Base64 在CSS中的使用 .box{...</p>
+                <p>前言
+
+小程序的组件中是没有支持SVG标签的。
+但是在前端小伙伴的实际开发中，UED经常提供SVG图片过来，如果不想用引入iconfont的话，那么妹子我将介绍个很好用的方法。
+
+SVG 简介
+
+
+  SVG 指可伸缩矢量图形 (Scalable Vector Graphics)
+  SVG 使用 XML 格式定义图形
+  SVG 图像在放大或改变尺寸的情况下其图形质量不会有所损失
+  SV...</p>
             </section>
             
                 <div class="notepad-index-post-tags">
