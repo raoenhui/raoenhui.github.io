@@ -128,6 +128,11 @@ callback([
   {
     "text": "react-router中的exact和strict",
     "href": "https://raoenhui.github.io/react/2019/05/04/exact-strict/"
+  } ,
+
+  {
+    "text": "Https在各种Web服务器下配置",
+    "href": "https://raoenhui.github.io/react/2019/06/04/https/"
   } 
 
 ])

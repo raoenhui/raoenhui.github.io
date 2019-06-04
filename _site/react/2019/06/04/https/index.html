@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang='zh'>
+<head>
+<meta charset="utf-8">
+<title>HTTPS在各种WEB服务器下配置 &vert; 前端妹子的博客</title>
+<meta name="description" content="一枚前端攻城狮!">
+<meta name="keywords" content="Nodejs">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raoenhui.github.io/images/logo.png">
+<meta name="twitter:title" content="Https在各种Web服务器下配置">
+<meta name="twitter:description" content="一枚前端攻城狮!">
+<meta name="twitter:creator" content="@raoenhui">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Https在各种Web服务器下配置">
+<meta property="og:description" content="一枚前端攻城狮!">
+<meta property="og:url" content="https://raoenhui.github.io/react/2019/06/04/https/">
+<meta property="og:site_name" content="前端妹子的博客">
+<meta property="og:image" content="https://raoenhui.github.io/images/">
+
+
+
+
+
+<link rel="canonical" href="https://raoenhui.github.io/react/2019/06/04/https/">
+<link href="https://raoenhui.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="前端妹子的博客 Feed">
+<link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+    <!--<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>-->
+	<!--<link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/font-awesome.min.css">-->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/normalize.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/nprogress.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/foundation.min.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/style.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/post.css">
+
+
+
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="https://raoenhui.github.io/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="https://raoenhui.github.io/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="https://raoenhui.github.io/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://raoenhui.github.io/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://raoenhui.github.io/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://raoenhui.github.io/images/apple-touch-icon-144x144-precomposed.png">
+
+<style type="text/css">@media only screen and (min-width:43.75em){.notepad-post-content div>p:first-child:first-letter{float:left;font-size:4.688rem;line-height:4.375rem;padding-top:.25rem;padding-right:.5rem;padding-left:.188rem;font-family:serif}}</style>
+</head>
+<body class="post-template" itemscope itemtype="http://schema.org/WebPage">
+<div style ='margin:0 auto;width:0px;height:0px;overflow:hidden;' >
+
+    <img src="https://raoenhui.github.io/assets/img/avator.jpg" />
+    <!--<img src="//chuantu.biz/t6/303/1525520078x-1566657998.png" />-->
+
+</div>
+
+        <main id="notepad-post-container-simple" class="notepad-post-container-simple" role="main">
+            <header class="notepad-post-header-simple">
+                <div class="notepad-post-menu-header-simple">
+
+                    <a class="notepad-blog-logo" href="https://raoenhui.github.io">
+                        <img src="https://raoenhui.github.io/images/logo.png" alt="Blog Logo" />
+                    </a>
+
+                <div class="notepad-blog-menu">      
+    <div class="notepad-mobile-menu show-for-small">
+        <a><i class="fa fa-bars"></i></a>
+    </div>
+    <ul class="notepad-menu">
+        <li class="notepad-mobile-close-btn show-for-small text-right">
+            <a><i class="fa fa-times"></i></a>
+        </li>
+
+            <li>
+                    <a href="https://raoenhui.github.io/">主页</a>
+                 </li>
+
+            <li>
+                    <a href="https://raoenhui.github.io/categories">目录</a>
+                 </li>
+
+            <li>
+                    <a href="https://raoenhui.github.io/about">关于</a>
+                 </li>
+
+           <li><a href="https://github.com/raoenhui/raoenhui.github.io" target="_blank" title="Github"><i class="icon-rss"></i> Github</a></li>
+           <li><a href="http://www.frontendx.cn" target="_blank" title="Index">Index</a></li>
+    </ul>
+
+</div>
+            </div>
+
+                <div class="notepad-post-title-simple row">
+                    <div class="small-12 columns">
+                        <div class="notepad-post-meta-simple">
+                            <h1>Https在各种Web服务器下配置</h1>
+                            <p>by <strong>Enhui Rao</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#Nodejs" data-toggle="tooltip" title="Posts tagged with Nodejs" rel="tag">Nodejs</a> <strong><time datetime="2019-06-04T22:07:00+05:30">04 Jun 2019</time></strong></p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+        <article class="notepad-post-content post tag-simple">
+            <div><h3 id="前言">前言</h3>
+<p>前端很多情况需要用启动web服务器，而为了保证数据的安全性，都需要用<code class="highlighter-rouge">Https</code>对传输的数据进行加密传输，而且有些<code class="highlighter-rouge">web-view</code>只允许<code class="highlighter-rouge">https</code>通过访问，所以学习怎么配置<code class="highlighter-rouge">https</code>也成为大前端不可以少的功课之一。下面本妹子将先简单介绍下 <code class="highlighter-rouge">Https</code>,再依次介绍怎么在<code class="highlighter-rouge">Node</code>、<code class="highlighter-rouge">webpack-dev-server</code>和<code class="highlighter-rouge">nginx</code>这三个最常见的前端web服务器下配置<code class="highlighter-rouge">Https</code>，以及关于证书的扩展干货。</p>
+
+<h3 id="https简介">Https简介</h3>
+<p><code class="highlighter-rouge">Https</code>协议的主要作用可以分为两点：
+1.建立一个信息安全通道，来保证数据传输的安全；
+2.确认网站的真实性；
+而<code class="highlighter-rouge">https</code>的加密方式主要是非对称加密，所以会有一对密钥，分别是一个公钥(证书)和私钥。</p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-d999ceac42544eb4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<p>浏览器allen访问的时候，客户端会接受这个证书，并利用这个证书里的公钥对数据加密，加密后，服务端tony用自己的私钥解密就行了。</p>
+
+<p>Web服务一般使用<code class="highlighter-rouge">OpenSSL</code>工具提供的密码库，生成PEM、KEY、CRT等格式的证书文件。
+其中<code class="highlighter-rouge">.crt</code>后缀一般存放证书，<code class="highlighter-rouge">.key</code>后缀一般存放私钥，<code class="highlighter-rouge">.pem</code>后缀的可以同时存放把CA证书和密钥。</p>
+
+<h3 id="生成证书和密钥">生成证书和密钥</h3>
+<p>可以直接用命令生成</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#使用以下命令生成一个证书密钥对 key.pem 和 cert.pem，它将有效期约10年（准确地说是3650天）</span>
+openssl req <span class="nt">-newkey</span> rsa:2048 <span class="nt">-new</span> <span class="nt">-nodes</span> <span class="nt">-x509</span> <span class="nt">-days</span> 3650 <span class="nt">-keyout</span> key.key <span class="nt">-out</span> cert.crt
+<span class="c">#或者直接生成到一个pem文件中</span>
+openssl req <span class="nt">-newkey</span> rsa:2048 <span class="nt">-new</span> <span class="nt">-nodes</span> <span class="nt">-x509</span> <span class="nt">-days</span> 3650 <span class="nt">-keyout</span> all.pem <span class="nt">-out</span> all.pem
+</code></pre></div></div>
+<p>可以用<code class="highlighter-rouge">selfsigned</code>插件生成</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">selfsigned</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'selfsigned'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">selfsigned</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'selfsigned'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">attrs</span> <span class="o">=</span> <span class="p">[{</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'commonName'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="s1">'contoso.com'</span> <span class="p">}];</span>
+<span class="c1">//有效期约10年</span>
+<span class="kd">var</span> <span class="nx">pems</span> <span class="o">=</span> <span class="nx">selfsigned</span><span class="p">.</span><span class="nx">generate</span><span class="p">(</span><span class="nx">attrs</span><span class="p">,</span> <span class="p">{</span> <span class="na">days</span><span class="p">:</span> <span class="mi">3650</span> <span class="p">});</span>
+<span class="nx">fs</span><span class="p">.</span><span class="nx">writeFileSync</span><span class="p">(</span><span class="s1">'all.pem'</span><span class="p">,</span> <span class="nx">pems</span><span class="p">.</span><span class="kr">private</span> <span class="o">+</span> <span class="nx">pems</span><span class="p">.</span><span class="nx">cert</span><span class="p">,</span> <span class="p">{</span> <span class="na">encoding</span><span class="p">:</span> <span class="s1">'utf-8'</span> <span class="p">});</span>
+</code></pre></div></div>
+<h3 id="node配置https">node配置https</h3>
+<p>用openssl生成all.pem</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl req <span class="nt">-newkey</span> rsa:2048 <span class="nt">-new</span> <span class="nt">-nodes</span> <span class="nt">-x509</span> <span class="nt">-days</span> 3650 <span class="nt">-keyout</span> all.pem <span class="nt">-out</span> all.pem
+</code></pre></div></div>
+<p>在同目录编写<code class="highlighter-rouge">app.js</code>,并运行<code class="highlighter-rouge">node app.js</code>,启动<code class="highlighter-rouge">node</code>服务监听<code class="highlighter-rouge">88</code>端口</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">https</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'https'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'fs'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'path'</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">key</span><span class="p">:</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">'./all.pem'</span><span class="p">)),</span><span class="c1">//密钥</span>
+  <span class="na">cert</span><span class="p">:</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">'./all.pem'</span><span class="p">))</span><span class="c1">//证书</span>
+<span class="p">};</span>
+<span class="nx">https</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span> <span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span><span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 发送 HTTP 头部 </span>
+    <span class="c1">// HTTP 状态值: 200 : OK</span>
+    <span class="c1">// 内容类型: text/plain</span>
+    <span class="nx">response</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span><span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'text/plain'</span><span class="p">});</span>
+    <span class="c1">// 发送响应数据 "Hello World"</span>
+    <span class="nx">response</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">'Hello World</span><span class="err">\</span><span class="s1">n'</span><span class="p">);</span>
+<span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mi">88</span><span class="p">);</span>
+
+<span class="c1">// 终端打印如下信息</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Server running at https://127.0.0.1:88/'</span><span class="p">);</span>
+</code></pre></div></div>
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-ae8fe4599c93e615.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="browser.png" /></p>
+
+<p>具体代码可查看<a href="https://github.com/raoenhui/node-https.git">https://github.com/raoenhui/node-https.git</a></p>
+
+<h3 id="web-dev-server-配置https">web-dev-server 配置https</h3>
+<p>web-dev-server配置很简单，只要将<code class="highlighter-rouge">https</code>选项设成<code class="highlighter-rouge">true</code>即可。</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">devServer</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">https</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<p>web-dev-server原理
+server.js里面判断如果没有证书和密钥，则用<code class="highlighter-rouge">selfsigned</code>生成，并放在ssl目录中的<code class="highlighter-rouge">server.pem</code>文件下,默认生成有效期为<code class="highlighter-rouge">30</code>天。</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="kd">const</span> <span class="nx">certPath</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">'../ssl/server.pem'</span><span class="p">);</span>
+      <span class="kd">let</span> <span class="nx">certExists</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">existsSync</span><span class="p">(</span><span class="nx">certPath</span><span class="p">);</span>
+      <span class="p">...</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">certExists</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">log</span><span class="p">(</span><span class="s1">'Generating SSL Certificate'</span><span class="p">);</span>
+        <span class="kd">const</span> <span class="nx">attrs</span> <span class="o">=</span> <span class="p">[{</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'commonName'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="s1">'localhost'</span> <span class="p">}];</span>
+        <span class="kd">const</span> <span class="nx">pems</span> <span class="o">=</span> <span class="nx">selfsigned</span><span class="p">.</span><span class="nx">generate</span><span class="p">(</span><span class="nx">attrs</span><span class="p">,</span> <span class="p">{</span>
+          <span class="na">algorithm</span><span class="p">:</span> <span class="s1">'sha256'</span><span class="p">,</span>
+          <span class="na">days</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+          <span class="na">keySize</span><span class="p">:</span> <span class="mi">2048</span><span class="p">,</span>
+          <span class="na">extensions</span><span class="p">:</span> <span class="p">[...]</span>
+        <span class="p">});</span>
+
+        <span class="nx">fs</span><span class="p">.</span><span class="nx">writeFileSync</span><span class="p">(</span><span class="nx">certPath</span><span class="p">,</span> <span class="nx">pems</span><span class="p">.</span><span class="kr">private</span> <span class="o">+</span> <span class="nx">pems</span><span class="p">.</span><span class="nx">cert</span><span class="p">,</span> <span class="p">{</span> <span class="na">encoding</span><span class="p">:</span> <span class="s1">'utf-8'</span> <span class="p">});</span>
+      <span class="p">}</span>
+      <span class="nx">fakeCert</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="nx">certPath</span><span class="p">);</span>
+</code></pre></div></div>
+<p>启动服务的时候引用证书和密钥</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nx">options</span><span class="p">.</span><span class="nx">https</span><span class="p">.</span><span class="nx">key</span> <span class="o">=</span> <span class="nx">options</span><span class="p">.</span><span class="nx">https</span><span class="p">.</span><span class="nx">key</span> <span class="o">||</span> <span class="nx">fakeCert</span><span class="p">;</span>
+    <span class="nx">options</span><span class="p">.</span><span class="nx">https</span><span class="p">.</span><span class="nx">cert</span> <span class="o">=</span> <span class="nx">options</span><span class="p">.</span><span class="nx">https</span><span class="p">.</span><span class="nx">cert</span> <span class="o">||</span> <span class="nx">fakeCert</span><span class="p">;</span>
+    <span class="p">...</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">listeningApp</span> <span class="o">=</span> <span class="nx">spdy</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">options</span><span class="p">.</span><span class="nx">https</span><span class="p">,</span> <span class="nx">app</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="nginx-配置https">Nginx 配置https</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 进入nginx目录</span>
+<span class="nb">cd </span>nginx
+<span class="c"># 在key文件夹中用openssl生成</span>
+<span class="nb">mkdir </span>key <span class="o">&amp;&amp;</span> <span class="nb">cd </span>key <span class="o">&amp;&amp;</span> openssl req <span class="nt">-newkey</span> rsa:2048 <span class="nt">-new</span> <span class="nt">-nodes</span> <span class="nt">-x509</span> <span class="nt">-days</span> 3650 <span class="nt">-keyout</span> all.pem <span class="nt">-out</span> all.pem
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># HTTPS server
+    #
+    server {
+        listen       443 ssl;
+        server_name  localhost;
+        #证书路径
+        ssl_certificate      key/all.pem;
+        ssl_certificate_key  key/all.pem;
+
+        ssl_session_cache    shared:SSL:1m;
+        ssl_session_timeout  5m;
+
+        ssl_ciphers  HIGH:!aNULL:!MD5;
+        ssl_prefer_server_ciphers  on;
+
+        location / {
+            root   /HD/mycode/test;
+            index  index.html index.htm;
+        }
+    }
+</code></pre></div></div>
+<h3 id="知识扩展">知识扩展</h3>
+<h4 id="其他证书格式">其他证书格式</h4>
+<p>上面本妹子所讲的是对于前端比较常见的web服务器，而其实还有很多种服务器它们的证书格式是不一样的，而且可以互相转换，具体如下图所示</p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-eb4d6e9b54fe9f90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.png" /></p>
+
+<h3 id="ca">CA</h3>
+<p>CA全称为Certificate Authority 证书授权中心。上面本妹子是自己生成证书，这个证书在互联网上是认为不安全的。只有通过CA机构下发的证书，浏览器和电脑才会认为是可靠安全的。
+其中证书也有很多分类，可以向CA申请不同类型的证书。下面举例几种常见证书类型的区别</p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-7ea9f4b1f425812b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="3.png" /></p>
+
+<p>还可以用SSL证书在线检测工具，检测网站证书详细信息。
+<a href="https://www.chinassl.net/ssltools/ssl-checker.html">https://www.chinassl.net/ssltools/ssl-checker.html</a></p>
+
+<p>如www.jd.com</p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-15297a73b2ebd34d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+<img src="https://upload-images.jianshu.io/upload_images/9902136-729fed59888b467a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<h3 id="相关链接">相关链接</h3>
+<blockquote>
+  <ul>
+    <li><a href="https://study.163.com/course/courseLearn.htm?courseId=1209189811#/learn/live?lessonId=1278788317&amp;courseId=1209189811">Https网络安全架构设计与实践视频教程</a></li>
+    <li><a href="https://www.npmjs.com/package/selfsigned">selfsigned说明文档</a></li>
+    <li><a href="https://www.jianshu.com/p/42bf7c4d6ab8">数字证书</a></li>
+  </ul>
+</blockquote>
+
+<p>Happy coding .. :)</p>
+
+
+            </div>
+        </article>
+        <div class="cf"></div>
+        <div class="row text-center">
+            <section class="notepad-post-share">
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Https在各种Web服务器下配置&quot;%20https://raoenhui.github.io/react/2019/06/04/https/%20via%20&#64;raoenhui"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/react/2019/06/04/https/"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/react/2019/06/04/https/"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </section>
+        </div>
+        <div class="cf"></div>
+        
+            <div class="notepad-author-info">
+                <div class="row">
+                    <section class="notepad-post-author small-12 columns">
+                        
+                            <img src="https://raoenhui.github.io/images/logo.png" class="notepad-post-author-avatar" alt="Enhui Rao's photo">
+                        
+                        
+                            <span class="author-label">Author</span>
+                            <h1>Enhui Rao</h1>
+                        
+                        
+                            <p><a href="mailto:raoenhui@jd.com" class="author-website">raoenhui@jd.com</a>
+
+			   <!--  <iframe src="//www.facebook.com/plugins/follow?href=https%3A%2F%2Fwww.facebook.com%2Fameyjadiye&amp;layout=standard&amp;show_faces=true&amp;colorscheme=light&amp;width=450&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe>  -->
+             <!--      <iframe src="//www.facebook.com/plugins/follow?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100004203407645&amp;layout=standard&amp;show_faces=true&amp;colorscheme=light&amp;width=450&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe> -->
+             
+
+              <div class="fb-like" data-href="http://raoenhui.github.io/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+       <!--      <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1757816481112269";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+			    </p>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1757816481112269";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>-->
+<div class="fb-follow" data-href="https://www.facebook.com/raoenhui" data-width="200" data-height="100" data-layout="standard" data-show-faces="true"></div>
+                        
+                        
+                            <p>Programming is 1% knowledge, 2% ability and 97% getting the ability to work with the knowledge :)</p>
+                        
+                    </section>
+                </div>
+            </div>
+ 
+        
+        <div class="cf"></div>
+        
+        <section class="notepad-disqus row">
+    <div class="small-12 columns">
+        <h1 class="notepad-comments-header">Comments评论</h1>
+   <!--      <p>国内网速超慢，建议翻墙评论，或直接在此评论
+            <a href="https://github.com/raoenhui/raoenhui.github.io/issues" target="_blank">https://github.com/raoenhui/raoenhui.github.io/issues</a></p> -->
+
+        <div id="disqus_thread"></div>
+        
+<!--
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = '饶恩慧'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+-->
+<!-- ice disqus https://raoenhui.disqus.com/admin/ start-->
+<!--<script>
+
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://raoenhui.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>-->
+<!-- ice disqus end-->
+
+<!-- ice gitment 评论 start-->
+    <div id="container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+// debugger
+var gitment = new Gitment({
+  id: location.pathname.split('/').reverse()[1], // 可选。默认为 location.href
+  owner: 'raoenhui',
+  repo: 'raoenhui.github.io',
+  oauth: {
+    client_id: 'bd88b9824048b133f7ed',
+    client_secret: '193c97904472a0e380b70dd990c46853f52881c7',
+    // client_id: '5548df3eca52697fac71',
+    // client_secret: '5b9480b7b3d4a49e22db3f29557380e2711bbcd9',
+  },
+})
+gitment.render('container')
+</script>
+<!-- ice gitment 评论 end-->
+<hr />
+
+<!-- ice facebook start-->
+ 
+<!-- <div class="fb-comments" data-href="https://raoenhui.github.io/react/2019/06/04/https/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1757816481112269";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script> -->
+<!-- ice facebook end-->
+
+<!-- 来必力 start https://livere.com/my_Livere-->
+<!-- <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTMzMC8xMTg2Ng==">
+    <script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+    </script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div> -->
+<!-- 来必力 end-->
+
+    </div>
+</section>
+
+        <div class="cf"></div>
+
+    <footer class="notepad-site-footer">
+    <div class="copyright">
+        <section>All content copyright <a href="https://raoenhui.github.io/about">Enhui Rao</a> &copy; 2019 &bull; All rights reserved.</section>
+	<!--<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>-->
+          <!--<a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>-->
+    </div>
+    <div class="social-icons">
+        
+        <!--
+        <a href="http://twitter.com/raoenhui">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="https://plus.google.com/u/0/+AmeyJadiye">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-google-plus fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="http://instagram.com/raoenhui">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-instagram fa-stack-1x"></i>
+            </span>
+        </a>
+        -->
+        
+        <a href="https://github.com/raoenhui" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+            <span style="position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0,0,0,0);border: 0;">Github</span>
+        </a>
+        
+        
+        <a href="https://facebook.com/raoenhui" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+            <span style="position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0,0,0,0);border: 0;">Facebook</span>
+        </a>
+        
+    </div>
+    
+    <div class="cf"></div>
+</footer>
+ 
+</main>    
+<script src="//apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://raoenhui.github.io/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+<script src="https://raoenhui.github.io/assets/js/vendor/modernizr.js"></script>
+<script src="https://raoenhui.github.io/assets/js/foundation.min.js"></script>
+
+<script src="https://raoenhui.github.io/assets/js/notepad.js"></script>
+<script src="https://raoenhui.github.io/assets/js/scripts.min.js"></script>
+<script src="https://raoenhui.github.io/assets/js/vendor/nprogress.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/sigma.js/1.0.3/sigma.min.js"></script>-->
+<script src="//apps.bdimg.com/libs/sigma.js/0.1/sigma.min.js"></script>
+
+<script>
+    $(document).foundation();
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-46791108-1', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+
+</script>
+
+<script>NProgress.start();
+var timeNum=0;
+var interval = setInterval(function () {
+    NProgress.inc();
+    //如果大于60秒停止检测
+    /*if(timeNum>60){
+        clearInterval(interval);
+        NProgress.done();
+
+    }
+    timeNum++;*/
+}, 1000);
+jQuery(window).load(function () {
+    clearInterval(interval);
+    NProgress.done()
+});
+jQuery(window).unload(function () {
+    NProgress.start()
+});
+
+</script>
+
+<!-- ice start-->
+<!--<script id="dsq-count-scr" src="//raoenhui.disqus.com/count.js" async></script>-->
+<script>
+  (function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+<!-- ice end--> 
+</body>
+</html>
