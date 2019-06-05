@@ -47,8 +47,7 @@
 
 
 
-
-
+    
 <!-- Icons -->
 <!-- 16x16 -->
 <link rel="shortcut icon" href="https://raoenhui.github.io/favicon.ico">
@@ -561,7 +560,9 @@ gitment.render('container')
  
 </main>    
 <script src="//apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="https://raoenhui.github.io/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+<script>
+  window.jQuery || document.write('<script src="https://raoenhui.github.io/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')
+</script>
 <script src="https://raoenhui.github.io/assets/js/vendor/modernizr.js"></script>
 <script src="https://raoenhui.github.io/assets/js/foundation.min.js"></script>
 
@@ -572,33 +573,33 @@ gitment.render('container')
 <script src="//apps.bdimg.com/libs/sigma.js/0.1/sigma.min.js"></script>
 
 <script>
-    $(document).foundation();
+  $(document).foundation();
 </script>
 
 
 <!-- Asynchronous Google Analytics snippet -->
 <script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-46791108-1', 'auto');
-    ga('require', 'displayfeatures');
-    ga('send', 'pageview');
-
+  ga('create', 'UA-46791108-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
 </script>
 
-<script>NProgress.start();
-var timeNum=0;
-var interval = setInterval(function () {
+<script>
+  NProgress.start();
+  var timeNum = 0;
+  var interval = setInterval(function () {
     NProgress.inc();
     //如果大于60秒停止检测
     /*if(timeNum>60){
@@ -607,33 +608,66 @@ var interval = setInterval(function () {
 
     }
     timeNum++;*/
-}, 1000);
-jQuery(window).load(function () {
+  }, 1000);
+  jQuery(window).load(function () {
     clearInterval(interval);
     NProgress.done()
-});
-jQuery(window).unload(function () {
+  });
+  jQuery(window).unload(function () {
     NProgress.start()
-});
-
+  });
 </script>
 
 <!-- ice start-->
 <!--<script id="dsq-count-scr" src="//raoenhui.disqus.com/count.js" async></script>-->
 <script>
-  (function(){
+  (function () {
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
     if (curProtocol === 'https') {
       bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
+    } else {
       bp.src = 'http://push.zhanzhang.baidu.com/push.js';
     }
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
   })();
 </script>
-<!-- ice end--> 
+<!-- ice end-->
+
+
+<!-- 2d 前端妹子 start -->
+<script src="https://l2dwidget.js.org/lib/L2Dwidget.min.js"></script>
+<script type="text/javascript">
+  L2Dwidget
+    .on('*', (name) => {
+      // console.log('%c EVENT ' + '%c -> ' + name, 'background: #222; color: yellow', 'background: #fff; color: #000')
+    })
+    .init({
+      dialog: {
+        // 开启对话框
+        enable: true,
+        script: {
+          // 当触摸到角色身体
+          'tap body': '哎呀！别碰我！',
+          // 当触摸到角色头部
+          'tap face': '人家是在认真写博客哦--前端妹子'
+        }
+      }
+    });
+</script>
+<style>
+  @media all and (max-width: 900px) {
+    #live2d-widget {
+      transform-origin: 100% 100% 0;
+      transform: scale(0.5);
+      -ms-transform: scale(0.5);
+      -moz-transform: scale(0.5);
+      -webkit-transform: scale(0.5);
+      -o-transform: scale(0.5);
+    }
+  }
+</style>
+<!-- 2d 前端妹子 end --> 
 </body>
 </html>
