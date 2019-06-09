@@ -12,16 +12,16 @@ url:        	 https://raoenhui.github.io
 #url:         http://localhost:4000
 # Owner/author information
 owner:
-  name:           Enhui Rao
+  name:           前端妹子
   avatar:         logo.png
   email:          raoenhui@jd.com
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
   description:    Programming is 1% knowledge, 2% ability and 97% getting the ability to work with the knowledge :)
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        raoenhui
-  facebook:       raoenhui
-  github:         raoenhui    
-  instagram:      raoenhui
+  twitter:        前端妹子
+  facebook:       前端妹子
+  github:         前端妹子    
+  instagram:      前端妹子
   # For Google Authorship https://plus.google.com/authorship
   google_plus:    https://plus.google.com/u/0/+AmeyJadiye
 
