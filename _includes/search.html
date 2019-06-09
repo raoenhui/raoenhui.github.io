@@ -1,0 +1,73 @@
+<style>
+    #search-con {
+        position: relative;
+        margin: 0 auto;
+        max-width: 55rem;
+    }
+
+    #search-input {
+        height: 35px;
+        color: #222;
+        background-color: #fff;
+        line-height: 35px;
+        padding: 0px 16px;
+        border: 1px solid #e971be;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 17px;
+        outline: none;
+        box-sizing: border-box;
+    }
+
+    #search-input:focus {
+        outline: none;
+        border-color: #e971be;
+        background-color: rgb(251, 240, 247);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px #e593c7;
+    }
+
+    #results-container {
+        /* position: absolute; */
+        top: 35px;
+        /* border: 1px solid #e971be;
+    border: 1px solid rgb(251, 240, 247); */
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px #e593c7;
+        border-top: none;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        border-radius: 17px;
+    }
+
+    #results-container li {
+        list-style: none;
+    }
+
+    #results-container li:hover {
+        background-color: rgb(251, 240, 247);
+    }
+
+    @media screen and (max-width: 769px) {
+        #results-container li {
+            border-bottom: 1px #e971be dotted;
+        }
+
+        #results-container li:last-child {
+            border-bottom: none;
+        }
+    }
+</style>
+<div id="search-con">
+    <input type="text" id="search-input" placeholder="搜索 文章标题 日期 标签">
+    <ul id="results-container"></ul>
+</div>
+
+<script src="https://cdn.rawgit.com/christian-fei/Simple-Jekyll-Search/master/dest/simple-jekyll-search.min.js">
+</script>
+<script>
+    var sjs = SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '/search.json'
+    })
+</script>

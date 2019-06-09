@@ -8,13 +8,13 @@
     
     {% for page in site.pages %}
     <url>
-        <loc>{{ site.url }}{{ page.url }}</loc>
+        <loc>{{ site.url }}{{ page.url }}index.html</loc>
     </url>
     {% endfor %}
 
     {% for post in site.posts %}
     <url>
-        <loc>{{ site.url }}{{ post.url }}</loc>
+        <loc>{{ site.url }}{{ post.url }}index.html</loc>
     </url>
     {% endfor %}
 </urlset>
