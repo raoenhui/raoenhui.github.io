@@ -36,7 +36,7 @@ tags:
 `strict`默认为false，如果为true时，路由后面有斜杠而url中没有斜杠，是不匹配的
 
 ### 案例
-![image.png](https://upload-images.jianshu.io/upload_images/9902136-f074f8bbfa8e394b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://raoenhui.github.io/images/190504/1.jpg)
 
 ### 总结
 如果没有子路由的情况，建议大家配都加一个`exact`；如果有子路由，建议在子路由中加`exact`，父路由不加；

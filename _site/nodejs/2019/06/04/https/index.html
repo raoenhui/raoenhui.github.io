@@ -128,7 +128,7 @@
 2.确认网站的真实性；
 而<code class="highlighter-rouge">https</code>的加密方式主要是非对称加密，所以会有一对密钥，分别是一个公钥(证书)和私钥。</p>
 
-<p><img src="https://github.com/raoenhui/raoenhui.github.io/raw/master/images/190604/1.jpg" alt="image.png" /></p>
+<p><img src="https://raoenhui.github.io/images/190604/1.jpg" alt="image.png" /></p>
 
 <p>浏览器allen访问的时候，客户端会接受这个证书，并利用这个证书里的公钥对数据加密，加密后，服务端tony用自己的私钥解密就行了。</p>
 
@@ -175,7 +175,7 @@ openssl req <span class="nt">-newkey</span> rsa:2048 <span class="nt">-new</span
 <span class="c1">// 终端打印如下信息</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Server running at https://127.0.0.1:88/'</span><span class="p">);</span>
 </code></pre></div></div>
-<p><img src="https://github.com/raoenhui/raoenhui.github.io/raw/master/images/190604/2.jpg" alt="browser.png" /></p>
+<p><img src="https://raoenhui.github.io/images/190604/2.jpg" alt="browser.png" /></p>
 
 <p>具体代码可查看<a href="https://github.com/raoenhui/node-https.git">https://github.com/raoenhui/node-https.git</a></p>
 
@@ -244,21 +244,21 @@ server.js里面判断如果没有证书和密钥，则用<code class="highlighte
 <h4 id="其他证书格式">其他证书格式</h4>
 <p>上面本妹子所讲的是对于前端比较常见的web服务器，而其实还有很多种服务器它们的证书格式是不一样的，而且可以互相转换，具体如下图所示</p>
 
-<p><img src="https://github.com/raoenhui/raoenhui.github.io/raw/master/images/190604/3.jpg" alt="2.png" /></p>
+<p><img src="https://raoenhui.github.io/images/190604/3.jpg" alt="2.png" /></p>
 
 <h3 id="ca">CA</h3>
 <p>CA全称为Certificate Authority 证书授权中心。上面本妹子是自己生成证书，这个证书在互联网上是认为不安全的。只有通过CA机构下发的证书，浏览器和电脑才会认为是可靠安全的。
 其中证书也有很多分类，可以向CA申请不同类型的证书。下面举例几种常见证书类型的区别</p>
 
-<p><img src="https://github.com/raoenhui/raoenhui.github.io/raw/master/images/190604/4.jpg" alt="3.png" /></p>
+<p><img src="https://raoenhui.github.io/images/190604/4.jpg" alt="3.png" /></p>
 
 <p>还可以用SSL证书在线检测工具，检测网站证书详细信息。
 <a href="https://www.chinassl.net/ssltools/ssl-checker.html">https://www.chinassl.net/ssltools/ssl-checker.html</a></p>
 
 <p>如www.jd.com</p>
 
-<p><img src="https://github.com/raoenhui/raoenhui.github.io/raw/master/images/190604/5.jpg" alt="image.png" />
-<img src="https://github.com/raoenhui/raoenhui.github.io/raw/master/images/190604/6.jpg" alt="image.png" /></p>
+<p><img src="https://raoenhui.github.io/images/190604/5.jpg" alt="image.png" />
+<img src="https://raoenhui.github.io/images/190604/6.jpg" alt="image.png" /></p>
 
 <h3 id="相关链接">相关链接</h3>
 <blockquote>
