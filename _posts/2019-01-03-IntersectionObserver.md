@@ -55,7 +55,7 @@ options 配置项
 callback 回调函数
 
 ### 案例
-![example.gif](https://raoenhui.github.io/images/190103/2.jpg)
+![example.gif](https://raoenhui.github.io/images/190103/2.gif)
 
 源码地址：[https://codepen.io/raoenhui/pen/xQKPaK](https://codepen.io/raoenhui/pen/xQKPaK)
 

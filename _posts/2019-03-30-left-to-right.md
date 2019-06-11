@@ -36,7 +36,7 @@ tags:
 ```css
 .root .sub span {}
 ```
-![domTree.png](https://upload-images.jianshu.io/upload_images/9902136-deafef260abd643a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![domTree.png](https://raoenhui.github.io/images/190330/1.jpg)
 
 
 ` right-to-left `解析

@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2019-06-11T15:58:40+05:30</updated>
+<updated>2019-06-11T16:07:09+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>前端妹子</name>
@@ -268,44 +268,44 @@ https://reacttraining.com/blog/react-router-v5/&lt;/p&gt;
 
 &lt;p&gt;1.1 浏览器输入&lt;a href=&quot;https://aws.amazon.com/free&quot;&gt;https://aws.amazon.com/free&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-65bb89826de60215.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/190409/1.jpg&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
   &lt;p&gt;注册过程需要绑定信用卡，我用的是visa卡绑定的,只有一年免费的，所以一年后记得删掉所有实例，解绑信用卡，关闭掉AWS账户。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;本妹子薅羊毛不亦乐乎&amp;gt; &amp;lt; &lt;img src=&quot;http://upload-images.jianshu.io/upload_images/9902136-b31760c6051b6c05.gif?imageMogr2/auto-orient/strip&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;本妹子薅羊毛不亦乐乎&amp;gt; &amp;lt; &lt;img src=&quot;https://raoenhui.github.io/images/190409/2.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;1.2 注册后登录，选择services-&amp;gt;EC2&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-79cd7d94a812260a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/190409/3.jpg&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
   &lt;p&gt;Amazon EC2全称Amazon Elastic Compute Cloud，亚马逊弹性云服务器，是一个虚拟机，用户将可以在这个虚拟机上运行任何自己想要的软件或应用程序。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;1.3 生成实例&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-c71d1e701c0d3f29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/190409/4.jpg&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;1.4 在亚马逊镜像库中搜索你最熟悉的系统
     我习惯用的是&lt;code class=&quot;highlighter-rouge&quot;&gt;centos7&lt;/code&gt;，所以我选择了它。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-d710f9fa6a8f0929.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/190409/5.jpg&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;1.5 选择免费类型，其他选择按照默认就好&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-bef2a50a92f98fbe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/190409/6.jpg&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;1.6 生成添加秘钥，并将秘钥下载到本地&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-f0500859154ab7d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/190409/7.jpg&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;1.7 生成实例成功&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-2829ace8133f7c92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/190409/8.jpg&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;1.8 添加安全组，更改成添加的安全组&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-4bd8186004415228.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/190409/9.jpg&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
   &lt;p&gt;如上配置是所以端口都能被访问，如果想要做限制的话，可以选择特殊的&lt;code class=&quot;highlighter-rouge&quot;&gt;IP&lt;/code&gt;和端口&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -339,7 +339,7 @@ ssserver &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 443 &lt;span class=&qu
 
 &lt;p&gt;下载地址：链接: https://pan.baidu.com/s/1YuT1uFqvxtPHWtBXPzsZYg 提取码: xqe4  （里面mac和windows的安装包都有）&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-56c2d685a00383ff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/190409/10.jpg&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;手机端可下载NetShuttle软件访问，注意美区appleID账号才能下载&lt;/p&gt;
@@ -347,8 +347,8 @@ ssserver &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 443 &lt;span class=&qu
 
 &lt;p&gt;2.3 哈哈，愉快的访问&lt;code class=&quot;highlighter-rouge&quot;&gt;youtobe&lt;/code&gt;了&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-d4176fbe31178ccb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;PC.png&quot; /&gt;
-&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-935844438d8002ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;MOBILE.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/190409/11.jpg&quot; alt=&quot;PC.png&quot; /&gt;
+&lt;img src=&quot;https://raoenhui.github.io/images/190409/12.jpg&quot; alt=&quot;MOBILE.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;四-注意事项&quot;&gt;四 、注意事项&lt;/h3&gt;
 
@@ -417,7 +417,7 @@ ssserver &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 443 &lt;span class=&qu
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.root&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.sub&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-deafef260abd643a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;domTree.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/190330/1.jpg&quot; alt=&quot;domTree.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt; right-to-left &lt;/code&gt;解析
 先找到所有的最右节点&lt;code class=&quot;highlighter-rouge&quot;&gt; span&lt;/code&gt;，有4个，对于每一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;span&lt;/code&gt;，向上寻找节点发现不是&lt;code class=&quot;highlighter-rouge&quot;&gt;.sub&lt;/code&gt;,在查找上上节点，直到找到&lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt;，发现没有符合的。再从下一个&lt;code class=&quot;highlighter-rouge&quot;&gt;span&lt;/code&gt;开始重复这个过程。
@@ -518,7 +518,7 @@ ssserver &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 443 &lt;span class=&qu
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;替换成功
-&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-e644255241b5f9ea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;https://raoenhui.github.io/images/190303/1.jpg&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;三gulp其他常用插件&quot;&gt;三、gulp其他常用插件&lt;/h2&gt;
 &lt;h3 id=&quot;js相关&quot;&gt;JS相关&lt;/h3&gt;
@@ -549,7 +549,7 @@ ssserver &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 443 &lt;span class=&qu
         &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'dist'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-3477f46bd1901a19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/190303/2.jpg&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
 &lt;h4 id=&quot;gulp-concat&quot;&gt;gulp-concat&lt;/h4&gt;
 &lt;p&gt;合并&lt;code class=&quot;highlighter-rouge&quot;&gt;js&lt;/code&gt;文件&lt;/p&gt;
 &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;concat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'gulp-concat'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -724,7 +724,7 @@ ssserver &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 443 &lt;span class=&qu
 &lt;p&gt;callback 回调函数&lt;/p&gt;
 
 &lt;h3 id=&quot;案例&quot;&gt;案例&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/190103/2.jpg&quot; alt=&quot;example.gif&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/190103/2.gif&quot; alt=&quot;example.gif&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;源码地址：&lt;a href=&quot;https://codepen.io/raoenhui/pen/xQKPaK&quot;&gt;https://codepen.io/raoenhui/pen/xQKPaK&lt;/a&gt;&lt;/p&gt;
 
