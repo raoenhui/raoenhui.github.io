@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2019-06-09T16:33:54+05:30</updated>
+<updated>2019-06-11T15:04:42+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>前端妹子</name>
@@ -39,7 +39,7 @@
 2.确认网站的真实性；
 而&lt;code class=&quot;highlighter-rouge&quot;&gt;https&lt;/code&gt;的加密方式主要是非对称加密，所以会有一对密钥，分别是一个公钥(证书)和私钥。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-d999ceac42544eb4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/raoenhui/raoenhui.github.io/raw/master/images/190604/1.jpg&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;浏览器allen访问的时候，客户端会接受这个证书，并利用这个证书里的公钥对数据加密，加密后，服务端tony用自己的私钥解密就行了。&lt;/p&gt;
 
@@ -86,7 +86,7 @@ openssl req &lt;span class=&quot;nt&quot;&gt;-newkey&lt;/span&gt; rsa:2048 &lt;s
 &lt;span class=&quot;c1&quot;&gt;// 终端打印如下信息&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Server running at https://127.0.0.1:88/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-ae8fe4599c93e615.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;browser.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/raoenhui/raoenhui.github.io/raw/master/images/190604/2.jpg&quot; alt=&quot;browser.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;具体代码可查看&lt;a href=&quot;https://github.com/raoenhui/node-https.git&quot;&gt;https://github.com/raoenhui/node-https.git&lt;/a&gt;&lt;/p&gt;
 
@@ -155,21 +155,21 @@ server.js里面判断如果没有证书和密钥，则用&lt;code class=&quot;hi
 &lt;h4 id=&quot;其他证书格式&quot;&gt;其他证书格式&lt;/h4&gt;
 &lt;p&gt;上面本妹子所讲的是对于前端比较常见的web服务器，而其实还有很多种服务器它们的证书格式是不一样的，而且可以互相转换，具体如下图所示&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-eb4d6e9b54fe9f90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;2.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/raoenhui/raoenhui.github.io/raw/master/images/190604/3.jpg&quot; alt=&quot;2.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;ca&quot;&gt;CA&lt;/h3&gt;
 &lt;p&gt;CA全称为Certificate Authority 证书授权中心。上面本妹子是自己生成证书，这个证书在互联网上是认为不安全的。只有通过CA机构下发的证书，浏览器和电脑才会认为是可靠安全的。
 其中证书也有很多分类，可以向CA申请不同类型的证书。下面举例几种常见证书类型的区别&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-7ea9f4b1f425812b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;3.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/raoenhui/raoenhui.github.io/raw/master/images/190604/4.jpg&quot; alt=&quot;3.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;还可以用SSL证书在线检测工具，检测网站证书详细信息。
 &lt;a href=&quot;https://www.chinassl.net/ssltools/ssl-checker.html&quot;&gt;https://www.chinassl.net/ssltools/ssl-checker.html&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;如www.jd.com&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-15297a73b2ebd34d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;
-&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-729fed59888b467a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/raoenhui/raoenhui.github.io/raw/master/images/190604/5.jpg&quot; alt=&quot;image.png&quot; /&gt;
+&lt;img src=&quot;https://github.com/raoenhui/raoenhui.github.io/raw/master/images/190604/6.jpg&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;相关链接&quot;&gt;相关链接&lt;/h3&gt;
 &lt;blockquote&gt;
