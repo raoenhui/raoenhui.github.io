@@ -29,7 +29,7 @@ tags:
 ## 新检测原理Intersection observer 
 
 Intersection observer 允许你配置一个回调函数，每当`target`进入浏览器视窗时，触发回调函数。
-![example1.gif](https://upload-images.jianshu.io/upload_images/9902136-f8077160e5fc757a.gif?imageMogr2/auto-orient/strip)
+![example1.gif](https://raoenhui.github.io/images/190103/1.gif)
 
 源码地址：[https://codepen.io/raoenhui/pen/XoVEjK](https://codepen.io/raoenhui/pen/XoVEjK)
 
@@ -55,7 +55,7 @@ options 配置项
 callback 回调函数
 
 ### 案例
-![example.gif](https://upload-images.jianshu.io/upload_images/9902136-63762fade545cfbe.gif?imageMogr2/auto-orient/strip)
+![example.gif](https://raoenhui.github.io/images/190103/2.jpg)
 
 源码地址：[https://codepen.io/raoenhui/pen/xQKPaK](https://codepen.io/raoenhui/pen/xQKPaK)
 
@@ -88,7 +88,7 @@ target元素和root元素相交程度达到该值的时候IntersectionObserver�
 ```
 ### 兼容性
 兼容性`chrome`基本支持，但是意外的是`safari`支持性不好，用到的小伙伴们要注意这点了，兼容性具体看下图：
-![image.png](https://upload-images.jianshu.io/upload_images/9902136-ab7a39b24d7dbe8e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://raoenhui.github.io/images/190103/1.jpg)
 
 ## 其他链接
 > * 官方链接[Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)

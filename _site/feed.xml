@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2019-06-11T15:30:15+05:30</updated>
+<updated>2019-06-11T15:58:40+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>前端妹子</name>
@@ -695,7 +695,7 @@ ssserver &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 443 &lt;span class=&qu
 &lt;h2 id=&quot;新检测原理intersection-observer&quot;&gt;新检测原理Intersection observer&lt;/h2&gt;
 
 &lt;p&gt;Intersection observer 允许你配置一个回调函数，每当&lt;code class=&quot;highlighter-rouge&quot;&gt;target&lt;/code&gt;进入浏览器视窗时，触发回调函数。
-&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-f8077160e5fc757a.gif?imageMogr2/auto-orient/strip&quot; alt=&quot;example1.gif&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;https://raoenhui.github.io/images/190103/1.gif&quot; alt=&quot;example1.gif&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;源码地址：&lt;a href=&quot;https://codepen.io/raoenhui/pen/XoVEjK&quot;&gt;https://codepen.io/raoenhui/pen/XoVEjK&lt;/a&gt;&lt;/p&gt;
 
@@ -724,7 +724,7 @@ ssserver &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 443 &lt;span class=&qu
 &lt;p&gt;callback 回调函数&lt;/p&gt;
 
 &lt;h3 id=&quot;案例&quot;&gt;案例&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-63762fade545cfbe.gif?imageMogr2/auto-orient/strip&quot; alt=&quot;example.gif&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/190103/2.jpg&quot; alt=&quot;example.gif&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;源码地址：&lt;a href=&quot;https://codepen.io/raoenhui/pen/xQKPaK&quot;&gt;https://codepen.io/raoenhui/pen/xQKPaK&lt;/a&gt;&lt;/p&gt;
 
@@ -756,7 +756,7 @@ ssserver &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 443 &lt;span class=&qu
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h3 id=&quot;兼容性&quot;&gt;兼容性&lt;/h3&gt;
 &lt;p&gt;兼容性&lt;code class=&quot;highlighter-rouge&quot;&gt;chrome&lt;/code&gt;基本支持，但是意外的是&lt;code class=&quot;highlighter-rouge&quot;&gt;safari&lt;/code&gt;支持性不好，用到的小伙伴们要注意这点了，兼容性具体看下图：
-&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-ab7a39b24d7dbe8e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;https://raoenhui.github.io/images/190103/1.jpg&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;其他链接&quot;&gt;其他链接&lt;/h2&gt;
 &lt;blockquote&gt;
