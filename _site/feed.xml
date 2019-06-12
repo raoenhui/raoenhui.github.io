@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2019-06-12T07:27:22+05:30</updated>
+<updated>2019-06-12T14:33:48+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>前端妹子</name>
@@ -157,12 +157,17 @@ server.js里面判断如果没有证书和密钥，则用&lt;code class=&quot;hi
 
 &lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/190604/3.jpg&quot; alt=&quot;2.png&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;ca&quot;&gt;CA&lt;/h3&gt;
+&lt;h4 id=&quot;ca&quot;&gt;CA&lt;/h4&gt;
 &lt;p&gt;CA全称为Certificate Authority 证书授权中心。上面本妹子是自己生成证书，这个证书在互联网上是认为不安全的。只有通过CA机构下发的证书，浏览器和电脑才会认为是可靠安全的。
 其中证书也有很多分类，可以向CA申请不同类型的证书。下面举例几种常见证书类型的区别&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/190604/4.jpg&quot; alt=&quot;3.png&quot; /&gt;&lt;/p&gt;
 
+&lt;blockquote&gt;
+  &lt;p&gt;我们国内一般常见的CA有阿里云，如果申请个人免费证书是申请DV ssl，为1年的有效期。免费证书下载后有两个文件。一个是扩展名为.pem的文件，一个是扩展名为.key的文件。.pem文件中已经包含服务器证书和CA中间证书，第一段为服务器证书，第二段为CA中间证书，可以使用文本编辑器自行提取。.key文件是证书私钥。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;ssl证书在线检测工具&quot;&gt;SSL证书在线检测工具&lt;/h4&gt;
 &lt;p&gt;还可以用SSL证书在线检测工具，检测网站证书详细信息。
 &lt;a href=&quot;https://www.chinassl.net/ssltools/ssl-checker.html&quot;&gt;https://www.chinassl.net/ssltools/ssl-checker.html&lt;/a&gt;&lt;/p&gt;
 
@@ -177,6 +182,7 @@ server.js里面判断如果没有证书和密钥，则用&lt;code class=&quot;hi
     &lt;li&gt;&lt;a href=&quot;https://study.163.com/course/courseLearn.htm?courseId=1209189811#/learn/live?lessonId=1278788317&amp;amp;courseId=1209189811&quot;&gt;Https网络安全架构设计与实践视频教程&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/package/selfsigned&quot;&gt;selfsigned说明文档&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://www.jianshu.com/p/42bf7c4d6ab8&quot;&gt;数字证书&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://help.aliyun.com/KnowledgeDetail.htm?spm=5176.2020520129.113.4.34f546aekABdeF&amp;amp;knowledgeId=88447&quot;&gt;CA证书&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/blockquote&gt;
 
