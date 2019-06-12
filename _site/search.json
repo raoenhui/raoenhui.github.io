@@ -4,7 +4,7 @@
       "title"    : "Https在各种Web服务器下配置",
       "category" : "",
       "tags"     : "Nodejs",
-      "url"      : "//nodejs/2019/06/04/https/index.html",
+      "url"      : "/nodejs/2019/06/04/https/index.html",
       "date"     : "2019-06-04 22:07:00 +0530"
     } ,
   
@@ -12,7 +12,7 @@
       "title"    : "react-router中的exact和strict",
       "category" : "",
       "tags"     : "React",
-      "url"      : "//react/2019/05/04/exact-strict/index.html",
+      "url"      : "/react/2019/05/04/exact-strict/index.html",
       "date"     : "2019-05-04 22:07:00 +0530"
     } ,
   
@@ -20,7 +20,7 @@
       "title"    : "假设最后一个css元素是html标签，则选择器解析从左往右的提案",
       "category" : "",
       "tags"     : "Css",
-      "url"      : "//css/2019/03/30/left-to-right/index.html",
+      "url"      : "/css/2019/03/30/left-to-right/index.html",
       "date"     : "2019-03-30 16:00:00 +0530"
     } ,
   
@@ -28,7 +28,7 @@
       "title"    : "gulp插件解决浏览器缓存问题",
       "category" : "",
       "tags"     : "Js",
-      "url"      : "//js/2019/03/03/gulp/index.html",
+      "url"      : "/js/2019/03/03/gulp/index.html",
       "date"     : "2019-03-03 22:00:00 +0530"
     } ,
   
@@ -36,7 +36,7 @@
       "title"    : "Intersection observer检测元素是否在视窗内",
       "category" : "",
       "tags"     : "Js",
-      "url"      : "//js/2019/01/03/IntersectionObserver/index.html",
+      "url"      : "/js/2019/01/03/IntersectionObserver/index.html",
       "date"     : "2019-01-03 23:00:00 +0530"
     } ,
   
@@ -44,7 +44,7 @@
       "title"    : "慎用try catch",
       "category" : "",
       "tags"     : "Js",
-      "url"      : "//js/2018/12/16/tryCatch/index.html",
+      "url"      : "/js/2018/12/16/tryCatch/index.html",
       "date"     : "2018-12-16 22:00:00 +0530"
     } ,
   
@@ -52,7 +52,7 @@
       "title"    : "require 和 import 详解",
       "category" : "",
       "tags"     : "Es6",
-      "url"      : "//es6/2018/12/06/import/index.html",
+      "url"      : "/es6/2018/12/06/import/index.html",
       "date"     : "2018-12-06 19:00:00 +0530"
     } ,
   
@@ -60,7 +60,7 @@
       "title"    : "表连接类型",
       "category" : "",
       "tags"     : "Sql",
-      "url"      : "//sql/2018/11/30/sqlLink/index.html",
+      "url"      : "/sql/2018/11/30/sqlLink/index.html",
       "date"     : "2018-11-30 00:00:00 +0530"
     } ,
   
@@ -68,7 +68,7 @@
       "title"    : "pm2 远程发版",
       "category" : "",
       "tags"     : "NodeJS",
-      "url"      : "//nodejs/2018/11/12/pm2/index.html",
+      "url"      : "/nodejs/2018/11/12/pm2/index.html",
       "date"     : "2018-11-12 22:03:00 +0530"
     } ,
   
@@ -76,7 +76,7 @@
       "title"    : "centos安装高版本git",
       "category" : "",
       "tags"     : "git",
-      "url"      : "//git/2018/11/05/installgit/index.html",
+      "url"      : "/git/2018/11/05/installgit/index.html",
       "date"     : "2018-11-05 22:03:00 +0530"
     } ,
   
@@ -84,7 +84,7 @@
       "title"    : "Pa11y测试网站可访问性工具",
       "category" : "",
       "tags"     : "tool",
-      "url"      : "//tool/2018/10/28/Pa11y/index.html",
+      "url"      : "/tool/2018/10/28/Pa11y/index.html",
       "date"     : "2018-10-28 22:03:00 +0530"
     } ,
   
@@ -92,7 +92,7 @@
       "title"    : "js双等号探索(三): [] == false为True,而!![] == false为False ？",
       "category" : "",
       "tags"     : "js",
-      "url"      : "//js/2018/09/28/compare3/index.html",
+      "url"      : "/js/2018/09/28/compare3/index.html",
       "date"     : "2018-09-28 22:03:00 +0530"
     } ,
   
@@ -100,7 +100,7 @@
       "title"    : "js双等号探索(二): a==3&amp;&amp;a==4 为True ？",
       "category" : "",
       "tags"     : "js",
-      "url"      : "//js/2018/09/23/compare2/index.html",
+      "url"      : "/js/2018/09/23/compare2/index.html",
       "date"     : "2018-09-23 15:03:00 +0530"
     } ,
   
@@ -108,7 +108,7 @@
       "title"    : "js双等号探索(一): [] == ![]为Ture ？",
       "category" : "",
       "tags"     : "js",
-      "url"      : "//js/2018/09/22/compare1/index.html",
+      "url"      : "/js/2018/09/22/compare1/index.html",
       "date"     : "2018-09-22 12:00:00 +0530"
     } ,
   
@@ -116,7 +116,7 @@
       "title"    : "小程序加载svg图片",
       "category" : "",
       "tags"     : "Wechat, Es6",
-      "url"      : "//wechat/2018/09/10/miniAppSvg/index.html",
+      "url"      : "/wechat/2018/09/10/miniAppSvg/index.html",
       "date"     : "2018-09-10 12:00:00 +0530"
     } ,
   
@@ -124,7 +124,7 @@
       "title"    : "Nextjs中文文档",
       "category" : "",
       "tags"     : "Nextjs, SSR",
-      "url"      : "//nextjs/2018/08/31/Nextjs%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/index.html",
+      "url"      : "/nextjs/2018/08/31/Nextjs%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/index.html",
       "date"     : "2018-08-31 21:00:00 +0530"
     } ,
   
@@ -132,7 +132,7 @@
       "title"    : "git commit前检测husky与pre-commit",
       "category" : "",
       "tags"     : "git, javascript, NodeJS",
-      "url"      : "//nodejs/git/2018/08/10/preventcommit/index.html",
+      "url"      : "/nodejs/git/2018/08/10/preventcommit/index.html",
       "date"     : "2018-08-10 21:00:00 +0530"
     } ,
   
@@ -140,7 +140,7 @@
       "title"    : "小程序开发中的那些坑",
       "category" : "",
       "tags"     : "Wechat, Es6",
-      "url"      : "//wechat/2018/07/18/%E5%B0%8F%E7%A8%8B%E5%BA%8F/index.html",
+      "url"      : "/wechat/2018/07/18/%E5%B0%8F%E7%A8%8B%E5%BA%8F/index.html",
       "date"     : "2018-07-18 21:00:00 +0530"
     } ,
   
@@ -148,7 +148,7 @@
       "title"    : "Typescript合成Webpack中",
       "category" : "",
       "tags"     : "Typescript",
-      "url"      : "//typescript/2018/05/31/webbpack-ts/index.html",
+      "url"      : "/typescript/2018/05/31/webbpack-ts/index.html",
       "date"     : "2018-05-31 21:00:00 +0530"
     } ,
   
@@ -156,7 +156,7 @@
       "title"    : "几种自动生成静态站点介绍",
       "category" : "",
       "tags"     : "cli",
-      "url"      : "//cli/2018/05/05/blog/index.html",
+      "url"      : "/cli/2018/05/05/blog/index.html",
       "date"     : "2018-05-05 13:00:00 +0530"
     } ,
   
@@ -164,7 +164,7 @@
       "title"    : "自动生成不同大小形状的图片",
       "category" : "",
       "tags"     : "NodeJS, koa",
-      "url"      : "//nodejs/koa/2018/05/01/createImg/index.html",
+      "url"      : "/nodejs/koa/2018/05/01/createImg/index.html",
       "date"     : "2018-05-01 20:00:00 +0530"
     } ,
   
@@ -172,7 +172,7 @@
       "title"    : "Caddy web服务器初探",
       "category" : "serve",
       "tags"     : "serve",
-      "url"      : "//serve/2018/04/11/caddy/index.html",
+      "url"      : "/serve/2018/04/11/caddy/index.html",
       "date"     : "2018-04-11 22:00:00 +0530"
     } ,
   
@@ -180,7 +180,7 @@
       "title"    : "node自动生成最新tag版本",
       "category" : "",
       "tags"     : "NodeJS, git",
-      "url"      : "//nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/index.html",
+      "url"      : "/nodejs/git/2018/03/30/nodejs%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tag/index.html",
       "date"     : "2018-03-30 20:00:00 +0530"
     } ,
   
@@ -188,7 +188,7 @@
       "title"    : "创建脚手架 cli 入门教程",
       "category" : "cli",
       "tags"     : "cli",
-      "url"      : "//cli/2018/02/26/cli/index.html",
+      "url"      : "/cli/2018/02/26/cli/index.html",
       "date"     : "2018-02-26 20:00:00 +0530"
     } ,
   
@@ -196,7 +196,7 @@
       "title"    : "ES6从入门到精通之常量与变量(一)",
       "category" : "ES6",
       "tags"     : "ES6",
-      "url"      : "//es6/2015/08/30/es6-one/index.html",
+      "url"      : "/es6/2015/08/30/es6-one/index.html",
       "date"     : "2015-08-30 20:00:00 +0530"
     } ,
   
@@ -204,7 +204,7 @@
       "title"    : "Es6 featrues",
       "category" : "ES6",
       "tags"     : "Es6",
-      "url"      : "//es6/2015/08/28/es6-featrue/index.html",
+      "url"      : "/es6/2015/08/28/es6-featrue/index.html",
       "date"     : "2015-08-28 15:09:00 +0530"
     } 
   
