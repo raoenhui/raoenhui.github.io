@@ -7,13 +7,231 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2019-06-12T15:33:41+05:30</updated>
+<updated>2019-06-17T22:46:17+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>前端妹子</name>
   <uri>https://raoenhui.github.io/</uri>
   <email>raoenhui@jd.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[微信小程序开发注意指南和优化实践]]></title>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/wechat/2019/06/18/miniapp/"/>
+  <id>https://raoenhui.github.io/wechat/2019/06/18/miniapp</id>
+  <published>2019-06-18T21:07:00+05:30</published>
+  <updated>2019-06-18T21:07:00+05:30</updated>
+  <author>
+    <name>前端妹子</name>
+    <uri>https://raoenhui.github.io</uri>
+    <email>raoenhui@jd.com</email>
+  </author>
+  <category scheme="https://raoenhui.github.io/tags/#Wechat" term="Wechat" />
+  <content type="html">
+  
+    &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;转眼间已经参与过我厂好几个小程序的开发了，下面本妹子将开发中的那些注意点和各位小伙伴们分享下，妥妥的干货一枚。&lt;/p&gt;
+
+&lt;h2 id=&quot;一wxml&quot;&gt;一、WXML&lt;/h2&gt;
+&lt;h3 id=&quot;不要换行写有空格不行&quot;&gt;不要换行写，有空格不行&lt;/h3&gt;
+
+&lt;p&gt;微信开发者工具不会对代码进行trim操作，如果代码中换行，页面也直接换行。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-f7fbc578d51c2413.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;wrap.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;wxif-vs-hidden&quot;&gt;wx:if vs hidden&lt;/h3&gt;
+&lt;p&gt;一般来说，wx:if 有更高的切换消耗而 hidden 有更高的初始渲染消耗。因此，如果需要频繁切换的情景下，用 hidden 更好，如果在运行时条件不大可能改变则 wx:if 较好。&lt;/p&gt;
+
+&lt;h3 id=&quot;图片处理&quot;&gt;图片处理&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;1.大图片也会造成页面切换的卡顿&lt;/strong&gt;
+有一部分小程序会在页面中引用大图片，在页面后退切换中会出现掉帧卡顿的情况。
+&lt;strong&gt;2.图片占容量&lt;/strong&gt;
+代码包限制是2MB，图片占用空间较大，建议都上传到&lt;code class=&quot;highlighter-rouge&quot;&gt;CDN&lt;/code&gt;上，代码里直接引用链接。
+&lt;strong&gt;3.大图片小点击位&lt;/strong&gt;
+小程序主要在手机端运行，手机屏幕大小有限，所以尽量点击位大点。
+&lt;strong&gt;4.图片截取&lt;/strong&gt;
+存在图片没有按原图宽高比例显示，可以设置&lt;code class=&quot;highlighter-rouge&quot;&gt;image&lt;/code&gt;组件的&lt;code class=&quot;highlighter-rouge&quot;&gt;mode&lt;/code&gt;属性，来保持原图宽高比。
+&lt;strong&gt;5.CSSSprites&lt;/strong&gt;
+所有零星图片都包含到一张大图中，减少请求数&lt;/p&gt;
+
+&lt;h3 id=&quot;wxs-模块&quot;&gt;WXS 模块&lt;/h3&gt;
+&lt;p&gt;每个 wxs 模块均有一个内置的 module 对象。
+直接在wxml中引入，可以将写需要转化数据的写进去，防止给setData加负担&lt;/p&gt;
+
+&lt;h4 id=&quot;使用了过大的-wxml-节点数目&quot;&gt;使用了过大的 WXML 节点数目&lt;/h4&gt;
+&lt;p&gt;一个太大的WXML节点树会增加内存的使用，样式重排时间也会更长，建议一个页面使用少于&lt;code class=&quot;highlighter-rouge&quot;&gt;1000&lt;/code&gt;个WXML的节点，节点树深度少于&lt;code class=&quot;highlighter-rouge&quot;&gt;30&lt;/code&gt;层，子节点数不大于&lt;code class=&quot;highlighter-rouge&quot;&gt;60&lt;/code&gt;个&lt;/p&gt;
+
+&lt;h2 id=&quot;二wxss&quot;&gt;二、WXSS&lt;/h2&gt;
+
+&lt;h3 id=&quot;css伪类看不到&quot;&gt;Css伪类看不到&lt;/h3&gt;
+&lt;p&gt;在微信开发者工具中，&lt;code class=&quot;highlighter-rouge&quot;&gt;Styles&lt;/code&gt;不会显示&lt;code class=&quot;highlighter-rouge&quot;&gt;Css&lt;/code&gt;伪类，喜欢写::before或:first-child的小伙伴们请注意了，你的伪类在控制台是看不到的,所以本妹子不建议在小程序里用&lt;code class=&quot;highlighter-rouge&quot;&gt;Css&lt;/code&gt;伪类，以防找不到问题点不好修复bug。&lt;/p&gt;
+
+&lt;p&gt;小程序&lt;code class=&quot;highlighter-rouge&quot;&gt;button&lt;/code&gt;自带给&lt;code class=&quot;highlighter-rouge&quot;&gt;after&lt;/code&gt;伪类添加了边框，通过开发者工具是看不到&lt;code class=&quot;highlighter-rouge&quot;&gt;after&lt;/code&gt;,我们需要自行去掉边框。&lt;/p&gt;
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;::after&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;hover&lt;/code&gt;伪类则可以用小程序自带的属性&lt;code class=&quot;highlighter-rouge&quot;&gt;hover-class&lt;/code&gt;代替。&lt;/p&gt;
+
+&lt;h3 id=&quot;部分css3属性不能用&quot;&gt;部分CSS3属性不能用&lt;/h3&gt;
+
+&lt;p&gt;如transform:rotate(180deg)，不能用。&lt;/p&gt;
+
+&lt;h3 id=&quot;自定义颜色限制&quot;&gt;自定义颜色限制&lt;/h3&gt;
+&lt;p&gt;不是所以颜色配置都能随心所欲，比如导航栏标题颜色，仅支持 black / white；下拉 loading 的样式，仅支持 dark / light。所以出视觉图关注下。&lt;/p&gt;
+
+&lt;h4 id=&quot;滚动区域没有开启惯性滚动&quot;&gt;滚动区域没有开启惯性滚动&lt;/h4&gt;
+&lt;p&gt;当加了overflow: scroll时，&lt;code class=&quot;highlighter-rouge&quot;&gt;IOS&lt;/code&gt;下需要额外设置：
+  -webkit-overflow-scrolling: touch，来开启惯性滚动。&lt;/p&gt;
+
+&lt;h2 id=&quot;三js&quot;&gt;三、JS&lt;/h2&gt;
+&lt;h3 id=&quot;javascript-支持情况&quot;&gt;JavaScript 支持情况&lt;/h3&gt;
+&lt;p&gt;如果需要支持到&lt;code class=&quot;highlighter-rouge&quot;&gt;IOS8&lt;/code&gt;话，建议下面&lt;code class=&quot;highlighter-rouge&quot;&gt;js&lt;/code&gt;方法都不使用。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-bef0c0dfd25b5fdc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;分享事件不支持异步&quot;&gt;分享事件不支持异步&lt;/h3&gt;
+
+&lt;p&gt;如果你想自定义分享图片，则在生命周期onShareAppMessage中编写如下所示：&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;Page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;onShareAppMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'自定义转发标题'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;imageUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'https://raoenhui.github.io/images/logo.png'&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;但是&lt;code class=&quot;highlighter-rouge&quot;&gt;onShareAppMessage&lt;/code&gt;不能支持异步，如果你想从接口里获取分享图片URL，必须在&lt;code class=&quot;highlighter-rouge&quot;&gt;onLoad&lt;/code&gt;提前读取并放入Data中&lt;/p&gt;
+
+&lt;h3 id=&quot;小程序有并发限制&quot;&gt;小程序有并发限制&lt;/h3&gt;
+&lt;p&gt;wx.request、wx.uploadFile、wx.downloadFile 的最大并发限制是 10 个。&lt;/p&gt;
+
+&lt;p&gt;所有为了保险起见，需要写个请求队列，如果并发量大于10，则等待请求。&lt;/p&gt;
+
+&lt;h3 id=&quot;采用公共方法和组件&quot;&gt;采用公共方法和组件&lt;/h3&gt;
+&lt;p&gt;编写公共方法和组件，可以避免重复造轮子。
+1.公共埋点方法
+2.各种处理js的方法（转https，throttle，formatTime等）
+3.公共组件（iphonex兼容组件，倒计时组件等）&lt;/p&gt;
+
+&lt;h3 id=&quot;catch绑定事件&quot;&gt;catch绑定事件&lt;/h3&gt;
+&lt;p&gt;比如&lt;code class=&quot;highlighter-rouge&quot;&gt;catchtouchmove&lt;/code&gt;弹框禁止滑动
+bind事件绑定不会阻止冒泡事件向上冒泡，catch事件绑定可以阻止冒泡事件向上冒泡。&lt;/p&gt;
+
+&lt;h3 id=&quot;循环中添加key&quot;&gt;循环中添加key&lt;/h3&gt;
+&lt;p&gt;对于经常要更新的列表需要加上&lt;code class=&quot;highlighter-rouge&quot;&gt;key&lt;/code&gt;值，key值相当于索引，但是&lt;code class=&quot;highlighter-rouge&quot;&gt;key&lt;/code&gt;值不要用&lt;code class=&quot;highlighter-rouge&quot;&gt;index&lt;/code&gt;,因为&lt;code class=&quot;highlighter-rouge&quot;&gt;index&lt;/code&gt;在增加删除的时候可能不变产生混乱，推荐用唯一标示&lt;code class=&quot;highlighter-rouge&quot;&gt;id&lt;/code&gt;，对数据改变之后的diff更新比较有很大的性能提升。
+PS：如果是单纯只显示的列表，不需要操作更新，那不需要加&lt;code class=&quot;highlighter-rouge&quot;&gt;key&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h3 id=&quot;巧用nexttick&quot;&gt;巧用nextTick&lt;/h3&gt;
+&lt;p&gt;小程序和vue写法比较相似，也有&lt;code class=&quot;highlighter-rouge&quot;&gt;nextTick &lt;/code&gt;,在当前同步流程结束后，下一个时间片执行 。
+比如有些取视图层的数据，可以等页面上流程结束后再取比较准确&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;wx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;nextTick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'.percent-line-toast'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;boundingClientRect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; 
+    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;处理后台运行的js&quot;&gt;处理后台运行的js&lt;/h3&gt;
+&lt;p&gt;setTimeout一定伴随着clearTimeout
+setInterval一定伴随着clearInterval
+这些我们经常会滚动算高度，倒计时，动画中用到。当我跳到了另外一个页面还在运行，小心后台页面的js&lt;/p&gt;
+
+&lt;h3 id=&quot;wxhide的坑&quot;&gt;wx.hide的坑&lt;/h3&gt;
+&lt;p&gt;两个都是基于同一个原生toast实例实现的，wx.showLoading()与wx.showToast(), 同时只能显示一个，
+wx.hideLoading()也会隐藏Toast ; wx.hideToast()也会隐藏Loading，
+失败的提示toast会一闪而过的问题，可能时因为调用了wx.hideLoading()。&lt;/p&gt;
+
+&lt;h3 id=&quot;http需变https&quot;&gt;http需变https&lt;/h3&gt;
+&lt;p&gt;HTTP是明文传输有篡改内容的风险，而且有些安卓机会不兼容。所以我们需要使用https。 所以开需求评审的时候，要注意后端要写成https，如果是运营配的数据，后端最好有个转https方法，输入了url自动转成https链接。&lt;/p&gt;
+
+&lt;p&gt;在微信开发者工具中，可勾选”不校验合法域名、web-view（业务域名）、TLS 版本以及 HTTPS 证书”规则即可用http，但是在实体里并没有这个选项，所以建议开发时就用https路径。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-9e913b9a449c2f99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;https.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;埋点的坑&quot;&gt;埋点的坑&lt;/h3&gt;
+
+&lt;p&gt;埋点用公共方法，页面曝光&lt;code class=&quot;highlighter-rouge&quot;&gt;pv&lt;/code&gt;埋点放入&lt;code class=&quot;highlighter-rouge&quot;&gt;onshow&lt;/code&gt;生命周期中更加准确。&lt;/p&gt;
+
+&lt;h3 id=&quot;预加载&quot;&gt;预加载&lt;/h3&gt;
+
+&lt;p&gt;1.数据预加载
+上个页面就将接口请求好，存到对象中，下个页面直接从对象中拿，有利有弊，从业务角度出发看是否需要预加载数据
+storage也可以存储数据，同一个微信用户，同一个小程序 storage 上限为 10MB。&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;分包预加载preloadRule
+&lt;code class=&quot;highlighter-rouge&quot;&gt;preloadRule&lt;/code&gt;预下载分包行为在进入某个页面时触发，享有共同的预下载大小限额 2M。
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;preloadRule&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+ &lt;span class=&quot;s2&quot;&gt;&quot;sub1/index&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;s2&quot;&gt;&quot;packages&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;important&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;3.图片预加载
+对视觉效果要求越来越高，多张图片如果想动画显示流畅，可以先加载图片，直接用request先请求图片下来。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;setdata注意点&quot;&gt;setData注意点&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;1. 频繁的去 setData&lt;/strong&gt;
+存在将未绑定在 WXML 的变量都不需要传入 setData。
+&lt;strong&gt;2. 每次 setData 都传递大量新数据，可局部更新&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;newList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;3. 后台态页面进行 setData&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;当页面进入后台态（用户不可见），不应该继续去进行&lt;code class=&quot;highlighter-rouge&quot;&gt;setData&lt;/code&gt;，后台态页面的渲染用户是无法感受的，另外后台态页面去&lt;code class=&quot;highlighter-rouge&quot;&gt;setData&lt;/code&gt;也会抢占前台页面的执行。也就是上文提到的不要忘了&lt;code class=&quot;highlighter-rouge&quot;&gt;clearTimeout&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;clearInterval&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h2 id=&quot;四其他&quot;&gt;四、其他&lt;/h2&gt;
+&lt;h3 id=&quot;使用分包&quot;&gt;使用分包&lt;/h3&gt;
+
+&lt;p&gt;由于小程序包大小有限制，整个小程序所有分包(包括独立分包和普通分包)大小不超过 8M，单个分包/主包大小不能超过 2M，建议把首屏不需要展示的都放入分包中，分包就像H5打出的chunk包一样，可以按需加载。&lt;/p&gt;
+
+&lt;h3 id=&quot;及时清理没有使用到的代码和资源&quot;&gt;及时清理没有使用到的代码和资源&lt;/h3&gt;
+
+&lt;p&gt;在日常开发的时候，我们可能引入了一些新的库文件，而过了一段时间后，由于各种原因又不再使用这个库了，我们常常会只是去掉了代码里的引用，而忘记删掉这类库文件了。目前小程序打包是会将工程下所有文件都打入代码包内，也就是说，这些没有被实际使用到的库文件和资源也会被打入到代码包里，从而影响到整体代码包的大小。&lt;/p&gt;
+
+&lt;h3 id=&quot;sitemap-配置&quot;&gt;sitemap 配置&lt;/h3&gt;
+
+&lt;p&gt;小程序根目录下的 &lt;a href=&quot;https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/sitemap.html&quot;&gt;sitemap.json&lt;/a&gt;文件用于配置小程序及其页面是否允许被微信索引，文件内容为一个 JSON 对象，如果没有 sitemap.json ，则默认为所有页面都允许被索引.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-bd571660e51d86df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;单元测试&quot;&gt;单元测试&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/unit-test.html&quot;&gt;miniprogram-simulate&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;模拟 touch 事件、自定义事件触发
+选取子节点
+更新自定义组件数据
+触发生命周期&lt;/p&gt;
+
+&lt;h3 id=&quot;检测工具&quot;&gt;检测工具&lt;/h3&gt;
+
+&lt;p&gt;开发者工具自带检测评分页面，可以分析页面存在的问题。
+&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-fddab9b1db46c648.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;
+wxss 覆盖率较低，有些动画样式比如&lt;code class=&quot;highlighter-rouge&quot;&gt;@keyframes&lt;/code&gt;是检测不到的。&lt;/p&gt;
+
+&lt;p&gt;以及可以通过性能面板查看页面性能。
+&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-5b6be29413a42b28.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;小伙伴们有其他建议欢迎留言评论^ ^&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;相关链接&quot;&gt;相关链接&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://developers.weixin.qq.com/miniprogram/dev/framework/&quot;&gt;微信开发指南&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Happy coding .. :)&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/wechat/2019/06/18/miniapp/&quot;&gt;微信小程序开发注意指南和优化实践&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on June 18, 2019.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -4094,72 +4312,6 @@ prevent commit时，我们可以把&lt;code class=&quot;highlighter-rouge&quot;&
 
   
   &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/typescript/2018/05/31/webbpack-ts/&quot;&gt;Typescript合成Webpack中&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on May 31, 2018.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[几种自动生成静态站点介绍]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/cli/2018/05/05/blog/"/>
-  <id>https://raoenhui.github.io/cli/2018/05/05/blog</id>
-  <published>2018-05-05T13:00:00+05:30</published>
-  <updated>2018-05-05T13:00:00+05:30</updated>
-  <author>
-    <name>前端妹子</name>
-    <uri>https://raoenhui.github.io</uri>
-    <email>raoenhui@jd.com</email>
-  </author>
-  <category scheme="https://raoenhui.github.io/tags/#cli" term="cli" />
-  <content type="html">
-  
-    &lt;h2 id=&quot;第一步-前言&quot;&gt;第一步 前言&lt;/h2&gt;
-
-&lt;p&gt;如何创建一个CMS网站，WordPress无疑是最好的选择。但是如果只生成静态站点，那便有很多千秋各异的选择，下面我将一一介绍。&lt;/p&gt;
-
-&lt;h2 id=&quot;第二步-介绍&quot;&gt;第二步 介绍&lt;/h2&gt;
-
-&lt;h3 id=&quot;jekyll&quot;&gt;Jekyll&lt;/h3&gt;
-
-&lt;p&gt;Jekyll是最流行的生成器。它主要是通过Ruby编译自动生成GitHub页面，所以在个人项目和文档中非常流行
-。而且它还有一个庞大的用户群和一个大的插件目录，这是个很大的优势。&lt;/p&gt;
-
-&lt;h3 id=&quot;hugo&quot;&gt;Hugo&lt;/h3&gt;
-
-&lt;p&gt;Hugo很像Jekyll，但是它对比Jekyll的优势是编译速度特别快，当有很多篇博客时，Jekyll的编译速度会非常慢。&lt;br /&gt;
-而且Hugo创建一个网站只要几秒，里面剥离了很多抽象的东西，使用户不需要配置很多东西变可以快速建站，对用户来说更加简单。&lt;/p&gt;
-
-&lt;h3 id=&quot;hexo&quot;&gt;Hexo&lt;/h3&gt;
-
-&lt;p&gt;Hexo是一个新出现的技术，它是NodeJs编译生成的。大部分用于创建博客平台。它有着Jekyll的可扩展性和Hugo的速度，而且用nodejs起服务，对前端工程师来说是个不错的选择。&lt;/p&gt;
-
-&lt;h3 id=&quot;wintersmith&quot;&gt;Wintersmith&lt;/h3&gt;
-
-&lt;p&gt;Wintersmith也是一个用NodeJs来编译的生成器。它最大的不同点就是非常的简单，它就想一个平台，你可以安装很多插件来满足你的需求。它需要一些精力去安装插件调整后才能进行工作，但是这样也给了用户更多的空间去自定义化。&lt;/p&gt;
-
-&lt;h3 id=&quot;gatsby&quot;&gt;Gatsby&lt;/h3&gt;
-
-&lt;p&gt;Gatsby是最新也是最有趣的生成器。它将静态页面引入框架中，它使用React和Webpack来做单页应用管理你的网页内容。它根据自己的需求移除很多配置项，给开发人员提供了个简单高效的解决方案，最终将生成一个现代和高端应用程序。
-事实上，Gatsby可以用来做很多事情，而不仅仅是生成一个博客。它的真正极限还没有被发现。很多React开发人员正在自发参与Gatsby的开发，Gatsby会越来越完善。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/180505/stackshare.png&quot; alt=&quot;website&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://stackshare.io/stackups/gatsby-vs-wintersmith-vs-hugo-vs-hexo-vs-jekyll&quot;&gt;StackShare&lt;/a&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&quot;https://jekyllrb.com&quot;&gt;https://jekyllrb.com&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://gohugo.io/&quot;&gt;https://gohugo.io&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://hexo.io&quot;&gt;https://hexo.io&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;http://wintersmith.io/&quot;&gt;http://wintersmith.io&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/&quot;&gt;https://www.gatsbyjs.org&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;来源译：&lt;a href=&quot;https://medium.freecodecamp.org/static-sites-are-back-24d01a01f11a&quot;&gt;https://medium.freecodecamp.org/static-sites-are-back-24d01a01f11a&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Happy coding .. :)&lt;/p&gt;
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/cli/2018/05/05/blog/&quot;&gt;几种自动生成静态站点介绍&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on May 05, 2018.&lt;/p&gt;</content>
 </entry>
 
 </feed>
