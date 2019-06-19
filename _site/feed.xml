@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2019-06-19T17:12:09+05:30</updated>
+<updated>2019-06-19T17:50:05+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>前端妹子</name>
@@ -33,6 +33,9 @@
     &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;转眼间已经参与过我厂好几个小程序的开发了，下面本妹子将开发中的那些注意点和各位小伙伴们分享下，妥妥的干货一枚。&lt;/p&gt;
 
+&lt;p&gt;&lt;strong&gt;其中培训视频以上传到B站中，欢迎小伙伴们来围观评论^ ^&lt;/strong&gt;
+&lt;a href=&quot;https://www.bilibili.com/video/av56083647&quot;&gt;https://www.bilibili.com/video/av56083647&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;一wxml&quot;&gt;一、WXML&lt;/h2&gt;
 &lt;h3 id=&quot;不要换行写有空格不行&quot;&gt;不要换行写，有空格不行&lt;/h3&gt;
 
@@ -45,21 +48,25 @@
 
 &lt;h3 id=&quot;图片处理&quot;&gt;图片处理&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;1.大图片也会造成页面切换的卡顿&lt;/strong&gt;
-有一部分小程序会在页面中引用大图片，在页面后退切换中会出现掉帧卡顿的情况。
-&lt;strong&gt;2.图片占容量&lt;/strong&gt;
-代码包限制是2MB，图片占用空间较大，建议都上传到&lt;code class=&quot;highlighter-rouge&quot;&gt;CDN&lt;/code&gt;上，代码里直接引用链接。
-&lt;strong&gt;3.大图片小点击位&lt;/strong&gt;
-小程序主要在手机端运行，手机屏幕大小有限，所以尽量点击位大点。
-&lt;strong&gt;4.图片截取&lt;/strong&gt;
-存在图片没有按原图宽高比例显示，可以设置&lt;code class=&quot;highlighter-rouge&quot;&gt;image&lt;/code&gt;组件的&lt;code class=&quot;highlighter-rouge&quot;&gt;mode&lt;/code&gt;属性，来保持原图宽高比。
-&lt;strong&gt;5.CSSSprites&lt;/strong&gt;
+有一部分小程序会在页面中引用大图片，在页面后退切换中会出现掉帧卡顿的情况。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2.图片占容量&lt;/strong&gt;
+代码包限制是2MB，图片占用空间较大，建议都上传到&lt;code class=&quot;highlighter-rouge&quot;&gt;CDN&lt;/code&gt;上，代码里直接引用链接。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3.大图片小点击位&lt;/strong&gt;
+小程序主要在手机端运行，手机屏幕大小有限，所以尽量点击位大点。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;4.图片截取&lt;/strong&gt;
+存在图片没有按原图宽高比例显示，可以设置&lt;code class=&quot;highlighter-rouge&quot;&gt;image&lt;/code&gt;组件的&lt;code class=&quot;highlighter-rouge&quot;&gt;mode&lt;/code&gt;属性，来保持原图宽高比。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;5.CSSSprites&lt;/strong&gt;
 所有零星图片都包含到一张大图中，减少请求数&lt;/p&gt;
 
 &lt;h3 id=&quot;wxs-模块&quot;&gt;WXS 模块&lt;/h3&gt;
 &lt;p&gt;每个 wxs 模块均有一个内置的 module 对象。
 直接在wxml中引入，可以将写需要转化数据的写进去，防止给setData加负担&lt;/p&gt;
 
-&lt;h4 id=&quot;使用了过大的-wxml-节点数目&quot;&gt;使用了过大的 WXML 节点数目&lt;/h4&gt;
+&lt;h3 id=&quot;使用了过大的-wxml-节点数目&quot;&gt;使用了过大的 WXML 节点数目&lt;/h3&gt;
 &lt;p&gt;一个太大的WXML节点树会增加内存的使用，样式重排时间也会更长，建议一个页面使用少于&lt;code class=&quot;highlighter-rouge&quot;&gt;1000&lt;/code&gt;个WXML的节点，节点树深度少于&lt;code class=&quot;highlighter-rouge&quot;&gt;30&lt;/code&gt;层，子节点数不大于&lt;code class=&quot;highlighter-rouge&quot;&gt;60&lt;/code&gt;个&lt;/p&gt;
 
 &lt;h2 id=&quot;二wxss&quot;&gt;二、WXSS&lt;/h2&gt;
@@ -81,7 +88,7 @@
 &lt;h3 id=&quot;自定义颜色限制&quot;&gt;自定义颜色限制&lt;/h3&gt;
 &lt;p&gt;不是所以颜色配置都能随心所欲，比如导航栏标题颜色，仅支持 black / white；下拉 loading 的样式，仅支持 dark / light。所以出视觉图关注下。&lt;/p&gt;
 
-&lt;h4 id=&quot;滚动区域没有开启惯性滚动&quot;&gt;滚动区域没有开启惯性滚动&lt;/h4&gt;
+&lt;h3 id=&quot;滚动区域没有开启惯性滚动&quot;&gt;滚动区域没有开启惯性滚动&lt;/h3&gt;
 &lt;p&gt;当加了overflow: scroll时，&lt;code class=&quot;highlighter-rouge&quot;&gt;IOS&lt;/code&gt;下需要额外设置：
   -webkit-overflow-scrolling: touch，来开启惯性滚动。&lt;/p&gt;
 
@@ -158,20 +165,17 @@ wx.hideLoading()也会隐藏Toast ; wx.hideToast()也会隐藏Loading，
 
 &lt;p&gt;1.数据预加载
 上个页面就将接口请求好，存到对象中，下个页面直接从对象中拿，有利有弊，从业务角度出发看是否需要预加载数据
-storage也可以存储数据，同一个微信用户，同一个小程序 storage 上限为 10MB。&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;分包预加载preloadRule
-&lt;code class=&quot;highlighter-rouge&quot;&gt;preloadRule&lt;/code&gt;预下载分包行为在进入某个页面时触发，享有共同的预下载大小限额 2M。
-    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;preloadRule&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
- &lt;span class=&quot;s2&quot;&gt;&quot;sub1/index&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-   &lt;span class=&quot;s2&quot;&gt;&quot;packages&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;important&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
- &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+storage也可以存储数据，同一个微信用户，同一个小程序 storage 上限为 10MB。
+2.分包预加载preloadRule
+&lt;code class=&quot;highlighter-rouge&quot;&gt;preloadRule&lt;/code&gt;预下载分包行为在进入某个页面时触发，享有共同的预下载大小限额 2M。&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;preloadRule&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;sub1/index&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&quot;packages&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;important&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-    &lt;p&gt;3.图片预加载
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;3.图片预加载
 对视觉效果要求越来越高，多张图片如果想动画显示流畅，可以先加载图片，直接用request先请求图片下来。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
 
 &lt;h3 id=&quot;setdata注意点&quot;&gt;setData注意点&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;1. 频繁的去 setData&lt;/strong&gt;
@@ -217,10 +221,7 @@ wxss 覆盖率较低，有些动画样式比如&lt;code class=&quot;highlighter-
 &lt;p&gt;以及可以通过性能面板查看页面性能。
 &lt;img src=&quot;https://raoenhui.github.io/images/190618/6.jpg&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;其中培训视频以上传到B站中，欢迎小伙伴们来围观评论^ ^&lt;/strong&gt;
-&lt;a href=&quot;https://www.bilibili.com/video/av56083647&quot;&gt;https://www.bilibili.com/video/av56083647&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;相关链接&quot;&gt;相关链接&lt;/h3&gt;
+&lt;h2 id=&quot;相关链接&quot;&gt;相关链接&lt;/h2&gt;
 &lt;blockquote&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&quot;https://developers.weixin.qq.com/miniprogram/dev/framework/&quot;&gt;微信开发指南&lt;/a&gt;&lt;/li&gt;
