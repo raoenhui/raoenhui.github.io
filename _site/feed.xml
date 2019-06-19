@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2019-06-17T22:46:17+05:30</updated>
+<updated>2019-06-19T14:37:12+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>前端妹子</name>
@@ -38,7 +38,7 @@
 
 &lt;p&gt;微信开发者工具不会对代码进行trim操作，如果代码中换行，页面也直接换行。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-f7fbc578d51c2413.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;wrap.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/190618/1.jpg&quot; alt=&quot;wrap.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;wxif-vs-hidden&quot;&gt;wx:if vs hidden&lt;/h3&gt;
 &lt;p&gt;一般来说，wx:if 有更高的切换消耗而 hidden 有更高的初始渲染消耗。因此，如果需要频繁切换的情景下，用 hidden 更好，如果在运行时条件不大可能改变则 wx:if 较好。&lt;/p&gt;
@@ -89,7 +89,7 @@
 &lt;h3 id=&quot;javascript-支持情况&quot;&gt;JavaScript 支持情况&lt;/h3&gt;
 &lt;p&gt;如果需要支持到&lt;code class=&quot;highlighter-rouge&quot;&gt;IOS8&lt;/code&gt;话，建议下面&lt;code class=&quot;highlighter-rouge&quot;&gt;js&lt;/code&gt;方法都不使用。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-bef0c0dfd25b5fdc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/190618/2.jpg&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;分享事件不支持异步&quot;&gt;分享事件不支持异步&lt;/h3&gt;
 
@@ -148,7 +148,7 @@ wx.hideLoading()也会隐藏Toast ; wx.hideToast()也会隐藏Loading，
 
 &lt;p&gt;在微信开发者工具中，可勾选”不校验合法域名、web-view（业务域名）、TLS 版本以及 HTTPS 证书”规则即可用http，但是在实体里并没有这个选项，所以建议开发时就用https路径。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-9e913b9a449c2f99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;https.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/190618/3.jpg&quot; alt=&quot;https.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;埋点的坑&quot;&gt;埋点的坑&lt;/h3&gt;
 
@@ -198,7 +198,7 @@ storage也可以存储数据，同一个微信用户，同一个小程序 storag
 
 &lt;p&gt;小程序根目录下的 &lt;a href=&quot;https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/sitemap.html&quot;&gt;sitemap.json&lt;/a&gt;文件用于配置小程序及其页面是否允许被微信索引，文件内容为一个 JSON 对象，如果没有 sitemap.json ，则默认为所有页面都允许被索引.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-bd571660e51d86df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raoenhui.github.io/images/190618/4.jpg&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;单元测试&quot;&gt;单元测试&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/unit-test.html&quot;&gt;miniprogram-simulate&lt;/a&gt;&lt;/p&gt;
@@ -211,13 +211,14 @@ storage也可以存储数据，同一个微信用户，同一个小程序 storag
 &lt;h3 id=&quot;检测工具&quot;&gt;检测工具&lt;/h3&gt;
 
 &lt;p&gt;开发者工具自带检测评分页面，可以分析页面存在的问题。
-&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-fddab9b1db46c648.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;
+&lt;img src=&quot;https://raoenhui.github.io/images/190618/5.jpg&quot; alt=&quot;image.png&quot; /&gt;
 wxss 覆盖率较低，有些动画样式比如&lt;code class=&quot;highlighter-rouge&quot;&gt;@keyframes&lt;/code&gt;是检测不到的。&lt;/p&gt;
 
 &lt;p&gt;以及可以通过性能面板查看页面性能。
-&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-5b6be29413a42b28.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;https://raoenhui.github.io/images/190618/6.jpg&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;小伙伴们有其他建议欢迎留言评论^ ^&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;其中培训视频以上传到B站中，欢迎小伙伴们来围观评论^ ^&lt;/strong&gt;
+&lt;a href=&quot;https://www.bilibili.com/video/av56083647&quot;&gt;https://www.bilibili.com/video/av56083647&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;相关链接&quot;&gt;相关链接&lt;/h3&gt;
 &lt;blockquote&gt;
