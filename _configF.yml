@@ -1,0 +1,82 @@
+title:            前端妹子的博客
+description:      "一枚前端攻城狮!"
+logo:             logo.png
+disqus_shortname: 饶恩慧
+share:            true
+dropcap:	   true
+# Change url to your domain. Leave localhost server or blank when working locally.
+# or use the hint from http://jekyllrb.com/docs/github-pages/ to keep this the same 
+# whether working locally or remotely. Start Jekyll with: jekyll serve --baseurl ''
+#url:     /
+#url:        	 https://raoenhui.github.io
+#baseurl:     /
+#url:         http://localhost:4000
+# Owner/author information
+owner:
+  name:           前端妹子
+  avatar:         logo.png
+  email:          raoenhui@jd.com
+  # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
+  description:    Programming is 1% knowledge, 2% ability and 97% getting the ability to work with the knowledge :)
+  # Social networking links used in footer. Update and remove as you like.
+  twitter:        前端妹子
+  facebook:       前端妹子
+  github:         前端妹子    
+  instagram:      前端妹子
+  # For Google Authorship https://plus.google.com/authorship
+  google_plus:    https://plus.google.com/u/0/+AmeyJadiye
+
+# Analytics and webmaster tools stuff goes here
+google_analytics:   UA-46791108-1
+google_verify:      
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:         
+
+# Links to include in footer navigation
+# For external links add external: true
+links:
+  - title: 主页
+    url: /
+    external: false
+    icon: home
+  - title: 目录
+    url: /categories
+  - title: 关于
+    url: /about
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    Asia/Calcutta
+future:      true
+highlighter: rouge
+markdown:    kramdown
+paginate:    5
+paginate_path: "page:num"
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   pretty
+
+kramdown:
+  auto_ids: true
+  parse_block_html: false
+  parse_span_html: false
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
+  syntax_highlighter_opts:
+    line_numbers: 
+    line_numbers_start: 1
+    tab_width: 4
+    bold_every: 10
+    css: class
+    
+plugins: [jekyll-paginate]
+
+plugins_dir:
+- jemoji
+- jekyll-paginate
+
+
+
+

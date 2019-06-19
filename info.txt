@@ -16,5 +16,5 @@ ruby 2.4.4p296 (2018-03-28 revision 63013) [x86_64-darwin15]
 图片截图 宽900px
 Liquid配置参考链接：https://shopify.github.io/liquid/basics/introduction/
 
-将config中的“url:https://raoenhui.github.io”注释，再build后拷贝
-scp -r /HD/mycode/raoenhui.github.io/_site root@47.98.138.195:/ice/blog
+将config中的“url:https://raoenhui.github.io”注释，再jekyll build后拷贝
+jekyll build --config _configF.yml -d _siteF && scp -r /HD/mycode/raoenhui.github.io/_siteF root@47.98.138.195:/ice/blog
