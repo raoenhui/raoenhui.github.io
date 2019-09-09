@@ -7,13 +7,97 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2019-08-15T22:20:45+05:30</updated>
+<updated>2019-09-09T17:44:47+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>前端妹子</name>
   <uri>https://raoenhui.github.io/</uri>
   <email>raoenhui@jd.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[google adsense 添加自动广告]]></title>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/js/2019/09/03/googleAd/"/>
+  <id>https://raoenhui.github.io/js/2019/09/03/googleAd</id>
+  <published>2019-09-03T09:07:00+05:30</published>
+  <updated>2019-09-03T09:07:00+05:30</updated>
+  <author>
+    <name>前端妹子</name>
+    <uri>https://raoenhui.github.io</uri>
+    <email>raoenhui@jd.com</email>
+  </author>
+  <category scheme="https://raoenhui.github.io/tags/#Js" term="Js" /><category scheme="https://raoenhui.github.io/tags/#Es6" term="Es6" />
+  <content type="html">
+  
+    &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;很多大佬写自己网站是为了开源给大家做贡献，如果可以景上添花，通过广告给自己带来写一定收入，岂不是达到作者与读者的双赢状态。
+那么如果要&lt;code class=&quot;highlighter-rouge&quot;&gt;插入广告&lt;/code&gt;，怎么才能发到用户体验良好，但是广告曝光率又高呢。毕竟我们也不是专业的运营同学，&lt;code class=&quot;highlighter-rouge&quot;&gt;google&lt;/code&gt;做为全球最大的广告商，已经给我们提供了插入自动广告的方法。&lt;/p&gt;
+
+&lt;h3 id=&quot;自动广告优势&quot;&gt;自动广告优势&lt;/h3&gt;
+&lt;p&gt;自动广告是一种广告格式系列，您可以将同一段广告代码放置在每个网页中，放置一次即可。在您添加代码后，Google 将在很有可能取得出色效果并提供良好用户体验的理想时机自动展示广告。
+自动广告的优势包括：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;让您能够集中精力创作精彩内容。自动广告会自动为您放置和优化广告，您不必亲历亲为，如此可节省时间。
+有望提升您的收入。自动广告会分析您的网页，然后根据您的布局、内容和现有 Google 广告找到新位置来展示广告。
+易于使用。您只需将同一段代码放置在要展示自动广告的每个网页中，放置一次即可。其余工作 Google 将为您代劳。
+响应式。网页显示在不同尺寸的浏览器中，都能自动帮你将广告插入合适的位置。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-ee8e7c88dbd7ae12.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-2b5b09a3c8b7dbbf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;自动广告添加&quot;&gt;自动广告添加&lt;/h3&gt;
+&lt;p&gt;首先注册好&lt;a href=&quot;https://www.google.com/adsense&quot;&gt;谷歌广告的账号&lt;/a&gt;;
+点击设置自动广告;
+&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-be95666d70e7e585.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;复制此代码并将其粘贴到您网站的 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt; 标记之间。您所有网页均使用的是这一代码。即使您更改了全局设置，也无需更改此代码。&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;adsbygoogle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;adsbygoogle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;google_ad_client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ca-pub-xxxxxxxxxx&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;enable_page_level_ads&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;于是已经成功，非常简单。&lt;/p&gt;
+
+&lt;h3 id=&quot;自动广告配置&quot;&gt;自动广告配置&lt;/h3&gt;
+&lt;p&gt;可以通过配置选择你想要的广告类型，小白的话建议全选，然后看自己网站如果有不合适的类型再一一关闭。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://support.google.com/adsense/answer/7478040?hl=zh-Hans&amp;amp;ref_topic=1307438&quot;&gt;穿插广告、锚定广告、展示广告、文章内嵌广告、信息流广告、匹配内容&lt;/a&gt;
+&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-ca2182a70823283c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;新建群组配置不同广告类型&quot;&gt;新建群组配置不同广告类型&lt;/h3&gt;
+&lt;p&gt;如果想要在网站的不同部分显示不同的广告设置。可以新建群组&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-7b6eb1fb01bb04c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;
+可以创建下面各项创建网址群组：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;网域，例如 example.com
+子网域，例如 forums.example.com
+版块，例如 example.com/directory/
+网页，例如 example.com/directory/page.html&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;然后为新增的群组配置不同广告类型即可。&lt;/p&gt;
+
+&lt;h3 id=&quot;其他&quot;&gt;其他&lt;/h3&gt;
+&lt;p&gt;下面给小伙伴们看看本妹子的广告位，一般帮我自动插入网页最下面呢～～
+&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-36a77d5568dc1975.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Happy coding .. :)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;https://support.google.com/adsense/answer/7478040?hl=zh-Hans&amp;amp;ref_topic=1307438&quot;&gt;自动广告简介&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/js/2019/09/03/googleAd/&quot;&gt;google adsense 添加自动广告&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on September 03, 2019.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -4160,108 +4244,6 @@ prevent commit时，我们可以把&lt;code class=&quot;highlighter-rouge&quot;&
 
   
   &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/nodejs/git/2018/08/10/preventcommit/&quot;&gt;git commit前检测husky与pre-commit&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on August 10, 2018.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[小程序开发中的那些坑]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/wechat/2018/07/18/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-  <id>https://raoenhui.github.io/wechat/2018/07/18/小程序</id>
-  <published>2018-07-18T21:00:00+05:30</published>
-  <updated>2018-07-18T21:00:00+05:30</updated>
-  <author>
-    <name>前端妹子</name>
-    <uri>https://raoenhui.github.io</uri>
-    <email>raoenhui@jd.com</email>
-  </author>
-  <category scheme="https://raoenhui.github.io/tags/#Wechat" term="Wechat" /><category scheme="https://raoenhui.github.io/tags/#Es6" term="Es6" />
-  <content type="html">
-  
-    &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
-
-&lt;p&gt;最近小程序特别火，不用安装，即开即用，用完就走。省流量，省安装时间等等优势吸引了大量用户，几乎所有大厂的APP都有小程序版本。我厂也有开发，所以我也加入了开发小程序的队伍，开发中的那些注意点和各位小伙伴们分享下。&lt;/p&gt;
-
-&lt;h3 id=&quot;一css伪类看不到&quot;&gt;一.css伪类看不到&lt;/h3&gt;
-
-&lt;p&gt;在微信开发者工具中，Styles不会显示css伪类，喜欢写::before或:first-child的小伙伴们请注意了，你的伪类在控制台是看不到的。&lt;/p&gt;
-
-&lt;p&gt;建议不要在公共css文件夹下写伪类，本妹子就遇到过这个坑，某小伙伴在公共css上写了按钮的after加了个边框样式，找了好久才找到这个边框写在哪。&lt;/p&gt;
-
-&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nt&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;::after&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
- 	  &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rpx&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
- &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-f4ec3d52aa3df3dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;after.png&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;二https&quot;&gt;二.https&lt;/h3&gt;
-
-&lt;p&gt;小程序的图片只支持https://…的URL，后台接口不能传//或http://,否则有些安卓机会不兼容&lt;/p&gt;
-
-&lt;p&gt;在微信开发者工具中，可勾选”不校验合法域名、web-view（业务域名）、TLS 版本以及 HTTPS 证书”规则即可用http，但是在实体里并没有这个选项，所以建议开发时就用https路径。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-9e913b9a449c2f99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;https.png&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;三不要换行写有空格不行&quot;&gt;三.不要换行写，有空格不行&lt;/h3&gt;
-
-&lt;p&gt;微信开发者工具不会对代码进行trim操作，如果代码中换行，页面也直接换行。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-f7fbc578d51c2413.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;wrap.png&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;四部分css3属性不能用&quot;&gt;四.部分CSS3属性不能用&lt;/h3&gt;
-
-&lt;p&gt;如transform:rotate(180deg)，不能用。&lt;/p&gt;
-
-&lt;h3 id=&quot;五git-状态展示&quot;&gt;五.Git 状态展示&lt;/h3&gt;
-&lt;p&gt;project.config.json和.git需要在同层目录,Git 状态才能显示，所以project.config.json最好放在根目录中&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-03b914e0a738ae80.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;git.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;六页面跳转&quot;&gt;六.页面跳转&lt;/h3&gt;
-
-&lt;p&gt;wx.navigateTo 新窗口打开页面 新页面有返回按钮&lt;/p&gt;
-
-&lt;p&gt;wx.redirectTo 关闭当前页面，跳转到应用内的某个页面   新页面没有返回按钮&lt;/p&gt;
-
-&lt;h3 id=&quot;七ide更换&quot;&gt;七.IDE更换&lt;/h3&gt;
-
-&lt;p&gt;微信开发者工具有很多快捷键都不能用，对于很多熟悉其他IDE的前端开发者来说很不习惯。
-  可以隐藏编辑器或分开窗口，把微信开发者工具只当作浏览器，然后然后小伙伴们就可以用自己熟悉的IDE了。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-52a2d9087fb98508.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;IDE.png&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;八分享事件不支持同步&quot;&gt;八.分享事件不支持同步&lt;/h3&gt;
-
-&lt;p&gt;如果你想自定义分享图片，则在生命周期onShareAppMessage中编写如下所示：&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;Page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;onShareAppMessage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'自定义转发标题'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;imageUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'https://raoenhui.github.io/images/logo.png'&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;但是&lt;code class=&quot;highlighter-rouge&quot;&gt;onShareAppMessage&lt;/code&gt;不能支持异步，如果你想从接口里获取分享图片URL，必须在&lt;code class=&quot;highlighter-rouge&quot;&gt;onLoad&lt;/code&gt;提前读取并放入Data中&lt;/p&gt;
-
-&lt;h3 id=&quot;九小程序有并发限制&quot;&gt;九.小程序有并发限制&lt;/h3&gt;
-&lt;p&gt;wx.request、wx.uploadFile、wx.downloadFile 的最大并发限制是 10 个。&lt;/p&gt;
-
-&lt;p&gt;所有为了保险起见，需要写个请求队列，如果并发量大于10，则等待请求。&lt;/p&gt;
-
-&lt;h4 id=&quot;其他链接&quot;&gt;其他链接&lt;/h4&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&quot;https://developers.weixin.qq.com/miniprogram/dev/api&quot;&gt;https://developers.weixin.qq.com/miniprogram/dev/api&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Happy coding .. :)&lt;/p&gt;
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/wechat/2018/07/18/%E5%B0%8F%E7%A8%8B%E5%BA%8F/&quot;&gt;小程序开发中的那些坑&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on July 18, 2018.&lt;/p&gt;</content>
 </entry>
 
 </feed>

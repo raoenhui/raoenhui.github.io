@@ -2,23 +2,23 @@
 <html lang='zh'>
 <head>
 <meta charset="utf-8">
-<title>ALIAS MAKES LIFE EASY &vert; 前端妹子的博客</title>
+<title>GOOGLE ADSENSE 添加自动广告 &vert; 前端妹子的博客</title>
 <meta name="description" content="一枚前端攻城狮!">
-<meta name="keywords" content="alias, commands">
+<meta name="keywords" content="Js, Es6">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raoenhui.github.io/images/logo.png">
-<meta name="twitter:title" content="Alias makes life easy">
+<meta name="twitter:title" content="google adsense 添加自动广告">
 <meta name="twitter:description" content="一枚前端攻城狮!">
 <meta name="twitter:creator" content="@raoenhui">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Alias makes life easy">
+<meta property="og:title" content="google adsense 添加自动广告">
 <meta property="og:description" content="一枚前端攻城狮!">
-<meta property="og:url" content="https://raoenhui.github.io/bak/2015-04-01-alias-makes-life-easy/">
+<meta property="og:url" content="https://raoenhui.github.io/js/2019/09/03/googleAd/">
 <meta property="og:site_name" content="前端妹子的博客">
 <meta property="og:image" content="https://raoenhui.github.io/images/">
 
@@ -26,7 +26,7 @@
 
 
 
-<link rel="canonical" href="https://raoenhui.github.io/bak/2015-04-01-alias-makes-life-easy/">
+<link rel="canonical" href="https://raoenhui.github.io/js/2019/09/03/googleAd/">
 <link href="https://raoenhui.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="前端妹子的博客 Feed">
 <link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
 
@@ -120,26 +120,77 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h1>Alias makes life easy</h1>
-                            <p>by <strong>前端妹子</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#alias, commands" data-toggle="tooltip" title="Posts tagged with alias, commands" rel="tag">alias, commands</a> <strong><time datetime="2015-04-01T18:45:00+05:30">01 Apr 2015</time></strong></p>
+                            <h1>google adsense 添加自动广告</h1>
+                            <p>by <strong>前端妹子</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#Js" data-toggle="tooltip" title="Posts tagged with Js" rel="tag">Js</a>&nbsp;&comma;&nbsp;<a href="https://raoenhui.github.io/tags/index.html#Es6" data-toggle="tooltip" title="Posts tagged with Es6" rel="tag">Es6</a> <strong><time datetime="2019-09-03T09:07:00+05:30">03 Sep 2019</time></strong></p>
                         </div>
                     </div>
                 </div>
             </header>
 
         <article class="notepad-post-content post tag-simple">
-            <div><p>From couple of years i’m using it but never thought its also shareable with community, alias is helping me shortning big and repeating commands, you just have to declare the short abbreviation of your short command and use it again n again, so here are usage :</p>
+            <div><h2 id="前言">前言</h2>
+<p>很多大佬写自己网站是为了开源给大家做贡献，如果可以景上添花，通过广告给自己带来写一定收入，岂不是达到作者与读者的双赢状态。
+那么如果要<code class="highlighter-rouge">插入广告</code>，怎么才能发到用户体验良好，但是广告曝光率又高呢。毕竟我们也不是专业的运营同学，<code class="highlighter-rouge">google</code>做为全球最大的广告商，已经给我们提供了插入自动广告的方法。</p>
 
-<p>I use commandline git a lot, may be maven build and deploy too, so i have defined few commands for easy use.</p>
+<h3 id="自动广告优势">自动广告优势</h3>
+<p>自动广告是一种广告格式系列，您可以将同一段广告代码放置在每个网页中，放置一次即可。在您添加代码后，Google 将在很有可能取得出色效果并提供良好用户体验的理想时机自动展示广告。
+自动广告的优势包括：</p>
+<blockquote>
+  <p>让您能够集中精力创作精彩内容。自动广告会自动为您放置和优化广告，您不必亲历亲为，如此可节省时间。
+有望提升您的收入。自动广告会分析您的网页，然后根据您的布局、内容和现有 Google 广告找到新位置来展示广告。
+易于使用。您只需将同一段代码放置在要展示自动广告的每个网页中，放置一次即可。其余工作 Google 将为您代劳。
+响应式。网页显示在不同尺寸的浏览器中，都能自动帮你将广告插入合适的位置。</p>
+</blockquote>
 
-<p>Open the ~/.bashrc and copy-paste below lines, close .bashrc and repoen terminal to use it.</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-ee8e7c88dbd7ae12.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">alias </span><span class="nv">gs</span><span class="o">=</span><span class="s1">'git status'</span>
-<span class="nb">alias </span><span class="nv">gps</span><span class="o">=</span><span class="s1">'git push origin master'</span> 
-<span class="nb">alias </span><span class="nv">gpl</span><span class="o">=</span><span class="s1">'git pull origin master'</span>
-<span class="nb">alias </span><span class="nv">gc</span><span class="o">=</span><span class="s1">'git commit -am'</span> <span class="c"># i use it like gc "this is commit message"</span>
-<span class="nb">alias </span><span class="nv">build</span><span class="o">=</span><span class="s1">'mvn clean compile install &amp;&amp; cd target \ 
-	     &amp;&amp; scp -i xxx.pem 1.3.4.zip ubuntu@192.168.0.9:~/build/.'</span></code></pre></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-2b5b09a3c8b7dbbf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<h3 id="自动广告添加">自动广告添加</h3>
+<p>首先注册好<a href="https://www.google.com/adsense">谷歌广告的账号</a>;
+点击设置自动广告;
+<img src="https://upload-images.jianshu.io/upload_images/9902136-be95666d70e7e585.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<p>复制此代码并将其粘贴到您网站的 <code class="highlighter-rouge">&lt;head&gt;</code> 标记之间。您所有网页均使用的是这一代码。即使您更改了全局设置，也无需更改此代码。</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">async</span> <span class="na">src=</span><span class="s">"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+     <span class="p">(</span><span class="nx">adsbygoogle</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">adsbygoogle</span> <span class="o">||</span> <span class="p">[]).</span><span class="nx">push</span><span class="p">({</span>
+          <span class="na">google_ad_client</span><span class="p">:</span> <span class="s2">"ca-pub-xxxxxxxxxx"</span><span class="p">,</span>
+          <span class="na">enable_page_level_ads</span><span class="p">:</span> <span class="kc">true</span>
+     <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+<p>于是已经成功，非常简单。</p>
+
+<h3 id="自动广告配置">自动广告配置</h3>
+<p>可以通过配置选择你想要的广告类型，小白的话建议全选，然后看自己网站如果有不合适的类型再一一关闭。</p>
+
+<p><a href="https://support.google.com/adsense/answer/7478040?hl=zh-Hans&amp;ref_topic=1307438">穿插广告、锚定广告、展示广告、文章内嵌广告、信息流广告、匹配内容</a>
+<img src="https://upload-images.jianshu.io/upload_images/9902136-ca2182a70823283c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<h3 id="新建群组配置不同广告类型">新建群组配置不同广告类型</h3>
+<p>如果想要在网站的不同部分显示不同的广告设置。可以新建群组</p>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/9902136-7b6eb1fb01bb04c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" />
+可以创建下面各项创建网址群组：</p>
+<blockquote>
+  <p>网域，例如 example.com
+子网域，例如 forums.example.com
+版块，例如 example.com/directory/
+网页，例如 example.com/directory/page.html</p>
+</blockquote>
+
+<p>然后为新增的群组配置不同广告类型即可。</p>
+
+<h3 id="其他">其他</h3>
+<p>下面给小伙伴们看看本妹子的广告位，一般帮我自动插入网页最下面呢～～
+<img src="https://upload-images.jianshu.io/upload_images/9902136-36a77d5568dc1975.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+
+<p>Happy coding .. :)</p>
+
+<blockquote>
+  <p><a href="https://support.google.com/adsense/answer/7478040?hl=zh-Hans&amp;ref_topic=1307438">自动广告简介</a></p>
+</blockquote>
 
 
             </div>
@@ -147,15 +198,15 @@
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Alias makes life easy&quot;%20https://raoenhui.github.io/bak/2015-04-01-alias-makes-life-easy/%20via%20&#64;raoenhui"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;google adsense 添加自动广告&quot;%20https://raoenhui.github.io/js/2019/09/03/googleAd/%20via%20&#64;raoenhui"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/bak/2015-04-01-alias-makes-life-easy/"
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/js/2019/09/03/googleAd/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/bak/2015-04-01-alias-makes-life-easy/"
+                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/js/2019/09/03/googleAd/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
                     <i class="fa fa-google-plus"></i>
                 </a>
@@ -284,7 +335,7 @@ gitment.render('container')
 
 <!-- ice facebook start-->
  
-<div class="fb-comments" data-href="https://raoenhui.github.io/bak/2015-04-01-alias-makes-life-easy/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+<div class="fb-comments" data-href="https://raoenhui.github.io/js/2019/09/03/googleAd/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {

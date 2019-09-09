@@ -138,6 +138,11 @@ callback([
   {
     "text": "this为什么会为undefined?",
     "href": "https://raoenhui.github.io/js/2019/08/15/this/"
+  } ,
+
+  {
+    "text": "google adsense 添加自动广告",
+    "href": "https://raoenhui.github.io/js/2019/09/03/googleAd/"
   } 
 
 ])
