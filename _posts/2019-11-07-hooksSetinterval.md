@@ -2,7 +2,7 @@
 author: raoenhui
 layout: post
 title: "React Hooks与setInterval"
-date: 2019-09-09 16:07
+date: 2019-11-07 16:07
 categories : React
 comments: true
 tags:
@@ -15,7 +15,7 @@ tags:
 Hooks出来已经有段时间了，相信大家都用过段时间了，有没有小伙伴们遇到坑呢，我这边就有个`setInterval`的坑，和小伙伴们分享下解决方案。
 
 ### 前言
-写个count每秒自增的定时器，如下写法结果，界面上`count`为`1`？
+写个`count`每秒自增的定时器，如下写法结果，界面上`count`为`1`？
 ```javascript
 function Counter() {
   let [count, setCount] = useState(0);

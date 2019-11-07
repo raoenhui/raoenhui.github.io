@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2019-11-07T14:26:16+05:30</updated>
+<updated>2019-11-07T14:47:51+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>前端妹子</name>
@@ -18,10 +18,10 @@
 
 <entry>
   <title type="html"><![CDATA[React Hooks与setInterval]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/react/2019/09/09/hooksSetinterval/"/>
-  <id>https://raoenhui.github.io/react/2019/09/09/hooksSetinterval</id>
-  <published>2019-09-09T16:07:00+05:30</published>
-  <updated>2019-09-09T16:07:00+05:30</updated>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/react/2019/11/07/hooksSetinterval/"/>
+  <id>https://raoenhui.github.io/react/2019/11/07/hooksSetinterval</id>
+  <published>2019-11-07T16:07:00+05:30</published>
+  <updated>2019-11-07T16:07:00+05:30</updated>
   <author>
     <name>前端妹子</name>
     <uri>https://raoenhui.github.io</uri>
@@ -35,7 +35,7 @@
 &lt;p&gt;Hooks出来已经有段时间了，相信大家都用过段时间了，有没有小伙伴们遇到坑呢，我这边就有个&lt;code class=&quot;highlighter-rouge&quot;&gt;setInterval&lt;/code&gt;的坑，和小伙伴们分享下解决方案。&lt;/p&gt;
 
 &lt;h3 id=&quot;前言-1&quot;&gt;前言&lt;/h3&gt;
-&lt;p&gt;写个count每秒自增的定时器，如下写法结果，界面上&lt;code class=&quot;highlighter-rouge&quot;&gt;count&lt;/code&gt;为&lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;？&lt;/p&gt;
+&lt;p&gt;写个&lt;code class=&quot;highlighter-rouge&quot;&gt;count&lt;/code&gt;每秒自增的定时器，如下写法结果，界面上&lt;code class=&quot;highlighter-rouge&quot;&gt;count&lt;/code&gt;为&lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;？&lt;/p&gt;
 &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;useEffect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -233,7 +233,7 @@
 
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/react/2019/09/09/hooksSetinterval/&quot;&gt;React Hooks与setInterval&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on September 09, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/react/2019/11/07/hooksSetinterval/&quot;&gt;React Hooks与setInterval&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on November 07, 2019.&lt;/p&gt;</content>
 </entry>
 
 
@@ -275,13 +275,8 @@
 &lt;img src=&quot;https://upload-images.jianshu.io/upload_images/9902136-be95666d70e7e585.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;复制此代码并将其粘贴到您网站的 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;head&amp;gt;&lt;/code&gt; 标记之间。您所有网页均使用的是这一代码。即使您更改了全局设置，也无需更改此代码。&lt;/p&gt;
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
-     &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;adsbygoogle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;adsbygoogle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-          &lt;span class=&quot;na&quot;&gt;google_ad_client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ca-pub-xxxxxxxxxx&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-          &lt;span class=&quot;na&quot;&gt;enable_page_level_ads&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
-     &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;data-ad-client=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ca-pub-xxxxxxx&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;于是已经成功，非常简单。&lt;/p&gt;
 

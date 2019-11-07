@@ -18,7 +18,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="React Hooks与setInterval">
 <meta property="og:description" content="一枚前端攻城狮!">
-<meta property="og:url" content="https://raoenhui.github.io/react/2019/09/09/hooksSetinterval/">
+<meta property="og:url" content="https://raoenhui.github.io/react/2019/11/07/hooksSetinterval/">
 <meta property="og:site_name" content="前端妹子的博客">
 <meta property="og:image" content="https://raoenhui.github.io/images/">
 
@@ -26,7 +26,7 @@
 
 
 
-<link rel="canonical" href="https://raoenhui.github.io/react/2019/09/09/hooksSetinterval/">
+<link rel="canonical" href="https://raoenhui.github.io/react/2019/11/07/hooksSetinterval/">
 <link href="https://raoenhui.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="前端妹子的博客 Feed">
 <link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
 
@@ -63,13 +63,14 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://raoenhui.github.io/images/apple-touch-icon-144x144-precomposed.png">
 
 <!-- ice google AdSense start-->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
   (adsbygoogle = window.adsbygoogle || []).push({
     google_ad_client: "ca-pub-6312691261569858",
     enable_page_level_ads: true
   });
-</script>
+</script> -->
+<script data-ad-client="ca-pub-6312691261569858" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- ice google AdSense end-->
 <style type="text/css">@media only screen and (min-width:43.75em){.notepad-post-content div>p:first-child:first-letter{float:left;font-size:4.688rem;line-height:4.375rem;padding-top:.25rem;padding-right:.5rem;padding-left:.188rem;font-family:serif}}</style>
 </head>
@@ -121,7 +122,7 @@
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
                             <h1>React Hooks与setInterval</h1>
-                            <p>by <strong>前端妹子</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#Js" data-toggle="tooltip" title="Posts tagged with Js" rel="tag">Js</a>&nbsp;&comma;&nbsp;<a href="https://raoenhui.github.io/tags/index.html#React" data-toggle="tooltip" title="Posts tagged with React" rel="tag">React</a> <strong><time datetime="2019-09-09T16:07:00+05:30">09 Sep 2019</time></strong></p>
+                            <p>by <strong>前端妹子</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#Js" data-toggle="tooltip" title="Posts tagged with Js" rel="tag">Js</a>&nbsp;&comma;&nbsp;<a href="https://raoenhui.github.io/tags/index.html#React" data-toggle="tooltip" title="Posts tagged with React" rel="tag">React</a> <strong><time datetime="2019-11-07T16:07:00+05:30">07 Nov 2019</time></strong></p>
                         </div>
                     </div>
                 </div>
@@ -133,7 +134,7 @@
 <p>Hooks出来已经有段时间了，相信大家都用过段时间了，有没有小伙伴们遇到坑呢，我这边就有个<code class="highlighter-rouge">setInterval</code>的坑，和小伙伴们分享下解决方案。</p>
 
 <h3 id="前言-1">前言</h3>
-<p>写个count每秒自增的定时器，如下写法结果，界面上<code class="highlighter-rouge">count</code>为<code class="highlighter-rouge">1</code>？</p>
+<p>写个<code class="highlighter-rouge">count</code>每秒自增的定时器，如下写法结果，界面上<code class="highlighter-rouge">count</code>为<code class="highlighter-rouge">1</code>？</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Counter</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
   <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -335,15 +336,15 @@
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;React Hooks与setInterval&quot;%20https://raoenhui.github.io/react/2019/09/09/hooksSetinterval/%20via%20&#64;raoenhui"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;React Hooks与setInterval&quot;%20https://raoenhui.github.io/react/2019/11/07/hooksSetinterval/%20via%20&#64;raoenhui"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/react/2019/09/09/hooksSetinterval/"
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/react/2019/11/07/hooksSetinterval/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/react/2019/09/09/hooksSetinterval/"
+                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/react/2019/11/07/hooksSetinterval/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
                     <i class="fa fa-google-plus"></i>
                 </a>
@@ -472,7 +473,7 @@ gitment.render('container')
 
 <!-- ice facebook start-->
  
-<div class="fb-comments" data-href="https://raoenhui.github.io/react/2019/09/09/hooksSetinterval/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+<div class="fb-comments" data-href="https://raoenhui.github.io/react/2019/11/07/hooksSetinterval/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
