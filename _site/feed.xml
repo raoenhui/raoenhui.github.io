@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2019-11-07T14:47:51+05:30</updated>
+<updated>2019-11-07T16:02:45+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>前端妹子</name>
@@ -34,7 +34,7 @@
 
 &lt;p&gt;Hooks出来已经有段时间了，相信大家都用过段时间了，有没有小伙伴们遇到坑呢，我这边就有个&lt;code class=&quot;highlighter-rouge&quot;&gt;setInterval&lt;/code&gt;的坑，和小伙伴们分享下解决方案。&lt;/p&gt;
 
-&lt;h3 id=&quot;前言-1&quot;&gt;前言&lt;/h3&gt;
+&lt;h3 id=&quot;问题&quot;&gt;问题&lt;/h3&gt;
 &lt;p&gt;写个&lt;code class=&quot;highlighter-rouge&quot;&gt;count&lt;/code&gt;每秒自增的定时器，如下写法结果，界面上&lt;code class=&quot;highlighter-rouge&quot;&gt;count&lt;/code&gt;为&lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;？&lt;/p&gt;
 &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -53,7 +53,7 @@
   &lt;p&gt;如果某些特定值在两次重渲染之间没有发生变化，你可以通知&lt;code class=&quot;highlighter-rouge&quot;&gt; React&lt;/code&gt; 跳过对 &lt;code class=&quot;highlighter-rouge&quot;&gt;effect&lt;/code&gt; 的调用。就是将第二个参数改成&lt;code class=&quot;highlighter-rouge&quot;&gt;[]&lt;/code&gt;,类似于更接近类组件的&lt;code class=&quot;highlighter-rouge&quot;&gt; componentDidMount&lt;/code&gt; 和&lt;code class=&quot;highlighter-rouge&quot;&gt; componentWillUnmount &lt;/code&gt;生命周期，只执行一次。 &lt;code class=&quot;highlighter-rouge&quot;&gt;effect&lt;/code&gt;的第二个参数中传入的值就是 它更改的话， &lt;code class=&quot;highlighter-rouge&quot;&gt;effect&lt;/code&gt;也会重新执行一遍的值。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;因为&lt;code class=&quot;highlighter-rouge&quot;&gt;Effect&lt;/code&gt;的第二个参数为&lt;code class=&quot;highlighter-rouge&quot;&gt;[]&lt;/code&gt;，没有依赖,&lt;code class=&quot;highlighter-rouge&quot;&gt;Effect&lt;/code&gt;只会执行一次。&lt;code class=&quot;highlighter-rouge&quot;&gt;setInterval&lt;/code&gt;中拿到的&lt;code class=&quot;highlighter-rouge&quot;&gt;count&lt;/code&gt;永远是&lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;,界面会一直显示&lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;,如下所示：&lt;/p&gt;
+&lt;p&gt;因为&lt;code class=&quot;highlighter-rouge&quot;&gt;Effect&lt;/code&gt;的第二个参数为&lt;code class=&quot;highlighter-rouge&quot;&gt;[]&lt;/code&gt;，没有依赖,&lt;code class=&quot;highlighter-rouge&quot;&gt;Effect&lt;/code&gt;只会执行一次。&lt;code class=&quot;highlighter-rouge&quot;&gt;setInterval&lt;/code&gt;中拿到的是第一次渲染时的闭包&lt;code class=&quot;highlighter-rouge&quot;&gt;count&lt;/code&gt;，所以&lt;code class=&quot;highlighter-rouge&quot;&gt;count&lt;/code&gt;永远是&lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;,界面会一直显示&lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;,如下所示：&lt;/p&gt;
 &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;useEffect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -197,7 +197,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;&lt;a href=&quot;https://codesandbox.io/embed/hooks-setinterval-ownhooks-0tpxe&quot;&gt;https://codesandbox.io/embed/hooks-setinterval-ownhooks-0tpxe&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;方案四用usereducer&quot;&gt;方案四、用UseReducer&lt;/h3&gt;
+&lt;h3 id=&quot;方案四用usereducer&quot;&gt;方案四、用useReducer&lt;/h3&gt;
 &lt;p&gt;将&lt;code class=&quot;highlighter-rouge&quot;&gt;count&lt;/code&gt;变量存入&lt;code class=&quot;highlighter-rouge&quot;&gt;reducer&lt;/code&gt;中，使用&lt;code class=&quot;highlighter-rouge&quot;&gt;useReducer&lt;/code&gt;更新&lt;code class=&quot;highlighter-rouge&quot;&gt;count&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reducer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;

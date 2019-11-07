@@ -133,7 +133,7 @@
 
 <p>Hooks出来已经有段时间了，相信大家都用过段时间了，有没有小伙伴们遇到坑呢，我这边就有个<code class="highlighter-rouge">setInterval</code>的坑，和小伙伴们分享下解决方案。</p>
 
-<h3 id="前言-1">前言</h3>
+<h3 id="问题">问题</h3>
 <p>写个<code class="highlighter-rouge">count</code>每秒自增的定时器，如下写法结果，界面上<code class="highlighter-rouge">count</code>为<code class="highlighter-rouge">1</code>？</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Counter</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
@@ -152,7 +152,7 @@
   <p>如果某些特定值在两次重渲染之间没有发生变化，你可以通知<code class="highlighter-rouge"> React</code> 跳过对 <code class="highlighter-rouge">effect</code> 的调用。就是将第二个参数改成<code class="highlighter-rouge">[]</code>,类似于更接近类组件的<code class="highlighter-rouge"> componentDidMount</code> 和<code class="highlighter-rouge"> componentWillUnmount </code>生命周期，只执行一次。 <code class="highlighter-rouge">effect</code>的第二个参数中传入的值就是 它更改的话， <code class="highlighter-rouge">effect</code>也会重新执行一遍的值。</p>
 </blockquote>
 
-<p>因为<code class="highlighter-rouge">Effect</code>的第二个参数为<code class="highlighter-rouge">[]</code>，没有依赖,<code class="highlighter-rouge">Effect</code>只会执行一次。<code class="highlighter-rouge">setInterval</code>中拿到的<code class="highlighter-rouge">count</code>永远是<code class="highlighter-rouge">0</code>,界面会一直显示<code class="highlighter-rouge">1</code>,如下所示：</p>
+<p>因为<code class="highlighter-rouge">Effect</code>的第二个参数为<code class="highlighter-rouge">[]</code>，没有依赖,<code class="highlighter-rouge">Effect</code>只会执行一次。<code class="highlighter-rouge">setInterval</code>中拿到的是第一次渲染时的闭包<code class="highlighter-rouge">count</code>，所以<code class="highlighter-rouge">count</code>永远是<code class="highlighter-rouge">0</code>,界面会一直显示<code class="highlighter-rouge">1</code>,如下所示：</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Counter</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
   <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -296,7 +296,7 @@
 </code></pre></div></div>
 <p><a href="https://codesandbox.io/embed/hooks-setinterval-ownhooks-0tpxe">https://codesandbox.io/embed/hooks-setinterval-ownhooks-0tpxe</a></p>
 
-<h3 id="方案四用usereducer">方案四、用UseReducer</h3>
+<h3 id="方案四用usereducer">方案四、用useReducer</h3>
 <p>将<code class="highlighter-rouge">count</code>变量存入<code class="highlighter-rouge">reducer</code>中，使用<code class="highlighter-rouge">useReducer</code>更新<code class="highlighter-rouge">count</code></p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">reducer</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">switch</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>

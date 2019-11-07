@@ -14,7 +14,7 @@ tags:
 
 Hooks出来已经有段时间了，相信大家都用过段时间了，有没有小伙伴们遇到坑呢，我这边就有个`setInterval`的坑，和小伙伴们分享下解决方案。
 
-### 前言
+### 问题
 写个`count`每秒自增的定时器，如下写法结果，界面上`count`为`1`？
 ```javascript
 function Counter() {
@@ -32,7 +32,7 @@ function Counter() {
 
 > 如果某些特定值在两次重渲染之间没有发生变化，你可以通知` React` 跳过对 `effect` 的调用。就是将第二个参数改成`[]`,类似于更接近类组件的` componentDidMount` 和` componentWillUnmount `生命周期，只执行一次。 `effect`的第二个参数中传入的值就是 它更改的话， `effect`也会重新执行一遍的值。
 
-因为`Effect`的第二个参数为`[]`，没有依赖,`Effect`只会执行一次。`setInterval`中拿到的`count`永远是`0`,界面会一直显示`1`,如下所示：
+因为`Effect`的第二个参数为`[]`，没有依赖,`Effect`只会执行一次。`setInterval`中拿到的是第一次渲染时的闭包`count`，所以`count`永远是`0`,界面会一直显示`1`,如下所示：
 ```javascript
 function Counter() {
   let [count, setCount] = useState(0);
@@ -183,7 +183,7 @@ function Counter() {
 ```
 [https://codesandbox.io/embed/hooks-setinterval-ownhooks-0tpxe](https://codesandbox.io/embed/hooks-setinterval-ownhooks-0tpxe)
 
-### 方案四、用UseReducer
+### 方案四、用useReducer
 将`count`变量存入`reducer`中，使用`useReducer`更新`count`
 ```javascript
 function reducer(state, action) {
