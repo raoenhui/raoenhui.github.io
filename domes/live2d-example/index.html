@@ -93,7 +93,7 @@ selectAry.map((ary) => {
 });
 
 $(".selectClick").click(function(e) {
-    window.location.href = `${window.location.origin}?id=${$(this).text().toLowerCase()}`;
+    window.location.href = `${window.location.origin}${window.location.pathname}?id=${$(this).text().toLowerCase()}`;
 })
 
 function initL2Dwidget(selectId) {
