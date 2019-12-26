@@ -136,7 +136,7 @@
 <p>本妹子的看板娘先给各位主人来露个脸吧！请多多关照^ ^
 <a href="https://raoenhui.github.io/nodejs/2019/06/04/https/index.html">https://raoenhui.github.io/nodejs/2019/06/04/https/index.html</a></p>
 
-<p><img src="https://raoenhui.github.io/images/191226/1.png" alt="image.png" /></p>
+<p><img src="https://raoenhui.github.io/images/191226/1.jpg" alt="image.png" /></p>
 
 <h3 id="用法">用法</h3>
 
@@ -162,14 +162,14 @@
 <h4 id="事件监听">事件监听</h4>
 
 <p>可以添加事件监听，比如触摸她的时候会弹出点提示</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">L2Dwidget</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'*'</span><span class="p">,</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">L2Dwidget</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'*'</span><span class="p">,</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'事件为： '</span> <span class="o">+</span> <span class="nx">name</span><span class="p">)</span>
 <span class="p">})</span>
 </code></pre></div></div>
 <h4 id="显示对话框">显示对话框</h4>
 
 <p>当触摸到角色身体或脸时，弹出对话框。</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">L2Dwidget</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">L2Dwidget</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
     <span class="na">dialog</span><span class="p">:</span> <span class="p">{</span>
         <span class="na">enable</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
         <span class="na">script</span><span class="p">:</span> <span class="p">{</span>
@@ -182,7 +182,7 @@
 <h4 id="看板娘位置">看板娘位置</h4>
 
 <p>位置默认在左下角，还可以设置<code class="highlighter-rouge">right</code> <code class="highlighter-rouge">top</code></p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">L2Dwidget</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">L2Dwidget</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
     <span class="na">display</span><span class="p">:</span> <span class="p">{</span>
         <span class="na">position</span><span class="p">:</span> <span class="s1">'right'</span>
     <span class="p">}</span>
@@ -191,7 +191,7 @@
 <h4 id="移动端兼容配置">移动端兼容配置</h4>
 
 <p>可以设置在移动端是否显示，或者缩小显示</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">L2Dwidget</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">L2Dwidget</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
     <span class="s2">"mobile"</span><span class="p">:</span> <span class="p">{</span> <span class="s2">"show"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">scale</span><span class="p">:</span> <span class="mf">0.5</span> <span class="p">},</span>
 <span class="p">});</span>
 </code></pre></div></div>
