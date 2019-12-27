@@ -142,9 +142,9 @@
 
 <p>Talk is cheap. Show me the code.</p>
 
-<p>第一步：引用文件<code class="highlighter-rouge">L2Dwidget.min.js</code>,地址为<a href="https://l2dwidget.js.org/lib/L2Dwidget.min.js">https://l2dwidget.js.org/lib/L2Dwidget.min.js</a></p>
+<p>第一步：引用文件<code class="highlighter-rouge">L2Dwidget.min.js</code>,地址为<a href="https://github.com/raoenhui/live2d-example/blob/master/src/L2Dwidget.min.js">https://github.com/raoenhui/live2d-example/blob/master/src/L2Dwidget.min.js</a></p>
 
-<p>第二步：引用对应动画精灵的<code class="highlighter-rouge">json</code>文件，引用动画精灵地址为：<a href="https://github.com/xiazeyu/live2d-widget-models">https://github.com/xiazeyu/live2d-widget-models</a></p>
+<p>第二步：引用对应动画精灵的<code class="highlighter-rouge">json</code>文件，引用动画精灵地址为：<a href="https://github.com/raoenhui/live2d-example/tree/master/packages/live2d-widget-model-shizuku">https://github.com/raoenhui/live2d-example/tree/master/packages/live2d-widget-model-shizuku</a></p>
 
 <p>第三步：初始化看板娘</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">L2Dwidget</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
@@ -195,10 +195,16 @@
     <span class="s2">"mobile"</span><span class="p">:</span> <span class="p">{</span> <span class="s2">"show"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">scale</span><span class="p">:</span> <span class="mf">0.5</span> <span class="p">},</span>
 <span class="p">});</span>
 </code></pre></div></div>
-<h3 id="案例">案例</h3>
 
-<p>还迷茫的小伙伴看直接看我写的<code class="highlighter-rouge">demo</code>：
-<a href="http://raoenhui.github.io/domes/live2d-example/index.html">http://raoenhui.github.io/domes/live2d-example/index.html</a></p>
+<h3 id="替换不同的看板娘">替换不同的看板娘</h3>
+
+<p>将<code class="highlighter-rouge">model</code>引用的对应看板娘的<code class="highlighter-rouge">json</code>文件，具体可以选择哪些看板娘，可以看下面案例</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">L2Dwidget</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+    <span class="s2">"model"</span><span class="p">:</span> <span class="p">{</span> <span class="s2">"jsonPath"</span><span class="p">:</span> <span class="s2">"packages/live2d-widget-model-"</span> <span class="o">+</span> <span class="nx">modalName</span> <span class="o">+</span> <span class="s2">"/assets/"</span> <span class="o">+</span> <span class="nx">selectId</span> <span class="o">+</span> <span class="s2">".model.json"</span> <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>还迷茫的小伙伴看直接看我写的<a href="http://raoenhui.github.io/domes/live2d-example/index.html">demo</a>，源码地址为：<a href="https://github.com/raoenhui/live2d-example">https://github.com/raoenhui/live2d-example</a></p>
 
 <p>通过<code class="highlighter-rouge">demo</code>，看板娘有以下可选择：</p>
 <ul>
@@ -233,7 +239,7 @@
 
 <h3 id="其他yy">其他YY</h3>
 
-<p>看板娘主要以<code class="highlighter-rouge">Live2D</code>为核心引擎，<a href="https://live2d.github.io/">Live2D</a>主要是有日本Guyzware公司开发的，支持native和web端，如果想自定义些功能的小伙伴们，可以研究下案例<a href="https://live2d.github.io/CubismJsComponents/">https://live2d.github.io/CubismJsComponents/</a>。</p>
+<p>看板娘主要以<code class="highlighter-rouge">Live2D</code>为核心引擎，<a href="https://live2d.github.io/">Live2D</a>主要是有日本Guyzware公司开发的，支持native和web端，如果想自定义看板娘的小伙伴们，可以研究下案例<a href="https://live2d.github.io/CubismJsComponents/">https://live2d.github.io/CubismJsComponents/</a>。</p>
 
 <p>虽然本妹子很想进入游戏开发，但是技术有限，至今仍在零基础徘徊，略显尴尬 .但是有绘画基础的小伙伴们可以给自己的<code class="highlighter-rouge">blog</code>请了一位喜欢唱，跳，rap和篮球的看板娘哦。</p>
 
@@ -242,6 +248,8 @@
 <h3 id="相关链接">相关链接</h3>
 
 <p><a href="https://raoenhui.github.io/js/2019/12/26/live2d/index.html">https://raoenhui.github.io/js/2019/12/26/live2d/index.html</a></p>
+
+<p><a href="https://github.com/raoenhui/live2d-example">https://github.com/raoenhui/live2d-example</a></p>
 
 <p><a href="http://raoenhui.github.io/domes/live2d-example/index.html">http://raoenhui.github.io/domes/live2d-example/index.html</a></p>
 

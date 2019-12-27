@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2019-12-26T21:15:49+05:30</updated>
+<updated>2019-12-27T11:51:16+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>前端妹子</name>
@@ -43,9 +43,9 @@
 
 &lt;p&gt;Talk is cheap. Show me the code.&lt;/p&gt;
 
-&lt;p&gt;第一步：引用文件&lt;code class=&quot;highlighter-rouge&quot;&gt;L2Dwidget.min.js&lt;/code&gt;,地址为&lt;a href=&quot;https://l2dwidget.js.org/lib/L2Dwidget.min.js&quot;&gt;https://l2dwidget.js.org/lib/L2Dwidget.min.js&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;第一步：引用文件&lt;code class=&quot;highlighter-rouge&quot;&gt;L2Dwidget.min.js&lt;/code&gt;,地址为&lt;a href=&quot;https://github.com/raoenhui/live2d-example/blob/master/src/L2Dwidget.min.js&quot;&gt;https://github.com/raoenhui/live2d-example/blob/master/src/L2Dwidget.min.js&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;第二步：引用对应动画精灵的&lt;code class=&quot;highlighter-rouge&quot;&gt;json&lt;/code&gt;文件，引用动画精灵地址为：&lt;a href=&quot;https://github.com/xiazeyu/live2d-widget-models&quot;&gt;https://github.com/xiazeyu/live2d-widget-models&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;第二步：引用对应动画精灵的&lt;code class=&quot;highlighter-rouge&quot;&gt;json&lt;/code&gt;文件，引用动画精灵地址为：&lt;a href=&quot;https://github.com/raoenhui/live2d-example/tree/master/packages/live2d-widget-model-shizuku&quot;&gt;https://github.com/raoenhui/live2d-example/tree/master/packages/live2d-widget-model-shizuku&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;第三步：初始化看板娘&lt;/p&gt;
 &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;L2Dwidget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
@@ -96,10 +96,16 @@
     &lt;span class=&quot;s2&quot;&gt;&quot;mobile&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;show&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;scale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;案例&quot;&gt;案例&lt;/h3&gt;
 
-&lt;p&gt;还迷茫的小伙伴看直接看我写的&lt;code class=&quot;highlighter-rouge&quot;&gt;demo&lt;/code&gt;：
-&lt;a href=&quot;http://raoenhui.github.io/domes/live2d-example/index.html&quot;&gt;http://raoenhui.github.io/domes/live2d-example/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;替换不同的看板娘&quot;&gt;替换不同的看板娘&lt;/h3&gt;
+
+&lt;p&gt;将&lt;code class=&quot;highlighter-rouge&quot;&gt;model&lt;/code&gt;引用的对应看板娘的&lt;code class=&quot;highlighter-rouge&quot;&gt;json&lt;/code&gt;文件，具体可以选择哪些看板娘，可以看下面案例&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;L2Dwidget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;model&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jsonPath&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;packages/live2d-widget-model-&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;modalName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/assets/&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;selectId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;.model.json&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;还迷茫的小伙伴看直接看我写的&lt;a href=&quot;http://raoenhui.github.io/domes/live2d-example/index.html&quot;&gt;demo&lt;/a&gt;，源码地址为：&lt;a href=&quot;https://github.com/raoenhui/live2d-example&quot;&gt;https://github.com/raoenhui/live2d-example&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;通过&lt;code class=&quot;highlighter-rouge&quot;&gt;demo&lt;/code&gt;，看板娘有以下可选择：&lt;/p&gt;
 &lt;ul&gt;
@@ -134,7 +140,7 @@
 
 &lt;h3 id=&quot;其他yy&quot;&gt;其他YY&lt;/h3&gt;
 
-&lt;p&gt;看板娘主要以&lt;code class=&quot;highlighter-rouge&quot;&gt;Live2D&lt;/code&gt;为核心引擎，&lt;a href=&quot;https://live2d.github.io/&quot;&gt;Live2D&lt;/a&gt;主要是有日本Guyzware公司开发的，支持native和web端，如果想自定义些功能的小伙伴们，可以研究下案例&lt;a href=&quot;https://live2d.github.io/CubismJsComponents/&quot;&gt;https://live2d.github.io/CubismJsComponents/&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;看板娘主要以&lt;code class=&quot;highlighter-rouge&quot;&gt;Live2D&lt;/code&gt;为核心引擎，&lt;a href=&quot;https://live2d.github.io/&quot;&gt;Live2D&lt;/a&gt;主要是有日本Guyzware公司开发的，支持native和web端，如果想自定义看板娘的小伙伴们，可以研究下案例&lt;a href=&quot;https://live2d.github.io/CubismJsComponents/&quot;&gt;https://live2d.github.io/CubismJsComponents/&lt;/a&gt;。&lt;/p&gt;
 
 &lt;p&gt;虽然本妹子很想进入游戏开发，但是技术有限，至今仍在零基础徘徊，略显尴尬 .但是有绘画基础的小伙伴们可以给自己的&lt;code class=&quot;highlighter-rouge&quot;&gt;blog&lt;/code&gt;请了一位喜欢唱，跳，rap和篮球的看板娘哦。&lt;/p&gt;
 
@@ -143,6 +149,8 @@
 &lt;h3 id=&quot;相关链接&quot;&gt;相关链接&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/js/2019/12/26/live2d/index.html&quot;&gt;https://raoenhui.github.io/js/2019/12/26/live2d/index.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/raoenhui/live2d-example&quot;&gt;https://github.com/raoenhui/live2d-example&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://raoenhui.github.io/domes/live2d-example/index.html&quot;&gt;http://raoenhui.github.io/domes/live2d-example/index.html&lt;/a&gt;&lt;/p&gt;
 
