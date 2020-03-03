@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "jekyll在mac下安装和运行指南",
+      "category" : "",
+      "tags"     : "blog",
+      "url"      : "/blog/2020/02/26/jekyll/index.html",
+      "date"     : "2020-02-26 08:07:00 +0530"
+    } ,
+  
+    {
       "title"    : "Git message规范Change log编写指南",
       "category" : "",
       "tags"     : "git",

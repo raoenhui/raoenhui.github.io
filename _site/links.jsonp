@@ -163,6 +163,11 @@ callback([
   {
     "text": "Git message规范Change log编写指南",
     "href": "https://raoenhui.github.io/git/2020/02/25/changelog/"
+  } ,
+
+  {
+    "text": "jekyll在mac下安装和运行指南",
+    "href": "https://raoenhui.github.io/blog/2020/02/26/jekyll/"
   } 
 
 ])
