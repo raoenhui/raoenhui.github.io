@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2020-03-03T15:07:51+05:30</updated>
+<updated>2020-03-03T15:17:35+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>前端妹子</name>
@@ -30,7 +30,9 @@
   <category scheme="https://raoenhui.github.io/tags/#git" term="git" />
   <content type="html">
   
-    &lt;h3 id=&quot;1介绍commit-message-的格式&quot;&gt;1.介绍Commit message 的格式&lt;/h3&gt;
+    &lt;p&gt;本文案例为&lt;a href=&quot;https://github.com/raoenhui/react-example/tree/changelog&quot;&gt;https://github.com/raoenhui/react-example/tree/changelog&lt;/a&gt;，欢迎下载查看。&lt;/p&gt;
+
+&lt;h3 id=&quot;1介绍commit-message-的格式&quot;&gt;1.介绍Commit message 的格式&lt;/h3&gt;
 &lt;p&gt;项目的 &lt;code class=&quot;highlighter-rouge&quot;&gt;Git Commit Message&lt;/code&gt; 参考了 &lt;a href=&quot;https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y&quot;&gt;AngularJS 规范&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;(&lt;/span&gt;&amp;lt;scope&amp;gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: &amp;lt;subject&amp;gt;
 // 空一行
@@ -176,6 +178,9 @@ commitizen init cz-conventional-changelog &lt;span class=&quot;nt&quot;&gt;-D&lt
 &lt;p&gt;Happy coding .. :)&lt;/p&gt;
 
 &lt;h3 id=&quot;相关文档&quot;&gt;相关文档&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/raoenhui/react-example/tree/changelog&quot;&gt;案例&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000004282514&quot;&gt;AngularJS Git提交信息规范&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html&quot;&gt;Commit message 和 Change log 编写指南&lt;/a&gt;&lt;/p&gt;

@@ -9,6 +9,7 @@ tags:
 - git
 ---
 
+本文案例为[https://github.com/raoenhui/react-example/tree/changelog](https://github.com/raoenhui/react-example/tree/changelog)，欢迎下载查看。
 
 ### 1.介绍Commit message 的格式
 项目的 `Git Commit Message` 参考了 [AngularJS 规范](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y)
@@ -170,6 +171,9 @@ npm install conventional-changelog-cli -D
 Happy coding .. :)
 
 ### 相关文档
+
+[案例](https://github.com/raoenhui/react-example/tree/changelog)
+
 [AngularJS Git提交信息规范](https://segmentfault.com/a/1190000004282514)
 
 [Commit message 和 Change log 编写指南](https://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
