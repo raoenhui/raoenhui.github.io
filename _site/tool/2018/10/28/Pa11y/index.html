@@ -148,8 +148,8 @@
 </code></pre></div></div>
 
 <p>也可在<code class="highlighter-rouge">js</code>中使用,pa11y(‘网址’)返回的是一个承诺对象。</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">pa11y</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'pa11y'</span><span class="p">);</span>
-<span class="nx">pa11y</span><span class="p">(</span><span class="s1">'http://example.com/'</span><span class="p">,</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">pa11y</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">pa11y</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">pa11y</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://example.com/</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
     <span class="c1">// Options go here</span>
 <span class="p">}).</span><span class="nx">then</span><span class="p">((</span><span class="nx">results</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="c1">// Do something with the results</span>
@@ -171,14 +171,14 @@ npm i
 </code></pre></div></div>
 <p>如连接本地<code class="highlighter-rouge">mongoDb</code>,并配置启动端口号为<em>4000</em></p>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-	</span><span class="s2">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">4000</span><span class="p">,</span><span class="w">
-	</span><span class="s2">"noindex"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-	</span><span class="s2">"readonly"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-	</span><span class="s2">"webservice"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-		</span><span class="s2">"database"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mongodb://localhost/pa11y-webservice"</span><span class="p">,</span><span class="w">
-		</span><span class="s2">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"localhost"</span><span class="p">,</span><span class="w">
-		</span><span class="s2">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">27017</span><span class="p">,</span><span class="w">
-		</span><span class="s2">"cron"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 30 0 * * *"</span><span class="w">
+	</span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">4000</span><span class="p">,</span><span class="w">
+	</span><span class="nl">"noindex"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+	</span><span class="nl">"readonly"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+	</span><span class="nl">"webservice"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+		</span><span class="nl">"database"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mongodb://localhost/pa11y-webservice"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"localhost"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">27017</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"cron"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 30 0 * * *"</span><span class="w">
 	</span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 <p>最后启动<code class="highlighter-rouge">dashboard</code></p>
@@ -414,7 +414,7 @@ gitment.render('container')
 
     <footer class="notepad-site-footer">
     <div class="copyright">
-        <section>All content copyright <a href="https://raoenhui.github.io/about">前端妹子</a> &copy; 2019 &bull; All rights reserved.</section>
+        <section>All content copyright <a href="https://raoenhui.github.io/about">前端妹子</a> &copy; 2020 &bull; All rights reserved.</section>
 	<!--<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>-->
           <!--<a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>-->
     </div>

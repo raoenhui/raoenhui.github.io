@@ -256,10 +256,10 @@
 <p>将下面脚本添加到 package.json 中:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"dev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next build"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next start"</span><span class="w">
+  </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"dev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next build"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next start"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -290,11 +290,11 @@
 
 <p>每个页面只会导入<code class="highlighter-rouge">import</code>中绑定以及被用到的代码. 也就是说并不会加载不需要的代码!</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">cowsay</span> <span class="k">from</span> <span class="s1">'cowsay-browser'</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">cowsay</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">cowsay-browser</span><span class="dl">'</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="p">()</span> <span class="o">=&gt;</span>
   <span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;</span>
-    <span class="si">{</span><span class="nx">cowsay</span><span class="p">.</span><span class="nx">say</span><span class="p">({</span> <span class="na">text</span><span class="p">:</span> <span class="s1">'hi there!'</span> <span class="p">})</span><span class="si">}</span>
+    <span class="si">{</span><span class="nx">cowsay</span><span class="p">.</span><span class="nx">say</span><span class="p">({</span> <span class="na">text</span><span class="p">:</span> <span class="dl">'</span><span class="s1">hi there!</span><span class="dl">'</span> <span class="p">})</span><span class="si">}</span>
   <span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
 </code></pre></div></div>
 
@@ -390,7 +390,7 @@
 
 <p>我们设置一个内置组件来装载<code class="highlighter-rouge">&lt;head&gt;</code>到页面中。</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Head</span> <span class="k">from</span> <span class="s1">'next/head'</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Head</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/head</span><span class="dl">'</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="p">()</span> <span class="o">=&gt;</span>
   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -404,7 +404,7 @@
 
 <p>我们定义<code class="highlighter-rouge">key</code>属性来避免重复的<code class="highlighter-rouge">&lt;head&gt;</code>标签，保证<code class="highlighter-rouge">&lt;head&gt;</code>只渲染一次，如下所示：</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Head</span> <span class="k">from</span> <span class="s1">'next/head'</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Head</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/head</span><span class="dl">'</span>
 <span class="k">export</span> <span class="k">default</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">(</span>
   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nc">Head</span><span class="p">&gt;</span>
@@ -433,11 +433,11 @@
 
 <p>如果你需要一个有状态、生命周期或有初始数据的 React 组件（而不是上面的无状态函数），如下所示：</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="s1">'react'</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
-  <span class="kr">static</span> <span class="k">async</span> <span class="nx">getInitialProps</span><span class="p">({</span> <span class="nx">req</span> <span class="p">})</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">userAgent</span> <span class="o">=</span> <span class="nx">req</span> <span class="p">?</span> <span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s1">'user-agent'</span><span class="p">]</span> <span class="p">:</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">userAgent</span>
+  <span class="kd">static</span> <span class="k">async</span> <span class="nx">getInitialProps</span><span class="p">({</span> <span class="nx">req</span> <span class="p">})</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">userAgent</span> <span class="o">=</span> <span class="nx">req</span> <span class="p">?</span> <span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="dl">'</span><span class="s1">user-agent</span><span class="dl">'</span><span class="p">]</span> <span class="p">:</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">userAgent</span>
     <span class="k">return</span> <span class="p">{</span> <span class="nx">userAgent</span> <span class="p">}</span>
   <span class="p">}</span>
 
@@ -478,8 +478,8 @@
   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
 <span class="nx">Page</span><span class="p">.</span><span class="nx">getInitialProps</span> <span class="o">=</span> <span class="k">async</span> <span class="p">({</span> <span class="nx">req</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s1">'https://api.github.com/repos/zeit/next.js'</span><span class="p">)</span>
-  <span class="kd">const</span> <span class="nx">json</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+  <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.github.com/repos/zeit/next.js</span><span class="dl">'</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">json</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
   <span class="k">return</span> <span class="p">{</span> <span class="na">stars</span><span class="p">:</span> <span class="nx">json</span><span class="p">.</span><span class="nx">stargazers_count</span> <span class="p">}</span>
 <span class="p">}</span>
 
@@ -514,14 +514,14 @@
 <p>可以用 <code class="highlighter-rouge">&lt;Link&gt;</code> 组件实现客户端的路由切换。</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// pages/index.js</span>
-<span class="k">import</span> <span class="nx">Link</span> <span class="k">from</span> <span class="s1">'next/link'</span>
+<span class="k">import</span> <span class="nx">Link</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/link</span><span class="dl">'</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="p">()</span> <span class="o">=&gt;</span>
   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-    Click<span class="si">{</span><span class="s1">' '</span><span class="si">}</span>
+    Click<span class="si">{</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="si">}</span>
     <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href=</span><span class="s2">"/about"</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">a</span><span class="p">&gt;</span>here<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span><span class="si">{</span><span class="s1">' '</span><span class="si">}</span>
+    <span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span><span class="si">{</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="si">}</span>
     to read more
   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div></div>
@@ -555,14 +555,14 @@
 <p>组件<code class="highlighter-rouge">&lt;Link&gt;</code>接收 URL 对象，而且它会自动格式化生成 URL 字符串</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// pages/index.js</span>
-<span class="k">import</span> <span class="nx">Link</span> <span class="k">from</span> <span class="s1">'next/link'</span>
+<span class="k">import</span> <span class="nx">Link</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/link</span><span class="dl">'</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="p">()</span> <span class="o">=&gt;</span>
   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-    Click<span class="si">{</span><span class="s1">' '</span><span class="si">}</span>
+    Click<span class="si">{</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="si">}</span>
     <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href=</span><span class="err">}&gt;
       &lt;a&gt;here&lt;/a&gt;
-    &lt;/Link&gt;</span><span class="si">{</span><span class="s1">' '</span><span class="si">}</span>
+    &lt;/Link&gt;</span><span class="si">{</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="si">}</span>
     <span class="nt">to</span> <span class="nt">read</span> <span class="nt">more</span>
   <span class="err">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div></div>
@@ -575,14 +575,14 @@
 <p><code class="highlighter-rouge">&lt;Link&gt;</code>组件默认将新 url 推入路由栈中。你可以使用<code class="highlighter-rouge">replace</code>属性来防止添加新输入。</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// pages/index.js</span>
-<span class="k">import</span> <span class="nx">Link</span> <span class="k">from</span> <span class="s1">'next/link'</span>
+<span class="k">import</span> <span class="nx">Link</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/link</span><span class="dl">'</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="p">()</span> <span class="o">=&gt;</span>
   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-    Click<span class="si">{</span><span class="s1">' '</span><span class="si">}</span>
+    Click<span class="si">{</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="si">}</span>
     <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href=</span><span class="s2">"/about"</span> <span class="nt">replace</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">a</span><span class="p">&gt;</span>here<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span><span class="si">{</span><span class="s1">' '</span><span class="si">}</span>
+    <span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span><span class="si">{</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="si">}</span>
     to read more
   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div></div>
@@ -593,11 +593,11 @@
 <p><code class="highlighter-rouge">&lt;Link&gt;</code>支持每个组件所支持的<code class="highlighter-rouge">onClick</code>事件。如果你不提供<code class="highlighter-rouge">&lt;a&gt;</code>标签，只会处理<code class="highlighter-rouge">onClick</code>事件而<code class="highlighter-rouge">href</code>将不起作用。</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// pages/index.js</span>
-<span class="k">import</span> <span class="nx">Link</span> <span class="k">from</span> <span class="s1">'next/link'</span>
+<span class="k">import</span> <span class="nx">Link</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/link</span><span class="dl">'</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="p">()</span> <span class="o">=&gt;</span>
   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-    Click<span class="si">{</span><span class="s1">' '</span><span class="si">}</span>
+    Click<span class="si">{</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="si">}</span>
     <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href=</span><span class="s2">"/about"</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src=</span><span class="s2">"/static/image.png"</span> <span class="na">alt=</span><span class="s2">"image"</span> <span class="p">/&gt;</span>
     <span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
@@ -611,8 +611,8 @@
 
 <p><strong>注意</strong>: 使用<code class="highlighter-rouge">a</code>之外的标签而且没有通过<code class="highlighter-rouge">passHref</code>的链接可能会使导航看上去正确，但是当搜索引擎爬行检测时，将不会识别成链接（由于缺乏 href 属性），这会对你网站的 SEO 产生负面影响。</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Link</span> <span class="k">from</span> <span class="s1">'next/link'</span>
-<span class="k">import</span> <span class="nx">Unexpected_A</span> <span class="k">from</span> <span class="s1">'third-library'</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Link</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/link</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Unexpected_A</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">third-library</span><span class="dl">'</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="p">({</span> <span class="nx">href</span><span class="p">,</span> <span class="nx">name</span> <span class="p">})</span> <span class="o">=&gt;</span>
   <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href=</span><span class="si">{</span><span class="nx">href</span><span class="si">}</span> <span class="nt">passHref</span><span class="p">&gt;</span>
@@ -628,7 +628,7 @@
 <p><code class="highlighter-rouge">&lt;Link&gt;</code>的默认行为就是滚到页面顶部。当有 hash 定义时（＃），页面将会滚动到对应的 id 上，就像<code class="highlighter-rouge">&lt;a&gt;</code>标签一样。为了预防滚动到顶部，可以给<code class="highlighter-rouge">&lt;Link&gt;</code>加
 <code class="highlighter-rouge">scroll={false}</code>属性：</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">Link</span> <span class="nx">scroll</span><span class="o">=</span><span class="p">{</span><span class="kc">false</span><span class="p">}</span> <span class="nx">href</span><span class="o">=</span><span class="s2">"/?counter=10"</span><span class="o">&gt;</span><span class="p">&lt;</span><span class="nt">a</span><span class="p">&gt;</span>Disables scrolling<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;</span><span class="err">/</span><span class="nc">Link</span><span class="p">&gt;</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">Link</span> <span class="nx">scroll</span><span class="o">=</span><span class="p">{</span><span class="kc">false</span><span class="p">}</span> <span class="nx">href</span><span class="o">=</span><span class="dl">"</span><span class="s2">/?counter=10</span><span class="dl">"</span><span class="o">&gt;</span><span class="p">&lt;</span><span class="nt">a</span><span class="p">&gt;</span>Disables scrolling<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;</span><span class="err">/</span><span class="nc">Link</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">href=</span><span class="s2">"/?counter=10"</span><span class="p">&gt;&lt;</span><span class="nt">a</span><span class="p">&gt;</span>Changes with scrolling to top<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
 </code></pre></div></div>
 
@@ -645,11 +645,11 @@
 
 <p>你也可以用<code class="highlighter-rouge">next/router</code>实现客户端路由切换</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Router</span> <span class="k">from</span> <span class="s1">'next/router'</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Router</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/router</span><span class="dl">'</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="p">()</span> <span class="o">=&gt;</span>
   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-    Click <span class="p">&lt;</span><span class="nt">span</span> <span class="na">onClick=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">Router</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">'/about'</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>here<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> to read more
+    Click <span class="p">&lt;</span><span class="nt">span</span> <span class="na">onClick=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">Router</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">'</span><span class="s1">/about</span><span class="dl">'</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>here<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> to read more
   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div></div>
 
@@ -659,11 +659,11 @@
 <p>有些情况（比如使用<a href="#custom-server-and-routing">custom router</a>），你可能想监听<a href="https://developer.mozilla.org/en-US/docs/Web/Events/popstate"><code class="highlighter-rouge">popstate</code></a>，在路由跳转前做一些动作。
 比如，你可以操作 request 或强制 SSR 刷新</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Router</span> <span class="k">from</span> <span class="s1">'next/router'</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Router</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/router</span><span class="dl">'</span>
 
 <span class="nx">Router</span><span class="p">.</span><span class="nx">beforePopState</span><span class="p">(({</span> <span class="nx">url</span><span class="p">,</span> <span class="k">as</span><span class="p">,</span> <span class="nx">options</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="c1">// I only want to allow these two routes!</span>
-  <span class="k">if</span> <span class="p">(</span><span class="k">as</span> <span class="o">!==</span> <span class="s2">"/"</span> <span class="o">||</span> <span class="k">as</span> <span class="o">!==</span> <span class="s2">"/other"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">as</span> <span class="o">!==</span> <span class="dl">"</span><span class="s2">/</span><span class="dl">"</span> <span class="o">||</span> <span class="k">as</span> <span class="o">!==</span> <span class="dl">"</span><span class="s2">/other</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Have SSR render bad routes as a 404.</span>
     <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="k">as</span>
     <span class="k">return</span> <span class="kc">false</span>
@@ -695,12 +695,12 @@
 
 <p><code class="highlighter-rouge">push</code> 或 <code class="highlighter-rouge">replace</code>可接收的 URL 对象（<code class="highlighter-rouge">&lt;Link&gt;</code>组件的 URL 对象一样）来生成 URL。</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Router</span> <span class="k">from</span> <span class="s1">'next/router'</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Router</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/router</span><span class="dl">'</span>
 
 <span class="kd">const</span> <span class="nx">handler</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span>
   <span class="nx">Router</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
-    <span class="na">pathname</span><span class="p">:</span> <span class="s1">'/about'</span><span class="p">,</span>
-    <span class="na">query</span><span class="p">:</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'Zeit'</span> <span class="p">}</span>
+    <span class="na">pathname</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/about</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">query</span><span class="p">:</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Zeit</span><span class="dl">'</span> <span class="p">}</span>
   <span class="p">})</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="p">()</span> <span class="o">=&gt;</span>
@@ -733,20 +733,20 @@
 <p>下面是如何正确使用路由事件<code class="highlighter-rouge">routeChangeStart</code>的例子：</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">handleRouteChange</span> <span class="o">=</span> <span class="nx">url</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'App is changing to: '</span><span class="p">,</span> <span class="nx">url</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">App is changing to: </span><span class="dl">'</span><span class="p">,</span> <span class="nx">url</span><span class="p">)</span>
 <span class="p">}</span>
 
-<span class="nx">Router</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'routeChangeStart'</span><span class="p">,</span> <span class="nx">handleRouteChange</span><span class="p">)</span>
+<span class="nx">Router</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">routeChangeStart</span><span class="dl">'</span><span class="p">,</span> <span class="nx">handleRouteChange</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>如果你不想长期监听该事件，你可以用<code class="highlighter-rouge">off</code>事件去取消监听：</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Router</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">off</span><span class="p">(</span><span class="s1">'routeChangeStart'</span><span class="p">,</span> <span class="nx">handleRouteChange</span><span class="p">)</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Router</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">off</span><span class="p">(</span><span class="dl">'</span><span class="s1">routeChangeStart</span><span class="dl">'</span><span class="p">,</span> <span class="nx">handleRouteChange</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>如果路由加载被取消（比如快速连续双击链接）</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Router</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'routeChangeError'</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">url</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Router</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">routeChangeError</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">url</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">cancelled</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Route to </span><span class="p">${</span><span class="nx">url</span><span class="p">}</span><span class="s2"> was cancelled!`</span><span class="p">)</span>
   <span class="p">}</span>
@@ -768,7 +768,7 @@
 <p>你可以给<code class="highlighter-rouge">Router.push</code> 或 <code class="highlighter-rouge">Router.replace</code>方法加<code class="highlighter-rouge">shallow: true</code>参数。如下面的例子所示：</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Current URL is "/"</span>
-<span class="kd">const</span> <span class="nx">href</span> <span class="o">=</span> <span class="s1">'/?counter=10'</span>
+<span class="kd">const</span> <span class="nx">href</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">/?counter=10</span><span class="dl">'</span>
 <span class="kd">const</span> <span class="k">as</span> <span class="o">=</span> <span class="nx">href</span>
 <span class="nx">Router</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">href</span><span class="p">,</span> <span class="k">as</span><span class="p">,</span> <span class="p">{</span> <span class="na">shallow</span><span class="p">:</span> <span class="kc">true</span> <span class="p">})</span>
 </code></pre></div></div>
@@ -790,7 +790,7 @@
   <p>注意:</p>
 
   <p>浅层路由只作用于相同 URL 的参数改变，比如我们假定有个其他路由<code class="highlighter-rouge">about</code>，而你向下面代码样运行:</p>
-  <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Router</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">'/?counter=10'</span><span class="p">,</span> <span class="s1">'/about?counter=10'</span><span class="p">,</span> <span class="p">{</span> <span class="na">shallow</span><span class="p">:</span> <span class="kc">true</span> <span class="p">})</span>
+  <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Router</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">'</span><span class="s1">/?counter=10</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">/about?counter=10</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">shallow</span><span class="p">:</span> <span class="kc">true</span> <span class="p">})</span>
 </code></pre></div>  </div>
   <p>那么这将会出现新页面，即使我们加了浅层路由，但是它还是会卸载当前页，会加载新的页面并触发新页面的<code class="highlighter-rouge">getInitialProps</code>。</p>
 </blockquote>
@@ -807,12 +807,12 @@
 
 <p>如果你想应用里每个组件都处理路由对象，你可以使用<code class="highlighter-rouge">withRouter</code>高阶组件。下面是如何使用它：</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">withRouter</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'next/router'</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">withRouter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/router</span><span class="dl">'</span>
 
 <span class="kd">const</span> <span class="nx">ActiveLink</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">children</span><span class="p">,</span> <span class="nx">router</span><span class="p">,</span> <span class="nx">href</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">style</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">marginRight</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-    <span class="na">color</span><span class="p">:</span> <span class="nx">router</span><span class="p">.</span><span class="nx">pathname</span> <span class="o">===</span> <span class="nx">href</span><span class="p">?</span> <span class="s1">'red'</span> <span class="p">:</span> <span class="s1">'black'</span>
+    <span class="na">color</span><span class="p">:</span> <span class="nx">router</span><span class="p">.</span><span class="nx">pathname</span> <span class="o">===</span> <span class="nx">href</span><span class="p">?</span> <span class="dl">'</span><span class="s1">red</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">black</span><span class="dl">'</span>
   <span class="p">}</span>
 
   <span class="kd">const</span> <span class="nx">handleClick</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -855,7 +855,7 @@
 
 <p>你可以给<link />添加 <code class="highlighter-rouge">prefetch</code> 属性，Next.js 将会在后台预加载这些页面。</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Link</span> <span class="k">from</span> <span class="s1">'next/link'</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Link</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/link</span><span class="dl">'</span>
 
 <span class="c1">// example header component</span>
 <span class="k">export</span> <span class="k">default</span> <span class="p">()</span> <span class="o">=&gt;</span>
@@ -885,35 +885,35 @@
 
 <p>大多数预加载是通过<link />处理的，但是我们还提供了命令式 API 用于更复杂的场景。</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">withRouter</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'next/router'</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">withRouter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/router</span><span class="dl">'</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="nx">withRouter</span><span class="p">(({</span> <span class="nx">router</span> <span class="p">})</span> <span class="o">=&gt;</span>
   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">onClick=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">router</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">'/dynamic'</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">onClick=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">router</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">'</span><span class="s1">/dynamic</span><span class="dl">'</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>
       A route transition will happen after 100ms
     <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
     <span class="si">{</span><span class="c1">// but we can prefetch it!</span>
-    <span class="nx">router</span><span class="p">.</span><span class="nx">prefetch</span><span class="p">(</span><span class="s1">'/dynamic'</span><span class="p">)</span><span class="si">}</span>
+    <span class="nx">router</span><span class="p">.</span><span class="nx">prefetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/dynamic</span><span class="dl">'</span><span class="p">)</span><span class="si">}</span>
   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="p">)</span>
 </code></pre></div></div>
 
 <p>路由实例只允许在应用程序的客户端。以防服务端渲染发生错误，建议 prefetch 事件写在<code class="highlighter-rouge">componentDidMount()</code>生命周期里。</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="s1">'react'</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">withRouter</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'next/router'</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">withRouter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/router</span><span class="dl">'</span>
 
 <span class="kd">class</span> <span class="nx">MyLink</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
   <span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="p">{</span> <span class="nx">router</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span>
-    <span class="nx">router</span><span class="p">.</span><span class="nx">prefetch</span><span class="p">(</span><span class="s1">'/dynamic'</span><span class="p">)</span>
+    <span class="nx">router</span><span class="p">.</span><span class="nx">prefetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/dynamic</span><span class="dl">'</span><span class="p">)</span>
   <span class="p">}</span>
   
   <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="p">{</span> <span class="nx">router</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span>
     <span class="k">return</span> <span class="p">(</span>
        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">onClick=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">router</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">'/dynamic'</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">onClick=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">router</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">'</span><span class="s1">/dynamic</span><span class="dl">'</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>
           A route transition will happen after 100ms
         <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
       <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>   
@@ -944,10 +944,10 @@
 <p>当使用自定义服务文件，如下面例子所示叫 server.js 时，确保你更新了 package.json 中的脚本。</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"dev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"node server.js"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next build"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NODE_ENV=production node server.js"</span><span class="w">
+  </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"dev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"node server.js"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next build"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NODE_ENV=production node server.js"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -957,11 +957,11 @@
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// This file doesn't go through babel or webpack transformation.</span>
 <span class="c1">// Make sure the syntax and sources this file requires are compatible with the current node version you are running</span>
 <span class="c1">// See https://github.com/zeit/next.js/issues/1245 for discussions on Universal Webpack or universal Babel</span>
-<span class="kd">const</span> <span class="p">{</span> <span class="nx">createServer</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'http'</span><span class="p">)</span>
-<span class="kd">const</span> <span class="p">{</span> <span class="nx">parse</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'url'</span><span class="p">)</span>
-<span class="kd">const</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'next'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">createServer</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">http</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">parse</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">url</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">next</span><span class="dl">'</span><span class="p">)</span>
 
-<span class="kd">const</span> <span class="nx">dev</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">!==</span> <span class="s1">'production'</span>
+<span class="kd">const</span> <span class="nx">dev</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">!==</span> <span class="dl">'</span><span class="s1">production</span><span class="dl">'</span>
 <span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">next</span><span class="p">({</span> <span class="nx">dev</span> <span class="p">})</span>
 <span class="kd">const</span> <span class="nx">handle</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">getRequestHandler</span><span class="p">()</span>
 
@@ -972,16 +972,16 @@
     <span class="kd">const</span> <span class="nx">parsedUrl</span> <span class="o">=</span> <span class="nx">parse</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
     <span class="kd">const</span> <span class="p">{</span> <span class="nx">pathname</span><span class="p">,</span> <span class="nx">query</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">parsedUrl</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nx">pathname</span> <span class="o">===</span> <span class="s1">'/a'</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">app</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="s1">'/b'</span><span class="p">,</span> <span class="nx">query</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">pathname</span> <span class="o">===</span> <span class="s1">'/b'</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">app</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="s1">'/a'</span><span class="p">,</span> <span class="nx">query</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">pathname</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">/a</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">app</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="dl">'</span><span class="s1">/b</span><span class="dl">'</span><span class="p">,</span> <span class="nx">query</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">pathname</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">/b</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">app</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="dl">'</span><span class="s1">/a</span><span class="dl">'</span><span class="p">,</span> <span class="nx">query</span><span class="p">)</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="nx">handle</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">parsedUrl</span><span class="p">)</span>
     <span class="p">}</span>
   <span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'&gt; Ready on http://localhost:3000'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">&gt; Ready on http://localhost:3000</span><span class="dl">'</span><span class="p">)</span>
   <span class="p">})</span>
 <span class="p">})</span>
 </code></pre></div></div>
@@ -1026,20 +1026,20 @@
 
 <p>使用方法如下：</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'next'</span><span class="p">)</span>
-<span class="kd">const</span> <span class="nx">micro</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'micro'</span><span class="p">)</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">next</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">micro</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">micro</span><span class="dl">'</span><span class="p">)</span>
 
-<span class="kd">const</span> <span class="nx">dev</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">!==</span> <span class="s1">'production'</span>
+<span class="kd">const</span> <span class="nx">dev</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">!==</span> <span class="dl">'</span><span class="s1">production</span><span class="dl">'</span>
 <span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">next</span><span class="p">({</span> <span class="nx">dev</span> <span class="p">})</span>
 <span class="kd">const</span> <span class="nx">handleNextRequests</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">getRequestHandler</span><span class="p">()</span>
 
 <span class="nx">app</span><span class="p">.</span><span class="nx">prepare</span><span class="p">().</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">server</span> <span class="o">=</span> <span class="nx">micro</span><span class="p">((</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="c1">// Add assetPrefix support based on the hostname</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">host</span> <span class="o">===</span> <span class="s1">'my-app.com'</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">app</span><span class="p">.</span><span class="nx">setAssetPrefix</span><span class="p">(</span><span class="s1">'http://cdn.com/myapp'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">host</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">my-app.com</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">app</span><span class="p">.</span><span class="nx">setAssetPrefix</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://cdn.com/myapp</span><span class="dl">'</span><span class="p">)</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="nx">app</span><span class="p">.</span><span class="nx">setAssetPrefix</span><span class="p">(</span><span class="s1">''</span><span class="p">)</span>
+      <span class="nx">app</span><span class="p">.</span><span class="nx">setAssetPrefix</span><span class="p">(</span><span class="dl">''</span><span class="p">)</span>
     <span class="p">}</span>
 
     <span class="nx">handleNextRequests</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span>
@@ -1075,9 +1075,9 @@
 <p><a id="1-basic-usage-also-does-ssr"></a></p>
 <h4 id="1-基础支持-同样支持-ssr">1. 基础支持 (同样支持 SSR)</h4>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">dynamic</span> <span class="k">from</span> <span class="s1">'next/dynamic'</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">dynamic</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/dynamic</span><span class="dl">'</span>
 
-<span class="kd">const</span> <span class="nx">DynamicComponent</span> <span class="o">=</span> <span class="nx">dynamic</span><span class="p">(</span><span class="k">import</span><span class="p">(</span><span class="s1">'../components/hello'</span><span class="p">))</span>
+<span class="kd">const</span> <span class="nx">DynamicComponent</span> <span class="o">=</span> <span class="nx">dynamic</span><span class="p">(</span><span class="k">import</span><span class="p">(</span><span class="dl">'</span><span class="s1">../components/hello</span><span class="dl">'</span><span class="p">))</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="p">()</span> <span class="o">=&gt;</span>
   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -1090,10 +1090,10 @@
 <p><a id="2-with-custom-loading-componen"></a></p>
 <h4 id="2-自定义加载组件">2. 自定义加载组件</h4>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">dynamic</span> <span class="k">from</span> <span class="s1">'next/dynamic'</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">dynamic</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/dynamic</span><span class="dl">'</span>
 
 <span class="kd">const</span> <span class="nx">DynamicComponentWithCustomLoading</span> <span class="o">=</span> <span class="nx">dynamic</span><span class="p">(</span>
-  <span class="k">import</span><span class="p">(</span><span class="s1">'../components/hello2'</span><span class="p">),</span>
+  <span class="k">import</span><span class="p">(</span><span class="dl">'</span><span class="s1">../components/hello2</span><span class="dl">'</span><span class="p">),</span>
   <span class="p">{</span>
     <span class="na">loading</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
   <span class="p">}</span>
@@ -1110,9 +1110,9 @@
 <p><a id="3-with-no-ssr"></a></p>
 <h4 id="3-禁止使用-ssr">3. 禁止使用 SSR</h4>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">dynamic</span> <span class="k">from</span> <span class="s1">'next/dynamic'</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">dynamic</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/dynamic</span><span class="dl">'</span>
 
-<span class="kd">const</span> <span class="nx">DynamicComponentWithNoSSR</span> <span class="o">=</span> <span class="nx">dynamic</span><span class="p">(</span><span class="k">import</span><span class="p">(</span><span class="s1">'../components/hello3'</span><span class="p">),</span> <span class="p">{</span>
+<span class="kd">const</span> <span class="nx">DynamicComponentWithNoSSR</span> <span class="o">=</span> <span class="nx">dynamic</span><span class="p">(</span><span class="k">import</span><span class="p">(</span><span class="dl">'</span><span class="s1">../components/hello3</span><span class="dl">'</span><span class="p">),</span> <span class="p">{</span>
   <span class="na">ssr</span><span class="p">:</span> <span class="kc">false</span>
 <span class="p">})</span>
 
@@ -1127,13 +1127,13 @@
 <p><a id="4-with-multiple-modules-at-once"></a></p>
 <h4 id="4-同时加载多个模块">4. 同时加载多个模块</h4>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">dynamic</span> <span class="k">from</span> <span class="s1">'next/dynamic'</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">dynamic</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/dynamic</span><span class="dl">'</span>
 
 <span class="kd">const</span> <span class="nx">HelloBundle</span> <span class="o">=</span> <span class="nx">dynamic</span><span class="p">({</span>
   <span class="na">modules</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">components</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="na">Hello1</span><span class="p">:</span> <span class="k">import</span><span class="p">(</span><span class="s1">'../components/hello1'</span><span class="p">),</span>
-      <span class="na">Hello2</span><span class="p">:</span> <span class="k">import</span><span class="p">(</span><span class="s1">'../components/hello2'</span><span class="p">)</span>
+      <span class="na">Hello1</span><span class="p">:</span> <span class="k">import</span><span class="p">(</span><span class="dl">'</span><span class="s1">../components/hello1</span><span class="dl">'</span><span class="p">),</span>
+      <span class="na">Hello2</span><span class="p">:</span> <span class="k">import</span><span class="p">(</span><span class="dl">'</span><span class="s1">../components/hello2</span><span class="dl">'</span><span class="p">)</span>
     <span class="p">}</span>
 
     <span class="k">return</span> <span class="nx">components</span>
@@ -1171,15 +1171,15 @@
 
 <p>重写的话，新建<code class="highlighter-rouge">./pages/_app.js</code>文件，重写 App 模块如下所示：</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">App</span><span class="p">,</span> <span class="p">{</span><span class="nx">Container</span><span class="p">}</span> <span class="k">from</span> <span class="s1">'next/app'</span>
-<span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="s1">'react'</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">App</span><span class="p">,</span> <span class="p">{</span><span class="nx">Container</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/app</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nx">MyApp</span> <span class="kd">extends</span> <span class="nx">App</span> <span class="p">{</span>
-  <span class="kr">static</span> <span class="k">async</span> <span class="nx">getInitialProps</span> <span class="p">({</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">router</span><span class="p">,</span> <span class="nx">ctx</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="kd">static</span> <span class="k">async</span> <span class="nx">getInitialProps</span> <span class="p">({</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">router</span><span class="p">,</span> <span class="nx">ctx</span> <span class="p">})</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nx">pageProps</span> <span class="o">=</span> <span class="p">{}</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="nx">Component</span><span class="p">.</span><span class="nx">getInitialProps</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">pageProps</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">Component</span><span class="p">.</span><span class="nx">getInitialProps</span><span class="p">(</span><span class="nx">ctx</span><span class="p">)</span>
+      <span class="nx">pageProps</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Component</span><span class="p">.</span><span class="nx">getInitialProps</span><span class="p">(</span><span class="nx">ctx</span><span class="p">)</span>
     <span class="p">}</span>
 
     <span class="k">return</span> <span class="p">{</span><span class="nx">pageProps</span><span class="p">}</span>
@@ -1215,11 +1215,11 @@
 <span class="c1">// Event handlers like onClick can't be added to this file</span>
 
 <span class="c1">// ./pages/_document.js</span>
-<span class="k">import</span> <span class="nx">Document</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Head</span><span class="p">,</span> <span class="nx">Main</span><span class="p">,</span> <span class="nx">NextScript</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'next/document'</span>
+<span class="k">import</span> <span class="nx">Document</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Head</span><span class="p">,</span> <span class="nx">Main</span><span class="p">,</span> <span class="nx">NextScript</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/document</span><span class="dl">'</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nx">MyDocument</span> <span class="kd">extends</span> <span class="nx">Document</span> <span class="p">{</span>
-  <span class="kr">static</span> <span class="k">async</span> <span class="nx">getInitialProps</span><span class="p">(</span><span class="nx">ctx</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">initialProps</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">Document</span><span class="p">.</span><span class="nx">getInitialProps</span><span class="p">(</span><span class="nx">ctx</span><span class="p">)</span>
+  <span class="kd">static</span> <span class="k">async</span> <span class="nx">getInitialProps</span><span class="p">(</span><span class="nx">ctx</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">initialProps</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Document</span><span class="p">.</span><span class="nx">getInitialProps</span><span class="p">(</span><span class="nx">ctx</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">{</span> <span class="p">...</span><span class="nx">initialProps</span> <span class="p">}</span>
   <span class="p">}</span>
 
@@ -1252,10 +1252,10 @@
 
 <p>404和500错误客户端和服务端都会通过<code class="highlighter-rouge">error.js</code>组件处理。如果你想改写它，则新建<code class="highlighter-rouge">_error.js</code>在文件夹中：</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="s1">'react'</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nb">Error</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
-  <span class="kr">static</span> <span class="nx">getInitialProps</span><span class="p">({</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">err</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="kd">static</span> <span class="nx">getInitialProps</span><span class="p">({</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">err</span> <span class="p">})</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">statusCode</span> <span class="o">=</span> <span class="nx">res</span> <span class="p">?</span> <span class="nx">res</span><span class="p">.</span><span class="nx">statusCode</span> <span class="p">:</span> <span class="nx">err</span> <span class="p">?</span> <span class="nx">err</span><span class="p">.</span><span class="nx">statusCode</span> <span class="p">:</span> <span class="kc">null</span><span class="p">;</span>
     <span class="k">return</span> <span class="p">{</span> <span class="nx">statusCode</span> <span class="p">}</span>
   <span class="p">}</span>
@@ -1265,7 +1265,7 @@
       <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
         <span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">statusCode</span>
           <span class="p">?</span> <span class="s2">`An error ${this.props.statusCode} occurred on server`</span>
-          <span class="p">:</span> <span class="s1">'An error occurred on client'</span><span class="si">}</span>
+          <span class="p">:</span> <span class="dl">'</span><span class="s1">An error occurred on client</span><span class="dl">'</span><span class="si">}</span>
       <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
     <span class="p">)</span>
   <span class="p">}</span>
@@ -1277,15 +1277,15 @@
 
 <p>如果你想渲染内置错误页面，你可以使用<code class="highlighter-rouge">next/error</code>：</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="s1">'react'</span>
-<span class="k">import</span> <span class="nb">Error</span> <span class="k">from</span> <span class="s1">'next/error'</span>
-<span class="k">import</span> <span class="nx">fetch</span> <span class="k">from</span> <span class="s1">'isomorphic-unfetch'</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nb">Error</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/error</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">fetch</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">isomorphic-unfetch</span><span class="dl">'</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nx">Page</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
-  <span class="kr">static</span> <span class="k">async</span> <span class="nx">getInitialProps</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s1">'https://api.github.com/repos/zeit/next.js'</span><span class="p">)</span>
+  <span class="kd">static</span> <span class="k">async</span> <span class="nx">getInitialProps</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.github.com/repos/zeit/next.js</span><span class="dl">'</span><span class="p">)</span>
     <span class="kd">const</span> <span class="nx">statusCode</span> <span class="o">=</span> <span class="nx">res</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">&gt;</span> <span class="mi">200</span> <span class="p">?</span> <span class="nx">res</span><span class="p">.</span><span class="nx">statusCode</span> <span class="p">:</span> <span class="kc">false</span>
-    <span class="kd">const</span> <span class="nx">json</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+    <span class="kd">const</span> <span class="nx">json</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
 
     <span class="k">return</span> <span class="p">{</span> <span class="nx">statusCode</span><span class="p">,</span> <span class="na">stars</span><span class="p">:</span> <span class="nx">json</span><span class="p">.</span><span class="nx">stargazers_count</span> <span class="p">}</span>
   <span class="p">}</span>
@@ -1335,7 +1335,7 @@
 <p><code class="highlighter-rouge">phase</code>是配置文件被加载时的当前内容。你可看到所有的 phases 常量：<a href="./lib/constants.js">constants</a>
 这些常量可以通过<code class="highlighter-rouge">next/constants</code>引入：</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span><span class="nx">PHASE_DEVELOPMENT_SERVER</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'next/constants'</span><span class="p">)</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span><span class="nx">PHASE_DEVELOPMENT_SERVER</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">next/constants</span><span class="dl">'</span><span class="p">)</span>
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">(</span><span class="nx">phase</span><span class="p">,</span> <span class="p">{</span><span class="nx">defaultConfig</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="k">if</span><span class="p">(</span><span class="nx">phase</span> <span class="o">===</span> <span class="nx">PHASE_DEVELOPMENT_SERVER</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">{</span>
@@ -1356,7 +1356,7 @@
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// next.config.js</span>
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">distDir</span><span class="p">:</span> <span class="s1">'build'</span>
+  <span class="na">distDir</span><span class="p">:</span> <span class="dl">'</span><span class="s1">build</span><span class="dl">'</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -1395,7 +1395,7 @@
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// next.config.js</span>
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">pageExtensions</span><span class="p">:</span> <span class="p">[</span><span class="s1">'jsx'</span><span class="p">,</span> <span class="s1">'js'</span><span class="p">]</span>
+  <span class="na">pageExtensions</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">jsx</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">js</span><span class="dl">'</span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -1408,7 +1408,7 @@
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">generateBuildId</span><span class="p">:</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="c1">// For example get the latest git commit hash here</span>
-    <span class="k">return</span> <span class="s1">'my-build-id'</span>
+    <span class="k">return</span> <span class="dl">'</span><span class="s1">my-build-id</span><span class="dl">'</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -1435,8 +1435,8 @@
 
 <p>多配置可以组合在一起，如：</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">withTypescript</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'@zeit/next-typescript'</span><span class="p">)</span>
-<span class="kd">const</span> <span class="nx">withSass</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'@zeit/next-sass'</span><span class="p">)</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">withTypescript</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">@zeit/next-typescript</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">withSass</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">@zeit/next-sass</span><span class="dl">'</span><span class="p">)</span>
 
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">withTypescript</span><span class="p">(</span><span class="nx">withSass</span><span class="p">({</span>
   <span class="nx">webpack</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
@@ -1490,7 +1490,7 @@
       <span class="na">use</span><span class="p">:</span> <span class="p">[</span>
         <span class="nx">options</span><span class="p">.</span><span class="nx">defaultLoaders</span><span class="p">.</span><span class="nx">babel</span><span class="p">,</span>
         <span class="p">{</span>
-          <span class="na">loader</span><span class="p">:</span> <span class="s1">'@mdx-js/loader'</span><span class="p">,</span>
+          <span class="na">loader</span><span class="p">:</span> <span class="dl">'</span><span class="s1">@mdx-js/loader</span><span class="dl">'</span><span class="p">,</span>
           <span class="na">options</span><span class="p">:</span> <span class="nx">pluginOptions</span><span class="p">.</span><span class="nx">options</span>
         <span class="p">}</span>
       <span class="p">]</span>
@@ -1518,8 +1518,8 @@
 <p>下面是<code class="highlighter-rouge">.babelrc</code>文件案例：</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"presets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"next/babel"</span><span class="p">],</span><span class="w">
-  </span><span class="s2">"plugins"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+  </span><span class="nl">"presets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"next/babel"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"plugins"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1537,15 +1537,15 @@
 <p>presets / plugins 不允许添加到<code class="highlighter-rouge">.babelrc</code>中，然而你可以配置<code class="highlighter-rouge">next/babel</code>预设：</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"presets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"presets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">[</span><span class="s2">"next/babel"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"preset-env"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-      </span><span class="s2">"transform-runtime"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-      </span><span class="s2">"styled-jsx"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-      </span><span class="s2">"class-properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+      </span><span class="nl">"preset-env"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="nl">"transform-runtime"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="nl">"styled-jsx"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="nl">"class-properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
     </span><span class="p">}]</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"plugins"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+  </span><span class="nl">"plugins"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1559,17 +1559,17 @@
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// next.config.js</span>
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">serverRuntimeConfig</span><span class="p">:</span> <span class="p">{</span> <span class="c1">// Will only be available on the server side</span>
-    <span class="na">mySecret</span><span class="p">:</span> <span class="s1">'secret'</span>
+    <span class="na">mySecret</span><span class="p">:</span> <span class="dl">'</span><span class="s1">secret</span><span class="dl">'</span>
   <span class="p">},</span>
   <span class="na">publicRuntimeConfig</span><span class="p">:</span> <span class="p">{</span> <span class="c1">// Will be available on both server and client</span>
-    <span class="na">staticFolder</span><span class="p">:</span> <span class="s1">'/static'</span><span class="p">,</span>
+    <span class="na">staticFolder</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/static</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">mySecret</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">MY_SECRET</span> <span class="c1">// Pass through env variables</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// pages/index.js</span>
-<span class="k">import</span> <span class="nx">getConfig</span> <span class="k">from</span> <span class="s1">'next/config'</span>
+<span class="k">import</span> <span class="nx">getConfig</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/config</span><span class="dl">'</span>
 <span class="c1">// Only holds serverRuntimeConfig and publicRuntimeConfig from next.config.js nothing else.</span>
 <span class="kd">const</span> <span class="p">{</span><span class="nx">serverRuntimeConfig</span><span class="p">,</span> <span class="nx">publicRuntimeConfig</span><span class="p">}</span> <span class="o">=</span> <span class="nx">getConfig</span><span class="p">()</span>
 
@@ -1577,7 +1577,7 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">publicRuntimeConfig</span><span class="p">.</span><span class="nx">staticFolder</span><span class="p">)</span> <span class="c1">// Will be available on both server and client</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="s2">`</span><span class="p">${</span><span class="nx">publicRuntimeConfig</span><span class="p">.</span><span class="nx">staticFolder</span><span class="p">}</span><span class="s2">/logo.png`</span><span class="p">}</span> <span class="nx">alt</span><span class="o">=</span><span class="s2">"logo"</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="s2">`</span><span class="p">${</span><span class="nx">publicRuntimeConfig</span><span class="p">.</span><span class="nx">staticFolder</span><span class="p">}</span><span class="s2">/logo.png`</span><span class="p">}</span> <span class="nx">alt</span><span class="o">=</span><span class="dl">"</span><span class="s2">logo</span><span class="dl">"</span> <span class="o">/&gt;</span>
 <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
 </span></code></pre></div></div>
 
@@ -1591,10 +1591,10 @@
 
 <p>建立一个 CDN，你能配置<code class="highlighter-rouge">assetPrefix</code>选项，去配置你的 CDN 源。</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">isProd</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">===</span> <span class="s1">'production'</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">isProd</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">production</span><span class="dl">'</span>
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
   <span class="c1">// You may only need to add assetPrefix in the production.</span>
-  <span class="na">assetPrefix</span><span class="p">:</span> <span class="nx">isProd</span> <span class="p">?</span> <span class="s1">'https://cdn.mydomain.com'</span> <span class="p">:</span> <span class="s1">''</span>
+  <span class="na">assetPrefix</span><span class="p">:</span> <span class="nx">isProd</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">https://cdn.mydomain.com</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">''</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -1612,14 +1612,14 @@ next start
 <p>例如，使用<a href="https://zeit.co/now"><code class="highlighter-rouge">now</code></a>去部署<code class="highlighter-rouge">package.json</code>配置文件如下：</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-app"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"latest"</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-app"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"latest"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"dev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next build"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next start"</span><span class="w">
+  </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"dev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next build"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next start"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -1677,12 +1677,12 @@ next export
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">exportPathMap</span><span class="p">:</span> <span class="k">async</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">defaultPathMap</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">{</span>
-      <span class="s1">'/'</span><span class="p">:</span> <span class="p">{</span> <span class="na">page</span><span class="p">:</span> <span class="s1">'/'</span> <span class="p">},</span>
-      <span class="s1">'/about'</span><span class="p">:</span> <span class="p">{</span> <span class="na">page</span><span class="p">:</span> <span class="s1">'/about'</span> <span class="p">},</span>
-      <span class="s1">'/readme.md'</span><span class="p">:</span> <span class="p">{</span> <span class="na">page</span><span class="p">:</span> <span class="s1">'/readme'</span> <span class="p">},</span>
-      <span class="s1">'/p/hello-nextjs'</span><span class="p">:</span> <span class="p">{</span> <span class="na">page</span><span class="p">:</span> <span class="s1">'/post'</span><span class="p">,</span> <span class="na">query</span><span class="p">:</span> <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="s1">'hello-nextjs'</span> <span class="p">}</span> <span class="p">},</span>
-      <span class="s1">'/p/learn-nextjs'</span><span class="p">:</span> <span class="p">{</span> <span class="na">page</span><span class="p">:</span> <span class="s1">'/post'</span><span class="p">,</span> <span class="na">query</span><span class="p">:</span> <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="s1">'learn-nextjs'</span> <span class="p">}</span> <span class="p">},</span>
-      <span class="s1">'/p/deploy-nextjs'</span><span class="p">:</span> <span class="p">{</span> <span class="na">page</span><span class="p">:</span> <span class="s1">'/post'</span><span class="p">,</span> <span class="na">query</span><span class="p">:</span> <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="s1">'deploy-nextjs'</span> <span class="p">}</span> <span class="p">}</span>
+      <span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span> <span class="na">page</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/</span><span class="dl">'</span> <span class="p">},</span>
+      <span class="dl">'</span><span class="s1">/about</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span> <span class="na">page</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/about</span><span class="dl">'</span> <span class="p">},</span>
+      <span class="dl">'</span><span class="s1">/readme.md</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span> <span class="na">page</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/readme</span><span class="dl">'</span> <span class="p">},</span>
+      <span class="dl">'</span><span class="s1">/p/hello-nextjs</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span> <span class="na">page</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/post</span><span class="dl">'</span><span class="p">,</span> <span class="na">query</span><span class="p">:</span> <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">hello-nextjs</span><span class="dl">'</span> <span class="p">}</span> <span class="p">},</span>
+      <span class="dl">'</span><span class="s1">/p/learn-nextjs</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span> <span class="na">page</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/post</span><span class="dl">'</span><span class="p">,</span> <span class="na">query</span><span class="p">:</span> <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">learn-nextjs</span><span class="dl">'</span> <span class="p">}</span> <span class="p">},</span>
+      <span class="dl">'</span><span class="s1">/p/deploy-nextjs</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span> <span class="na">page</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/post</span><span class="dl">'</span><span class="p">,</span> <span class="na">query</span><span class="p">:</span> <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">deploy-nextjs</span><span class="dl">'</span> <span class="p">}</span> <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -1701,9 +1701,9 @@ next <span class="nb">export</span>
 <p>你可以在<code class="highlighter-rouge">package.json</code>添加一个 NPM 脚本，如下所示：</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next build"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"export"</span><span class="p">:</span><span class="w"> </span><span class="s2">"npm run build &amp;&amp; next export"</span><span class="w">
+  </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"next build"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"export"</span><span class="p">:</span><span class="w"> </span><span class="s2">"npm run build &amp;&amp; next export"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -1778,9 +1778,9 @@ next <span class="nb">export</span>
 <p>你能使用代理<a href="https://github.com/zeit/micro-proxy">micro proxy</a>来作为你的本地代理服务。它允许你定义路由规则如下：</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"rules"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="s2">"pathname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/docs**"</span><span class="p">,</span><span class="w"> </span><span class="s2">"method"</span><span class="p">:[</span><span class="s2">"GET"</span><span class="p">,</span><span class="w"> </span><span class="s2">"POST"</span><span class="p">,</span><span class="w"> </span><span class="s2">"OPTIONS"</span><span class="p">],</span><span class="w"> </span><span class="s2">"dest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://docs.my-app.com"</span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="s2">"pathname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/**"</span><span class="p">,</span><span class="w"> </span><span class="s2">"dest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ui.my-app.com"</span><span class="p">}</span><span class="w">
+  </span><span class="nl">"rules"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="nl">"pathname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/docs**"</span><span class="p">,</span><span class="w"> </span><span class="nl">"method"</span><span class="p">:[</span><span class="s2">"GET"</span><span class="p">,</span><span class="w"> </span><span class="s2">"POST"</span><span class="p">,</span><span class="w"> </span><span class="s2">"OPTIONS"</span><span class="p">],</span><span class="w"> </span><span class="nl">"dest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://docs.my-app.com"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="nl">"pathname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/**"</span><span class="p">,</span><span class="w"> </span><span class="nl">"dest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ui.my-app.com"</span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -2122,7 +2122,7 @@ gitment.render('container')
 
     <footer class="notepad-site-footer">
     <div class="copyright">
-        <section>All content copyright <a href="https://raoenhui.github.io/about">前端妹子</a> &copy; 2019 &bull; All rights reserved.</section>
+        <section>All content copyright <a href="https://raoenhui.github.io/about">前端妹子</a> &copy; 2020 &bull; All rights reserved.</section>
 	<!--<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>-->
           <!--<a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>-->
     </div>

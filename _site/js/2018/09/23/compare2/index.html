@@ -137,7 +137,7 @@
 <span class="nx">a</span><span class="p">.</span><span class="nx">valueOf</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
    <span class="k">return</span> <span class="nx">x</span><span class="o">++</span>
 <span class="p">};</span>
-<span class="nx">a</span><span class="o">==</span><span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="nx">a</span><span class="o">==</span><span class="mi">4</span> <span class="p">?</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"succeed"</span><span class="p">)</span> <span class="p">:</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"failed"</span><span class="p">);</span>
+<span class="nx">a</span><span class="o">==</span><span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="nx">a</span><span class="o">==</span><span class="mi">4</span> <span class="p">?</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">succeed</span><span class="dl">"</span><span class="p">)</span> <span class="p">:</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">failed</span><span class="dl">"</span><span class="p">);</span>
 <span class="c1">//succeed</span>
 </code></pre></div></div>
 <p>下面妹子我将一一解析其原理。</p>
@@ -154,7 +154,7 @@
   <p>在 ES5 中，如果参数不是一个对象类型，将抛出一个<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/TypeError" title="TypeError（类型错误） 对象用来表示值的类型非预期类型时发生的错误。"><code class="highlighter-rouge">TypeError</code></a>异常。在 ES2015 中，非对象参数将被视为一个冻结的普通对象，因此会返回<code class="highlighter-rouge">true</code>。</p>
 </blockquote>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">isFrozen</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">isFrozen</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
 <span class="c1">// true                         (ES2015 code)</span>
 
 <span class="nb">Object</span><span class="p">.</span><span class="nx">isFrozen</span><span class="p">({});</span>
@@ -162,12 +162,12 @@
 </code></pre></div></div>
 
 <p><strong>注意</strong>：所以<code class="highlighter-rouge">a</code>一定要是对象，如果a是非对象的其他基本类型如<code class="highlighter-rouge">String</code>，，被视为冻结对象，不能重写<code class="highlighter-rouge">valueOf</code>，则不起效果。</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="o">=</span><span class="s2">""</span><span class="p">;</span> <span class="c1">//非对象</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="o">=</span><span class="dl">""</span><span class="p">;</span> <span class="c1">//非对象</span>
 <span class="kd">var</span> <span class="nx">x</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span>
 <span class="nx">a</span><span class="p">.</span><span class="nx">valueOf</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
    <span class="k">return</span> <span class="nx">x</span><span class="o">++</span>
 <span class="p">};</span>
-<span class="nx">a</span><span class="o">==</span><span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="nx">a</span><span class="o">==</span><span class="mi">4</span> <span class="p">?</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"succeed"</span><span class="p">)</span> <span class="p">:</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"failed"</span><span class="p">);</span>
+<span class="nx">a</span><span class="o">==</span><span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="nx">a</span><span class="o">==</span><span class="mi">4</span> <span class="p">?</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">succeed</span><span class="dl">"</span><span class="p">)</span> <span class="p">:</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">failed</span><span class="dl">"</span><span class="p">);</span>
 <span class="c1">//failed</span>
 </code></pre></div></div>
 <h3 id="第二步-a3--a4">第二步 <code class="highlighter-rouge">a==3 &amp;&amp; a==4</code></h3>
@@ -222,7 +222,7 @@
 <span class="nx">a</span><span class="p">.</span><span class="nx">valueOf</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
    <span class="k">return</span> <span class="nx">x</span><span class="o">++</span>
 <span class="p">};</span>
-<span class="nx">a</span><span class="o">==</span><span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="nx">a</span><span class="o">==</span><span class="mi">4</span> <span class="p">?</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"succeed"</span><span class="p">)</span> <span class="p">:</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"failed"</span><span class="p">);</span>
+<span class="nx">a</span><span class="o">==</span><span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="nx">a</span><span class="o">==</span><span class="mi">4</span> <span class="p">?</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">succeed</span><span class="dl">"</span><span class="p">)</span> <span class="p">:</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">failed</span><span class="dl">"</span><span class="p">);</span>
 <span class="c1">//succeed</span>
 </code></pre></div></div>
 
@@ -421,7 +421,7 @@ gitment.render('container')
 
     <footer class="notepad-site-footer">
     <div class="copyright">
-        <section>All content copyright <a href="https://raoenhui.github.io/about">前端妹子</a> &copy; 2019 &bull; All rights reserved.</section>
+        <section>All content copyright <a href="https://raoenhui.github.io/about">前端妹子</a> &copy; 2020 &bull; All rights reserved.</section>
 	<!--<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>-->
           <!--<a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>-->
     </div>

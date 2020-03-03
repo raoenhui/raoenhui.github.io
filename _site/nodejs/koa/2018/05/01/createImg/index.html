@@ -146,10 +146,10 @@
 </ul>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="kd">const</span> <span class="nx">logger</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'koa-logger'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">koaBody</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'koa-body'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">logger</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">koa-logger</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">koaBody</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">koa-body</span><span class="dl">'</span><span class="p">);</span>
 
-<span class="kd">const</span> <span class="nx">Koa</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'koa'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">Koa</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">koa</span><span class="dl">'</span><span class="p">);</span>
 <span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Koa</span><span class="p">();</span>
 
 <span class="c1">// middleware</span>
@@ -169,11 +169,11 @@
 </ul>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'koa-router'</span><span class="p">)();</span>
+<span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">koa-router</span><span class="dl">'</span><span class="p">)();</span>
 <span class="c1">// route definitions</span>
 
-<span class="nx">router</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'/:size/:shape/:bg'</span><span class="p">,</span> <span class="nx">list</span><span class="p">)</span>
-  <span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="nx">list</span><span class="p">);</span>
+<span class="nx">router</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/:size/:shape/:bg</span><span class="dl">'</span><span class="p">,</span> <span class="nx">list</span><span class="p">)</span>
+  <span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="nx">list</span><span class="p">);</span>
 
 <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">router</span><span class="p">.</span><span class="nx">routes</span><span class="p">());</span>
 
@@ -182,12 +182,12 @@
  */</span>
 
  <span class="kd">function</span> <span class="nx">list</span><span class="p">(</span><span class="nx">ctx</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">sizeAry</span><span class="o">=</span><span class="nx">ctx</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">size</span><span class="p">?</span><span class="nx">ctx</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">size</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">'x'</span><span class="p">):[</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">];</span>
-  <span class="kd">var</span> <span class="nx">shape</span><span class="o">=</span><span class="nx">ctx</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">shape</span><span class="p">?</span><span class="nx">ctx</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">shape</span><span class="p">:</span><span class="s1">'rectangle'</span><span class="p">;</span> <span class="c1">//'rectangle||circle'</span>
+  <span class="kd">var</span> <span class="nx">sizeAry</span><span class="o">=</span><span class="nx">ctx</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">size</span><span class="p">?</span><span class="nx">ctx</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">size</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">x</span><span class="dl">'</span><span class="p">):[</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">];</span>
+  <span class="kd">var</span> <span class="nx">shape</span><span class="o">=</span><span class="nx">ctx</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">shape</span><span class="p">?</span><span class="nx">ctx</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">shape</span><span class="p">:</span><span class="dl">'</span><span class="s1">rectangle</span><span class="dl">'</span><span class="p">;</span> <span class="c1">//'rectangle||circle'</span>
   <span class="kd">var</span> <span class="nx">bgColor</span><span class="o">=</span><span class="nx">ctx</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">bg</span><span class="p">?</span><span class="s2">`#</span><span class="p">${</span><span class="nx">ctx</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">bg</span><span class="p">}</span><span class="s2">`</span><span class="p">:</span><span class="s2">`#e83632`</span><span class="p">;</span>
 
   <span class="kd">var</span> <span class="nx">imgBuffer</span><span class="o">=</span><span class="nx">getCanvas</span><span class="p">({</span><span class="na">width</span><span class="p">:</span><span class="nb">Number</span><span class="p">(</span><span class="nx">sizeAry</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="na">height</span><span class="p">:</span><span class="nb">Number</span><span class="p">(</span><span class="nx">sizeAry</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="nx">shape</span><span class="p">,</span><span class="nx">bgColor</span><span class="p">});</span>
-  <span class="nx">ctx</span><span class="p">.</span><span class="nx">type</span><span class="o">=</span><span class="s2">"image/jpg"</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">image/jpg</span><span class="dl">"</span>
   <span class="nx">ctx</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span>
   <span class="nx">ctx</span><span class="p">.</span><span class="nx">body</span> <span class="o">=</span> <span class="nx">imgBuffer</span><span class="p">;</span>
 <span class="p">}</span>
@@ -199,12 +199,12 @@
 </ul>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="kd">var</span> <span class="nx">Canvas</span><span class="o">=</span><span class="nx">require</span><span class="p">(</span><span class="s1">'canvas'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Canvas</span><span class="o">=</span><span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">canvas</span><span class="dl">'</span><span class="p">);</span>
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="p">{</span><span class="nx">shape</span><span class="p">,</span><span class="nx">width</span><span class="p">,</span><span class="nx">height</span><span class="p">,</span><span class="nx">bgColor</span><span class="p">}</span><span class="o">=</span><span class="nx">params</span><span class="p">;</span>
     <span class="kd">var</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Canvas</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span><span class="nx">width</span><span class="p">);</span>
-    <span class="kd">var</span>  <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">'2d'</span><span class="p">);</span>
-  <span class="k">if</span><span class="p">(</span><span class="nx">shape</span><span class="o">==</span><span class="s1">'circle'</span><span class="p">){</span>
+    <span class="kd">var</span>  <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="dl">'</span><span class="s1">2d</span><span class="dl">'</span><span class="p">);</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">shape</span><span class="o">==</span><span class="dl">'</span><span class="s1">circle</span><span class="dl">'</span><span class="p">){</span>
     <span class="c1">//圆形</span>
     <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
     <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="nx">bgColor</span><span class="p">;</span>
@@ -414,7 +414,7 @@ gitment.render('container')
 
     <footer class="notepad-site-footer">
     <div class="copyright">
-        <section>All content copyright <a href="https://raoenhui.github.io/about">前端妹子</a> &copy; 2019 &bull; All rights reserved.</section>
+        <section>All content copyright <a href="https://raoenhui.github.io/about">前端妹子</a> &copy; 2020 &bull; All rights reserved.</section>
 	<!--<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>-->
           <!--<a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>-->
     </div>

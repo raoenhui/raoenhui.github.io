@@ -183,17 +183,17 @@
 
     <span class="na">resolve</span><span class="p">:</span> <span class="p">{</span>
         <span class="c1">// Add '.ts' and '.tsx' as resolvable extensions.</span>
-        <span class="na">extensions</span><span class="p">:</span> <span class="p">[</span><span class="s1">'.web.js'</span><span class="p">,</span> <span class="s1">'.mjs'</span><span class="p">,</span> <span class="s1">'.js'</span><span class="p">,</span> <span class="s1">'.json'</span><span class="p">,</span> <span class="s1">'.web.jsx'</span><span class="p">,</span> <span class="s1">'.jsx'</span><span class="p">,</span><span class="s2">".ts"</span><span class="p">,</span> <span class="s2">".tsx"</span><span class="p">],</span>
+        <span class="na">extensions</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">.web.js</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">.mjs</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">.js</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">.json</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">.web.jsx</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">.jsx</span><span class="dl">'</span><span class="p">,</span><span class="dl">"</span><span class="s2">.ts</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">.tsx</span><span class="dl">"</span><span class="p">],</span>
     <span class="p">},</span>
 
     <span class="na">module</span><span class="p">:</span> <span class="p">{</span>
         <span class="na">rules</span><span class="p">:</span> <span class="p">[</span>
             <span class="c1">// All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.</span>
             <span class="c1">// { test: /\.tsx?$/, loader: "awesome-typescript-loader" },</span>
-            <span class="p">{</span> <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">tsx</span><span class="se">?</span><span class="sr">$/</span><span class="p">,</span> <span class="na">loader</span><span class="p">:</span> <span class="s2">"ts-loader"</span> <span class="p">},</span>
+            <span class="p">{</span> <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">tsx</span><span class="se">?</span><span class="sr">$/</span><span class="p">,</span> <span class="na">loader</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ts-loader</span><span class="dl">"</span> <span class="p">},</span>
 
             <span class="c1">// All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.</span>
-            <span class="p">{</span> <span class="na">enforce</span><span class="p">:</span> <span class="s2">"pre"</span><span class="p">,</span> <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">js$/</span><span class="p">,</span> <span class="na">loader</span><span class="p">:</span> <span class="s2">"source-map-loader"</span> <span class="p">}</span>
+            <span class="p">{</span> <span class="na">enforce</span><span class="p">:</span> <span class="dl">"</span><span class="s2">pre</span><span class="dl">"</span><span class="p">,</span> <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">js$/</span><span class="p">,</span> <span class="na">loader</span><span class="p">:</span> <span class="dl">"</span><span class="s2">source-map-loader</span><span class="dl">"</span> <span class="p">}</span>
         <span class="p">]</span>
     <span class="p">}</span>
 <span class="p">};</span>
@@ -204,22 +204,22 @@
 <p>新建tsconfig.json,</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"compilerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"outDir"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./ts/"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"sourceMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"noImplicitAny"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"es6"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"jsx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"react"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"allowJs"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"moduleResolution"</span><span class="p">:</span><span class="s2">"node"</span><span class="w">
+  </span><span class="nl">"compilerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"outDir"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./ts/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sourceMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"noImplicitAny"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"es6"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"jsx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"react"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"allowJs"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"moduleResolution"</span><span class="p">:</span><span class="s2">"node"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"include"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"include"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"./src/**/*"</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"exclude"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"exclude"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"node_modules"</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"./node_modules/immutable/dist/immutable.d.ts"</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -241,10 +241,10 @@
 <h3 id="下面可以尽情编写ts文件了">下面可以尽情编写TS文件了</h3>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">React</span> <span class="k">from</span> <span class="s2">"React"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">Baseinfo</span> <span class="k">from</span> <span class="s2">"./baseinfo/baseinfo"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Switch</span><span class="p">,</span> <span class="nx">Route</span><span class="p">,</span><span class="nx">Link</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'react-router-dom'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span><span class="nx">is</span><span class="p">,</span> <span class="nx">fromJS</span><span class="p">}</span> <span class="k">from</span> <span class="s1">'immutable'</span><span class="p">;</span>
+<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">React</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Baseinfo</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./baseinfo/baseinfo</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Switch</span><span class="p">,</span> <span class="nx">Route</span><span class="p">,</span><span class="nx">Link</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react-router-dom</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">is</span><span class="p">,</span> <span class="nx">fromJS</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">immutable</span><span class="dl">'</span><span class="p">;</span>
 
 
 <span class="k">export</span> <span class="kr">interface</span> <span class="nx">Props</span> <span class="p">{</span> <span class="nl">match</span><span class="p">:</span> <span class="p">{</span><span class="nl">url</span><span class="p">:</span><span class="nx">string</span><span class="p">}}</span>
@@ -263,7 +263,7 @@
     <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
         <span class="kd">const</span> <span class="p">{</span> <span class="nx">match</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span>
         <span class="k">return</span> <span class="p">(</span>
-            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s2">"toast-wrapper"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">toast-wrapper</span><span class="dl">"</span><span class="o">&gt;</span>
                 <span class="o">&lt;</span><span class="nx">Link</span> <span class="nx">to</span><span class="o">=</span><span class="p">{</span><span class="s2">`</span><span class="p">${</span><span class="nx">match</span><span class="p">.</span><span class="nx">url</span><span class="p">}</span><span class="s2">/baseinfo`</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">baseinfo</span><span class="o">&lt;</span><span class="sr">/Link</span><span class="err">&gt;
 </span>                <span class="o">&lt;</span><span class="nx">Switch</span><span class="o">&gt;</span>
                     <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="p">{</span><span class="s2">`</span><span class="p">${</span><span class="nx">match</span><span class="p">.</span><span class="nx">url</span><span class="p">}</span><span class="s2">/baseinfo`</span><span class="p">}</span> <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">Baseinfo</span><span class="p">}</span><span class="sr">/</span><span class="err">&gt;
@@ -470,7 +470,7 @@ gitment.render('container')
 
     <footer class="notepad-site-footer">
     <div class="copyright">
-        <section>All content copyright <a href="https://raoenhui.github.io/about">前端妹子</a> &copy; 2019 &bull; All rights reserved.</section>
+        <section>All content copyright <a href="https://raoenhui.github.io/about">前端妹子</a> &copy; 2020 &bull; All rights reserved.</section>
 	<!--<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>-->
           <!--<a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>-->
     </div>

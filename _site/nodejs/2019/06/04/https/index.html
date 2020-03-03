@@ -153,37 +153,37 @@ openssl req <span class="nt">-newkey</span> rsa:2048 <span class="nt">-new</span
 openssl req <span class="nt">-newkey</span> rsa:2048 <span class="nt">-new</span> <span class="nt">-nodes</span> <span class="nt">-x509</span> <span class="nt">-days</span> 3650 <span class="nt">-keyout</span> all.pem <span class="nt">-out</span> all.pem
 </code></pre></div></div>
 <p>可以用<code class="highlighter-rouge">selfsigned</code>插件生成</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">selfsigned</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'selfsigned'</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">selfsigned</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'selfsigned'</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">attrs</span> <span class="o">=</span> <span class="p">[{</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'commonName'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="s1">'contoso.com'</span> <span class="p">}];</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">selfsigned</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">selfsigned</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">selfsigned</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">selfsigned</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">attrs</span> <span class="o">=</span> <span class="p">[{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">commonName</span><span class="dl">'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">contoso.com</span><span class="dl">'</span> <span class="p">}];</span>
 <span class="c1">//有效期约10年</span>
 <span class="kd">var</span> <span class="nx">pems</span> <span class="o">=</span> <span class="nx">selfsigned</span><span class="p">.</span><span class="nx">generate</span><span class="p">(</span><span class="nx">attrs</span><span class="p">,</span> <span class="p">{</span> <span class="na">days</span><span class="p">:</span> <span class="mi">3650</span> <span class="p">});</span>
-<span class="nx">fs</span><span class="p">.</span><span class="nx">writeFileSync</span><span class="p">(</span><span class="s1">'all.pem'</span><span class="p">,</span> <span class="nx">pems</span><span class="p">.</span><span class="kr">private</span> <span class="o">+</span> <span class="nx">pems</span><span class="p">.</span><span class="nx">cert</span><span class="p">,</span> <span class="p">{</span> <span class="na">encoding</span><span class="p">:</span> <span class="s1">'utf-8'</span> <span class="p">});</span>
+<span class="nx">fs</span><span class="p">.</span><span class="nx">writeFileSync</span><span class="p">(</span><span class="dl">'</span><span class="s1">all.pem</span><span class="dl">'</span><span class="p">,</span> <span class="nx">pems</span><span class="p">.</span><span class="kr">private</span> <span class="o">+</span> <span class="nx">pems</span><span class="p">.</span><span class="nx">cert</span><span class="p">,</span> <span class="p">{</span> <span class="na">encoding</span><span class="p">:</span> <span class="dl">'</span><span class="s1">utf-8</span><span class="dl">'</span> <span class="p">});</span>
 </code></pre></div></div>
 <h3 id="node配置https">node配置https</h3>
 <p>用openssl生成all.pem</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl req <span class="nt">-newkey</span> rsa:2048 <span class="nt">-new</span> <span class="nt">-nodes</span> <span class="nt">-x509</span> <span class="nt">-days</span> 3650 <span class="nt">-keyout</span> all.pem <span class="nt">-out</span> all.pem
 </code></pre></div></div>
 <p>在同目录编写<code class="highlighter-rouge">app.js</code>,并运行<code class="highlighter-rouge">node app.js</code>,启动<code class="highlighter-rouge">node</code>服务监听<code class="highlighter-rouge">88</code>端口</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">https</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'https'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'fs'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'path'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">https</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">https</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">fs</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">path</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">key</span><span class="p">:</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">'./all.pem'</span><span class="p">)),</span><span class="c1">//密钥</span>
-  <span class="na">cert</span><span class="p">:</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">'./all.pem'</span><span class="p">))</span><span class="c1">//证书</span>
+  <span class="na">key</span><span class="p">:</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">'</span><span class="s1">./all.pem</span><span class="dl">'</span><span class="p">)),</span><span class="c1">//密钥</span>
+  <span class="na">cert</span><span class="p">:</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">'</span><span class="s1">./all.pem</span><span class="dl">'</span><span class="p">))</span><span class="c1">//证书</span>
 <span class="p">};</span>
 <span class="nx">https</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span> <span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span><span class="o">=&gt;</span> <span class="p">{</span>
     <span class="c1">// 发送 HTTP 头部 </span>
     <span class="c1">// HTTP 状态值: 200 : OK</span>
     <span class="c1">// 内容类型: text/plain</span>
-    <span class="nx">response</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span><span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'text/plain'</span><span class="p">});</span>
+    <span class="nx">response</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span><span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">text/plain</span><span class="dl">'</span><span class="p">});</span>
     <span class="c1">// 发送响应数据 "Hello World"</span>
-    <span class="nx">response</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">'Hello World</span><span class="err">\</span><span class="s1">n'</span><span class="p">);</span>
+    <span class="nx">response</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello World</span><span class="se">\n</span><span class="dl">'</span><span class="p">);</span>
 <span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mi">88</span><span class="p">);</span>
 
 <span class="c1">// 终端打印如下信息</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Server running at https://127.0.0.1:88/'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Server running at https://127.0.0.1:88/</span><span class="dl">'</span><span class="p">);</span>
 </code></pre></div></div>
 <p><img src="https://raoenhui.github.io/images/190604/2.jpg" alt="browser.png" /></p>
 
@@ -199,20 +199,20 @@ openssl req <span class="nt">-newkey</span> rsa:2048 <span class="nt">-new</span
 </code></pre></div></div>
 <p>web-dev-server原理
 server.js里面判断如果没有证书和密钥，则用<code class="highlighter-rouge">selfsigned</code>生成，并放在ssl目录中的<code class="highlighter-rouge">server.pem</code>文件下,默认生成有效期为<code class="highlighter-rouge">30</code>天。</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="kd">const</span> <span class="nx">certPath</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">'../ssl/server.pem'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="kd">const</span> <span class="nx">certPath</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">'</span><span class="s1">../ssl/server.pem</span><span class="dl">'</span><span class="p">);</span>
       <span class="kd">let</span> <span class="nx">certExists</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">existsSync</span><span class="p">(</span><span class="nx">certPath</span><span class="p">);</span>
       <span class="p">...</span>
       <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">certExists</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">log</span><span class="p">(</span><span class="s1">'Generating SSL Certificate'</span><span class="p">);</span>
-        <span class="kd">const</span> <span class="nx">attrs</span> <span class="o">=</span> <span class="p">[{</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'commonName'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="s1">'localhost'</span> <span class="p">}];</span>
+        <span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Generating SSL Certificate</span><span class="dl">'</span><span class="p">);</span>
+        <span class="kd">const</span> <span class="nx">attrs</span> <span class="o">=</span> <span class="p">[{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">commonName</span><span class="dl">'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">localhost</span><span class="dl">'</span> <span class="p">}];</span>
         <span class="kd">const</span> <span class="nx">pems</span> <span class="o">=</span> <span class="nx">selfsigned</span><span class="p">.</span><span class="nx">generate</span><span class="p">(</span><span class="nx">attrs</span><span class="p">,</span> <span class="p">{</span>
-          <span class="na">algorithm</span><span class="p">:</span> <span class="s1">'sha256'</span><span class="p">,</span>
+          <span class="na">algorithm</span><span class="p">:</span> <span class="dl">'</span><span class="s1">sha256</span><span class="dl">'</span><span class="p">,</span>
           <span class="na">days</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
           <span class="na">keySize</span><span class="p">:</span> <span class="mi">2048</span><span class="p">,</span>
           <span class="na">extensions</span><span class="p">:</span> <span class="p">[...]</span>
         <span class="p">});</span>
 
-        <span class="nx">fs</span><span class="p">.</span><span class="nx">writeFileSync</span><span class="p">(</span><span class="nx">certPath</span><span class="p">,</span> <span class="nx">pems</span><span class="p">.</span><span class="kr">private</span> <span class="o">+</span> <span class="nx">pems</span><span class="p">.</span><span class="nx">cert</span><span class="p">,</span> <span class="p">{</span> <span class="na">encoding</span><span class="p">:</span> <span class="s1">'utf-8'</span> <span class="p">});</span>
+        <span class="nx">fs</span><span class="p">.</span><span class="nx">writeFileSync</span><span class="p">(</span><span class="nx">certPath</span><span class="p">,</span> <span class="nx">pems</span><span class="p">.</span><span class="kr">private</span> <span class="o">+</span> <span class="nx">pems</span><span class="p">.</span><span class="nx">cert</span><span class="p">,</span> <span class="p">{</span> <span class="na">encoding</span><span class="p">:</span> <span class="dl">'</span><span class="s1">utf-8</span><span class="dl">'</span> <span class="p">});</span>
       <span class="p">}</span>
       <span class="nx">fakeCert</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="nx">certPath</span><span class="p">);</span>
 </code></pre></div></div>
@@ -472,7 +472,7 @@ gitment.render('container')
 
     <footer class="notepad-site-footer">
     <div class="copyright">
-        <section>All content copyright <a href="https://raoenhui.github.io/about">前端妹子</a> &copy; 2019 &bull; All rights reserved.</section>
+        <section>All content copyright <a href="https://raoenhui.github.io/about">前端妹子</a> &copy; 2020 &bull; All rights reserved.</section>
 	<!--<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>-->
           <!--<a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>-->
     </div>

@@ -141,34 +141,34 @@
 <p>1.为静态文件添加唯一<code class="highlighter-rouge">hash</code>值，如 unicorn.css → unicorn-d41d8cd98f.css。</p>
 
 <p>2.生成<code class="highlighter-rouge">map</code>映射文件，方便后面<code class="highlighter-rouge">html</code>更换文件名</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'js'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span>
-    <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">([</span><span class="s1">'./src/app.js'</span><span class="p">,</span> <span class="s1">'./src/app2.js'</span><span class="p">])</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'dist'</span><span class="p">))</span> <span class="c1">// 将源文件拷贝到打包目录</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">'</span><span class="s1">js</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span>
+    <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">([</span><span class="dl">'</span><span class="s1">./src/app.js</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">./src/app2.js</span><span class="dl">'</span><span class="p">])</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="dl">'</span><span class="s1">dist</span><span class="dl">'</span><span class="p">))</span> <span class="c1">// 将源文件拷贝到打包目录</span>
         <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">rev</span><span class="p">())</span>  
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'dist'</span><span class="p">))</span> <span class="c1">// 将生成的hash文件添加到打包目录</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">rev</span><span class="p">.</span><span class="nx">manifest</span><span class="p">(</span><span class="s1">'js-rev.json'</span><span class="p">))</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'dist'</span><span class="p">))</span> <span class="c1">// 将map映射文件添加到打包目录</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="dl">'</span><span class="s1">dist</span><span class="dl">'</span><span class="p">))</span> <span class="c1">// 将生成的hash文件添加到打包目录</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">rev</span><span class="p">.</span><span class="nx">manifest</span><span class="p">(</span><span class="dl">'</span><span class="s1">js-rev.json</span><span class="dl">'</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="dl">'</span><span class="s1">dist</span><span class="dl">'</span><span class="p">))</span> <span class="c1">// 将map映射文件添加到打包目录</span>
 <span class="p">);</span>
 
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'css'</span><span class="p">,()</span><span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'./src/*.css'</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'dist'</span><span class="p">))</span> <span class="c1">// 将生成的hash文件添加到打包目录</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">'</span><span class="s1">css</span><span class="dl">'</span><span class="p">,()</span><span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="dl">'</span><span class="s1">./src/*.css</span><span class="dl">'</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="dl">'</span><span class="s1">dist</span><span class="dl">'</span><span class="p">))</span> <span class="c1">// 将生成的hash文件添加到打包目录</span>
         <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">rev</span><span class="p">())</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'dist'</span><span class="p">))</span><span class="c1">// write rev'd assets to build dir</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">rev</span><span class="p">.</span><span class="nx">manifest</span><span class="p">(</span><span class="s1">'css-rev.json'</span><span class="p">))</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'dist'</span><span class="p">))</span>   <span class="c1">// 将map映射文件添加到打包目录</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="dl">'</span><span class="s1">dist</span><span class="dl">'</span><span class="p">))</span><span class="c1">// write rev'd assets to build dir</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">rev</span><span class="p">.</span><span class="nx">manifest</span><span class="p">(</span><span class="dl">'</span><span class="s1">css-rev.json</span><span class="dl">'</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="dl">'</span><span class="s1">dist</span><span class="dl">'</span><span class="p">))</span>   <span class="c1">// 将map映射文件添加到打包目录</span>
 
 <span class="p">});</span>
 </code></pre></div></div>
 <h4 id="gulp-rev-rewrite">gulp-rev-rewrite</h4>
 <p>根据<code class="highlighter-rouge">rev</code>生成的manifest.json <code class="highlighter-rouge">map</code>映射文件, 去替换<code class="highlighter-rouge">html</code>文件中的引用名称,</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'html'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">jsManifest</span> <span class="o">=</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'dist/js-rev.json'</span><span class="p">);</span> <span class="c1">//获取js映射文件</span>
-  <span class="kd">const</span> <span class="nx">cssManifest</span> <span class="o">=</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'dist/css-rev.json'</span><span class="p">);</span> <span class="c1">//获取css映射文件</span>
-  <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'./*.html'</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">'</span><span class="s1">html</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">jsManifest</span> <span class="o">=</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="dl">'</span><span class="s1">dist/js-rev.json</span><span class="dl">'</span><span class="p">);</span> <span class="c1">//获取js映射文件</span>
+  <span class="kd">const</span> <span class="nx">cssManifest</span> <span class="o">=</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="dl">'</span><span class="s1">dist/css-rev.json</span><span class="dl">'</span><span class="p">);</span> <span class="c1">//获取css映射文件</span>
+  <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="dl">'</span><span class="s1">./*.html</span><span class="dl">'</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">revRewrite</span><span class="p">({</span><span class="na">manifest</span><span class="p">:</span> <span class="nx">jsManifest</span><span class="p">}))</span> <span class="c1">// 把引用的js替换成有版本号的名字</span>
     <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">revRewrite</span><span class="p">({</span><span class="na">manifest</span><span class="p">:</span> <span class="nx">cssManifest</span><span class="p">}))</span> <span class="c1">// 把引用的css替换成有版本号的名字</span>
-    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'dist'</span><span class="p">))</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="dl">'</span><span class="s1">dist</span><span class="dl">'</span><span class="p">))</span>
 <span class="p">});</span>
 </code></pre></div></div>
 <p>替换成功
@@ -179,121 +179,121 @@
 <h4 id="gulp-babel">gulp-babel</h4>
 <p><code class="highlighter-rouge">babel</code>是一个 JavaScript 编译器。我们主要是用将<code class="highlighter-rouge">ES6</code>转换成可以在浏览器中运行的代码。而<code class="highlighter-rouge">gulp-babel </code>的用法、功能和<code class="highlighter-rouge">babel </code>是一样的。
 先运行 npm install –save-dev gulp-babel @babel/core @babel/preset-env  @babel/plugin-transform-runtime，装好<code class="highlighter-rouge">babel</code>。</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">babel</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-babel'</span><span class="p">);</span>
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'js'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span>
-    <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'src/app.js'</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">babel</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">gulp-babel</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">'</span><span class="s1">js</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span>
+    <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="dl">'</span><span class="s1">src/app.js</span><span class="dl">'</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">babel</span><span class="p">({</span>
-            <span class="na">presets</span><span class="p">:</span> <span class="p">[</span><span class="s1">'@babel/env'</span><span class="p">],</span> 
-            <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span><span class="s1">'@babel/transform-runtime'</span><span class="p">]</span>
+            <span class="na">presets</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">@babel/env</span><span class="dl">'</span><span class="p">],</span> 
+            <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">@babel/transform-runtime</span><span class="dl">'</span><span class="p">]</span>
         <span class="p">}))</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'dist'</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="dl">'</span><span class="s1">dist</span><span class="dl">'</span><span class="p">))</span>
 <span class="p">);</span>
 </code></pre></div></div>
 <h4 id="gulp-sourcemaps">gulp-sourcemaps</h4>
 <p>找到编译源文件，方便调试源码。</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">sourcemaps</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-sourcemaps'</span><span class="p">);</span>
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'js'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span>
-    <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'src/app.js'</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">sourcemaps</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">gulp-sourcemaps</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">'</span><span class="s1">js</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span>
+    <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="dl">'</span><span class="s1">src/app.js</span><span class="dl">'</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sourcemaps</span><span class="p">.</span><span class="nx">init</span><span class="p">())</span>
         <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">babel</span><span class="p">({</span>
-            <span class="na">presets</span><span class="p">:</span> <span class="p">[</span><span class="s1">'@babel/env'</span><span class="p">],</span> 
-            <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span><span class="s1">'@babel/transform-runtime'</span><span class="p">]</span>
+            <span class="na">presets</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">@babel/env</span><span class="dl">'</span><span class="p">],</span> 
+            <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">@babel/transform-runtime</span><span class="dl">'</span><span class="p">]</span>
         <span class="p">}))</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sourcemaps</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">'.'</span><span class="p">))</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'dist'</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sourcemaps</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">'</span><span class="s1">.</span><span class="dl">'</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="dl">'</span><span class="s1">dist</span><span class="dl">'</span><span class="p">))</span>
 <span class="p">);</span>
 </code></pre></div></div>
 <p><img src="https://raoenhui.github.io/images/190303/2.jpg" alt="image.png" /></p>
 <h4 id="gulp-concat">gulp-concat</h4>
 <p>合并<code class="highlighter-rouge">js</code>文件</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">concat</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-concat'</span><span class="p">);</span>
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'js'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">([</span><span class="s1">'./src/app.js'</span><span class="p">,</span> <span class="s1">'./src/app2.js'</span><span class="p">])</span>
-    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">concat</span><span class="p">(</span><span class="s1">'app.js'</span><span class="p">))</span>
-    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'dist'</span><span class="p">));</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">concat</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">gulp-concat</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">'</span><span class="s1">js</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">([</span><span class="dl">'</span><span class="s1">./src/app.js</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">./src/app2.js</span><span class="dl">'</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">concat</span><span class="p">(</span><span class="dl">'</span><span class="s1">app.js</span><span class="dl">'</span><span class="p">))</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="dl">'</span><span class="s1">dist</span><span class="dl">'</span><span class="p">));</span>
 <span class="p">});</span>             
 </code></pre></div></div>
 
 <h3 id="css相关">CSS相关</h3>
 <h4 id="gulp-postcss">gulp-postcss</h4>
 <p><code class="highlighter-rouge">CSS</code>预处理器。</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">postcss</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-postcss'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">autoprefixer</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'autoprefixer'</span><span class="p">);</span> <span class="c1">//添加css兼容性写法</span>
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'css'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'./src/*.css'</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">postcss</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">gulp-postcss</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">autoprefixer</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">autoprefixer</span><span class="dl">'</span><span class="p">);</span> <span class="c1">//添加css兼容性写法</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">'</span><span class="s1">css</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="dl">'</span><span class="s1">./src/*.css</span><span class="dl">'</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">postcss</span><span class="p">([</span> <span class="nx">autoprefixer</span><span class="p">({</span>
             <span class="na">browsers</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s1">'&gt;1%'</span><span class="p">,</span>
-                <span class="s1">'last 4 versions'</span><span class="p">,</span>
-                <span class="s1">'Firefox ESR'</span><span class="p">,</span>
-                <span class="s1">'not ie &lt; 9'</span><span class="p">,</span> 
-                <span class="s1">'iOS &gt;= 8'</span><span class="p">,</span>
-                <span class="s1">'Android &gt; 4.4'</span>
+                <span class="dl">'</span><span class="s1">&gt;1%</span><span class="dl">'</span><span class="p">,</span>
+                <span class="dl">'</span><span class="s1">last 4 versions</span><span class="dl">'</span><span class="p">,</span>
+                <span class="dl">'</span><span class="s1">Firefox ESR</span><span class="dl">'</span><span class="p">,</span>
+                <span class="dl">'</span><span class="s1">not ie &lt; 9</span><span class="dl">'</span><span class="p">,</span> 
+                <span class="dl">'</span><span class="s1">iOS &gt;= 8</span><span class="dl">'</span><span class="p">,</span>
+                <span class="dl">'</span><span class="s1">Android &gt; 4.4</span><span class="dl">'</span>
             <span class="p">],</span>
-            <span class="na">flexbox</span><span class="p">:</span> <span class="s1">'no-2009'</span><span class="p">,</span>
+            <span class="na">flexbox</span><span class="p">:</span> <span class="dl">'</span><span class="s1">no-2009</span><span class="dl">'</span><span class="p">,</span>
         <span class="p">})</span> <span class="p">]))</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'./dest'</span><span class="p">));</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="dl">'</span><span class="s1">./dest</span><span class="dl">'</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre></div></div>
 <h4 id="gulp-clean-css">gulp-clean-css</h4>
 <p>压缩<code class="highlighter-rouge">CSS</code></p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">cleanCSS</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-clean-css'</span><span class="p">);</span>
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'css'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'styles/*.css'</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">cleanCSS</span><span class="p">({</span><span class="na">compatibility</span><span class="p">:</span> <span class="s1">'ie8'</span><span class="p">}))</span>
-    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'dist'</span><span class="p">));</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">cleanCSS</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">gulp-clean-css</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">'</span><span class="s1">css</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="dl">'</span><span class="s1">styles/*.css</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">cleanCSS</span><span class="p">({</span><span class="na">compatibility</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ie8</span><span class="dl">'</span><span class="p">}))</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="dl">'</span><span class="s1">dist</span><span class="dl">'</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre></div></div>
 <h3 id="html相关">HTML相关</h3>
 <h4 id="gulp-inline-source">gulp-inline-source</h4>
 <p>将引用的<code class="highlighter-rouge">js</code>、<code class="highlighter-rouge">css</code>文件，插入<code class="highlighter-rouge">html</code>中，变成内联式引用。</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">inlinesource</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-inline-source'</span><span class="p">);</span>
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'html'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'./*.html'</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">inlinesource</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">gulp-inline-source</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">'</span><span class="s1">html</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="dl">'</span><span class="s1">./*.html</span><span class="dl">'</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">inlinesource</span><span class="p">({</span>
            <span class="na">compress</span><span class="p">:</span> <span class="kc">false</span>     <span class="c1">//是否压缩成一行，默认为true压缩</span>
          <span class="p">}))</span>
-        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'./out'</span><span class="p">));</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="dl">'</span><span class="s1">./out</span><span class="dl">'</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre></div></div>
 <h4 id="gulp-htmlmin">gulp-htmlmin</h4>
 <p>压缩html</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">htmlmin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-htmlmin'</span><span class="p">);</span>
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'minify'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'src/*.html'</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">htmlmin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">gulp-htmlmin</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">'</span><span class="s1">minify</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="dl">'</span><span class="s1">src/*.html</span><span class="dl">'</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">htmlmin</span><span class="p">({</span>
                 <span class="na">removeComments</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>  <span class="c1">//去除备注</span>
                 <span class="na">collapseWhitespace</span><span class="p">:</span> <span class="kc">true</span> <span class="c1">//去除空白</span>
               <span class="p">}))</span>
-    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'dist'</span><span class="p">));</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="dl">'</span><span class="s1">dist</span><span class="dl">'</span><span class="p">));</span>
 <span class="p">});</span>    
 </code></pre></div></div>
 
 <h3 id="其他">其他</h3>
 <h4 id="del">del</h4>
 <p>删除文件或文件夹</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">del</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'del'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">del</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">del</span><span class="dl">'</span><span class="p">);</span>
 <span class="cm">/* 清理一些不是必须的js，css文件 */</span>
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'clean'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">del</span><span class="p">([</span><span class="s1">'./dist/*.js'</span><span class="p">,</span>
-        <span class="s1">'./dist/*.css'</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">'</span><span class="s1">clean</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">del</span><span class="p">([</span><span class="dl">'</span><span class="s1">./dist/*.js</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">./dist/*.css</span><span class="dl">'</span>
     <span class="p">]).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'delete unnecessary files for firecrackers'</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">delete unnecessary files for firecrackers</span><span class="dl">'</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="p">});</span>
 </code></pre></div></div>
 <h4 id="gulp-rename">gulp-rename</h4>
 <p>重命名文件</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">rename</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-rename'</span><span class="p">);</span>
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'html'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">rename</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">gulp-rename</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">'</span><span class="s1">html</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">rename</span><span class="p">({</span>
-    <span class="na">dirname</span><span class="p">:</span> <span class="s2">"."</span><span class="p">,</span>                <span class="c1">// 路径名</span>
-    <span class="na">basename</span><span class="p">:</span> <span class="s2">"index"</span><span class="p">,</span>            <span class="c1">// 主文件名</span>
-    <span class="na">prefix</span><span class="p">:</span> <span class="s2">"pre-"</span><span class="p">,</span>                 <span class="c1">// 前缀</span>
-    <span class="na">suffix</span><span class="p">:</span> <span class="s2">"-min"</span><span class="p">,</span>                 <span class="c1">// 后缀</span>
-    <span class="na">extname</span><span class="p">:</span> <span class="s2">".html"</span>                <span class="c1">// 扩展名</span>
+    <span class="na">dirname</span><span class="p">:</span> <span class="dl">"</span><span class="s2">.</span><span class="dl">"</span><span class="p">,</span>                <span class="c1">// 路径名</span>
+    <span class="na">basename</span><span class="p">:</span> <span class="dl">"</span><span class="s2">index</span><span class="dl">"</span><span class="p">,</span>            <span class="c1">// 主文件名</span>
+    <span class="na">prefix</span><span class="p">:</span> <span class="dl">"</span><span class="s2">pre-</span><span class="dl">"</span><span class="p">,</span>                 <span class="c1">// 前缀</span>
+    <span class="na">suffix</span><span class="p">:</span> <span class="dl">"</span><span class="s2">-min</span><span class="dl">"</span><span class="p">,</span>                 <span class="c1">// 后缀</span>
+    <span class="na">extname</span><span class="p">:</span> <span class="dl">"</span><span class="s2">.html</span><span class="dl">"</span>                <span class="c1">// 扩展名</span>
   <span class="p">}))</span>
-<span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'dist'</span><span class="p">))</span>
+<span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="dl">'</span><span class="s1">dist</span><span class="dl">'</span><span class="p">))</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
@@ -490,7 +490,7 @@ gitment.render('container')
 
     <footer class="notepad-site-footer">
     <div class="copyright">
-        <section>All content copyright <a href="https://raoenhui.github.io/about">前端妹子</a> &copy; 2019 &bull; All rights reserved.</section>
+        <section>All content copyright <a href="https://raoenhui.github.io/about">前端妹子</a> &copy; 2020 &bull; All rights reserved.</section>
 	<!--<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>-->
           <!--<a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>-->
     </div>

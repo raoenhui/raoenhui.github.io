@@ -154,14 +154,14 @@
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">RequestHandler</span>
 <span class="o">{</span>
  
-<span class="n">Logger</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">RequestHandler</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+<span class="nc">Logger</span> <span class="n">logger</span> <span class="o">=</span> <span class="nc">Logger</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="nc">RequestHandler</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
  
-<span class="kd">private</span> <span class="n">DataServiceController</span> <span class="n">dataServiceController</span><span class="o">;</span>
+<span class="kd">private</span> <span class="nc">DataServiceController</span> <span class="n">dataServiceController</span><span class="o">;</span>
  
 <span class="nd">@Path</span><span class="o">(</span><span class="s">"/ready"</span><span class="o">)</span>
 <span class="nd">@GET</span>
-<span class="nd">@Produces</span><span class="o">(</span><span class="n">MediaType</span><span class="o">.</span><span class="na">TEXT_HTML</span><span class="o">)</span>
-<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">ready</span><span class="o">(</span><span class="nd">@HeaderParam</span><span class="o">(</span><span class="s">"user-agent"</span><span class="o">)</span> <span class="n">String</span> <span class="n">userAgent</span><span class="o">)</span>
+<span class="nd">@Produces</span><span class="o">(</span><span class="nc">MediaType</span><span class="o">.</span><span class="na">TEXT_HTML</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">ready</span><span class="o">(</span><span class="nd">@HeaderParam</span><span class="o">(</span><span class="s">"user-agent"</span><span class="o">)</span> <span class="nc">String</span> <span class="n">userAgent</span><span class="o">)</span>
 <span class="o">{</span>
  
 <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"User Agent : "</span> <span class="o">+</span> <span class="n">userAgent</span><span class="o">);</span>
@@ -193,22 +193,22 @@
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">RequestHandler</span>
 <span class="o">{</span>
  
-    <span class="n">Logger</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">Logger</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">RequestHandler</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    <span class="nc">Logger</span> <span class="n">logger</span> <span class="o">=</span> <span class="nc">Logger</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="nc">RequestHandler</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
  
-    <span class="kd">private</span> <span class="n">DataServiceController</span> <span class="n">dataServiceController</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">DataServiceController</span> <span class="n">dataServiceController</span><span class="o">;</span>
  
     <span class="nd">@Path</span><span class="o">(</span><span class="s">"/ready"</span><span class="o">)</span>
     <span class="nd">@GET</span>
-    <span class="nd">@Produces</span><span class="o">(</span><span class="n">MediaType</span><span class="o">.</span><span class="na">TEXT_HTML</span><span class="o">)</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">ready</span><span class="o">(</span><span class="nd">@Context</span> <span class="n">HttpHeaders</span> <span class="n">headers</span><span class="o">)</span>
+    <span class="nd">@Produces</span><span class="o">(</span><span class="nc">MediaType</span><span class="o">.</span><span class="na">TEXT_HTML</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">ready</span><span class="o">(</span><span class="nd">@Context</span> <span class="nc">HttpHeaders</span> <span class="n">headers</span><span class="o">)</span>
     <span class="o">{</span>
  
-<span class="k">for</span><span class="o">(</span><span class="n">String</span> <span class="n">header</span> <span class="o">:</span> <span class="n">headers</span><span class="o">.</span><span class="na">getRequestHeaders</span><span class="o">().</span><span class="na">keySet</span><span class="o">()){</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">header</span> <span class="o">+</span> <span class="s">"==&gt; "</span><span class="o">);</span>
-             <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">value</span> <span class="o">:</span> <span class="n">headers</span><span class="o">.</span><span class="na">getRequestHeader</span><span class="o">(</span><span class="n">header</span><span class="o">))</span> <span class="o">{</span>
-                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">value</span> <span class="o">+</span> <span class="s">":"</span><span class="o">);</span>
+<span class="k">for</span><span class="o">(</span><span class="nc">String</span> <span class="n">header</span> <span class="o">:</span> <span class="n">headers</span><span class="o">.</span><span class="na">getRequestHeaders</span><span class="o">().</span><span class="na">keySet</span><span class="o">()){</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">header</span> <span class="o">+</span> <span class="s">"==&gt; "</span><span class="o">);</span>
+             <span class="k">for</span> <span class="o">(</span><span class="nc">String</span> <span class="n">value</span> <span class="o">:</span> <span class="n">headers</span><span class="o">.</span><span class="na">getRequestHeader</span><span class="o">(</span><span class="n">header</span><span class="o">))</span> <span class="o">{</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">value</span> <span class="o">+</span> <span class="s">":"</span><span class="o">);</span>
             <span class="o">}</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
         <span class="o">}</span>
  
 <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
@@ -411,7 +411,7 @@ gitment.render('container')
 
     <footer class="notepad-site-footer">
     <div class="copyright">
-        <section>All content copyright <a href="https://raoenhui.github.io/about">前端妹子</a> &copy; 2019 &bull; All rights reserved.</section>
+        <section>All content copyright <a href="https://raoenhui.github.io/about">前端妹子</a> &copy; 2020 &bull; All rights reserved.</section>
 	<!--<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>-->
           <!--<a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>-->
     </div>

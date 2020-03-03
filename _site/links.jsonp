@@ -158,6 +158,11 @@ callback([
   {
     "text": "小程序swiper下拉判断是否拉到底部",
     "href": "https://raoenhui.github.io/wechat/2019/12/31/swiper/"
+  } ,
+
+  {
+    "text": "Git message规范Change log编写指南",
+    "href": "https://raoenhui.github.io/git/2020/02/25/changelog/"
   } 
 
 ])

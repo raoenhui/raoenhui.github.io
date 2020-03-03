@@ -134,44 +134,44 @@
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">apps</span> <span class="p">:</span> <span class="p">[{</span>
     <span class="c1">//pm2名字</span>
-    <span class="na">name</span><span class="p">:</span> <span class="s2">"nextcn"</span><span class="p">,</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">nextcn</span><span class="dl">"</span><span class="p">,</span>
    <span class="c1">//pm2运行脚本</span>
-    <span class="na">script</span><span class="p">:</span> <span class="s2">"./app.js"</span><span class="p">,</span>
+    <span class="na">script</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./app.js</span><span class="dl">"</span><span class="p">,</span>
   <span class="c1">//环境变量</span>
     <span class="na">env</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">NODE_ENV</span><span class="p">:</span> <span class="s2">"development"</span><span class="p">,</span>
+      <span class="na">NODE_ENV</span><span class="p">:</span> <span class="dl">"</span><span class="s2">development</span><span class="dl">"</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="na">env_production</span><span class="p">:</span> <span class="p">{</span>
-      <span class="na">NODE_ENV</span><span class="p">:</span> <span class="s2">"production"</span><span class="p">,</span>
+      <span class="na">NODE_ENV</span><span class="p">:</span> <span class="dl">"</span><span class="s2">production</span><span class="dl">"</span><span class="p">,</span>
     <span class="p">}</span>
   <span class="p">}],</span>
   <span class="na">deploy</span><span class="p">:</span> <span class="p">{</span>
     <span class="c1">// "production" is the environment name</span>
     <span class="na">production</span><span class="p">:</span> <span class="p">{</span>
       <span class="c1">// 服务器端SSH key 地址, 默认 $HOME/.ssh</span>
-      <span class="na">key</span><span class="p">:</span> <span class="s2">"$HOME/.ssh"</span><span class="p">,</span>
+      <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">$HOME/.ssh</span><span class="dl">"</span><span class="p">,</span>
       <span class="c1">// SSH user 需配置</span>
-      <span class="na">user</span><span class="p">:</span> <span class="s2">"root"</span><span class="p">,</span>
+      <span class="na">user</span><span class="p">:</span> <span class="dl">"</span><span class="s2">root</span><span class="dl">"</span><span class="p">,</span>
       <span class="c1">// SSH host 需配置</span>
-      <span class="na">host</span><span class="p">:</span> <span class="p">[</span><span class="s2">"47.98.138.195"</span><span class="p">],</span>
+      <span class="na">host</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">47.98.138.195</span><span class="dl">"</span><span class="p">],</span>
       <span class="c1">// SSH options with no command-line flag, see 'man ssh'</span>
       <span class="c1">// can be either a single string or an array of strings</span>
-      <span class="na">ssh_options</span><span class="p">:</span> <span class="s2">"StrictHostKeyChecking=no"</span><span class="p">,</span>
+      <span class="na">ssh_options</span><span class="p">:</span> <span class="dl">"</span><span class="s2">StrictHostKeyChecking=no</span><span class="dl">"</span><span class="p">,</span>
       <span class="c1">// GIT remote/branch</span>
-      <span class="na">ref</span><span class="p">:</span> <span class="s2">"origin/master"</span><span class="p">,</span>
+      <span class="na">ref</span><span class="p">:</span> <span class="dl">"</span><span class="s2">origin/master</span><span class="dl">"</span><span class="p">,</span>
       <span class="c1">// GIT ssh远程地址 需配置</span>
-      <span class="na">repo</span><span class="p">:</span> <span class="s2">"git@github.com:raoenhui/next-site-cn.git"</span><span class="p">,</span>
+      <span class="na">repo</span><span class="p">:</span> <span class="dl">"</span><span class="s2">git@github.com:raoenhui/next-site-cn.git</span><span class="dl">"</span><span class="p">,</span>
       <span class="c1">// 放入服务器端地址 需配置</span>
-      <span class="na">path</span><span class="p">:</span> <span class="s2">"/ice/pm2"</span><span class="p">,</span>
+      <span class="na">path</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/ice/pm2</span><span class="dl">"</span><span class="p">,</span>
       <span class="c1">// Pre-setup command or path to a script on your local machine</span>
-      <span class="s2">"pre-setup"</span><span class="p">:</span> <span class="s2">"echo 'This is a pre-setup command'"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">pre-setup</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">echo 'This is a pre-setup command'</span><span class="dl">"</span><span class="p">,</span>
       <span class="c1">// Post-setup commands or path to a script on the host machine</span>
       <span class="c1">// eg: placing configurations in the shared dir etc</span>
-      <span class="s2">"post-setup"</span><span class="p">:</span> <span class="s2">"ls -la"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">post-setup</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ls -la</span><span class="dl">"</span><span class="p">,</span>
       <span class="c1">// pre-deploy action</span>
-      <span class="s2">"pre-deploy-local"</span><span class="p">:</span> <span class="s2">"echo 'This is a pre-deploy-local command'"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">pre-deploy-local</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">echo 'This is a pre-deploy-local command'</span><span class="dl">"</span><span class="p">,</span>
       <span class="c1">// post-deploy action</span>
-      <span class="s2">"post-deploy"</span><span class="p">:</span> <span class="s2">"npm install &amp;&amp; pm2 reload ecosystem.config.js --env production'"</span>
+      <span class="dl">"</span><span class="s2">post-deploy</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">npm install &amp;&amp; pm2 reload ecosystem.config.js --env production'</span><span class="dl">"</span>
     <span class="p">},</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -396,7 +396,7 @@ gitment.render('container')
 
     <footer class="notepad-site-footer">
     <div class="copyright">
-        <section>All content copyright <a href="https://raoenhui.github.io/about">前端妹子</a> &copy; 2019 &bull; All rights reserved.</section>
+        <section>All content copyright <a href="https://raoenhui.github.io/about">前端妹子</a> &copy; 2020 &bull; All rights reserved.</section>
 	<!--<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>-->
           <!--<a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>-->
     </div>

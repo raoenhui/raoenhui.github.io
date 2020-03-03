@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "Git message规范Change log编写指南",
+      "category" : "",
+      "tags"     : "git",
+      "url"      : "/git/2020/02/25/changelog/index.html",
+      "date"     : "2020-02-25 08:07:00 +0530"
+    } ,
+  
+    {
       "title"    : "小程序swiper下拉判断是否拉到底部",
       "category" : "",
       "tags"     : "Wechat",

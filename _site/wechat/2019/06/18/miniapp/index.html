@@ -200,8 +200,8 @@
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Page</span><span class="p">({</span>
   <span class="na">onShareAppMessage</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">{</span>
-      <span class="na">title</span><span class="p">:</span> <span class="s1">'自定义转发标题'</span><span class="p">,</span>
-      <span class="na">imageUrl</span><span class="p">:</span> <span class="s1">'https://raoenhui.github.io/images/logo.png'</span>
+      <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">自定义转发标题</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">imageUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://raoenhui.github.io/images/logo.png</span><span class="dl">'</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">})</span>
@@ -231,7 +231,7 @@ PS：如果是单纯只显示的列表，不需要操作更新，那不需要加
 <p>小程序和vue写法比较相似，也有<code class="highlighter-rouge">nextTick </code>,在当前同步流程结束后，下一个时间片执行 。
 比如有些取视图层的数据，可以等页面上流程结束后再取比较准确</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">wx</span><span class="p">.</span><span class="nx">nextTick</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">query</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">'.percent-line-toast'</span><span class="p">).</span><span class="nx">boundingClientRect</span><span class="p">()</span> 
+      <span class="nx">query</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="dl">'</span><span class="s1">.percent-line-toast</span><span class="dl">'</span><span class="p">).</span><span class="nx">boundingClientRect</span><span class="p">()</span> 
     <span class="p">})</span>
 </code></pre></div></div>
 
@@ -263,9 +263,9 @@ wx.hideLoading()也会隐藏Toast ; wx.hideToast()也会隐藏Loading，
 storage也可以存储数据，同一个微信用户，同一个小程序 storage 上限为 10MB。
 2.分包预加载preloadRule
 <code class="highlighter-rouge">preloadRule</code>预下载分包行为在进入某个页面时触发，享有共同的预下载大小限额 2M。</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"preloadRule"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"sub1/index"</span><span class="p">:</span> <span class="p">{</span>
-      <span class="s2">"packages"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"important"</span><span class="p">]</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">preloadRule</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">sub1/index</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">packages</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">important</span><span class="dl">"</span><span class="p">]</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -510,7 +510,7 @@ gitment.render('container')
 
     <footer class="notepad-site-footer">
     <div class="copyright">
-        <section>All content copyright <a href="https://raoenhui.github.io/about">前端妹子</a> &copy; 2019 &bull; All rights reserved.</section>
+        <section>All content copyright <a href="https://raoenhui.github.io/about">前端妹子</a> &copy; 2020 &bull; All rights reserved.</section>
 	<!--<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>-->
           <!--<a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>-->
     </div>
