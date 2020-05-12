@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "如何关闭Amazon AWS上服务器",
+      "category" : "",
+      "tags"     : "VPN",
+      "url"      : "/vpn/2020/04/26/rm-aws/index.html",
+      "date"     : "2020-04-26 08:07:00 +0530"
+    } ,
+  
+    {
       "title"    : "jekyll在mac下安装和运行指南",
       "category" : "",
       "tags"     : "blog",

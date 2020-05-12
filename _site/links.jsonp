@@ -168,6 +168,11 @@ callback([
   {
     "text": "jekyll在mac下安装和运行指南",
     "href": "https://raoenhui.github.io/blog/2020/02/26/jekyll/"
+  } ,
+
+  {
+    "text": "如何关闭Amazon AWS上服务器",
+    "href": "https://raoenhui.github.io/vpn/2020/04/26/rm-aws/"
   } 
 
 ])

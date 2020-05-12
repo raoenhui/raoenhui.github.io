@@ -20,7 +20,7 @@ Hooks出来已经有段时间了，相信大家都用过段时间了，有没有
 function Counter() {
   let [count, setCount] = useState(0);
   useEffect(() => {
-    let id = setInterval(() => {
+    const id = setInterval(() => {
       setCount(count + 1);
     }, 1000);
     return () => clearInterval(id);
@@ -37,7 +37,7 @@ function Counter() {
 function Counter() {
   let [count, setCount] = useState(0);
   useEffect(() => {
-    let id = setInterval(() => {
+    const id = setInterval(() => {
       setCount(0 + 1);
     }, 1000);
     return () => clearInterval(id);
@@ -50,7 +50,7 @@ function Counter() {
 function Counter() {
 //... 
 useEffect(() => {
-    let id = setInterval(() => {
+    const id = setInterval(() => {
       setCount(count + 1);
     }, 1000);
     return () => clearInterval(id);
@@ -64,7 +64,7 @@ useEffect(() => {
 function Counter() {
 //... 
 useEffect(() => {
-    let id = setInterval(() => {
+    const id = setInterval(() => {
       setCount(0 + 1);
     }, 1000);
     return () => clearInterval(id);
@@ -75,7 +75,7 @@ useEffect(() => {
 function Counter() {
 //... 
 useEffect(() => {
-    let id = setInterval(() => {
+    const id = setInterval(() => {
       setCount(1 + 1);
     }, 1000);
     return () => clearInterval(id);
@@ -92,7 +92,7 @@ useEffect(() => {
 function Counter() {
 let [count, setCount] = useState(0);
 useEffect(() => {
-    let id = setInterval(() => {
+    const id = setInterval(() => {
       setCount(v => {
         return v + 1;
       });
@@ -115,7 +115,7 @@ function Counter() {
     setCount(count + 1);
   };
   useEffect(() => {
-    let id = setInterval(() => {
+    const id = setInterval(() => {
       myRef.current();
     }, 1000);
     return () => clearInterval(id);
@@ -134,7 +134,7 @@ function Counter() {
     setCount(count + 1);
   };
   useEffect(() => {
-    let id = setInterval(myRef.current, 1000);
+    const id = setInterval(myRef.current, 1000);
     return () => clearInterval(id);
   }, []);
  return <h1>{count}</h1>;
@@ -166,7 +166,7 @@ function useInterval(fun) {
     myRef.current = fun;
   }, [fun]);
   useEffect(() => {
-    let id = setInterval(() => {
+    const id = setInterval(() => {
       myRef.current();
     }, 1000);
     return () => clearInterval(id);
@@ -198,9 +198,10 @@ function reducer(state, action) {
 function Counter() {
   const [state, dispatch] = useReducer(reducer, 0);
   useEffect(() => {
-    setInterval(() => {
+    const id = setInterval(() => {
       dispatch({ type: "increment" });
     }, 1000);
+   return () => clearInterval(id);
   }, []);
   return <h1>{state}</h1>;
 }

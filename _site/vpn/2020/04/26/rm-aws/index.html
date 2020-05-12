@@ -2,23 +2,23 @@
 <html lang='zh'>
 <head>
 <meta charset="utf-8">
-<title>免费搭建VPN服务 &vert; 前端妹子的博客</title>
+<title>如何关闭AMAZON AWS上服务器 &vert; 前端妹子的博客</title>
 <meta name="description" content="一枚前端攻城狮!">
 <meta name="keywords" content="VPN">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raoenhui.github.io/images/logo.png">
-<meta name="twitter:title" content="免费搭建VPN服务">
+<meta name="twitter:title" content="如何关闭Amazon AWS上服务器">
 <meta name="twitter:description" content="一枚前端攻城狮!">
 <meta name="twitter:creator" content="@raoenhui">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="免费搭建VPN服务">
+<meta property="og:title" content="如何关闭Amazon AWS上服务器">
 <meta property="og:description" content="一枚前端攻城狮!">
-<meta property="og:url" content="https://raoenhui.github.io/limit/vpn/2019-04-09-vpn/">
+<meta property="og:url" content="https://raoenhui.github.io/vpn/2020/04/26/rm-aws/">
 <meta property="og:site_name" content="前端妹子的博客">
 <meta property="og:image" content="https://raoenhui.github.io/images/">
 
@@ -26,7 +26,7 @@
 
 
 
-<link rel="canonical" href="https://raoenhui.github.io/limit/vpn/2019-04-09-vpn/">
+<link rel="canonical" href="https://raoenhui.github.io/vpn/2020/04/26/rm-aws/">
 <link href="https://raoenhui.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="前端妹子的博客 Feed">
 <link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
 
@@ -121,138 +121,87 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h1>免费搭建VPN服务</h1>
-                            <p>by <strong>前端妹子</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#VPN" data-toggle="tooltip" title="Posts tagged with VPN" rel="tag">VPN</a> <strong><time datetime="2019-04-09T22:07:00+05:30">09 Apr 2019</time></strong></p>
+                            <h1>如何关闭Amazon AWS上服务器</h1>
+                            <p>by <strong>前端妹子</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#VPN" data-toggle="tooltip" title="Posts tagged with VPN" rel="tag">VPN</a> <strong><time datetime="2020-04-26T08:07:00+05:30">26 Apr 2020</time></strong></p>
                         </div>
                     </div>
                 </div>
             </header>
 
         <article class="notepad-post-content post tag-simple">
-            <div><h3 id="一-注册亚马逊aws云">一 、注册亚马逊AWS云</h3>
+            <div><h3 id="前言">前言</h3>
+<p>很多小伙伴们都用过亚马逊上<code class="highlighter-rouge">AWS</code>提供的免费主机，如果想用的可以参照本妹子的另外篇文章<a href="https://raoenhui.github.io/limit/vpn/index.html">免费搭建VPN服务</a>。但是该主机使用权限只有<code class="highlighter-rouge">一年</code>,本妹子是去年4月搭的，期限快到了，怎么取消关闭AWS的云服务器。这里面有很多坑。有些小伙伴们把关掉后却还在收费，后面被迫停visa卡才停止扣费。下面本妹子就把关闭的正确姿势一一列出。</p>
 
-<p>1.1 浏览器输入<a href="https://aws.amazon.com/free">https://aws.amazon.com/free</a></p>
+<h3 id="本妹子被坑事项">本妹子被坑事项</h3>
+<p>一月就被扣了<code class="highlighter-rouge">0.27</code>美元，原因是因为我加了个<code class="highlighter-rouge">Snapshots</code>镜像快照，然而没想到快照存储会扣钱
+<img src="https://img14.360buyimg.com/imagetools/jfs/t1/120818/20/1286/192505/5ebaa38cEefbc2e7c/ae12d82ff2555b0b.png" alt="1.png" />
+<img src="https://img13.360buyimg.com/imagetools/jfs/t1/127878/36/1231/64971/5ebaa4adE7752349f/8f8787164a0aadce.png" alt="2.png" />
+小伙伴们也可以通过<a href="https://console.aws.amazon.com/billing/home?#/bills">https://console.aws.amazon.com/billing/home?#/bills</a>
+查下自己有没有被扣钱。
+所以我的第一步就是删掉快照。也建议小伙伴们把扣费项现删除掉。
+<img src="https://img11.360buyimg.com/imagetools/jfs/t1/112390/9/6556/51154/5ebaa5a6E0ba51993/ed58335db2ceb059.png" alt="3.png" /></p>
 
-<p><img src="https://raoenhui.github.io/images/190409/1.jpg" alt="image.png" /></p>
+<h3 id="第一步删除快照没有快照可忽视">第一步：删除快照（没有快照可忽视）</h3>
+<p>删除<code class="highlighter-rouge">Snapshot</code>快照发现有报错
+<img src="https://img14.360buyimg.com/imagetools/jfs/t1/126480/12/1238/45228/5ebaa5a6E7e56a073/bb9766db57bd01fe.png" alt="4.png" />
+<img src="https://img12.360buyimg.com/imagetools/jfs/t1/116483/8/6575/75117/5ebaa5a5E5636e464/2b1206c2270b2ec1.png" alt="5.png" />
+原因是没有解除<code class="highlighter-rouge">AMI</code>镜像.
+如果不再需要 <code class="highlighter-rouge">EBS</code> 快照或与其关联的 <code class="highlighter-rouge">AMI</code>，则取消注册该 <code class="highlighter-rouge">AMI</code>。然后在 <code class="highlighter-rouge">Amazon EC2</code> 控制台中删除该 <code class="highlighter-rouge">EBS</code> 快照：</p>
+<ol>
+  <li>记下错误消息中的 AMI ID。</li>
+  <li>在 <a href="https://console.aws.amazon.com/ec2/">Amazon EC2 控制台</a>的左侧导航窗格中选择 <strong>AMI</strong>。</li>
+  <li>
+    <p>查找并选中错误消息中提到的 AMI，然后从<strong>操作</strong>菜单选择<strong>取消注册</strong>。
+<strong>注意：</strong>如果未看到您在寻找的 AMI，请<a href="https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/getting-started.html#select-region">检查您可能使用的任何其他 AWS 区域</a>。
+<img src="https://img10.360buyimg.com/imagetools/jfs/t1/129094/15/1226/44013/5ebaa5a5E65ee6981/da761e3ebae5bc84.png" alt="6.png" /></p>
+  </li>
+  <li>通过 EC2 控制台或使用 AWS CLI <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">删除 EBS 快照</a>。</li>
+</ol>
+
+<h3 id="第二步删掉实例">第二步：删掉实例</h3>
+<p>现终止<code class="highlighter-rouge">EC2</code>实例，使卷与实例分离。
+<img src="https://img13.360buyimg.com/imagetools/jfs/t1/114726/5/6583/48278/5ebaa5a5E37fc0773/d4b74304f6682e4f.png" alt="7.png" /></p>
+
+<h3 id="第三步删除卷">第三步：删除卷</h3>
+<p>实例终止后，但是还在在<code class="highlighter-rouge">EBS</code>卷上保存下了，如果存储量超出免费套餐权益范围，您将为卷存储付费。所以讲<code class="highlighter-rouge">EBS</code>卷删除
+<img src="https://img11.360buyimg.com/imagetools/jfs/t1/124986/9/1226/163221/5ebaa5a5E5bc83ea5/2542c73b79a87f45.png" alt="8.png" />
+<img src="https://img11.360buyimg.com/imagetools/jfs/t1/118082/5/6399/44942/5ebaa5a5E1fcccc1b/0e62173a80ae2ff5.png" alt="9.png" /></p>
+
+<h3 id="第四步最后检查">第四步：最后检查</h3>
+<p>如果还不放心就把<code class="highlighter-rouge">EC2</code>所有东西都删除掉,通过这个查看<a href="https://us-east-2.console.aws.amazon.com/ec2/v2/home?region=us-east-2#Home:">https://us-east-2.console.aws.amazon.com/ec2/v2/home?region=us-east-2#Home:</a>，本妹子发现自己还有<code class="highlighter-rouge">key pairs</code>密钥和<code class="highlighter-rouge">Security groups</code>安全组没有删除，赶紧全删掉。
+<img src="https://img12.360buyimg.com/imagetools/jfs/t1/121341/2/1258/93297/5ebaa5a5E7eece222/682e71f82a38383d.png" alt="10.png" />
+<img src="https://img12.360buyimg.com/imagetools/jfs/t1/126443/6/1270/41182/5ebaa5a5E83cb7221/e5ac3ca3cd062f58.png" alt="11.png" />
+<img src="https://img13.360buyimg.com/imagetools/jfs/t1/108887/32/17747/36193/5ebaa5a5Ee090be7c/5501194a4a861c47.png" alt="12.png" /></p>
+
+<p>那么就删除好了。</p>
 <blockquote>
-  <p>注册过程需要绑定信用卡，我用的是visa卡绑定的,只有一年免费的，所以一年后记得删掉所有实例，解绑信用卡，关闭掉AWS账户。</p>
-</blockquote>
-
-<p>本妹子薅羊毛不亦乐乎&gt; &lt; <img src="https://raoenhui.github.io/images/190409/2.jpg" alt="image" /></p>
-
-<p>1.2 注册后登录，选择services-&gt;EC2</p>
-
-<p><img src="https://raoenhui.github.io/images/190409/3.jpg" alt="image.png" /></p>
-<blockquote>
-  <p>Amazon EC2全称Amazon Elastic Compute Cloud，亚马逊弹性云服务器，是一个虚拟机，用户将可以在这个虚拟机上运行任何自己想要的软件或应用程序。</p>
-</blockquote>
-
-<p>1.3 生成实例</p>
-
-<p><img src="https://raoenhui.github.io/images/190409/4.jpg" alt="image.png" /></p>
-
-<p>1.4 在亚马逊镜像库中搜索你最熟悉的系统
-    我习惯用的是<code class="highlighter-rouge">centos7</code>，所以我选择了它。</p>
-
-<p><img src="https://raoenhui.github.io/images/190409/5.jpg" alt="image.png" /></p>
-
-<p>1.5 选择免费类型，其他选择按照默认就好</p>
-
-<p><img src="https://raoenhui.github.io/images/190409/6.jpg" alt="image.png" /></p>
-
-<p>1.6 生成添加秘钥，并将秘钥下载到本地</p>
-
-<p><img src="https://raoenhui.github.io/images/190409/7.jpg" alt="image.png" /></p>
-
-<p>1.7 生成实例成功</p>
-
-<p><img src="https://raoenhui.github.io/images/190409/8.jpg" alt="image.png" /></p>
-
-<p>1.8 添加安全组，更改成添加的安全组</p>
-
-<p><img src="https://raoenhui.github.io/images/190409/9.jpg" alt="image.png" /></p>
-<blockquote>
-  <p>如上配置是所以端口都能被访问，如果想要做限制的话，可以选择特殊的<code class="highlighter-rouge">IP</code>和端口</p>
-</blockquote>
-
-<h3 id="二-安装ss服务">二 、安装ss服务</h3>
-<p>2.1 服务端开启ss服务</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#用ssh登录</span>
-ssh <span class="nt">-i</span> <span class="s2">"a.pem"</span> centos@ec2-3-16-129-69.us-east-2.compute.amazonaws.com
-<span class="c">#切换root用户</span>
-<span class="nb">sudo </span>su
-
-<span class="c">#开始真正安装啦</span>
-<span class="c">#用pip安装ss服务</span>
-yum <span class="nb">install </span>python-setuptools <span class="o">&amp;&amp;</span> easy_install pip
-<span class="c">#安装小飞机</span>
-pip <span class="nb">install </span>shadowsocks
-<span class="c">#启动ssserver</span>
-ssserver <span class="nt">-p</span> 443 <span class="nt">-k</span> MyPass <span class="nt">-m</span> rc4-md5 <span class="nt">-d</span> start
-</code></pre></div></div>
-<blockquote>
-  <p>ssserver命令中 443是指端口 MyPass是指密码 rc4-md5是指加密方式，这些小伙伴们都可以自定义修改</p>
-</blockquote>
-
-<blockquote>
-  <p>停止ss服务可用 ssserver -d stop</p>
-</blockquote>
-
-<h3 id="三-下载客户端软件地址">三 、下载客户端软件地址</h3>
-<p>2.2 客户端链接
-下载<code class="highlighter-rouge">shadowsocks</code>软件，编辑server，Address输入公网IP，Password输入MyPass，其他按截图所示即可</p>
-
-<p>下载地址：链接: https://pan.baidu.com/s/1YuT1uFqvxtPHWtBXPzsZYg 提取码: xqe4  （里面mac和windows的安装包都有）</p>
-
-<p><img src="https://raoenhui.github.io/images/190409/10.jpg" alt="image.png" /></p>
-
-<blockquote>
-  <p>手机端可下载NetShuttle软件访问，注意美区appleID账号才能下载</p>
-</blockquote>
-
-<p>2.3 哈哈，愉快的访问<code class="highlighter-rouge">youtobe</code>了</p>
-
-<p><img src="https://raoenhui.github.io/images/190409/11.jpg" alt="PC.png" />
-<img src="https://raoenhui.github.io/images/190409/12.jpg" alt="MOBILE.png" /></p>
-
-<h3 id="四-注意事项">四 、注意事项</h3>
-
-<p>1.只有一年免费的,一年后扣信用卡的钱,可以点击查看<a href="https://raoenhui.github.io/blog/2020/04/26/rm-aws/index.html">如何关闭Amazon AWS上服务器</a></p>
-
-<p>2.每月流量有上限，上限为15G;</p>
-
-<p>限制详情可看 <a href="https://aws.amazon.com/cn/free/faqs/">https://aws.amazon.com/cn/free/faqs/</a>;</p>
-
-<p>建议实时查看下自己的流量使用情况，具体操作可查看 <a href="https://www.peels.cn/225.html">https://www.peels.cn/225.html</a>;</p>
-
-<h2 id="其他链接">其他链接</h2>
-<blockquote>
-  <ul>
-    <li><a href="https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/vpn-connections.html">https://docs.aws.amazon.com/zh_cn/vpc/latest/userguide/vpn-connections.html</a></li>
-    <li><a href="http://www.gengzhibo.com/2017/02/05/vpn/">http://www.gengzhibo.com/2017/02/05/vpn/</a></li>
-    <li><a href="https://aws.amazon.com/cn/free/faqs/">https://aws.amazon.com/cn/free/faqs/</a></li>
-    <li><a href="https://www.peels.cn/225.html">https://www.peels.cn/225.html</a></li>
-    <li><a href="https://raoenhui.github.io/blog/2020/04/26/rm-aws/index.html">如何关闭Amazon AWS上服务器</a></li>
-  </ul>
+  <p>注意：如果你的visa信用卡因为AWS扣费而已经欠费的话，建议不能忽视，尽快付掉以免产生更多的利息。</p>
 </blockquote>
 
 <p>Happy coding .. :)</p>
 
+<h3 id="相关链接">相关链接</h3>
+<blockquote>
+  <ul>
+    <li><a href="https://aws.amazon.com/cn/premiumsupport/knowledge-center/snapshot-in-use-error/">https://aws.amazon.com/cn/premiumsupport/knowledge-center/snapshot-in-use-error/</a></li>
+    <li><a href="https://raoenhui.github.io/blog/2020/04/26/rm-aws/index.html">如何关闭Amazon AWS上服务器</a></li>
+  </ul>
+</blockquote>
 
             </div>
         </article>
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;免费搭建VPN服务&quot;%20https://raoenhui.github.io/limit/vpn/2019-04-09-vpn/%20via%20&#64;raoenhui"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;如何关闭Amazon AWS上服务器&quot;%20https://raoenhui.github.io/vpn/2020/04/26/rm-aws/%20via%20&#64;raoenhui"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/limit/vpn/2019-04-09-vpn/"
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/vpn/2020/04/26/rm-aws/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/limit/vpn/2019-04-09-vpn/"
+                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/vpn/2020/04/26/rm-aws/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
                     <i class="fa fa-google-plus"></i>
                 </a>
@@ -381,7 +330,7 @@ gitment.render('container')
 
 <!-- ice facebook start-->
  
-<div class="fb-comments" data-href="https://raoenhui.github.io/limit/vpn/2019-04-09-vpn/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+<div class="fb-comments" data-href="https://raoenhui.github.io/vpn/2020/04/26/rm-aws/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {

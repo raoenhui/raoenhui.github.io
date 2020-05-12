@@ -137,7 +137,7 @@
 <p>特点：</p>
 <ul>
   <li>1.运行时加载</li>
-  <li>2.拷贝到本页面</li>
+  <li>2.拷贝到本页面(类似深拷贝)</li>
   <li>3.全部引入</li>
 </ul>
 
@@ -246,11 +246,40 @@ CMD是”Common Module Definition”的缩写。类似于requirejs，但是seajs
 <span class="p">});</span>
 </code></pre></div></div>
 
+<h4 id="14-umd">1.4 UMD</h4>
+<p>UMD像个万精油，同时包含<code class="highlighter-rouge">CommonJS</code>,<code class="highlighter-rouge">AMD</code>,<code class="highlighter-rouge">CMD</code>和挂载在<code class="highlighter-rouge">windows</code>下。</p>
+<h5 id="141-用法">1.4.1 用法</h5>
+<p><code class="highlighter-rouge">CommonJS</code>,<code class="highlighter-rouge">AMD</code>,<code class="highlighter-rouge">CMD</code>写法都通用。</p>
+
+<h5 id="141-模块写法">1.4.1 模块写法</h5>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">root</span><span class="p">,</span> <span class="nx">factory</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">module</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">object</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="k">typeof</span> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">object</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">是commonjs模块规范，nodejs环境</span><span class="dl">'</span><span class="p">)</span>
+        <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">factory</span><span class="p">();</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">define</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">function</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nx">define</span><span class="p">.</span><span class="nx">amd</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">是AMD模块规范，如require.js</span><span class="dl">'</span><span class="p">)</span>
+        <span class="nx">define</span><span class="p">(</span><span class="nx">factory</span><span class="p">())</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">define</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">function</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nx">define</span><span class="p">.</span><span class="nx">cmd</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">是CMD模块规范，如sea.js</span><span class="dl">'</span><span class="p">)</span>
+        <span class="nx">define</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">require</span><span class="p">,</span> <span class="nx">exports</span><span class="p">,</span> <span class="nx">module</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">factory</span><span class="p">()</span>
+        <span class="p">})</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">没有模块环境，直接挂载在全局对象上</span><span class="dl">'</span><span class="p">)</span>
+        <span class="nx">root</span><span class="p">.</span><span class="nx">umdModule</span> <span class="o">=</span> <span class="nx">factory</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}(</span><span class="k">this</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">我是一个umd模块</span><span class="dl">'</span>
+    <span class="p">}</span>
+<span class="p">}))</span>
+</code></pre></div></div>
+
 <h3 id="2-import">2 import</h3>
 <p>特点：</p>
 <ul>
   <li>1.编译时加载</li>
-  <li>2.只引用定义</li>
+  <li>2.只引用定义(类似浅拷贝)</li>
   <li>3.按需加载</li>
 </ul>
 
@@ -258,7 +287,7 @@ CMD是”Common Module Definition”的缩写。类似于requirejs，但是seajs
   <p>可对比<code class="highlighter-rouge">require</code>的特点，发现<code class="highlighter-rouge">import</code>完胜<code class="highlighter-rouge">require</code>,推荐用<code class="highlighter-rouge">import</code>取代<code class="highlighter-rouge">require</code></p>
 </blockquote>
 
-<h5 id="211-用法">2.1.1 用法</h5>
+<h5 id="21-用法">2.1 用法</h5>
 
 <p>import有两种模块导入方式：命名式导入（名称导入）和默认导入（定义式导入），以及 <code class="highlighter-rouge">import()</code>。</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">defaultMember</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">module-name</span><span class="dl">"</span><span class="p">;</span>
@@ -281,24 +310,46 @@ CMD是”Common Module Definition”的缩写。类似于requirejs，但是seajs
   <li>from－从已经存在的模块、脚本文件等导入</li>
 </ul>
 
-<h6 id="import">import()</h6>
+<h5 id="22-导入模块顺序">2.2 导入模块顺序</h5>
+
+<p>调用时，先找当前模块目录下的node_moudles文件夹
+再去找该文件夹下的package.json文件
+在文件中找main,main属性就记录了当前模块的入口
+如果找不到package.json或者main，则node会自动找该目录下的index.js
+如果以上操作都不成立，则进入上一级目录的node_moudles文件夹寻找
+如果还没有,再进入上一级,直到根目录，然后报错</p>
+
+<h5 id="23-import">2.3 import()</h5>
 
 <p>import()返回一个 Promise 对象。</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 报错</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">===</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">import</span> <span class="nx">MyModual</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./myModual</span><span class="dl">'</span><span class="p">;</span>
+  <span class="k">import</span> <span class="nx">MyModal</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./myModal</span><span class="dl">'</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 <p>引擎处理import语句是在编译时，这时不会去分析或执行if语句，所以import语句放在if代码块之中毫无意义，因此会报句法错误，而不是执行时错误。没办法像require样根据条件动态加载。
 于是<a href="https://github.com/tc39/proposal-dynamic-import">提案</a>引入import()函数，编译时分析if语句,完成动态加载。</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="nx">x</span> <span class="o">===</span> <span class="mi">2</span><span class="p">){</span>
-  <span class="k">import</span><span class="p">(</span><span class="dl">'</span><span class="s1">myModual</span><span class="dl">'</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">MyModual</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-    <span class="k">new</span> <span class="nx">MyModual</span><span class="p">();</span>
+  <span class="k">import</span><span class="p">(</span><span class="dl">'</span><span class="s1">MyModal</span><span class="dl">'</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">MyModual</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+    <span class="k">new</span> <span class="nx">MyModal</span><span class="p">();</span>
   <span class="p">})</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h5 id="221-模块写法">2.2.1 模块写法</h5>
+<p>实用案例：动态加载<code class="highlighter-rouge">vconsole</code>,方便查看控制台报错</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * vconsole
+ * 在链接中加vconsole=1，则会出现VConsole
+ */</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">vconsole</span><span class="dl">'</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">import</span><span class="p">(</span><span class="dl">'</span><span class="s1">vconsole</span><span class="dl">'</span><span class="p">).</span><span class="nx">then</span><span class="p">(({</span> <span class="na">default</span><span class="p">:</span> <span class="nx">VConsole</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">new</span> <span class="nx">VConsole</span><span class="p">();</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><code class="highlighter-rouge">webpack</code>根据<code class="highlighter-rouge">ES2015 loader</code> 规范实现了用于动态加载的<code class="highlighter-rouge">import()</code>方法。在代码中所有被<code class="highlighter-rouge">import()</code>的模块，都将打成分别打出单独的包，放在<code class="highlighter-rouge">chunk</code>存储的目录下。当链接中加<code class="highlighter-rouge">vconsole=1</code>，浏览器运行到这一行代码时，就会自动请求这个<code class="highlighter-rouge">chunk</code>包，实现异步加载。</p>
+
+<h5 id="24-模块写法">2.4 模块写法</h5>
 <p>export有两种模块导出方式：命名式导出（名称导出）和默认导出（定义式导出），命名式导出每个模块可以多个，而默认导出每个模块仅一个。</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="p">{</span> <span class="nx">name1</span><span class="p">,</span> <span class="nx">name2</span><span class="p">,</span> <span class="err">…</span><span class="p">,</span> <span class="nx">nameN</span> <span class="p">};</span>
 <span class="k">export</span> <span class="p">{</span> <span class="nx">variable1</span> <span class="k">as</span> <span class="nx">name1</span><span class="p">,</span> <span class="nx">variable2</span> <span class="k">as</span> <span class="nx">name2</span><span class="p">,</span> <span class="err">…</span><span class="p">,</span> <span class="nx">nameN</span> <span class="p">};</span>
@@ -322,6 +373,8 @@ CMD是”Common Module Definition”的缩写。类似于requirejs，但是seajs
   <li>from－从已经存在的模块、脚本文件…导出</li>
 </ul>
 
+<p>Happy coding .. :)</p>
+
 <h3 id="参考资料">参考资料</h3>
 
 <blockquote>
@@ -330,8 +383,6 @@ CMD是”Common Module Definition”的缩写。类似于requirejs，但是seajs
     <li><a href="https://www.cnblogs.com/liaojie970/p/7376682.html">https://www.cnblogs.com/liaojie970/p/7376682.html</a></li>
   </ul>
 </blockquote>
-
-<p>Happy coding .. :)</p>
 
             </div>
         </article>
