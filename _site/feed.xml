@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2020-06-08T20:25:40+05:30</updated>
+<updated>2020-06-08T20:30:06+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>前端妹子</name>
@@ -32,7 +32,7 @@
   
     &lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
 
-&lt;p&gt;发现&lt;code class=&quot;highlighter-rouge&quot;&gt;react-route&lt;/code&gt;用&lt;code class=&quot;highlighter-rouge&quot;&gt;Link&lt;/code&gt;或&lt;code class=&quot;highlighter-rouge&quot;&gt;Push&lt;/code&gt;跳转时,没有刷新页面,但是&lt;code class=&quot;highlighter-rouge&quot;&gt;Url&lt;/code&gt;变了，而且点击浏览器自动的返回按钮，&lt;code class=&quot;highlighter-rouge&quot;&gt;Url&lt;/code&gt;变了但是页面不刷新，怎么做到的呢？于是本妹子就从这个方向研究了下&lt;code class=&quot;highlighter-rouge&quot;&gt;react-route&lt;/code&gt;的源码，给小伙伴们分享下。&lt;/p&gt;
+&lt;p&gt;发现无论是用&lt;code class=&quot;highlighter-rouge&quot;&gt;react-route&lt;/code&gt;的&lt;code class=&quot;highlighter-rouge&quot;&gt;Link&lt;/code&gt;或&lt;code class=&quot;highlighter-rouge&quot;&gt;Push&lt;/code&gt;跳转，还是点击浏览器自带的返回按钮，都是只&lt;code class=&quot;highlighter-rouge&quot;&gt;Url&lt;/code&gt;变了但是页面并不刷新，是怎么做到的呢？于是本妹子就从这个方向研究了下&lt;code class=&quot;highlighter-rouge&quot;&gt;react-route&lt;/code&gt;的源码，给小伙伴们分享下。&lt;/p&gt;
 
 &lt;h3 id=&quot;一解密-显示隐藏页面&quot;&gt;一、解密-显示隐藏页面&lt;/h3&gt;
 
