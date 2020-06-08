@@ -1,7 +1,7 @@
 ---
 author: raoenhui
 layout: post
-title: "react router源码分析"
+title: "React Router源码分析"
 date: 2020-06-08 22:07
 categories : React
 comments: true
@@ -152,4 +152,3 @@ Happy coding .. :)
 [change URL with history package](https://codepen.io/huihui/pen/gOPaMNE)
 
 [Change URL without refreshing page](https://codepen.io/huihui/pen/qBbOajM)
-> * [原文链接-如何关闭Amazon AWS上服务器](https://raoenhui.github.io/vpn/2020/04/26/rm-aws/index.html)
