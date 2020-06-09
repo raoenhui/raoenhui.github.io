@@ -189,6 +189,7 @@
 <span class="p">});</span>
 </code></pre></div></div>
 <h5 id="案例">案例</h5>
+
 <p>具体代码为<code class="highlighter-rouge">codepen</code>上的<a href="https://codepen.io/huihui/pen/qBbOajM">change page with history package</a></p>
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useState</span><span class="p">,</span> <span class="nx">useRef</span><span class="p">,</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">MapPage</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
@@ -247,7 +248,37 @@
 
 <p><code class="highlighter-rouge">popstate</code>和<code class="highlighter-rouge">onhashchange</code>方法对<code class="highlighter-rouge">android4.4.4</code>不兼容，需要引入<a href="https://www.npmjs.com/package/history">history</a>这个<code class="highlighter-rouge">npm</code>包，里面有兼容性代码，如果判断不兼容，就直接按照<code class="highlighter-rouge">window.location.href</code>跳转。</p>
 
-<p>具体代码为<code class="highlighter-rouge">codepen</code>上的<a href="https://codepen.io/huihui/pen/gOPaMNE">change URL with history package</a></p>
+<h4 id="源码-1">源码</h4>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//判断是否支持History</span>
+<span class="kd">function</span> <span class="nx">supportsHistory</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">ua</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nb">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">;</span>
+
+  <span class="k">if</span> <span class="p">(</span>
+    <span class="p">(</span><span class="nx">ua</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">Android 2.</span><span class="dl">'</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span> <span class="o">||</span> <span class="nx">ua</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">Android 4.0</span><span class="dl">'</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;&amp;</span>
+    <span class="nx">ua</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">Mobile Safari</span><span class="dl">'</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&amp;&amp;</span>
+    <span class="nx">ua</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">Chrome</span><span class="dl">'</span><span class="p">)</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&amp;&amp;</span>
+    <span class="nx">ua</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">Windows Phone</span><span class="dl">'</span><span class="p">)</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span>
+  <span class="p">)</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="nb">window</span><span class="p">.</span><span class="nx">history</span> <span class="o">&amp;&amp;</span> <span class="dl">'</span><span class="s1">pushState</span><span class="dl">'</span> <span class="k">in</span> <span class="nb">window</span><span class="p">.</span><span class="nx">history</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">const</span> <span class="nx">canUseHistory</span> <span class="o">=</span> <span class="nx">supportsHistory</span><span class="p">();</span>
+ <span class="k">if</span> <span class="p">(</span><span class="nx">canUseHistory</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">globalHistory</span><span class="p">.</span><span class="nx">pushState</span><span class="p">({</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">state</span> <span class="p">},</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">href</span><span class="p">);</span>
+    <span class="c1">//...</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">warning</span><span class="p">(</span>
+      <span class="nx">state</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">,</span>
+      <span class="dl">'</span><span class="s1">Browser history cannot push state in browsers that do not support HTML5 history</span><span class="dl">'</span>
+    <span class="p">);</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="nx">href</span><span class="p">;</span> <span class="c1">//不支持则直接用location.href</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<h5 id="案例-1">案例</h5>
+
+<p>本妹子用<code class="highlighter-rouge">History API</code>的具体代码为<code class="highlighter-rouge">codepen</code>上的<a href="https://codepen.io/huihui/pen/gOPaMNE">change URL with history package</a></p>
 
 <p>Happy coding .. :)</p>
 

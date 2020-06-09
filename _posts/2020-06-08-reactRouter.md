@@ -77,6 +77,7 @@ window.addEventListener('popstate', (event) => {
 });
 ```
 ##### 案例
+
 具体代码为`codepen`上的[change page with history package](https://codepen.io/huihui/pen/qBbOajM)
 ```js
 import React, { useEffect, useState, useRef, Component } from 'react';
@@ -136,7 +137,38 @@ export default ConPage
 
 `popstate`和`onhashchange`方法对`android4.4.4`不兼容，需要引入[history](https://www.npmjs.com/package/history)这个`npm`包，里面有兼容性代码，如果判断不兼容，就直接按照`window.location.href`跳转。
 
-具体代码为`codepen`上的[change URL with history package](https://codepen.io/huihui/pen/gOPaMNE)
+#### 源码
+```js
+//判断是否支持History
+function supportsHistory() {
+  const ua = window.navigator.userAgent;
+
+  if (
+    (ua.indexOf('Android 2.') !== -1 || ua.indexOf('Android 4.0') !== -1) &&
+    ua.indexOf('Mobile Safari') !== -1 &&
+    ua.indexOf('Chrome') === -1 &&
+    ua.indexOf('Windows Phone') === -1
+  )
+    return false;
+
+  return window.history && 'pushState' in window.history;
+}
+const canUseHistory = supportsHistory();
+ if (canUseHistory) {
+    globalHistory.pushState({ key, state }, null, href);
+    //...
+  } else {
+    warning(
+      state === undefined,
+      'Browser history cannot push state in browsers that do not support HTML5 history'
+    );
+    window.location.href = href; //不支持则直接用location.href
+  }
+```
+
+##### 案例
+
+本妹子用`History API`的具体代码为`codepen`上的[change URL with history package](https://codepen.io/huihui/pen/gOPaMNE)
 
 Happy coding .. :)
 
