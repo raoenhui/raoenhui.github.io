@@ -78,7 +78,7 @@ window.addEventListener('popstate', (event) => {
 ```
 ##### 案例
 
-具体代码为`codepen`上的[change page with history package](https://codepen.io/huihui/pen/qBbOajM)
+具体代码为`codepen`上的[Change URL without refreshing page](https://codepen.io/huihui/pen/qBbOajM)
 ```js
 import React, { useEffect, useState, useRef, Component } from 'react';
 const MapPage=()=>{
@@ -135,7 +135,9 @@ export default ConPage
 
 ### 三、兼容方法
 
-`popstate`和`onhashchange`方法对`android4.4.4`不兼容，需要引入[history](https://www.npmjs.com/package/history)这个`npm`包，里面有兼容性代码，如果判断不兼容，就直接按照`window.location.href`跳转。
+`popstate`和`onhashchange`方法对`android4.4.4`不兼容，所以`React Router`引入了[History](https://www.npmjs.com/package/history)这个`npm`包，里面有兼容性代码，如果判断不兼容，就直接按照`window.location.href`跳转。
+
+![1.png](https://img10.360buyimg.com/imagetools/jfs/t1/146096/10/288/58975/5edef832Efe118194/cebc1df6d88d7da9.png)
 
 #### 源码
 ```js
@@ -168,7 +170,7 @@ const canUseHistory = supportsHistory();
 
 ##### 案例
 
-本妹子用`History API`的具体代码为`codepen`上的[change URL with history package](https://codepen.io/huihui/pen/gOPaMNE)
+本妹子用`History API`的具体代码为`codepen`上的[Change URL with History package](https://codepen.io/huihui/pen/gOPaMNE)
 
 Happy coding .. :)
 
@@ -179,7 +181,7 @@ Happy coding .. :)
 
 [popstate接口API](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/popstate_event)
 
-[onHashchange兼容性](https://caniuse.com/#search=onHashchange)
+[Can I use onHashchange](https://caniuse.com/#search=onHashchange)
 
 [change URL with history package](https://codepen.io/huihui/pen/gOPaMNE)
 

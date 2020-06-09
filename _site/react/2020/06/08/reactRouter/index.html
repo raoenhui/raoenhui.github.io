@@ -190,7 +190,7 @@
 </code></pre></div></div>
 <h5 id="案例">案例</h5>
 
-<p>具体代码为<code class="highlighter-rouge">codepen</code>上的<a href="https://codepen.io/huihui/pen/qBbOajM">change page with history package</a></p>
+<p>具体代码为<code class="highlighter-rouge">codepen</code>上的<a href="https://codepen.io/huihui/pen/qBbOajM">Change URL without refreshing page</a></p>
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useState</span><span class="p">,</span> <span class="nx">useRef</span><span class="p">,</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">MapPage</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
   <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">MapPage</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
@@ -246,7 +246,9 @@
 
 <h3 id="三兼容方法">三、兼容方法</h3>
 
-<p><code class="highlighter-rouge">popstate</code>和<code class="highlighter-rouge">onhashchange</code>方法对<code class="highlighter-rouge">android4.4.4</code>不兼容，需要引入<a href="https://www.npmjs.com/package/history">history</a>这个<code class="highlighter-rouge">npm</code>包，里面有兼容性代码，如果判断不兼容，就直接按照<code class="highlighter-rouge">window.location.href</code>跳转。</p>
+<p><code class="highlighter-rouge">popstate</code>和<code class="highlighter-rouge">onhashchange</code>方法对<code class="highlighter-rouge">android4.4.4</code>不兼容，所以<code class="highlighter-rouge">React Router</code>引入了<a href="https://www.npmjs.com/package/history">History</a>这个<code class="highlighter-rouge">npm</code>包，里面有兼容性代码，如果判断不兼容，就直接按照<code class="highlighter-rouge">window.location.href</code>跳转。</p>
+
+<p><img src="https://img10.360buyimg.com/imagetools/jfs/t1/146096/10/288/58975/5edef832Efe118194/cebc1df6d88d7da9.png" alt="1.png" /></p>
 
 <h4 id="源码-1">源码</h4>
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//判断是否支持History</span>
@@ -278,7 +280,7 @@
 
 <h5 id="案例-1">案例</h5>
 
-<p>本妹子用<code class="highlighter-rouge">History API</code>的具体代码为<code class="highlighter-rouge">codepen</code>上的<a href="https://codepen.io/huihui/pen/gOPaMNE">change URL with history package</a></p>
+<p>本妹子用<code class="highlighter-rouge">History API</code>的具体代码为<code class="highlighter-rouge">codepen</code>上的<a href="https://codepen.io/huihui/pen/gOPaMNE">Change URL with History package</a></p>
 
 <p>Happy coding .. :)</p>
 
@@ -289,7 +291,7 @@
 
 <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/popstate_event">popstate接口API</a></p>
 
-<p><a href="https://caniuse.com/#search=onHashchange">onHashchange兼容性</a></p>
+<p><a href="https://caniuse.com/#search=onHashchange">Can I use onHashchange</a></p>
 
 <p><a href="https://codepen.io/huihui/pen/gOPaMNE">change URL with history package</a></p>
 
