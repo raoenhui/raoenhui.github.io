@@ -176,6 +176,11 @@ callback([
   } ,
 
   {
+    "text": "移动端自动播放视频之TS视频",
+    "href": "https://raoenhui.github.io/react/2020/05/08/ts/"
+  } ,
+
+  {
     "text": "React Router源码分析",
     "href": "https://raoenhui.github.io/react/2020/06/08/reactRouter/"
   } 

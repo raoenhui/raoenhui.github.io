@@ -9,6 +9,14 @@
     } ,
   
     {
+      "title"    : "移动端自动播放视频之TS视频",
+      "category" : "",
+      "tags"     : "video",
+      "url"      : "/react/2020/05/08/ts/index.html",
+      "date"     : "2020-05-08 22:07:00 +0530"
+    } ,
+  
+    {
       "title"    : "如何关闭Amazon AWS上服务器",
       "category" : "",
       "tags"     : "VPN",
