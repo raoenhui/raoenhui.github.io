@@ -148,15 +148,13 @@
             <section class="notepad-post-excerpt">
                 <p>前言
 
-发现无论是用react-route的Link或Push跳转，还是点击浏览器自带的返回按钮，都是只Url变了但是页面并不刷新，是怎么做到的呢？于是本妹子就从这个方向研究了下react-route的源码，给小伙伴们分享下。
+发现react-route用Link或Push跳转时,没有刷新页面,但是Url变了，而且点击浏览器自动的返回按钮，Url变了但是页面不刷新，怎么做到的呢？于是本妹子就从这个方向研究了下react-route的源码，给小伙伴们分享下。
 
-一、解密-显示隐藏页面
+解密-点击返回按钮但页面不刷新
 
-源码
-react-router里的RouterContext.js
-
-//TODO:直接用React.createContext也可以
-i...</p>
+一、HashRouter 分析
+通过location.hash来达到url变但页面不刷新
+location.hash...</p>
             </section>
             
                 <div class="notepad-index-post-tags">

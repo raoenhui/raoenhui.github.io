@@ -131,55 +131,22 @@
         <article class="notepad-post-content post tag-simple">
             <div><h3 id="前言">前言</h3>
 
-<p>发现无论是用<code class="highlighter-rouge">react-route</code>的<code class="highlighter-rouge">Link</code>或<code class="highlighter-rouge">Push</code>跳转，还是点击浏览器自带的返回按钮，都是只<code class="highlighter-rouge">Url</code>变了但是页面并不刷新，是怎么做到的呢？于是本妹子就从这个方向研究了下<code class="highlighter-rouge">react-route</code>的源码，给小伙伴们分享下。</p>
+<p>发现<code class="highlighter-rouge">react-route</code>用<code class="highlighter-rouge">Link</code>或<code class="highlighter-rouge">Push</code>跳转时,没有刷新页面,但是<code class="highlighter-rouge">Url</code>变了，而且点击浏览器自动的返回按钮，<code class="highlighter-rouge">Url</code>变了但是页面不刷新，怎么做到的呢？于是本妹子就从这个方向研究了下<code class="highlighter-rouge">react-route</code>的源码，给小伙伴们分享下。</p>
 
-<h3 id="一解密-显示隐藏页面">一、解密-显示隐藏页面</h3>
+<h3 id="解密-点击返回按钮但页面不刷新">解密-点击返回按钮但页面不刷新</h3>
 
-<h4 id="源码">源码</h4>
-<p><a href="https://github.com/ReactTraining/react-router">react-router</a>里的RouterContext.js</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//TODO:直接用React.createContext也可以</span>
-<span class="k">import</span> <span class="nx">createContext</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">mini-create-react-context</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">createNamedContext</span> <span class="o">=</span> <span class="nx">name</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">context</span> <span class="o">=</span> <span class="nx">createContext</span><span class="p">();</span>
-  <span class="nx">context</span><span class="p">.</span><span class="nx">displayName</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
-
-  <span class="k">return</span> <span class="nx">context</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="kd">const</span> <span class="nx">context</span> <span class="o">=</span> <span class="cm">/*#__PURE__*/</span> <span class="nx">createNamedContext</span><span class="p">(</span><span class="dl">"</span><span class="s2">Router</span><span class="dl">"</span><span class="p">);</span>
-<span class="k">export</span> <span class="k">default</span> <span class="nx">context</span><span class="p">;</span>
-
-</code></pre></div></div>
-<h4 id="分析">分析</h4>
-
-<p><a href="https://reactjs.org/docs/context.html#contextdisplayname">Context.displayName</a>解释：
-<code class="highlighter-rouge">context </code>对象接受一个名为 <code class="highlighter-rouge">displayName</code> 的<code class="highlighter-rouge"> property</code>，类型为字符串。<code class="highlighter-rouge">React DevTools </code>使用该字符串来确定 <code class="highlighter-rouge">context</code> 要显示的内容。</p>
-
-<p>示例，下述组件在 <code class="highlighter-rouge">DevTools</code> 中将显示为 <code class="highlighter-rouge">MyDisplayName</code>：</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">MyContext</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createContext</span><span class="p">(</span><span class="cm">/* some value */</span><span class="p">);</span>
-<span class="nx">MyContext</span><span class="p">.</span><span class="nx">displayName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">MyDisplayName</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="o">&lt;</span><span class="nx">MyContext</span><span class="p">.</span><span class="nx">Provider</span><span class="o">&gt;</span> <span class="c1">// "MyDisplayName.Provider" 在 DevTools 中</span>
-<span class="o">&lt;</span><span class="nx">MyContext</span><span class="p">.</span><span class="nx">Consumer</span><span class="o">&gt;</span> <span class="c1">// "MyDisplayName.Consumer" 在 DevTools 中</span>
-</code></pre></div></div>
-
-<h3 id="二解密-点击返回按钮但页面不刷新">二、解密-点击返回按钮但页面不刷新</h3>
-
-<h4 id="hashrouter-分析">HashRouter 分析</h4>
+<h4 id="一hashrouter-分析">一、HashRouter 分析</h4>
 <p>通过<code class="highlighter-rouge">location.hash</code>来达到<code class="highlighter-rouge">url</code>变但页面不刷新</p>
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">location</span><span class="p">.</span><span class="nx">hash</span><span class="o">=</span><span class="nx">hashValue</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">location</span><span class="p">.</span><span class="nx">hash</span><span class="o">=</span><span class="nx">hash</span>
 </code></pre></div></div>
 <p>然后在通过<code class="highlighter-rouge">onhashchange</code>监听浏览器的返回事件</p>
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">onhashchange</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">changeDisplayName</span><span class="p">();</span><span class="c1">//替换显示的内容</span>
 <span class="p">});</span>
 </code></pre></div></div>
-<h4 id="browserrouter-分析">BrowserRouter 分析</h4>
+<h4 id="二-browserrouter-分析">二、 BrowserRouter 分析</h4>
 
-<p>通过<code class="highlighter-rouge">pushState</code>来达到url变但页面不刷新，其中<code class="highlighter-rouge">history.push</code>实际是用原生<code class="highlighter-rouge">history.pushState</code>来实现的，<code class="highlighter-rouge">history.replace</code>实际是用原生<code class="highlighter-rouge">history.replaceState</code>来实现的。</p>
+<p>通过pushState来达到url变但页面不刷新，<code class="highlighter-rouge">history.push</code>实际是用原生<code class="highlighter-rouge">history.pushState</code>来实现的，<code class="highlighter-rouge">history.replace</code>实际是用原生<code class="highlighter-rouge">history.replaceState</code>来实现的。</p>
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">changeDisplayName</span><span class="p">();</span><span class="c1">//替换显示的内容</span>
 <span class="nb">window</span><span class="p">.</span><span class="nx">history</span><span class="p">.</span><span class="nx">pushState</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">newUrl</span><span class="p">);</span>
 </code></pre></div></div>
@@ -189,8 +156,7 @@
 <span class="p">});</span>
 </code></pre></div></div>
 <h5 id="案例">案例</h5>
-
-<p>具体代码为<code class="highlighter-rouge">codepen</code>上的<a href="https://codepen.io/huihui/pen/qBbOajM">Change URL without refreshing page</a></p>
+<p>具体代码为<code class="highlighter-rouge">codepen</code>上的<a href="https://codepen.io/huihui/pen/qBbOajM">change page with history package</a></p>
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useState</span><span class="p">,</span> <span class="nx">useRef</span><span class="p">,</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">MapPage</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
   <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">MapPage</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
@@ -244,43 +210,91 @@
 <span class="k">export</span> <span class="k">default</span> <span class="nx">ConPage</span>
 </code></pre></div></div>
 
-<h3 id="三兼容方法">三、兼容方法</h3>
+<h4 id="三与-history-结合">三、与 history 结合</h4>
 
-<p><code class="highlighter-rouge">popstate</code>和<code class="highlighter-rouge">onhashchange</code>方法对<code class="highlighter-rouge">android4.4.4</code>不兼容，所以<code class="highlighter-rouge">React Router</code>引入了<a href="https://www.npmjs.com/package/history">History</a>这个<code class="highlighter-rouge">npm</code>包，里面有兼容性代码，如果判断不兼容，就直接按照<code class="highlighter-rouge">window.location.href</code>跳转。</p>
+<p><code class="highlighter-rouge">popstate</code>和<code class="highlighter-rouge">onhashchange</code>方法对<code class="highlighter-rouge">android4.4.4</code>不兼容，需要引入<a href="https://www.npmjs.com/package/history">history</a>这个<code class="highlighter-rouge">npm</code>包，里面有兼容性代码，如果判断不兼容，就直接按照<code class="highlighter-rouge">window.location.href</code>跳转。</p>
 
-<p><img src="https://img10.360buyimg.com/imagetools/jfs/t1/146096/10/288/58975/5edef832Efe118194/cebc1df6d88d7da9.png" alt="1.png" /></p>
+<p>具体代码为<code class="highlighter-rouge">codepen</code>上的<a href="https://codepen.io/huihui/pen/gOPaMNE">change URL with history package</a></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">history</span> <span class="o">=</span> <span class="nx">History</span><span class="p">.</span><span class="nx">createBrowserHistory</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">Location</span> <span class="o">=</span> <span class="nx">history</span><span class="p">.</span><span class="nx">location</span><span class="p">;</span>
 
-<h4 id="源码-1">源码</h4>
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//判断是否支持History</span>
-<span class="kd">function</span> <span class="nx">supportsHistory</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">ua</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nb">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">MapPage</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">MapPage</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="p">}</span>
+<span class="kd">const</span> <span class="nx">RankPage</span><span class="o">=</span><span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">RankPage</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="p">}</span> 
 
-  <span class="k">if</span> <span class="p">(</span>
-    <span class="p">(</span><span class="nx">ua</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">Android 2.</span><span class="dl">'</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span> <span class="o">||</span> <span class="nx">ua</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">Android 4.0</span><span class="dl">'</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;&amp;</span>
-    <span class="nx">ua</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">Mobile Safari</span><span class="dl">'</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&amp;&amp;</span>
-    <span class="nx">ua</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">Chrome</span><span class="dl">'</span><span class="p">)</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&amp;&amp;</span>
-    <span class="nx">ua</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">Windows Phone</span><span class="dl">'</span><span class="p">)</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span>
-  <span class="p">)</span>
-    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">ConPage</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span><span class="p">[</span><span class="nx">Page</span><span class="p">,</span> <span class="nx">setPage</span><span class="p">]</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">useState</span><span class="p">(</span><span class="dl">'</span><span class="s1">rank</span><span class="dl">'</span><span class="p">);</span>
 
-  <span class="k">return</span> <span class="nb">window</span><span class="p">.</span><span class="nx">history</span> <span class="o">&amp;&amp;</span> <span class="dl">'</span><span class="s1">pushState</span><span class="dl">'</span> <span class="k">in</span> <span class="nb">window</span><span class="p">.</span><span class="nx">history</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="kd">const</span> <span class="nx">canUseHistory</span> <span class="o">=</span> <span class="nx">supportsHistory</span><span class="p">();</span>
- <span class="k">if</span> <span class="p">(</span><span class="nx">canUseHistory</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">globalHistory</span><span class="p">.</span><span class="nx">pushState</span><span class="p">({</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">state</span> <span class="p">},</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">href</span><span class="p">);</span>
-    <span class="c1">//...</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nx">warning</span><span class="p">(</span>
-      <span class="nx">state</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">,</span>
-      <span class="dl">'</span><span class="s1">Browser history cannot push state in browsers that do not support HTML5 history</span><span class="dl">'</span>
-    <span class="p">);</span>
-    <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="nx">href</span><span class="p">;</span> <span class="c1">//不支持则直接用location.href</span>
+  <span class="nx">React</span><span class="p">.</span><span class="nx">useEffect</span><span class="p">(()</span><span class="o">=&gt;</span><span class="p">{</span>
+   <span class="nx">history</span><span class="p">.</span><span class="nx">listen</span><span class="p">((</span><span class="nx">Location</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">action</span><span class="p">,</span> <span class="nx">Location</span><span class="p">.</span><span class="nx">state</span><span class="p">);</span>
+      <span class="k">if</span><span class="p">(</span><span class="nx">Location</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">page</span> <span class="o">&amp;&amp;</span> <span class="nx">Location</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">page</span><span class="o">==</span><span class="dl">'</span><span class="s1">map</span><span class="dl">'</span><span class="p">){</span>
+        <span class="nx">setPage</span><span class="p">(</span><span class="dl">'</span><span class="s1">map</span><span class="dl">'</span><span class="p">)</span>
+      <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="nx">setPage</span><span class="p">(</span><span class="dl">'</span><span class="s1">rank</span><span class="dl">'</span><span class="p">)</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+  <span class="p">},[])</span>
+
+
+  <span class="kd">const</span> <span class="nx">_changePage</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">Page</span><span class="o">==</span><span class="dl">'</span><span class="s1">rank</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">history</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">'</span><span class="s1">/con?pId=map</span><span class="dl">'</span><span class="p">,{</span>  <span class="na">page</span><span class="p">:</span> <span class="dl">'</span><span class="s1">map</span><span class="dl">'</span> <span class="p">});</span>
+     <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+      <span class="nx">history</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">'</span><span class="s1">/con?pId=rank</span><span class="dl">'</span><span class="p">,{</span>  <span class="na">page</span><span class="p">:</span> <span class="dl">'</span><span class="s1">rank</span><span class="dl">'</span> <span class="p">});</span>
+     <span class="p">}</span>
   <span class="p">}</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">_changePage</span><span class="p">}</span> <span class="nx">className</span><span class="o">=</span><span class="dl">'</span><span class="s1">btnTest</span><span class="dl">'</span><span class="o">&gt;</span> <span class="err">切换路由</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>      <span class="p">{</span><span class="nx">Page</span><span class="o">==</span><span class="dl">'</span><span class="s1">rank</span><span class="dl">'</span> <span class="o">&amp;&amp;&lt;</span><span class="nx">RankPage</span> <span class="o">/&gt;</span><span class="p">}</span>
+      <span class="p">{</span><span class="nx">Page</span><span class="o">==</span><span class="dl">'</span><span class="s1">map</span><span class="dl">'</span> <span class="o">&amp;&amp;&lt;</span><span class="nx">MapPage</span> <span class="o">/&gt;</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+<span class="o">&lt;</span><span class="nx">ConPage</span> <span class="o">/&gt;</span><span class="p">,</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">),</span>
+  <span class="p">)</span>
 </code></pre></div></div>
 
-<h5 id="案例-1">案例</h5>
+<h4 id="四查看显示页面">四、查看显示页面</h4>
 
-<p>本妹子用<code class="highlighter-rouge">History API</code>的具体代码为<code class="highlighter-rouge">codepen</code>上的<a href="https://codepen.io/huihui/pen/gOPaMNE">Change URL with History package</a></p>
+<h5 id="源码">源码</h5>
+<p><a href="https://github.com/ReactTraining/react-router">react-router</a>里的RouterContext.js</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//TODO:直接用React.createContext也可以</span>
+<span class="k">import</span> <span class="nx">createContext</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">mini-create-react-context</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">createNamedContext</span> <span class="o">=</span> <span class="nx">name</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">context</span> <span class="o">=</span> <span class="nx">createContext</span><span class="p">();</span>
+  <span class="nx">context</span><span class="p">.</span><span class="nx">displayName</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="nx">context</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">context</span> <span class="o">=</span> <span class="cm">/*#__PURE__*/</span> <span class="nx">createNamedContext</span><span class="p">(</span><span class="dl">"</span><span class="s2">Router</span><span class="dl">"</span><span class="p">);</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">context</span><span class="p">;</span>
+
+</code></pre></div></div>
+<h5 id="分析">分析</h5>
+
+<p><a href="https://reactjs.org/docs/context.html#contextdisplayname">Context.displayName</a>解释：
+<code class="highlighter-rouge">context </code>对象接受一个名为 <code class="highlighter-rouge">displayName</code> 的<code class="highlighter-rouge"> property</code>，类型为字符串。<code class="highlighter-rouge">React DevTools </code>使用该字符串来标示<code class="highlighter-rouge">context</code> 要显示的内容。</p>
+
+<p>示例，下述组件在 <code class="highlighter-rouge">DevTools</code> 中将显示为 <a href="https://zh-hans.reactjs.org/docs/context.html#classcontexttype">MyDisplayName</a>：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">MyContext</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createContext</span><span class="p">(</span><span class="cm">/* some value */</span><span class="p">);</span>
+<span class="nx">MyContext</span><span class="p">.</span><span class="nx">displayName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">MyDisplayName</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="o">&lt;</span><span class="nx">MyContext</span><span class="p">.</span><span class="nx">Provider</span><span class="o">&gt;</span> <span class="c1">// "MyDisplayName.Provider" 在 DevTools 中</span>
+<span class="o">&lt;</span><span class="nx">MyContext</span><span class="p">.</span><span class="nx">Consumer</span><span class="o">&gt;</span> <span class="c1">// "MyDisplayName.Consumer" 在 DevTools 中</span>
+</code></pre></div></div>
 
 <p>Happy coding .. :)</p>
 
@@ -291,7 +305,7 @@
 
 <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/popstate_event">popstate接口API</a></p>
 
-<p><a href="https://caniuse.com/#search=onHashchange">Can I use onHashchange</a></p>
+<p><a href="https://caniuse.com/#search=onHashchange">onHashchange兼容性</a></p>
 
 <p><a href="https://codepen.io/huihui/pen/gOPaMNE">change URL with history package</a></p>
 

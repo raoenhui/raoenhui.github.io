@@ -349,7 +349,7 @@ CMD是”Common Module Definition”的缩写。类似于requirejs，但是seajs
 </code></pre></div></div>
 <p><code class="highlighter-rouge">webpack</code>根据<code class="highlighter-rouge">ES2015 loader</code> 规范实现了用于动态加载的<code class="highlighter-rouge">import()</code>方法。在代码中所有被<code class="highlighter-rouge">import()</code>的模块，都将打成分别打出单独的包，放在<code class="highlighter-rouge">chunk</code>存储的目录下。当链接中加<code class="highlighter-rouge">vconsole=1</code>，浏览器运行到这一行代码时，就会自动请求这个<code class="highlighter-rouge">chunk</code>包，实现异步加载。</p>
 
-<h5 id="24-模块写法">2.4 模块写法</h5>
+<h5 id="24-模块写法-es-module">2.4 模块写法 ES Module</h5>
 <p>export有两种模块导出方式：命名式导出（名称导出）和默认导出（定义式导出），命名式导出每个模块可以多个，而默认导出每个模块仅一个。</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="p">{</span> <span class="nx">name1</span><span class="p">,</span> <span class="nx">name2</span><span class="p">,</span> <span class="err">…</span><span class="p">,</span> <span class="nx">nameN</span> <span class="p">};</span>
 <span class="k">export</span> <span class="p">{</span> <span class="nx">variable1</span> <span class="k">as</span> <span class="nx">name1</span><span class="p">,</span> <span class="nx">variable2</span> <span class="k">as</span> <span class="nx">name2</span><span class="p">,</span> <span class="err">…</span><span class="p">,</span> <span class="nx">nameN</span> <span class="p">};</span>

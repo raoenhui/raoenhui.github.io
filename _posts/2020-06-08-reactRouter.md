@@ -9,53 +9,16 @@ tags:
 - React
 ---
 
-
-
 ### 前言
 
-发现无论是用`react-route`的`Link`或`Push`跳转，还是点击浏览器自带的返回按钮，都是只`Url`变了但是页面并不刷新，是怎么做到的呢？于是本妹子就从这个方向研究了下`react-route`的源码，给小伙伴们分享下。
+发现`react-route`用`Link`或`Push`跳转时,没有刷新页面,但是`Url`变了，而且点击浏览器自动的返回按钮，`Url`变了但是页面不刷新，怎么做到的呢？于是本妹子就从这个方向研究了下`react-route`的源码，给小伙伴们分享下。
 
-### 一、解密-显示隐藏页面
+### 解密-点击返回按钮但页面不刷新
 
-#### 源码
-[react-router](https://github.com/ReactTraining/react-router)里的RouterContext.js
-
-```js
-//TODO:直接用React.createContext也可以
-import createContext from "mini-create-react-context";
-
-const createNamedContext = name => {
-  const context = createContext();
-  context.displayName = name;
-
-  return context;
-};
-
-const context = /*#__PURE__*/ createNamedContext("Router");
-export default context;
-
-```
-#### 分析
-
-[Context.displayName](https://reactjs.org/docs/context.html#contextdisplayname)解释：
-`context `对象接受一个名为 `displayName` 的` property`，类型为字符串。`React DevTools `使用该字符串来确定 `context` 要显示的内容。
-
-示例，下述组件在 `DevTools` 中将显示为 `MyDisplayName`：
-
-```js
-const MyContext = React.createContext(/* some value */);
-MyContext.displayName = 'MyDisplayName';
-
-<MyContext.Provider> // "MyDisplayName.Provider" 在 DevTools 中
-<MyContext.Consumer> // "MyDisplayName.Consumer" 在 DevTools 中
-```
-
-### 二、解密-点击返回按钮但页面不刷新
-
-#### HashRouter 分析
+#### 一、HashRouter 分析
 通过`location.hash`来达到`url`变但页面不刷新
 ```js
-location.hash=hashValue
+location.hash=hash
 ```
 然后在通过`onhashchange`监听浏览器的返回事件
 ```js
@@ -63,9 +26,9 @@ window.addEventListener('onhashchange', (event) => {
     changeDisplayName();//替换显示的内容
 });
 ```
-#### BrowserRouter 分析
+#### 二、 BrowserRouter 分析
 
-通过`pushState`来达到url变但页面不刷新，其中`history.push`实际是用原生`history.pushState`来实现的，`history.replace`实际是用原生`history.replaceState`来实现的。
+通过pushState来达到url变但页面不刷新，`history.push`实际是用原生`history.pushState`来实现的，`history.replace`实际是用原生`history.replaceState`来实现的。
 ```js
 changeDisplayName();//替换显示的内容
 window.history.pushState(null, null, newUrl);
@@ -77,8 +40,7 @@ window.addEventListener('popstate', (event) => {
 });
 ```
 ##### 案例
-
-具体代码为`codepen`上的[Change URL without refreshing page](https://codepen.io/huihui/pen/qBbOajM)
+具体代码为`codepen`上的[change page with history package](https://codepen.io/huihui/pen/qBbOajM)
 ```js
 import React, { useEffect, useState, useRef, Component } from 'react';
 const MapPage=()=>{
@@ -133,44 +95,96 @@ function ConPage() {
 export default ConPage
 ```
 
-### 三、兼容方法
+#### 三、与 history 结合
 
-`popstate`和`onhashchange`方法对`android4.4.4`不兼容，所以`React Router`引入了[History](https://www.npmjs.com/package/history)这个`npm`包，里面有兼容性代码，如果判断不兼容，就直接按照`window.location.href`跳转。
+`popstate`和`onhashchange`方法对`android4.4.4`不兼容，需要引入[history](https://www.npmjs.com/package/history)这个`npm`包，里面有兼容性代码，如果判断不兼容，就直接按照`window.location.href`跳转。
 
-![1.png](https://img10.360buyimg.com/imagetools/jfs/t1/146096/10/288/58975/5edef832Efe118194/cebc1df6d88d7da9.png)
-
-#### 源码
+具体代码为`codepen`上的[change URL with history package](https://codepen.io/huihui/pen/gOPaMNE)
 ```js
-//判断是否支持History
-function supportsHistory() {
-  const ua = window.navigator.userAgent;
+const history = History.createBrowserHistory();
+const Location = history.location;
 
-  if (
-    (ua.indexOf('Android 2.') !== -1 || ua.indexOf('Android 4.0') !== -1) &&
-    ua.indexOf('Mobile Safari') !== -1 &&
-    ua.indexOf('Chrome') === -1 &&
-    ua.indexOf('Windows Phone') === -1
-  )
-    return false;
-
-  return window.history && 'pushState' in window.history;
+const MapPage=()=>{
+  return <div>MapPage</div>
 }
-const canUseHistory = supportsHistory();
- if (canUseHistory) {
-    globalHistory.pushState({ key, state }, null, href);
-    //...
-  } else {
-    warning(
-      state === undefined,
-      'Browser history cannot push state in browsers that do not support HTML5 history'
-    );
-    window.location.href = href; //不支持则直接用location.href
+const RankPage=()=>{
+  return <div>RankPage</div>
+} 
+
+function ConPage() {
+  const[Page, setPage] = React.useState('rank');
+
+  React.useEffect(()=>{
+   history.listen((Location, action) => {
+      console.log(action, Location.state);
+      if(Location.state.page && Location.state.page=='map'){
+        setPage('map')
+      }else{
+        setPage('rank')
+      }
+    });
+  },[])
+
+
+  const _changePage = () => {
+    if(Page=='rank') {
+      history.push('/con?pId=map',{  page: 'map' });
+     }else{
+      history.push('/con?pId=rank',{  page: 'rank' });
+     }
   }
+
+  return (
+    <div>
+      <button onClick={_changePage} className='btnTest'> 切换路由</button>
+      {Page=='rank' &&<RankPage />}
+      {Page=='map' &&<MapPage />}
+    </div>
+  )
+}
+
+ReactDOM.render(
+<ConPage />,
+    document.getElementById('root'),
+  )
 ```
 
-##### 案例
+#### 四、查看显示页面
 
-本妹子用`History API`的具体代码为`codepen`上的[Change URL with History package](https://codepen.io/huihui/pen/gOPaMNE)
+##### 源码
+[react-router](https://github.com/ReactTraining/react-router)里的RouterContext.js
+
+```js
+//TODO:直接用React.createContext也可以
+import createContext from "mini-create-react-context";
+
+const createNamedContext = name => {
+  const context = createContext();
+  context.displayName = name;
+
+  return context;
+};
+
+const context = /*#__PURE__*/ createNamedContext("Router");
+export default context;
+
+```
+##### 分析
+
+[Context.displayName](https://reactjs.org/docs/context.html#contextdisplayname)解释：
+`context `对象接受一个名为 `displayName` 的` property`，类型为字符串。`React DevTools `使用该字符串来标示`context` 要显示的内容。
+
+示例，下述组件在 `DevTools` 中将显示为 [MyDisplayName](https://zh-hans.reactjs.org/docs/context.html#classcontexttype)：
+
+
+
+```js
+const MyContext = React.createContext(/* some value */);
+MyContext.displayName = 'MyDisplayName';
+
+<MyContext.Provider> // "MyDisplayName.Provider" 在 DevTools 中
+<MyContext.Consumer> // "MyDisplayName.Consumer" 在 DevTools 中
+```
 
 Happy coding .. :)
 
@@ -181,7 +195,7 @@ Happy coding .. :)
 
 [popstate接口API](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/popstate_event)
 
-[Can I use onHashchange](https://caniuse.com/#search=onHashchange)
+[onHashchange兼容性](https://caniuse.com/#search=onHashchange)
 
 [change URL with history package](https://codepen.io/huihui/pen/gOPaMNE)
 
