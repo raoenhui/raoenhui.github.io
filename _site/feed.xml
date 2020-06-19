@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2020-06-18T17:03:46+05:30</updated>
+<updated>2020-06-19T08:32:51+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>前端妹子</name>
@@ -237,7 +237,9 @@
 &lt;h2 id=&quot;ts与mp4优势对比&quot;&gt;Ts与Mp4优势对比&lt;/h2&gt;
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Mp4&lt;/code&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;IOS&lt;/code&gt;下可以自动播放，但是在部分安卓机下无法自动播放产生黑屏。
  &lt;code class=&quot;highlighter-rouge&quot;&gt;Ts&lt;/code&gt;可实现自动播放，&lt;code class=&quot;highlighter-rouge&quot;&gt;IOS8&lt;/code&gt;以上和&lt;code class=&quot;highlighter-rouge&quot;&gt;Android4.4&lt;/code&gt;以上都支持。
-基于自动播放的优势，本妹子在本厂的&lt;code class=&quot;highlighter-rouge&quot;&gt;618&lt;/code&gt;大促主会场及各个活动需求上就用了&lt;code class=&quot;highlighter-rouge&quot;&gt;Ts&lt;/code&gt;技术。&lt;/p&gt;
+基于自动播放的优势，本妹子在本厂的&lt;code class=&quot;highlighter-rouge&quot;&gt;618&lt;/code&gt;大促主会场及各个活动需求上就用了&lt;code class=&quot;highlighter-rouge&quot;&gt;Ts&lt;/code&gt;技术。先show下具体效果:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img30.360buyimg.com/pop/jfs/t1/130773/8/2560/2100559/5eec25f9Ee95b756d/3524810c410cf517.gif&quot; alt=&quot;renjialun.gif&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;生成ts视频&quot;&gt;生成ts视频&lt;/h2&gt;
 &lt;p&gt;需要下&lt;code class=&quot;highlighter-rouge&quot;&gt;ffmpeg&lt;/code&gt;来将&lt;code class=&quot;highlighter-rouge&quot;&gt;Mp4&lt;/code&gt;转化成&lt;code class=&quot;highlighter-rouge&quot;&gt;Ts&lt;/code&gt;视频。下面下载操作如下所示：
@@ -345,11 +347,12 @@
 &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;react&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Home&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;VideoTs&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;tsClass&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cover&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;https://img11.360buyimg.com/imagetools/jfs/t1/105707/30/17596/32160/5e8c8ae6Ee2bfd8db/1ef4084de9ec103f.jpg&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; 
-    &lt;span class=&quot;nx&quot;&gt;tsSrc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;https://storage.360buyimg.com/xingdianzhang/%E6%B5%8B%E8%AF%95ts.ts&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;VideoTs&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;tsClass&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cover&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;https://img30.360buyimg.com/ling/jfs/t1/111077/7/8742/256800/5ed202f4Ef1221073/cf0fcf7a6c39eb3d.jpg&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; 
+    &lt;span class=&quot;nx&quot;&gt;tsSrc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;https://storage.360buyimg.com/icepublic/rennjialun.ts&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;p&gt;Happy coding .. :)&lt;/p&gt;
 
 &lt;h3 id=&quot;相关链接&quot;&gt;相关链接&lt;/h3&gt;
