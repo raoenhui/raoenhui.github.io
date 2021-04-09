@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2021-04-09T15:56:10+05:30</updated>
+<updated>2021-04-09T15:57:59+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>前端妹子</name>
@@ -17,23 +17,317 @@
 
 
 <entry>
-  <title type="html"><![CDATA[Animation]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/2021/01/02/animation/"/>
-  <id>https://raoenhui.github.io/2021/01/02/animation</id>
-  <published>2021-01-02T00:00:00+05:30</published>
-  <updated>2021-01-02T00:00:00+05:30</updated>
+  <title type="html"><![CDATA[H5动画实战浅析]]></title>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/react/2021/01/02/animation/"/>
+  <id>https://raoenhui.github.io/react/2021/01/02/animation</id>
+  <published>2021-01-02T22:07:00+05:30</published>
+  <updated>2021-01-02T22:07:00+05:30</updated>
   <author>
     <name>前端妹子</name>
     <uri>https://raoenhui.github.io</uri>
     <email>raoenhui@jd.com</email>
   </author>
-  
+  <category scheme="https://raoenhui.github.io/tags/#React" term="React" />
   <content type="html">
   
-    
+    &lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
+&lt;p&gt;动画效果一直是人机交互的一个非常重要的部分，动画效果的引入，会让交互变得更加友好，让用户获得更加愉悦的体验。而随着市场环境变化，手机性能越来越好，网速越来越快，以及用户视觉效果要求越来越高，作为一名网页开发者，动画也是一个必会的技能。由此本文和大家分享下动画方面的技术实践经验。&lt;/p&gt;
+
+&lt;h3 id=&quot;动画的形成&quot;&gt;动画的形成&lt;/h3&gt;
+&lt;p&gt;多张不同的图像连在一起就会变成了动态的图像。在网页端的世界里，浏览器在视觉暂留时间内，连续不断的逐帧输出图像。每一帧输出一张图像，形成了用户视觉效果中的动画。那么怎么高效的通过一帧帧输出连续流畅的动画，是有很多种动画技术可以都可以实现的。&lt;/p&gt;
+
+&lt;h3 id=&quot;动画技术&quot;&gt;动画技术&lt;/h3&gt;
+&lt;p&gt;下面以当今主流的动画技术，分成四个部分给大家介绍下，分别为&lt;code class=&quot;highlighter-rouge&quot;&gt;纯Css&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;Lottie库&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;Svga库&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;Creatjs库&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h4 id=&quot;一纯css&quot;&gt;一、纯CSS&lt;/h4&gt;
+
+&lt;p&gt;1.1 &lt;code class=&quot;highlighter-rouge&quot;&gt;Animation&lt;/code&gt;动画属性主要结合&lt;code class=&quot;highlighter-rouge&quot;&gt;@keyframes&lt;/code&gt;规则来创建动画。&lt;/p&gt;
+
+&lt;p&gt;下面以语音喇叭声波动效为例：
+中间的小圆点是一直存在的，第一条和第二条线都是&lt;code class=&quot;highlighter-rouge&quot;&gt;1/4&lt;/code&gt;的圆弧，分别间隔&lt;code class=&quot;highlighter-rouge&quot;&gt;0.2s&lt;/code&gt;去循环显示隐藏。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img14.360buyimg.com/imagetools/jfs/t1/141819/25/2260/19854/5f02bf7dE7860564a/420b5e7f2d771181.gif&quot; alt=&quot;声波动效.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.second&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;animation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fadeInOut&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1s&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;infinite&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.2s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.third&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;nl&quot;&gt;animation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fadeInOut&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1s&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;infinite&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.4s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@keyframes&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fadeInOut&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;/*初始状态 透明度为0*/&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;/*结尾状态 透明度为1*/&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;我们一般用阶跃函数&lt;code class=&quot;highlighter-rouge&quot;&gt;step&lt;/code&gt;来做帧动画。
+下面是&lt;code class=&quot;highlighter-rouge&quot;&gt;linear&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;step&lt;/code&gt;的具体案例：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://codepen.io/huihui/pen/ExPKbdj&quot;&gt;https://codepen.io/huihui/pen/ExPKbdj&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;先生成&lt;code class=&quot;highlighter-rouge&quot;&gt;Sprite&lt;/code&gt;图片，再移动&lt;code class=&quot;highlighter-rouge&quot;&gt;X&lt;/code&gt;轴位置形成帧动画。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img11.360buyimg.com/imagetools/jfs/t1/143380/10/2197/40201/5f02c24aE396b2557/40e8c2e0b16dbde8.png&quot; alt=&quot;image1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img12.360buyimg.com/imagetools/jfs/t1/146702/25/2252/262783/5f02bf79Ebe245e02/6541b4eaed704ff9.gif&quot; alt=&quot;linear-step.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;1.2 &lt;code class=&quot;highlighter-rouge&quot;&gt;Transform&lt;/code&gt;属性应用于元素的2D或3D转换。该属性允许我们对元素进行旋转、缩放、倾斜、移动、透视以及使用矩阵函数。分别为&lt;code class=&quot;highlighter-rouge&quot;&gt;rotate&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;scale&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;skew&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;translate&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;perspective&lt;/code&gt;以及&lt;code class=&quot;highlighter-rouge&quot;&gt;matrix&lt;/code&gt;。还可以通过&lt;code class=&quot;highlighter-rouge&quot;&gt;transform-origin&lt;/code&gt;用来确定中心点的位置为&lt;code class=&quot;highlighter-rouge&quot;&gt;X、Y、Z&lt;/code&gt;，默认值：50% 50% 0。
+这里有个很好的例子来演示&lt;code class=&quot;highlighter-rouge&quot;&gt;Transform&lt;/code&gt;属性：&lt;a href=&quot;https://c.runoob.com/codedemo/3391&quot;&gt;https://c.runoob.com/codedemo/3391&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img14.360buyimg.com/imagetools/jfs/t1/128709/15/6373/1245938/5f02bf73E28c5ed08/e90dc4bffbb8643c.gif&quot; alt=&quot;transform.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;下面以翻牌动效为例，主要是通过透视&lt;code class=&quot;highlighter-rouge&quot;&gt;perspective&lt;/code&gt;属性来实现：&lt;/p&gt;
+
+&lt;p&gt;要达到图中&lt;code class=&quot;highlighter-rouge&quot;&gt;第一组翻牌&lt;/code&gt;的效果。首先设置&lt;code class=&quot;highlighter-rouge&quot;&gt;transform-style: preserve-3d&lt;/code&gt;，使被转换的子元素保留其&lt;code class=&quot;highlighter-rouge&quot;&gt;3D&lt;/code&gt;转换。如果不加透视距离&lt;code class=&quot;highlighter-rouge&quot;&gt;perspective&lt;/code&gt;，则会为&lt;code class=&quot;highlighter-rouge&quot;&gt;第三组翻牌&lt;/code&gt;中的效果，扁平没有&lt;code class=&quot;highlighter-rouge&quot;&gt;Z&lt;/code&gt;轴的立体感。其次添加了透视距离后，如果&lt;code class=&quot;highlighter-rouge&quot;&gt;Z&lt;/code&gt;轴相同，三个卡片是会有重叠的现象，如&lt;code class=&quot;highlighter-rouge&quot;&gt;第二组翻牌&lt;/code&gt;中的效果。最后特意给&lt;code class=&quot;highlighter-rouge&quot;&gt;卡片一&lt;/code&gt;加大了&lt;code class=&quot;highlighter-rouge&quot;&gt;Z&lt;/code&gt;轴距离。这样通过透视，如果&lt;code class=&quot;highlighter-rouge&quot;&gt;Z&lt;/code&gt;轴距离越大，卡片就看上去越小。可以用&lt;code class=&quot;highlighter-rouge&quot;&gt;scale&lt;/code&gt;放大了&lt;code class=&quot;highlighter-rouge&quot;&gt;卡片一&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img13.360buyimg.com/imagetools/jfs/t1/134606/34/3659/2704483/5f02bfe2E51d75eec/165d1cf13a02d82e.gif&quot; alt=&quot;排行榜翻牌.gif&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.card-board&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;perspective&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;800&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.board-item-wrap1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;translateZ&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;提示：一般用&lt;code class=&quot;highlighter-rouge&quot;&gt;transform: translateZ(0)&lt;/code&gt;，开启&lt;code class=&quot;highlighter-rouge&quot;&gt;3D&lt;/code&gt;引擎，触发&lt;code class=&quot;highlighter-rouge&quot;&gt;GPU&lt;/code&gt;加速，让网页动画更流畅。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;1.3 &lt;code class=&quot;highlighter-rouge&quot;&gt;Transition&lt;/code&gt;属性是用来设置动画过渡效果的，可以设置动画的过渡时间和延迟时间。还可以添加动画函数&lt;code class=&quot;highlighter-rouge&quot;&gt;animation-timing-function&lt;/code&gt;，其默认值为&lt;code class=&quot;highlighter-rouge&quot;&gt;ease&lt;/code&gt;。可用贝塞尔曲线来做为动画速度曲线，推荐一个贝塞尔曲线的可视化网址：&lt;a href=&quot;https://cubic-bezier.com/&quot;&gt;cubic-bezier&lt;/a&gt;，&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img13.360buyimg.com/imagetools/jfs/t1/127825/40/6414/2239448/5f02bf9dEee84d3fe/c295f209d53c247c.gif&quot; alt=&quot;贝塞尔曲线.gif&quot; /&gt;
+以地图页的动画为例：
+品牌岛屿的移动效果用了&lt;code class=&quot;highlighter-rouge&quot;&gt;ease&lt;/code&gt;，由于后面的品牌需要模糊，设置了较晚模糊的贝塞尔曲线&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img13.360buyimg.com/imagetools/jfs/t1/149207/6/2205/2691714/5f02bf8fE599376e3/5ad1a4f941c5ec9c.gif&quot; alt=&quot;map.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;transition&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;transform&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;1s&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;ease&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;filter&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;1s&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;cubic-bezier&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.06&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.45&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.82&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.34&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;https://cubic-bezier.com/#.06,.45,.82,1.34&quot;&gt;https://cubic-bezier.com/#.06,.45,.82,1.34&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img14.360buyimg.com/imagetools/jfs/t1/142516/29/2186/60587/5f02c25fEd01ed66d/b75a10768a1785aa.png&quot; alt=&quot;image2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;1.4 &lt;code class=&quot;highlighter-rouge&quot;&gt;Js&lt;/code&gt;动画事件监听：
+动画事件有：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;https://www.runoob.com/jsref/event-animationstart.html&quot;&gt;animationstart&lt;/a&gt; - CSS动画开始后触发&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/animationiteration_event&quot;&gt;animationiteration&lt;/a&gt;- CSS 动画重复播放时触发&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;https://www.runoob.com/jsref/event_animationend.html&quot;&gt;animationend&lt;/a&gt; - CSS动画完成后触发&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;过渡事件有：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/Events/transitionend&quot;&gt;transitionend&lt;/a&gt;- 该事件在 CSS 完成过渡后触发。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;注意：&lt;code class=&quot;highlighter-rouge&quot;&gt;transitionend&lt;/code&gt;存在个问题.如果&lt;code class=&quot;highlighter-rouge&quot;&gt;transition&lt;/code&gt;中,变换的属性有多个，就会触发多次。比如如果同时设置宽高的过渡效果（transition:width:.2s,height:.2s），那么&lt;code class=&quot;highlighter-rouge&quot;&gt;transitionend&lt;/code&gt;事件就会触发&lt;code class=&quot;highlighter-rouge&quot;&gt;2&lt;/code&gt;次。&lt;/p&gt;
+
+&lt;p&gt;以&lt;code class=&quot;highlighter-rouge&quot;&gt;2&lt;/code&gt;秒消失提示框为例：&lt;/p&gt;
+
+&lt;p&gt;动画结束&lt;code class=&quot;highlighter-rouge&quot;&gt;2&lt;/code&gt;秒后隐藏，用&lt;code class=&quot;highlighter-rouge&quot;&gt;animationEnd&lt;/code&gt;事件来监听。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img13.360buyimg.com/imagetools/jfs/t1/121570/26/6447/64338/5f02bf84Efb46e746/447697e674d5a2b7.gif&quot; alt=&quot;toast.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;兼容性：
+上面&lt;code class=&quot;highlighter-rouge&quot;&gt;4&lt;/code&gt;个事件都存在兼容性问题，在&lt;code class=&quot;highlighter-rouge&quot;&gt;Android5&lt;/code&gt;下或&lt;code class=&quot;highlighter-rouge&quot;&gt;Ios9.3&lt;/code&gt;下都需要加&lt;code class=&quot;highlighter-rouge&quot;&gt;webkit&lt;/code&gt;前缀才能兼容，例如&lt;code class=&quot;highlighter-rouge&quot;&gt;animationstart&lt;/code&gt;事件在&lt;code class=&quot;highlighter-rouge&quot;&gt;Android5&lt;/code&gt;下需要用&lt;code class=&quot;highlighter-rouge&quot;&gt;webkitAnimationStart&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img11.360buyimg.com/imagetools/jfs/t1/126222/6/8970/86383/5f2babe8Ef23853ff/9ef7f1ad31e2940e.png&quot; alt=&quot;webkit.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;兼容性这块本人封装了插件&lt;a href=&quot;https://www.npmjs.com/package/jdyfe-eventployfill&quot;&gt;jdyfe-eventployfill&lt;/a&gt;，原理是用&lt;code class=&quot;highlighter-rouge&quot;&gt;createElement&lt;/code&gt;创建一个元素但是不插入页面&lt;code class=&quot;highlighter-rouge&quot;&gt;Dom&lt;/code&gt;,查找&lt;code class=&quot;highlighter-rouge&quot;&gt;style&lt;/code&gt;中是否有动画事件，来作为&lt;code class=&quot;highlighter-rouge&quot;&gt;webkit&lt;/code&gt;的兼容判断
+使用方法&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;janimationstart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;janimationiteration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;janimationend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;jtransitionend&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;jdyfe-eventPloyfill&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;dom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;janimationstart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{})&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;dom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;janimationiteration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{})&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;dom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;janimationend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{})&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;dom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;jtransitionend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{})&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;二lottie&quot;&gt;二、Lottie&lt;/h4&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;airbnb&lt;/code&gt;提供的开源动画库&lt;a href=&quot;https://github.com/airbnb/lottie-web&quot;&gt;Lottie&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;支持多版本，&lt;code class=&quot;highlighter-rouge&quot;&gt;React Native&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;web&lt;/code&gt;和  &lt;code class=&quot;highlighter-rouge&quot;&gt;iOS&lt;/code&gt;， &lt;code class=&quot;highlighter-rouge&quot;&gt;Android&lt;/code&gt; 版本&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;用矢量图导出。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;在浏览器中生成的是&lt;code class=&quot;highlighter-rouge&quot;&gt;svg&lt;/code&gt;标签，不会失真&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;案例为：
+&lt;a href=&quot;https://codepen.io/airnan/pen/MPmQQB&quot;&gt;https://codepen.io/airnan/pen/MPmQQB&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;svgContainer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;svgContainer&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;animItem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bodymovin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loadAnimation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;wrapper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;svgContainer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//div的id&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;animType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;svg&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;loop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;https://labs.nearpod.com/bodymovin/demo/markus/halloween/markus.json&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;更多&lt;code class=&quot;highlighter-rouge&quot;&gt;Lottie&lt;/code&gt;案例：&lt;a href=&quot;https://codepen.io/collection/nVYWZR/&quot;&gt;https://codepen.io/collection/nVYWZR/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Lottie&lt;/code&gt;还和京东的&lt;code class=&quot;highlighter-rouge&quot;&gt;JDReact&lt;/code&gt;框架结合，推出了&lt;code class=&quot;highlighter-rouge&quot;&gt;JDLottieLoadingView&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;JDLottieView&lt;/code&gt;组件。其中&lt;code class=&quot;highlighter-rouge&quot;&gt;JDLottieLoadingView&lt;/code&gt;主要是显示加载中的动效，会默认引用&lt;code class=&quot;highlighter-rouge&quot;&gt;loading&lt;/code&gt;动画样式。&lt;code class=&quot;highlighter-rouge&quot;&gt;JDLottieView&lt;/code&gt;是&lt;code class=&quot;highlighter-rouge&quot;&gt;Lottie&lt;/code&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;JDReact&lt;/code&gt;上的封装，用法不变。&lt;/p&gt;
+
+&lt;p&gt;案例代码如下：&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;JDLottieLoadingView&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;autoSize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
+    &lt;span class=&quot;nx&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;loading.json&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;JDLottieView&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;autoPlay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;autoSize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;./animations/LottieWalkthrough&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)}&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;progress&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;loop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;三svga&quot;&gt;三、Svga&lt;/h4&gt;
+&lt;p&gt;SVGA 是一种跨平台的开源动画格式，集成 svga player 之后可直接使用，安装&lt;code class=&quot;highlighter-rouge&quot;&gt;svgaplayerweb&lt;/code&gt;包即可，&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;支持多版本，兼容 &lt;code class=&quot;highlighter-rouge&quot;&gt;iOS&lt;/code&gt; / &lt;code class=&quot;highlighter-rouge&quot;&gt;Android&lt;/code&gt; / &lt;code class=&quot;highlighter-rouge&quot;&gt;Flutter&lt;/code&gt; / &lt;code class=&quot;highlighter-rouge&quot;&gt;Web&lt;/code&gt; 多个平台的动画格式&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;支持位图和矢量图&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;在浏览器中生成的是&lt;code class=&quot;highlighter-rouge&quot;&gt;canvas&lt;/code&gt;标签&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;案例代码如下：&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;SVGA&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;svgaplayerweb&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;AniSvga&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;useEffect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;player&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;SVGA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Player&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;#demoCanvas1&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;parser&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;SVGA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Parser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;#demoCanvas1&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Must Provide same selector eg:#demoCanvas IF support IE6+&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;parser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;./plugin/mengniu.svga&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;videoItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;player&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setVideoItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;videoItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;player&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;startAnimation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;player&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;clear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;jdyfe-svgaPage&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;demoCanvas1&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/div&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/div&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;AniSvga&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;svga&lt;/code&gt;在线预览：&lt;a href=&quot;https://svga.io/svga-preview.html&quot;&gt;https://svga.io/svga-preview.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;某些&lt;code class=&quot;highlighter-rouge&quot;&gt;Android&lt;/code&gt;操作系统缺少&lt;code class=&quot;highlighter-rouge&quot;&gt;Blob&lt;/code&gt;支持，所以需要自行添加&lt;code class=&quot;highlighter-rouge&quot;&gt;Blob Polyfill&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img10.360buyimg.com/imagetools/jfs/t1/144654/12/2217/98830/5f02c263Ef0d528c4/76c63aa0263d8c2d.png&quot; alt=&quot;image3.png&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;//cdn.bootcss.com/blob-polyfill/1.0.20150320/Blob.min.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;四createjs&quot;&gt;四、Createjs&lt;/h4&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CreateJS&lt;/code&gt;是基于&lt;code class=&quot;highlighter-rouge&quot;&gt;HTML5&lt;/code&gt;开发的一套模块化的工具库。
+基于这些库，可以非常快捷地开发出基于&lt;code class=&quot;highlighter-rouge&quot;&gt;HTML5&lt;/code&gt;的游戏、动画和交互应用。&lt;/p&gt;
+&lt;h6 id=&quot;41-easeljs&quot;&gt;4.1 EaselJS&lt;/h6&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;EaselJS&lt;/code&gt;提供了&lt;code class=&quot;highlighter-rouge&quot;&gt;JavaScript&lt;/code&gt;库，可轻松操作&lt;code class=&quot;highlighter-rouge&quot;&gt;HTML5 Canvas&lt;/code&gt;元素。&lt;/p&gt;
+
+&lt;p&gt;可以绘制&lt;a href=&quot;http://www.createjs.cc/src/docs/easeljs/classes/Stage.html&quot;&gt;Stage&lt;/a&gt;舞台、&lt;a href=&quot;http://www.createjs.cc/src/docs/easeljs/classes/Container.html&quot;&gt;Container&lt;/a&gt;容器和&lt;a href=&quot;http://www.createjs.cc/src/docs/easeljs/classes/Sprite.html&quot;&gt;Sprite&lt;/a&gt;精灵的大小位置等，还提供很多事件可以做交互，很适合纯互动游戏制作。
+精灵可以用&lt;code class=&quot;highlighter-rouge&quot;&gt;TexturePacker &lt;/code&gt;软件来生成雪碧图，导出&lt;code class=&quot;highlighter-rouge&quot;&gt;Createjs&lt;/code&gt;的&lt;code class=&quot;highlighter-rouge&quot;&gt;json&lt;/code&gt;文件。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img12.360buyimg.com/imagetools/jfs/t1/122287/35/6465/589123/5f02c269E4956502e/eefad80c4e72f74a.png&quot; alt=&quot;image4.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;42-tweenjs&quot;&gt;4.2 TweenJs&lt;/h6&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;TweenJs&lt;/code&gt;主要是调整动画属性，例如&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;alpha&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;createjs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Tween&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;wait&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;alpha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;visible&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;handleComplete&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;handleComplete&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//渐变完成执行&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;这个渐变将会先等待0.5秒，渐变目标的alpha属性从0到1，并且visible属性从true变为false，这个过程用时1秒，最后调用handleComplete函数。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h6 id=&quot;43-soundjs&quot;&gt;4.3 SoundJs&lt;/h6&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SoundJs&lt;/code&gt;主要用来加载处理音频的。&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;暂停，恢复 声音&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;控制声音的音量，静音&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;监听声音实例中的事件，如完成，循环，或失败事件&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nx&quot;&gt;createjs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Sound&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;alternateExtensions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;mp3&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+ &lt;span class=&quot;nx&quot;&gt;createjs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Sound&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;fileload&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loadHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;span class=&quot;nx&quot;&gt;createjs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Sound&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;registerSound&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;path/to/mySound.ogg&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;sound&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;loadHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;// 这会引发针对每个已注册的声音。&lt;/span&gt;
+     &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;instance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;createjs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Sound&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;play&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;sound&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 发挥使用ID。也可以使用完整的源路径或event.src。&lt;/span&gt;
+     &lt;span class=&quot;nx&quot;&gt;instance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;complete&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;handleComplete&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+     &lt;span class=&quot;nx&quot;&gt;instance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;volume&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h6 id=&quot;44-preloadjs&quot;&gt;4.4 PreloadJS&lt;/h6&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;PreloadJS&lt;/code&gt;是一个用来管理和协调相关资源加载的类库，它可以帮助你预先加载相关资源。对比自己写监听&lt;code class=&quot;highlighter-rouge&quot;&gt;load&lt;/code&gt;事件来确认完成加载，&lt;code class=&quot;highlighter-rouge&quot;&gt;PreloadJS&lt;/code&gt;更方便，并且支持预加载多种类型的数据，例如：图片、文件、音频、数据等等。
+&lt;code class=&quot;highlighter-rouge&quot;&gt;PreloadJS&lt;/code&gt;主要是用&lt;code class=&quot;highlighter-rouge&quot;&gt;URL. createObjectURL &lt;/code&gt;创建了&lt;code class=&quot;highlighter-rouge&quot;&gt;Blob&lt;/code&gt;对象，然后赋值给URL，移除的时候用 &lt;code class=&quot;highlighter-rouge&quot;&gt;URL.revokeObjectURL&lt;/code&gt;方法移除&lt;code class=&quot;highlighter-rouge&quot;&gt;Blob&lt;/code&gt;对象。所以会在&lt;code class=&quot;highlighter-rouge&quot;&gt;network&lt;/code&gt;中看到&lt;code class=&quot;highlighter-rouge&quot;&gt;Blob&lt;/code&gt;对象。&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;createjs&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;jdyfe-createjs&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;loader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;createjs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;LoadQueue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loadManifest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bgAry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;imgAry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;complete&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+       &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;complete&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//全部加载完成&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;fileload&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+       &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;fileload---&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;progress&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//进度条&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;案例&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;createjs&lt;/code&gt;官网不支持&lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt;方式使用，我们用&lt;code class=&quot;highlighter-rouge&quot;&gt;webpack&lt;/code&gt;重新打包生成了一个&lt;code class=&quot;highlighter-rouge&quot;&gt;umd&lt;/code&gt;模块&lt;a href=&quot;https://www.npmjs.com/package/jdyfe-createjs&quot;&gt;jdyfe-createjs&lt;/a&gt;，可供大家下载和使用。&lt;/p&gt;
+
+&lt;p&gt;下面案例包含了上面说的&lt;code class=&quot;highlighter-rouge&quot;&gt;4&lt;/code&gt;个模块，也用到了&lt;code class=&quot;highlighter-rouge&quot;&gt;jdyfe-createjs&lt;/code&gt;，具体可看：&lt;a href=&quot;https://github.com/raoenhui/react-example/blob/master/src/AniCreatejs/index.jsx&quot;&gt;Belly跑步案例&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img12.360buyimg.com/imagetools/jfs/t1/121093/28/6360/173594/5f02bf4cE49ad27a5/063274896b83e5f1.gif&quot; alt=&quot;createjs.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Happy coding .. :)&lt;/p&gt;
+
+&lt;h3 id=&quot;相关链接&quot;&gt;相关链接&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Animation/play&quot;&gt;https://developer.mozilla.org/en-US/docs/Web/API/Animation/play&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.createjs.cc/src/docs/tweenjs/classes/CSSPlugin.html&quot;&gt;http://www.createjs.cc/src/docs/tweenjs/classes/CSSPlugin.html&lt;/a&gt;&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/2021/01/02/animation/&quot;&gt;Animation&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on January 02, 2021.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/react/2021/01/02/animation/&quot;&gt;H5动画实战浅析&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on January 02, 2021.&lt;/p&gt;</content>
 </entry>
 
 

@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang='zh'>
+<head>
+<meta charset="utf-8">
+<title>H5动画实战浅析 &vert; 前端妹子的博客</title>
+<meta name="description" content="一枚前端攻城狮!">
+<meta name="keywords" content="React">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raoenhui.github.io/images/logo.png">
+<meta name="twitter:title" content="H5动画实战浅析">
+<meta name="twitter:description" content="一枚前端攻城狮!">
+<meta name="twitter:creator" content="@raoenhui">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="H5动画实战浅析">
+<meta property="og:description" content="一枚前端攻城狮!">
+<meta property="og:url" content="https://raoenhui.github.io/react/2021/01/02/animation/">
+<meta property="og:site_name" content="前端妹子的博客">
+<meta property="og:image" content="https://raoenhui.github.io/images/">
+
+
+
+
+
+<link rel="canonical" href="https://raoenhui.github.io/react/2021/01/02/animation/">
+<link href="https://raoenhui.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="前端妹子的博客 Feed">
+<link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+    <!--<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>-->
+	<!--<link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/font-awesome.min.css">-->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/normalize.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/nprogress.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/foundation.min.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/style.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/post.css">
+
+
+
+    
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="https://raoenhui.github.io/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="https://raoenhui.github.io/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="https://raoenhui.github.io/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://raoenhui.github.io/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://raoenhui.github.io/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://raoenhui.github.io/images/apple-touch-icon-144x144-precomposed.png">
+
+<!-- ice google AdSense start-->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6312691261569858",
+    enable_page_level_ads: true
+  });
+</script> -->
+<script data-ad-client="ca-pub-6312691261569858" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ice google AdSense end-->
+<style type="text/css">@media only screen and (min-width:43.75em){.notepad-post-content div>p:first-child:first-letter{float:left;font-size:4.688rem;line-height:4.375rem;padding-top:.25rem;padding-right:.5rem;padding-left:.188rem;font-family:serif}}</style>
+</head>
+<body class="post-template" itemscope itemtype="http://schema.org/WebPage">
+<div style ='margin:0 auto;width:0px;height:0px;overflow:hidden;' >
+
+    <img src="https://raoenhui.github.io/assets/img/avator.jpg" />
+    <!--<img src="//chuantu.biz/t6/303/1525520078x-1566657998.png" />-->
+
+</div>
+
+        <main id="notepad-post-container-simple" class="notepad-post-container-simple" role="main">
+            <header class="notepad-post-header-simple">
+                <div class="notepad-post-menu-header-simple">
+
+                    <a class="notepad-blog-logo" href="https://raoenhui.github.io">
+                        <img src="https://raoenhui.github.io/images/logo.png" alt="Blog Logo" />
+                    </a>
+
+                <div class="notepad-blog-menu">      
+    <div class="notepad-mobile-menu show-for-small">
+        <a><i class="fa fa-bars"></i></a>
+    </div>
+    <ul class="notepad-menu">
+        <li class="notepad-mobile-close-btn show-for-small text-right">
+            <a><i class="fa fa-times"></i></a>
+        </li>
+
+            <li>
+                    <a href="https://raoenhui.github.io/">主页</a>
+                 </li>
+
+            <li>
+                    <a href="https://raoenhui.github.io/categories">目录</a>
+                 </li>
+
+            <li>
+                    <a href="https://raoenhui.github.io/about">关于</a>
+                 </li>
+
+           <li><a href="https://github.com/raoenhui/raoenhui.github.io" target="_blank" title="Github"><i class="icon-rss"></i> Github</a></li>
+           <li><a href="http://www.frontendx.cn" target="_blank" title="Index">Index</a></li>
+    </ul>
+
+</div>
+            </div>
+
+                <div class="notepad-post-title-simple row">
+                    <div class="small-12 columns">
+                        <div class="notepad-post-meta-simple">
+                            <h1>H5动画实战浅析</h1>
+                            <p>by <strong>前端妹子</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#React" data-toggle="tooltip" title="Posts tagged with React" rel="tag">React</a> <strong><time datetime="2021-01-02T22:07:00+05:30">02 Jan 2021</time></strong></p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+        <article class="notepad-post-content post tag-simple">
+            <div><h3 id="前言">前言</h3>
+<p>动画效果一直是人机交互的一个非常重要的部分，动画效果的引入，会让交互变得更加友好，让用户获得更加愉悦的体验。而随着市场环境变化，手机性能越来越好，网速越来越快，以及用户视觉效果要求越来越高，作为一名网页开发者，动画也是一个必会的技能。由此本文和大家分享下动画方面的技术实践经验。</p>
+
+<h3 id="动画的形成">动画的形成</h3>
+<p>多张不同的图像连在一起就会变成了动态的图像。在网页端的世界里，浏览器在视觉暂留时间内，连续不断的逐帧输出图像。每一帧输出一张图像，形成了用户视觉效果中的动画。那么怎么高效的通过一帧帧输出连续流畅的动画，是有很多种动画技术可以都可以实现的。</p>
+
+<h3 id="动画技术">动画技术</h3>
+<p>下面以当今主流的动画技术，分成四个部分给大家介绍下，分别为<code class="highlighter-rouge">纯Css</code>、<code class="highlighter-rouge">Lottie库</code>、<code class="highlighter-rouge">Svga库</code>、<code class="highlighter-rouge">Creatjs库</code>。</p>
+
+<h4 id="一纯css">一、纯CSS</h4>
+
+<p>1.1 <code class="highlighter-rouge">Animation</code>动画属性主要结合<code class="highlighter-rouge">@keyframes</code>规则来创建动画。</p>
+
+<p>下面以语音喇叭声波动效为例：
+中间的小圆点是一直存在的，第一条和第二条线都是<code class="highlighter-rouge">1/4</code>的圆弧，分别间隔<code class="highlighter-rouge">0.2s</code>去循环显示隐藏。</p>
+
+<p><img src="https://img14.360buyimg.com/imagetools/jfs/t1/141819/25/2260/19854/5f02bf7dE7860564a/420b5e7f2d771181.gif" alt="声波动效.gif" /></p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.second</span> <span class="p">{</span>
+    <span class="nl">animation</span><span class="p">:</span> <span class="n">fadeInOut</span> <span class="m">1s</span> <span class="n">infinite</span> <span class="m">0.2s</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.third</span> <span class="p">{</span>
+   <span class="nl">animation</span><span class="p">:</span> <span class="n">fadeInOut</span> <span class="m">1s</span> <span class="n">infinite</span> <span class="m">0.4s</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">@keyframes</span> <span class="n">fadeInOut</span> <span class="p">{</span>
+  <span class="nt">0</span><span class="o">%</span> <span class="p">{</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="c">/*初始状态 透明度为0*/</span>
+  <span class="p">}</span>
+  <span class="nt">100</span><span class="o">%</span> <span class="p">{</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+    <span class="c">/*结尾状态 透明度为1*/</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>我们一般用阶跃函数<code class="highlighter-rouge">step</code>来做帧动画。
+下面是<code class="highlighter-rouge">linear</code>和<code class="highlighter-rouge">step</code>的具体案例：</p>
+
+<p><a href="https://codepen.io/huihui/pen/ExPKbdj">https://codepen.io/huihui/pen/ExPKbdj</a></p>
+
+<p>先生成<code class="highlighter-rouge">Sprite</code>图片，再移动<code class="highlighter-rouge">X</code>轴位置形成帧动画。</p>
+
+<p><img src="https://img11.360buyimg.com/imagetools/jfs/t1/143380/10/2197/40201/5f02c24aE396b2557/40e8c2e0b16dbde8.png" alt="image1.png" /></p>
+
+<p><img src="https://img12.360buyimg.com/imagetools/jfs/t1/146702/25/2252/262783/5f02bf79Ebe245e02/6541b4eaed704ff9.gif" alt="linear-step.gif" /></p>
+
+<p>1.2 <code class="highlighter-rouge">Transform</code>属性应用于元素的2D或3D转换。该属性允许我们对元素进行旋转、缩放、倾斜、移动、透视以及使用矩阵函数。分别为<code class="highlighter-rouge">rotate</code>，<code class="highlighter-rouge">scale</code>，<code class="highlighter-rouge">skew</code>，<code class="highlighter-rouge">translate</code>，<code class="highlighter-rouge">perspective</code>以及<code class="highlighter-rouge">matrix</code>。还可以通过<code class="highlighter-rouge">transform-origin</code>用来确定中心点的位置为<code class="highlighter-rouge">X、Y、Z</code>，默认值：50% 50% 0。
+这里有个很好的例子来演示<code class="highlighter-rouge">Transform</code>属性：<a href="https://c.runoob.com/codedemo/3391">https://c.runoob.com/codedemo/3391</a></p>
+
+<p><img src="https://img14.360buyimg.com/imagetools/jfs/t1/128709/15/6373/1245938/5f02bf73E28c5ed08/e90dc4bffbb8643c.gif" alt="transform.gif" /></p>
+
+<p>下面以翻牌动效为例，主要是通过透视<code class="highlighter-rouge">perspective</code>属性来实现：</p>
+
+<p>要达到图中<code class="highlighter-rouge">第一组翻牌</code>的效果。首先设置<code class="highlighter-rouge">transform-style: preserve-3d</code>，使被转换的子元素保留其<code class="highlighter-rouge">3D</code>转换。如果不加透视距离<code class="highlighter-rouge">perspective</code>，则会为<code class="highlighter-rouge">第三组翻牌</code>中的效果，扁平没有<code class="highlighter-rouge">Z</code>轴的立体感。其次添加了透视距离后，如果<code class="highlighter-rouge">Z</code>轴相同，三个卡片是会有重叠的现象，如<code class="highlighter-rouge">第二组翻牌</code>中的效果。最后特意给<code class="highlighter-rouge">卡片一</code>加大了<code class="highlighter-rouge">Z</code>轴距离。这样通过透视，如果<code class="highlighter-rouge">Z</code>轴距离越大，卡片就看上去越小。可以用<code class="highlighter-rouge">scale</code>放大了<code class="highlighter-rouge">卡片一</code>。</p>
+
+<p><img src="https://img13.360buyimg.com/imagetools/jfs/t1/134606/34/3659/2704483/5f02bfe2E51d75eec/165d1cf13a02d82e.gif" alt="排行榜翻牌.gif" /></p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.card-board</span><span class="p">{</span>
+  <span class="nl">perspective</span><span class="p">:</span> <span class="m">800</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.board-item-wrap1</span><span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1.1</span><span class="p">)</span> <span class="n">translateZ</span><span class="p">(</span><span class="m">-100px</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<blockquote>
+  <p>提示：一般用<code class="highlighter-rouge">transform: translateZ(0)</code>，开启<code class="highlighter-rouge">3D</code>引擎，触发<code class="highlighter-rouge">GPU</code>加速，让网页动画更流畅。</p>
+</blockquote>
+
+<p>1.3 <code class="highlighter-rouge">Transition</code>属性是用来设置动画过渡效果的，可以设置动画的过渡时间和延迟时间。还可以添加动画函数<code class="highlighter-rouge">animation-timing-function</code>，其默认值为<code class="highlighter-rouge">ease</code>。可用贝塞尔曲线来做为动画速度曲线，推荐一个贝塞尔曲线的可视化网址：<a href="https://cubic-bezier.com/">cubic-bezier</a>，</p>
+
+<p><img src="https://img13.360buyimg.com/imagetools/jfs/t1/127825/40/6414/2239448/5f02bf9dEee84d3fe/c295f209d53c247c.gif" alt="贝塞尔曲线.gif" />
+以地图页的动画为例：
+品牌岛屿的移动效果用了<code class="highlighter-rouge">ease</code>，由于后面的品牌需要模糊，设置了较晚模糊的贝塞尔曲线</p>
+
+<p><img src="https://img13.360buyimg.com/imagetools/jfs/t1/149207/6/2205/2691714/5f02bf8fE599376e3/5ad1a4f941c5ec9c.gif" alt="map.gif" /></p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition</span><span class="o">:</span> <span class="nt">transform</span> <span class="nt">1s</span> <span class="nt">ease</span><span class="o">,</span><span class="nt">filter</span> <span class="nt">1s</span> <span class="nt">cubic-bezier</span><span class="o">(</span><span class="nc">.06</span><span class="o">,</span><span class="nc">.45</span><span class="o">,</span><span class="nc">.82</span><span class="o">,</span><span class="nt">1</span><span class="nc">.34</span><span class="o">);</span>
+</code></pre></div></div>
+<p><a href="https://cubic-bezier.com/#.06,.45,.82,1.34">https://cubic-bezier.com/#.06,.45,.82,1.34</a></p>
+
+<p><img src="https://img14.360buyimg.com/imagetools/jfs/t1/142516/29/2186/60587/5f02c25fEd01ed66d/b75a10768a1785aa.png" alt="image2.png" /></p>
+
+<p>1.4 <code class="highlighter-rouge">Js</code>动画事件监听：
+动画事件有：</p>
+<blockquote>
+  <p><a href="https://www.runoob.com/jsref/event-animationstart.html">animationstart</a> - CSS动画开始后触发</p>
+</blockquote>
+
+<blockquote>
+  <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/animationiteration_event">animationiteration</a>- CSS 动画重复播放时触发</p>
+</blockquote>
+
+<blockquote>
+  <p><a href="https://www.runoob.com/jsref/event_animationend.html">animationend</a> - CSS动画完成后触发</p>
+</blockquote>
+
+<p>过渡事件有：</p>
+<blockquote>
+  <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Events/transitionend">transitionend</a>- 该事件在 CSS 完成过渡后触发。</p>
+</blockquote>
+
+<p>注意：<code class="highlighter-rouge">transitionend</code>存在个问题.如果<code class="highlighter-rouge">transition</code>中,变换的属性有多个，就会触发多次。比如如果同时设置宽高的过渡效果（transition:width:.2s,height:.2s），那么<code class="highlighter-rouge">transitionend</code>事件就会触发<code class="highlighter-rouge">2</code>次。</p>
+
+<p>以<code class="highlighter-rouge">2</code>秒消失提示框为例：</p>
+
+<p>动画结束<code class="highlighter-rouge">2</code>秒后隐藏，用<code class="highlighter-rouge">animationEnd</code>事件来监听。</p>
+
+<p><img src="https://img13.360buyimg.com/imagetools/jfs/t1/121570/26/6447/64338/5f02bf84Efb46e746/447697e674d5a2b7.gif" alt="toast.gif" /></p>
+
+<p>兼容性：
+上面<code class="highlighter-rouge">4</code>个事件都存在兼容性问题，在<code class="highlighter-rouge">Android5</code>下或<code class="highlighter-rouge">Ios9.3</code>下都需要加<code class="highlighter-rouge">webkit</code>前缀才能兼容，例如<code class="highlighter-rouge">animationstart</code>事件在<code class="highlighter-rouge">Android5</code>下需要用<code class="highlighter-rouge">webkitAnimationStart</code>。</p>
+
+<p><img src="https://img11.360buyimg.com/imagetools/jfs/t1/126222/6/8970/86383/5f2babe8Ef23853ff/9ef7f1ad31e2940e.png" alt="webkit.png" /></p>
+
+<p>兼容性这块本人封装了插件<a href="https://www.npmjs.com/package/jdyfe-eventployfill">jdyfe-eventployfill</a>，原理是用<code class="highlighter-rouge">createElement</code>创建一个元素但是不插入页面<code class="highlighter-rouge">Dom</code>,查找<code class="highlighter-rouge">style</code>中是否有动画事件，来作为<code class="highlighter-rouge">webkit</code>的兼容判断
+使用方法</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">janimationstart</span><span class="p">,</span> <span class="nx">janimationiteration</span><span class="p">,</span> <span class="nx">janimationend</span><span class="p">,</span> <span class="nx">jtransitionend</span> <span class="p">}</span> <span class="k">from</span><span class="dl">'</span><span class="s1">jdyfe-eventPloyfill</span><span class="dl">'</span>
+    <span class="p">...</span>
+    <span class="nx">dom</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">janimationstart</span><span class="p">,</span> <span class="p">()</span><span class="o">=&gt;</span><span class="p">{})</span>
+    <span class="nx">dom</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">janimationiteration</span><span class="p">,</span> <span class="p">()</span><span class="o">=&gt;</span><span class="p">{})</span>
+    <span class="nx">dom</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">janimationend</span><span class="p">,</span> <span class="p">()</span><span class="o">=&gt;</span><span class="p">{})</span>
+    <span class="nx">dom</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">jtransitionend</span><span class="p">,</span> <span class="p">()</span><span class="o">=&gt;</span><span class="p">{})</span>
+    <span class="p">...</span>
+</code></pre></div></div>
+
+<h4 id="二lottie">二、Lottie</h4>
+<p><code class="highlighter-rouge">airbnb</code>提供的开源动画库<a href="https://github.com/airbnb/lottie-web">Lottie</a></p>
+
+<blockquote>
+  <p>支持多版本，<code class="highlighter-rouge">React Native</code>，<code class="highlighter-rouge">web</code>和  <code class="highlighter-rouge">iOS</code>， <code class="highlighter-rouge">Android</code> 版本</p>
+</blockquote>
+
+<blockquote>
+  <p>用矢量图导出。</p>
+</blockquote>
+
+<blockquote>
+  <p>在浏览器中生成的是<code class="highlighter-rouge">svg</code>标签，不会失真</p>
+</blockquote>
+
+<p>案例为：
+<a href="https://codepen.io/airnan/pen/MPmQQB">https://codepen.io/airnan/pen/MPmQQB</a></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">svgContainer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">svgContainer</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">animItem</span> <span class="o">=</span> <span class="nx">bodymovin</span><span class="p">.</span><span class="nx">loadAnimation</span><span class="p">({</span>
+  <span class="na">wrapper</span><span class="p">:</span> <span class="nx">svgContainer</span><span class="p">,</span><span class="c1">//div的id</span>
+  <span class="na">animType</span><span class="p">:</span> <span class="dl">'</span><span class="s1">svg</span><span class="dl">'</span>
+  <span class="na">loop</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://labs.nearpod.com/bodymovin/demo/markus/halloween/markus.json</span><span class="dl">'</span>
+<span class="p">})</span>
+</code></pre></div></div>
+<p>更多<code class="highlighter-rouge">Lottie</code>案例：<a href="https://codepen.io/collection/nVYWZR/">https://codepen.io/collection/nVYWZR/</a></p>
+
+<p><code class="highlighter-rouge">Lottie</code>还和京东的<code class="highlighter-rouge">JDReact</code>框架结合，推出了<code class="highlighter-rouge">JDLottieLoadingView</code>和<code class="highlighter-rouge">JDLottieView</code>组件。其中<code class="highlighter-rouge">JDLottieLoadingView</code>主要是显示加载中的动效，会默认引用<code class="highlighter-rouge">loading</code>动画样式。<code class="highlighter-rouge">JDLottieView</code>是<code class="highlighter-rouge">Lottie</code>在<code class="highlighter-rouge">JDReact</code>上的封装，用法不变。</p>
+
+<p>案例代码如下：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">JDLottieLoadingView</span>
+    <span class="nx">autoSize</span><span class="o">=</span><span class="p">{</span><span class="kc">false</span><span class="p">}</span> 
+    <span class="nx">source</span><span class="o">=</span><span class="p">{</span><span class="dl">"</span><span class="s2">loading.json</span><span class="dl">"</span><span class="p">}</span>
+<span class="sr">/</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">JDLottieView</span>
+    <span class="nx">autoPlay</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+    <span class="nx">autoSize</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+    <span class="nx">style</span><span class="o">=</span>
+    <span class="nx">source</span><span class="o">=</span><span class="p">{</span><span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./animations/LottieWalkthrough</span><span class="dl">'</span><span class="p">)}</span>
+    <span class="nx">progress</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span>
+    <span class="nx">loop</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+<span class="sr">/</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<h4 id="三svga">三、Svga</h4>
+<p>SVGA 是一种跨平台的开源动画格式，集成 svga player 之后可直接使用，安装<code class="highlighter-rouge">svgaplayerweb</code>包即可，</p>
+
+<blockquote>
+  <p>支持多版本，兼容 <code class="highlighter-rouge">iOS</code> / <code class="highlighter-rouge">Android</code> / <code class="highlighter-rouge">Flutter</code> / <code class="highlighter-rouge">Web</code> 多个平台的动画格式</p>
+</blockquote>
+
+<blockquote>
+  <p>支持位图和矢量图</p>
+</blockquote>
+
+<blockquote>
+  <p>在浏览器中生成的是<code class="highlighter-rouge">canvas</code>标签</p>
+</blockquote>
+
+<p>案例代码如下：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">SVGA</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">svgaplayerweb</span><span class="dl">'</span>
+<span class="kd">function</span> <span class="nx">AniSvga</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">player</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SVGA</span><span class="p">.</span><span class="nx">Player</span><span class="p">(</span><span class="dl">'</span><span class="s1">#demoCanvas1</span><span class="dl">'</span><span class="p">)</span>
+    <span class="kd">var</span> <span class="nx">parser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SVGA</span><span class="p">.</span><span class="nx">Parser</span><span class="p">(</span><span class="dl">'</span><span class="s1">#demoCanvas1</span><span class="dl">'</span><span class="p">)</span> <span class="c1">// Must Provide same selector eg:#demoCanvas IF support IE6+</span>
+    <span class="nx">parser</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="dl">'</span><span class="s1">./plugin/mengniu.svga</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">videoItem</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">player</span><span class="p">.</span><span class="nx">setVideoItem</span><span class="p">(</span><span class="nx">videoItem</span><span class="p">)</span>
+        <span class="nx">player</span><span class="p">.</span><span class="nx">startAnimation</span><span class="p">()</span>
+    <span class="p">})</span>
+    <span class="k">return</span> <span class="p">()</span><span class="o">=&gt;</span><span class="p">{</span>
+      <span class="nx">player</span><span class="p">.</span><span class="nx">clear</span><span class="p">()</span>
+    <span class="p">}</span>
+  <span class="p">},</span> <span class="p">[])</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">jdyfe-svgaPage</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">demoCanvas1</span><span class="dl">"</span> <span class="o">&gt;&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">AniSvga</span>
+</code></pre></div></div>
+<p><code class="highlighter-rouge">svga</code>在线预览：<a href="https://svga.io/svga-preview.html">https://svga.io/svga-preview.html</a></p>
+
+<p>某些<code class="highlighter-rouge">Android</code>操作系统缺少<code class="highlighter-rouge">Blob</code>支持，所以需要自行添加<code class="highlighter-rouge">Blob Polyfill</code>。</p>
+
+<p><img src="https://img10.360buyimg.com/imagetools/jfs/t1/144654/12/2217/98830/5f02c263Ef0d528c4/76c63aa0263d8c2d.png" alt="image3.png" /></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdn.bootcss.com/blob-polyfill/1.0.20150320/Blob.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<h4 id="四createjs">四、Createjs</h4>
+<p><code class="highlighter-rouge">CreateJS</code>是基于<code class="highlighter-rouge">HTML5</code>开发的一套模块化的工具库。
+基于这些库，可以非常快捷地开发出基于<code class="highlighter-rouge">HTML5</code>的游戏、动画和交互应用。</p>
+<h6 id="41-easeljs">4.1 EaselJS</h6>
+<p><code class="highlighter-rouge">EaselJS</code>提供了<code class="highlighter-rouge">JavaScript</code>库，可轻松操作<code class="highlighter-rouge">HTML5 Canvas</code>元素。</p>
+
+<p>可以绘制<a href="http://www.createjs.cc/src/docs/easeljs/classes/Stage.html">Stage</a>舞台、<a href="http://www.createjs.cc/src/docs/easeljs/classes/Container.html">Container</a>容器和<a href="http://www.createjs.cc/src/docs/easeljs/classes/Sprite.html">Sprite</a>精灵的大小位置等，还提供很多事件可以做交互，很适合纯互动游戏制作。
+精灵可以用<code class="highlighter-rouge">TexturePacker </code>软件来生成雪碧图，导出<code class="highlighter-rouge">Createjs</code>的<code class="highlighter-rouge">json</code>文件。</p>
+
+<p><img src="https://img12.360buyimg.com/imagetools/jfs/t1/122287/35/6465/589123/5f02c269E4956502e/eefad80c4e72f74a.png" alt="image4.png" /></p>
+
+<h6 id="42-tweenjs">4.2 TweenJs</h6>
+<p><code class="highlighter-rouge">TweenJs</code>主要是调整动画属性，例如</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">target</span><span class="p">.</span><span class="nx">alpha</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nx">createjs</span><span class="p">.</span><span class="nx">Tween</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">target</span><span class="p">).</span><span class="nx">wait</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">to</span><span class="p">({</span><span class="na">alpha</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="na">visible</span><span class="p">:</span><span class="kc">false</span><span class="p">},</span> <span class="mi">1000</span><span class="p">).</span><span class="nx">call</span><span class="p">(</span><span class="nx">handleComplete</span><span class="p">)</span>
+<span class="kd">function</span> <span class="nx">handleComplete</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">//渐变完成执行</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<blockquote>
+  <p>这个渐变将会先等待0.5秒，渐变目标的alpha属性从0到1，并且visible属性从true变为false，这个过程用时1秒，最后调用handleComplete函数。</p>
+</blockquote>
+
+<h6 id="43-soundjs">4.3 SoundJs</h6>
+<p><code class="highlighter-rouge">SoundJs</code>主要用来加载处理音频的。</p>
+<blockquote>
+  <p>暂停，恢复 声音</p>
+</blockquote>
+
+<blockquote>
+  <p>控制声音的音量，静音</p>
+</blockquote>
+
+<blockquote>
+  <p>监听声音实例中的事件，如完成，循环，或失败事件</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">createjs</span><span class="p">.</span><span class="nx">Sound</span><span class="p">.</span><span class="nx">alternateExtensions</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">mp3</span><span class="dl">"</span><span class="p">]</span>
+ <span class="nx">createjs</span><span class="p">.</span><span class="nx">Sound</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">fileload</span><span class="dl">"</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">loadHandler</span><span class="p">,</span> <span class="k">this</span><span class="p">)</span>
+ <span class="nx">createjs</span><span class="p">.</span><span class="nx">Sound</span><span class="p">.</span><span class="nx">registerSound</span><span class="p">(</span><span class="dl">"</span><span class="s2">path/to/mySound.ogg</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">sound</span><span class="dl">"</span><span class="p">)</span>
+ <span class="kd">function</span> <span class="nx">loadHandler</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+     <span class="c1">// 这会引发针对每个已注册的声音。</span>
+     <span class="kd">var</span> <span class="nx">instance</span> <span class="o">=</span> <span class="nx">createjs</span><span class="p">.</span><span class="nx">Sound</span><span class="p">.</span><span class="nx">play</span><span class="p">(</span><span class="dl">"</span><span class="s2">sound</span><span class="dl">"</span><span class="p">)</span>  <span class="c1">// 发挥使用ID。也可以使用完整的源路径或event.src。</span>
+     <span class="nx">instance</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">complete</span><span class="dl">"</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">handleComplete</span><span class="p">,</span> <span class="k">this</span><span class="p">)</span>
+     <span class="nx">instance</span><span class="p">.</span><span class="nx">volume</span> <span class="o">=</span> <span class="mf">0.5</span>
+ <span class="p">}</span>
+</code></pre></div></div>
+
+<h6 id="44-preloadjs">4.4 PreloadJS</h6>
+<p><code class="highlighter-rouge">PreloadJS</code>是一个用来管理和协调相关资源加载的类库，它可以帮助你预先加载相关资源。对比自己写监听<code class="highlighter-rouge">load</code>事件来确认完成加载，<code class="highlighter-rouge">PreloadJS</code>更方便，并且支持预加载多种类型的数据，例如：图片、文件、音频、数据等等。
+<code class="highlighter-rouge">PreloadJS</code>主要是用<code class="highlighter-rouge">URL. createObjectURL </code>创建了<code class="highlighter-rouge">Blob</code>对象，然后赋值给URL，移除的时候用 <code class="highlighter-rouge">URL.revokeObjectURL</code>方法移除<code class="highlighter-rouge">Blob</code>对象。所以会在<code class="highlighter-rouge">network</code>中看到<code class="highlighter-rouge">Blob</code>对象。</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">createjs</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">jdyfe-createjs</span><span class="dl">'</span>
+<span class="kd">const</span> <span class="nx">loader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">createjs</span><span class="p">.</span><span class="nx">LoadQueue</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+<span class="nx">loader</span><span class="p">.</span><span class="nx">loadManifest</span><span class="p">([</span><span class="nx">bgAry</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">...</span><span class="nx">imgAry</span><span class="p">])</span>
+<span class="nx">loader</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">complete</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">complete</span><span class="dl">'</span><span class="p">)</span><span class="c1">//全部加载完成</span>
+<span class="p">})</span>
+<span class="nx">loader</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">fileload</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">fileload---</span><span class="dl">'</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">progress</span><span class="p">)</span><span class="c1">//进度条</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>案例</p>
+
+<p><code class="highlighter-rouge">createjs</code>官网不支持<code class="highlighter-rouge">npm</code>方式使用，我们用<code class="highlighter-rouge">webpack</code>重新打包生成了一个<code class="highlighter-rouge">umd</code>模块<a href="https://www.npmjs.com/package/jdyfe-createjs">jdyfe-createjs</a>，可供大家下载和使用。</p>
+
+<p>下面案例包含了上面说的<code class="highlighter-rouge">4</code>个模块，也用到了<code class="highlighter-rouge">jdyfe-createjs</code>，具体可看：<a href="https://github.com/raoenhui/react-example/blob/master/src/AniCreatejs/index.jsx">Belly跑步案例</a></p>
+
+<p><img src="https://img12.360buyimg.com/imagetools/jfs/t1/121093/28/6360/173594/5f02bf4cE49ad27a5/063274896b83e5f1.gif" alt="createjs.gif" /></p>
+
+<p>Happy coding .. :)</p>
+
+<h3 id="相关链接">相关链接</h3>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Animation/play">https://developer.mozilla.org/en-US/docs/Web/API/Animation/play</a></p>
+
+<p><a href="http://www.createjs.cc/src/docs/tweenjs/classes/CSSPlugin.html">http://www.createjs.cc/src/docs/tweenjs/classes/CSSPlugin.html</a></p>
+
+            </div>
+        </article>
+        <div class="cf"></div>
+        <div class="row text-center">
+            <section class="notepad-post-share">
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;H5动画实战浅析&quot;%20https://raoenhui.github.io/react/2021/01/02/animation/%20via%20&#64;raoenhui"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/react/2021/01/02/animation/"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/react/2021/01/02/animation/"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </section>
+        </div>
+        <div class="cf"></div>
+        
+            <div class="notepad-author-info">
+                <div class="row">
+                    <section class="notepad-post-author small-12 columns">
+                        
+                            <img src="https://raoenhui.github.io/images/logo.png" class="notepad-post-author-avatar" alt="前端妹子's photo">
+                        
+                        
+                            <span class="author-label">Author</span>
+                            <h1>前端妹子</h1>
+                        
+                        
+                            <p><a href="mailto:raoenhui@jd.com" class="author-website">raoenhui@jd.com</a>
+
+			   <!--  <iframe src="//www.facebook.com/plugins/follow?href=https%3A%2F%2Fwww.facebook.com%2Fameyjadiye&amp;layout=standard&amp;show_faces=true&amp;colorscheme=light&amp;width=450&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe>  -->
+             <!--      <iframe src="//www.facebook.com/plugins/follow?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100004203407645&amp;layout=standard&amp;show_faces=true&amp;colorscheme=light&amp;width=450&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe> -->
+             
+
+              <div class="fb-like" data-href="https://raoenhui.github.io/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+       <!--      <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1757816481112269";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+			    </p>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1757816481112269";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>-->
+<div class="fb-follow" data-href="https://www.facebook.com/raoenhui" data-width="200" data-height="100" data-layout="standard" data-show-faces="true"></div>
+                        
+                        
+                            <p>Programming is 1% knowledge, 2% ability and 97% getting the ability to work with the knowledge :)</p>
+                        
+                    </section>
+                </div>
+            </div>
+ 
+        
+        <div class="cf"></div>
+        
+        <section class="notepad-disqus row">
+    <div class="small-12 columns">
+        <h1 class="notepad-comments-header">Comments评论</h1>
+
+        <div id="disqus_thread"></div>
+        
+<!--
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = '饶恩慧'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+-->
+<!-- ice disqus https://raoenhui.disqus.com/admin/ start-->
+<!--<script>
+
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://raoenhui.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>-->
+<!-- ice disqus end-->
+
+<!-- ice gitment 评论 start-->
+ <!--    <div id="container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+// debugger
+var gitment = new Gitment({
+  id: location.pathname.split('/').reverse()[1], // 可选。默认为 location.href
+  owner: 'raoenhui',
+  repo: 'raoenhui.github.io',
+  oauth: {
+    client_id: 'bd88b9824048b133f7ed',
+    client_secret: '193c97904472a0e380b70dd990c46853f52881c7',
+    // client_id: '5548df3eca52697fac71',
+    // client_secret: '5b9480b7b3d4a49e22db3f29557380e2711bbcd9',
+  },
+})
+gitment.render('container')
+</script>-->
+<!-- ice gitment 评论 end-->
+<hr />
+
+<!-- ice facebook start-->
+ <!-- 
+<div class="fb-comments" data-href="https://raoenhui.github.io/react/2021/01/02/animation/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1757816481112269";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script> -->
+<!-- ice facebook end-->
+
+<!-- 来必力 start https://livere.com/my_Livere-->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNTMzMC8xMTg2Ng==">
+    <script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+    </script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- 来必力 end-->
+
+        <br>
+        <p>也可直接在issue下评论
+            <a href="https://github.com/raoenhui/raoenhui.github.io/issues" target="_blank">https://github.com/raoenhui/raoenhui.github.io/issues</a>
+        </p>
+    </div>
+</section>
+
+        <div class="cf"></div>
+
+    <footer class="notepad-site-footer">
+    <div class="copyright">
+        <section>All content copyright <a href="https://raoenhui.github.io/about">前端妹子</a> &copy; 2021 &bull; All rights reserved.</section>
+	<!--<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>-->
+          <!--<a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>-->
+    </div>
+    <div class="social-icons">
+        
+        <!--
+        <a href="http://twitter.com/raoenhui">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="https://plus.google.com/u/0/+AmeyJadiye">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-google-plus fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="http://instagram.com/raoenhui">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-instagram fa-stack-1x"></i>
+            </span>
+        </a>
+        -->
+        
+        <a href="https://github.com/raoenhui" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+            <span style="position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0,0,0,0);border: 0;">Github</span>
+        </a>
+        
+        
+        <a href="https://facebook.com/raoenhui" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+            <span style="position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0,0,0,0);border: 0;">Facebook</span>
+        </a>
+        
+    </div>
+    
+    <div class="cf"></div>
+</footer>
+ 
+</main>    
+<script src="//apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+  window.jQuery || document.write('<script src="https://raoenhui.github.io/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')
+</script>
+<script src="https://raoenhui.github.io/assets/js/vendor/modernizr.js"></script>
+<script src="https://raoenhui.github.io/assets/js/foundation.min.js"></script>
+
+<script src="https://raoenhui.github.io/assets/js/notepad.js"></script>
+<script src="https://raoenhui.github.io/assets/js/scripts.min.js"></script>
+<script src="https://raoenhui.github.io/assets/js/vendor/nprogress.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/sigma.js/1.0.3/sigma.min.js"></script>-->
+<script src="//apps.bdimg.com/libs/sigma.js/0.1/sigma.min.js"></script>
+
+<script>
+  $(document).foundation();
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+  ga('create', 'UA-46791108-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script>
+
+<script>
+  NProgress.start();
+  var timeNum = 0;
+  var interval = setInterval(function () {
+    NProgress.inc();
+    //如果大于60秒停止检测
+    /*if(timeNum>60){
+        clearInterval(interval);
+        NProgress.done();
+
+    }
+    timeNum++;*/
+  }, 1000);
+  jQuery(window).load(function () {
+    clearInterval(interval);
+    NProgress.done()
+  });
+  jQuery(window).unload(function () {
+    NProgress.start()
+  });
+</script>
+
+<!-- ice start-->
+<!--<script id="dsq-count-scr" src="//raoenhui.disqus.com/count.js" async></script>-->
+<script>
+  (function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+<!-- ice end-->
+
+
+<!-- 2d 前端妹子 start -->
+<!-- 萌萌哒二次元看板娘 -->
+<script src="https://l2dwidget.js.org/lib/L2Dwidget.min.js"></script>
+<script type="text/javascript">
+  L2Dwidget
+    .on('*', (name) => {
+      // console.log('%c EVENT ' + '%c -> ' + name, 'background: #222; color: yellow', 'background: #fff; color: #000')
+    })
+    .init({
+      dialog: {
+        // 开启对话框
+        enable: true,
+        script: {
+          // 当触摸到角色身体
+          'tap body': '哎呀！别碰我！',
+          // 当触摸到角色头部
+          'tap face': '人家是在认真写博客哦--前端妹子'
+        },
+        //下载模版地址：https://github.com/xiazeyu/live2d-widget-models.git
+        // "model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},
+        "mobile":{"show":true}
+      }
+    });
+</script>
+<style>
+  @media all and (max-width: 900px) {
+    #live2d-widget {
+      transform-origin: 100% 100% 0;
+      transform: scale(0.5);
+      -ms-transform: scale(0.5);
+      -moz-transform: scale(0.5);
+      -webkit-transform: scale(0.5);
+      -o-transform: scale(0.5);
+    }
+  }
+</style>
+<!-- 2d 前端妹子 end --> 
+</body>
+</html>
