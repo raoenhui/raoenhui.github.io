@@ -188,6 +188,11 @@ callback([
   {
     "text": "H5动画实战浅析",
     "href": "https://raoenhui.github.io/react/2021/01/02/animation/"
+  } ,
+
+  {
+    "text": "LowCode平台前端实战之投放素材中心",
+    "href": "https://raoenhui.github.io/lowcode/2021/06/30/lowcode/"
   } 
 
 ])

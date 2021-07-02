@@ -7,13 +7,116 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2021-04-09T15:57:59+05:30</updated>
+<updated>2021-07-02T12:14:33+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>前端妹子</name>
   <uri>https://raoenhui.github.io/</uri>
   <email>raoenhui@jd.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[LowCode平台前端实战之投放素材中心]]></title>
+  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/lowcode/2021/06/30/lowcode/"/>
+  <id>https://raoenhui.github.io/lowcode/2021/06/30/lowcode</id>
+  <published>2021-06-30T22:07:00+05:30</published>
+  <updated>2021-06-30T22:07:00+05:30</updated>
+  <author>
+    <name>前端妹子</name>
+    <uri>https://raoenhui.github.io</uri>
+    <email>raoenhui@jd.com</email>
+  </author>
+  <category scheme="https://raoenhui.github.io/tags/#LowCode" term="LowCode" />
+  <content type="html">
+  
+    &lt;h2 id=&quot;why为什么要用lowcode&quot;&gt;Why：为什么要用LowCode&lt;/h2&gt;
+
+&lt;p&gt;从业界动态来讲，根据全球领先的信息技术研究和顾问公司&lt;a href=&quot;https://www.gartner.com/en&quot;&gt;Gartner&lt;/a&gt;的最新预测，2021年全球IT支出将达到&lt;a href=&quot;https://www.gartner.com/cn/newsroom/press-releases/gartner_2021_it_4&quot;&gt;4万亿美元&lt;/a&gt;，到2023年，超过&lt;a href=&quot;https://www.gartner.com/doc/reprints?ct=190711&amp;amp;id=1-1FKNU1TK&quot;&gt;50%&lt;/a&gt;的大中型企业将采用&lt;code class=&quot;highlighter-rouge&quot;&gt;LowCode&lt;/code&gt;作为其战略应用平台之一。那么中国作为亚太地区的经济大国与IT强国，中国的应用开发市场将会引来一个爆发期，未来几年内的增速都会超过全球平均水平，&lt;code class=&quot;highlighter-rouge&quot;&gt;LowCode&lt;/code&gt;概念被重点提出。目前国内各大厂都有自己的&lt;code class=&quot;highlighter-rouge&quot;&gt;LowCode&lt;/code&gt;搭建平台，如云凤蝶(阿里)、Blocks(百度)、乐高(美团)等一系列的平台。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img11.360buyimg.com/imagetools/jfs/t1/186959/12/11241/260680/60deb3ebEb972183c/2f6393d28d609baf.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;what什么是lowcode&quot;&gt;What：什么是LowCode&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;LowCode&lt;/code&gt;是一种软件开发方法，可以更快地以最少的手工编码交付应用程序。&lt;/p&gt;
+&lt;h4 id=&quot;lowcode基础能力&quot;&gt;LowCode基础能力&lt;/h4&gt;
+&lt;p&gt;那么一个好的&lt;code class=&quot;highlighter-rouge&quot;&gt;LowCode&lt;/code&gt;平台需要具备哪些基础能力呢。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img13.360buyimg.com/imagetools/jfs/t1/191386/24/10654/178928/60deb3f2Ef144b49c/976446a11ab922dd.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;HTML Tree 编辑&lt;/strong&gt;: 可以方便自由的去改变页面元素的尺寸、上下移动位置，来更改页面布局。&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Component Tree 编辑&lt;/strong&gt;：指单个组件编辑。在基础组件列表中选择合适的组件, 通过拖拉的方式将组件嵌入到页面中, 生成带布局和样式。&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Custom Development&lt;/strong&gt;：为什么我们叫&lt;code class=&quot;highlighter-rouge&quot;&gt;LowCode&lt;/code&gt;低代码而不是叫NoCode无代码。因为还是可以有少量代码开发。&lt;code class=&quot;highlighter-rouge&quot;&gt;LowCode&lt;/code&gt;平台不仅要有丰富的基础组件，也需要具备定制化开发的能力，来满足部分定制化的场景。&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Data 编辑&lt;/strong&gt;：专注于可视化的编辑页面的 Data部分, 如可以自由配置图片URL、按钮文本、按钮跳转链接等。&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Dynamic Logic 编辑&lt;/strong&gt;：可灵活添加业务判断逻辑的能力,如校验规则，是否必填，填写最大长度为多少。&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;lowcode与现有开发模式对比&quot;&gt;LowCode与现有开发模式对比&lt;/h4&gt;
+&lt;p&gt;下面从3个方面来讲使用了低代码平台之后的变化。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img10.360buyimg.com/imagetools/jfs/t1/177386/10/11615/22248/60deb3f2Ee32edf9b/d454923b48706429.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;差异点&lt;/strong&gt;: 用编程方式来开发应用，变成直接可视化搭建应用。&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;技能要求&lt;/strong&gt;：之前生成应用需要会编程基础的人进行开发，而用&lt;code class=&quot;highlighter-rouge&quot;&gt;LowCode&lt;/code&gt;后，无编程基础的人也可以搭建自己想要的应用。&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;操作方式&lt;/strong&gt;：操作方式的转变，从在开发者工具中编写代码，到直接在可视化平台中拖拉。&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;how投放lowcode实战&quot;&gt;How：投放LowCode实战&lt;/h2&gt;
+
+&lt;h4 id=&quot;投放平台背景介绍&quot;&gt;投放平台背景介绍&lt;/h4&gt;
+
+&lt;p&gt;投放平台是集素材录入，素材管理，素材分发为一体的可视化智能平台。随着素材多样性，需要越来越多的素材类型支持，而我们的产研资源都是有限的，怎么才能更快的满足业务需求。我们需要引入&lt;code class=&quot;highlighter-rouge&quot;&gt;LowCode&lt;/code&gt;-低代码平台，来优化我们的现有流程。&lt;/p&gt;
+
+&lt;h4 id=&quot;投放lowcode流程对比&quot;&gt;投放LowCode流程对比&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img11.360buyimg.com/imagetools/jfs/t1/174794/25/17736/63666/60deb3f1Ed2467613/66f5753bdf7a53f5.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;下面我们来分析下素材新增流程，当业务方有个新素材需求时，先要通过产品来编写&lt;code class=&quot;highlighter-rouge&quot;&gt;PRD&lt;/code&gt;，交互出交互稿或者视觉稿，放入PRD中。评审后进入开发阶段，后端进行CMS接口开发以及对接上游接口，前端开发页面，前后端连调，再测试上线。 
+但是会有两个弊端，第一个弊端是新增素材类型，前后端都需定制开发，产研沟通成本很高，开发效率很低 。第二个弊端是目前素材类型已超过60种，在开发过程中，为了满足各种业务需求，引入了多种字段，缺乏对素材类型的明确区分；而每次接入新素材，前端也需要定制化开发，缺乏组件沉淀。这导致了系统的复杂性增加，维护与迭代难度增加，不利于系统进一步快速发展。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img11.360buyimg.com/imagetools/jfs/t1/188892/9/11165/56155/60deb3fbEbf4f2af3/4b6c5c16307bcc2d.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如果我们用&lt;code class=&quot;highlighter-rouge&quot;&gt;LowCode&lt;/code&gt;改造，后面的流程会变成：当产品收到新素材需求时，产品先去&lt;code class=&quot;highlighter-rouge&quot;&gt;LowCode&lt;/code&gt;平台直接配置素材， 如果都是复用以前的素材类型配置，则不需要研发，直接测试，上线。 低代码平台成熟后，测试也不需要接入，直接上线发布。实现全链路一体化流程。像之前做一个“新增相似商品组”的需求，之前就有类似的组配置，可以无需开发，可直接上线。 如果有需要对接上游接口，后端定制开发介入，但是&lt;code class=&quot;highlighter-rouge&quot;&gt;CMS&lt;/code&gt;端不用开发。像接入小程序素材类型，没有上游对接，后端可无需接入。 如果有&lt;code class=&quot;highlighter-rouge&quot;&gt;LowCode&lt;/code&gt;平台无法支持的需求，前端参与做定制化组件的开发。 对比两个流程，&lt;code class=&quot;highlighter-rouge&quot;&gt;LowCode&lt;/code&gt;的优势，通过可视化、配置化搭建，产品与研发无需或少量对接沟通，节约产研资源，缩短需求交付周期。&lt;/p&gt;
+
+&lt;p&gt;接下来从不同用户角色的角度来讲解下素材新建的全流程。&lt;/p&gt;
+&lt;h4 id=&quot;角色一产品搭建素材流程&quot;&gt;角色一：产品搭建素材流程&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img12.360buyimg.com/imagetools/jfs/t1/191916/38/11311/164273/60deb3fbE11517097/5ac15ce8a25e77a9.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;先新建组类型、录入类型、录入限制，如先新建一个商品组名字为通用，再是新建到家业务录入类型，最后是新建&lt;code class=&quot;highlighter-rouge&quot;&gt;SkuId&lt;/code&gt;录入限制。 接下来就是重点，投放素材配置搭建，主要是两部分，表单搭建和表格搭建。表单搭建用的是可视化表单&lt;code class=&quot;highlighter-rouge&quot;&gt;Drip-form-generator&lt;/code&gt;技术，它可自由拖拽基础表单和业务表单，并自定义校验规则，如必填，或最大值判断。再就是有导入或导出表单配置。加上定制化开发的能力。配置完表单后得到配置数据，配置数据的格式遵循业界通用的&lt;code class=&quot;highlighter-rouge&quot;&gt;Json Schema&lt;/code&gt;协议，后端来存储配置数据。新建素材类型需要配置4份表单，分别为素材组、场次、新增以及编辑素材表单。 可视化列表搭建技术架构也是类似，叫做&lt;code class=&quot;highlighter-rouge&quot;&gt;Drip-table-generator&lt;/code&gt;，遵循&lt;code class=&quot;highlighter-rouge&quot;&gt;Json Schema&lt;/code&gt;协议，前端收集配置数据，后端存储。 最后是写扩展功能，白名单配置，可在投放现有的权限管理中配置。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img10.360buyimg.com/imagetools/jfs/t1/174454/31/17814/253570/60deb3fbEb1a1eff2/745ec9a6fe9ba0ff.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;h4 id=&quot;角色二业务方录入素材场景&quot;&gt;角色二：业务方录入素材场景&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img11.360buyimg.com/imagetools/jfs/t1/189002/19/11397/105570/60deb3faE2f8c2c54/cc413f723262be74.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;业务方先选择商品组还是广告组，白名单用户会跳到新版素材录入页面，在场次上确定录入限制，也就是确定了素材类型。之后前端将从接口中读取表单、列表的配置数据，用&lt;code class=&quot;highlighter-rouge&quot;&gt;Drip-form&lt;/code&gt;以及&lt;code class=&quot;highlighter-rouge&quot;&gt;Drip-table&lt;/code&gt;去解析数据，渲染出&lt;code class=&quot;highlighter-rouge&quot;&gt;4&lt;/code&gt;份表单以及&lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;份素材列表，完成素材中心页面渲染。&lt;/p&gt;
+
+&lt;h2 id=&quot;feature未来愿景&quot;&gt;Feature：未来愿景&lt;/h2&gt;
+&lt;p&gt;在未来，借助&lt;code class=&quot;highlighter-rouge&quot;&gt;LowCode&lt;/code&gt;平台，每个人都能快速构建和共享低代码应用。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img10.360buyimg.com/imagetools/jfs/t1/184860/4/12218/691035/60deb3faE00751852/d2a13493c2f38dde.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Happy coding .. :)&lt;/p&gt;
+
+&lt;h3 id=&quot;参考材料&quot;&gt;参考材料&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/xioxu/awesome-LowCode&quot;&gt;业界低代码平台汇总&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.gartner.com/cn/newsroom/press-releases/gartner_2021_it_4&quot;&gt;Gartner预测&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.scalevp.com/blog/the-user-x-use-case-framework-for-no-code-and-low-code&quot;&gt;The User x Use Case Framework for No-Code and Low-Code&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/uMprW-dglk9SD_X_MV5CSQ&quot;&gt;iPaaS京东零售前台研发标准和赋能方案&lt;/a&gt;&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/lowcode/2021/06/30/lowcode/&quot;&gt;LowCode平台前端实战之投放素材中心&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on June 30, 2021.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -2976,136 +3079,6 @@ CMD是”Common Module Definition”的缩写。类似于requirejs，但是seajs
 
   
   &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/es6/2018/12/06/import/&quot;&gt;require 和 import 详解&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on December 06, 2018.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[表连接类型]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/sql/2018/11/30/sqlLink/"/>
-  <id>https://raoenhui.github.io/sql/2018/11/30/sqlLink</id>
-  <published>2018-11-30T00:00:00+05:30</published>
-  <updated>2018-11-30T00:00:00+05:30</updated>
-  <author>
-    <name>前端妹子</name>
-    <uri>https://raoenhui.github.io</uri>
-    <email>raoenhui@jd.com</email>
-  </author>
-  <category scheme="https://raoenhui.github.io/tags/#Sql" term="Sql" />
-  <content type="html">
-  
-    &lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
-&lt;p&gt;对于关系型数据库来说，对于复杂的查询表连接是必不可少的，下面妹子就来介绍下表连接的方式&lt;/p&gt;
-
-&lt;h3 id=&quot;内连接inner-join&quot;&gt;内连接（Inner Join）&lt;/h3&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Inner&lt;/code&gt;指的是 &lt;code class=&quot;highlighter-rouge&quot;&gt;intersect&lt;/code&gt;相交,顾名思义就是取两表的&lt;em&gt;交集&lt;/em&gt;。&lt;/p&gt;
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;per_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`b_borrow_list`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*63条*/&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;per_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`b_borrow_deductions`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*10条*/&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;/*inner-join*/&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;`per_id`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`b_borrow_list`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; 
-&lt;span class=&quot;k&quot;&gt;INNER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`b_borrow_deductions`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; 
-&lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;per_id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;per_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*51条*/&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;表a有63条数据，表b有10条数据，两表都有键值per_id，用INNER JOIN取交集为51条&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;外连接outer-join&quot;&gt;外连接（Outer Join）&lt;/h3&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Outer&lt;/code&gt;指的是 &lt;code class=&quot;highlighter-rouge&quot;&gt;union&lt;/code&gt;集合,就是取两表的&lt;em&gt;并集&lt;/em&gt;。
-其中外连接分为3种：&lt;/p&gt;
-&lt;h4 id=&quot;full-outer-join&quot;&gt;Full outer join&lt;/h4&gt;
-&lt;p&gt;full outer join 得到两表的乘集,也可叫做笛卡尔乘积。如果a表中的行在b表中没有对应的部分,b的部分将是 null, 反之亦然。&lt;/p&gt;
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;per_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`b_borrow_list`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*63条*/&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;per_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`b_borrow_deductions`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*10条*/&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;/*full-outer-join*/&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;`per_id`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`b_borrow_list`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; 
-&lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`b_borrow_deductions`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/*630条*/&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;取两表的乘集，则a表的行数乘以b表的行数，63*10=630（条）&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&quot;left-join&quot;&gt;Left join&lt;/h4&gt;
-&lt;p&gt;左连接，取表a的所有行，和b表中匹配的值，没有匹配的则以null值取代。&lt;/p&gt;
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;per_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`b_borrow_list`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*63条*/&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;per_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`b_borrow_deductions`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*10条*/&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;/*left-join*/&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;`per_id`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`b_borrow_list`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; 
-&lt;span class=&quot;k&quot;&gt;LEFT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`b_borrow_deductions`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; 
-&lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;per_id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;per_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*63条*/&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;a表有63行，b表中键值per_id在a表中都有。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&quot;right-join&quot;&gt;Right join&lt;/h4&gt;
-&lt;p&gt;右连接，取表b的所有行，和a表中匹配的值，没有匹配的则以null值取代。&lt;/p&gt;
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;per_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`b_borrow_list`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*63条*/&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;per_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`b_borrow_deductions`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*10条*/&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;/*right-join*/&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;`per_id`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`b_borrow_list`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; 
-&lt;span class=&quot;k&quot;&gt;RIGHT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`b_borrow_deductions`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; 
-&lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;per_id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;per_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*51条*/&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;b表有10行，a表中有重复键值per_id，所以有51条&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;反连接anti-join&quot;&gt;反连接（Anti Join）&lt;/h3&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Anti&lt;/code&gt;指的是 英语词根&lt;code class=&quot;highlighter-rouge&quot;&gt;反对&lt;/code&gt;的意思，与&lt;code class=&quot;highlighter-rouge&quot;&gt;inner join&lt;/code&gt;正好相反。
-多用于!= not in 等查询；如果找到满足条件（!= not in）的不返回，不满足条件（!= not in）的返回。&lt;/p&gt;
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;per_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`b_borrow_list`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*63条*/&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;per_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`b_borrow_deductions`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*10条*/&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;/*anti-join*/&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;`per_id`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`b_borrow_list`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;`b_borrow_deductions`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; 
-&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;per_id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;per_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*579条*/&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;相当于a表与b表的乘级减去a表与b表的交集，即(63*10)-51=579条&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;半连接semi-join&quot;&gt;半连接（Semi Join）&lt;/h3&gt;
-&lt;p&gt;半连接多在子查询exists中使用，找到存在的键值之后就不再查找内部其他的键值了。&lt;/p&gt;
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;per_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`b_borrow_list`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*63条*/&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;per_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`b_borrow_deductions`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*10条*/&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;/*semi-join */&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;`per_id`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`b_borrow_list`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; 
-&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;EXISTS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; 
-&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;`b_borrow_deductions`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;per_id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;per_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*51条*/&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;星型连接star-join&quot;&gt;星型连接（Star Join）&lt;/h3&gt;
-&lt;p&gt;是指一张大的事实表和多个小表关联得出所需的数据，往四周发散，所以称为星型链接。
-要使用星型转换，必须要求初始化参数&lt;code class=&quot;highlighter-rouge&quot;&gt;star_transforation_enabled&lt;/code&gt;设为TRUE。&lt;/p&gt;
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;really_big_fact&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;-- 50 million rows&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;      &lt;span class=&quot;n&quot;&gt;dim1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d1&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;-- 50 rows&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;      &lt;span class=&quot;n&quot;&gt;dim2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d2&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;-- 100 rows&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;      &lt;span class=&quot;n&quot;&gt;dim3&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d3&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;-- 10 rows&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;      &lt;span class=&quot;n&quot;&gt;dim4&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d4&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;-- 15 rows&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key1&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key2&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key3&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key4&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;现在只有&lt;code class=&quot;highlighter-rouge&quot;&gt;Oracle&lt;/code&gt;才有&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;表链接的方式&quot;&gt;表链接的方式&lt;/h3&gt;
-&lt;p&gt;表链接的方式有：排序合并连接(Sort Merge join)、嵌套循环连接(Nested Logo join)、哈希连接(Mash join)、笛卡尔链接(Cross join)&lt;/p&gt;
-
-&lt;h3 id=&quot;参考资料&quot;&gt;参考资料&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&quot;http://www.orafaq.com/tuningguide/star%20join.html&quot;&gt;http://www.orafaq.com/tuningguide/star%20join.html&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Happy coding .. :)&lt;/p&gt;
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/sql/2018/11/30/sqlLink/&quot;&gt;表连接类型&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on November 30, 2018.&lt;/p&gt;</content>
 </entry>
 
 </feed>

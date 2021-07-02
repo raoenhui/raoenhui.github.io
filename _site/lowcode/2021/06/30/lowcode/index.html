@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang='zh'>
+<head>
+<meta charset="utf-8">
+<title>LOWCODE平台前端实战之投放素材中心 &vert; 前端妹子的博客</title>
+<meta name="description" content="一枚前端攻城狮!">
+<meta name="keywords" content="LowCode">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raoenhui.github.io/images/logo.png">
+<meta name="twitter:title" content="LowCode平台前端实战之投放素材中心">
+<meta name="twitter:description" content="一枚前端攻城狮!">
+<meta name="twitter:creator" content="@raoenhui">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LowCode平台前端实战之投放素材中心">
+<meta property="og:description" content="一枚前端攻城狮!">
+<meta property="og:url" content="https://raoenhui.github.io/lowcode/2021/06/30/lowcode/">
+<meta property="og:site_name" content="前端妹子的博客">
+<meta property="og:image" content="https://raoenhui.github.io/images/">
+
+
+
+
+
+<link rel="canonical" href="https://raoenhui.github.io/lowcode/2021/06/30/lowcode/">
+<link href="https://raoenhui.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="前端妹子的博客 Feed">
+<link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+    <!--<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>-->
+	<!--<link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/font-awesome.min.css">-->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/normalize.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/nprogress.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/foundation.min.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/style.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/post.css">
+
+
+
+    
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="https://raoenhui.github.io/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="https://raoenhui.github.io/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="https://raoenhui.github.io/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://raoenhui.github.io/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://raoenhui.github.io/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://raoenhui.github.io/images/apple-touch-icon-144x144-precomposed.png">
+
+<!-- ice google AdSense start-->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6312691261569858",
+    enable_page_level_ads: true
+  });
+</script> -->
+<script data-ad-client="ca-pub-6312691261569858" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ice google AdSense end-->
+<style type="text/css">@media only screen and (min-width:43.75em){.notepad-post-content div>p:first-child:first-letter{float:left;font-size:4.688rem;line-height:4.375rem;padding-top:.25rem;padding-right:.5rem;padding-left:.188rem;font-family:serif}}</style>
+</head>
+<body class="post-template" itemscope itemtype="http://schema.org/WebPage">
+<div style ='margin:0 auto;width:0px;height:0px;overflow:hidden;' >
+
+    <img src="https://raoenhui.github.io/assets/img/avator.jpg" />
+    <!--<img src="//chuantu.biz/t6/303/1525520078x-1566657998.png" />-->
+
+</div>
+
+        <main id="notepad-post-container-simple" class="notepad-post-container-simple" role="main">
+            <header class="notepad-post-header-simple">
+                <div class="notepad-post-menu-header-simple">
+
+                    <a class="notepad-blog-logo" href="https://raoenhui.github.io">
+                        <img src="https://raoenhui.github.io/images/logo.png" alt="Blog Logo" />
+                    </a>
+
+                <div class="notepad-blog-menu">      
+    <div class="notepad-mobile-menu show-for-small">
+        <a><i class="fa fa-bars"></i></a>
+    </div>
+    <ul class="notepad-menu">
+        <li class="notepad-mobile-close-btn show-for-small text-right">
+            <a><i class="fa fa-times"></i></a>
+        </li>
+
+            <li>
+                    <a href="https://raoenhui.github.io/">主页</a>
+                 </li>
+
+            <li>
+                    <a href="https://raoenhui.github.io/categories">目录</a>
+                 </li>
+
+            <li>
+                    <a href="https://raoenhui.github.io/about">关于</a>
+                 </li>
+
+           <li><a href="https://github.com/raoenhui/raoenhui.github.io" target="_blank" title="Github"><i class="icon-rss"></i> Github</a></li>
+           <li><a href="http://www.frontendx.cn" target="_blank" title="Index">Index</a></li>
+    </ul>
+
+</div>
+            </div>
+
+                <div class="notepad-post-title-simple row">
+                    <div class="small-12 columns">
+                        <div class="notepad-post-meta-simple">
+                            <h1>LowCode平台前端实战之投放素材中心</h1>
+                            <p>by <strong>前端妹子</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#LowCode" data-toggle="tooltip" title="Posts tagged with LowCode" rel="tag">LowCode</a> <strong><time datetime="2021-06-30T22:07:00+05:30">30 Jun 2021</time></strong></p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+        <article class="notepad-post-content post tag-simple">
+            <div><h2 id="why为什么要用lowcode">Why：为什么要用LowCode</h2>
+
+<p>从业界动态来讲，根据全球领先的信息技术研究和顾问公司<a href="https://www.gartner.com/en">Gartner</a>的最新预测，2021年全球IT支出将达到<a href="https://www.gartner.com/cn/newsroom/press-releases/gartner_2021_it_4">4万亿美元</a>，到2023年，超过<a href="https://www.gartner.com/doc/reprints?ct=190711&amp;id=1-1FKNU1TK">50%</a>的大中型企业将采用<code class="highlighter-rouge">LowCode</code>作为其战略应用平台之一。那么中国作为亚太地区的经济大国与IT强国，中国的应用开发市场将会引来一个爆发期，未来几年内的增速都会超过全球平均水平，<code class="highlighter-rouge">LowCode</code>概念被重点提出。目前国内各大厂都有自己的<code class="highlighter-rouge">LowCode</code>搭建平台，如云凤蝶(阿里)、Blocks(百度)、乐高(美团)等一系列的平台。</p>
+
+<p><img src="https://img11.360buyimg.com/imagetools/jfs/t1/186959/12/11241/260680/60deb3ebEb972183c/2f6393d28d609baf.png" alt="image.png" /></p>
+
+<h2 id="what什么是lowcode">What：什么是LowCode</h2>
+<p><code class="highlighter-rouge">LowCode</code>是一种软件开发方法，可以更快地以最少的手工编码交付应用程序。</p>
+<h4 id="lowcode基础能力">LowCode基础能力</h4>
+<p>那么一个好的<code class="highlighter-rouge">LowCode</code>平台需要具备哪些基础能力呢。</p>
+
+<p><img src="https://img13.360buyimg.com/imagetools/jfs/t1/191386/24/10654/178928/60deb3f2Ef144b49c/976446a11ab922dd.png" alt="image.png" /></p>
+
+<blockquote>
+  <ul>
+    <li><strong>HTML Tree 编辑</strong>: 可以方便自由的去改变页面元素的尺寸、上下移动位置，来更改页面布局。</li>
+    <li><strong>Component Tree 编辑</strong>：指单个组件编辑。在基础组件列表中选择合适的组件, 通过拖拉的方式将组件嵌入到页面中, 生成带布局和样式。</li>
+    <li><strong>Custom Development</strong>：为什么我们叫<code class="highlighter-rouge">LowCode</code>低代码而不是叫NoCode无代码。因为还是可以有少量代码开发。<code class="highlighter-rouge">LowCode</code>平台不仅要有丰富的基础组件，也需要具备定制化开发的能力，来满足部分定制化的场景。</li>
+    <li><strong>Data 编辑</strong>：专注于可视化的编辑页面的 Data部分, 如可以自由配置图片URL、按钮文本、按钮跳转链接等。</li>
+    <li><strong>Dynamic Logic 编辑</strong>：可灵活添加业务判断逻辑的能力,如校验规则，是否必填，填写最大长度为多少。</li>
+  </ul>
+</blockquote>
+
+<h4 id="lowcode与现有开发模式对比">LowCode与现有开发模式对比</h4>
+<p>下面从3个方面来讲使用了低代码平台之后的变化。</p>
+
+<p><img src="https://img10.360buyimg.com/imagetools/jfs/t1/177386/10/11615/22248/60deb3f2Ee32edf9b/d454923b48706429.png" alt="image.png" /></p>
+
+<blockquote>
+  <ul>
+    <li><strong>差异点</strong>: 用编程方式来开发应用，变成直接可视化搭建应用。</li>
+    <li><strong>技能要求</strong>：之前生成应用需要会编程基础的人进行开发，而用<code class="highlighter-rouge">LowCode</code>后，无编程基础的人也可以搭建自己想要的应用。</li>
+    <li><strong>操作方式</strong>：操作方式的转变，从在开发者工具中编写代码，到直接在可视化平台中拖拉。</li>
+  </ul>
+</blockquote>
+
+<h2 id="how投放lowcode实战">How：投放LowCode实战</h2>
+
+<h4 id="投放平台背景介绍">投放平台背景介绍</h4>
+
+<p>投放平台是集素材录入，素材管理，素材分发为一体的可视化智能平台。随着素材多样性，需要越来越多的素材类型支持，而我们的产研资源都是有限的，怎么才能更快的满足业务需求。我们需要引入<code class="highlighter-rouge">LowCode</code>-低代码平台，来优化我们的现有流程。</p>
+
+<h4 id="投放lowcode流程对比">投放LowCode流程对比</h4>
+
+<p><img src="https://img11.360buyimg.com/imagetools/jfs/t1/174794/25/17736/63666/60deb3f1Ed2467613/66f5753bdf7a53f5.png" alt="image.png" /></p>
+
+<p>下面我们来分析下素材新增流程，当业务方有个新素材需求时，先要通过产品来编写<code class="highlighter-rouge">PRD</code>，交互出交互稿或者视觉稿，放入PRD中。评审后进入开发阶段，后端进行CMS接口开发以及对接上游接口，前端开发页面，前后端连调，再测试上线。 
+但是会有两个弊端，第一个弊端是新增素材类型，前后端都需定制开发，产研沟通成本很高，开发效率很低 。第二个弊端是目前素材类型已超过60种，在开发过程中，为了满足各种业务需求，引入了多种字段，缺乏对素材类型的明确区分；而每次接入新素材，前端也需要定制化开发，缺乏组件沉淀。这导致了系统的复杂性增加，维护与迭代难度增加，不利于系统进一步快速发展。</p>
+
+<p><img src="https://img11.360buyimg.com/imagetools/jfs/t1/188892/9/11165/56155/60deb3fbEbf4f2af3/4b6c5c16307bcc2d.png" alt="image.png" /></p>
+
+<p>如果我们用<code class="highlighter-rouge">LowCode</code>改造，后面的流程会变成：当产品收到新素材需求时，产品先去<code class="highlighter-rouge">LowCode</code>平台直接配置素材， 如果都是复用以前的素材类型配置，则不需要研发，直接测试，上线。 低代码平台成熟后，测试也不需要接入，直接上线发布。实现全链路一体化流程。像之前做一个“新增相似商品组”的需求，之前就有类似的组配置，可以无需开发，可直接上线。 如果有需要对接上游接口，后端定制开发介入，但是<code class="highlighter-rouge">CMS</code>端不用开发。像接入小程序素材类型，没有上游对接，后端可无需接入。 如果有<code class="highlighter-rouge">LowCode</code>平台无法支持的需求，前端参与做定制化组件的开发。 对比两个流程，<code class="highlighter-rouge">LowCode</code>的优势，通过可视化、配置化搭建，产品与研发无需或少量对接沟通，节约产研资源，缩短需求交付周期。</p>
+
+<p>接下来从不同用户角色的角度来讲解下素材新建的全流程。</p>
+<h4 id="角色一产品搭建素材流程">角色一：产品搭建素材流程</h4>
+
+<p><img src="https://img12.360buyimg.com/imagetools/jfs/t1/191916/38/11311/164273/60deb3fbE11517097/5ac15ce8a25e77a9.png" alt="image.png" /></p>
+
+<p>先新建组类型、录入类型、录入限制，如先新建一个商品组名字为通用，再是新建到家业务录入类型，最后是新建<code class="highlighter-rouge">SkuId</code>录入限制。 接下来就是重点，投放素材配置搭建，主要是两部分，表单搭建和表格搭建。表单搭建用的是可视化表单<code class="highlighter-rouge">Drip-form-generator</code>技术，它可自由拖拽基础表单和业务表单，并自定义校验规则，如必填，或最大值判断。再就是有导入或导出表单配置。加上定制化开发的能力。配置完表单后得到配置数据，配置数据的格式遵循业界通用的<code class="highlighter-rouge">Json Schema</code>协议，后端来存储配置数据。新建素材类型需要配置4份表单，分别为素材组、场次、新增以及编辑素材表单。 可视化列表搭建技术架构也是类似，叫做<code class="highlighter-rouge">Drip-table-generator</code>，遵循<code class="highlighter-rouge">Json Schema</code>协议，前端收集配置数据，后端存储。 最后是写扩展功能，白名单配置，可在投放现有的权限管理中配置。</p>
+
+<p><img src="https://img10.360buyimg.com/imagetools/jfs/t1/174454/31/17814/253570/60deb3fbEb1a1eff2/745ec9a6fe9ba0ff.png" alt="image.png" /></p>
+<h4 id="角色二业务方录入素材场景">角色二：业务方录入素材场景</h4>
+
+<p><img src="https://img11.360buyimg.com/imagetools/jfs/t1/189002/19/11397/105570/60deb3faE2f8c2c54/cc413f723262be74.png" alt="image.png" /></p>
+
+<p>业务方先选择商品组还是广告组，白名单用户会跳到新版素材录入页面，在场次上确定录入限制，也就是确定了素材类型。之后前端将从接口中读取表单、列表的配置数据，用<code class="highlighter-rouge">Drip-form</code>以及<code class="highlighter-rouge">Drip-table</code>去解析数据，渲染出<code class="highlighter-rouge">4</code>份表单以及<code class="highlighter-rouge">1</code>份素材列表，完成素材中心页面渲染。</p>
+
+<h2 id="feature未来愿景">Feature：未来愿景</h2>
+<p>在未来，借助<code class="highlighter-rouge">LowCode</code>平台，每个人都能快速构建和共享低代码应用。</p>
+
+<p><img src="https://img10.360buyimg.com/imagetools/jfs/t1/184860/4/12218/691035/60deb3faE00751852/d2a13493c2f38dde.png" alt="image.png" /></p>
+
+<p>Happy coding .. :)</p>
+
+<h3 id="参考材料">参考材料</h3>
+
+<p><a href="https://github.com/xioxu/awesome-LowCode">业界低代码平台汇总</a></p>
+
+<p><a href="https://www.gartner.com/cn/newsroom/press-releases/gartner_2021_it_4">Gartner预测</a></p>
+
+<p><a href="https://www.scalevp.com/blog/the-user-x-use-case-framework-for-no-code-and-low-code">The User x Use Case Framework for No-Code and Low-Code</a></p>
+
+<p><a href="https://mp.weixin.qq.com/s/uMprW-dglk9SD_X_MV5CSQ">iPaaS京东零售前台研发标准和赋能方案</a></p>
+
+            </div>
+        </article>
+        <div class="cf"></div>
+        <div class="row text-center">
+            <section class="notepad-post-share">
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;LowCode平台前端实战之投放素材中心&quot;%20https://raoenhui.github.io/lowcode/2021/06/30/lowcode/%20via%20&#64;raoenhui"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/lowcode/2021/06/30/lowcode/"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/lowcode/2021/06/30/lowcode/"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </section>
+        </div>
+        <div class="cf"></div>
+        
+            <div class="notepad-author-info">
+                <div class="row">
+                    <section class="notepad-post-author small-12 columns">
+                        
+                            <img src="https://raoenhui.github.io/images/logo.png" class="notepad-post-author-avatar" alt="前端妹子's photo">
+                        
+                        
+                            <span class="author-label">Author</span>
+                            <h1>前端妹子</h1>
+                        
+                        
+                            <p><a href="mailto:raoenhui@jd.com" class="author-website">raoenhui@jd.com</a>
+
+			   <!--  <iframe src="//www.facebook.com/plugins/follow?href=https%3A%2F%2Fwww.facebook.com%2Fameyjadiye&amp;layout=standard&amp;show_faces=true&amp;colorscheme=light&amp;width=450&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe>  -->
+             <!--      <iframe src="//www.facebook.com/plugins/follow?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100004203407645&amp;layout=standard&amp;show_faces=true&amp;colorscheme=light&amp;width=450&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe> -->
+             
+
+              <div class="fb-like" data-href="https://raoenhui.github.io/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+       <!--      <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1757816481112269";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+			    </p>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1757816481112269";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>-->
+<div class="fb-follow" data-href="https://www.facebook.com/raoenhui" data-width="200" data-height="100" data-layout="standard" data-show-faces="true"></div>
+                        
+                        
+                            <p>Programming is 1% knowledge, 2% ability and 97% getting the ability to work with the knowledge :)</p>
+                        
+                    </section>
+                </div>
+            </div>
+ 
+        
+        <div class="cf"></div>
+        
+        <section class="notepad-disqus row">
+    <div class="small-12 columns">
+        <h1 class="notepad-comments-header">Comments评论</h1>
+
+        <div id="disqus_thread"></div>
+        
+<!--
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = '饶恩慧'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+-->
+<!-- ice disqus https://raoenhui.disqus.com/admin/ start-->
+<!--<script>
+
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://raoenhui.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>-->
+<!-- ice disqus end-->
+
+<!-- ice gitment 评论 start-->
+ <!--    <div id="container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+// debugger
+var gitment = new Gitment({
+  id: location.pathname.split('/').reverse()[1], // 可选。默认为 location.href
+  owner: 'raoenhui',
+  repo: 'raoenhui.github.io',
+  oauth: {
+    client_id: 'bd88b9824048b133f7ed',
+    client_secret: '193c97904472a0e380b70dd990c46853f52881c7',
+    // client_id: '5548df3eca52697fac71',
+    // client_secret: '5b9480b7b3d4a49e22db3f29557380e2711bbcd9',
+  },
+})
+gitment.render('container')
+</script>-->
+<!-- ice gitment 评论 end-->
+<hr />
+
+<!-- ice facebook start-->
+ <!-- 
+<div class="fb-comments" data-href="https://raoenhui.github.io/lowcode/2021/06/30/lowcode/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1757816481112269";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script> -->
+<!-- ice facebook end-->
+
+<!-- 来必力 start https://livere.com/my_Livere-->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNTMzMC8xMTg2Ng==">
+    <script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+    </script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- 来必力 end-->
+
+        <br>
+        <p>也可直接在issue下评论
+            <a href="https://github.com/raoenhui/raoenhui.github.io/issues" target="_blank">https://github.com/raoenhui/raoenhui.github.io/issues</a>
+        </p>
+    </div>
+</section>
+
+        <div class="cf"></div>
+
+    <footer class="notepad-site-footer">
+    <div class="copyright">
+        <section>All content copyright <a href="https://raoenhui.github.io/about">前端妹子</a> &copy; 2021 &bull; All rights reserved.</section>
+	<!--<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>-->
+          <!--<a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>-->
+    </div>
+    <div class="social-icons">
+        
+        <!--
+        <a href="http://twitter.com/raoenhui">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="https://plus.google.com/u/0/+AmeyJadiye">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-google-plus fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="http://instagram.com/raoenhui">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-instagram fa-stack-1x"></i>
+            </span>
+        </a>
+        -->
+        
+        <a href="https://github.com/raoenhui" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+            <span style="position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0,0,0,0);border: 0;">Github</span>
+        </a>
+        
+        
+        <a href="https://facebook.com/raoenhui" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+            <span style="position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0,0,0,0);border: 0;">Facebook</span>
+        </a>
+        
+    </div>
+    
+    <div class="cf"></div>
+</footer>
+ 
+</main>    
+<script src="//apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+  window.jQuery || document.write('<script src="https://raoenhui.github.io/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')
+</script>
+<script src="https://raoenhui.github.io/assets/js/vendor/modernizr.js"></script>
+<script src="https://raoenhui.github.io/assets/js/foundation.min.js"></script>
+
+<script src="https://raoenhui.github.io/assets/js/notepad.js"></script>
+<script src="https://raoenhui.github.io/assets/js/scripts.min.js"></script>
+<script src="https://raoenhui.github.io/assets/js/vendor/nprogress.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/sigma.js/1.0.3/sigma.min.js"></script>-->
+<script src="//apps.bdimg.com/libs/sigma.js/0.1/sigma.min.js"></script>
+
+<script>
+  $(document).foundation();
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+  ga('create', 'UA-46791108-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script>
+
+<script>
+  NProgress.start();
+  var timeNum = 0;
+  var interval = setInterval(function () {
+    NProgress.inc();
+    //如果大于60秒停止检测
+    /*if(timeNum>60){
+        clearInterval(interval);
+        NProgress.done();
+
+    }
+    timeNum++;*/
+  }, 1000);
+  jQuery(window).load(function () {
+    clearInterval(interval);
+    NProgress.done()
+  });
+  jQuery(window).unload(function () {
+    NProgress.start()
+  });
+</script>
+
+<!-- ice start-->
+<!--<script id="dsq-count-scr" src="//raoenhui.disqus.com/count.js" async></script>-->
+<script>
+  (function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+<!-- ice end-->
+
+
+<!-- 2d 前端妹子 start -->
+<!-- 萌萌哒二次元看板娘 -->
+<script src="https://l2dwidget.js.org/lib/L2Dwidget.min.js"></script>
+<script type="text/javascript">
+  L2Dwidget
+    .on('*', (name) => {
+      // console.log('%c EVENT ' + '%c -> ' + name, 'background: #222; color: yellow', 'background: #fff; color: #000')
+    })
+    .init({
+      dialog: {
+        // 开启对话框
+        enable: true,
+        script: {
+          // 当触摸到角色身体
+          'tap body': '哎呀！别碰我！',
+          // 当触摸到角色头部
+          'tap face': '人家是在认真写博客哦--前端妹子'
+        },
+        //下载模版地址：https://github.com/xiazeyu/live2d-widget-models.git
+        // "model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},
+        "mobile":{"show":true}
+      }
+    });
+</script>
+<style>
+  @media all and (max-width: 900px) {
+    #live2d-widget {
+      transform-origin: 100% 100% 0;
+      transform: scale(0.5);
+      -ms-transform: scale(0.5);
+      -moz-transform: scale(0.5);
+      -webkit-transform: scale(0.5);
+      -o-transform: scale(0.5);
+    }
+  }
+</style>
+<!-- 2d 前端妹子 end --> 
+</body>
+</html>
