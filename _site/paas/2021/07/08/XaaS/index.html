@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang='zh'>
+<head>
+<meta charset="utf-8">
+<title>IAAS、PAAS、SAAS、FAAS以及XPAAS大全 &vert; 前端妹子的博客</title>
+<meta name="description" content="一枚前端攻城狮!">
+<meta name="keywords" content="PaaS">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raoenhui.github.io/images/logo.png">
+<meta name="twitter:title" content="IaaS、PaaS、SaaS、FaaS以及XPaaS大全">
+<meta name="twitter:description" content="一枚前端攻城狮!">
+<meta name="twitter:creator" content="@raoenhui">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IaaS、PaaS、SaaS、FaaS以及XPaaS大全">
+<meta property="og:description" content="一枚前端攻城狮!">
+<meta property="og:url" content="https://raoenhui.github.io/paas/2021/07/08/XaaS/">
+<meta property="og:site_name" content="前端妹子的博客">
+<meta property="og:image" content="https://raoenhui.github.io/images/">
+
+
+
+
+
+<link rel="canonical" href="https://raoenhui.github.io/paas/2021/07/08/XaaS/">
+<link href="https://raoenhui.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="前端妹子的博客 Feed">
+<link rel="author" href="https://plus.google.com/u/0/+AmeyJadiye?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+    <!--<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>-->
+	<!--<link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/font-awesome.min.css">-->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/normalize.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/nprogress.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/vendor/foundation.min.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/style.css">
+    <link rel="stylesheet" href="https://raoenhui.github.io/assets/css/post.css">
+
+
+
+    
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="https://raoenhui.github.io/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="https://raoenhui.github.io/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="https://raoenhui.github.io/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://raoenhui.github.io/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://raoenhui.github.io/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://raoenhui.github.io/images/apple-touch-icon-144x144-precomposed.png">
+
+<!-- ice google AdSense start-->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6312691261569858",
+    enable_page_level_ads: true
+  });
+</script> -->
+<script data-ad-client="ca-pub-6312691261569858" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ice google AdSense end-->
+<style type="text/css">@media only screen and (min-width:43.75em){.notepad-post-content div>p:first-child:first-letter{float:left;font-size:4.688rem;line-height:4.375rem;padding-top:.25rem;padding-right:.5rem;padding-left:.188rem;font-family:serif}}</style>
+</head>
+<body class="post-template" itemscope itemtype="http://schema.org/WebPage">
+<div style ='margin:0 auto;width:0px;height:0px;overflow:hidden;' >
+
+    <img src="https://raoenhui.github.io/assets/img/avator.jpg" />
+    <!--<img src="//chuantu.biz/t6/303/1525520078x-1566657998.png" />-->
+
+</div>
+
+        <main id="notepad-post-container-simple" class="notepad-post-container-simple" role="main">
+            <header class="notepad-post-header-simple">
+                <div class="notepad-post-menu-header-simple">
+
+                    <a class="notepad-blog-logo" href="https://raoenhui.github.io">
+                        <img src="https://raoenhui.github.io/images/logo.png" alt="Blog Logo" />
+                    </a>
+
+                <div class="notepad-blog-menu">      
+    <div class="notepad-mobile-menu show-for-small">
+        <a><i class="fa fa-bars"></i></a>
+    </div>
+    <ul class="notepad-menu">
+        <li class="notepad-mobile-close-btn show-for-small text-right">
+            <a><i class="fa fa-times"></i></a>
+        </li>
+
+            <li>
+                    <a href="https://raoenhui.github.io/">主页</a>
+                 </li>
+
+            <li>
+                    <a href="https://raoenhui.github.io/categories">目录</a>
+                 </li>
+
+            <li>
+                    <a href="https://raoenhui.github.io/about">关于</a>
+                 </li>
+
+           <li><a href="https://github.com/raoenhui/raoenhui.github.io" target="_blank" title="Github"><i class="icon-rss"></i> Github</a></li>
+           <li><a href="http://www.frontendx.cn" target="_blank" title="Index">Index</a></li>
+    </ul>
+
+</div>
+            </div>
+
+                <div class="notepad-post-title-simple row">
+                    <div class="small-12 columns">
+                        <div class="notepad-post-meta-simple">
+                            <h1>IaaS、PaaS、SaaS、FaaS以及XPaaS大全</h1>
+                            <p>by <strong>前端妹子</strong> &#8212; on <a href="https://raoenhui.github.io/tags/index.html#PaaS" data-toggle="tooltip" title="Posts tagged with PaaS" rel="tag">PaaS</a> <strong><time datetime="2021-07-08T22:07:00+05:30">08 Jul 2021</time></strong></p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+        <article class="notepad-post-content post tag-simple">
+            <div><h2 id="一aas">一、aaS</h2>
+<p><code class="highlighter-rouge">aaS</code> 是 <code class="highlighter-rouge">As-a-Service</code> 即为服务 的意思。</p>
+<h2 id="二xaas">二、XaaS</h2>
+<p><code class="highlighter-rouge">XaaS</code> 是一种类的术语，这里是<code class="highlighter-rouge">aaS</code> 类的统称。包含有<code class="highlighter-rouge">IaaS</code> <code class="highlighter-rouge">PaaS</code> <code class="highlighter-rouge">SaaS</code> <code class="highlighter-rouge">BaaS</code> <code class="highlighter-rouge">FaaS</code> <code class="highlighter-rouge">DaaS</code> <code class="highlighter-rouge">NaaS</code>,下面本妹子将一一介绍。</p>
+
+<h3 id="21-iaas">2.1 IaaS</h3>
+<p><code class="highlighter-rouge">IaaS</code>是指基础设施服务，<code class="highlighter-rouge">Infrastructure-as-a-service</code>。主要提供部分基础资源，也就是云服务的最底层。市场上的 <code class="highlighter-rouge">IaaS</code>有 <a href="https://www.digitalocean.com/">DigitalOcean</a>、 <a href="https://www.linode.com/">Linode</a>、 <a href="https://www.rackspace.com/">Rackspace</a>、 <a href="https://aws.amazon.com/">Amazon Web Services (AWS)</a>、 <a href="https://www.cisco.com/c/en/us/products/cloud-systems-management/metacloud/index.html">Cisco Metacloud</a>、 <a href="https://azure.microsoft.com/en-us/">Microsoft Azure</a>、 <a href="https://cloud.google.com/compute/">Google Compute Engine (GCE)</a>。</p>
+
+<h3 id="22-paas">2.2 PaaS</h3>
+<p><code class="highlighter-rouge">PaaS</code>是指平台服务，<code class="highlighter-rouge">Platform-as-a-service</code>。平台提供软件部署平台（runtime），抽象掉了硬件和操作系统细节，可以无缝地扩展（scaling）。开发者只需要关注自己的业务逻辑，不需要关注底层。市场上的 <code class="highlighter-rouge">PaaS</code>有<a href="https://aws.amazon.com/elasticbeanstalk/">AWS Elastic Beanstalk</a>、 <a href="https://azure.microsoft.com/en-us/free/windows-server-on-azure/">Windows Azure</a>、 <a href="https://www.heroku.com/">Heroku</a>、 <a href="https://developer.salesforce.com/platform/force.com">Force.com</a>、 <a href="https://cloud.google.com/appengine/">Google App Engine</a>、 <a href="https://www.openshift.com/">OpenShift</a>。</p>
+
+<h3 id="23-saas">2.3 SaaS</h3>
+<p><code class="highlighter-rouge">SaaS</code>是指软件服务,也称为云应用服务，<code class="highlighter-rouge">Software-as-a-service</code>。是软件的开发、管理、部署都交给第三方，不需要关心技术问题，可以拿来即用。普通用户接触到的互联网服务，几乎都是 SaaS。市场上的 <code class="highlighter-rouge">SaaS</code>有<a href="https://workspace.google.com/">Google Workspace</a>、 <a href="https://www.dropbox.com/">Dropbox</a>、<a href="https://www.salesforce.com/">Salesforce</a>、 <a href="https://www.webex.com/">Cisco WebEx</a>、 <a href="https://www.concur.com/">SAP Concur</a>、<a href="https://www.gotomeeting.com/">GoToMeeting</a>。</p>
+
+<h3 id="24-iaaspaassaas差异">2.4 IaaS、PaaS、SaaS差异</h3>
+<p><img src="https://img14.360buyimg.com/imagetools/jfs/t1/179265/3/13252/61449/60e6ee9bEe0cbfa8a/ea239862be9b2660.png" alt="image.png" /></p>
+
+<h3 id="25-baas">2.5 BaaS</h3>
+<p><code class="highlighter-rouge">BaaS</code>是指后端即服务，<code class="highlighter-rouge">Backend as a Service</code>。服务商为客户(开发者)提供整合云后端的服务，如提供文件存储、数据存储、推送服务、身份验证服务等功能，以帮助开发者快速开发应用。</p>
+
+<h3 id="26-faas">2.6 FaaS</h3>
+<p><code class="highlighter-rouge">FaaS</code>是指函数即服务，<code class="highlighter-rouge">Function as a Service</code>。无服务器计算，当前使用最广泛的是AWS的<a href="https://aws.amazon.com/cn/lambda/">Lambada</a>。服务商提供一个平台，允许客户开发、运行和管理应用程序功能，而无需构建和维护通常与开发和启动应用程序相关的基础架构的复杂性。 按照此模型构建应用程序是实现“无服务器”体系结构的一种方式，通常在构建微服务应用程序时使用。</p>
+
+<h3 id="27-daas">2.7 DaaS</h3>
+<p><code class="highlighter-rouge">DaaS</code>是指函数即服务，<code class="highlighter-rouge">Data as a Service</code>。云端公司负责建立全部的IT环境，收集用户需要的基础数据并且做数据分析，最后对分析结构或者算法提供编程接口，让数据成为服务。<code class="highlighter-rouge">DaaS</code>是大数据时代的象征，能做DaaS服务的云端公司需要从数据积累、数据分析和数据交付三方面积累自身的核心竞争力。</p>
+
+<h3 id="28-naas">2.8 NaaS</h3>
+<p><code class="highlighter-rouge">NaaS</code>是指网络即服务，<code class="highlighter-rouge">Network as a Service</code>。在中国移动“5G+发布会”上，中国移动发布了网络即服务<code class="highlighter-rouge">（NaaS, Network as a Service）</code>能力体系，,通过打造一个核心基石、六大创新能力，实现开放化的网络即服务。，从而为各行各业数字化转型升级注入“5G+”新动能，助力社会、经济高质量发展。</p>
+
+<h2 id="三xpaas">三、XPaaS</h2>
+<p><code class="highlighter-rouge">XPaaS </code>是指各种类型的 <code class="highlighter-rouge">PaaS</code>，它和 <code class="highlighter-rouge">XaaS</code> 一样，类的术语，这里是 <code class="highlighter-rouge">PaaS</code> 类的统称。从<code class="highlighter-rouge">Gartner</code>每年追踪的多达30余种的PaaS技术来看，可知PaaS是一种复杂和多样化的应用软件开发平台。下面将一一介绍各种类型的 <code class="highlighter-rouge">PaaS</code>。</p>
+
+<h3 id="31-apaas">3.1 aPaaS</h3>
+<p><code class="highlighter-rouge">aPaaS</code>是应用平台即服务，<code class="highlighter-rouge">Application platform as a service</code>。aPaaS依托一个可视化环境，该环境提供基于云的快速应用程序开发工具和应用程序部署。市场上的 <code class="highlighter-rouge">aPaaS</code>有<a href="https://www.jiandaoyun.com">简道云</a>、<a href="https://zenkit.com">zenkit</a>.</p>
+
+<h3 id="32-ipaas">3.2 iPaaS</h3>
+<p><code class="highlighter-rouge">iPaaS</code>是集成平台即服务，<code class="highlighter-rouge">Integration platform as a service</code>。
+ 集成平台即服务，Gartner 将其<a href="https://baike.baidu.com/item/iPaaS/18884950?fr=aladdin">定义</a>为“促进开发、执行和集成流治理同任何本地（on-premises）以及基于云的流程、服务、应用和数据连接的一套云服务，可以在独立的或者多个交叉的组织中进行。
+iPaaS 的特征是集成和打通平台。市场上的<code class="highlighter-rouge">iPaas</code>有<a href="http://ipaas.jd.com/wiki/index.html#/">京东iPaaS</a>。</p>
+
+<h3 id="33-apaasipaas差异">3.3 aPaaS、iPaaS差异</h3>
+<p><code class="highlighter-rouge">aPaas</code>偏向<code class="highlighter-rouge">SaaS</code>的<code class="highlighter-rouge">PaaS</code>。
+<code class="highlighter-rouge">iPaas</code>偏向<code class="highlighter-rouge">IaaS</code>的<code class="highlighter-rouge">PaaS</code>。</p>
+
+<h3 id="34-apimpaas">3.4 apimPaaS</h3>
+<p><code class="highlighter-rouge">apimPaaS</code>是管理平台即服务，<code class="highlighter-rouge">API management PaaS API</code>。</p>
+<h3 id="35-bapaas">3.5 baPaaS</h3>
+<p><code class="highlighter-rouge">baPaaS</code>是管理平台即服务，<code class="highlighter-rouge">Business analytics PaaS</code>。</p>
+<h3 id="36-iot-paas">3.6 IoT PaaS</h3>
+<p><code class="highlighter-rouge">IoT PaaS</code>是物联网即服务，<code class="highlighter-rouge">Internet of Things PaaS</code>。</p>
+<h3 id="37-mpaas">3.7 mPaaS</h3>
+<p><code class="highlighter-rouge">mPaaS</code>是移动平台即服务，<code class="highlighter-rouge">Mobile PaaS</code>。
+ <code class="highlighter-rouge">Mobile PaaS</code>， <code class="highlighter-rouge">mPaaS</code> 是源自于支付宝的移动开发平台，为移动开发、测试、运营及运维提供云到端的一站式解决方案。产品能力全面覆盖「跨端开发框架、研发协同、数字化运营、智能营销、后端连接」等场景，目前已服务 12306、上海地铁、广发银行、华夏银行、CSDN、可口可乐等众多 B 端客户，及亿级 C 端用户。</p>
+<h3 id="38-dbpaas">3.8 dbPaaS</h3>
+<p><code class="highlighter-rouge">baPaaS</code>是管理平台即服务，<code class="highlighter-rouge">Business analytics PaaS</code>。</p>
+<h3 id="39-uipaas">3.9 UIPaaS</h3>
+<p><code class="highlighter-rouge">UIPaaS</code>是UI平台即服务，<code class="highlighter-rouge">User Interface PaaS</code>。产品界面设计与研发一站式解决方案。</p>
+
+<p>Happy coding .. :)</p>
+
+<h2 id="参考材料">参考材料</h2>
+<p><a href="https://www.bmc.com/blogs/saas-vs-paas-vs-iaas-whats-the-difference-and-how-to-choose">SaaS vs PaaS vs IaaS: What’s The Difference &amp; How To Choose</a></p>
+
+<p><a href="http://www.ruanyifeng.com/blog/2017/07/iaas-paas-saas.html">阮一峰的IaaS，PaaS，SaaS 的区别</a></p>
+
+<p><a href="https://blog.csdn.net/xianghongai/article/details/79572220">IaaS, PaaS, SaaS, BaaS, Faas</a></p>
+
+<p><a href="https://juejin.cn/post/6945992085963014157">iPaaS 和 aPaaS 的区别，以及 mPaaS，UIPaaS</a></p>
+
+<p><a href="https://juejin.cn/post/6945992085963014157">PaaS与数字中台大时代终到来</a></p>
+
+
+            </div>
+        </article>
+        <div class="cf"></div>
+        <div class="row text-center">
+            <section class="notepad-post-share">
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;IaaS、PaaS、SaaS、FaaS以及XPaaS大全&quot;%20https://raoenhui.github.io/paas/2021/07/08/XaaS/%20via%20&#64;raoenhui"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=https://raoenhui.github.io/paas/2021/07/08/XaaS/"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a class="google-icon" href="https://plus.google.com/share?url=https://raoenhui.github.io/paas/2021/07/08/XaaS/"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </section>
+        </div>
+        <div class="cf"></div>
+        
+            <div class="notepad-author-info">
+                <div class="row">
+                    <section class="notepad-post-author small-12 columns">
+                        
+                            <img src="https://raoenhui.github.io/images/logo.png" class="notepad-post-author-avatar" alt="前端妹子's photo">
+                        
+                        
+                            <span class="author-label">Author</span>
+                            <h1>前端妹子</h1>
+                        
+                        
+                            <p><a href="mailto:raoenhui@jd.com" class="author-website">raoenhui@jd.com</a>
+
+			   <!--  <iframe src="//www.facebook.com/plugins/follow?href=https%3A%2F%2Fwww.facebook.com%2Fameyjadiye&amp;layout=standard&amp;show_faces=true&amp;colorscheme=light&amp;width=450&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe>  -->
+             <!--      <iframe src="//www.facebook.com/plugins/follow?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100004203407645&amp;layout=standard&amp;show_faces=true&amp;colorscheme=light&amp;width=450&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe> -->
+             
+
+              <div class="fb-like" data-href="https://raoenhui.github.io/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+       <!--      <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1757816481112269";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+			    </p>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1757816481112269";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>-->
+<div class="fb-follow" data-href="https://www.facebook.com/raoenhui" data-width="200" data-height="100" data-layout="standard" data-show-faces="true"></div>
+                        
+                        
+                            <p>Programming is 1% knowledge, 2% ability and 97% getting the ability to work with the knowledge :)</p>
+                        
+                    </section>
+                </div>
+            </div>
+ 
+        
+        <div class="cf"></div>
+        
+        <section class="notepad-disqus row">
+    <div class="small-12 columns">
+        <h1 class="notepad-comments-header">Comments评论</h1>
+
+        <div id="disqus_thread"></div>
+        
+<!--
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = '饶恩慧'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+-->
+<!-- ice disqus https://raoenhui.disqus.com/admin/ start-->
+<!--<script>
+
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://raoenhui.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>-->
+<!-- ice disqus end-->
+
+<!-- ice gitment 评论 start-->
+ <!--    <div id="container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+// debugger
+var gitment = new Gitment({
+  id: location.pathname.split('/').reverse()[1], // 可选。默认为 location.href
+  owner: 'raoenhui',
+  repo: 'raoenhui.github.io',
+  oauth: {
+    client_id: 'bd88b9824048b133f7ed',
+    client_secret: '193c97904472a0e380b70dd990c46853f52881c7',
+    // client_id: '5548df3eca52697fac71',
+    // client_secret: '5b9480b7b3d4a49e22db3f29557380e2711bbcd9',
+  },
+})
+gitment.render('container')
+</script>-->
+<!-- ice gitment 评论 end-->
+<hr />
+
+<!-- ice facebook start-->
+ <!-- 
+<div class="fb-comments" data-href="https://raoenhui.github.io/paas/2021/07/08/XaaS/" data-num-posts="4" data-width="706" data-version="v2.3"></div>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1757816481112269";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script> -->
+<!-- ice facebook end-->
+
+<!-- 来必力 start https://livere.com/my_Livere-->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNTMzMC8xMTg2Ng==">
+    <script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+    </script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- 来必力 end-->
+
+        <br>
+        <p>也可直接在issue下评论
+            <a href="https://github.com/raoenhui/raoenhui.github.io/issues" target="_blank">https://github.com/raoenhui/raoenhui.github.io/issues</a>
+        </p>
+    </div>
+</section>
+
+        <div class="cf"></div>
+
+    <footer class="notepad-site-footer">
+    <div class="copyright">
+        <section>All content copyright <a href="https://raoenhui.github.io/about">前端妹子</a> &copy; 2021 &bull; All rights reserved.</section>
+	<!--<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>-->
+          <!--<a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>-->
+    </div>
+    <div class="social-icons">
+        
+        <!--
+        <a href="http://twitter.com/raoenhui">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="https://plus.google.com/u/0/+AmeyJadiye">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-google-plus fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="http://instagram.com/raoenhui">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-instagram fa-stack-1x"></i>
+            </span>
+        </a>
+        -->
+        
+        <a href="https://github.com/raoenhui" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+            <span style="position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0,0,0,0);border: 0;">Github</span>
+        </a>
+        
+        
+        <a href="https://facebook.com/raoenhui" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+            <span style="position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0,0,0,0);border: 0;">Facebook</span>
+        </a>
+        
+    </div>
+    
+    <div class="cf"></div>
+</footer>
+ 
+</main>    
+<script src="//apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+  window.jQuery || document.write('<script src="https://raoenhui.github.io/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')
+</script>
+<script src="https://raoenhui.github.io/assets/js/vendor/modernizr.js"></script>
+<script src="https://raoenhui.github.io/assets/js/foundation.min.js"></script>
+
+<script src="https://raoenhui.github.io/assets/js/notepad.js"></script>
+<script src="https://raoenhui.github.io/assets/js/scripts.min.js"></script>
+<script src="https://raoenhui.github.io/assets/js/vendor/nprogress.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/sigma.js/1.0.3/sigma.min.js"></script>-->
+<script src="//apps.bdimg.com/libs/sigma.js/0.1/sigma.min.js"></script>
+
+<script>
+  $(document).foundation();
+</script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+  ga('create', 'UA-46791108-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script>
+
+<script>
+  NProgress.start();
+  var timeNum = 0;
+  var interval = setInterval(function () {
+    NProgress.inc();
+    //如果大于60秒停止检测
+    /*if(timeNum>60){
+        clearInterval(interval);
+        NProgress.done();
+
+    }
+    timeNum++;*/
+  }, 1000);
+  jQuery(window).load(function () {
+    clearInterval(interval);
+    NProgress.done()
+  });
+  jQuery(window).unload(function () {
+    NProgress.start()
+  });
+</script>
+
+<!-- ice start-->
+<!--<script id="dsq-count-scr" src="//raoenhui.disqus.com/count.js" async></script>-->
+<script>
+  (function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+<!-- ice end-->
+
+
+<!-- 2d 前端妹子 start -->
+<!-- 萌萌哒二次元看板娘 -->
+<script src="https://l2dwidget.js.org/lib/L2Dwidget.min.js"></script>
+<script type="text/javascript">
+  L2Dwidget
+    .on('*', (name) => {
+      // console.log('%c EVENT ' + '%c -> ' + name, 'background: #222; color: yellow', 'background: #fff; color: #000')
+    })
+    .init({
+      dialog: {
+        // 开启对话框
+        enable: true,
+        script: {
+          // 当触摸到角色身体
+          'tap body': '哎呀！别碰我！',
+          // 当触摸到角色头部
+          'tap face': '人家是在认真写博客哦--前端妹子'
+        },
+        //下载模版地址：https://github.com/xiazeyu/live2d-widget-models.git
+        // "model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},
+        "mobile":{"show":true}
+      }
+    });
+</script>
+<style>
+  @media all and (max-width: 900px) {
+    #live2d-widget {
+      transform-origin: 100% 100% 0;
+      transform: scale(0.5);
+      -ms-transform: scale(0.5);
+      -moz-transform: scale(0.5);
+      -webkit-transform: scale(0.5);
+      -o-transform: scale(0.5);
+    }
+  }
+</style>
+<!-- 2d 前端妹子 end --> 
+</body>
+</html>

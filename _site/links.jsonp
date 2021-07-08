@@ -193,6 +193,11 @@ callback([
   {
     "text": "LowCode平台前端实战之投放素材中心",
     "href": "https://raoenhui.github.io/lowcode/2021/06/30/lowcode/"
+  } ,
+
+  {
+    "text": "IaaS、PaaS、SaaS、FaaS以及XPaaS大全",
+    "href": "https://raoenhui.github.io/paas/2021/07/08/XaaS/"
   } 
 
 ])
