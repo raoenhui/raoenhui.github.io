@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2021-07-08T17:56:26+05:30</updated>
+<updated>2021-07-12T14:16:09+05:30</updated>
 <id>https://raoenhui.github.io/</id>
 <author>
   <name>前端妹子</name>
@@ -54,7 +54,7 @@
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;FaaS&lt;/code&gt;是指函数即服务，&lt;code class=&quot;highlighter-rouge&quot;&gt;Function as a Service&lt;/code&gt;。无服务器计算，当前使用最广泛的是AWS的&lt;a href=&quot;https://aws.amazon.com/cn/lambda/&quot;&gt;Lambada&lt;/a&gt;。服务商提供一个平台，允许客户开发、运行和管理应用程序功能，而无需构建和维护通常与开发和启动应用程序相关的基础架构的复杂性。 按照此模型构建应用程序是实现“无服务器”体系结构的一种方式，通常在构建微服务应用程序时使用。&lt;/p&gt;
 
 &lt;h3 id=&quot;27-daas&quot;&gt;2.7 DaaS&lt;/h3&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;DaaS&lt;/code&gt;是指函数即服务，&lt;code class=&quot;highlighter-rouge&quot;&gt;Data as a Service&lt;/code&gt;。云端公司负责建立全部的IT环境，收集用户需要的基础数据并且做数据分析，最后对分析结构或者算法提供编程接口，让数据成为服务。&lt;code class=&quot;highlighter-rouge&quot;&gt;DaaS&lt;/code&gt;是大数据时代的象征，能做DaaS服务的云端公司需要从数据积累、数据分析和数据交付三方面积累自身的核心竞争力。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;DaaS&lt;/code&gt;是指数据即服务，&lt;code class=&quot;highlighter-rouge&quot;&gt;Data as a Service&lt;/code&gt;。云端公司负责建立全部的IT环境，收集用户需要的基础数据并且做数据分析，最后对分析结构或者算法提供编程接口，让数据成为服务。&lt;code class=&quot;highlighter-rouge&quot;&gt;DaaS&lt;/code&gt;是大数据时代的象征，能做DaaS服务的云端公司需要从数据积累、数据分析和数据交付三方面积累自身的核心竞争力。&lt;/p&gt;
 
 &lt;h3 id=&quot;28-naas&quot;&gt;2.8 NaaS&lt;/h3&gt;
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;NaaS&lt;/code&gt;是指网络即服务，&lt;code class=&quot;highlighter-rouge&quot;&gt;Network as a Service&lt;/code&gt;。在中国移动“5G+发布会”上，中国移动发布了网络即服务&lt;code class=&quot;highlighter-rouge&quot;&gt;（NaaS, Network as a Service）&lt;/code&gt;能力体系，,通过打造一个核心基石、六大创新能力，实现开放化的网络即服务。，从而为各行各业数字化转型升级注入“5G+”新动能，助力社会、经济高质量发展。&lt;/p&gt;
@@ -84,7 +84,7 @@ iPaaS 的特征是集成和打通平台。市场上的&lt;code class=&quot;highl
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mPaaS&lt;/code&gt;是移动平台即服务，&lt;code class=&quot;highlighter-rouge&quot;&gt;Mobile PaaS&lt;/code&gt;。
  &lt;code class=&quot;highlighter-rouge&quot;&gt;Mobile PaaS&lt;/code&gt;， &lt;code class=&quot;highlighter-rouge&quot;&gt;mPaaS&lt;/code&gt; 是源自于支付宝的移动开发平台，为移动开发、测试、运营及运维提供云到端的一站式解决方案。产品能力全面覆盖「跨端开发框架、研发协同、数字化运营、智能营销、后端连接」等场景，目前已服务 12306、上海地铁、广发银行、华夏银行、CSDN、可口可乐等众多 B 端客户，及亿级 C 端用户。&lt;/p&gt;
 &lt;h3 id=&quot;38-dbpaas&quot;&gt;3.8 dbPaaS&lt;/h3&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;baPaaS&lt;/code&gt;是管理平台即服务，&lt;code class=&quot;highlighter-rouge&quot;&gt;Business analytics PaaS&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dbPaaS&lt;/code&gt;是数据即服务，&lt;code class=&quot;highlighter-rouge&quot;&gt;Database Platform as a Service&lt;/code&gt;。&lt;/p&gt;
 &lt;h3 id=&quot;39-uipaas&quot;&gt;3.9 UIPaaS&lt;/h3&gt;
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;UIPaaS&lt;/code&gt;是UI平台即服务，&lt;code class=&quot;highlighter-rouge&quot;&gt;User Interface PaaS&lt;/code&gt;。产品界面设计与研发一站式解决方案。&lt;/p&gt;
 

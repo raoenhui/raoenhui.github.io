@@ -7,6 +7,8 @@ jekyll build --watch && jekyll serve --watch
 
 jekyll build && git add --all && git status
 
+git commit -m "feat: add XaaS article"
+
 git push origin master
 
 jekyll 3.4.0
