@@ -5,29 +5,119 @@
 
 <title type="text">前端妹子的博客</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="https://raoenhui.github.io/feed.xml" />
-<link rel="alternate" type="text/html" href="https://raoenhui.github.io/" />
-<updated>2021-07-12T14:16:09+05:30</updated>
-<id>https://raoenhui.github.io/</id>
+<link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
+<link rel="alternate" type="text/html" href="http://localhost:4000/" />
+<updated>2021-10-27T15:37:47+05:30</updated>
+<id>http://localhost:4000/</id>
 <author>
   <name>前端妹子</name>
-  <uri>https://raoenhui.github.io/</uri>
+  <uri>http://localhost:4000/</uri>
   <email>raoenhui@jd.com</email>
 </author>
 
 
 <entry>
+  <title type="html"><![CDATA[iPaaS京东零售之列表解决方案Drip-Table]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/lowcode/2021/10/27/table/"/>
+  <id>http://localhost:4000/lowcode/2021/10/27/table</id>
+  <published>2021-10-27T22:07:00+05:30</published>
+  <updated>2021-10-27T22:07:00+05:30</updated>
+  <author>
+    <name>前端妹子</name>
+    <uri>http://localhost:4000</uri>
+    <email>raoenhui@jd.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#LowCode" term="LowCode" />
+  <content type="html">
+  
+    &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;根据全球领先的信息技术研究和顾问公司&lt;a href=&quot;https://www.gartner.com/en&quot;&gt;Gartner&lt;/a&gt;的最新预测，2021年全球IT支出将达到&lt;a href=&quot;https://www.gartner.com/cn/newsroom/press-releases/gartner_2021_it_4&quot;&gt;4万亿美元&lt;/a&gt;。那么中国作为亚太地区的经济大国与IT强国，中国的应用开发市场将会引来一个爆发期，未来几年内的增速都会超过全球平均水平。而大部分应用都离不开列表。随着列表类型越来越多，复杂多样，研发资源有限的，现有开发模式已难以满足日益增长的需求。因此京东推出一种通过&lt;code class=&quot;highlighter-rouge&quot;&gt;LowCode&lt;/code&gt;实现搭建&lt;code class=&quot;highlighter-rouge&quot;&gt;web&lt;/code&gt;列表的技术方案&lt;code class=&quot;highlighter-rouge&quot;&gt;Drip-Table&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h2 id=&quot;何时使用&quot;&gt;何时使用&lt;/h2&gt;
+&lt;p&gt;1、无编程基础的用户想搭建自定义表格应用。
+2、开发者高效创建表格，定制化需求可通过少量代码实现。&lt;/p&gt;
+
+&lt;h2 id=&quot;使用案例&quot;&gt;使用案例&lt;/h2&gt;
+&lt;p&gt;打开&lt;a href=&quot;http://drip-table.jd.com/drip-table-generator/preview/&quot;&gt;Drip-Table案例&lt;/a&gt;即可视化搭建表格。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img12.360buyimg.com/imagetools/jfs/t1/217829/14/2022/830148/6178c696E8f80672a/96acae2fa9c71d15.gif&quot; alt=&quot;driptable基础组件.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;表格搭建流程&quot;&gt;表格搭建流程&lt;/h2&gt;
+&lt;p&gt;整体流程为: 使用&lt;code class=&quot;highlighter-rouge&quot;&gt;Drip-Table-Generator&lt;/code&gt;可视化搭建工具搭建表格，配置组件属性，如果不能满足业务场景，配置自定义组件，然后在线编写带嵌入模板数据的渲染逻辑，最后生成&lt;code class=&quot;highlighter-rouge&quot;&gt;JSON Schema&lt;/code&gt;协议数据。通过&lt;code class=&quot;highlighter-rouge&quot;&gt;Drip-Table&lt;/code&gt;渲染器动态渲染表格，最终实现业务方不经过开发，可直接完成表格相关业务需求。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img11.360buyimg.com/imagetools/jfs/t1/160981/31/22710/82200/6178c695Eadf1aaaf/9cd53dcfb195054b.png&quot; alt=&quot;搭建流程.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;drip-table-generator&quot;&gt;Drip-Table-Generator&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Drip-Table-Generator&lt;/code&gt;是一种可视化搭建列表解决方案。&lt;/p&gt;
+&lt;h3 id=&quot;drip-table-generator的基础能力&quot;&gt;Drip-Table-Generator的基础能力&lt;/h3&gt;
+&lt;p&gt;那么一个好的可视化搭建列表方案需要具备哪些基础能力呢。主要包含以下5点：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img10.360buyimg.com/imagetools/jfs/t1/212489/19/2014/125804/6178c694E981b3fe8/d017318a4e58f800.png&quot; alt=&quot;基础能力.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;1html-tree编辑-样式编辑&quot;&gt;1.HTML Tree 编辑 （样式编辑）&lt;/h5&gt;
+&lt;p&gt;编辑页面可见元素, 能自由修改页面结构样式&lt;/p&gt;
+&lt;h5 id=&quot;2component-tree编辑-组件编辑&quot;&gt;2.Component Tree 编辑 （组件编辑）&lt;/h5&gt;
+&lt;p&gt;组件列表中选择组件, 通过拖拉的方式嵌入到页面中&lt;/p&gt;
+&lt;h5 id=&quot;3custom-development-定制开发&quot;&gt;3.Custom Development （定制开发）&lt;/h5&gt;
+&lt;p&gt;研发可介入开发自定义组件,满足定制化的场景&lt;/p&gt;
+&lt;h5 id=&quot;4data编辑-数据编辑&quot;&gt;4.Data 编辑 （数据编辑）&lt;/h5&gt;
+&lt;p&gt;可视化的编辑页面的 数据部分, 如文本、URL&lt;/p&gt;
+&lt;h5 id=&quot;5dynamic-logic编辑-逻辑编辑&quot;&gt;5、Dynamic Logic 编辑 （逻辑编辑）&lt;/h5&gt;
+&lt;p&gt;可自由添加业务判断逻辑的能力,如校验规则&lt;/p&gt;
+
+&lt;h3 id=&quot;列表组件以及配置&quot;&gt;列表组件以及配置&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img11.360buyimg.com/imagetools/jfs/t1/155833/22/21930/102575/6178c694E017a293f/827a7b22ed901d38.png&quot; alt=&quot;组件以及配置.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;基础组件&quot;&gt;基础组件&lt;/h4&gt;
+&lt;p&gt;基础组件为列表常用通用组件，包含文本、图文、标签等组件。&lt;/p&gt;
+&lt;h4 id=&quot;业务组件&quot;&gt;业务组件&lt;/h4&gt;
+&lt;p&gt;业务组件通常只服务于特定业务，研发可以根据Drip-table-generator暴露的API方法，添加定制化业务组件。&lt;/p&gt;
+&lt;h4 id=&quot;自定义组件&quot;&gt;自定义组件&lt;/h4&gt;
+&lt;p&gt;自定义组件解决了无法操作数据字段以及无法校验语法和逻辑的问题。搭建工具或者通过在线代码编辑器允许用户编写&lt;code class=&quot;highlighter-rouge&quot;&gt;LowCode&lt;/code&gt;代码生成业务组件，然后进行语法检查，还能利用预览功能进行业务逻辑校验；另外，代码编辑器支持通过嵌套模板来进行数据操作。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img10.360buyimg.com/imagetools/jfs/t1/215022/5/2056/338885/6178c695Ec997819b/757a254824b5403f.gif&quot; alt=&quot;driptable自定义.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;定义json-schema协议&quot;&gt;定义Json Schema协议&lt;/h2&gt;
+&lt;p&gt;采用国际规范(Understanding JSON Schema)，定义了全局以及列表项的Json数据格式。通过配置项，我们可以决定开启或关闭某些功能，或者设置表格样式等。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img11.360buyimg.com/imagetools/jfs/t1/223161/13/197/275087/6178c694E9c51628c/2eaae6aa1519fd07.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;drip-table&quot;&gt;Drip-Table&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Drip-Table&lt;/code&gt;是一种基于&lt;code class=&quot;highlighter-rouge&quot;&gt;Json Schema&lt;/code&gt; 的渲染动态列表解决方案。
+架构主要分为四块JSON Schema定义，分别为Columns schema、Configs Schema、LifeCycle、EventCallback。还支持Drip-design和Antd-design主题包。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img13.360buyimg.com/imagetools/jfs/t1/198311/33/14798/179638/6178c693E637d25d9/42a4c8f3820ef884.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;成功案例&quot;&gt;成功案例&lt;/h2&gt;
+&lt;h5 id=&quot;京东投放平台&quot;&gt;京东投放平台&lt;/h5&gt;
+&lt;p&gt;&lt;img src=&quot;https://img11.360buyimg.com/imagetools/jfs/t1/213162/13/2052/191507/6178c693Ef27fed0a/42a2f68780c7558e.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;h5 id=&quot;drip-works平台&quot;&gt;Drip Works平台&lt;/h5&gt;
+&lt;p&gt;&lt;img src=&quot;https://img11.360buyimg.com/imagetools/jfs/t1/206778/10/7067/46836/6178c693E12e19701/90f4b7ce9f6f6eb5.jpg&quot; alt=&quot;image.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;参考材料&quot;&gt;参考材料&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;http://json-schema.org&quot;&gt;JSON Schema&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/lowcode/2021/10/27/table/&quot;&gt;iPaaS京东零售之列表解决方案Drip-Table&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on October 27, 2021.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
   <title type="html"><![CDATA[IaaS、PaaS、SaaS、FaaS以及XPaaS大全]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/paas/2021/07/08/XaaS/"/>
-  <id>https://raoenhui.github.io/paas/2021/07/08/XaaS</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/paas/2021/07/08/XaaS/"/>
+  <id>http://localhost:4000/paas/2021/07/08/XaaS</id>
   <published>2021-07-08T22:07:00+05:30</published>
   <updated>2021-07-08T22:07:00+05:30</updated>
   <author>
     <name>前端妹子</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>raoenhui@jd.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#PaaS" term="PaaS" />
+  <category scheme="http://localhost:4000/tags/#PaaS" term="PaaS" />
   <content type="html">
   
     &lt;h2 id=&quot;一aas&quot;&gt;一、aaS&lt;/h2&gt;
@@ -103,22 +193,22 @@ iPaaS 的特征是集成和打通平台。市场上的&lt;code class=&quot;highl
 
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/paas/2021/07/08/XaaS/&quot;&gt;IaaS、PaaS、SaaS、FaaS以及XPaaS大全&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on July 08, 2021.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/paas/2021/07/08/XaaS/&quot;&gt;IaaS、PaaS、SaaS、FaaS以及XPaaS大全&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on July 08, 2021.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[LowCode平台前端实战之投放素材中心]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/lowcode/2021/06/30/lowcode/"/>
-  <id>https://raoenhui.github.io/lowcode/2021/06/30/lowcode</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/lowcode/2021/06/30/lowcode/"/>
+  <id>http://localhost:4000/lowcode/2021/06/30/lowcode</id>
   <published>2021-06-30T22:07:00+05:30</published>
   <updated>2021-06-30T22:07:00+05:30</updated>
   <author>
     <name>前端妹子</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>raoenhui@jd.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#LowCode" term="LowCode" />
+  <category scheme="http://localhost:4000/tags/#LowCode" term="LowCode" />
   <content type="html">
   
     &lt;h2 id=&quot;why为什么要用lowcode&quot;&gt;Why：为什么要用LowCode&lt;/h2&gt;
@@ -206,22 +296,22 @@ iPaaS 的特征是集成和打通平台。市场上的&lt;code class=&quot;highl
 &lt;p&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/uMprW-dglk9SD_X_MV5CSQ&quot;&gt;iPaaS京东零售前台研发标准和赋能方案&lt;/a&gt;&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/lowcode/2021/06/30/lowcode/&quot;&gt;LowCode平台前端实战之投放素材中心&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on June 30, 2021.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/lowcode/2021/06/30/lowcode/&quot;&gt;LowCode平台前端实战之投放素材中心&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on June 30, 2021.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[H5动画实战浅析]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/react/2021/01/02/animation/"/>
-  <id>https://raoenhui.github.io/react/2021/01/02/animation</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/react/2021/01/02/animation/"/>
+  <id>http://localhost:4000/react/2021/01/02/animation</id>
   <published>2021-01-02T22:07:00+05:30</published>
   <updated>2021-01-02T22:07:00+05:30</updated>
   <author>
     <name>前端妹子</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>raoenhui@jd.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#React" term="React" />
+  <category scheme="http://localhost:4000/tags/#React" term="React" />
   <content type="html">
   
     &lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
@@ -521,22 +611,22 @@ iPaaS 的特征是集成和打通平台。市场上的&lt;code class=&quot;highl
 &lt;p&gt;&lt;a href=&quot;http://www.createjs.cc/src/docs/tweenjs/classes/CSSPlugin.html&quot;&gt;http://www.createjs.cc/src/docs/tweenjs/classes/CSSPlugin.html&lt;/a&gt;&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/react/2021/01/02/animation/&quot;&gt;H5动画实战浅析&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on January 02, 2021.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/react/2021/01/02/animation/&quot;&gt;H5动画实战浅析&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on January 02, 2021.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[React Router源码分析]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/react/2020/06/08/reactRouter/"/>
-  <id>https://raoenhui.github.io/react/2020/06/08/reactRouter</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/react/2020/06/08/reactRouter/"/>
+  <id>http://localhost:4000/react/2020/06/08/reactRouter</id>
   <published>2020-06-08T22:07:00+05:30</published>
   <updated>2020-06-08T22:07:00+05:30</updated>
   <author>
     <name>前端妹子</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>raoenhui@jd.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#React" term="React" />
+  <category scheme="http://localhost:4000/tags/#React" term="React" />
   <content type="html">
   
     &lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
@@ -722,22 +812,22 @@ iPaaS 的特征是集成和打通平台。市场上的&lt;code class=&quot;highl
 &lt;p&gt;&lt;a href=&quot;https://codepen.io/huihui/pen/qBbOajM&quot;&gt;Change URL without refreshing page&lt;/a&gt;&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/react/2020/06/08/reactRouter/&quot;&gt;React Router源码分析&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on June 08, 2020.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/react/2020/06/08/reactRouter/&quot;&gt;React Router源码分析&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on June 08, 2020.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[移动端自动播放视频之TS视频]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/react/2020/05/08/ts/"/>
-  <id>https://raoenhui.github.io/react/2020/05/08/ts</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/react/2020/05/08/ts/"/>
+  <id>http://localhost:4000/react/2020/05/08/ts</id>
   <published>2020-05-08T22:07:00+05:30</published>
   <updated>2020-05-08T22:07:00+05:30</updated>
   <author>
     <name>前端妹子</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>raoenhui@jd.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#video" term="video" />
+  <category scheme="http://localhost:4000/tags/#video" term="video" />
   <content type="html">
   
     &lt;h2 id=&quot;ts简介&quot;&gt;ts简介&lt;/h2&gt;
@@ -882,22 +972,22 @@ iPaaS 的特征是集成和打通平台。市场上的&lt;code class=&quot;highl
 &lt;/blockquote&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/react/2020/05/08/ts/&quot;&gt;移动端自动播放视频之TS视频&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on May 08, 2020.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/react/2020/05/08/ts/&quot;&gt;移动端自动播放视频之TS视频&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on May 08, 2020.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[如何关闭Amazon AWS上服务器]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/vpn/2020/04/26/rm-aws/"/>
-  <id>https://raoenhui.github.io/vpn/2020/04/26/rm-aws</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/vpn/2020/04/26/rm-aws/"/>
+  <id>http://localhost:4000/vpn/2020/04/26/rm-aws</id>
   <published>2020-04-26T08:07:00+05:30</published>
   <updated>2020-04-26T08:07:00+05:30</updated>
   <author>
     <name>前端妹子</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>raoenhui@jd.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#VPN" term="VPN" />
+  <category scheme="http://localhost:4000/tags/#VPN" term="VPN" />
   <content type="html">
   
     &lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
@@ -960,22 +1050,22 @@ iPaaS 的特征是集成和打通平台。市场上的&lt;code class=&quot;highl
 &lt;/blockquote&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/vpn/2020/04/26/rm-aws/&quot;&gt;如何关闭Amazon AWS上服务器&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on April 26, 2020.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/vpn/2020/04/26/rm-aws/&quot;&gt;如何关闭Amazon AWS上服务器&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on April 26, 2020.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[jekyll在mac下安装和运行指南]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/blog/2020/02/26/jekyll/"/>
-  <id>https://raoenhui.github.io/blog/2020/02/26/jekyll</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/blog/2020/02/26/jekyll/"/>
+  <id>http://localhost:4000/blog/2020/02/26/jekyll</id>
   <published>2020-02-26T08:07:00+05:30</published>
   <updated>2020-02-26T08:07:00+05:30</updated>
   <author>
     <name>前端妹子</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>raoenhui@jd.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#blog" term="blog" />
+  <category scheme="http://localhost:4000/tags/#blog" term="blog" />
   <content type="html">
   
     &lt;h3 id=&quot;安装命令&quot;&gt;安装命令&lt;/h3&gt;
@@ -1048,22 +1138,22 @@ bundle &lt;span class=&quot;nb&quot;&gt;install
 &lt;p&gt;&lt;a href=&quot;http://jekyllthemes.org/page19/&quot;&gt;http://jekyllthemes.org/page19/&lt;/a&gt;&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/blog/2020/02/26/jekyll/&quot;&gt;jekyll在mac下安装和运行指南&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on February 26, 2020.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/blog/2020/02/26/jekyll/&quot;&gt;jekyll在mac下安装和运行指南&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on February 26, 2020.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Git message规范Change log编写指南]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/git/2020/02/25/changelog/"/>
-  <id>https://raoenhui.github.io/git/2020/02/25/changelog</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/git/2020/02/25/changelog/"/>
+  <id>http://localhost:4000/git/2020/02/25/changelog</id>
   <published>2020-02-25T08:07:00+05:30</published>
   <updated>2020-02-25T08:07:00+05:30</updated>
   <author>
     <name>前端妹子</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>raoenhui@jd.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#git" term="git" />
+  <category scheme="http://localhost:4000/tags/#git" term="git" />
   <content type="html">
   
     &lt;p&gt;本文案例为&lt;a href=&quot;https://github.com/raoenhui/react-example/tree/changelog&quot;&gt;https://github.com/raoenhui/react-example/tree/changelog&lt;/a&gt;，欢迎下载查看。&lt;/p&gt;
@@ -1225,22 +1315,22 @@ commitizen init cz-conventional-changelog &lt;span class=&quot;nt&quot;&gt;-D&lt
 
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/git/2020/02/25/changelog/&quot;&gt;Git message规范Change log编写指南&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on February 25, 2020.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/git/2020/02/25/changelog/&quot;&gt;Git message规范Change log编写指南&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on February 25, 2020.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[小程序swiper下拉判断是否拉到底部]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/wechat/2019/12/31/swiper/"/>
-  <id>https://raoenhui.github.io/wechat/2019/12/31/swiper</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/wechat/2019/12/31/swiper/"/>
+  <id>http://localhost:4000/wechat/2019/12/31/swiper</id>
   <published>2019-12-31T08:07:00+05:30</published>
   <updated>2019-12-31T08:07:00+05:30</updated>
   <author>
     <name>前端妹子</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>raoenhui@jd.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#Wechat" term="Wechat" />
+  <category scheme="http://localhost:4000/tags/#Wechat" term="Wechat" />
   <content type="html">
   
     &lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
@@ -1286,22 +1376,22 @@ commitizen init cz-conventional-changelog &lt;span class=&quot;nt&quot;&gt;-D&lt
 
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/wechat/2019/12/31/swiper/&quot;&gt;小程序swiper下拉判断是否拉到底部&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on December 31, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/wechat/2019/12/31/swiper/&quot;&gt;小程序swiper下拉判断是否拉到底部&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on December 31, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[请收下超萌的web装饰 卡通看板娘]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/js/2019/12/26/live2d/"/>
-  <id>https://raoenhui.github.io/js/2019/12/26/live2d</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/js/2019/12/26/live2d/"/>
+  <id>http://localhost:4000/js/2019/12/26/live2d</id>
   <published>2019-12-26T22:07:00+05:30</published>
   <updated>2019-12-26T22:07:00+05:30</updated>
   <author>
     <name>前端妹子</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>raoenhui@jd.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#Js" term="Js" />
+  <category scheme="http://localhost:4000/tags/#Js" term="Js" />
   <content type="html">
   
     &lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
@@ -1438,22 +1528,22 @@ commitizen init cz-conventional-changelog &lt;span class=&quot;nt&quot;&gt;-D&lt
 
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/js/2019/12/26/live2d/&quot;&gt;请收下超萌的web装饰 卡通看板娘&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on December 26, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/js/2019/12/26/live2d/&quot;&gt;请收下超萌的web装饰 卡通看板娘&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on December 26, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[React Hooks与setInterval]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/react/2019/11/07/hooksSetinterval/"/>
-  <id>https://raoenhui.github.io/react/2019/11/07/hooksSetinterval</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/react/2019/11/07/hooksSetinterval/"/>
+  <id>http://localhost:4000/react/2019/11/07/hooksSetinterval</id>
   <published>2019-11-07T16:07:00+05:30</published>
   <updated>2019-11-07T16:07:00+05:30</updated>
   <author>
     <name>前端妹子</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>raoenhui@jd.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#Js" term="Js" /><category scheme="https://raoenhui.github.io/tags/#React" term="React" />
+  <category scheme="http://localhost:4000/tags/#Js" term="Js" /><category scheme="http://localhost:4000/tags/#React" term="React" />
   <content type="html">
   
     &lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
@@ -1660,22 +1750,22 @@ commitizen init cz-conventional-changelog &lt;span class=&quot;nt&quot;&gt;-D&lt
 
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/react/2019/11/07/hooksSetinterval/&quot;&gt;React Hooks与setInterval&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on November 07, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/react/2019/11/07/hooksSetinterval/&quot;&gt;React Hooks与setInterval&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on November 07, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[google adsense 添加自动广告]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/js/2019/09/03/googleAd/"/>
-  <id>https://raoenhui.github.io/js/2019/09/03/googleAd</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/js/2019/09/03/googleAd/"/>
+  <id>http://localhost:4000/js/2019/09/03/googleAd</id>
   <published>2019-09-03T09:07:00+05:30</published>
   <updated>2019-09-03T09:07:00+05:30</updated>
   <author>
     <name>前端妹子</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>raoenhui@jd.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#Js" term="Js" /><category scheme="https://raoenhui.github.io/tags/#Es6" term="Es6" />
+  <category scheme="http://localhost:4000/tags/#Js" term="Js" /><category scheme="http://localhost:4000/tags/#Es6" term="Es6" />
   <content type="html">
   
     &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
@@ -1739,22 +1829,22 @@ commitizen init cz-conventional-changelog &lt;span class=&quot;nt&quot;&gt;-D&lt
 
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/js/2019/09/03/googleAd/&quot;&gt;google adsense 添加自动广告&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on September 03, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/js/2019/09/03/googleAd/&quot;&gt;google adsense 添加自动广告&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on September 03, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[this为什么会为undefined?]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/js/2019/08/15/this/"/>
-  <id>https://raoenhui.github.io/js/2019/08/15/this</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/js/2019/08/15/this/"/>
+  <id>http://localhost:4000/js/2019/08/15/this</id>
   <published>2019-08-15T19:07:00+05:30</published>
   <updated>2019-08-15T19:07:00+05:30</updated>
   <author>
     <name>前端妹子</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>raoenhui@jd.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#Js" term="Js" /><category scheme="https://raoenhui.github.io/tags/#Es6" term="Es6" />
+  <category scheme="http://localhost:4000/tags/#Js" term="Js" /><category scheme="http://localhost:4000/tags/#Es6" term="Es6" />
   <content type="html">
   
     &lt;h3 id=&quot;一前言&quot;&gt;一、前言&lt;/h3&gt;
@@ -1867,22 +1957,22 @@ commitizen init cz-conventional-changelog &lt;span class=&quot;nt&quot;&gt;-D&lt
 
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/js/2019/08/15/this/&quot;&gt;this为什么会为undefined?&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on August 15, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/js/2019/08/15/this/&quot;&gt;this为什么会为undefined?&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on August 15, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[微信小程序开发注意指南和优化实践]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/wechat/2019/06/18/miniapp/"/>
-  <id>https://raoenhui.github.io/wechat/2019/06/18/miniapp</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/wechat/2019/06/18/miniapp/"/>
+  <id>http://localhost:4000/wechat/2019/06/18/miniapp</id>
   <published>2019-06-18T21:07:00+05:30</published>
   <updated>2019-06-18T21:07:00+05:30</updated>
   <author>
     <name>前端妹子</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>raoenhui@jd.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#Wechat" term="Wechat" />
+  <category scheme="http://localhost:4000/tags/#Wechat" term="Wechat" />
   <content type="html">
   
     &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
@@ -2083,22 +2173,22 @@ wxss 覆盖率较低，有些动画样式比如&lt;code class=&quot;highlighter-
 
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/wechat/2019/06/18/miniapp/&quot;&gt;微信小程序开发注意指南和优化实践&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on June 18, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/wechat/2019/06/18/miniapp/&quot;&gt;微信小程序开发注意指南和优化实践&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on June 18, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Https在各种Web服务器下配置]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/nodejs/2019/06/04/https/"/>
-  <id>https://raoenhui.github.io/nodejs/2019/06/04/https</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/nodejs/2019/06/04/https/"/>
+  <id>http://localhost:4000/nodejs/2019/06/04/https</id>
   <published>2019-06-04T22:07:00+05:30</published>
   <updated>2019-06-04T22:07:00+05:30</updated>
   <author>
     <name>前端妹子</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>raoenhui@jd.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#Nodejs" term="Nodejs" />
+  <category scheme="http://localhost:4000/tags/#Nodejs" term="Nodejs" />
   <content type="html">
   
     &lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
@@ -2261,22 +2351,22 @@ server.js里面判断如果没有证书和密钥，则用&lt;code class=&quot;hi
 
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/nodejs/2019/06/04/https/&quot;&gt;Https在各种Web服务器下配置&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on June 04, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/nodejs/2019/06/04/https/&quot;&gt;Https在各种Web服务器下配置&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on June 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[react-router中的exact和strict]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/react/2019/05/04/exact-strict/"/>
-  <id>https://raoenhui.github.io/react/2019/05/04/exact-strict</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/react/2019/05/04/exact-strict/"/>
+  <id>http://localhost:4000/react/2019/05/04/exact-strict</id>
   <published>2019-05-04T22:07:00+05:30</published>
   <updated>2019-05-04T22:07:00+05:30</updated>
   <author>
     <name>前端妹子</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>raoenhui@jd.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#React" term="React" />
+  <category scheme="http://localhost:4000/tags/#React" term="React" />
   <content type="html">
   
     &lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
@@ -2323,22 +2413,22 @@ https://reacttraining.com/blog/react-router-v5/&lt;/p&gt;
 
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/react/2019/05/04/exact-strict/&quot;&gt;react-router中的exact和strict&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on May 04, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/react/2019/05/04/exact-strict/&quot;&gt;react-router中的exact和strict&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on May 04, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[假设最后一个css元素是html标签，则选择器解析从左往右的提案]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/css/2019/03/30/left-to-right/"/>
-  <id>https://raoenhui.github.io/css/2019/03/30/left-to-right</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/css/2019/03/30/left-to-right/"/>
+  <id>http://localhost:4000/css/2019/03/30/left-to-right</id>
   <published>2019-03-30T16:00:00+05:30</published>
   <updated>2019-03-30T16:00:00+05:30</updated>
   <author>
     <name>前端妹子</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>raoenhui@jd.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#Css" term="Css" />
+  <category scheme="http://localhost:4000/tags/#Css" term="Css" />
   <content type="html">
   
     &lt;h2 id=&quot;现状&quot;&gt;现状&lt;/h2&gt;
@@ -2406,22 +2496,22 @@ https://reacttraining.com/blog/react-router-v5/&lt;/p&gt;
 &lt;p&gt;Happy coding .. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/css/2019/03/30/left-to-right/&quot;&gt;假设最后一个css元素是html标签，则选择器解析从左往右的提案&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on March 30, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/css/2019/03/30/left-to-right/&quot;&gt;假设最后一个css元素是html标签，则选择器解析从左往右的提案&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on March 30, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[gulp插件解决浏览器缓存问题]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/js/2019/03/03/gulp/"/>
-  <id>https://raoenhui.github.io/js/2019/03/03/gulp</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/js/2019/03/03/gulp/"/>
+  <id>http://localhost:4000/js/2019/03/03/gulp</id>
   <published>2019-03-03T22:00:00+05:30</published>
   <updated>2019-03-03T22:00:00+05:30</updated>
   <author>
     <name>前端妹子</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>raoenhui@jd.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#Js" term="Js" />
+  <category scheme="http://localhost:4000/tags/#Js" term="Js" />
   <content type="html">
   
     &lt;h2 id=&quot;一前言&quot;&gt;一、前言&lt;/h2&gt;
@@ -2602,22 +2692,22 @@ https://reacttraining.com/blog/react-router-v5/&lt;/p&gt;
 &lt;p&gt;Happy coding .. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/js/2019/03/03/gulp/&quot;&gt;gulp插件解决浏览器缓存问题&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on March 03, 2019.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/js/2019/03/03/gulp/&quot;&gt;gulp插件解决浏览器缓存问题&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on March 03, 2019.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Intersection observer检测元素是否在视窗内]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/js/2019/01/03/IntersectionObserver/"/>
-  <id>https://raoenhui.github.io/js/2019/01/03/IntersectionObserver</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/js/2019/01/03/IntersectionObserver/"/>
+  <id>http://localhost:4000/js/2019/01/03/IntersectionObserver</id>
   <published>2019-01-03T23:00:00+05:30</published>
   <updated>2019-01-03T23:00:00+05:30</updated>
   <author>
     <name>前端妹子</name>
-    <uri>https://raoenhui.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>raoenhui@jd.com</email>
   </author>
-  <category scheme="https://raoenhui.github.io/tags/#Js" term="Js" />
+  <category scheme="http://localhost:4000/tags/#Js" term="Js" />
   <content type="html">
   
     &lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
@@ -2720,182 +2810,7 @@ https://reacttraining.com/blog/react-router-v5/&lt;/p&gt;
 &lt;p&gt;Happy coding .. :)&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/js/2019/01/03/IntersectionObserver/&quot;&gt;Intersection observer检测元素是否在视窗内&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on January 03, 2019.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[慎用try catch]]></title>
-  <link rel="alternate" type="text/html" href="https://raoenhui.github.io/js/2018/12/16/tryCatch/"/>
-  <id>https://raoenhui.github.io/js/2018/12/16/tryCatch</id>
-  <published>2018-12-16T22:00:00+05:30</published>
-  <updated>2018-12-16T22:00:00+05:30</updated>
-  <author>
-    <name>前端妹子</name>
-    <uri>https://raoenhui.github.io</uri>
-    <email>raoenhui@jd.com</email>
-  </author>
-  <category scheme="https://raoenhui.github.io/tags/#Js" term="Js" />
-  <content type="html">
-  
-    &lt;h3 id=&quot;前言&quot;&gt;前言&lt;/h3&gt;
-&lt;p&gt;自从ECMA-262第3版引入了&lt;code class=&quot;highlighter-rouge&quot;&gt;try catch&lt;/code&gt;语句，作为JavaScript中处理异常的一种标准方式。基本的语法如下所示。&lt;/p&gt;
-
-&lt;h3 id=&quot;一try-catch基本语法&quot;&gt;一、try catch基本语法&lt;/h3&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//可能会导致错误的代码&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//在错误发生时怎么处理&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;finally&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-     &lt;span class=&quot;c1&quot;&gt;//即使报错始终执行&lt;/span&gt;
- &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;二try-catch特点&quot;&gt;二、try catch特点&lt;/h3&gt;
-
-&lt;h5 id=&quot;1try-catch耗性能&quot;&gt;1.try catch耗性能&lt;/h5&gt;
-
-&lt;h5 id=&quot;11-try-catch耗性能原理&quot;&gt;1.1 try catch耗性能原理&lt;/h5&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.ecma-international.org/ecma-262/6.0/#sec-try-statement-static-semantics-varscopeddeclarations&quot;&gt;ECMAScript 2015 -The try Statement&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.ecma-international.org/ecma-262/6.0/#sec-try-statement-static-semantics-vardeclarednames&quot; title=&quot;link to this section&quot;&gt;13.15.5&lt;/a&gt; Static Semantics: VarDeclaredNames&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;TryStatement : try Block Catch Finally&lt;/li&gt;
-  &lt;li&gt;1.Let names be VarDeclaredNames of Block.&lt;/li&gt;
-  &lt;li&gt;2.Append to names the elements of the VarDeclaredNames of Catch.&lt;/li&gt;
-  &lt;li&gt;3.Append to names the elements of the VarDeclaredNames of Finally.&lt;/li&gt;
-  &lt;li&gt;4.Return names.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.ecma-international.org/ecma-262/6.0/#sec-try-statement-static-semantics-varscopeddeclarations&quot; title=&quot;link to this section&quot;&gt;13.15.6&lt;/a&gt; Static Semantics: VarScopedDeclarations&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;TryStatement : try Block Catch Finally&lt;/li&gt;
-  &lt;li&gt;1.Let declarations be VarScopedDeclarations of Block.&lt;/li&gt;
-  &lt;li&gt;2.Append to declarations the elements of the VarScopedDeclarations of Catch.&lt;/li&gt;
-  &lt;li&gt;3.Append to declarations the elements of the VarScopedDeclarations of Finally.&lt;/li&gt;
-  &lt;li&gt;4.Return declarations.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;根据上面&lt;a href=&quot;https://www.ecma-international.org/ecma-262/6.0&quot;&gt;ECMAScript&lt;/a&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;文档的&lt;/code&gt;13.15.5&lt;code class=&quot;highlighter-rouge&quot;&gt;和&lt;/code&gt;13.15.6`。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;下面仅为本妹子自己的翻译理解，仅供参考&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;上面大概说运行&lt;code class=&quot;highlighter-rouge&quot;&gt;try catch&lt;/code&gt;时，需要将当前的词法环境和作用域全部分别添加到&lt;code class=&quot;highlighter-rouge&quot;&gt;catch&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;Finally&lt;/code&gt;所要执行的代码块中。从上可以推断出&lt;code class=&quot;highlighter-rouge&quot;&gt;try catch&lt;/code&gt;是消耗性能的。&lt;/p&gt;
-
-&lt;h5 id=&quot;12-try-catch耗性能实验&quot;&gt;1.2 try catch耗性能实验&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/9902136-1df0bee220c7aadb?imageMogr2/auto-orient/strip&quot; alt=&quot;webwxgetmsgimg.jpeg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;下面我用&lt;code class=&quot;highlighter-rouge&quot;&gt;Chrome62&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;IE9&lt;/code&gt;分别添加多个&lt;code class=&quot;highlighter-rouge&quot;&gt;try catch&lt;/code&gt;,进行对比实验，虽然，很想抛弃&lt;code class=&quot;highlighter-rouge&quot;&gt;万恶的IE&lt;/code&gt;，但是很多国内的产品不答应呀，除非我们去健身房再多练练，打一架，嘿嘿～～
-1.2.1 实验数据：&lt;/p&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//没有加try catch&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-     &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}())&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//有try catch&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;finally&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}())&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;1.2.2 实验结果：
-&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/9902136-78857d903038a84d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;chrome62-simple.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/9902136-ff46791595f72bc5?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;IE11-simple.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/9902136-4341796d2474eb1f?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;chrome62-more.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/9902136-de5acf017224cb21?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;IE11-more.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;1.2.3 实验链接：&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://jsperf.com/test-try-catch3&quot;&gt;https://jsperf.com/test-try-catch3&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://jsperf.com/test-try-catch&quot;&gt;https://jsperf.com/test-try-catch&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;上面实验数据对比得知，&lt;code class=&quot;highlighter-rouge&quot;&gt;try catch&lt;/code&gt;会消耗性能，但是&lt;code class=&quot;highlighter-rouge&quot;&gt;try catch&lt;/code&gt;对&lt;code class=&quot;highlighter-rouge&quot;&gt;Chrome&lt;/code&gt;的影响比&lt;code class=&quot;highlighter-rouge&quot;&gt;IE11&lt;/code&gt;小很多,据说是V8引擎新的编译器&lt;code class=&quot;highlighter-rouge&quot;&gt;TurboFan &lt;/code&gt;起到的作用，有兴趣的小伙伴们可以看下&lt;a href=&quot;https://v8docs.nodesource.com/node-0.8/d4/da0/v8_8h_source.html&quot;&gt;v8_8h_source的3354行起&lt;/a&gt;，但是&lt;code class=&quot;highlighter-rouge&quot;&gt;IE11&lt;/code&gt;是slower不少的。这就根据小伙伴们的业务对象了，如果只面向现代浏览器，&lt;code class=&quot;highlighter-rouge&quot;&gt;try catch&lt;/code&gt;消耗性能影响会很小；如果需要兼容&lt;code class=&quot;highlighter-rouge&quot;&gt;IE&lt;/code&gt;或内嵌在低端的&lt;code class=&quot;highlighter-rouge&quot;&gt;webView&lt;/code&gt;时，可适当考虑下&lt;code class=&quot;highlighter-rouge&quot;&gt;try catch&lt;/code&gt;消耗性能。&lt;/p&gt;
-
-&lt;h5 id=&quot;2try-catch捕获不到异步错误&quot;&gt;2.try catch捕获不到异步错误&lt;/h5&gt;
-
-&lt;p&gt;尝试对异步方法进行&lt;code class=&quot;highlighter-rouge&quot;&gt;try catch&lt;/code&gt;操作只能捕获当次事件循环内的异常，对callback执行时抛出的异常将无能为力。&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// 这里并不能捕获回调里面抛出的异常&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;-----catch error------&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;异步情况想捕获异常，建议在异步函数里包一层&lt;code class=&quot;highlighter-rouge&quot;&gt;try catch&lt;/code&gt;。&lt;/p&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;nx&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h5 id=&quot;3try-catch抛出错误&quot;&gt;3.try catch抛出错误&lt;/h5&gt;
-
-&lt;p&gt;与 &lt;code class=&quot;highlighter-rouge&quot;&gt;try-catch&lt;/code&gt; 语句相配的还有一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;throw&lt;/code&gt; 操作符，随时抛出自定义错误，可以根据不同错误类型，创建自定义错误消息。&lt;/p&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Something bad happened.&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;SyntaxError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;I don’t like your syntax.&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;TypeError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;What type of variable do you take me for?&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;RangeError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Sorry, you just don’t have the range.&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;EvalError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;That doesn’t evaluate.&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;URIError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Uri, is that you?&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ReferenceError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;You didn’t cite your references properly.&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;如果觉得自定义的报错不合理，想看原生报错，可以使用&lt;code class=&quot;highlighter-rouge&quot;&gt;Chrome&lt;/code&gt;的&lt;code class=&quot;highlighter-rouge&quot;&gt;Pause on exceptions&lt;/code&gt;功能
-&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/9902136-e4cbfcb116381944?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;三慎用try-catch&quot;&gt;三、慎用try catch&lt;/h3&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;try catch&lt;/code&gt;最适合处理那些我们无法控制的错误，如&lt;code class=&quot;highlighter-rouge&quot;&gt;I/O&lt;/code&gt;操作等，后端&lt;code class=&quot;highlighter-rouge&quot;&gt;nodeJs&lt;/code&gt;或&lt;code class=&quot;highlighter-rouge&quot;&gt;java&lt;/code&gt;读取&lt;code class=&quot;highlighter-rouge&quot;&gt;I/O&lt;/code&gt;操作比较多比如读数据库，所以用&lt;code class=&quot;highlighter-rouge&quot;&gt;try catch&lt;/code&gt;比较多。前端可以用在上传图片、使用别人的&lt;code class=&quot;highlighter-rouge&quot;&gt;js&lt;/code&gt;库报错、&lt;code class=&quot;highlighter-rouge&quot;&gt;async await&lt;/code&gt;同步调接口等地方适用。&lt;/p&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Promise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;出错了&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Promise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;hello world&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;但是大部分前端客户端代码处理都不怎么依赖环境也没有&lt;code class=&quot;highlighter-rouge&quot;&gt;I/O&lt;/code&gt;操作，都是自己写的代码，在明明白白地知道自己的代码会发生错误时，再使用&lt;code class=&quot;highlighter-rouge&quot;&gt;try catch&lt;/code&gt;语句就不太合适了，对应数据类型的错误，建议小伙伴们用解构赋值指定默认值、&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;&amp;amp;&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;||&lt;/code&gt;来规避，所以慎用try catch。&lt;/p&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{})&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;obj.code&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;参考资料&quot;&gt;参考资料&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&quot;https://www.ecma-international.org/ecma-262/6.0/#sec-try-statement-static-semantics-varscopeddeclarations&quot;&gt;ECMAScript 2015 -The try Statement&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2015/05/automatically-pause-on-any-exception&quot;&gt;https://developers.google.com/web/updates/2015/05/automatically-pause-on-any-exception&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://v8docs.nodesource.com/node-0.8/d4/da0/v8_8h_source.html&quot;&gt;https://v8docs.nodesource.com/node-0.8/d4/da0/v8_8h_source.html&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Happy coding .. :)&lt;/p&gt;
-
-  
-  &lt;p&gt;&lt;a href=&quot;https://raoenhui.github.io/js/2018/12/16/tryCatch/&quot;&gt;慎用try catch&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;https://raoenhui.github.io&quot;&gt;前端妹子的博客&lt;/a&gt; on December 16, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/js/2019/01/03/IntersectionObserver/&quot;&gt;Intersection observer检测元素是否在视窗内&lt;/a&gt; was originally published by 前端妹子 at &lt;a href=&quot;http://localhost:4000&quot;&gt;前端妹子的博客&lt;/a&gt; on January 03, 2019.&lt;/p&gt;</content>
 </entry>
 
 </feed>
