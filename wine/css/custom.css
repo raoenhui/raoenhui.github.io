@@ -1,6 +1,45 @@
-.a-logo{    display: block;
+.a-logo {
+    display: block;
     height: 50px;
     font-size: 34px;
     line-height: 50px;
     color: #000;
-    margin-top: 10px;}
+    margin-top: 10px;
+}
+
+.price {
+    font-size: 16px;
+    color: black;
+
+    .inner-price {
+        color: red;
+        margin-left: 2px;
+    }
+}
+@media (max-width: 768px) {
+    .price {
+        font-size: 26px;
+ 
+    }
+  }
+
+  /* @media (max-width: 767px) {
+    .hidden-xs {
+      display: none !important;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .hidden-sm {
+      display: none !important;
+    }
+  }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .hidden-md {
+      display: none !important;
+    }
+  }
+  @media (min-width: 1200px) {
+    .hidden-lg {
+      display: none !important;
+    }
+  } */
