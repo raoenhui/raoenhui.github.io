@@ -21,6 +21,16 @@
         font-size: 26px;
  
     }
+    .index-page{
+        .fullscreen-element{
+            padding-top: 20px;
+            padding-bottom: 270px;
+        }
+        .background-image-holder{
+            background-position: 90% 50% !important;
+        }
+    }
+    
   }
 
   /* @media (max-width: 767px) {
