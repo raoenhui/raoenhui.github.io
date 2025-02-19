@@ -1,0 +1,4 @@
+curl -H 'Content-Type:text/plain' --data-binary @urls.txt "http://data.zz.baidu.com/urls?site=https://wine.frontendx.cn&token=O5bUMSI31Y9MLR0J"
+curl -H 'Content-Type:text/plain' --data-binary @urls.txt "http://data.zz.baidu.com/urls?site=https://wine.frontendx.cn/index.html&token=O5bUMSI31Y9MLR0J"
+curl -H 'Content-Type:text/plain' --data-binary @urls.txt "http://data.zz.baidu.com/urls?site=https://wine.frontendx.cn/wines.html&token=O5bUMSI31Y9MLR0J"
+curl -H 'Content-Type:text/plain' --data-binary @urls.txt "http://data.zz.baidu.com/urls?site=https://wine.frontendx.cn/process.html&token=O5bUMSI31Y9MLR0J"
