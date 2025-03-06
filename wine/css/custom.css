@@ -33,6 +33,16 @@
     
   }
 
+  .wine-item{
+    &:hover{
+      border-radius: 8px;
+    border: 1px solid #ff0f23;
+    -webkit-box-shadow: 2px 4px 16px #00000029;
+    box-shadow: 2px 4px 16px #00000029;
+   
+    }
+  }
+
   /* @media (max-width: 767px) {
     .hidden-xs {
       display: none !important;
