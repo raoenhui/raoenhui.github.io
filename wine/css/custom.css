@@ -43,6 +43,10 @@
     }
   }
 
+section.duplicatable-content.icey-content{
+    padding-top: 0px;
+  }
+
   /* @media (max-width: 767px) {
     .hidden-xs {
       display: none !important;
@@ -63,3 +67,4 @@
       display: none !important;
     }
   } */
+
