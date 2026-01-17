@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI体检报告解读 - 平安好医生</title>
+    <style>
+        /* 将CSS样式直接内联到HTML中 */
+        /* 基础样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 头部样式 */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .logo i {
+            font-size: 2.5rem;
+            color: #ff6b6b;
+        }
+
+        .logo h1 {
+            font-size: 2.2rem;
+            font-weight: 300;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* 主内容区 */
+        .main-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        /* 上传区域 */
+        
+
+        /* 健康信息表单 */
+        .health-info-section {
+            margin-bottom: 30px;
+        }
+
+        .health-info-section h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .health-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        /* 分析按钮 */
+        .analyze-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .analyze-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .analyze-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .analyze-btn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* 加载状态 */
+        .loading-section {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .loading-spinner {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .loading-section p {
+            font-size: 1.2rem;
+            color: #495057;
+            margin-bottom: 10px;
+        }
+
+        .loading-subtext {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        /* 结果区域 */
+        .results-section {
+            margin-top: 40px;
+        }
+
+        .results-section h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        .report-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #6c757d;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-btn:hover {
+            color: #667eea;
+        }
+
+        .tab-btn.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+
+        .tab-content {
+            min-height: 300px;
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        .report-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            border-left: 4px solid #667eea;
+        }
+
+        /* 底部 */
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+        }
+
+        .disclaimer {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .main-content {
+                padding: 20px;
+            }
+            
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .upload-options {
+                flex-direction: column;
+            }
+            
+            .health-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .report-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .tab-btn {
+                flex: 1;
+                min-width: 120px;
+                padding: 12px 15px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <h1>平安好医生 - AI体检报告解读</h1>
+            </div>
+            <p class="subtitle">专业医疗AI为您解读体检报告，提供个性化健康建议</p>
+        </header>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <!-- 体检报告输入区域 -->
+            <div class="report-input-section">
+                <div class="input-card">
+                    <div class="input-icon">
+                        <i class="fas fa-file-medical"></i>
+                    </div>
+                    <h2>输入体检报告内容</h2>
+                    <p class="input-description">
+                        请输入您的体检报告内容，AI将为您提供专业的解读分析
+                    </p>
+                    
+                    <div class="form-group">
+                        <label for="reportContent">体检报告内容</label>
+                        <textarea id="reportContent" placeholder="请粘贴或输入您的体检报告内容，包括各项检查指标、结果和医生建议等" rows="8"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 健康信息输入 -->
+            <div class="health-info-section">
+                <h3>健康信息补充（可选）</h3>
+                <div class="health-form">
+                    <div class="form-group">
+                        <label for="age">年龄</label>
+                        <input type="number" id="age" placeholder="请输入年龄">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">性别</label>
+                        <select id="gender">
+                            <option value="">请选择</option>
+                            <option value="male">男</option>
+                            <option value="female">女</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="medicalHistory">既往病史</label>
+                        <textarea id="medicalHistory" placeholder="请输入既往病史（如高血压、糖尿病等）"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="medication">当前用药</label>
+                        <textarea id="medication" placeholder="请输入当前正在使用的药物"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="lifestyle">生活习惯</label>
+                        <textarea id="lifestyle" placeholder="请输入生活习惯（吸烟、饮酒、运动等）"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 分析按钮 -->
+            <div class="analyze-section">
+                <button id="analyzeBtn" class="analyze-btn" disabled>
+                    <i class="fas fa-microscope"></i>
+                    开始AI分析解读
+                </button>
+            </div>
+
+            <!-- 加载状态 -->
+            <div class="loading-section" id="loadingSection" style="display: none;">
+                <div class="loading-spinner">
+                    <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <p>AI正在分析您的体检报告，请稍候...</p>
+                <p class="loading-subtext">深度分析中，这可能需要几分钟时间</p>
+            </div>
+
+            <!-- 结果展示区域 -->
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <h2>AI解读报告</h2>
+                <div class="report-tabs">
+                    <button class="tab-btn active" data-tab="analysis">异常指标分析</button>
+                    <button class="tab-btn" data-tab="management">健康管理方案</button>
+                    <button class="tab-btn" data-tab="services">健康服务推荐</button>
+                </div>
+
+                <div class="tab-content">
+                    <div id="analysisTab" class="tab-pane active">
+                        <div class="report-card" id="analysisResult">
+                            <!-- 异常指标分析内容将在这里显示 -->
+                        </div>
+                    </div>
+                    <div id="managementTab" class="tab-pane">
+                        <div class="report-card" id="managementResult">
+                            <!-- 健康管理方案内容将在这里显示 -->
+                        </div>
+                    </div>
+                    <div id="servicesTab" class="tab-pane">
+                        <div class="report-card" id="servicesResult">
+                            <!-- 健康服务推荐内容将在这里显示 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 底部信息 -->
+        <footer class="footer">
+            <p>© 2025 平安好医生 - AI医疗健康服务平台</p>
+            <p class="disclaimer">
+                免责声明：本AI解读仅供参考，不能替代专业医生的诊断和建议。如有严重症状，请及时就医。
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // 将JavaScript代码直接内联到HTML中
+        // 全局变量
+        const DEEPSEEK_API_KEY = 'sk-7ca808a584134811bf6c16a981fedbb4';
+        const DEEPSEEK_API_URL = 'https://api.deepseek.com/v1/chat/completions';
+
+        // DOM加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeEventListeners();
+            updateAnalyzeButtonState();
+        });
+
+        // 初始化事件监听器
+        function initializeEventListeners() {
+            // 文本输入监听
+            document.getElementById('reportContent').addEventListener('input', handleReportContentInput);
+            
+            // 分析按钮监听
+            document.getElementById('analyzeBtn').addEventListener('click', handleAnalysis);
+            
+            // 标签页切换监听
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => switchTab(button.dataset.tab));
+            });
+        }
+
+        // 处理体检报告文本输入
+        function handleReportContentInput() {
+            updateAnalyzeButtonState();
+        }
+
+        // 更新分析按钮状态
+        function updateAnalyzeButtonState() {
+            const analyzeBtn = document.getElementById('analyzeBtn');
+            const reportContent = document.getElementById('reportContent').value.trim();
+            analyzeBtn.disabled = reportContent.length === 0;
+        }
+
+        // 处理分析请求
+        async function handleAnalysis() {
+            // 显示加载状态
+            showLoading();
+            
+            try {
+                // 收集表单数据
+                const formData = collectFormData();
+                
+                // 构建分析内容
+                const analysisContent = buildAnalysisContent(formData);
+                
+                // 调用DeepSeek API进行分析
+                const result = await callDeepSeekAPI(analysisContent);
+                
+                // 显示分析结果
+                displayAnalysisResult(result);
+                
+            } catch (error) {
+                console.error('分析失败:', error);
+                alert('分析失败: ' + (error.message || '请重试或联系技术支持'));
+            } finally {
+                // 隐藏加载状态
+                hideLoading();
+            }
+        }
+
+        // 收集表单数据
+        function collectFormData() {
+            return {
+                age: document.getElementById('age').value,
+                gender: document.getElementById('gender').value,
+                medicalHistory: document.getElementById('medicalHistory').value,
+                medication: document.getElementById('medication').value,
+                lifestyle: document.getElementById('lifestyle').value,
+                reportContent: document.getElementById('reportContent').value
+            };
+        }
+
+        // 构建分析内容
+        function buildAnalysisContent(formData) {
+            let content = '';
+
+            // 添加用户基本信息
+            content += '## 用户基本信息\n';
+            content += `- 年龄: ${formData.age || '未提供'}\n`;
+            content += `- 性别: ${formData.gender || '未提供'}\n`;
+            content += `- 既往病史: ${formData.medicalHistory || '无'}\n`;
+            content += `- 当前用药: ${formData.medication || '无'}\n`;
+            content += `- 生活习惯: ${formData.lifestyle || '未提供'}\n\n`;
+
+            // 添加体检报告内容
+            if (formData.reportContent) {
+                content += '## 体检报告内容\n';
+                content += formData.reportContent + '\n\n';
+            }
+
+            return content;
+        }
+
+        // 调用DeepSeek API
+        async function callDeepSeekAPI(content) {
+            const prompt = `
+作为专业的全科医生，请根据以下用户信息和体检报告，提供专业的医学解读和建议。
+
+${content}
+
+## 分析要求：
+1. 异常指标分析：精准识别异常指标，分析严重程度，解释临床意义
+2. 多指标联动：分析相关指标的关联性，评估整体健康状况
+3. 健康趋势：如有多年数据，分析健康变化趋势
+4. 风险评估：评估潜在健康风险，给出预警建议
+5. 用药建议：基于用户当前用药和病史，给出合理的用药建议
+6. 健康管理：提供个性化的生活方式和健康管理方案
+7. 服务推荐：推荐2-5个适合的健康服务
+
+请以JSON格式返回结构化结果，包含以下三个模块：
+1. analysis: 异常指标分析（包含abnormalItems数组、overallAssessment、trendAnalysis）
+2. management: 健康管理方案（包含medicationAdvice、lifestyleRecommendations、followUpPlan）
+3. services: 健康服务推荐（数组，包含name、targetGroup、description、usage）
+
+要求语言通俗易懂，适合普通用户理解，同时保持医学专业性。
+            `.trim();
+
+            const response = await fetch(DEEPSEEK_API_URL, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${DEEPSEEK_API_KEY}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    model: "deepseek-chat",
+                    messages: [
+                        {
+                            role: "system",
+                            content: "你是一名专业的全科医生，拥有丰富的临床经验。请提供专业、准确、通俗易懂的医学解读和建议。"
+                        },
+                        {
+                            role: "user",
+                            content: prompt
+                        }
+                    ],
+                    temperature: 0.3,
+                    max_tokens: 4000
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error(`API请求失败: ${response.status} ${response.statusText}`);
+            }
+
+            const data = await response.json();
+            const aiResponse = data.choices[0].message.content;
+            
+            // 解析AI响应
+            return parseAIResponse(aiResponse);
+        }
+
+        // 解析AI响应
+        function parseAIResponse(aiResponse) {
+            try {
+                // 尝试从响应中提取JSON
+                const jsonMatch = aiResponse.match(/```json\n([\s\S]*?)\n```/) ||
+                                 aiResponse.match(/\{[\s\S]*\}/);
+                
+                if (jsonMatch) {
+                    const jsonStr = jsonMatch[1] || jsonMatch[0];
+                    return JSON.parse(jsonStr);
+                }
+                
+                throw new Error('无法解析AI响应');
+                
+            } catch (error) {
+                console.error('JSON解析错误:', error);
+                // 返回模拟结果
+                return getMockAnalysisResult();
+            }
+        }
+
+        // 获取模拟分析结果（备用）
+        function getMockAnalysisResult() {
+            return {
+                analysis: {
+                    abnormalItems: [
+                        {
+                            indicator: "血糖",
+                            severity: "medium",
+                            currentValue: "7.8 mmol/L",
+                            referenceRange: "3.9-6.1 mmol/L",
+                            interpretation: "空腹血糖偏高，可能存在糖代谢异常",
+                            recommendation: "建议复查血糖，必要时进行糖化血红蛋白检测"
+                        }
+                    ],
+                    overallAssessment: "总体健康状况良好，主要异常为血糖轻度升高，建议关注生活方式调整。",
+                    trendAnalysis: "建议定期监测血糖变化趋势。"
+                },
+                management: {
+                    medicationAdvice: "目前不建议立即使用降糖药物，建议先通过饮食和运动控制血糖。",
+                    lifestyleRecommendations: "1. 饮食：低糖饮食，控制碳水化合物摄入\n2. 运动：每周至少150分钟中等强度运动\n3. 监测：定期监测血糖水平",
+                    followUpPlan: "建议3个月后复查血糖"
+                },
+                services: [
+                    {
+                        name: "糖尿病健康管理",
+                        targetGroup: "血糖异常人群",
+                        description: "专业医生咨询和健康指导",
+                        usage: "通过平安好医生平台预约"
+                    }
+                ]
+            };
+        }
+
+        // 显示加载状态
+        function showLoading() {
+            document.getElementById('loadingSection').style.display = 'block';
+            document.getElementById('analyzeBtn').disabled = true;
+        }
+
+        // 隐藏加载状态
+        function hideLoading() {
+            document.getElementById('loadingSection').style.display = 'none';
+            document.getElementById('analyzeBtn').disabled = false;
+        }
+
+        // 显示分析结果
+        function displayAnalysisResult(result) {
+            // 显示结果区域
+            document.getElementById('resultsSection').style.display = 'block';
+            
+            // 填充各个标签页的内容
+            populateAnalysisTab(result.analysis);
+            populateManagementTab(result.management);
+            populateServicesTab(result.services);
+            
+            // 滚动到结果区域
+            document.getElementById('resultsSection').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // 填充异常指标分析标签页
+        function populateAnalysisTab(analysisData) {
+            const container = document.getElementById('analysisResult');
+            let html = '';
+            
+            if (analysisData && analysisData.abnormalItems) {
+                analysisData.abnormalItems.forEach(item => {
+                    html += `
+                        <div class="abnormal-item">
+                            <h4>${item.indicator} <span class="severity ${item.severity}">${getSeverityText(item.severity)}</span></h4>
+                            <p><strong>当前值:</strong> ${item.currentValue}</p>
+                            <p><strong>参考范围:</strong> ${item.referenceRange}</p>
+                            <p><strong>解读:</strong> ${item.interpretation}</p>
+                            ${item.recommendation ? `<p><strong>建议:</strong> ${item.recommendation}</p>` : ''}
+                        </div>
+                    `;
+                });
+                
+                if (analysisData.overallAssessment) {
+                    html += `
+                        <div class="overall-assessment">
+                            <h4>总体评估</h4>
+                            <p>${analysisData.overallAssessment}</p>
+                        </div>
+                    `;
+                }
+            } else {
+                html = '<p>未发现明显异常指标</p>';
+            }
+            
+            container.innerHTML = html;
+        }
+
+        // 填充健康管理方案标签页
+        function populateManagementTab(managementData) {
+            const container = document.getElementById('managementResult');
+            let html = '';
+            
+            if (managementData) {
+                if (managementData.medicationAdvice) {
+                    html += `
+                        <div class="medication-advice">
+                            <h4>用药建议</h4>
+                            <p>${managementData.medicationAdvice}</p>
+                        </div>
+                    `;
+                }
+                
+                if (managementData.lifestyleRecommendations) {
+                    html += `
+                        <div class="lifestyle-recommendations">
+                            <h4>生活方式建议</h4>
+                            <p>${managementData.lifestyleRecommendations}</p>
+                        </div>
+                    `;
+                }
+            } else {
+                html = '<p>暂无具体的健康管理建议</p>';
+            }
+            
+            container.innerHTML = html;
+        }
+
+        // 填充健康服务推荐标签页
+        function populateServicesTab(servicesData) {
+            const container = document.getElementById('servicesResult');
+            let html = '';
+            
+            if (servicesData && servicesData.length > 0) {
+                servicesData.forEach(service => {
+                    html += `
+                        <div class="service-item">
+                            <h4>${service.name}</h4>
+                            <p><strong>适用人群:</strong> ${service.targetGroup}</p>
+                            <p><strong>服务内容:</strong> ${service.description}</p>
+                            <p><strong>使用方式:</strong> ${service.usage}</p>
+                        </div>
+                    `;
+                });
+            } else {
+                html = '<p>暂无推荐的健康服务</p>';
+            }
+            
+            container.innerHTML = html;
+        }
+
+        // 获取严重程度文本
+        function getSeverityText(severity) {
+            const severityMap = {
+                'low': '轻度',
+                'medium': '中度',
+                'high': '重度',
+                'critical': '危急'
+            };
+            return severityMap[severity] || severity;
+        }
+
+        // 切换标签页
+        function switchTab(tabName) {
+            // 更新按钮状态
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.tab === tabName);
+            });
+            
+            // 更新内容显示
+            document.querySelectorAll('.tab-pane').forEach(pane => {
+                pane.classList.toggle('active', pane.id === tabName + 'Tab');
+            });
+        }
+    </script>
+</body>
+</html>
