@@ -573,6 +573,8 @@ ${content}
                 throw new Error(`API请求失败: ${response.status} ${response.statusText}`);
             }
 
+        //    const response = await fetch('./mock.json');
+
             const data = await response.json();
             const aiResponse = data.choices[0].message.content;
             
@@ -672,11 +674,11 @@ ${content}
                 analysisData.abnormalItems.forEach(item => {
                     html += `
                         <div class="abnormal-item">
-                            <h4>${item.indicator} <span class="severity ${item.severity}">${getSeverityText(item.severity)}</span></h4>
-                            <p><strong>当前值:</strong> ${item.currentValue}</p>
-                            <p><strong>参考范围:</strong> ${item.referenceRange}</p>
-                            <p><strong>解读:</strong> ${item.interpretation}</p>
-                            ${item.recommendation ? `<p><strong>建议:</strong> ${item.recommendation}</p>` : ''}
+                            <h4>${item.item} <span class="severity ${item.severity}">${getSeverityText(item.severity)}</span></h4>
+                            <p><strong>当前值:</strong> ${item.value}</p>
+                            <p><strong>参考范围:</strong> ${item.reference}</p>
+                            <p><strong>解读:</strong> ${item.severity}</p>
+                            ${item.meaning ? `<p><strong>建议:</strong> ${item.meaning}</p>` : ''}
                         </div>
                     `;
                 });
@@ -711,7 +713,34 @@ ${content}
                     `;
                 }
                 
-                if (managementData.lifestyleRecommendations) {
+                if (managementData.lifestyleRecommendations && Array.isArray(managementData.lifestyleRecommendations)) {
+                    html += `
+                        <div class="lifestyle-recommendations">
+                            <h4>生活方式建议</h4>
+                    `;
+                    
+                    managementData.lifestyleRecommendations.forEach(category => {
+                        html += `
+                            <div class="recommendation-category">
+                                <h5>${category.category}</h5>
+                                <ul>
+                        `;
+                        
+                        category.details.forEach(detail => {
+                            // 将Markdown格式的加粗 **文本** 转换为HTML <strong>文本</strong>
+                            const formattedDetail = detail.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                            html += `<li>${formattedDetail}</li>`;
+                        });
+                        
+                        html += `
+                                </ul>
+                            </div>
+                        `;
+                    });
+                    
+                    html += `</div>`;
+                } else if (managementData.lifestyleRecommendations) {
+                    // 兼容旧格式
                     html += `
                         <div class="lifestyle-recommendations">
                             <h4>生活方式建议</h4>
