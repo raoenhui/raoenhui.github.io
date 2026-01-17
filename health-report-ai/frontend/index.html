@@ -524,27 +524,49 @@
 
         // 调用DeepSeek API
         async function callDeepSeekAPI(content) {
-            const prompt = `
+        const prompt = `
 作为专业的全科医生，请根据以下用户信息和体检报告，提供专业的医学解读和建议。
 
 ${content}
 
 ## 分析要求：
 1. 异常指标分析：精准识别异常指标，分析严重程度，解释临床意义
-2. 多指标联动：分析相关指标的关联性，评估整体健康状况
+2. 多指标联动：分析相关指标的关联性，评估整体健康状况  
 3. 健康趋势：如有多年数据，分析健康变化趋势
 4. 风险评估：评估潜在健康风险，给出预警建议
 5. 用药建议：基于用户当前用药和病史，给出合理的用药建议
 6. 健康管理：提供个性化的生活方式和健康管理方案
 7. 服务推荐：推荐2-5个适合的健康服务
 
-请以JSON格式返回结构化结果，包含以下三个模块：
-1. analysis: 异常指标分析（包含abnormalItems数组、overallAssessment、trendAnalysis）
-2. management: 健康管理方案（包含medicationAdvice、lifestyleRecommendations、followUpPlan）
-3. services: 健康服务推荐（数组，包含name、targetGroup、description、usage）
+## 输出格式要求：
+必须严格按以下JSON结构输出：
 
-要求语言通俗易懂，适合普通用户理解，同时保持医学专业性。
-            `.trim();
+{
+  "analysis": {
+    "abnormalItems": [{
+      "item": "项目名称", "value": "数值", "reference": "参考范围", 
+      "severity": "严重程度", "meaning": "临床意义", "recommendation": "建议"
+    }],
+    "overallAssessment": "总体评估",
+    "trendAnalysis": "趋势分析"
+  },
+  "management": {
+    "medicationAdvice": "用药建议",
+    "lifestyleRecommendations": [{
+      "category": "分类", "details": ["建议1", "建议2"]
+    }],
+    "followUpPlan": [{
+      "time": "时间", "action": "行动计划"
+    }]
+  },
+  "services": [{
+    "name": "服务名", "targetGroup": "适用人群", 
+    "description": "描述", "usage": "使用方式"
+  }]
+}
+
+要求：完全匹配数据结构，中文输出，专业通俗，最终输出纯JSON格式。
+`.trim();
 
             const response = await fetch(DEEPSEEK_API_URL, {
                 method: 'POST',
