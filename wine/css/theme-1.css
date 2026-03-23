@@ -273,10 +273,10 @@ section.duplicatable-content {
   padding-bottom: 40px;
 }
 section:nth-of-type(odd) {
-  background: #f4f4f4;
+  background: #f6f5e7;
 }
 section:nth-of-type(even) {
-  background: #ffffff;
+  background: #f6f5e7;
 }
 .no-pad {
   padding: 0px;
