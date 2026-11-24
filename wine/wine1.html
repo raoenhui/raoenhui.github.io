@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="线上选酒。浏览葡萄酒、加入购物车、查看配送费用，添加微信确认订单。">
+  <meta name="theme-color" content="#530031">
+  <meta name="keywords" content="上交红, 交大红酒, 红酒, 交大, 上海交通大学">
+  <title>葡萄酒选购</title>
+  <style>
+    @import url("css/elegant-icons.min.css") layer(legacy);
+    @import url("css/bootstrap.min.css") layer(legacy);
+    @import url("css/theme-1.css") layer(legacy);
+    @import url("css/font1.css?family=Open+Sans:300italic,400italic,400,300,600,700%7CRaleway:700") layer(legacy);
+
+    /* Keep the old theme on the navigation, not on the embedded shop. */
+    @layer shop-reset {
+      .wine-shop, .wine-shop *, .wine-shop *::before, .wine-shop *::after { all: revert; }
+    }
+
+    .nav-container { min-height: 80px; }
+    .wine-shop .hero .endorsement { font-size: clamp(22px, 3vw, 38px); line-height: 1.35; }
+    .wine-shop :is(#top, #catalog, #delivery, #wechat-contact) {
+      scroll-margin-top: calc(16px + var(--wine-nav-sticky-height, 0px));
+    }
+  </style>
+  <link rel="stylesheet" href="css/shop.css?v=13">
+  <script src="js/wines-nav.js" defer></script>
+  <script src="js/catalog.js?v=13" defer></script>
+  <script src="js/shipping.js?v=13" defer></script>
+  <script src="js/product-details.js?v=13" defer></script>
+  <script src="js/shop.js?v=13" defer></script>
+</head>
+<body>
+		<div class="nav-container">
+			<nav class="centered-logo top-bar">
+				<div class="container">
+				
+					
+					
+					<div class="row">
+						<div class="col-sm-12 text-center">
+							<a href="index.html">
+							<img class="logo logo-dark" alt="Logo" src="//zeromock.s3.cn-north-1.jdcloud-oss.com/imgwine/logotype_dark.png">
+						</div>
+					</div>
+				
+				
+					<div class="row nav-menu">
+					
+						<div class="col-sm-12 columns text-center">
+							<ul class="menu">
+								<a></a>
+								<li><a href="index.html" target="_self">首页</a></li>
+								<!-- <li><a href="about.html" target="_self">关于</a></li> -->
+								<li><a href="wines.html" target="_self"> 商品介绍 </a></li>
+								<li><a href="process.html" target="_self">联系我们</a></li>
+								<!-- <li><a href="contact.html" target="_self">联系我们</a></li> -->
+							</ul>
+		
+						</div>
+					</div>
+					
+					<div class="mobile-toggle">
+						<i class="icon icon_menu"></i>
+					</div>
+					
+				</div>
+				<div class="bottom-border"></div>
+			</nav>
+		
+						
+			
+		
+			
+		
+			
+		
+		</div>
+
+  <div class="wine-shop">
+    <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.2 12h12.1L22 7H6m3 13h.01m9.99 0h.01"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+      <symbol id="i-wine" viewBox="0 0 24 24"><path d="M8 3h8l1 6a5 5 0 0 1-10 0l1-6Zm4 11v7m-4 0h8M7 9h10"/></symbol>
+      <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 5h12v13H3zm12 4h3l3 4v5h-6"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 10-7 10S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11a9 8 0 0 1-9 8c-1.2 0-2.4-.2-3.5-.6L4 20l1-3.9A7.5 7.5 0 0 1 3 11a9 8 0 0 1 18 0Z"/><path d="M8 11h.01m4 0h.01m4 0h.01"/></symbol>
+    </svg>
+    <main id="top" class="wrap">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h1 id="hero-title" class="endorsement">上海交通大学葡萄与葡萄酒科普教育基地监制红酒</h1>
+          <p class="intro">天地交通系列葡萄酒特邀上海交通大学宋士任老师（西班牙里奥哈大学葡萄栽培与酿酒学）为酿酒顾问，采用上海交通大学培育酿酒葡萄优系及先进酿造技术匠心研制，与王朝御马酒庄、云南香格里拉、山西戎子酒庄教学研究基地深度合作。</p>
+          <a class="hero-cta" href="#catalog">开始选酒 <svg><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="hero-art"><img class="hero-photo" src="shop-assets/hero-collection.jpg?v=13" alt="上交红、天地交通与白兰地 XO 全家福" width="1920" height="1343"></div>
+      </section>
+      <div class="perks" aria-label="购买须知">
+        <a href="#delivery"><svg><use href="#i-truck"/></svg><span><strong>顺丰快递</strong><small>酒款满 ¥2,000 免运费</small></span></a>
+        <a href="#delivery"><svg><use href="#i-pin"/></svg><span><strong>闵行校区自提</strong><small>无运费、无快递包装费</small></span></a>
+        <a href="#wechat-contact"><svg><use href="#i-chat"/></svg><span><strong>微信确认订单</strong><small>查看二维码</small></span></a>
+      </div>
+      <section id="catalog" class="catalog" aria-labelledby="catalog-title">
+        <div class="section-head"><div><p class="eyebrow">THE WINE LIST</p><h2 id="catalog-title">选购酒款</h2><p class="subtle">从干红到清爽果酒，按系列挑选你喜欢的酒。</p></div>
+          <label class="search"><svg><use href="#i-search"/></svg><input id="search" type="search" aria-label="搜索酒款" placeholder="搜索酒款、系列或风味"></label>
+        </div>
+        <div class="catalog-tools"><div id="filters" class="filters" role="group" aria-label="按系列筛选"></div><button type="button" class="cart-open" data-open-cart><svg><use href="#i-cart"/></svg><span>购物车</span><span class="count" data-count>0</span></button></div>
+        <p class="result-count" id="result-count" aria-live="polite"></p>
+        <div id="products" class="products"></div>
+        <noscript>需要启用 JavaScript 才能查看酒款、使用购物车并计算总额。</noscript>
+      </section>
+      <section id="delivery" class="delivery" aria-labelledby="delivery-title">
+        <p class="eyebrow">DELIVERY & PICKUP</p><h2 id="delivery-title">配送与购买说明</h2>
+        <p class="subtle delivery-note">页面不收款，请添加微信 <strong>r670615769</strong> 确认价格、库存、配送费用及付款方式。</p>
+        <div id="wechat-contact" class="wechat-card">
+          <a class="wechat-qr" href="shop-assets/wechat-qr.png" target="_blank" rel="noopener" aria-label="查看微信二维码原图（新标签页）"><img src="shop-assets/wechat-qr.png" width="560" height="560" loading="lazy" alt="微信联系二维码"></a>
+          <div><strong>扫码添加微信</strong><p>手机可长按识别；也可复制微信号 <b>r670615769</b>，在微信搜索添加。</p><button type="button" class="secondary" data-copy-wechat>复制微信号</button></div>
+        </div>
+      </section>
+    </main>
+    <button type="button" class="floating-cart" data-open-cart hidden><svg><use href="#i-cart"/></svg><span>查看购物车</span><span class="count" data-count>0</span></button>
+    <dialog id="cart" aria-labelledby="cart-title">
+      <div class="cart-panel"><header class="dialog-head"><div><p class="eyebrow">YOUR SELECTION</p><h2 id="cart-title">购物车</h2></div><form method="dialog"><button class="close" type="submit" aria-label="关闭购物车" autofocus>×</button></form></header>
+        <div id="cart-body" class="cart-body"></div><div id="cart-footer" class="cart-footer"></div>
+      </div>
+    </dialog>
+    <dialog id="product-detail" aria-labelledby="product-detail-title">
+      <header class="dialog-head">
+        <div><p class="eyebrow" id="product-detail-series"></p><h2 id="product-detail-title"></h2></div>
+        <form method="dialog"><button class="close" type="submit" aria-label="关闭商品详情" autofocus>×</button></form>
+      </header>
+      <div class="product-detail-body">
+        <div class="product-detail-photo" id="product-detail-photo"></div>
+        <div class="product-detail-copy">
+          <p id="product-detail-specs"></p>
+          <p id="product-detail-description"></p>
+          <p id="product-detail-price"></p>
+        </div>
+      </div>
+    </dialog>
+    <div id="toast" class="toast" role="status"></div>
+  </div>
+
+		<div class="footer-container">
+
+			<footer class="short bg-secondary-1">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12 text-center">
+							<br>
+							<br>
+							<br>
+							<div style="color:#a87f97" >@上海葡韵科技有限公司 出品</div>
+							<div style="color:#a87f97">由上海交通大学农业与生物学院第一届葡萄与葡萄酒专业硕士成立</div>
+						</div>
+
+					</div>
+				</div>
+			</footer>
+		</div>
+</body>
+</html>

@@ -3,3 +3,7 @@ _config.yml
 node_modules
 **.idea
 _siteF
+.joycode
+.muskills
+
+.workbuddy
