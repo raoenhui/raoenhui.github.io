@@ -1,0 +1,51 @@
+wine/js/shop.js
+  s_19974c3322ef20::t_5f47786e8b9985 1-6,8-53,55-59,75-207,213-257,260
+  s_19974c3322ef20::t_d3fc930fa3ea61 7,54,60-74,208-212
+  s_19974c3322ef20::t_2340fe8b469872 258-259
+  s_19974c3322ef20::t_7d85ce615c7f65 261-263
+  h_925775a3adde3a 264-267
+wine/css/shop.css
+  s_19974c3322ef20::t_d3fc930fa3ea61 1-22
+  s_19974c3322ef20::t_250f763e5a68ed 23-25
+  h_925775a3adde3a 26-29
+wine/js/product-details.js
+  s_19974c3322ef20::t_d3fc930fa3ea61 1-31
+  s_19974c3322ef20::t_74eefb07314a94 32-34
+  h_925775a3adde3a 35-55
+.gitignore
+  h_925775a3adde3a 6-9
+  h_925775a3adde3a 5
+wine/js/wines-nav.js
+  s_19974c3322ef20::t_3c2f2fbdd4e268 1-38
+.joycode/prompt.json
+  h_925775a3adde3a 1
+"wine/Wine List Brochure 2606.pdf"
+  h_925775a3adde3a 1-66935
+wine/js/catalog.js
+  h_925775a3adde3a 1-56
+wine/js/shipping.js
+  h_925775a3adde3a 1-68
+wine/wine1.html
+  h_925775a3adde3a 1-164
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "00ffa65352bcf7160f9742b7e4d9ced28d56f5a5",
+  "prompts": {},
+  "humans": {
+    "h_925775a3adde3a": {
+      "author": "raoenhui <raoenhui@jd.com>"
+    }
+  },
+  "sessions": {
+    "s_19974c3322ef20": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a20d00-fb16-7161-b515-1296a76f3b8a",
+        "model": "GPT-6.2 Sol"
+      },
+      "human_author": "raoenhui <raoenhui@jd.com>"
+    }
+  }
+}
