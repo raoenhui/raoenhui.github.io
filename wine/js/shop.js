@@ -15,6 +15,7 @@ const series = ['全部', ...new Set(catalog.map(item => item.series))];
 const hotIds = new Set(['bundle-king', 'bundle-td-1', 'bundle-td-2']);
 let activeSeries = '全部';
 let opener;
+let detailItem;
 let toastTimer;
 const state = {cart:Object.create(null), method:'shipping', province:''};
 // Keep contact and address details only in this tab's memory, never in localStorage.
@@ -68,6 +69,8 @@ function renderProducts() {
   }).join('') || '<p class="empty">没有找到符合条件的酒款，试试其他关键词或系列。</p>';
 }
 function openProductDetail(item) {
+  detailItem = item;
+  $('#detail-add').setAttribute('aria-label', `将${item.series} ${item.name}加入购物车`);
   const [page, specs, description] = window.WineProductDetails[item.id] ?? [];
   $('#product-detail-series').textContent = `${item.series} · ${item.style}`;
   $('#product-detail-title').textContent = item.name;
@@ -241,6 +244,13 @@ $('#products').addEventListener('click', event => {
   if ((state.cart[id] || 0) === 999) { feedback('此酒款最多可选 999 瓶。'); return; }
   setQuantity(id, (state.cart[id] || 0) + 1);
   feedback(`已加入购物车：${byId.get(id).name}`);
+});
+detailDialog.addEventListener('click', event => {
+  if (!event.target.closest('#detail-add') || !detailItem) return;
+  const id = detailItem.id;
+  if ((state.cart[id] || 0) === 999) { feedback('此酒款最多可选 999 瓶。'); return; }
+  setQuantity(id, (state.cart[id] || 0) + 1);
+  feedback(`已加入购物车：${detailItem.name}`);
 });
 document.addEventListener('click', event => {
   const trigger = event.target.closest('[data-open-cart]');
