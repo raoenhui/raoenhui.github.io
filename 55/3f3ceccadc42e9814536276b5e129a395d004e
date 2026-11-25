@@ -1,0 +1,36 @@
+wine/wines.html
+  s_19974c3322ef20::t_2358b81fd58053 146,159
+  s_19974c3322ef20::t_514cab9d7d9a02 24,110
+  s_19974c3322ef20::t_5f47786e8b9985 6,9,81,119
+  h_925775a3adde3a 27,29-32,90,96,99,117,144
+  s_19974c3322ef20::t_044a48acb6104c 22,94-95
+  s_19974c3322ef20::t_d3fc930fa3ea61 128-141
+  s_19974c3322ef20::t_3c2f2fbdd4e268 1-5,7-8,10-14,16-19,21,23,25-26,28,33-34,82-89,91-93,97-98,100-109,111-116,118,120-127,142-143,145,164
+wine/css/shop.css
+  h_925775a3adde3a 30-37
+wine/js/shop.js
+  h_925775a3adde3a 14-15,55,64,150,156-159,162-166,168-171,188-189,218-220
+wine/wine1.html
+  h_925775a3adde3a 2-36,38-45,91-178,180-190,203,208-223,225
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "553f3ceccadc42e9814536276b5e129a395d004e",
+  "prompts": {},
+  "humans": {
+    "h_925775a3adde3a": {
+      "author": "raoenhui <raoenhui@jd.com>"
+    }
+  },
+  "sessions": {
+    "s_19974c3322ef20": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a20d00-fb16-7161-b515-1296a76f3b8a",
+        "model": "GPT-6.2 Sol"
+      },
+      "human_author": "raoenhui <raoenhui@jd.com>"
+    }
+  }
+}
