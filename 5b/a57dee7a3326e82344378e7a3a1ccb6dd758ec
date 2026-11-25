@@ -1,0 +1,16 @@
+wine/css/font1.css
+  h_925775a3adde3a 546,554,562,570,578
+wine/wines.html
+  h_925775a3adde3a 20-23,47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5ba57dee7a3326e82344378e7a3a1ccb6dd758ec",
+  "prompts": {},
+  "humans": {
+    "h_925775a3adde3a": {
+      "author": "raoenhui <raoenhui@jd.com>"
+    }
+  }
+}
