@@ -1,0 +1,16 @@
+wine/js/shop.js
+  h_925775a3adde3a 18,72-73,248-254
+wine/wines.html
+  h_925775a3adde3a 35,143
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1f9acc9b61ab553e7d7e865cab432fedc3a7ba29",
+  "prompts": {},
+  "humans": {
+    "h_925775a3adde3a": {
+      "author": "raoenhui <raoenhui@jd.com>"
+    }
+  }
+}
