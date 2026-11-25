@@ -11,6 +11,8 @@ const money = amount => `¥${amount.toLocaleString('zh-CN')}`;
 const icon = name => `<svg aria-hidden="true"><use href="#i-${name}"/></svg>`;
 const provinceSet = new Set(shippingRules.groups.flatMap(group => group.provinces));
 const series = ['全部', ...new Set(catalog.map(item => item.series))];
+// 前三个套餐显示“🔥 hot”热销角标。
+const hotIds = new Set(['bundle-king', 'bundle-td-1', 'bundle-td-2']);
 let activeSeries = '全部';
 let opener;
 let toastTimer;
@@ -50,7 +52,7 @@ const wasPrice = item => item.retail != null && item.retail > item.alumni
   ? `<s class="was" aria-label="零售价 ${money(item.retail)}">${money(item.retail)}</s>` : '';
 function thumb(item, compact = false) {
   if (!item.photo) return compact ? `<span class="cart-thumb">${icon('wine')}</span>` : `<span class="no-photo">${icon('wine')}暂无商品图</span>`;
-  return `<img src="shop-assets/${item.id}.webp?v=13" alt="${compact ? '' : item.name}" width="440" height="540" ${compact ? '' : 'loading="lazy"'} decoding="async">`;
+  return `<img src="shop-assets/${item.id}.webp?v=16" alt="${compact ? '' : item.name}" width="440" height="540" ${compact ? '' : 'loading="lazy"'} decoding="async">`;
 }
 function renderProducts() {
   const query = $('#search').value.trim().replace(/\s+/g, ' ').toLowerCase().split(' ').filter(Boolean);
@@ -59,7 +61,7 @@ function renderProducts() {
   $('#products').innerHTML = matches.map(item => {
     const price = effectivePrice(item);
     return `<article class="product">
-      <button type="button" class="product-media" data-detail="${item.id}" aria-label="查看${item.series} ${item.name}详情" aria-haspopup="dialog"><span class="tag">${item.style}</span>${thumb(item)}<span class="detail-hint" aria-hidden="true">查看详情</span></button>
+      <button type="button" class="product-media" data-detail="${item.id}" aria-label="查看${item.series} ${item.name}详情" aria-haspopup="dialog"><span class="tag">${item.style}</span>${hotIds.has(item.id) ? `<span class="hot-badge" aria-label="热销">${icon('flame')}hot</span>` : ''}${thumb(item)}<span class="detail-hint" aria-hidden="true">查看详情</span></button>
       <div class="product-body"><p class="series">${item.series}</p><h3>${item.name}</h3><p class="product-note">${item.note}</p>
       <div class="product-buy"><div class="price"><small>${priceLabel(item) ?? priceName()}</small>${wasPrice(item)}${money(price)}</div>
       <button type="button" class="add" data-add="${item.id}" aria-label="将${item.series} ${item.name}加入购物车">＋ 加入购物车</button></div></div></article>`;
@@ -145,17 +147,28 @@ function renderCart() {
       <p id="address-hint" class="quote-note address-hint">收货信息仅保留在当前页面，复制订单后由你自行发送给商家。</p>
     </fieldset></div><dl class="summary" id="summary" aria-live="polite"></dl>`
     : '<p class="empty">购物车还是空的，去挑几款喜欢的酒吧。</p>';
-  $('#cart-footer').innerHTML = `<div class="contact"><div><strong>微信确认订单与付款</strong><p>微信号：<b>${wxId}</b> · 页面不收款</p></div><div class="contact-copy"><button type="button" class="secondary" data-copy-wechat>复制微信号</button>${order.items ? '<button type="button" class="primary" id="copy-order">复制订单明细</button>' : ''}</div></div><div class="wechat-card cart-wechat"><a class="wechat-qr" href="shop-assets/wechat-qr.png" target="_blank" rel="noopener" aria-label="查看微信二维码原图（新标签页）"><img src="shop-assets/wechat-qr.png" width="560" height="560" alt="微信联系二维码"></a><div><strong>微信扫一扫或长按识别</strong><p>${order.items ? '添加后将复制的订单明细发给商家。' : '添加后可咨询酒款、库存及购买方式。'}</p></div></div><div class="dialog-feedback" role="status"></div><textarea class="copy-fallback" aria-label="可手动复制的联系信息或订单明细" readonly hidden></textarea>`;
+  $('#cart-footer').innerHTML = `<div class="contact"><div><strong>微信确认订单与付款</strong><p>微信号：<b>${wxId}</b> · 确认后微信转账，款项到账后 24 小时内安排发货或备货</p></div><div class="contact-copy"><button type="button" class="secondary" data-copy-wechat>复制微信号</button>${order.items ? '<button type="button" class="primary" id="copy-order">复制订单明细</button>' : ''}</div></div><div class="wechat-card cart-wechat"><a class="wechat-qr" href="shop-assets/wechat-qr.png" target="_blank" rel="noopener" aria-label="查看微信二维码原图（新标签页）"><img src="shop-assets/wechat-qr.png" width="560" height="560" alt="微信联系二维码"></a><div><strong>微信扫一扫或长按识别</strong><p>${order.items ? '添加后将复制的订单明细发给商家。' : '添加后可咨询酒款、库存及购买方式。'}</p></div></div><div class="dialog-feedback" role="status"></div><textarea class="copy-fallback" aria-label="可手动复制的联系信息或订单明细" readonly hidden></textarea>`;
   cartDialog.querySelectorAll('[data-address]').forEach(input => { input.value = deliveryAddress[input.dataset.address]; });
   renderSummary(order);
 }
 function feedback(message) {
   if (cartDialog.open) { $('.dialog-feedback').textContent = message; return; }
+  showToast(message);
+}
+// 提示浮层使用 popover，确保购物车弹窗打开时也能看到；3 秒后自动消失。
+function showToast(message) {
   const toast = $('#toast');
   toast.textContent = message;
-  toast.classList.add('show');
+  if (typeof toast.showPopover === 'function') {
+    if (!toast.matches(':popover-open')) toast.showPopover();
+  } else {
+    toast.classList.add('show');
+  }
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => toast.classList.remove('show'), 3000);
+  toastTimer = setTimeout(() => {
+    if (typeof toast.hidePopover === 'function' && toast.matches(':popover-open')) toast.hidePopover();
+    toast.classList.remove('show');
+  }, 3000);
 }
 async function copyText(text, type) {
   let copied = false;
@@ -172,8 +185,8 @@ async function copyText(text, type) {
     previous?.focus({preventScroll:true});
   }
   if (copied) {
-    if (cartDialog.open) $('.copy-fallback').hidden = true;
-    feedback(type === 'wx' ? '微信号已复制' : '订单明细已复制，请粘贴到微信发送。');
+    if (cartDialog.open) { $('.copy-fallback').hidden = true; $('.dialog-feedback').textContent = ''; }
+    showToast('复制成功');
   } else if (cartDialog.open) {
     const fallback = $('.copy-fallback');
     fallback.value = text; fallback.hidden = false; fallback.select();
@@ -202,7 +215,9 @@ function validateAddress() {
 function orderText() {
   const order = getOrder();
   const method = state.method === 'pickup' ? '闵行校区自提' : `顺丰快递（${provinceSet.has(state.province) ? state.province : state.province === 'other' ? '其他地区' : '收货地区未选'}）`;
-  return [ `订购咨询（${priceName()}）`, ...order.lines.map(({item, qty, price}) => `${item.series} · ${item.name} × ${qty}：${money(qty * price)}`), `配送：${method}`, ...(state.method === 'shipping' ? [`收件人：${deliveryAddress.recipient}`, `联系电话：${deliveryAddress.phone}`, `收货地址：${state.province === 'other' ? deliveryAddress.region : state.province} ${deliveryAddress.locality} ${deliveryAddress.street}`] : []), `商品小计：${money(order.subtotal)}`, ...(state.method === 'pickup' ? [] : [`顺丰运费（${order.bottles} 瓶）：${order.shipping === null ? '待确认' : money(order.shipping)}`, `防破损包装费（${order.bottles + order.boxes} 件 × ${money(shippingRules.packingFee)}）：${order.packing === null ? '待确认' : money(order.packing)}`]), `订单总额：${order.total === null ? '待确认运费后计算' : money(order.total)}`, '请帮忙确认库存、价格和付款方式，谢谢！' ].join('\n');
+  return [ `订购咨询（${priceName()}）`, ...order.lines.map(({item, qty, price}) => `${item.series} · ${item.name} × ${qty}：${money(qty * price)}`), `配送：${method}`, ...(state.method === 'shipping' ? [`收件人：${deliveryAddress.recipient}`, `联系电话：${deliveryAddress.phone}`, `收货地址：${state.province === 'other' ? deliveryAddress.region : state.province} ${deliveryAddress.locality} ${deliveryAddress.street}`] : []), `商品小计：${money(order.subtotal)}`, ...(state.method === 'pickup' ? [] : [`顺丰运费（${order.bottles} 瓶）：${order.shipping === null ? '待确认' : money(order.shipping)}`, `防破损包装费（${order.bottles + order.boxes} 件 × ${money(shippingRules.packingFee)}）：${order.packing === null ? '待确认' : money(order.packing)}`]), `订单总额：${order.total === null ? '待确认运费后计算' : money(order.total)}`, state.method === 'pickup'
+    ? '请加微信 r670615769 转账订单总额；款项收到后 24 小时内备好，约定时间到闵行校区自提，谢谢！'
+    : '请加微信 r670615769 转账订单总额；款项收到后 24 小时内安排顺丰发出，谢谢！' ].join('\n');
 }
 
 $('#filters').innerHTML = series.map((value, index) => `<button type="button" data-series="${value}" aria-pressed="${index === 0}">${value}</button>`).join('');

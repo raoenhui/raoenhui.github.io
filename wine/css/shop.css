@@ -27,3 +27,11 @@
 
 /* ---- Hero family photo ---- */
 :where(.wine-shop) .hero-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+
+/* ---- Hot badge on top bundles ---- */
+:where(.wine-shop) .hot-badge{position:absolute;right:10px;top:10px;z-index:1;display:inline-flex;align-items:center;gap:3px;padding:3px 8px;border-radius:999px;background:linear-gradient(135deg,#ff8a1f,#e5352b);color:#fff;font-size:11px;font-weight:800;line-height:1.2;letter-spacing:.04em;box-shadow:0 2px 9px #d93a2155}
+:where(.wine-shop) .hot-badge svg{width:13px;height:13px;stroke:#fff;stroke-width:2}
+
+/* ---- Copy toast stays above modal dialogs ---- */
+:where(.wine-shop) .toast[popover]{position:fixed;inset:auto auto 74px 50%;margin:0;border:0;transition:opacity .16s ease}
+:where(.wine-shop) .toast[popover]:popover-open{opacity:1}

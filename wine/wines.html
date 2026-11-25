@@ -1,48 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="线上选酒。浏览葡萄酒、加入购物车、查看配送费用，添加微信确认订单。">
+  <meta name="theme-color" content="#530031">
+  <meta name="keywords" content="上交红, 交大红酒, 红酒, 交大, 上海交通大学">
+  <title>葡萄酒选购</title>
+  <style>
+    @import url("css/elegant-icons.min.css") layer(legacy);
+    @import url("css/bootstrap.min.css") layer(legacy);
+    @import url("css/theme-1.css") layer(legacy);
+    @import url("css/font1.css?family=Open+Sans:300italic,400italic,400,300,600,700%7CRaleway:700") layer(legacy);
 
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> 
-<html class="no-js"> <!--<![endif]-->
-    <head>
-		<title>上交红, 交大红酒, 红酒, 交大, 上海交通大学</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="keywords" content="上交红, 交大红酒, 红酒, 交大, 上海交通大学">
-		<meta name="description" content="上海交通大学葡萄与葡萄酒科普教育基地监制红酒。2021年度首发“天地交通”系列致敬交大校庆125周年，2022年度发布“上交红”系列产品，另有获国际葡萄酒大奖赛大金奖殊荣的旗舰产品“致远”系列干红。同时,葡韵与多国葡萄酒协会、酒庄、进口商合作，挑选全球极致性价比酒款供大家选择。">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link href="css/flexslider.min.css" rel="stylesheet" type="text/css" media="all"/>
-        <link href="css/line-icons.min.css" rel="stylesheet" type="text/css" media="all"/>
-        <link href="css/elegant-icons.min.css" rel="stylesheet" type="text/css" media="all"/>
-        <link href="css/lightbox.min.css" rel="stylesheet" type="text/css" media="all"/>
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all"/>
-        <link href="css/theme-1.css" rel="stylesheet" type="text/css" media="all"/>
-        <link href="css/custom.css" rel="stylesheet" type="text/css" media="all"/>
-        <!--[if gte IE 9]>
-        	<link rel="stylesheet" type="text/css" href="css/ie9.css" />
-		<![endif]-->
-        <link href='css/font1.css?family=Open+Sans:300italic,400italic,400,300,600,700%7CRaleway:700' rel='stylesheet' type='text/css'>
-        <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <!-- <link href="http://fonts.googleapis.com/css?family=Cardo:400,400italic" rel="stylesheet" type="text/css"> -->
-        <link href="css/font-cardo.css" rel="stylesheet" type="text/css">
-		<!-- icon -->
-		<link rel="icon" type="image/x-icon" href="favicon.ico">
-		<link rel="icon" type="image/png" href="favicon.png">
-		<link rel="apple-touch-icon" href="apple-touch-icon.png">
-		<meta name="msapplication-TileImage" content="mstile.png">
-		<meta name="msapplication-TileColor" content="#3372C7">
-    </head>
+    /* Keep the old theme on the navigation, not on the embedded shop. */
+    @layer shop-reset {
+      .wine-shop, .wine-shop *, .wine-shop *::before, .wine-shop *::after { all: revert; }
+    }
 
-    <body>
-    	<!-- <div class="loader">
-    		<div class="spinner">
-			  <div class="double-bounce1"></div>
-			  <div class="double-bounce2"></div>
-			</div>
-    	</div> -->
-				
+    .nav-container { min-height: 80px; }
+    .wine-shop .hero .endorsement { font-size: clamp(22px, 3vw, 38px); line-height: 1.35; }
+    .wine-shop :is(#top, #catalog, #delivery, #wechat-contact) {
+      scroll-margin-top: calc(16px + var(--wine-nav-sticky-height, 0px));
+    }
+  </style>
+  <link rel="stylesheet" href="css/shop.css?v=16">
+  <script src="js/wines-nav.js" defer></script>
+  <script src="js/catalog.js?v=16" defer></script>
+  <script src="js/shipping.js?v=16" defer></script>
+  <script src="js/product-details.js?v=16" defer></script>
+  <script src="js/shop.js?v=16" defer></script>
+</head>
+<body>
 		<div class="nav-container">
 			<nav class="centered-logo top-bar">
 				<div class="container">
@@ -88,106 +77,73 @@
 			
 		
 		</div>
-		
-		<div class="main-container">
-		<section class="team-1">
-				<div class="container">
-					<div class="row">
-						<!-- <div class="col-sm-4 text-center">
-							<image src="//zeromock.s3.cn-north-1.jdcloud-oss.com/imgwine/wx.png"/>
-						</div> -->
-						<div class="col-sm-12  text-center">
-							<h1>上海交通大学葡萄与葡萄酒科普教育基地监制红酒</h1>
-							<p class="lead">
-								天地交通系列葡萄酒特邀上海交通大学宋士任老师(西班牙里奥哈大学葡萄栽培与酿酒学)为酿酒顾问,采用上海交通大学培育酿酒葡萄优系及先进酿造技术匠心研制,与王朝御马酒庄、云南香格里拉、山西戎子酒庄教学研究基地深度合作。
-							</p>
-							<div class="row text-center">价格：酒价+邮费+每瓶酒*2¥防破损快递包装费</div>
-							<div class="row text-center">购买可加微信：r670615769</div>
-						</div>
-					</div>
-					
-					<!-- <div class="row">
-						<div class="col-md-2 col-sm-4 wine-item">
-							<div class="team-1-member">
-								<img alt="Team Member" class="background-image" src="//zeromock.s3.cn-north-1.jdcloud-oss.com/imgwine/wine_1.png ">
-								<h5>天（干红）</h5>
-								<div class="price"><span>零售价</span><b>¥668</b>  <span>内购价</span><b class="inner-price">¥398</b></div><br>
-								
-							</div>
-						</div><div class="col-md-2 col-sm-4 wine-item">
-							<div class="team-1-member">
-								<img alt="Team Member" class="background-image" src="//zeromock.s3.cn-north-1.jdcloud-oss.com/imgwine/wine_2.png ">
-								<h5>地（干白）</h5>
-								<div class="price"><span>零售价</span><b>¥468</b>  <span>内购价</span><b class="inner-price">¥278</b></div><br>
-								
-							</div>
-						</div><div class="col-md-2 col-sm-4 wine-item">
-							<div class="team-1-member">
-								<img alt="Team Member" class="background-image" src="//zeromock.s3.cn-north-1.jdcloud-oss.com/imgwine/wine_3.png ">
-								<h5>交（干红）</h5>
-								<div class="price"><span>零售价</span><b>¥368</b>  <span>内购价</span><b class="inner-price">¥198</b></div><br>
-								
-							</div>
-						</div><div class="col-md-2 col-sm-4 wine-item">
-							<div class="team-1-member">
-								<img alt="Team Member" class="background-image" src="//zeromock.s3.cn-north-1.jdcloud-oss.com/imgwine/wine_4.png ">
-								<h5>通（桃红）</h5>
-								<div class="price"><span>零售价</span><b>¥228</b>  <span>内购价</span><b class="inner-price">¥125</b></div><br>
-								
-							</div>
-						</div><div class="col-md-2 col-sm-4 wine-item">
-							<div class="team-1-member">
-								<img alt="Team Member" class="background-image" src="//zeromock.s3.cn-north-1.jdcloud-oss.com/imgwine/wine_1_2.png ">
-								<h5> 天地（干红+干白）</h5>
-								<div class="price"><span>零售价</span><b>¥1136</b>  <span>内购价</span><b class="inner-price">¥676</b></div><br>
-								
-							</div>
-						</div><div class="col-md-2 col-sm-4 wine-item">
-							<div class="team-1-member">
-								<img alt="Team Member" class="background-image" src="//zeromock.s3.cn-north-1.jdcloud-oss.com/imgwine/wine_3_4.png ">
-								<h5>交通（干红+桃红）</h5>
-								<div class="price"><span>零售价</span><b>¥586</b>  <span>内购价</span><b class="inner-price">¥323</b></div><br>
-								
-							</div>
-						</div>						
-					</div> -->
-					
-				</div>
-			</section>
-			
-			<section class="duplicatable-content pure-text icey-content">
-				<div class="container">
-					<!-- <div class="row">
-						<div class="col-sm-12 text-center">
-							<h1>更多选择</h1>
-						</div>
-					</div> -->
-						<div class="row text-center"><img width="1200" src="//img12.360buyimg.com/imagetools/jfs/t1/408536/33/2803/464219/69c119b1F44e69ebe/03e63c432099600b.png" /></div>
-						<div class="row text-center"><img src="//img12.360buyimg.com/imagetools/jfs/t1/375858/34/17119/779818/694aa4e8Fb2a3f5a7/03e69abc29e5cc7c.jpg" /></div>
-					<div class="row text-center"><img src="//img10.360buyimg.com/imagetools/jfs/t1/380587/9/9111/382766/694a98c4F7c11f0d9/03e69b0db4da0d08.jpg" /></div>
-					<div class="row text-center"><img src="//img14.360buyimg.com/imagetools/jfs/t1/375476/1/21733/437427/694a9d9bF44605e5a/03e69b0db47d3c6b.jpg" /></div>
-					<div class="row text-center"><img src="//img14.360buyimg.com/imagetools/jfs/t1/373327/4/21761/564558/694a9d9dF67dfee99/03e69b0db49a3c57.jpg" /></div>
-					<div class="row text-center"><img src="//img11.360buyimg.com/imagetools/jfs/t1/404369/5/19026/258043/69c112d0F06fd88b0/03e650066198f1ca.jpg" /></div>
-					<div class="row text-center"><img src="//img13.360buyimg.com/imagetools/jfs/t1/381410/7/6432/672677/694aa4ddF58f6cde8/03e69abc284c241c.jpg" /></div>
-					<div class="row text-center"><img src="//img12.360buyimg.com/imagetools/jfs/t1/379808/39/10694/747613/694aa4dfFaf17fe19/03e69acc480662f7.jpg" /></div>
-					<div class="row text-center"><img src="//img13.360buyimg.com/imagetools/jfs/t1/382830/14/5841/571753/694aa4e2F94bd1b7e/03e69b0c48942da7.jpg" /></div>
-					<div class="row text-center"><img src="//img12.360buyimg.com/imagetools/jfs/t1/376727/11/18766/614067/694aa4e4Fc3502d0f/03e69b0c58da44b6.jpg" /></div>
-					<div class="row text-center"><img src="//img12.360buyimg.com/imagetools/jfs/t1/406732/19/10155/207245/69c112d1F72b3fa4b/03e650065d404425.jpg" /></div>
-				
-					<div class="row text-center"><img src="//img13.360buyimg.com/imagetools/jfs/t1/380773/4/9477/704548/694a9d9fF6eb95b96/03e69b0db46ab292.jpg" /></div>
-			
 
-					
-					<!-- <div class="row text-center"><img src="//zeromock.s3.cn-north-1.jdcloud-oss.com/imgwine/winegoods.jpg" /></div> -->
-					<!-- <div class="row text-center"><img src="//zeromock.s3.cn-north-1.jdcloud-oss.com/imgwine/winegoods.jpg" /></div> -->
-					<div class="row text-center">
-						<image src="//zeromock.s3.cn-north-1.jdcloud-oss.com/imgwine/wx.png"/>
-					</div>
-				</div>
-			</section>
-			
-		</div>
-		
+  <div class="wine-shop">
+    <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.2 12h12.1L22 7H6m3 13h.01m9.99 0h.01"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+      <symbol id="i-wine" viewBox="0 0 24 24"><path d="M8 3h8l1 6a5 5 0 0 1-10 0l1-6Zm4 11v7m-4 0h8M7 9h10"/></symbol>
+      <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 5h12v13H3zm12 4h3l3 4v5h-6"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 10-7 10S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11a9 8 0 0 1-9 8c-1.2 0-2.4-.2-3.5-.6L4 20l1-3.9A7.5 7.5 0 0 1 3 11a9 8 0 0 1 18 0Z"/><path d="M8 11h.01m4 0h.01m4 0h.01"/></symbol>
+      <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-3.2-2.1-5.6-4.3-7.3-.8 2.4-1.9 3.3-3.2 3.3-1.5 0-2-1.2-2-2.8 0-1.7.7-3.2 2.5-5.2C8.5 5 5 8.8 5 14a7 7 0 0 0 7 8Z"/><path d="M12 22a3 3 0 0 0 3-3c0-1.6-1.3-2.7-3-4.3-1.7 1.6-3 2.7-3 4.3a3 3 0 0 0 3 3Z"/></symbol>
+    </svg>
+    <main id="top" class="wrap">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h1 id="hero-title" class="endorsement">上海交通大学葡萄与葡萄酒科普教育基地监制红酒</h1>
+          <p class="intro">天地交通系列葡萄酒特邀上海交通大学宋士任老师（西班牙里奥哈大学葡萄栽培与酿酒学）为酿酒顾问。采用上海交通大学培育酿酒葡萄优系及先进酿造技术匠心研制，与王朝御马酒庄、云南香格里拉、山西戎子酒庄教学研究基地深度合作。</p>
+          <a class="hero-cta" href="#catalog">开始选酒 <svg><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="hero-art"><img class="hero-photo" src="shop-assets/hero-collection.jpg?v=16" alt="上交红、天地交通与白兰地 XO 全家福" width="1920" height="1343"></div>
+      </section>
+      <div class="perks" aria-label="购买须知">
+        <a href="#delivery"><svg><use href="#i-truck"/></svg><span><strong>顺丰快递</strong><small>酒款满 ¥2,000 免运费</small></span></a>
+        <a href="#delivery"><svg><use href="#i-pin"/></svg><span><strong>闵行校区自提</strong><small>无运费、无快递包装费</small></span></a>
+        <a href="#wechat-contact"><svg><use href="#i-chat"/></svg><span><strong>微信确认订单</strong><small>查看二维码</small></span></a>
+      </div>
+      <section id="catalog" class="catalog" aria-labelledby="catalog-title">
+        <div class="section-head"><div><p class="eyebrow">THE WINE LIST</p><h2 id="catalog-title">选购酒款</h2><p class="subtle">从干红到清爽果酒，按系列挑选你喜欢的酒。</p></div>
+          <label class="search"><svg><use href="#i-search"/></svg><input id="search" type="search" aria-label="搜索酒款" placeholder="搜索酒款、系列或风味"></label>
+        </div>
+        <div class="catalog-tools"><div id="filters" class="filters" role="group" aria-label="按系列筛选"></div><button type="button" class="cart-open" data-open-cart><svg><use href="#i-cart"/></svg><span>购物车</span><span class="count" data-count>0</span></button></div>
+        <p class="result-count" id="result-count" aria-live="polite"></p>
+        <div id="products" class="products"></div>
+        <noscript>需要启用 JavaScript 才能查看酒款、使用购物车并计算总额。</noscript>
+      </section>
+      <section id="delivery" class="delivery" aria-labelledby="delivery-title">
+        <p class="eyebrow">DELIVERY & PICKUP</p><h2 id="delivery-title">配送与购买说明</h2>
+        <p class="subtle delivery-note">页面不收款，请加微信 <strong>r670615769</strong> 确认库存、价格与配送费用后转账；款项收到后 24 小时内安排顺丰发出，自提订单备好后通知取货。</p>
+        <div id="wechat-contact" class="wechat-card">
+          <a class="wechat-qr" href="shop-assets/wechat-qr.png" target="_blank" rel="noopener" aria-label="查看微信二维码原图（新标签页）"><img src="shop-assets/wechat-qr.png" width="560" height="560" loading="lazy" alt="微信联系二维码"></a>
+          <div><strong>扫码添加微信</strong><p>手机可长按识别；也可复制微信号 <b>r670615769</b>，在微信搜索添加。</p><button type="button" class="secondary" data-copy-wechat>复制微信号</button></div>
+        </div>
+      </section>
+    </main>
+    <button type="button" class="floating-cart" data-open-cart hidden><svg><use href="#i-cart"/></svg><span>查看购物车</span><span class="count" data-count>0</span></button>
+    <dialog id="cart" aria-labelledby="cart-title">
+      <div class="cart-panel"><header class="dialog-head"><div><p class="eyebrow">YOUR SELECTION</p><h2 id="cart-title">购物车</h2></div><form method="dialog"><button class="close" type="submit" aria-label="关闭购物车" autofocus>×</button></form></header>
+        <div id="cart-body" class="cart-body"></div><div id="cart-footer" class="cart-footer"></div>
+      </div>
+    </dialog>
+    <dialog id="product-detail" aria-labelledby="product-detail-title">
+      <header class="dialog-head">
+        <div><p class="eyebrow" id="product-detail-series"></p><h2 id="product-detail-title"></h2></div>
+        <form method="dialog"><button class="close" type="submit" aria-label="关闭商品详情" autofocus>×</button></form>
+      </header>
+      <div class="product-detail-body">
+        <div class="product-detail-photo" id="product-detail-photo"></div>
+        <div class="product-detail-copy">
+          <p id="product-detail-specs"></p>
+          <p id="product-detail-description"></p>
+          <p id="product-detail-price"></p>
+        </div>
+      </div>
+    </dialog>
+    <div id="toast" class="toast" popover="manual" role="status"></div>
+  </div>
+
 		<div class="footer-container">
 
 			<footer class="short bg-secondary-1">
@@ -200,26 +156,10 @@
 							<div style="color:#a87f97" >@上海葡韵科技有限公司 出品</div>
 							<div style="color:#a87f97">由上海交通大学农业与生物学院第一届葡萄与葡萄酒专业硕士成立</div>
 						</div>
-	
+
 					</div>
 				</div>
 			</footer>
 		</div>
-				
-		<!-- <script src="https://www.youtube.com/iframe_api"></script> -->
-		<script src="js/jquery.min.js"></script>
-        <script src="js/jquery.plugin.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.flexslider-min.js"></script>
-        <script src="js/smooth-scroll.min.js"></script>
-        <script src="js/skrollr.min.js"></script>
-        <script src="js/spectragram.min.js"></script>
-        <script src="js/scrollReveal.min.js"></script>
-        <script src="js/isotope.min.js"></script>
-        <script src="js/twitterFetcher_v10_min.js"></script>
-        <script src="js/lightbox.min.js"></script>
-        <script src="js/jquery.countdown.min.js"></script>
-        <script src="js/scripts.js"></script>
-    </body>
+</body>
 </html>
-				
