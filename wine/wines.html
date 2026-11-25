@@ -11,12 +11,15 @@
     @import url("css/elegant-icons.min.css") layer(legacy);
     @import url("css/bootstrap.min.css") layer(legacy);
     @import url("css/theme-1.css") layer(legacy);
-    @import url("css/font1.css?family=Open+Sans:300italic,400italic,400,300,600,700%7CRaleway:700") layer(legacy);
 
     /* Keep the old theme on the navigation, not on the embedded shop. */
     @layer shop-reset {
       .wine-shop, .wine-shop *, .wine-shop *::before, .wine-shop *::after { all: revert; }
     }
+
+    /* 不用 Raleway / Open Sans，整页走系统默认字体；图标字体保持原样 */
+    :root { --wine-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif; }
+    body, body *:not(.icon):not([class*="icon-"]) { font-family: var(--wine-font); }
 
     .nav-container { min-height: 80px; }
     .wine-shop .hero .endorsement { font-size: clamp(22px, 3vw, 38px); line-height: 1.35; }
@@ -41,7 +44,7 @@
 					<div class="row">
 						<div class="col-sm-12 text-center">
 							<a href="index.html">
-							<img class="logo logo-dark" alt="Logo" src="//zeromock.s3.cn-north-1.jdcloud-oss.com/imgwine/logotype_dark.png">
+							<img class="logo logo-dark" alt="上交红" src="shop-assets/logotype_dark.png">
 						</div>
 					</div>
 				
