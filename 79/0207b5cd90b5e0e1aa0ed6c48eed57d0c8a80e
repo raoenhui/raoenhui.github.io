@@ -1,0 +1,14 @@
+wine/wines.html
+  h_925775a3adde3a 110
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "790207b5cd90b5e0e1aa0ed6c48eed57d0c8a80e",
+  "prompts": {},
+  "humans": {
+    "h_925775a3adde3a": {
+      "author": "raoenhui <raoenhui@jd.com>"
+    }
+  }
+}
